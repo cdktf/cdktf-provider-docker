@@ -1,0 +1,7 @@
+{
+  "language": "typescript",
+  "app": "echo noop",
+  "terraformProviders": [
+    "terraform-providers/docker@~> 2.0"
+  ]
+}
