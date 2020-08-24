@@ -90,7 +90,7 @@ export class Secret extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       data: this._data,
       name: this._name,

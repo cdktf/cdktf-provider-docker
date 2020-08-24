@@ -104,7 +104,7 @@ export class Volume extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       driver: this._driver,
       driver_opts: this._driverOpts,

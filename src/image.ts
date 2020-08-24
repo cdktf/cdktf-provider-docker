@@ -97,7 +97,7 @@ export class Image extends TerraformResource {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       keep_locally: this._keepLocally,
       name: this._name,

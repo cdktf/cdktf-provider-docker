@@ -132,7 +132,7 @@ export class DockerProvider extends TerraformProvider {
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
       ca_material: this._caMaterial,
       cert_material: this._certMaterial,
