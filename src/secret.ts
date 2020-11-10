@@ -53,37 +53,48 @@ export class Secret extends TerraformResource {
   // data - computed: false, optional: false, required: true
   private _data: string;
   public get data() {
-    return this._data;
+    return this.getStringAttribute('data');
   }
   public set data(value: string) {
     this._data = value;
   }
+  // Temporarily expose input value. Use with caution.
+  public get dataInput() {
+    return this._data
+  }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // name - computed: false, optional: false, required: true
   private _name: string;
   public get name() {
-    return this._name;
+    return this.getStringAttribute('name');
   }
   public set name(value: string) {
     this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
   }
 
   // labels - computed: false, optional: true, required: false
   private _labels?: SecretLabels[];
   public get labels() {
-    return this._labels;
+    return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: SecretLabels[] | undefined) {
+  public set labels(value: SecretLabels[] ) {
     this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
   }
 
   // =========
