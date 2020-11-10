@@ -370,91 +370,144 @@ export class Service extends TerraformResource {
   // auth - computed: false, optional: true, required: false
   private _auth?: { [key: string]: string };
   public get auth() {
-    return this._auth;
+    return this.interpolationForAttribute('auth') as any;
   }
-  public set auth(value: { [key: string]: string } | undefined) {
+  public set auth(value: { [key: string]: string } ) {
     this._auth = value;
+  }
+  public resetAuth() {
+    this._auth = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get authInput() {
+    return this._auth
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // name - computed: false, optional: false, required: true
   private _name: string;
   public get name() {
-    return this._name;
+    return this.getStringAttribute('name');
   }
   public set name(value: string) {
     this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
   }
 
   // converge_config - computed: false, optional: true, required: false
   private _convergeConfig?: ServiceConvergeConfig[];
   public get convergeConfig() {
-    return this._convergeConfig;
+    return this.interpolationForAttribute('converge_config') as any;
   }
-  public set convergeConfig(value: ServiceConvergeConfig[] | undefined) {
+  public set convergeConfig(value: ServiceConvergeConfig[] ) {
     this._convergeConfig = value;
+  }
+  public resetConvergeConfig() {
+    this._convergeConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get convergeConfigInput() {
+    return this._convergeConfig
   }
 
   // endpoint_spec - computed: false, optional: true, required: false
   private _endpointSpec?: ServiceEndpointSpec[];
   public get endpointSpec() {
-    return this._endpointSpec;
+    return this.interpolationForAttribute('endpoint_spec') as any;
   }
-  public set endpointSpec(value: ServiceEndpointSpec[] | undefined) {
+  public set endpointSpec(value: ServiceEndpointSpec[] ) {
     this._endpointSpec = value;
+  }
+  public resetEndpointSpec() {
+    this._endpointSpec = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get endpointSpecInput() {
+    return this._endpointSpec
   }
 
   // labels - computed: false, optional: true, required: false
   private _labels?: ServiceLabels[];
   public get labels() {
-    return this._labels;
+    return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: ServiceLabels[] | undefined) {
+  public set labels(value: ServiceLabels[] ) {
     this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
   }
 
   // mode - computed: false, optional: true, required: false
   private _mode?: ServiceMode[];
   public get mode() {
-    return this._mode;
+    return this.interpolationForAttribute('mode') as any;
   }
-  public set mode(value: ServiceMode[] | undefined) {
+  public set mode(value: ServiceMode[] ) {
     this._mode = value;
+  }
+  public resetMode() {
+    this._mode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get modeInput() {
+    return this._mode
   }
 
   // rollback_config - computed: false, optional: true, required: false
   private _rollbackConfig?: ServiceRollbackConfig[];
   public get rollbackConfig() {
-    return this._rollbackConfig;
+    return this.interpolationForAttribute('rollback_config') as any;
   }
-  public set rollbackConfig(value: ServiceRollbackConfig[] | undefined) {
+  public set rollbackConfig(value: ServiceRollbackConfig[] ) {
     this._rollbackConfig = value;
+  }
+  public resetRollbackConfig() {
+    this._rollbackConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get rollbackConfigInput() {
+    return this._rollbackConfig
   }
 
   // task_spec - computed: false, optional: false, required: true
   private _taskSpec: ServiceTaskSpec[];
   public get taskSpec() {
-    return this._taskSpec;
+    return this.interpolationForAttribute('task_spec') as any;
   }
   public set taskSpec(value: ServiceTaskSpec[]) {
     this._taskSpec = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get taskSpecInput() {
+    return this._taskSpec
   }
 
   // update_config - computed: false, optional: true, required: false
   private _updateConfig?: ServiceUpdateConfig[];
   public get updateConfig() {
-    return this._updateConfig;
+    return this.interpolationForAttribute('update_config') as any;
   }
-  public set updateConfig(value: ServiceUpdateConfig[] | undefined) {
+  public set updateConfig(value: ServiceUpdateConfig[] ) {
     this._updateConfig = value;
+  }
+  public resetUpdateConfig() {
+    this._updateConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get updateConfigInput() {
+    return this._updateConfig
   }
 
   // =========

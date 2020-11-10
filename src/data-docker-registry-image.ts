@@ -38,24 +38,27 @@ export class DataDockerRegistryImage extends TerraformDataSource {
   // ==========
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // name - computed: false, optional: true, required: false
   private _name?: string;
   public get name() {
-    return this._name;
+    return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string ) {
     this._name = value;
   }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
 
-  // sha256_digest - computed: true, optional: false, required: true
+  // sha256_digest - computed: true, optional: false, required: false
   public get sha256Digest() {
     return this.getStringAttribute('sha256_digest');
   }
