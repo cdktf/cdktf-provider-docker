@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface VolumeConfig extends TerraformMetaArguments {
+export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   readonly driver?: string;
   readonly driverOpts?: { [key: string]: string };
   readonly name?: string;
@@ -21,9 +20,18 @@ export interface VolumeLabels {
   readonly value: string;
 }
 
+function volumeLabelsToTerraform(struct?: VolumeLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Volume extends TerraformResource {
+export class Volume extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -130,10 +138,10 @@ export class Volume extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      driver: this._driver,
-      driver_opts: this._driverOpts,
-      name: this._name,
-      labels: this._labels,
+      driver: cdktf.stringToTerraform(this._driver),
+      driver_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._driverOpts),
+      name: cdktf.stringToTerraform(this._name),
+      labels: cdktf.listMapper(volumeLabelsToTerraform)(this._labels),
     };
   }
 }

@@ -2,13 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ContainerConfig extends TerraformMetaArguments {
+export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   readonly attach?: boolean;
   readonly command?: string[];
   readonly cpuSet?: string;
@@ -75,7 +73,7 @@ export interface ContainerConfig extends TerraformMetaArguments {
   /** volumes block */
   readonly volumes?: ContainerVolumes[];
 }
-export class ContainerNetworkData extends ComplexComputedList {
+export class ContainerNetworkData extends cdktf.ComplexComputedList {
 
   // gateway - computed: true, optional: false, required: false
   public get gateway() {
@@ -101,11 +99,30 @@ export interface ContainerCapabilities {
   readonly add?: string[];
   readonly drop?: string[];
 }
+
+function containerCapabilitiesToTerraform(struct?: ContainerCapabilities): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+  }
+}
+
 export interface ContainerDevices {
   readonly containerPath?: string;
   readonly hostPath: string;
   readonly permissions?: string;
 }
+
+function containerDevicesToTerraform(struct?: ContainerDevices): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    container_path: cdktf.stringToTerraform(struct!.containerPath),
+    host_path: cdktf.stringToTerraform(struct!.hostPath),
+    permissions: cdktf.stringToTerraform(struct!.permissions),
+  }
+}
+
 export interface ContainerHealthcheck {
   /** Time between running the check (ms|s|m|h) */
   readonly interval?: string;
@@ -118,32 +135,88 @@ export interface ContainerHealthcheck {
   /** Maximum time to allow one check to run (ms|s|m|h) */
   readonly timeout?: string;
 }
+
+function containerHealthcheckToTerraform(struct?: ContainerHealthcheck): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    interval: cdktf.stringToTerraform(struct!.interval),
+    retries: cdktf.numberToTerraform(struct!.retries),
+    start_period: cdktf.stringToTerraform(struct!.startPeriod),
+    test: cdktf.listMapper(cdktf.stringToTerraform)(struct!.test),
+    timeout: cdktf.stringToTerraform(struct!.timeout),
+  }
+}
+
 export interface ContainerHost {
   readonly host: string;
   readonly ip: string;
 }
+
+function containerHostToTerraform(struct?: ContainerHost): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    host: cdktf.stringToTerraform(struct!.host),
+    ip: cdktf.stringToTerraform(struct!.ip),
+  }
+}
+
 export interface ContainerLabels {
   /** Name of the label */
   readonly label: string;
   /** Value of the label */
   readonly value: string;
 }
+
+function containerLabelsToTerraform(struct?: ContainerLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
 export interface ContainerMountsBindOptions {
   /** A propagation mode with the value */
   readonly propagation?: string;
 }
+
+function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBindOptions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    propagation: cdktf.stringToTerraform(struct!.propagation),
+  }
+}
+
 export interface ContainerMountsTmpfsOptions {
   /** The permission mode for the tmpfs mount in an integer */
   readonly mode?: number;
   /** The size for the tmpfs mount in bytes */
   readonly sizeBytes?: number;
 }
+
+function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsTmpfsOptions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    mode: cdktf.numberToTerraform(struct!.mode),
+    size_bytes: cdktf.numberToTerraform(struct!.sizeBytes),
+  }
+}
+
 export interface ContainerMountsVolumeOptionsLabels {
   /** Name of the label */
   readonly label: string;
   /** Value of the label */
   readonly value: string;
 }
+
+function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsVolumeOptionsLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
 export interface ContainerMountsVolumeOptions {
   /** Name of the driver to use to create the volume. */
   readonly driverName?: string;
@@ -154,6 +227,17 @@ export interface ContainerMountsVolumeOptions {
   /** labels block */
   readonly labels?: ContainerMountsVolumeOptionsLabels[];
 }
+
+function containerMountsVolumeOptionsToTerraform(struct?: ContainerMountsVolumeOptions): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    driver_name: cdktf.stringToTerraform(struct!.driverName),
+    driver_options: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.driverOptions),
+    no_copy: cdktf.booleanToTerraform(struct!.noCopy),
+    labels: cdktf.listMapper(containerMountsVolumeOptionsLabelsToTerraform)(struct!.labels),
+  }
+}
+
 export interface ContainerMounts {
   /** Whether the mount should be read-only */
   readonly readOnly?: boolean;
@@ -170,23 +254,69 @@ export interface ContainerMounts {
   /** volume_options block */
   readonly volumeOptions?: ContainerMountsVolumeOptions[];
 }
+
+function containerMountsToTerraform(struct?: ContainerMounts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    read_only: cdktf.booleanToTerraform(struct!.readOnly),
+    source: cdktf.stringToTerraform(struct!.source),
+    target: cdktf.stringToTerraform(struct!.target),
+    type: cdktf.stringToTerraform(struct!.type),
+    bind_options: cdktf.listMapper(containerMountsBindOptionsToTerraform)(struct!.bindOptions),
+    tmpfs_options: cdktf.listMapper(containerMountsTmpfsOptionsToTerraform)(struct!.tmpfsOptions),
+    volume_options: cdktf.listMapper(containerMountsVolumeOptionsToTerraform)(struct!.volumeOptions),
+  }
+}
+
 export interface ContainerNetworksAdvanced {
   readonly aliases?: string[];
   readonly ipv4Address?: string;
   readonly ipv6Address?: string;
   readonly name: string;
 }
+
+function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    aliases: cdktf.listMapper(cdktf.stringToTerraform)(struct!.aliases),
+    ipv4_address: cdktf.stringToTerraform(struct!.ipv4Address),
+    ipv6_address: cdktf.stringToTerraform(struct!.ipv6Address),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
 export interface ContainerPorts {
   readonly external?: number;
   readonly internal: number;
   readonly ip?: string;
   readonly protocol?: string;
 }
+
+function containerPortsToTerraform(struct?: ContainerPorts): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    external: cdktf.numberToTerraform(struct!.external),
+    internal: cdktf.numberToTerraform(struct!.internal),
+    ip: cdktf.stringToTerraform(struct!.ip),
+    protocol: cdktf.stringToTerraform(struct!.protocol),
+  }
+}
+
 export interface ContainerUlimit {
   readonly hard: number;
   readonly name: string;
   readonly soft: number;
 }
+
+function containerUlimitToTerraform(struct?: ContainerUlimit): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    hard: cdktf.numberToTerraform(struct!.hard),
+    name: cdktf.stringToTerraform(struct!.name),
+    soft: cdktf.numberToTerraform(struct!.soft),
+  }
+}
+
 export interface ContainerUpload {
   readonly content?: string;
   readonly contentBase64?: string;
@@ -195,6 +325,19 @@ export interface ContainerUpload {
   readonly source?: string;
   readonly sourceHash?: string;
 }
+
+function containerUploadToTerraform(struct?: ContainerUpload): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    content: cdktf.stringToTerraform(struct!.content),
+    content_base64: cdktf.stringToTerraform(struct!.contentBase64),
+    executable: cdktf.booleanToTerraform(struct!.executable),
+    file: cdktf.stringToTerraform(struct!.file),
+    source: cdktf.stringToTerraform(struct!.source),
+    source_hash: cdktf.stringToTerraform(struct!.sourceHash),
+  }
+}
+
 export interface ContainerVolumes {
   readonly containerPath?: string;
   readonly fromContainer?: string;
@@ -203,9 +346,21 @@ export interface ContainerVolumes {
   readonly volumeName?: string;
 }
 
+function containerVolumesToTerraform(struct?: ContainerVolumes): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    container_path: cdktf.stringToTerraform(struct!.containerPath),
+    from_container: cdktf.stringToTerraform(struct!.fromContainer),
+    host_path: cdktf.stringToTerraform(struct!.hostPath),
+    read_only: cdktf.booleanToTerraform(struct!.readOnly),
+    volume_name: cdktf.stringToTerraform(struct!.volumeName),
+  }
+}
+
+
 // Resource
 
-export class Container extends TerraformResource {
+export class Container extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -1135,57 +1290,57 @@ export class Container extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      attach: this._attach,
-      command: this._command,
-      cpu_set: this._cpuSet,
-      cpu_shares: this._cpuShares,
-      destroy_grace_seconds: this._destroyGraceSeconds,
-      dns: this._dns,
-      dns_opts: this._dnsOpts,
-      dns_search: this._dnsSearch,
-      domainname: this._domainname,
-      entrypoint: this._entrypoint,
-      env: this._env,
-      group_add: this._groupAdd,
-      hostname: this._hostname,
-      image: this._image,
-      ipc_mode: this._ipcMode,
-      links: this._links,
-      log_driver: this._logDriver,
-      log_opts: this._logOpts,
-      logs: this._logs,
-      max_retry_count: this._maxRetryCount,
-      memory: this._memory,
-      memory_swap: this._memorySwap,
-      must_run: this._mustRun,
-      name: this._name,
-      network_alias: this._networkAlias,
-      network_mode: this._networkMode,
-      networks: this._networks,
-      pid_mode: this._pidMode,
-      privileged: this._privileged,
-      publish_all_ports: this._publishAllPorts,
-      read_only: this._readOnly,
-      restart: this._restart,
-      rm: this._rm,
-      shm_size: this._shmSize,
-      start: this._start,
-      sysctls: this._sysctls,
-      tmpfs: this._tmpfs,
-      user: this._user,
-      userns_mode: this._usernsMode,
-      working_dir: this._workingDir,
-      capabilities: this._capabilities,
-      devices: this._devices,
-      healthcheck: this._healthcheck,
-      host: this._host,
-      labels: this._labels,
-      mounts: this._mounts,
-      networks_advanced: this._networksAdvanced,
-      ports: this._ports,
-      ulimit: this._ulimit,
-      upload: this._upload,
-      volumes: this._volumes,
+      attach: cdktf.booleanToTerraform(this._attach),
+      command: cdktf.listMapper(cdktf.stringToTerraform)(this._command),
+      cpu_set: cdktf.stringToTerraform(this._cpuSet),
+      cpu_shares: cdktf.numberToTerraform(this._cpuShares),
+      destroy_grace_seconds: cdktf.numberToTerraform(this._destroyGraceSeconds),
+      dns: cdktf.listMapper(cdktf.stringToTerraform)(this._dns),
+      dns_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._dnsOpts),
+      dns_search: cdktf.listMapper(cdktf.stringToTerraform)(this._dnsSearch),
+      domainname: cdktf.stringToTerraform(this._domainname),
+      entrypoint: cdktf.listMapper(cdktf.stringToTerraform)(this._entrypoint),
+      env: cdktf.listMapper(cdktf.stringToTerraform)(this._env),
+      group_add: cdktf.listMapper(cdktf.stringToTerraform)(this._groupAdd),
+      hostname: cdktf.stringToTerraform(this._hostname),
+      image: cdktf.stringToTerraform(this._image),
+      ipc_mode: cdktf.stringToTerraform(this._ipcMode),
+      links: cdktf.listMapper(cdktf.stringToTerraform)(this._links),
+      log_driver: cdktf.stringToTerraform(this._logDriver),
+      log_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._logOpts),
+      logs: cdktf.booleanToTerraform(this._logs),
+      max_retry_count: cdktf.numberToTerraform(this._maxRetryCount),
+      memory: cdktf.numberToTerraform(this._memory),
+      memory_swap: cdktf.numberToTerraform(this._memorySwap),
+      must_run: cdktf.booleanToTerraform(this._mustRun),
+      name: cdktf.stringToTerraform(this._name),
+      network_alias: cdktf.listMapper(cdktf.stringToTerraform)(this._networkAlias),
+      network_mode: cdktf.stringToTerraform(this._networkMode),
+      networks: cdktf.listMapper(cdktf.stringToTerraform)(this._networks),
+      pid_mode: cdktf.stringToTerraform(this._pidMode),
+      privileged: cdktf.booleanToTerraform(this._privileged),
+      publish_all_ports: cdktf.booleanToTerraform(this._publishAllPorts),
+      read_only: cdktf.booleanToTerraform(this._readOnly),
+      restart: cdktf.stringToTerraform(this._restart),
+      rm: cdktf.booleanToTerraform(this._rm),
+      shm_size: cdktf.numberToTerraform(this._shmSize),
+      start: cdktf.booleanToTerraform(this._start),
+      sysctls: cdktf.hashMapper(cdktf.anyToTerraform)(this._sysctls),
+      tmpfs: cdktf.hashMapper(cdktf.anyToTerraform)(this._tmpfs),
+      user: cdktf.stringToTerraform(this._user),
+      userns_mode: cdktf.stringToTerraform(this._usernsMode),
+      working_dir: cdktf.stringToTerraform(this._workingDir),
+      capabilities: cdktf.listMapper(containerCapabilitiesToTerraform)(this._capabilities),
+      devices: cdktf.listMapper(containerDevicesToTerraform)(this._devices),
+      healthcheck: cdktf.listMapper(containerHealthcheckToTerraform)(this._healthcheck),
+      host: cdktf.listMapper(containerHostToTerraform)(this._host),
+      labels: cdktf.listMapper(containerLabelsToTerraform)(this._labels),
+      mounts: cdktf.listMapper(containerMountsToTerraform)(this._mounts),
+      networks_advanced: cdktf.listMapper(containerNetworksAdvancedToTerraform)(this._networksAdvanced),
+      ports: cdktf.listMapper(containerPortsToTerraform)(this._ports),
+      ulimit: cdktf.listMapper(containerUlimitToTerraform)(this._ulimit),
+      upload: cdktf.listMapper(containerUploadToTerraform)(this._upload),
+      volumes: cdktf.listMapper(containerVolumesToTerraform)(this._volumes),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface SecretConfig extends TerraformMetaArguments {
+export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /** Base64-url-safe-encoded secret data */
   readonly data: string;
   /** User-defined name of the secret */
@@ -22,9 +21,18 @@ export interface SecretLabels {
   readonly value: string;
 }
 
+function secretLabelsToTerraform(struct?: SecretLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Secret extends TerraformResource {
+export class Secret extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -103,9 +111,9 @@ export class Secret extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      data: this._data,
-      name: this._name,
-      labels: this._labels,
+      data: cdktf.stringToTerraform(this._data),
+      name: cdktf.stringToTerraform(this._name),
+      labels: cdktf.listMapper(secretLabelsToTerraform)(this._labels),
     };
   }
 }

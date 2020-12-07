@@ -2,7 +2,7 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformProvider } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
@@ -35,9 +35,21 @@ export interface DockerProviderRegistryAuth {
   readonly username?: string;
 }
 
+function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuth): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    address: cdktf.stringToTerraform(struct!.address),
+    config_file: cdktf.stringToTerraform(struct!.configFile),
+    config_file_content: cdktf.stringToTerraform(struct!.configFileContent),
+    password: cdktf.stringToTerraform(struct!.password),
+    username: cdktf.stringToTerraform(struct!.username),
+  }
+}
+
+
 // Resource
 
-export class DockerProvider extends TerraformProvider {
+export class DockerProvider extends cdktf.TerraformProvider {
 
   // ===========
   // INITIALIZER
@@ -183,13 +195,13 @@ export class DockerProvider extends TerraformProvider {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      ca_material: this._caMaterial,
-      cert_material: this._certMaterial,
-      cert_path: this._certPath,
-      host: this._host,
-      key_material: this._keyMaterial,
-      alias: this._alias,
-      registry_auth: this._registryAuth,
+      ca_material: cdktf.stringToTerraform(this._caMaterial),
+      cert_material: cdktf.stringToTerraform(this._certMaterial),
+      cert_path: cdktf.stringToTerraform(this._certPath),
+      host: cdktf.stringToTerraform(this._host),
+      key_material: cdktf.stringToTerraform(this._keyMaterial),
+      alias: cdktf.stringToTerraform(this._alias),
+      registry_auth: cdktf.listMapper(dockerProviderRegistryAuthToTerraform)(this._registryAuth),
     };
   }
 }

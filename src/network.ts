@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface NetworkConfig extends TerraformMetaArguments {
+export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   readonly attachable?: boolean;
   readonly checkDuplicate?: boolean;
   readonly driver?: string;
@@ -28,6 +27,17 @@ export interface NetworkIpamConfig {
   readonly ipRange?: string;
   readonly subnet?: string;
 }
+
+function networkIpamConfigToTerraform(struct?: NetworkIpamConfig): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    aux_address: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.auxAddress),
+    gateway: cdktf.stringToTerraform(struct!.gateway),
+    ip_range: cdktf.stringToTerraform(struct!.ipRange),
+    subnet: cdktf.stringToTerraform(struct!.subnet),
+  }
+}
+
 export interface NetworkLabels {
   /** Name of the label */
   readonly label: string;
@@ -35,9 +45,18 @@ export interface NetworkLabels {
   readonly value: string;
 }
 
+function networkLabelsToTerraform(struct?: NetworkLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Network extends TerraformResource {
+export class Network extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -260,17 +279,17 @@ export class Network extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      attachable: this._attachable,
-      check_duplicate: this._checkDuplicate,
-      driver: this._driver,
-      ingress: this._ingress,
-      internal: this._internal,
-      ipam_driver: this._ipamDriver,
-      ipv6: this._ipv6,
-      name: this._name,
-      options: this._options,
-      ipam_config: this._ipamConfig,
-      labels: this._labels,
+      attachable: cdktf.booleanToTerraform(this._attachable),
+      check_duplicate: cdktf.booleanToTerraform(this._checkDuplicate),
+      driver: cdktf.stringToTerraform(this._driver),
+      ingress: cdktf.booleanToTerraform(this._ingress),
+      internal: cdktf.booleanToTerraform(this._internal),
+      ipam_driver: cdktf.stringToTerraform(this._ipamDriver),
+      ipv6: cdktf.booleanToTerraform(this._ipv6),
+      name: cdktf.stringToTerraform(this._name),
+      options: cdktf.hashMapper(cdktf.anyToTerraform)(this._options),
+      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform)(this._ipamConfig),
+      labels: cdktf.listMapper(networkLabelsToTerraform)(this._labels),
     };
   }
 }

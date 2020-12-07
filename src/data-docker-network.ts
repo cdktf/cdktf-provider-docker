@@ -2,18 +2,15 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformDataSource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
-import { ComplexComputedList } from "cdktf";
-import { StringMap } from "cdktf";
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface DataDockerNetworkConfig extends TerraformMetaArguments {
+export interface DataDockerNetworkConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   readonly name?: string;
 }
-export class DataDockerNetworkIpamConfig extends ComplexComputedList {
+export class DataDockerNetworkIpamConfig extends cdktf.ComplexComputedList {
 
   // aux_address - computed: true, optional: false, required: false
   public get auxAddress() {
@@ -38,7 +35,7 @@ export class DataDockerNetworkIpamConfig extends ComplexComputedList {
 
 // Resource
 
-export class DataDockerNetwork extends TerraformDataSource {
+export class DataDockerNetwork extends cdktf.TerraformDataSource {
 
   // ===========
   // INITIALIZER
@@ -112,7 +109,7 @@ export class DataDockerNetwork extends TerraformDataSource {
 
   // options - computed: true, optional: false, required: false
   public options(key: string): string {
-    return new StringMap(this, 'options').lookup(key);
+    return new cdktf.StringMap(this, 'options').lookup(key);
   }
 
   // scope - computed: true, optional: false, required: false
@@ -126,8 +123,8 @@ export class DataDockerNetwork extends TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      id: this._id,
-      name: this._name,
+      id: cdktf.stringToTerraform(this._id),
+      name: cdktf.stringToTerraform(this._name),
     };
   }
 }

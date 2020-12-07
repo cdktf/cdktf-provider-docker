@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ImageConfig extends TerraformMetaArguments {
+export interface ImageConfig extends cdktf.TerraformMetaArguments {
   readonly keepLocally?: boolean;
   readonly name: string;
   readonly pullTrigger?: string;
@@ -16,7 +15,7 @@ export interface ImageConfig extends TerraformMetaArguments {
 
 // Resource
 
-export class Image extends TerraformResource {
+export class Image extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -120,10 +119,10 @@ export class Image extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      keep_locally: this._keepLocally,
-      name: this._name,
-      pull_trigger: this._pullTrigger,
-      pull_triggers: this._pullTriggers,
+      keep_locally: cdktf.booleanToTerraform(this._keepLocally),
+      name: cdktf.stringToTerraform(this._name),
+      pull_trigger: cdktf.stringToTerraform(this._pullTrigger),
+      pull_triggers: cdktf.listMapper(cdktf.stringToTerraform)(this._pullTriggers),
     };
   }
 }

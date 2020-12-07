@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface ConfigConfig extends TerraformMetaArguments {
+export interface ConfigConfig extends cdktf.TerraformMetaArguments {
   /** Base64-url-safe-encoded config data */
   readonly data: string;
   /** User-defined name of the config */
@@ -16,7 +15,7 @@ export interface ConfigConfig extends TerraformMetaArguments {
 
 // Resource
 
-export class Config extends TerraformResource {
+export class Config extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -78,8 +77,8 @@ export class Config extends TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      data: this._data,
-      name: this._name,
+      data: cdktf.stringToTerraform(this._data),
+      name: cdktf.stringToTerraform(this._name),
     };
   }
 }
