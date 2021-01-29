@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface SecretConfig extends TerraformMetaArguments {
+export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /** Base64-url-safe-encoded secret data */
   readonly data: string;
   /** User-defined name of the secret */
@@ -22,9 +21,18 @@ export interface SecretLabels {
   readonly value: string;
 }
 
+function secretLabelsToTerraform(struct?: SecretLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Secret extends TerraformResource {
+export class Secret extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -53,48 +61,59 @@ export class Secret extends TerraformResource {
   // data - computed: false, optional: false, required: true
   private _data: string;
   public get data() {
-    return this._data;
+    return this.getStringAttribute('data');
   }
   public set data(value: string) {
     this._data = value;
   }
+  // Temporarily expose input value. Use with caution.
+  public get dataInput() {
+    return this._data
+  }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // name - computed: false, optional: false, required: true
   private _name: string;
   public get name() {
-    return this._name;
+    return this.getStringAttribute('name');
   }
   public set name(value: string) {
     this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
   }
 
   // labels - computed: false, optional: true, required: false
   private _labels?: SecretLabels[];
   public get labels() {
-    return this._labels;
+    return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: SecretLabels[] | undefined) {
+  public set labels(value: SecretLabels[] ) {
     this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      data: this._data,
-      name: this._name,
-      labels: this._labels,
+      data: cdktf.stringToTerraform(this._data),
+      name: cdktf.stringToTerraform(this._name),
+      labels: cdktf.listMapper(secretLabelsToTerraform)(this._labels),
     };
   }
 }

@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface VolumeConfig extends TerraformMetaArguments {
+export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   readonly driver?: string;
   readonly driverOpts?: { [key: string]: string };
   readonly name?: string;
@@ -21,9 +20,18 @@ export interface VolumeLabels {
   readonly value: string;
 }
 
+function volumeLabelsToTerraform(struct?: VolumeLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Volume extends TerraformResource {
+export class Volume extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -53,31 +61,41 @@ export class Volume extends TerraformResource {
   // driver - computed: true, optional: true, required: false
   private _driver?: string;
   public get driver() {
-    return this._driver ?? this.getStringAttribute('driver');
+    return this.getStringAttribute('driver');
   }
-  public set driver(value: string | undefined) {
+  public set driver(value: string) {
     this._driver = value;
+  }
+  public resetDriver() {
+    this._driver = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverInput() {
+    return this._driver
   }
 
   // driver_opts - computed: false, optional: true, required: false
   private _driverOpts?: { [key: string]: string };
   public get driverOpts() {
-    return this._driverOpts;
+    return this.interpolationForAttribute('driver_opts') as any;
   }
-  public set driverOpts(value: { [key: string]: string } | undefined) {
+  public set driverOpts(value: { [key: string]: string } ) {
     this._driverOpts = value;
+  }
+  public resetDriverOpts() {
+    this._driverOpts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverOptsInput() {
+    return this._driverOpts
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
-  // mountpoint - computed: true, optional: false, required: true
+  // mountpoint - computed: true, optional: false, required: false
   public get mountpoint() {
     return this.getStringAttribute('mountpoint');
   }
@@ -85,31 +103,45 @@ export class Volume extends TerraformResource {
   // name - computed: true, optional: true, required: false
   private _name?: string;
   public get name() {
-    return this._name ?? this.getStringAttribute('name');
+    return this.getStringAttribute('name');
   }
-  public set name(value: string | undefined) {
+  public set name(value: string) {
     this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
   }
 
   // labels - computed: false, optional: true, required: false
   private _labels?: VolumeLabels[];
   public get labels() {
-    return this._labels;
+    return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: VolumeLabels[] | undefined) {
+  public set labels(value: VolumeLabels[] ) {
     this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      driver: this._driver,
-      driver_opts: this._driverOpts,
-      name: this._name,
-      labels: this._labels,
+      driver: cdktf.stringToTerraform(this._driver),
+      driver_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._driverOpts),
+      name: cdktf.stringToTerraform(this._name),
+      labels: cdktf.listMapper(volumeLabelsToTerraform)(this._labels),
     };
   }
 }

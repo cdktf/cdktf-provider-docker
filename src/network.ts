@@ -2,12 +2,11 @@
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
-import { TerraformResource } from 'cdktf';
-import { TerraformMetaArguments } from 'cdktf';
+import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface NetworkConfig extends TerraformMetaArguments {
+export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   readonly attachable?: boolean;
   readonly checkDuplicate?: boolean;
   readonly driver?: string;
@@ -28,6 +27,17 @@ export interface NetworkIpamConfig {
   readonly ipRange?: string;
   readonly subnet?: string;
 }
+
+function networkIpamConfigToTerraform(struct?: NetworkIpamConfig): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    aux_address: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.auxAddress),
+    gateway: cdktf.stringToTerraform(struct!.gateway),
+    ip_range: cdktf.stringToTerraform(struct!.ipRange),
+    subnet: cdktf.stringToTerraform(struct!.subnet),
+  }
+}
+
 export interface NetworkLabels {
   /** Name of the label */
   readonly label: string;
@@ -35,9 +45,18 @@ export interface NetworkLabels {
   readonly value: string;
 }
 
+function networkLabelsToTerraform(struct?: NetworkLabels): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    label: cdktf.stringToTerraform(struct!.label),
+    value: cdktf.stringToTerraform(struct!.value),
+  }
+}
+
+
 // Resource
 
-export class Network extends TerraformResource {
+export class Network extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
@@ -74,94 +93,150 @@ export class Network extends TerraformResource {
   // attachable - computed: false, optional: true, required: false
   private _attachable?: boolean;
   public get attachable() {
-    return this._attachable;
+    return this.getBooleanAttribute('attachable');
   }
-  public set attachable(value: boolean | undefined) {
+  public set attachable(value: boolean ) {
     this._attachable = value;
+  }
+  public resetAttachable() {
+    this._attachable = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get attachableInput() {
+    return this._attachable
   }
 
   // check_duplicate - computed: false, optional: true, required: false
   private _checkDuplicate?: boolean;
   public get checkDuplicate() {
-    return this._checkDuplicate;
+    return this.getBooleanAttribute('check_duplicate');
   }
-  public set checkDuplicate(value: boolean | undefined) {
+  public set checkDuplicate(value: boolean ) {
     this._checkDuplicate = value;
+  }
+  public resetCheckDuplicate() {
+    this._checkDuplicate = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get checkDuplicateInput() {
+    return this._checkDuplicate
   }
 
   // driver - computed: true, optional: true, required: false
   private _driver?: string;
   public get driver() {
-    return this._driver ?? this.getStringAttribute('driver');
+    return this.getStringAttribute('driver');
   }
-  public set driver(value: string | undefined) {
+  public set driver(value: string) {
     this._driver = value;
+  }
+  public resetDriver() {
+    this._driver = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverInput() {
+    return this._driver
   }
 
   // id - computed: true, optional: true, required: false
-  private _id?: string;
   public get id() {
-    return this._id ?? this.getStringAttribute('id');
-  }
-  public set id(value: string | undefined) {
-    this._id = value;
+    return this.getStringAttribute('id');
   }
 
   // ingress - computed: false, optional: true, required: false
   private _ingress?: boolean;
   public get ingress() {
-    return this._ingress;
+    return this.getBooleanAttribute('ingress');
   }
-  public set ingress(value: boolean | undefined) {
+  public set ingress(value: boolean ) {
     this._ingress = value;
+  }
+  public resetIngress() {
+    this._ingress = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ingressInput() {
+    return this._ingress
   }
 
   // internal - computed: true, optional: true, required: false
   private _internal?: boolean;
   public get internal() {
-    return this._internal ?? this.getBooleanAttribute('internal');
+    return this.getBooleanAttribute('internal');
   }
-  public set internal(value: boolean | undefined) {
+  public set internal(value: boolean) {
     this._internal = value;
+  }
+  public resetInternal() {
+    this._internal = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get internalInput() {
+    return this._internal
   }
 
   // ipam_driver - computed: false, optional: true, required: false
   private _ipamDriver?: string;
   public get ipamDriver() {
-    return this._ipamDriver;
+    return this.getStringAttribute('ipam_driver');
   }
-  public set ipamDriver(value: string | undefined) {
+  public set ipamDriver(value: string ) {
     this._ipamDriver = value;
+  }
+  public resetIpamDriver() {
+    this._ipamDriver = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipamDriverInput() {
+    return this._ipamDriver
   }
 
   // ipv6 - computed: false, optional: true, required: false
   private _ipv6?: boolean;
   public get ipv6() {
-    return this._ipv6;
+    return this.getBooleanAttribute('ipv6');
   }
-  public set ipv6(value: boolean | undefined) {
+  public set ipv6(value: boolean ) {
     this._ipv6 = value;
+  }
+  public resetIpv6() {
+    this._ipv6 = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipv6Input() {
+    return this._ipv6
   }
 
   // name - computed: false, optional: false, required: true
   private _name: string;
   public get name() {
-    return this._name;
+    return this.getStringAttribute('name');
   }
   public set name(value: string) {
     this._name = value;
   }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name
+  }
 
   // options - computed: true, optional: true, required: false
   private _options?: { [key: string]: string }
-  public get options(): { [key: string]: string } | undefined {
-    return this._options; // Getting the computed value is not yet implemented
+  public get options(): { [key: string]: string } {
+    return this.interpolationForAttribute('options') as any; // Getting the computed value is not yet implemented
   }
-  public set options(value: { [key: string]: string } | undefined) {
+  public set options(value: { [key: string]: string }) {
     this._options = value;
   }
+  public resetOptions() {
+    this._options = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get optionsInput() {
+    return this._options
+  }
 
-  // scope - computed: true, optional: false, required: true
+  // scope - computed: true, optional: false, required: false
   public get scope() {
     return this.getStringAttribute('scope');
   }
@@ -169,38 +244,52 @@ export class Network extends TerraformResource {
   // ipam_config - computed: false, optional: true, required: false
   private _ipamConfig?: NetworkIpamConfig[];
   public get ipamConfig() {
-    return this._ipamConfig;
+    return this.interpolationForAttribute('ipam_config') as any;
   }
-  public set ipamConfig(value: NetworkIpamConfig[] | undefined) {
+  public set ipamConfig(value: NetworkIpamConfig[] ) {
     this._ipamConfig = value;
+  }
+  public resetIpamConfig() {
+    this._ipamConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipamConfigInput() {
+    return this._ipamConfig
   }
 
   // labels - computed: false, optional: true, required: false
   private _labels?: NetworkLabels[];
   public get labels() {
-    return this._labels;
+    return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: NetworkLabels[] | undefined) {
+  public set labels(value: NetworkLabels[] ) {
     this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
   }
 
   // =========
   // SYNTHESIS
   // =========
 
-  public synthesizeAttributes(): { [name: string]: any } {
+  protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      attachable: this._attachable,
-      check_duplicate: this._checkDuplicate,
-      driver: this._driver,
-      ingress: this._ingress,
-      internal: this._internal,
-      ipam_driver: this._ipamDriver,
-      ipv6: this._ipv6,
-      name: this._name,
-      options: this._options,
-      ipam_config: this._ipamConfig,
-      labels: this._labels,
+      attachable: cdktf.booleanToTerraform(this._attachable),
+      check_duplicate: cdktf.booleanToTerraform(this._checkDuplicate),
+      driver: cdktf.stringToTerraform(this._driver),
+      ingress: cdktf.booleanToTerraform(this._ingress),
+      internal: cdktf.booleanToTerraform(this._internal),
+      ipam_driver: cdktf.stringToTerraform(this._ipamDriver),
+      ipv6: cdktf.booleanToTerraform(this._ipv6),
+      name: cdktf.stringToTerraform(this._name),
+      options: cdktf.hashMapper(cdktf.anyToTerraform)(this._options),
+      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform)(this._ipamConfig),
+      labels: cdktf.listMapper(networkLabelsToTerraform)(this._labels),
     };
   }
 }
