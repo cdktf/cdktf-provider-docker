@@ -270,10 +270,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cdktf/hcl2json@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@cdktf/hcl2json/-/hcl2json-0.2.1.tgz#eaf844d38cb55fb5bb7f3d6572cd3ce8998e8fc3"
-  integrity sha512-fn2ZA+Fxdk+QfDleT7GOiZozHdic5kVR0MhFHPzTEipXw7tJlrrbqd1fH+GJFu090uzIagdUM3Y+j4w1GTOz7g==
+"@cdktf/hcl2json@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@cdktf/hcl2json/-/hcl2json-0.2.2.tgz#a8c471268462209aaf2c33c4a6ecb8a52d241a80"
+  integrity sha512-C/IOl8ARTRiafC9mdZiIuJbqys6LRmaVM/grux7OASkVbkyYy2RHKPVXRBsD5mtfLBXQaL/NGjLLJ4aSC7jFZQ==
   dependencies:
     "@types/node-fetch" "^2.5.8"
     node-fetch "^2.6.1"
@@ -1188,20 +1188,21 @@ caseless@~0.12.0:
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
 cdktf-cli@^0.2:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/cdktf-cli/-/cdktf-cli-0.2.1.tgz#00aa8e2a164a5b50544b3bbfb453163515719b67"
-  integrity sha512-DcAkiIy8oA3GIUG8/zqO7oBYyER7WxC4ylVNkQFqq/k7m+x+YCk18JvHkZHX4uK2xxQyttQ0lxHMNyZyA5y1oA==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/cdktf-cli/-/cdktf-cli-0.2.2.tgz#0664a285e809d5f862d0cedb25cf1cbfa786eb81"
+  integrity sha512-tkUGs4+739C+3lklwQQM/wLgp41maVlJUK/2cCzuNxVBgobLXBxn55lHxbmEuh2Ddc8PtNV31uzHzn1f2ZzdfQ==
   dependencies:
-    "@cdktf/hcl2json" "0.2.1"
+    "@cdktf/hcl2json" "0.2.2"
     "@skorfmann/ink-confirm-input" "^3.0.0"
     "@skorfmann/terraform-cloud" "^1.9.1"
     "@types/node" "^14.0.26"
     archiver "^5.1.0"
-    cdktf "0.2.1"
+    cdktf "0.2.2"
     chalk "^4.1.0"
     codemaker "^0.22.0"
     constructs "^3.0.0"
     fs-extra "^8.1.0"
+    indent-string "^4.0.0"
     ink "^3.0.8"
     ink-spinner "^4.0.1"
     jsii-srcmak "^0.1.223"
@@ -1216,10 +1217,10 @@ cdktf-cli@^0.2:
     uuid "^8.3.0"
     yargs "^15.1.0"
 
-cdktf@0.2.1, cdktf@^0.2:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/cdktf/-/cdktf-0.2.1.tgz#ec4864db7741bc7350ff8563cc547d4601ded309"
-  integrity sha512-yz2eoeiSWDjf98ackXw6D0bWvdsmJ7EIxuTHbkn7hzaIJ9sDrXhVLpcTP0rolBVZ/FR8/mtFLoEdHnthIg5IcA==
+cdktf@0.2.2, cdktf@^0.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/cdktf/-/cdktf-0.2.2.tgz#93aec902694bca77009ecd1c1490fec19e908a12"
+  integrity sha512-SMiDV99ruSGhjBm+dj30XmtV20BKesjY75SGGB3sTcFeaqn5d1Gf8gAaG69QTm3zqI8SbYO12MDslkoX1BY5Zw==
   dependencies:
     json-stable-stringify "^1.0.1"
 
@@ -1477,12 +1478,7 @@ constant-case@^3.0.4:
     tslib "^2.0.3"
     upper-case "^2.0.2"
 
-constructs@^3.0.0:
-  version "3.2.117"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.117.tgz#d6f29d822f99530f4cb5c79089dc2e1bd0d0e9d3"
-  integrity sha512-zYDlALAHWdopUzMGr3aZPlPR8f+OEYr1+QZCkLqi/eyUjbOmlPQ6xwrlDoOaJNgpMf727T9Yo+hokCjIRsZweQ==
-
-constructs@^3.0.4:
+constructs@^3.0.0, constructs@^3.0.4:
   version "3.3.71"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.71.tgz#5a3e968de484ad327bc2650aa4a7f37a39834ac5"
   integrity sha512-3KFtTsA7OV27m/+pJhN4iJkKzHbPIPvyvEX5BQ/JCAWjfCHOQEVpIgxHLpT4i8L1OFta+pJrzcEVAHo6UitwqA==
@@ -3544,13 +3540,13 @@ jsesc@^2.5.1:
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
 jsii-diff@^1.9.0:
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.27.1.tgz#fe396401cc7e35b4b77fa80b27628b618e9a2f22"
-  integrity sha512-1E28l0Jy93B1KbaB72FpDcFWBE0ABlOqWssr615aHeDLFC2G4jzlI1azdGUXbSWh6615pDX3oM0F3zrJEcbxLw==
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.28.0.tgz#16f889559f3d2679154f93eae004704db1e6c62d"
+  integrity sha512-SJUzVY7sXg3esBeuvj3tQGzeRYEkpmrqbC1lIHd8VdXpPybYWU958z3hlJJkvaM1AomQpiMyXK6Ev+2XOp741g==
   dependencies:
-    "@jsii/spec" "^1.27.1"
+    "@jsii/spec" "^1.28.0"
     fs-extra "^9.1.0"
-    jsii-reflect "^1.27.1"
+    jsii-reflect "^1.28.0"
     log4js "^6.3.0"
     typescript "~3.9.9"
     yargs "^16.2.0"
@@ -3618,11 +3614,11 @@ jsii-srcmak@^0.1.223:
     yargs "^15.4.1"
 
 jsii@^1.12.0, jsii@^1.9.0:
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.27.1.tgz#e595e8ba462c40b6fd1cb7c1dd56913ad21b3610"
-  integrity sha512-2VIZwLytVRsOnqhdZNqZPPKrAPYIAmqxest7YcrwgFbTK+Zyxsa2FQyWyD2nNVzdxWqVUqALvuV3RMKMEHWv7g==
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-1.28.0.tgz#c453f2a81d001dd2c3c3991e6e36d4bbb1d03f42"
+  integrity sha512-B6CbHi60fabeQZJYNea8wSUsrILJzN7ng+yx69GmMJ4C6NtCVt7Oc/CITfhY/cYTwdhN3FAJf01e5/v8qj6bUA==
   dependencies:
-    "@jsii/spec" "^1.27.1"
+    "@jsii/spec" "^1.28.0"
     case "^1.6.3"
     colors "^1.4.0"
     deep-equal "^2.0.5"
