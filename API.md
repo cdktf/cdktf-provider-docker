@@ -965,12 +965,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ContainerNetworkData(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new ContainerNetworkData(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
@@ -1106,12 +1106,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataDockerNetworkIpamConfig(terraformResource: ITerraformResource, terraformAttribute: string, index: string)
+new DataDockerNetworkIpamConfig(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
 ```
 
 * **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
-* **index** (<code>string</code>)  *No description*
+* **complexComputedListIndex** (<code>string</code>)  *No description*
 
 
 
