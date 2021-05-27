@@ -4,18 +4,18 @@
 
 Name|Description
 ----|-----------
-[Config](#cdktf-provider-docker-config)|*No description*
-[Container](#cdktf-provider-docker-container)|*No description*
+[Config](#cdktf-provider-docker-config)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}.
+[Container](#cdktf-provider-docker-container)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}.
 [ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)|*No description*
-[DataDockerNetwork](#cdktf-provider-docker-datadockernetwork)|*No description*
+[DataDockerNetwork](#cdktf-provider-docker-datadockernetwork)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network}.
 [DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)|*No description*
-[DataDockerRegistryImage](#cdktf-provider-docker-datadockerregistryimage)|*No description*
-[DockerProvider](#cdktf-provider-docker-dockerprovider)|*No description*
-[Image](#cdktf-provider-docker-image)|*No description*
-[Network](#cdktf-provider-docker-network)|*No description*
-[Secret](#cdktf-provider-docker-secret)|*No description*
-[Service](#cdktf-provider-docker-service)|*No description*
-[Volume](#cdktf-provider-docker-volume)|*No description*
+[DataDockerRegistryImage](#cdktf-provider-docker-datadockerregistryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}.
+[DockerProvider](#cdktf-provider-docker-dockerprovider)|Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
+[Image](#cdktf-provider-docker-image)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}.
+[Network](#cdktf-provider-docker-network)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}.
+[Secret](#cdktf-provider-docker-secret)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}.
+[Service](#cdktf-provider-docker-service)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}.
+[Volume](#cdktf-provider-docker-volume)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}.
 
 
 **Structs**
@@ -89,7 +89,7 @@ Name|Description
 
 ## class Config  <a id="cdktf-provider-docker-config"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -97,14 +97,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config} Resource.
 
 ```ts
 new Config(scope: Construct, id: string, config: ConfigConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ConfigConfig](#cdktf-provider-docker-configconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -145,7 +145,7 @@ __Returns__:
 
 ## class Container  <a id="cdktf-provider-docker-container"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -153,70 +153,70 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container} Resource.
 
 ```ts
 new Container(scope: Construct, id: string, config: ContainerConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ContainerConfig](#cdktf-provider-docker-containerconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **image** (<code>string</code>)  *No description* 
-  * **name** (<code>string</code>)  *No description* 
-  * **attach** (<code>boolean</code>)  *No description* __*Optional*__
+  * **image** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#image Container#image}. 
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}. 
+  * **attach** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#attach Container#attach}. __*Optional*__
   * **capabilities** (<code>Array<[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)></code>)  capabilities block. __*Optional*__
-  * **command** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **cpuSet** (<code>string</code>)  *No description* __*Optional*__
-  * **cpuShares** (<code>number</code>)  *No description* __*Optional*__
-  * **destroyGraceSeconds** (<code>number</code>)  *No description* __*Optional*__
+  * **command** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#command Container#command}. __*Optional*__
+  * **cpuSet** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_set Container#cpu_set}. __*Optional*__
+  * **cpuShares** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_shares Container#cpu_shares}. __*Optional*__
+  * **destroyGraceSeconds** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#destroy_grace_seconds Container#destroy_grace_seconds}. __*Optional*__
   * **devices** (<code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code>)  devices block. __*Optional*__
-  * **dns** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **dnsOpts** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **dnsSearch** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **domainname** (<code>string</code>)  *No description* __*Optional*__
-  * **entrypoint** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **env** (<code>Array<string></code>)  *No description* __*Optional*__
+  * **dns** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns Container#dns}. __*Optional*__
+  * **dnsOpts** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_opts Container#dns_opts}. __*Optional*__
+  * **dnsSearch** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_search Container#dns_search}. __*Optional*__
+  * **domainname** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#domainname Container#domainname}. __*Optional*__
+  * **entrypoint** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#entrypoint Container#entrypoint}. __*Optional*__
+  * **env** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#env Container#env}. __*Optional*__
   * **groupAdd** (<code>Array<string></code>)  Additional groups for the container user. __*Optional*__
   * **healthcheck** (<code>Array<[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)></code>)  healthcheck block. __*Optional*__
   * **host** (<code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code>)  host block. __*Optional*__
-  * **hostname** (<code>string</code>)  *No description* __*Optional*__
+  * **hostname** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#hostname Container#hostname}. __*Optional*__
   * **ipcMode** (<code>string</code>)  IPC sharing mode for the container. __*Optional*__
   * **labels** (<code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code>)  labels block. __*Optional*__
-  * **links** (<code>Array<string></code>)  *No description* __*Optional*__
-  * **logDriver** (<code>string</code>)  *No description* __*Optional*__
-  * **logOpts** (<code>Map<string, string></code>)  *No description* __*Optional*__
-  * **logs** (<code>boolean</code>)  *No description* __*Optional*__
-  * **maxRetryCount** (<code>number</code>)  *No description* __*Optional*__
-  * **memory** (<code>number</code>)  *No description* __*Optional*__
-  * **memorySwap** (<code>number</code>)  *No description* __*Optional*__
+  * **links** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#links Container#links}. __*Optional*__
+  * **logDriver** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_driver Container#log_driver}. __*Optional*__
+  * **logOpts** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_opts Container#log_opts}. __*Optional*__
+  * **logs** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#logs Container#logs}. __*Optional*__
+  * **maxRetryCount** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#max_retry_count Container#max_retry_count}. __*Optional*__
+  * **memory** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory Container#memory}. __*Optional*__
+  * **memorySwap** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory_swap Container#memory_swap}. __*Optional*__
   * **mounts** (<code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code>)  mounts block. __*Optional*__
-  * **mustRun** (<code>boolean</code>)  *No description* __*Optional*__
+  * **mustRun** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#must_run Container#must_run}. __*Optional*__
   * **networkAlias** (<code>Array<string></code>)  Set an alias for the container in all specified networks. __*Optional*__
-  * **networkMode** (<code>string</code>)  *No description* __*Optional*__
-  * **networks** (<code>Array<string></code>)  *No description* __*Optional*__
+  * **networkMode** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#network_mode Container#network_mode}. __*Optional*__
+  * **networks** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#networks Container#networks}. __*Optional*__
   * **networksAdvanced** (<code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code>)  networks_advanced block. __*Optional*__
-  * **pidMode** (<code>string</code>)  *No description* __*Optional*__
+  * **pidMode** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#pid_mode Container#pid_mode}. __*Optional*__
   * **ports** (<code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code>)  ports block. __*Optional*__
-  * **privileged** (<code>boolean</code>)  *No description* __*Optional*__
-  * **publishAllPorts** (<code>boolean</code>)  *No description* __*Optional*__
-  * **readOnly** (<code>boolean</code>)  *No description* __*Optional*__
-  * **restart** (<code>string</code>)  *No description* __*Optional*__
-  * **rm** (<code>boolean</code>)  *No description* __*Optional*__
-  * **shmSize** (<code>number</code>)  *No description* __*Optional*__
-  * **start** (<code>boolean</code>)  *No description* __*Optional*__
-  * **sysctls** (<code>Map<string, string></code>)  *No description* __*Optional*__
-  * **tmpfs** (<code>Map<string, string></code>)  *No description* __*Optional*__
+  * **privileged** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#privileged Container#privileged}. __*Optional*__
+  * **publishAllPorts** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#publish_all_ports Container#publish_all_ports}. __*Optional*__
+  * **readOnly** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}. __*Optional*__
+  * **restart** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#restart Container#restart}. __*Optional*__
+  * **rm** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#rm Container#rm}. __*Optional*__
+  * **shmSize** (<code>number</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#shm_size Container#shm_size}. __*Optional*__
+  * **start** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#start Container#start}. __*Optional*__
+  * **sysctls** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#sysctls Container#sysctls}. __*Optional*__
+  * **tmpfs** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tmpfs Container#tmpfs}. __*Optional*__
   * **ulimit** (<code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code>)  ulimit block. __*Optional*__
   * **upload** (<code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code>)  upload block. __*Optional*__
-  * **user** (<code>string</code>)  *No description* __*Optional*__
-  * **usernsMode** (<code>string</code>)  *No description* __*Optional*__
+  * **user** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#user Container#user}. __*Optional*__
+  * **usernsMode** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#userns_mode Container#userns_mode}. __*Optional*__
   * **volumes** (<code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code>)  volumes block. __*Optional*__
-  * **workingDir** (<code>string</code>)  *No description* __*Optional*__
+  * **workingDir** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#working_dir Container#working_dir}. __*Optional*__
 
 
 
@@ -988,7 +988,7 @@ Name | Type | Description
 
 ## class DataDockerNetwork  <a id="cdktf-provider-docker-datadockernetwork"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -996,21 +996,21 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network} Data Source.
 
 ```ts
 new DataDockerNetwork(scope: Construct, id: string, config?: DataDockerNetworkConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerNetworkConfig](#cdktf-provider-docker-datadockernetworkconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **id** (<code>string</code>)  *No description* __*Optional*__
-  * **name** (<code>string</code>)  *No description* __*Optional*__
+  * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#id DataDockerNetwork#id}. __*Optional*__
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#name DataDockerNetwork#name}. __*Optional*__
 
 
 
@@ -1129,7 +1129,7 @@ Name | Type | Description
 
 ## class DataDockerRegistryImage  <a id="cdktf-provider-docker-datadockerregistryimage"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -1137,20 +1137,20 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image} Data Source.
 
 ```ts
 new DataDockerRegistryImage(scope: Construct, id: string, config?: DataDockerRegistryImageConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerRegistryImageConfig](#cdktf-provider-docker-datadockerregistryimageconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **name** (<code>string</code>)  *No description* __*Optional*__
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#name DataDockerRegistryImage#name}. __*Optional*__
 
 
 
@@ -1195,7 +1195,7 @@ __Returns__:
 
 ## class DockerProvider  <a id="cdktf-provider-docker-dockerprovider"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
 
 __Implements__: [IConstruct](#constructs-iconstruct)
 __Extends__: [TerraformProvider](#cdktf-terraformprovider)
@@ -1203,14 +1203,14 @@ __Extends__: [TerraformProvider](#cdktf-terraformprovider)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker docker} Resource.
 
 ```ts
 new DockerProvider(scope: Construct, id: string, config?: DockerProviderConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DockerProviderConfig](#cdktf-provider-docker-dockerproviderconfig)</code>)  *No description*
   * **alias** (<code>string</code>)  Alias name. __*Optional*__
   * **caMaterial** (<code>string</code>)  PEM-encoded content of Docker host CA certificate. __*Optional*__
@@ -1345,7 +1345,7 @@ __Returns__:
 
 ## class Image  <a id="cdktf-provider-docker-image"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1353,23 +1353,23 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image} Resource.
 
 ```ts
 new Image(scope: Construct, id: string, config: ImageConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ImageConfig](#cdktf-provider-docker-imageconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **name** (<code>string</code>)  *No description* 
-  * **keepLocally** (<code>boolean</code>)  *No description* __*Optional*__
-  * **pullTrigger** (<code>string</code>)  *No description* __*Optional*__
-  * **pullTriggers** (<code>Array<string></code>)  *No description* __*Optional*__
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#name Image#name}. 
+  * **keepLocally** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#keep_locally Image#keep_locally}. __*Optional*__
+  * **pullTrigger** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_trigger Image#pull_trigger}. __*Optional*__
+  * **pullTriggers** (<code>Array<string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_triggers Image#pull_triggers}. __*Optional*__
 
 
 
@@ -1444,7 +1444,7 @@ __Returns__:
 
 ## class Network  <a id="cdktf-provider-docker-network"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1452,30 +1452,30 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network} Resource.
 
 ```ts
 new Network(scope: Construct, id: string, config: NetworkConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[NetworkConfig](#cdktf-provider-docker-networkconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **name** (<code>string</code>)  *No description* 
-  * **attachable** (<code>boolean</code>)  *No description* __*Optional*__
-  * **checkDuplicate** (<code>boolean</code>)  *No description* __*Optional*__
-  * **driver** (<code>string</code>)  *No description* __*Optional*__
-  * **ingress** (<code>boolean</code>)  *No description* __*Optional*__
-  * **internal** (<code>boolean</code>)  *No description* __*Optional*__
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#name Network#name}. 
+  * **attachable** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}. __*Optional*__
+  * **checkDuplicate** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}. __*Optional*__
+  * **driver** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#driver Network#driver}. __*Optional*__
+  * **ingress** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}. __*Optional*__
+  * **internal** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}. __*Optional*__
   * **ipamConfig** (<code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code>)  ipam_config block. __*Optional*__
-  * **ipamDriver** (<code>string</code>)  *No description* __*Optional*__
-  * **ipv6** (<code>boolean</code>)  *No description* __*Optional*__
+  * **ipamDriver** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_driver Network#ipam_driver}. __*Optional*__
+  * **ipv6** (<code>boolean</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}. __*Optional*__
   * **labels** (<code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code>)  labels block. __*Optional*__
-  * **options** (<code>Map<string, string></code>)  *No description* __*Optional*__
+  * **options** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}. __*Optional*__
 
 
 
@@ -1648,7 +1648,7 @@ __Returns__:
 
 ## class Secret  <a id="cdktf-provider-docker-secret"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1656,14 +1656,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret} Resource.
 
 ```ts
 new Secret(scope: Construct, id: string, config: SecretConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[SecretConfig](#cdktf-provider-docker-secretconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -1719,7 +1719,7 @@ __Returns__:
 
 ## class Service  <a id="cdktf-provider-docker-service"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1727,14 +1727,14 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service} Resource.
 
 ```ts
 new Service(scope: Construct, id: string, config: ServiceConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ServiceConfig](#cdktf-provider-docker-serviceconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
@@ -1742,7 +1742,7 @@ new Service(scope: Construct, id: string, config: ServiceConfig)
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  Name of the service. 
   * **taskSpec** (<code>Array<[ServiceTaskSpec](#cdktf-provider-docker-servicetaskspec)></code>)  task_spec block. 
-  * **auth** (<code>Map<string, string></code>)  *No description* __*Optional*__
+  * **auth** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#auth Service#auth}. __*Optional*__
   * **convergeConfig** (<code>Array<[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)></code>)  converge_config block. __*Optional*__
   * **endpointSpec** (<code>Array<[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)></code>)  endpoint_spec block. __*Optional*__
   * **labels** (<code>Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code>)  labels block. __*Optional*__
@@ -1880,7 +1880,7 @@ __Returns__:
 
 ## class Volume  <a id="cdktf-provider-docker-volume"></a>
 
-
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1888,23 +1888,23 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume} Resource.
 
 ```ts
 new Volume(scope: Construct, id: string, config?: VolumeConfig)
 ```
 
-* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[VolumeConfig](#cdktf-provider-docker-volumeconfig)</code>)  *No description*
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
-  * **driver** (<code>string</code>)  *No description* __*Optional*__
-  * **driverOpts** (<code>Map<string, string></code>)  *No description* __*Optional*__
+  * **driver** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver Volume#driver}. __*Optional*__
+  * **driverOpts** (<code>Map<string, string></code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}. __*Optional*__
   * **labels** (<code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code>)  labels block. __*Optional*__
-  * **name** (<code>string</code>)  *No description* __*Optional*__
+  * **name** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#name Volume#name}. __*Optional*__
 
 
 
@@ -2016,8 +2016,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**add**? | <code>Array<string></code> | __*Optional*__
-**drop**? | <code>Array<string></code> | __*Optional*__
+**add**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#add Container#add}.<br/>__*Optional*__
+**drop**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#drop Container#drop}.<br/>__*Optional*__
 
 
 
@@ -2030,61 +2030,61 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**image** | <code>string</code> | <span></span>
-**name** | <code>string</code> | <span></span>
-**attach**? | <code>boolean</code> | __*Optional*__
+**image** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#image Container#image}.
+**name** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}.
+**attach**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#attach Container#attach}.<br/>__*Optional*__
 **capabilities**? | <code>Array<[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)></code> | capabilities block.<br/>__*Optional*__
-**command**? | <code>Array<string></code> | __*Optional*__
+**command**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#command Container#command}.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
-**cpuSet**? | <code>string</code> | __*Optional*__
-**cpuShares**? | <code>number</code> | __*Optional*__
+**cpuSet**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_set Container#cpu_set}.<br/>__*Optional*__
+**cpuShares**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_shares Container#cpu_shares}.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**destroyGraceSeconds**? | <code>number</code> | __*Optional*__
+**destroyGraceSeconds**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#destroy_grace_seconds Container#destroy_grace_seconds}.<br/>__*Optional*__
 **devices**? | <code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | devices block.<br/>__*Optional*__
-**dns**? | <code>Array<string></code> | __*Optional*__
-**dnsOpts**? | <code>Array<string></code> | __*Optional*__
-**dnsSearch**? | <code>Array<string></code> | __*Optional*__
-**domainname**? | <code>string</code> | __*Optional*__
-**entrypoint**? | <code>Array<string></code> | __*Optional*__
-**env**? | <code>Array<string></code> | __*Optional*__
+**dns**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns Container#dns}.<br/>__*Optional*__
+**dnsOpts**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_opts Container#dns_opts}.<br/>__*Optional*__
+**dnsSearch**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_search Container#dns_search}.<br/>__*Optional*__
+**domainname**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#domainname Container#domainname}.<br/>__*Optional*__
+**entrypoint**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#entrypoint Container#entrypoint}.<br/>__*Optional*__
+**env**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#env Container#env}.<br/>__*Optional*__
 **groupAdd**? | <code>Array<string></code> | Additional groups for the container user.<br/>__*Optional*__
 **healthcheck**? | <code>Array<[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)></code> | healthcheck block.<br/>__*Optional*__
 **host**? | <code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | host block.<br/>__*Optional*__
-**hostname**? | <code>string</code> | __*Optional*__
+**hostname**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#hostname Container#hostname}.<br/>__*Optional*__
 **ipcMode**? | <code>string</code> | IPC sharing mode for the container.<br/>__*Optional*__
 **labels**? | <code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**links**? | <code>Array<string></code> | __*Optional*__
-**logDriver**? | <code>string</code> | __*Optional*__
-**logOpts**? | <code>Map<string, string></code> | __*Optional*__
-**logs**? | <code>boolean</code> | __*Optional*__
-**maxRetryCount**? | <code>number</code> | __*Optional*__
-**memory**? | <code>number</code> | __*Optional*__
-**memorySwap**? | <code>number</code> | __*Optional*__
+**links**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#links Container#links}.<br/>__*Optional*__
+**logDriver**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_driver Container#log_driver}.<br/>__*Optional*__
+**logOpts**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_opts Container#log_opts}.<br/>__*Optional*__
+**logs**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#logs Container#logs}.<br/>__*Optional*__
+**maxRetryCount**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#max_retry_count Container#max_retry_count}.<br/>__*Optional*__
+**memory**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory Container#memory}.<br/>__*Optional*__
+**memorySwap**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory_swap Container#memory_swap}.<br/>__*Optional*__
 **mounts**? | <code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | mounts block.<br/>__*Optional*__
-**mustRun**? | <code>boolean</code> | __*Optional*__
+**mustRun**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#must_run Container#must_run}.<br/>__*Optional*__
 **networkAlias**? | <code>Array<string></code> | Set an alias for the container in all specified networks.<br/>__*Optional*__
-**networkMode**? | <code>string</code> | __*Optional*__
-**networks**? | <code>Array<string></code> | __*Optional*__
+**networkMode**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#network_mode Container#network_mode}.<br/>__*Optional*__
+**networks**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#networks Container#networks}.<br/>__*Optional*__
 **networksAdvanced**? | <code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | networks_advanced block.<br/>__*Optional*__
-**pidMode**? | <code>string</code> | __*Optional*__
+**pidMode**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#pid_mode Container#pid_mode}.<br/>__*Optional*__
 **ports**? | <code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | ports block.<br/>__*Optional*__
-**privileged**? | <code>boolean</code> | __*Optional*__
+**privileged**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#privileged Container#privileged}.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
-**publishAllPorts**? | <code>boolean</code> | __*Optional*__
-**readOnly**? | <code>boolean</code> | __*Optional*__
-**restart**? | <code>string</code> | __*Optional*__
-**rm**? | <code>boolean</code> | __*Optional*__
-**shmSize**? | <code>number</code> | __*Optional*__
-**start**? | <code>boolean</code> | __*Optional*__
-**sysctls**? | <code>Map<string, string></code> | __*Optional*__
-**tmpfs**? | <code>Map<string, string></code> | __*Optional*__
+**publishAllPorts**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#publish_all_ports Container#publish_all_ports}.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}.<br/>__*Optional*__
+**restart**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#restart Container#restart}.<br/>__*Optional*__
+**rm**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#rm Container#rm}.<br/>__*Optional*__
+**shmSize**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#shm_size Container#shm_size}.<br/>__*Optional*__
+**start**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#start Container#start}.<br/>__*Optional*__
+**sysctls**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#sysctls Container#sysctls}.<br/>__*Optional*__
+**tmpfs**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tmpfs Container#tmpfs}.<br/>__*Optional*__
 **ulimit**? | <code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | ulimit block.<br/>__*Optional*__
 **upload**? | <code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | upload block.<br/>__*Optional*__
-**user**? | <code>string</code> | __*Optional*__
-**usernsMode**? | <code>string</code> | __*Optional*__
+**user**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#user Container#user}.<br/>__*Optional*__
+**usernsMode**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#userns_mode Container#userns_mode}.<br/>__*Optional*__
 **volumes**? | <code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | volumes block.<br/>__*Optional*__
-**workingDir**? | <code>string</code> | __*Optional*__
+**workingDir**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#working_dir Container#working_dir}.<br/>__*Optional*__
 
 
 
@@ -2097,9 +2097,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**hostPath** | <code>string</code> | <span></span>
-**containerPath**? | <code>string</code> | __*Optional*__
-**permissions**? | <code>string</code> | __*Optional*__
+**hostPath** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host_path Container#host_path}.
+**containerPath**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#container_path Container#container_path}.<br/>__*Optional*__
+**permissions**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#permissions Container#permissions}.<br/>__*Optional*__
 
 
 
@@ -2129,8 +2129,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host** | <code>string</code> | <span></span>
-**ip** | <code>string</code> | <span></span>
+**host** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host Container#host}.
+**ip** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ip Container#ip}.
 
 
 
@@ -2233,10 +2233,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | <span></span>
-**aliases**? | <code>Array<string></code> | __*Optional*__
-**ipv4Address**? | <code>string</code> | __*Optional*__
-**ipv6Address**? | <code>string</code> | __*Optional*__
+**name** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}.
+**aliases**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#aliases Container#aliases}.<br/>__*Optional*__
+**ipv4Address**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ipv4_address Container#ipv4_address}.<br/>__*Optional*__
+**ipv6Address**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ipv6_address Container#ipv6_address}.<br/>__*Optional*__
 
 
 
@@ -2249,10 +2249,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**internal** | <code>number</code> | <span></span>
-**external**? | <code>number</code> | __*Optional*__
-**ip**? | <code>string</code> | __*Optional*__
-**protocol**? | <code>string</code> | __*Optional*__
+**internal** | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#internal Container#internal}.
+**external**? | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#external Container#external}.<br/>__*Optional*__
+**ip**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ip Container#ip}.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#protocol Container#protocol}.<br/>__*Optional*__
 
 
 
@@ -2265,9 +2265,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**hard** | <code>number</code> | <span></span>
-**name** | <code>string</code> | <span></span>
-**soft** | <code>number</code> | <span></span>
+**hard** | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#hard Container#hard}.
+**name** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}.
+**soft** | <code>number</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#soft Container#soft}.
 
 
 
@@ -2280,12 +2280,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**file** | <code>string</code> | <span></span>
-**content**? | <code>string</code> | __*Optional*__
-**contentBase64**? | <code>string</code> | __*Optional*__
-**executable**? | <code>boolean</code> | __*Optional*__
-**source**? | <code>string</code> | __*Optional*__
-**sourceHash**? | <code>string</code> | __*Optional*__
+**file** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#file Container#file}.
+**content**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#content Container#content}.<br/>__*Optional*__
+**contentBase64**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#content_base64 Container#content_base64}.<br/>__*Optional*__
+**executable**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#executable Container#executable}.<br/>__*Optional*__
+**source**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#source Container#source}.<br/>__*Optional*__
+**sourceHash**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#source_hash Container#source_hash}.<br/>__*Optional*__
 
 
 
@@ -2298,11 +2298,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**containerPath**? | <code>string</code> | __*Optional*__
-**fromContainer**? | <code>string</code> | __*Optional*__
-**hostPath**? | <code>string</code> | __*Optional*__
-**readOnly**? | <code>boolean</code> | __*Optional*__
-**volumeName**? | <code>string</code> | __*Optional*__
+**containerPath**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#container_path Container#container_path}.<br/>__*Optional*__
+**fromContainer**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#from_container Container#from_container}.<br/>__*Optional*__
+**hostPath**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host_path Container#host_path}.<br/>__*Optional*__
+**readOnly**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}.<br/>__*Optional*__
+**volumeName**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#volume_name Container#volume_name}.<br/>__*Optional*__
 
 
 
@@ -2317,9 +2317,9 @@ Name | Type | Description
 -----|------|-------------
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**id**? | <code>string</code> | __*Optional*__
+**id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#id DataDockerNetwork#id}.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**name**? | <code>string</code> | __*Optional*__
+**name**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#name DataDockerNetwork#name}.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
 
@@ -2336,7 +2336,7 @@ Name | Type | Description
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**name**? | <code>string</code> | __*Optional*__
+**name**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#name DataDockerRegistryImage#name}.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
 
@@ -2386,14 +2386,14 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | <span></span>
+**name** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#name Image#name}.
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**keepLocally**? | <code>boolean</code> | __*Optional*__
+**keepLocally**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#keep_locally Image#keep_locally}.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
-**pullTrigger**? | <code>string</code> | __*Optional*__
-**pullTriggers**? | <code>Array<string></code> | __*Optional*__
+**pullTrigger**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_trigger Image#pull_trigger}.<br/>__*Optional*__
+**pullTriggers**? | <code>Array<string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_triggers Image#pull_triggers}.<br/>__*Optional*__
 
 
 
@@ -2406,20 +2406,20 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | <span></span>
-**attachable**? | <code>boolean</code> | __*Optional*__
-**checkDuplicate**? | <code>boolean</code> | __*Optional*__
+**name** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#name Network#name}.
+**attachable**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}.<br/>__*Optional*__
+**checkDuplicate**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**driver**? | <code>string</code> | __*Optional*__
-**ingress**? | <code>boolean</code> | __*Optional*__
-**internal**? | <code>boolean</code> | __*Optional*__
+**driver**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#driver Network#driver}.<br/>__*Optional*__
+**ingress**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}.<br/>__*Optional*__
+**internal**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}.<br/>__*Optional*__
 **ipamConfig**? | <code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | ipam_config block.<br/>__*Optional*__
-**ipamDriver**? | <code>string</code> | __*Optional*__
-**ipv6**? | <code>boolean</code> | __*Optional*__
+**ipamDriver**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_driver Network#ipam_driver}.<br/>__*Optional*__
+**ipv6**? | <code>boolean</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}.<br/>__*Optional*__
 **labels**? | <code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**options**? | <code>Map<string, string></code> | __*Optional*__
+**options**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
 
@@ -2433,10 +2433,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**auxAddress**? | <code>Map<string, string></code> | __*Optional*__
-**gateway**? | <code>string</code> | __*Optional*__
-**ipRange**? | <code>string</code> | __*Optional*__
-**subnet**? | <code>string</code> | __*Optional*__
+**auxAddress**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#aux_address Network#aux_address}.<br/>__*Optional*__
+**gateway**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#gateway Network#gateway}.<br/>__*Optional*__
+**ipRange**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ip_range Network#ip_range}.<br/>__*Optional*__
+**subnet**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#subnet Network#subnet}.<br/>__*Optional*__
 
 
 
@@ -2498,7 +2498,7 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | Name of the service.
 **taskSpec** | <code>Array<[ServiceTaskSpec](#cdktf-provider-docker-servicetaskspec)></code> | task_spec block.
-**auth**? | <code>Map<string, string></code> | __*Optional*__
+**auth**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#auth Service#auth}.<br/>__*Optional*__
 **convergeConfig**? | <code>Array<[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)></code> | converge_config block.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
@@ -2521,8 +2521,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**delay**? | <code>string</code> | The interval to check if the desired state is reached (ms|s).<br/>__*Optional*__
-**timeout**? | <code>string</code> | The timeout of the service to reach the desired state (s|m).<br/>__*Optional*__
+**delay**? | <code>string</code> | The interval to check if the desired state is reached (ms|s). Default: 7s.<br/>__*Optional*__
+**timeout**? | <code>string</code> | The timeout of the service to reach the desired state (s|m). Default: 3m.<br/>__*Optional*__
 
 
 
@@ -2626,13 +2626,13 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **containerSpec** | <code>Array<[ServiceTaskSpecContainerSpec](#cdktf-provider-docker-servicetaskspeccontainerspec)></code> | container_spec block.
-**forceUpdate**? | <code>number</code> | A counter that triggers an update even if no relevant parameters have been changed.<br/>__*Optional*__
+**forceUpdate**? | <code>number</code> | A counter that triggers an update even if no relevant parameters have been changed. See https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126.<br/>__*Optional*__
 **logDriver**? | <code>Array<[ServiceTaskSpecLogDriver](#cdktf-provider-docker-servicetaskspeclogdriver)></code> | log_driver block.<br/>__*Optional*__
 **networks**? | <code>Array<string></code> | Ids of the networks in which the  container will be put in.<br/>__*Optional*__
 **placement**? | <code>Array<[ServiceTaskSpecPlacement](#cdktf-provider-docker-servicetaskspecplacement)></code> | placement block.<br/>__*Optional*__
 **resources**? | <code>Array<[ServiceTaskSpecResources](#cdktf-provider-docker-servicetaskspecresources)></code> | resources block.<br/>__*Optional*__
 **restartPolicy**? | <code>Map<string, string></code> | Specification for the restart policy which applies to containers created as part of this service.<br/>__*Optional*__
-**runtime**? | <code>string</code> | Runtime is the type of runtime specified for the task executor.<br/>__*Optional*__
+**runtime**? | <code>string</code> | Runtime is the type of runtime specified for the task executor. See https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go.<br/>__*Optional*__
 
 
 
@@ -2656,7 +2656,7 @@ Name | Type | Description
 **healthcheck**? | <code>Array<[ServiceTaskSpecContainerSpecHealthcheck](#cdktf-provider-docker-servicetaskspeccontainerspechealthcheck)></code> | healthcheck block.<br/>__*Optional*__
 **hostname**? | <code>string</code> | The hostname to use for the container, as a valid RFC 1123 hostname.<br/>__*Optional*__
 **hosts**? | <code>Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | hosts block.<br/>__*Optional*__
-**isolation**? | <code>string</code> | Isolation technology of the containers running the service.<br/>__*Optional*__
+**isolation**? | <code>string</code> | Isolation technology of the containers running the service. (Windows only).<br/>__*Optional*__
 **labels**? | <code>Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | labels block.<br/>__*Optional*__
 **mounts**? | <code>Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | mounts block.<br/>__*Optional*__
 **privileges**? | <code>Array<[ServiceTaskSpecContainerSpecPrivileges](#cdktf-provider-docker-servicetaskspeccontainerspecprivileges)></code> | privileges block.<br/>__*Optional*__
@@ -2727,8 +2727,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**host** | <code>string</code> | <span></span>
-**ip** | <code>string</code> | <span></span>
+**host** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#host Service#host}.
+**ip** | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#ip Service#ip}.
 
 
 
@@ -2908,7 +2908,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**constraints**? | <code>Array<string></code> | An array of constraints.<br/>__*Optional*__
+**constraints**? | <code>Array<string></code> | An array of constraints. e.g.: node.role==manager.<br/>__*Optional*__
 **platforms**? | <code>Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | platforms block.<br/>__*Optional*__
 **prefs**? | <code>Array<string></code> | Preferences provide a way to make the scheduler aware of factors such as topology.<br/>__*Optional*__
 
@@ -2953,7 +2953,7 @@ Name | Type | Description
 -----|------|-------------
 **genericResources**? | <code>Array<[ServiceTaskSpecResourcesLimitsGenericResources](#cdktf-provider-docker-servicetaskspecresourceslimitsgenericresources)></code> | generic_resources block.<br/>__*Optional*__
 **memoryBytes**? | <code>number</code> | The amounf of memory in bytes the container allocates.<br/>__*Optional*__
-**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU.<br/>__*Optional*__
+**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000.<br/>__*Optional*__
 
 
 
@@ -2982,7 +2982,7 @@ Name | Type | Description
 -----|------|-------------
 **genericResources**? | <code>Array<[ServiceTaskSpecResourcesReservationGenericResources](#cdktf-provider-docker-servicetaskspecresourcesreservationgenericresources)></code> | generic_resources block.<br/>__*Optional*__
 **memoryBytes**? | <code>number</code> | The amounf of memory in bytes the container allocates.<br/>__*Optional*__
-**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU.<br/>__*Optional*__
+**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000.<br/>__*Optional*__
 
 
 
@@ -3029,11 +3029,11 @@ Name | Type | Description
 -----|------|-------------
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**driver**? | <code>string</code> | __*Optional*__
-**driverOpts**? | <code>Map<string, string></code> | __*Optional*__
+**driver**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver Volume#driver}.<br/>__*Optional*__
+**driverOpts**? | <code>Map<string, string></code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}.<br/>__*Optional*__
 **labels**? | <code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**name**? | <code>string</code> | __*Optional*__
+**name**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#name Volume#name}.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
 

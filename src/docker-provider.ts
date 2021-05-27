@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/docker_provider.html
+// https://www.terraform.io/docs/providers/docker
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -7,31 +7,79 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface DockerProviderConfig {
-  /** PEM-encoded content of Docker host CA certificate */
+  /**
+  * PEM-encoded content of Docker host CA certificate
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#ca_material DockerProvider#ca_material}
+  */
   readonly caMaterial?: string;
-  /** PEM-encoded content of Docker client certificate */
+  /**
+  * PEM-encoded content of Docker client certificate
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#cert_material DockerProvider#cert_material}
+  */
   readonly certMaterial?: string;
-  /** Path to directory with Docker TLS config */
+  /**
+  * Path to directory with Docker TLS config
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#cert_path DockerProvider#cert_path}
+  */
   readonly certPath?: string;
-  /** The Docker daemon address */
+  /**
+  * The Docker daemon address
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#host DockerProvider#host}
+  */
   readonly host?: string;
-  /** PEM-encoded content of Docker client private key */
+  /**
+  * PEM-encoded content of Docker client private key
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#key_material DockerProvider#key_material}
+  */
   readonly keyMaterial?: string;
-  /** Alias name */
+  /**
+  * Alias name
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#alias DockerProvider#alias}
+  */
   readonly alias?: string;
-  /** registry_auth block */
+  /**
+  * registry_auth block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#registry_auth DockerProvider#registry_auth}
+  */
   readonly registryAuth?: DockerProviderRegistryAuth[];
 }
 export interface DockerProviderRegistryAuth {
-  /** Address of the registry */
+  /**
+  * Address of the registry
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#address DockerProvider#address}
+  */
   readonly address: string;
-  /** Path to docker json file for registry auth */
+  /**
+  * Path to docker json file for registry auth
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file DockerProvider#config_file}
+  */
   readonly configFile?: string;
-  /** Plain content of the docker json file for registry auth */
+  /**
+  * Plain content of the docker json file for registry auth
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file_content DockerProvider#config_file_content}
+  */
   readonly configFileContent?: string;
-  /** Password for the registry */
+  /**
+  * Password for the registry
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#password DockerProvider#password}
+  */
   readonly password?: string;
-  /** Username for the registry */
+  /**
+  * Username for the registry
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#username DockerProvider#username}
+  */
   readonly username?: string;
 }
 
@@ -47,14 +95,22 @@ function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAu
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker docker}
+*/
 export class DockerProvider extends cdktf.TerraformProvider {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker docker} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options DockerProviderConfig = {}
+  */
   public constructor(scope: Construct, id: string, config: DockerProviderConfig = {}) {
     super(scope, id, {
       terraformResourceType: 'docker',

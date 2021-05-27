@@ -7,16 +7,37 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface VolumeConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver Volume#driver}
+  */
   readonly driver?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}
+  */
   readonly driverOpts?: { [key: string]: string };
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#name Volume#name}
+  */
   readonly name?: string;
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#labels Volume#labels}
+  */
   readonly labels?: VolumeLabels[];
 }
 export interface VolumeLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#label Volume#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#value Volume#value}
+  */
   readonly value: string;
 }
 
@@ -29,14 +50,22 @@ function volumeLabelsToTerraform(struct?: VolumeLabels): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}
+*/
 export class Volume extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options VolumeConfig = {}
+  */
   public constructor(scope: Construct, id: string, config: VolumeConfig = {}) {
     super(scope, id, {
       terraformResourceType: 'docker_volume',

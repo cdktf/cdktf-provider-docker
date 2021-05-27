@@ -7,17 +7,37 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface SecretConfig extends cdktf.TerraformMetaArguments {
-  /** Base64-url-safe-encoded secret data */
+  /**
+  * Base64-url-safe-encoded secret data
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#data Secret#data}
+  */
   readonly data: string;
-  /** User-defined name of the secret */
+  /**
+  * User-defined name of the secret
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#name Secret#name}
+  */
   readonly name: string;
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#labels Secret#labels}
+  */
   readonly labels?: SecretLabels[];
 }
 export interface SecretLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#label Secret#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#value Secret#value}
+  */
   readonly value: string;
 }
 
@@ -30,14 +50,22 @@ function secretLabelsToTerraform(struct?: SecretLabels): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}
+*/
 export class Secret extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options SecretConfig
+  */
   public constructor(scope: Construct, id: string, config: SecretConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_secret',
