@@ -7,28 +7,71 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ServiceConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#auth Service#auth}
+  */
   readonly auth?: { [key: string]: string };
-  /** Name of the service */
+  /**
+  * Name of the service
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#name Service#name}
+  */
   readonly name: string;
-  /** converge_config block */
+  /**
+  * converge_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#converge_config Service#converge_config}
+  */
   readonly convergeConfig?: ServiceConvergeConfig[];
-  /** endpoint_spec block */
+  /**
+  * endpoint_spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#endpoint_spec Service#endpoint_spec}
+  */
   readonly endpointSpec?: ServiceEndpointSpec[];
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#labels Service#labels}
+  */
   readonly labels?: ServiceLabels[];
-  /** mode block */
+  /**
+  * mode block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#mode Service#mode}
+  */
   readonly mode?: ServiceMode[];
-  /** rollback_config block */
+  /**
+  * rollback_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#rollback_config Service#rollback_config}
+  */
   readonly rollbackConfig?: ServiceRollbackConfig[];
-  /** task_spec block */
+  /**
+  * task_spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#task_spec Service#task_spec}
+  */
   readonly taskSpec: ServiceTaskSpec[];
-  /** update_config block */
+  /**
+  * update_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#update_config Service#update_config}
+  */
   readonly updateConfig?: ServiceUpdateConfig[];
 }
 export interface ServiceConvergeConfig {
-  /** The interval to check if the desired state is reached (ms|s). Default: 7s */
+  /**
+  * The interval to check if the desired state is reached (ms|s). Default: 7s
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
+  */
   readonly delay?: string;
-  /** The timeout of the service to reach the desired state (s|m). Default: 3m */
+  /**
+  * The timeout of the service to reach the desired state (s|m). Default: 3m
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#timeout Service#timeout}
+  */
   readonly timeout?: string;
 }
 
@@ -41,15 +84,35 @@ function serviceConvergeConfigToTerraform(struct?: ServiceConvergeConfig): any {
 }
 
 export interface ServiceEndpointSpecPorts {
-  /** A random name for the port */
+  /**
+  * A random name for the port
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#name Service#name}
+  */
   readonly name?: string;
-  /** Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp' */
+  /**
+  * Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#protocol Service#protocol}
+  */
   readonly protocol?: string;
-  /** Represents the mode in which the port is to be published: 'ingress' or 'host' */
+  /**
+  * Represents the mode in which the port is to be published: 'ingress' or 'host'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#publish_mode Service#publish_mode}
+  */
   readonly publishMode?: string;
-  /** The port on the swarm hosts. */
+  /**
+  * The port on the swarm hosts.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#published_port Service#published_port}
+  */
   readonly publishedPort?: number;
-  /** The port inside the container */
+  /**
+  * The port inside the container
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#target_port Service#target_port}
+  */
   readonly targetPort: number;
 }
 
@@ -65,9 +128,17 @@ function serviceEndpointSpecPortsToTerraform(struct?: ServiceEndpointSpecPorts):
 }
 
 export interface ServiceEndpointSpec {
-  /** The mode of resolution to use for internal load balancing between tasks */
+  /**
+  * The mode of resolution to use for internal load balancing between tasks
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#mode Service#mode}
+  */
   readonly mode?: string;
-  /** ports block */
+  /**
+  * ports block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#ports Service#ports}
+  */
   readonly ports?: ServiceEndpointSpecPorts[];
 }
 
@@ -80,9 +151,17 @@ function serviceEndpointSpecToTerraform(struct?: ServiceEndpointSpec): any {
 }
 
 export interface ServiceLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#label Service#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#value Service#value}
+  */
   readonly value: string;
 }
 
@@ -95,7 +174,11 @@ function serviceLabelsToTerraform(struct?: ServiceLabels): any {
 }
 
 export interface ServiceModeReplicated {
-  /** The amount of replicas of the service */
+  /**
+  * The amount of replicas of the service
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#replicas Service#replicas}
+  */
   readonly replicas?: number;
 }
 
@@ -107,9 +190,17 @@ function serviceModeReplicatedToTerraform(struct?: ServiceModeReplicated): any {
 }
 
 export interface ServiceMode {
-  /** The global service mode */
+  /**
+  * The global service mode
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#global Service#global}
+  */
   readonly global?: boolean;
-  /** replicated block */
+  /**
+  * replicated block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#replicated Service#replicated}
+  */
   readonly replicated?: ServiceModeReplicated[];
 }
 
@@ -122,17 +213,41 @@ function serviceModeToTerraform(struct?: ServiceMode): any {
 }
 
 export interface ServiceRollbackConfig {
-  /** Delay between task rollbacks (ns|us|ms|s|m|h) */
+  /**
+  * Delay between task rollbacks (ns|us|ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
+  */
   readonly delay?: string;
-  /** Action on rollback failure: pause | continue */
+  /**
+  * Action on rollback failure: pause | continue
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#failure_action Service#failure_action}
+  */
   readonly failureAction?: string;
-  /** Failure rate to tolerate during a rollback */
+  /**
+  * Failure rate to tolerate during a rollback
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_failure_ratio Service#max_failure_ratio}
+  */
   readonly maxFailureRatio?: string;
-  /** Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h) */
+  /**
+  * Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#monitor Service#monitor}
+  */
   readonly monitor?: string;
-  /** Rollback order: either 'stop-first' or 'start-first' */
+  /**
+  * Rollback order: either 'stop-first' or 'start-first'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#order Service#order}
+  */
   readonly order?: string;
-  /** Maximum number of tasks to be rollbacked in one iteration */
+  /**
+  * Maximum number of tasks to be rollbacked in one iteration
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#parallelism Service#parallelism}
+  */
   readonly parallelism?: number;
 }
 
@@ -149,17 +264,41 @@ function serviceRollbackConfigToTerraform(struct?: ServiceRollbackConfig): any {
 }
 
 export interface ServiceTaskSpecContainerSpecConfigs {
-  /** ID of the specific config that we're referencing */
+  /**
+  * ID of the specific config that we're referencing
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#config_id Service#config_id}
+  */
   readonly configId: string;
-  /** Name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID */
+  /**
+  * Name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#config_name Service#config_name}
+  */
   readonly configName?: string;
-  /** Represents the file GID */
+  /**
+  * Represents the file GID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_gid Service#file_gid}
+  */
   readonly fileGid?: string;
-  /** Represents represents the FileMode of the file */
+  /**
+  * Represents represents the FileMode of the file
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_mode Service#file_mode}
+  */
   readonly fileMode?: number;
-  /** Represents the final filename in the filesystem */
+  /**
+  * Represents the final filename in the filesystem
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_name Service#file_name}
+  */
   readonly fileName: string;
-  /** Represents the file UID */
+  /**
+  * Represents the file UID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_uid Service#file_uid}
+  */
   readonly fileUid?: string;
 }
 
@@ -176,11 +315,23 @@ function serviceTaskSpecContainerSpecConfigsToTerraform(struct?: ServiceTaskSpec
 }
 
 export interface ServiceTaskSpecContainerSpecDnsConfig {
-  /** The IP addresses of the name servers */
+  /**
+  * The IP addresses of the name servers
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#nameservers Service#nameservers}
+  */
   readonly nameservers: string[];
-  /** A list of internal resolver variables to be modified (e.g., debug, ndots:3, etc.) */
+  /**
+  * A list of internal resolver variables to be modified (e.g., debug, ndots:3, etc.)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#options Service#options}
+  */
   readonly options?: string[];
-  /** A search list for host-name lookup */
+  /**
+  * A search list for host-name lookup
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#search Service#search}
+  */
   readonly search?: string[];
 }
 
@@ -194,15 +345,35 @@ function serviceTaskSpecContainerSpecDnsConfigToTerraform(struct?: ServiceTaskSp
 }
 
 export interface ServiceTaskSpecContainerSpecHealthcheck {
-  /** Time between running the check (ms|s|m|h) */
+  /**
+  * Time between running the check (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#interval Service#interval}
+  */
   readonly interval?: string;
-  /** Consecutive failures needed to report unhealthy */
+  /**
+  * Consecutive failures needed to report unhealthy
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#retries Service#retries}
+  */
   readonly retries?: number;
-  /** Start period for the container to initialize before counting retries towards unstable (ms|s|m|h) */
+  /**
+  * Start period for the container to initialize before counting retries towards unstable (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#start_period Service#start_period}
+  */
   readonly startPeriod?: string;
-  /** The test to perform as list */
+  /**
+  * The test to perform as list
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#test Service#test}
+  */
   readonly test: string[];
-  /** Maximum time to allow one check to run (ms|s|m|h) */
+  /**
+  * Maximum time to allow one check to run (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#timeout Service#timeout}
+  */
   readonly timeout?: string;
 }
 
@@ -218,7 +389,13 @@ function serviceTaskSpecContainerSpecHealthcheckToTerraform(struct?: ServiceTask
 }
 
 export interface ServiceTaskSpecContainerSpecHosts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#host Service#host}
+  */
   readonly host: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#ip Service#ip}
+  */
   readonly ip: string;
 }
 
@@ -231,9 +408,17 @@ function serviceTaskSpecContainerSpecHostsToTerraform(struct?: ServiceTaskSpecCo
 }
 
 export interface ServiceTaskSpecContainerSpecLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#label Service#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#value Service#value}
+  */
   readonly value: string;
 }
 
@@ -246,7 +431,11 @@ function serviceTaskSpecContainerSpecLabelsToTerraform(struct?: ServiceTaskSpecC
 }
 
 export interface ServiceTaskSpecContainerSpecMountsBindOptions {
-  /** A propagation mode with the value */
+  /**
+  * A propagation mode with the value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#propagation Service#propagation}
+  */
   readonly propagation?: string;
 }
 
@@ -258,9 +447,17 @@ function serviceTaskSpecContainerSpecMountsBindOptionsToTerraform(struct?: Servi
 }
 
 export interface ServiceTaskSpecContainerSpecMountsTmpfsOptions {
-  /** The permission mode for the tmpfs mount in an integer */
+  /**
+  * The permission mode for the tmpfs mount in an integer
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#mode Service#mode}
+  */
   readonly mode?: number;
-  /** The size for the tmpfs mount in bytes */
+  /**
+  * The size for the tmpfs mount in bytes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#size_bytes Service#size_bytes}
+  */
   readonly sizeBytes?: number;
 }
 
@@ -273,9 +470,17 @@ function serviceTaskSpecContainerSpecMountsTmpfsOptionsToTerraform(struct?: Serv
 }
 
 export interface ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#label Service#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#value Service#value}
+  */
   readonly value: string;
 }
 
@@ -288,13 +493,29 @@ function serviceTaskSpecContainerSpecMountsVolumeOptionsLabelsToTerraform(struct
 }
 
 export interface ServiceTaskSpecContainerSpecMountsVolumeOptions {
-  /** Name of the driver to use to create the volume. */
+  /**
+  * Name of the driver to use to create the volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#driver_name Service#driver_name}
+  */
   readonly driverName?: string;
-  /** key/value map of driver specific options */
+  /**
+  * key/value map of driver specific options
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#driver_options Service#driver_options}
+  */
   readonly driverOptions?: { [key: string]: string };
-  /** Populate volume with data from the target */
+  /**
+  * Populate volume with data from the target
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#no_copy Service#no_copy}
+  */
   readonly noCopy?: boolean;
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#labels Service#labels}
+  */
   readonly labels?: ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[];
 }
 
@@ -309,19 +530,47 @@ function serviceTaskSpecContainerSpecMountsVolumeOptionsToTerraform(struct?: Ser
 }
 
 export interface ServiceTaskSpecContainerSpecMounts {
-  /** Whether the mount should be read-only */
+  /**
+  * Whether the mount should be read-only
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#read_only Service#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Mount source (e.g. a volume name, a host path) */
+  /**
+  * Mount source (e.g. a volume name, a host path)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#source Service#source}
+  */
   readonly source?: string;
-  /** Container path */
+  /**
+  * Container path
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#target Service#target}
+  */
   readonly target: string;
-  /** The mount type */
+  /**
+  * The mount type
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#type Service#type}
+  */
   readonly type: string;
-  /** bind_options block */
+  /**
+  * bind_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#bind_options Service#bind_options}
+  */
   readonly bindOptions?: ServiceTaskSpecContainerSpecMountsBindOptions[];
-  /** tmpfs_options block */
+  /**
+  * tmpfs_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#tmpfs_options Service#tmpfs_options}
+  */
   readonly tmpfsOptions?: ServiceTaskSpecContainerSpecMountsTmpfsOptions[];
-  /** volume_options block */
+  /**
+  * volume_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#volume_options Service#volume_options}
+  */
   readonly volumeOptions?: ServiceTaskSpecContainerSpecMountsVolumeOptions[];
 }
 
@@ -339,9 +588,17 @@ function serviceTaskSpecContainerSpecMountsToTerraform(struct?: ServiceTaskSpecC
 }
 
 export interface ServiceTaskSpecContainerSpecPrivilegesCredentialSpec {
-  /** Load credential spec from this file */
+  /**
+  * Load credential spec from this file
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file Service#file}
+  */
   readonly file?: string;
-  /** Load credential spec from this value in the Windows registry */
+  /**
+  * Load credential spec from this value in the Windows registry
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#registry Service#registry}
+  */
   readonly registry?: string;
 }
 
@@ -354,15 +611,35 @@ function serviceTaskSpecContainerSpecPrivilegesCredentialSpecToTerraform(struct?
 }
 
 export interface ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
-  /** Disable SELinux */
+  /**
+  * Disable SELinux
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#disable Service#disable}
+  */
   readonly disable?: boolean;
-  /** SELinux level label */
+  /**
+  * SELinux level label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#level Service#level}
+  */
   readonly level?: string;
-  /** SELinux role label */
+  /**
+  * SELinux role label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#role Service#role}
+  */
   readonly role?: string;
-  /** SELinux type label */
+  /**
+  * SELinux type label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#type Service#type}
+  */
   readonly type?: string;
-  /** SELinux user label */
+  /**
+  * SELinux user label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#user Service#user}
+  */
   readonly user?: string;
 }
 
@@ -378,9 +655,17 @@ function serviceTaskSpecContainerSpecPrivilegesSeLinuxContextToTerraform(struct?
 }
 
 export interface ServiceTaskSpecContainerSpecPrivileges {
-  /** credential_spec block */
+  /**
+  * credential_spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#credential_spec Service#credential_spec}
+  */
   readonly credentialSpec?: ServiceTaskSpecContainerSpecPrivilegesCredentialSpec[];
-  /** se_linux_context block */
+  /**
+  * se_linux_context block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#se_linux_context Service#se_linux_context}
+  */
   readonly seLinuxContext?: ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext[];
 }
 
@@ -393,17 +678,41 @@ function serviceTaskSpecContainerSpecPrivilegesToTerraform(struct?: ServiceTaskS
 }
 
 export interface ServiceTaskSpecContainerSpecSecrets {
-  /** Represents the file GID */
+  /**
+  * Represents the file GID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_gid Service#file_gid}
+  */
   readonly fileGid?: string;
-  /** Represents represents the FileMode of the file */
+  /**
+  * Represents represents the FileMode of the file
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_mode Service#file_mode}
+  */
   readonly fileMode?: number;
-  /** Represents the final filename in the filesystem */
+  /**
+  * Represents the final filename in the filesystem
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_name Service#file_name}
+  */
   readonly fileName: string;
-  /** Represents the file UID */
+  /**
+  * Represents the file UID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_uid Service#file_uid}
+  */
   readonly fileUid?: string;
-  /** ID of the specific secret that we're referencing */
+  /**
+  * ID of the specific secret that we're referencing
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#secret_id Service#secret_id}
+  */
   readonly secretId: string;
-  /** Name of the secret that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID */
+  /**
+  * Name of the secret that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#secret_name Service#secret_name}
+  */
   readonly secretName?: string;
 }
 
@@ -420,45 +729,125 @@ function serviceTaskSpecContainerSpecSecretsToTerraform(struct?: ServiceTaskSpec
 }
 
 export interface ServiceTaskSpecContainerSpec {
-  /** Arguments to the command */
+  /**
+  * Arguments to the command
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#args Service#args}
+  */
   readonly args?: string[];
-  /** The command to be run in the image */
+  /**
+  * The command to be run in the image
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#command Service#command}
+  */
   readonly command?: string[];
-  /** The working directory for commands to run in */
+  /**
+  * The working directory for commands to run in
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#dir Service#dir}
+  */
   readonly dir?: string;
-  /** A list of environment variables in the form VAR="value" */
+  /**
+  * A list of environment variables in the form VAR="value"
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#env Service#env}
+  */
   readonly env?: { [key: string]: string };
-  /** A list of additional groups that the container process will run as */
+  /**
+  * A list of additional groups that the container process will run as
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#groups Service#groups}
+  */
   readonly groups?: string[];
-  /** The hostname to use for the container, as a valid RFC 1123 hostname */
+  /**
+  * The hostname to use for the container, as a valid RFC 1123 hostname
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#hostname Service#hostname}
+  */
   readonly hostname?: string;
-  /** The image name to use for the containers of the service */
+  /**
+  * The image name to use for the containers of the service
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#image Service#image}
+  */
   readonly image: string;
-  /** Isolation technology of the containers running the service. (Windows only) */
+  /**
+  * Isolation technology of the containers running the service. (Windows only)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#isolation Service#isolation}
+  */
   readonly isolation?: string;
-  /** Mount the container's root filesystem as read only */
+  /**
+  * Mount the container's root filesystem as read only
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#read_only Service#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Amount of time to wait for the container to terminate before forcefully removing it (ms|s|m|h) */
+  /**
+  * Amount of time to wait for the container to terminate before forcefully removing it (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#stop_grace_period Service#stop_grace_period}
+  */
   readonly stopGracePeriod?: string;
-  /** Signal to stop the container */
+  /**
+  * Signal to stop the container
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#stop_signal Service#stop_signal}
+  */
   readonly stopSignal?: string;
-  /** The user inside the container */
+  /**
+  * The user inside the container
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#user Service#user}
+  */
   readonly user?: string;
-  /** configs block */
+  /**
+  * configs block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#configs Service#configs}
+  */
   readonly configs?: ServiceTaskSpecContainerSpecConfigs[];
-  /** dns_config block */
+  /**
+  * dns_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#dns_config Service#dns_config}
+  */
   readonly dnsConfig?: ServiceTaskSpecContainerSpecDnsConfig[];
-  /** healthcheck block */
+  /**
+  * healthcheck block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#healthcheck Service#healthcheck}
+  */
   readonly healthcheck?: ServiceTaskSpecContainerSpecHealthcheck[];
-  /** hosts block */
+  /**
+  * hosts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#hosts Service#hosts}
+  */
   readonly hosts?: ServiceTaskSpecContainerSpecHosts[];
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#labels Service#labels}
+  */
   readonly labels?: ServiceTaskSpecContainerSpecLabels[];
-  /** mounts block */
+  /**
+  * mounts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#mounts Service#mounts}
+  */
   readonly mounts?: ServiceTaskSpecContainerSpecMounts[];
-  /** privileges block */
+  /**
+  * privileges block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#privileges Service#privileges}
+  */
   readonly privileges?: ServiceTaskSpecContainerSpecPrivileges[];
-  /** secrets block */
+  /**
+  * secrets block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#secrets Service#secrets}
+  */
   readonly secrets?: ServiceTaskSpecContainerSpecSecrets[];
 }
 
@@ -489,9 +878,17 @@ function serviceTaskSpecContainerSpecToTerraform(struct?: ServiceTaskSpecContain
 }
 
 export interface ServiceTaskSpecLogDriver {
-  /** The logging driver to use */
+  /**
+  * The logging driver to use
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#name Service#name}
+  */
   readonly name: string;
-  /** The options for the logging driver */
+  /**
+  * The options for the logging driver
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#options Service#options}
+  */
   readonly options?: { [key: string]: string };
 }
 
@@ -504,9 +901,17 @@ function serviceTaskSpecLogDriverToTerraform(struct?: ServiceTaskSpecLogDriver):
 }
 
 export interface ServiceTaskSpecPlacementPlatforms {
-  /** The architecture, e.g. amd64 */
+  /**
+  * The architecture, e.g. amd64
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#architecture Service#architecture}
+  */
   readonly architecture: string;
-  /** The operation system, e.g. linux */
+  /**
+  * The operation system, e.g. linux
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#os Service#os}
+  */
   readonly os: string;
 }
 
@@ -519,11 +924,23 @@ function serviceTaskSpecPlacementPlatformsToTerraform(struct?: ServiceTaskSpecPl
 }
 
 export interface ServiceTaskSpecPlacement {
-  /** An array of constraints. e.g.: node.role==manager */
+  /**
+  * An array of constraints. e.g.: node.role==manager
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#constraints Service#constraints}
+  */
   readonly constraints?: string[];
-  /** Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence, e.g.: spread=node.role.manager */
+  /**
+  * Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence, e.g.: spread=node.role.manager
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#prefs Service#prefs}
+  */
   readonly prefs?: string[];
-  /** platforms block */
+  /**
+  * platforms block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#platforms Service#platforms}
+  */
   readonly platforms?: ServiceTaskSpecPlacementPlatforms[];
 }
 
@@ -537,9 +954,17 @@ function serviceTaskSpecPlacementToTerraform(struct?: ServiceTaskSpecPlacement):
 }
 
 export interface ServiceTaskSpecResourcesLimitsGenericResources {
-  /** The Integer resources */
+  /**
+  * The Integer resources
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#discrete_resources_spec Service#discrete_resources_spec}
+  */
   readonly discreteResourcesSpec?: string[];
-  /** The String resources */
+  /**
+  * The String resources
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#named_resources_spec Service#named_resources_spec}
+  */
   readonly namedResourcesSpec?: string[];
 }
 
@@ -552,11 +977,23 @@ function serviceTaskSpecResourcesLimitsGenericResourcesToTerraform(struct?: Serv
 }
 
 export interface ServiceTaskSpecResourcesLimits {
-  /** The amounf of memory in bytes the container allocates */
+  /**
+  * The amounf of memory in bytes the container allocates
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#memory_bytes Service#memory_bytes}
+  */
   readonly memoryBytes?: number;
-  /** CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000 */
+  /**
+  * CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#nano_cpus Service#nano_cpus}
+  */
   readonly nanoCpus?: number;
-  /** generic_resources block */
+  /**
+  * generic_resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#generic_resources Service#generic_resources}
+  */
   readonly genericResources?: ServiceTaskSpecResourcesLimitsGenericResources[];
 }
 
@@ -570,9 +1007,17 @@ function serviceTaskSpecResourcesLimitsToTerraform(struct?: ServiceTaskSpecResou
 }
 
 export interface ServiceTaskSpecResourcesReservationGenericResources {
-  /** The Integer resources */
+  /**
+  * The Integer resources
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#discrete_resources_spec Service#discrete_resources_spec}
+  */
   readonly discreteResourcesSpec?: string[];
-  /** The String resources */
+  /**
+  * The String resources
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#named_resources_spec Service#named_resources_spec}
+  */
   readonly namedResourcesSpec?: string[];
 }
 
@@ -585,11 +1030,23 @@ function serviceTaskSpecResourcesReservationGenericResourcesToTerraform(struct?:
 }
 
 export interface ServiceTaskSpecResourcesReservation {
-  /** The amounf of memory in bytes the container allocates */
+  /**
+  * The amounf of memory in bytes the container allocates
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#memory_bytes Service#memory_bytes}
+  */
   readonly memoryBytes?: number;
-  /** CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000 */
+  /**
+  * CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#nano_cpus Service#nano_cpus}
+  */
   readonly nanoCpus?: number;
-  /** generic_resources block */
+  /**
+  * generic_resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#generic_resources Service#generic_resources}
+  */
   readonly genericResources?: ServiceTaskSpecResourcesReservationGenericResources[];
 }
 
@@ -603,9 +1060,17 @@ function serviceTaskSpecResourcesReservationToTerraform(struct?: ServiceTaskSpec
 }
 
 export interface ServiceTaskSpecResources {
-  /** limits block */
+  /**
+  * limits block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#limits Service#limits}
+  */
   readonly limits?: ServiceTaskSpecResourcesLimits[];
-  /** reservation block */
+  /**
+  * reservation block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#reservation Service#reservation}
+  */
   readonly reservation?: ServiceTaskSpecResourcesReservation[];
 }
 
@@ -618,21 +1083,53 @@ function serviceTaskSpecResourcesToTerraform(struct?: ServiceTaskSpecResources):
 }
 
 export interface ServiceTaskSpec {
-  /** A counter that triggers an update even if no relevant parameters have been changed. See https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126 */
+  /**
+  * A counter that triggers an update even if no relevant parameters have been changed. See https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#force_update Service#force_update}
+  */
   readonly forceUpdate?: number;
-  /** Ids of the networks in which the  container will be put in. */
+  /**
+  * Ids of the networks in which the  container will be put in.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#networks Service#networks}
+  */
   readonly networks?: string[];
-  /** Specification for the restart policy which applies to containers created as part of this service. */
+  /**
+  * Specification for the restart policy which applies to containers created as part of this service.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#restart_policy Service#restart_policy}
+  */
   readonly restartPolicy?: { [key: string]: string };
-  /** Runtime is the type of runtime specified for the task executor. See https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go */
+  /**
+  * Runtime is the type of runtime specified for the task executor. See https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#runtime Service#runtime}
+  */
   readonly runtime?: string;
-  /** container_spec block */
+  /**
+  * container_spec block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#container_spec Service#container_spec}
+  */
   readonly containerSpec: ServiceTaskSpecContainerSpec[];
-  /** log_driver block */
+  /**
+  * log_driver block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#log_driver Service#log_driver}
+  */
   readonly logDriver?: ServiceTaskSpecLogDriver[];
-  /** placement block */
+  /**
+  * placement block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#placement Service#placement}
+  */
   readonly placement?: ServiceTaskSpecPlacement[];
-  /** resources block */
+  /**
+  * resources block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#resources Service#resources}
+  */
   readonly resources?: ServiceTaskSpecResources[];
 }
 
@@ -651,17 +1148,41 @@ function serviceTaskSpecToTerraform(struct?: ServiceTaskSpec): any {
 }
 
 export interface ServiceUpdateConfig {
-  /** Delay between task updates (ns|us|ms|s|m|h) */
+  /**
+  * Delay between task updates (ns|us|ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
+  */
   readonly delay?: string;
-  /** Action on update failure: pause | continue | rollback */
+  /**
+  * Action on update failure: pause | continue | rollback
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#failure_action Service#failure_action}
+  */
   readonly failureAction?: string;
-  /** Failure rate to tolerate during an update */
+  /**
+  * Failure rate to tolerate during an update
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_failure_ratio Service#max_failure_ratio}
+  */
   readonly maxFailureRatio?: string;
-  /** Duration after each task update to monitor for failure (ns|us|ms|s|m|h) */
+  /**
+  * Duration after each task update to monitor for failure (ns|us|ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#monitor Service#monitor}
+  */
   readonly monitor?: string;
-  /** Update order: either 'stop-first' or 'start-first' */
+  /**
+  * Update order: either 'stop-first' or 'start-first'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#order Service#order}
+  */
   readonly order?: string;
-  /** Maximum number of tasks to be updated in one iteration */
+  /**
+  * Maximum number of tasks to be updated in one iteration
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#parallelism Service#parallelism}
+  */
   readonly parallelism?: number;
 }
 
@@ -678,14 +1199,22 @@ function serviceUpdateConfigToTerraform(struct?: ServiceUpdateConfig): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}
+*/
 export class Service extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options ServiceConfig
+  */
   public constructor(scope: Construct, id: string, config: ServiceConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_service',

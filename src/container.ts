@@ -7,70 +7,237 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ContainerConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#attach Container#attach}
+  */
   readonly attach?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#command Container#command}
+  */
   readonly command?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_set Container#cpu_set}
+  */
   readonly cpuSet?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#cpu_shares Container#cpu_shares}
+  */
   readonly cpuShares?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#destroy_grace_seconds Container#destroy_grace_seconds}
+  */
   readonly destroyGraceSeconds?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns Container#dns}
+  */
   readonly dns?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_opts Container#dns_opts}
+  */
   readonly dnsOpts?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#dns_search Container#dns_search}
+  */
   readonly dnsSearch?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#domainname Container#domainname}
+  */
   readonly domainname?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#entrypoint Container#entrypoint}
+  */
   readonly entrypoint?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#env Container#env}
+  */
   readonly env?: string[];
-  /** Additional groups for the container user */
+  /**
+  * Additional groups for the container user
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#group_add Container#group_add}
+  */
   readonly groupAdd?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#hostname Container#hostname}
+  */
   readonly hostname?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#image Container#image}
+  */
   readonly image: string;
-  /** IPC sharing mode for the container */
+  /**
+  * IPC sharing mode for the container
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ipc_mode Container#ipc_mode}
+  */
   readonly ipcMode?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#links Container#links}
+  */
   readonly links?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_driver Container#log_driver}
+  */
   readonly logDriver?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_opts Container#log_opts}
+  */
   readonly logOpts?: { [key: string]: string };
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#logs Container#logs}
+  */
   readonly logs?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#max_retry_count Container#max_retry_count}
+  */
   readonly maxRetryCount?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory Container#memory}
+  */
   readonly memory?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#memory_swap Container#memory_swap}
+  */
   readonly memorySwap?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#must_run Container#must_run}
+  */
   readonly mustRun?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}
+  */
   readonly name: string;
-  /** Set an alias for the container in all specified networks */
+  /**
+  * Set an alias for the container in all specified networks
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#network_alias Container#network_alias}
+  */
   readonly networkAlias?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#network_mode Container#network_mode}
+  */
   readonly networkMode?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#networks Container#networks}
+  */
   readonly networks?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#pid_mode Container#pid_mode}
+  */
   readonly pidMode?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#privileged Container#privileged}
+  */
   readonly privileged?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#publish_all_ports Container#publish_all_ports}
+  */
   readonly publishAllPorts?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
+  */
   readonly readOnly?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#restart Container#restart}
+  */
   readonly restart?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#rm Container#rm}
+  */
   readonly rm?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#shm_size Container#shm_size}
+  */
   readonly shmSize?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#start Container#start}
+  */
   readonly start?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#sysctls Container#sysctls}
+  */
   readonly sysctls?: { [key: string]: string };
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tmpfs Container#tmpfs}
+  */
   readonly tmpfs?: { [key: string]: string };
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#user Container#user}
+  */
   readonly user?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#userns_mode Container#userns_mode}
+  */
   readonly usernsMode?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#working_dir Container#working_dir}
+  */
   readonly workingDir?: string;
-  /** capabilities block */
+  /**
+  * capabilities block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#capabilities Container#capabilities}
+  */
   readonly capabilities?: ContainerCapabilities[];
-  /** devices block */
+  /**
+  * devices block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#devices Container#devices}
+  */
   readonly devices?: ContainerDevices[];
-  /** healthcheck block */
+  /**
+  * healthcheck block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#healthcheck Container#healthcheck}
+  */
   readonly healthcheck?: ContainerHealthcheck[];
-  /** host block */
+  /**
+  * host block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host Container#host}
+  */
   readonly host?: ContainerHost[];
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#labels Container#labels}
+  */
   readonly labels?: ContainerLabels[];
-  /** mounts block */
+  /**
+  * mounts block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#mounts Container#mounts}
+  */
   readonly mounts?: ContainerMounts[];
-  /** networks_advanced block */
+  /**
+  * networks_advanced block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#networks_advanced Container#networks_advanced}
+  */
   readonly networksAdvanced?: ContainerNetworksAdvanced[];
-  /** ports block */
+  /**
+  * ports block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ports Container#ports}
+  */
   readonly ports?: ContainerPorts[];
-  /** ulimit block */
+  /**
+  * ulimit block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ulimit Container#ulimit}
+  */
   readonly ulimit?: ContainerUlimit[];
-  /** upload block */
+  /**
+  * upload block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#upload Container#upload}
+  */
   readonly upload?: ContainerUpload[];
-  /** volumes block */
+  /**
+  * volumes block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#volumes Container#volumes}
+  */
   readonly volumes?: ContainerVolumes[];
 }
 export class ContainerNetworkData extends cdktf.ComplexComputedList {
@@ -96,7 +263,13 @@ export class ContainerNetworkData extends cdktf.ComplexComputedList {
   }
 }
 export interface ContainerCapabilities {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#add Container#add}
+  */
   readonly add?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#drop Container#drop}
+  */
   readonly drop?: string[];
 }
 
@@ -109,8 +282,17 @@ function containerCapabilitiesToTerraform(struct?: ContainerCapabilities): any {
 }
 
 export interface ContainerDevices {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#container_path Container#container_path}
+  */
   readonly containerPath?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host_path Container#host_path}
+  */
   readonly hostPath: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#permissions Container#permissions}
+  */
   readonly permissions?: string;
 }
 
@@ -124,15 +306,35 @@ function containerDevicesToTerraform(struct?: ContainerDevices): any {
 }
 
 export interface ContainerHealthcheck {
-  /** Time between running the check (ms|s|m|h) */
+  /**
+  * Time between running the check (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#interval Container#interval}
+  */
   readonly interval?: string;
-  /** Consecutive failures needed to report unhealthy */
+  /**
+  * Consecutive failures needed to report unhealthy
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#retries Container#retries}
+  */
   readonly retries?: number;
-  /** Start period for the container to initialize before counting retries towards unstable (ms|s|m|h) */
+  /**
+  * Start period for the container to initialize before counting retries towards unstable (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#start_period Container#start_period}
+  */
   readonly startPeriod?: string;
-  /** The test to perform as list */
+  /**
+  * The test to perform as list
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#test Container#test}
+  */
   readonly test: string[];
-  /** Maximum time to allow one check to run (ms|s|m|h) */
+  /**
+  * Maximum time to allow one check to run (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#timeout Container#timeout}
+  */
   readonly timeout?: string;
 }
 
@@ -148,7 +350,13 @@ function containerHealthcheckToTerraform(struct?: ContainerHealthcheck): any {
 }
 
 export interface ContainerHost {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host Container#host}
+  */
   readonly host: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ip Container#ip}
+  */
   readonly ip: string;
 }
 
@@ -161,9 +369,17 @@ function containerHostToTerraform(struct?: ContainerHost): any {
 }
 
 export interface ContainerLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#label Container#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#value Container#value}
+  */
   readonly value: string;
 }
 
@@ -176,7 +392,11 @@ function containerLabelsToTerraform(struct?: ContainerLabels): any {
 }
 
 export interface ContainerMountsBindOptions {
-  /** A propagation mode with the value */
+  /**
+  * A propagation mode with the value
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#propagation Container#propagation}
+  */
   readonly propagation?: string;
 }
 
@@ -188,9 +408,17 @@ function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBindOptio
 }
 
 export interface ContainerMountsTmpfsOptions {
-  /** The permission mode for the tmpfs mount in an integer */
+  /**
+  * The permission mode for the tmpfs mount in an integer
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#mode Container#mode}
+  */
   readonly mode?: number;
-  /** The size for the tmpfs mount in bytes */
+  /**
+  * The size for the tmpfs mount in bytes
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#size_bytes Container#size_bytes}
+  */
   readonly sizeBytes?: number;
 }
 
@@ -203,9 +431,17 @@ function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsTmpfsOpt
 }
 
 export interface ContainerMountsVolumeOptionsLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#label Container#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#value Container#value}
+  */
   readonly value: string;
 }
 
@@ -218,13 +454,29 @@ function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsV
 }
 
 export interface ContainerMountsVolumeOptions {
-  /** Name of the driver to use to create the volume. */
+  /**
+  * Name of the driver to use to create the volume.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#driver_name Container#driver_name}
+  */
   readonly driverName?: string;
-  /** key/value map of driver specific options */
+  /**
+  * key/value map of driver specific options
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#driver_options Container#driver_options}
+  */
   readonly driverOptions?: { [key: string]: string };
-  /** Populate volume with data from the target */
+  /**
+  * Populate volume with data from the target
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#no_copy Container#no_copy}
+  */
   readonly noCopy?: boolean;
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#labels Container#labels}
+  */
   readonly labels?: ContainerMountsVolumeOptionsLabels[];
 }
 
@@ -239,19 +491,47 @@ function containerMountsVolumeOptionsToTerraform(struct?: ContainerMountsVolumeO
 }
 
 export interface ContainerMounts {
-  /** Whether the mount should be read-only */
+  /**
+  * Whether the mount should be read-only
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
+  */
   readonly readOnly?: boolean;
-  /** Mount source (e.g. a volume name, a host path) */
+  /**
+  * Mount source (e.g. a volume name, a host path)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#source Container#source}
+  */
   readonly source?: string;
-  /** Container path */
+  /**
+  * Container path
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#target Container#target}
+  */
   readonly target: string;
-  /** The mount type */
+  /**
+  * The mount type
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#type Container#type}
+  */
   readonly type: string;
-  /** bind_options block */
+  /**
+  * bind_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#bind_options Container#bind_options}
+  */
   readonly bindOptions?: ContainerMountsBindOptions[];
-  /** tmpfs_options block */
+  /**
+  * tmpfs_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tmpfs_options Container#tmpfs_options}
+  */
   readonly tmpfsOptions?: ContainerMountsTmpfsOptions[];
-  /** volume_options block */
+  /**
+  * volume_options block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#volume_options Container#volume_options}
+  */
   readonly volumeOptions?: ContainerMountsVolumeOptions[];
 }
 
@@ -269,9 +549,21 @@ function containerMountsToTerraform(struct?: ContainerMounts): any {
 }
 
 export interface ContainerNetworksAdvanced {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#aliases Container#aliases}
+  */
   readonly aliases?: string[];
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ipv4_address Container#ipv4_address}
+  */
   readonly ipv4Address?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ipv6_address Container#ipv6_address}
+  */
   readonly ipv6Address?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}
+  */
   readonly name: string;
 }
 
@@ -286,9 +578,21 @@ function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced
 }
 
 export interface ContainerPorts {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#external Container#external}
+  */
   readonly external?: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#internal Container#internal}
+  */
   readonly internal: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#ip Container#ip}
+  */
   readonly ip?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#protocol Container#protocol}
+  */
   readonly protocol?: string;
 }
 
@@ -303,8 +607,17 @@ function containerPortsToTerraform(struct?: ContainerPorts): any {
 }
 
 export interface ContainerUlimit {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#hard Container#hard}
+  */
   readonly hard: number;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#name Container#name}
+  */
   readonly name: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#soft Container#soft}
+  */
   readonly soft: number;
 }
 
@@ -318,11 +631,29 @@ function containerUlimitToTerraform(struct?: ContainerUlimit): any {
 }
 
 export interface ContainerUpload {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#content Container#content}
+  */
   readonly content?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#content_base64 Container#content_base64}
+  */
   readonly contentBase64?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#executable Container#executable}
+  */
   readonly executable?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#file Container#file}
+  */
   readonly file: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#source Container#source}
+  */
   readonly source?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#source_hash Container#source_hash}
+  */
   readonly sourceHash?: string;
 }
 
@@ -339,10 +670,25 @@ function containerUploadToTerraform(struct?: ContainerUpload): any {
 }
 
 export interface ContainerVolumes {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#container_path Container#container_path}
+  */
   readonly containerPath?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#from_container Container#from_container}
+  */
   readonly fromContainer?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#host_path Container#host_path}
+  */
   readonly hostPath?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
+  */
   readonly readOnly?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#volume_name Container#volume_name}
+  */
   readonly volumeName?: string;
 }
 
@@ -358,14 +704,22 @@ function containerVolumesToTerraform(struct?: ContainerVolumes): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}
+*/
 export class Container extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options ContainerConfig
+  */
   public constructor(scope: Construct, id: string, config: ContainerConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_container',

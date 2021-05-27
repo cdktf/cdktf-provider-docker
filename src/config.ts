@@ -7,20 +7,36 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface ConfigConfig extends cdktf.TerraformMetaArguments {
-  /** Base64-url-safe-encoded config data */
+  /**
+  * Base64-url-safe-encoded config data
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config.html#data Config#data}
+  */
   readonly data: string;
-  /** User-defined name of the config */
+  /**
+  * User-defined name of the config
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config.html#name Config#name}
+  */
   readonly name: string;
 }
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}
+*/
 export class Config extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options ConfigConfig
+  */
   public constructor(scope: Construct, id: string, config: ConfigConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_config',

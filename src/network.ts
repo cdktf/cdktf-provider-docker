@@ -7,24 +7,71 @@ import * as cdktf from 'cdktf';
 // Configuration
 
 export interface NetworkConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}
+  */
   readonly attachable?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}
+  */
   readonly checkDuplicate?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#driver Network#driver}
+  */
   readonly driver?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}
+  */
   readonly ingress?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}
+  */
   readonly internal?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_driver Network#ipam_driver}
+  */
   readonly ipamDriver?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}
+  */
   readonly ipv6?: boolean;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#name Network#name}
+  */
   readonly name: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}
+  */
   readonly options?: { [key: string]: string };
-  /** ipam_config block */
+  /**
+  * ipam_config block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_config Network#ipam_config}
+  */
   readonly ipamConfig?: NetworkIpamConfig[];
-  /** labels block */
+  /**
+  * labels block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#labels Network#labels}
+  */
   readonly labels?: NetworkLabels[];
 }
 export interface NetworkIpamConfig {
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#aux_address Network#aux_address}
+  */
   readonly auxAddress?: { [key: string]: string };
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#gateway Network#gateway}
+  */
   readonly gateway?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ip_range Network#ip_range}
+  */
   readonly ipRange?: string;
+  /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#subnet Network#subnet}
+  */
   readonly subnet?: string;
 }
 
@@ -39,9 +86,17 @@ function networkIpamConfigToTerraform(struct?: NetworkIpamConfig): any {
 }
 
 export interface NetworkLabels {
-  /** Name of the label */
+  /**
+  * Name of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#label Network#label}
+  */
   readonly label: string;
-  /** Value of the label */
+  /**
+  * Value of the label
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#value Network#value}
+  */
   readonly value: string;
 }
 
@@ -54,14 +109,22 @@ function networkLabelsToTerraform(struct?: NetworkLabels): any {
 }
 
 
-// Resource
-
+/**
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}
+*/
 export class Network extends cdktf.TerraformResource {
 
   // ===========
   // INITIALIZER
   // ===========
 
+  /**
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network} Resource
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options NetworkConfig
+  */
   public constructor(scope: Construct, id: string, config: NetworkConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_network',
