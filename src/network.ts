@@ -8,38 +8,56 @@ import * as cdktf from 'cdktf';
 
 export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Enable manual container attachment to the network.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}
   */
   readonly attachable?: boolean;
   /**
+  * Requests daemon to check for networks with same name.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}
   */
   readonly checkDuplicate?: boolean;
   /**
+  * The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#driver Network#driver}
   */
   readonly driver?: string;
   /**
+  * Create swarm routing-mesh network. Defaults to `false`.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}
   */
   readonly ingress?: boolean;
   /**
+  * Whether the network is internal.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}
   */
   readonly internal?: boolean;
   /**
+  * Driver used by the custom IP scheme of the network. Defaults to `default`
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_driver Network#ipam_driver}
   */
   readonly ipamDriver?: string;
   /**
+  * Enable IPv6 networking. Defaults to `false`.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}
   */
   readonly ipv6?: boolean;
   /**
+  * The name of the Docker network.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#name Network#name}
   */
   readonly name: string;
   /**
+  * Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}
   */
   readonly options?: { [key: string]: string };
@@ -58,18 +76,26 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
 }
 export interface NetworkIpamConfig {
   /**
+  * Auxiliary IPv4 or IPv6 addresses used by Network driver
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#aux_address Network#aux_address}
   */
   readonly auxAddress?: { [key: string]: string };
   /**
+  * The IP address of the gateway
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#gateway Network#gateway}
   */
   readonly gateway?: string;
   /**
+  * The ip range in CIDR form
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ip_range Network#ip_range}
   */
   readonly ipRange?: string;
   /**
+  * The subnet in CIDR form
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#subnet Network#subnet}
   */
   readonly subnet?: string;
