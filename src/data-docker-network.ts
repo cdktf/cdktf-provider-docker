@@ -8,13 +8,11 @@ import * as cdktf from 'cdktf';
 
 export interface DataDockerNetworkConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#id DataDockerNetwork#id}
-  */
-  readonly id?: string;
-  /**
+  * The name of the Docker network.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#name DataDockerNetwork#name}
   */
-  readonly name?: string;
+  readonly name: string;
 }
 export class DataDockerNetworkIpamConfig extends cdktf.ComplexComputedList {
 
@@ -53,9 +51,9 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
-  * @param options DataDockerNetworkConfig = {}
+  * @param options DataDockerNetworkConfig
   */
-  public constructor(scope: Construct, id: string, config: DataDockerNetworkConfig = {}) {
+  public constructor(scope: Construct, id: string, config: DataDockerNetworkConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_network',
       terraformGeneratorMetadata: {
@@ -66,7 +64,6 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._id = config.id;
     this._name = config.name;
   }
 
@@ -79,20 +76,9 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
     return this.getStringAttribute('driver');
   }
 
-  // id - computed: false, optional: true, required: false
-  private _id?: string;
+  // id - computed: true, optional: false, required: false
   public get id() {
     return this.getStringAttribute('id');
-  }
-  public set id(value: string ) {
-    this._id = value;
-  }
-  public resetId() {
-    this._id = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get idInput() {
-    return this._id
   }
 
   // internal - computed: true, optional: false, required: false
@@ -105,16 +91,13 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
     return new DataDockerNetworkIpamConfig(this, 'ipam_config', index);
   }
 
-  // name - computed: false, optional: true, required: false
-  private _name?: string;
+  // name - computed: false, optional: false, required: true
+  private _name: string;
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string ) {
+  public set name(value: string) {
     this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
@@ -137,7 +120,6 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
     };
   }

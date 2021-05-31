@@ -8,15 +8,17 @@ import * as cdktf from 'cdktf';
 
 export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#auth Service#auth}
-  */
-  readonly auth?: { [key: string]: string };
-  /**
   * Name of the service
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#name Service#name}
   */
   readonly name: string;
+  /**
+  * auth block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#auth Service#auth}
+  */
+  readonly auth?: ServiceAuth[];
   /**
   * converge_config block
   * 
@@ -60,15 +62,45 @@ export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   */
   readonly updateConfig?: ServiceUpdateConfig[];
 }
+export interface ServiceAuth {
+  /**
+  * The password
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#password Service#password}
+  */
+  readonly password?: string;
+  /**
+  * The address of the server for the authentication
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#server_address Service#server_address}
+  */
+  readonly serverAddress: string;
+  /**
+  * The username
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#username Service#username}
+  */
+  readonly username?: string;
+}
+
+function serviceAuthToTerraform(struct?: ServiceAuth): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    password: cdktf.stringToTerraform(struct!.password),
+    server_address: cdktf.stringToTerraform(struct!.serverAddress),
+    username: cdktf.stringToTerraform(struct!.username),
+  }
+}
+
 export interface ServiceConvergeConfig {
   /**
-  * The interval to check if the desired state is reached (ms|s). Default: 7s
+  * The interval to check if the desired state is reached (ms|s). Defaults to `7s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
   */
   readonly delay?: string;
   /**
-  * The timeout of the service to reach the desired state (s|m). Default: 3m
+  * The timeout of the service to reach the desired state (s|m). Defaults to `3m`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#timeout Service#timeout}
   */
@@ -91,19 +123,19 @@ export interface ServiceEndpointSpecPorts {
   */
   readonly name?: string;
   /**
-  * Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp'
+  * Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp'. Defaults to `tcp`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#protocol Service#protocol}
   */
   readonly protocol?: string;
   /**
-  * Represents the mode in which the port is to be published: 'ingress' or 'host'
+  * Represents the mode in which the port is to be published: 'ingress' or 'host'. Defaults to `ingress`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#publish_mode Service#publish_mode}
   */
   readonly publishMode?: string;
   /**
-  * The port on the swarm hosts.
+  * The port on the swarm hosts
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#published_port Service#published_port}
   */
@@ -175,7 +207,7 @@ function serviceLabelsToTerraform(struct?: ServiceLabels): any {
 
 export interface ServiceModeReplicated {
   /**
-  * The amount of replicas of the service
+  * The amount of replicas of the service. Defaults to `1`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#replicas Service#replicas}
   */
@@ -191,7 +223,7 @@ function serviceModeReplicatedToTerraform(struct?: ServiceModeReplicated): any {
 
 export interface ServiceMode {
   /**
-  * The global service mode
+  * The global service mode. Defaults to `false`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#global Service#global}
   */
@@ -214,37 +246,37 @@ function serviceModeToTerraform(struct?: ServiceMode): any {
 
 export interface ServiceRollbackConfig {
   /**
-  * Delay between task rollbacks (ns|us|ms|s|m|h)
+  * Delay between task rollbacks (ns|us|ms|s|m|h). Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
   */
   readonly delay?: string;
   /**
-  * Action on rollback failure: pause | continue
+  * Action on rollback failure: pause | continue. Defaults to `pause`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#failure_action Service#failure_action}
   */
   readonly failureAction?: string;
   /**
-  * Failure rate to tolerate during a rollback
+  * Failure rate to tolerate during a rollback. Defaults to `0.0`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_failure_ratio Service#max_failure_ratio}
   */
   readonly maxFailureRatio?: string;
   /**
-  * Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h)
+  * Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#monitor Service#monitor}
   */
   readonly monitor?: string;
   /**
-  * Rollback order: either 'stop-first' or 'start-first'
+  * Rollback order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#order Service#order}
   */
   readonly order?: string;
   /**
-  * Maximum number of tasks to be rollbacked in one iteration
+  * Maximum number of tasks to be rollbacked in one iteration. Defaults to `1`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#parallelism Service#parallelism}
   */
@@ -277,13 +309,13 @@ export interface ServiceTaskSpecContainerSpecConfigs {
   */
   readonly configName?: string;
   /**
-  * Represents the file GID
+  * Represents the file GID. Defaults to `0`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_gid Service#file_gid}
   */
   readonly fileGid?: string;
   /**
-  * Represents represents the FileMode of the file
+  * Represents represents the FileMode of the file. Defaults to `0o444`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_mode Service#file_mode}
   */
@@ -295,7 +327,7 @@ export interface ServiceTaskSpecContainerSpecConfigs {
   */
   readonly fileName: string;
   /**
-  * Represents the file UID
+  * Represents the file UID. Defaults to `0`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_uid Service#file_uid}
   */
@@ -346,19 +378,19 @@ function serviceTaskSpecContainerSpecDnsConfigToTerraform(struct?: ServiceTaskSp
 
 export interface ServiceTaskSpecContainerSpecHealthcheck {
   /**
-  * Time between running the check (ms|s|m|h)
+  * Time between running the check (ms|s|m|h). Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#interval Service#interval}
   */
   readonly interval?: string;
   /**
-  * Consecutive failures needed to report unhealthy
+  * Consecutive failures needed to report unhealthy. Defaults to `0`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#retries Service#retries}
   */
   readonly retries?: number;
   /**
-  * Start period for the container to initialize before counting retries towards unstable (ms|s|m|h)
+  * Start period for the container to initialize before counting retries towards unstable (ms|s|m|h). Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#start_period Service#start_period}
   */
@@ -370,7 +402,7 @@ export interface ServiceTaskSpecContainerSpecHealthcheck {
   */
   readonly test: string[];
   /**
-  * Maximum time to allow one check to run (ms|s|m|h)
+  * Maximum time to allow one check to run (ms|s|m|h). Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#timeout Service#timeout}
   */
@@ -390,10 +422,14 @@ function serviceTaskSpecContainerSpecHealthcheckToTerraform(struct?: ServiceTask
 
 export interface ServiceTaskSpecContainerSpecHosts {
   /**
+  * The name of the host
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#host Service#host}
   */
   readonly host: string;
   /**
+  * The ip of the host
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#ip Service#ip}
   */
   readonly ip: string;
@@ -494,7 +530,7 @@ function serviceTaskSpecContainerSpecMountsVolumeOptionsLabelsToTerraform(struct
 
 export interface ServiceTaskSpecContainerSpecMountsVolumeOptions {
   /**
-  * Name of the driver to use to create the volume.
+  * Name of the driver to use to create the volume
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#driver_name Service#driver_name}
   */
@@ -679,13 +715,13 @@ function serviceTaskSpecContainerSpecPrivilegesToTerraform(struct?: ServiceTaskS
 
 export interface ServiceTaskSpecContainerSpecSecrets {
   /**
-  * Represents the file GID
+  * Represents the file GID. Defaults to `0`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_gid Service#file_gid}
   */
   readonly fileGid?: string;
   /**
-  * Represents represents the FileMode of the file
+  * Represents represents the FileMode of the file. Defaults to `0o444`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_mode Service#file_mode}
   */
@@ -697,7 +733,7 @@ export interface ServiceTaskSpecContainerSpecSecrets {
   */
   readonly fileName: string;
   /**
-  * Represents the file UID
+  * Represents the file UID. Defaults to `0`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#file_uid Service#file_uid}
   */
@@ -772,7 +808,7 @@ export interface ServiceTaskSpecContainerSpec {
   */
   readonly image: string;
   /**
-  * Isolation technology of the containers running the service. (Windows only)
+  * Isolation technology of the containers running the service. (Windows only). Defaults to `default`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#isolation Service#isolation}
   */
@@ -902,13 +938,13 @@ function serviceTaskSpecLogDriverToTerraform(struct?: ServiceTaskSpecLogDriver):
 
 export interface ServiceTaskSpecPlacementPlatforms {
   /**
-  * The architecture, e.g. amd64
+  * The architecture, e.g. `amd64`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#architecture Service#architecture}
   */
   readonly architecture: string;
   /**
-  * The operation system, e.g. linux
+  * The operation system, e.g. `linux`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#os Service#os}
   */
@@ -925,11 +961,17 @@ function serviceTaskSpecPlacementPlatformsToTerraform(struct?: ServiceTaskSpecPl
 
 export interface ServiceTaskSpecPlacement {
   /**
-  * An array of constraints. e.g.: node.role==manager
+  * An array of constraints. e.g.: `node.role==manager`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#constraints Service#constraints}
   */
   readonly constraints?: string[];
+  /**
+  * Maximum number of replicas for per node (default value is `0`, which is unlimited)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_replicas Service#max_replicas}
+  */
+  readonly maxReplicas?: number;
   /**
   * Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence, e.g.: spread=node.role.manager
   * 
@@ -948,31 +990,9 @@ function serviceTaskSpecPlacementToTerraform(struct?: ServiceTaskSpecPlacement):
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     constraints: cdktf.listMapper(cdktf.stringToTerraform)(struct!.constraints),
+    max_replicas: cdktf.numberToTerraform(struct!.maxReplicas),
     prefs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.prefs),
     platforms: cdktf.listMapper(serviceTaskSpecPlacementPlatformsToTerraform)(struct!.platforms),
-  }
-}
-
-export interface ServiceTaskSpecResourcesLimitsGenericResources {
-  /**
-  * The Integer resources
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#discrete_resources_spec Service#discrete_resources_spec}
-  */
-  readonly discreteResourcesSpec?: string[];
-  /**
-  * The String resources
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#named_resources_spec Service#named_resources_spec}
-  */
-  readonly namedResourcesSpec?: string[];
-}
-
-function serviceTaskSpecResourcesLimitsGenericResourcesToTerraform(struct?: ServiceTaskSpecResourcesLimitsGenericResources): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
-  return {
-    discrete_resources_spec: cdktf.listMapper(cdktf.stringToTerraform)(struct!.discreteResourcesSpec),
-    named_resources_spec: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namedResourcesSpec),
   }
 }
 
@@ -984,17 +1004,11 @@ export interface ServiceTaskSpecResourcesLimits {
   */
   readonly memoryBytes?: number;
   /**
-  * CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000
+  * CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least 1000000
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#nano_cpus Service#nano_cpus}
   */
   readonly nanoCpus?: number;
-  /**
-  * generic_resources block
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#generic_resources Service#generic_resources}
-  */
-  readonly genericResources?: ServiceTaskSpecResourcesLimitsGenericResources[];
 }
 
 function serviceTaskSpecResourcesLimitsToTerraform(struct?: ServiceTaskSpecResourcesLimits): any {
@@ -1002,7 +1016,6 @@ function serviceTaskSpecResourcesLimitsToTerraform(struct?: ServiceTaskSpecResou
   return {
     memory_bytes: cdktf.numberToTerraform(struct!.memoryBytes),
     nano_cpus: cdktf.numberToTerraform(struct!.nanoCpus),
-    generic_resources: cdktf.listMapper(serviceTaskSpecResourcesLimitsGenericResourcesToTerraform)(struct!.genericResources),
   }
 }
 
@@ -1082,27 +1095,58 @@ function serviceTaskSpecResourcesToTerraform(struct?: ServiceTaskSpecResources):
   }
 }
 
+export interface ServiceTaskSpecRestartPolicy {
+  /**
+  * Condition for restart
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#condition Service#condition}
+  */
+  readonly condition?: string;
+  /**
+  * Delay between restart attempts (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
+  */
+  readonly delay?: string;
+  /**
+  * Maximum attempts to restart a given container before giving up (default value is `0`, which is ignored)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_attempts Service#max_attempts}
+  */
+  readonly maxAttempts?: number;
+  /**
+  * The time window used to evaluate the restart policy (default value is `0`, which is unbounded) (ms|s|m|h)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#window Service#window}
+  */
+  readonly window?: string;
+}
+
+function serviceTaskSpecRestartPolicyToTerraform(struct?: ServiceTaskSpecRestartPolicy): any {
+  if (!cdktf.canInspect(struct)) { return struct; }
+  return {
+    condition: cdktf.stringToTerraform(struct!.condition),
+    delay: cdktf.stringToTerraform(struct!.delay),
+    max_attempts: cdktf.numberToTerraform(struct!.maxAttempts),
+    window: cdktf.stringToTerraform(struct!.window),
+  }
+}
+
 export interface ServiceTaskSpec {
   /**
-  * A counter that triggers an update even if no relevant parameters have been changed. See https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126
+  * A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#force_update Service#force_update}
   */
   readonly forceUpdate?: number;
   /**
-  * Ids of the networks in which the  container will be put in.
+  * Ids of the networks in which the  container will be put in
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#networks Service#networks}
   */
   readonly networks?: string[];
   /**
-  * Specification for the restart policy which applies to containers created as part of this service.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#restart_policy Service#restart_policy}
-  */
-  readonly restartPolicy?: { [key: string]: string };
-  /**
-  * Runtime is the type of runtime specified for the task executor. See https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go
+  * Runtime is the type of runtime specified for the task executor. See the [types](https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#runtime Service#runtime}
   */
@@ -1131,6 +1175,12 @@ export interface ServiceTaskSpec {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#resources Service#resources}
   */
   readonly resources?: ServiceTaskSpecResources[];
+  /**
+  * restart_policy block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#restart_policy Service#restart_policy}
+  */
+  readonly restartPolicy?: ServiceTaskSpecRestartPolicy[];
 }
 
 function serviceTaskSpecToTerraform(struct?: ServiceTaskSpec): any {
@@ -1138,48 +1188,48 @@ function serviceTaskSpecToTerraform(struct?: ServiceTaskSpec): any {
   return {
     force_update: cdktf.numberToTerraform(struct!.forceUpdate),
     networks: cdktf.listMapper(cdktf.stringToTerraform)(struct!.networks),
-    restart_policy: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.restartPolicy),
     runtime: cdktf.stringToTerraform(struct!.runtime),
     container_spec: cdktf.listMapper(serviceTaskSpecContainerSpecToTerraform)(struct!.containerSpec),
     log_driver: cdktf.listMapper(serviceTaskSpecLogDriverToTerraform)(struct!.logDriver),
     placement: cdktf.listMapper(serviceTaskSpecPlacementToTerraform)(struct!.placement),
     resources: cdktf.listMapper(serviceTaskSpecResourcesToTerraform)(struct!.resources),
+    restart_policy: cdktf.listMapper(serviceTaskSpecRestartPolicyToTerraform)(struct!.restartPolicy),
   }
 }
 
 export interface ServiceUpdateConfig {
   /**
-  * Delay between task updates (ns|us|ms|s|m|h)
+  * Delay between task updates (ns|us|ms|s|m|h). Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#delay Service#delay}
   */
   readonly delay?: string;
   /**
-  * Action on update failure: pause | continue | rollback
+  * Action on update failure: pause | continue | rollback. Defaults to `pause`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#failure_action Service#failure_action}
   */
   readonly failureAction?: string;
   /**
-  * Failure rate to tolerate during an update
+  * Failure rate to tolerate during an update. Defaults to `0.0`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#max_failure_ratio Service#max_failure_ratio}
   */
   readonly maxFailureRatio?: string;
   /**
-  * Duration after each task update to monitor for failure (ns|us|ms|s|m|h)
+  * Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#monitor Service#monitor}
   */
   readonly monitor?: string;
   /**
-  * Update order: either 'stop-first' or 'start-first'
+  * Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#order Service#order}
   */
   readonly order?: string;
   /**
-  * Maximum number of tasks to be updated in one iteration
+  * Maximum number of tasks to be updated in one iteration. Defaults to `1`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#parallelism Service#parallelism}
   */
@@ -1226,8 +1276,8 @@ export class Service extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
-    this._auth = config.auth;
     this._name = config.name;
+    this._auth = config.auth;
     this._convergeConfig = config.convergeConfig;
     this._endpointSpec = config.endpointSpec;
     this._labels = config.labels;
@@ -1240,22 +1290,6 @@ export class Service extends cdktf.TerraformResource {
   // ==========
   // ATTRIBUTES
   // ==========
-
-  // auth - computed: false, optional: true, required: false
-  private _auth?: { [key: string]: string };
-  public get auth() {
-    return this.interpolationForAttribute('auth') as any;
-  }
-  public set auth(value: { [key: string]: string } ) {
-    this._auth = value;
-  }
-  public resetAuth() {
-    this._auth = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get authInput() {
-    return this._auth
-  }
 
   // id - computed: true, optional: true, required: false
   public get id() {
@@ -1273,6 +1307,22 @@ export class Service extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name
+  }
+
+  // auth - computed: false, optional: true, required: false
+  private _auth?: ServiceAuth[];
+  public get auth() {
+    return this.interpolationForAttribute('auth') as any;
+  }
+  public set auth(value: ServiceAuth[] ) {
+    this._auth = value;
+  }
+  public resetAuth() {
+    this._auth = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get authInput() {
+    return this._auth
   }
 
   // converge_config - computed: false, optional: true, required: false
@@ -1390,8 +1440,8 @@ export class Service extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
-      auth: cdktf.hashMapper(cdktf.anyToTerraform)(this._auth),
       name: cdktf.stringToTerraform(this._name),
+      auth: cdktf.listMapper(serviceAuthToTerraform)(this._auth),
       converge_config: cdktf.listMapper(serviceConvergeConfigToTerraform)(this._convergeConfig),
       endpoint_spec: cdktf.listMapper(serviceEndpointSpecToTerraform)(this._endpointSpec),
       labels: cdktf.listMapper(serviceLabelsToTerraform)(this._labels),

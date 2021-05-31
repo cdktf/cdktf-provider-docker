@@ -3,10 +3,13 @@ export * from './config';
 export * from './container';
 export * from './image';
 export * from './network';
+export * from './plugin';
+export * from './registry-image';
 export * from './secret';
 export * from './service';
 export * from './volume';
 export * from './data-docker-network';
+export * from './data-docker-plugin';
 export * from './data-docker-registry-image';
 export * from './docker-provider';
 

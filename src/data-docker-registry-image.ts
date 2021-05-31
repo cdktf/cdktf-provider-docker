@@ -8,9 +8,11 @@ import * as cdktf from 'cdktf';
 
 export interface DataDockerRegistryImageConfig extends cdktf.TerraformMetaArguments {
   /**
+  * The name of the Docker image, including any tags. e.g. `alpine:latest`
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#name DataDockerRegistryImage#name}
   */
-  readonly name?: string;
+  readonly name: string;
 }
 
 /**
@@ -27,9 +29,9 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
-  * @param options DataDockerRegistryImageConfig = {}
+  * @param options DataDockerRegistryImageConfig
   */
-  public constructor(scope: Construct, id: string, config: DataDockerRegistryImageConfig = {}) {
+  public constructor(scope: Construct, id: string, config: DataDockerRegistryImageConfig) {
     super(scope, id, {
       terraformResourceType: 'docker_registry_image',
       terraformGeneratorMetadata: {
@@ -52,16 +54,13 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
     return this.getStringAttribute('id');
   }
 
-  // name - computed: false, optional: true, required: false
-  private _name?: string;
+  // name - computed: false, optional: false, required: true
+  private _name: string;
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string ) {
+  public set name(value: string) {
     this._name = value;
-  }
-  public resetName() {
-    this._name = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {

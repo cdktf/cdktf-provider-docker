@@ -2,7 +2,7 @@ const { CdktfProviderProject } = require('@cdktf/provider-project');
 const { Semver } = require('projen');
 
 const project = new CdktfProviderProject({
-  terraformProvider: 'terraform-providers/docker@~> 2.0',
+  terraformProvider: 'kreuzwerker/docker@~> 2.12',
   eslint: false,
 });
 

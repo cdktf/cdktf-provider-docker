@@ -8,14 +8,20 @@ import * as cdktf from 'cdktf';
 
 export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Driver type for the volume. Defaults to `local`.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver Volume#driver}
   */
   readonly driver?: string;
   /**
+  * Options specific to the driver.
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}
   */
   readonly driverOpts?: { [key: string]: string };
   /**
+  * The name of the Docker volume (will be generated if not provided).
+  * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#name Volume#name}
   */
   readonly name?: string;
