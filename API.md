@@ -227,6 +227,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **shmSize** (<code>number</code>)  Size of `/dev/shm` in MBs. __*Optional*__
   * **start** (<code>boolean</code>)  If `true`, then the Docker container will be started after creation. __*Optional*__
   * **stdinOpen** (<code>boolean</code>)  If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. __*Optional*__
+  * **storageOpts** (<code>Map<string, string></code>)  Key/value pairs for the storage driver options, e.g. `size`: `120G`. __*Optional*__
   * **sysctls** (<code>Map<string, string></code>)  A map of kernel parameters (sysctls) to set in the container. __*Optional*__
   * **tmpfs** (<code>Map<string, string></code>)  A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. __*Optional*__
   * **tty** (<code>boolean</code>)  If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. __*Optional*__
@@ -300,6 +301,7 @@ Name | Type | Description
 **shmSize** | <code>number</code> | <span></span>
 **start** | <code>boolean</code> | <span></span>
 **stdinOpen** | <code>boolean</code> | <span></span>
+**storageOpts** | <code>Map<string, string></code> | <span></span>
 **sysctls** | <code>Map<string, string></code> | <span></span>
 **tmpfs** | <code>Map<string, string></code> | <span></span>
 **tty** | <code>boolean</code> | <span></span>
@@ -354,6 +356,7 @@ Name | Type | Description
 **shmSizeInput**? | <code>number</code> | __*Optional*__
 **startInput**? | <code>boolean</code> | __*Optional*__
 **stdinOpenInput**? | <code>boolean</code> | __*Optional*__
+**storageOptsInput**? | <code>Map<string, string></code> | __*Optional*__
 **sysctlsInput**? | <code>Map<string, string></code> | __*Optional*__
 **tmpfsInput**? | <code>Map<string, string></code> | __*Optional*__
 **ttyInput**? | <code>boolean</code> | __*Optional*__
@@ -914,6 +917,18 @@ resetStart(): void
 
 ```ts
 resetStdinOpen(): void
+```
+
+
+
+
+
+#### resetStorageOpts() <a id="cdktf-provider-docker-container-resetstorageopts"></a>
+
+
+
+```ts
+resetStorageOpts(): void
 ```
 
 
@@ -2593,6 +2608,7 @@ Name | Type | Description
 **shmSize**? | <code>number</code> | Size of `/dev/shm` in MBs.<br/>__*Optional*__
 **start**? | <code>boolean</code> | If `true`, then the Docker container will be started after creation.<br/>__*Optional*__
 **stdinOpen**? | <code>boolean</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.<br/>__*Optional*__
+**storageOpts**? | <code>Map<string, string></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`.<br/>__*Optional*__
 **sysctls**? | <code>Map<string, string></code> | A map of kernel parameters (sysctls) to set in the container.<br/>__*Optional*__
 **tmpfs**? | <code>Map<string, string></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.<br/>__*Optional*__
 **tty**? | <code>boolean</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.<br/>__*Optional*__

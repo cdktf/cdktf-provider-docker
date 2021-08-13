@@ -6,10 +6,6 @@
       "type": "build"
     },
     {
-      "name": "@types/jest",
-      "type": "build"
-    },
-    {
       "name": "@types/node",
       "version": "^12.19.0",
       "type": "build"
@@ -32,15 +28,6 @@
     {
       "name": "dot-prop",
       "version": "^5.2.0",
-      "type": "build"
-    },
-    {
-      "name": "jest",
-      "type": "build"
-    },
-    {
-      "name": "jest-junit",
-      "version": "^12",
       "type": "build"
     },
     {
@@ -71,10 +58,6 @@
     {
       "name": "standard-version",
       "version": "^9",
-      "type": "build"
-    },
-    {
-      "name": "ts-jest",
       "type": "build"
     },
     {

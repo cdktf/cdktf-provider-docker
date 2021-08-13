@@ -242,6 +242,12 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly stdinOpen?: boolean;
   /**
+  * Key/value pairs for the storage driver options, e.g. `size`: `120G`
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#storage_opts Container#storage_opts}
+  */
+  readonly storageOpts?: { [key: string]: string };
+  /**
   * A map of kernel parameters (sysctls) to set in the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#sysctls Container#sysctls}
@@ -947,6 +953,7 @@ export class Container extends cdktf.TerraformResource {
     this._shmSize = config.shmSize;
     this._start = config.start;
     this._stdinOpen = config.stdinOpen;
+    this._storageOpts = config.storageOpts;
     this._sysctls = config.sysctls;
     this._tmpfs = config.tmpfs;
     this._tty = config.tty;
@@ -1628,6 +1635,22 @@ export class Container extends cdktf.TerraformResource {
     return this._stdinOpen
   }
 
+  // storage_opts - computed: false, optional: true, required: false
+  private _storageOpts?: { [key: string]: string };
+  public get storageOpts() {
+    return this.interpolationForAttribute('storage_opts') as any;
+  }
+  public set storageOpts(value: { [key: string]: string } ) {
+    this._storageOpts = value;
+  }
+  public resetStorageOpts() {
+    this._storageOpts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get storageOptsInput() {
+    return this._storageOpts
+  }
+
   // sysctls - computed: false, optional: true, required: false
   private _sysctls?: { [key: string]: string };
   public get sysctls() {
@@ -1945,6 +1968,7 @@ export class Container extends cdktf.TerraformResource {
       shm_size: cdktf.numberToTerraform(this._shmSize),
       start: cdktf.booleanToTerraform(this._start),
       stdin_open: cdktf.booleanToTerraform(this._stdinOpen),
+      storage_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._storageOpts),
       sysctls: cdktf.hashMapper(cdktf.anyToTerraform)(this._sysctls),
       tmpfs: cdktf.hashMapper(cdktf.anyToTerraform)(this._tmpfs),
       tty: cdktf.booleanToTerraform(this._tty),

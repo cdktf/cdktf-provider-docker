@@ -11,8 +11,6 @@
     "test:compile": "npx projen test:compile",
     "test": "jest --passWithNoTests",
     "build": "npx projen build",
-    "test:watch": "npx projen test:watch",
-    "test:update": "npx projen test:update",
     "bump": "npx projen bump",
     "unbump": "npx projen unbump",
     "publish:github": "npx projen publish:github",
@@ -28,10 +26,11 @@
     "docgen": "npx projen docgen",
     "release": "npx projen release",
     "projen": "npx projen",
-    "fetch": "rm -rf ./src/* && cdktf get && cp -R .gen/providers/docker/* ./src/",
+    "fetch": "mkdir -p src && rm -rf ./src/* && cdktf get && cp -R .gen/providers/docker/* ./src/",
     "commit": "git add -A && git commit -am \"Update provider\" || echo \"No changes to commit\"",
     "should-release": "! git diff --exit-code v$(cat version.json | jq -r '.version') ./src ./package.json",
-    "prebump": "yarn fetch && yarn compile && yarn run commit && yarn run should-release"
+    "prebump": "yarn fetch && yarn compile && yarn run commit && yarn run should-release",
+    "build-provider": "yarn fetch && yarn compile && yarn docgen"
   },
   "author": {
     "name": "HashiCorp",
@@ -40,14 +39,11 @@
   },
   "devDependencies": {
     "@cdktf/provider-project": "^0.2.8",
-    "@types/jest": "^26.0.7",
     "@types/node": "^12.19.0",
     "cdktf": "^0.5",
     "cdktf-cli": "^0.5",
     "constructs": "^3.0.4",
     "dot-prop": "^5.2.0",
-    "jest": "^26.0.1",
-    "jest-junit": "^12",
     "jsii": "^1.9.0",
     "jsii-diff": "^1.9.0",
     "jsii-docgen": "^1.3.2",
@@ -55,7 +51,6 @@
     "npm-check-updates": "^11",
     "projen": "^0.27.28",
     "standard-version": "^9",
-    "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
@@ -79,45 +74,6 @@
     "access": "public"
   },
   "version": "0.0.0",
-  "jest": {
-    "testMatch": [
-      "**/__tests__/**/*.ts?(x)",
-      "**/?(*.)+(spec|test).ts?(x)"
-    ],
-    "clearMocks": true,
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "clover",
-      "text"
-    ],
-    "coverageDirectory": "coverage",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "watchPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "reporters": [
-      "default",
-      [
-        "jest-junit",
-        {
-          "outputDirectory": "test-reports"
-        }
-      ]
-    ],
-    "preset": "ts-jest",
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.jest.json"
-      }
-    }
-  },
   "types": "lib/index.d.ts",
   "stability": "stable",
   "jsii": {
