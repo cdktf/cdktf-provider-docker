@@ -13,16 +13,13 @@
 .nyc_output
 .terraform
 .yarn-integrity
-/coverage
 /dist
 /dist/changelog.md
 /dist/version.txt
 /lib
-/test-reports/
 build/Release
 coverage
 jspm_packages/
-junit.xml
 lerna-debug.log*
 lib-cov
 logs
@@ -53,4 +50,3 @@ yarn-error.log*
 !/package.json
 !/src
 !/test
-!/tsconfig.jest.json

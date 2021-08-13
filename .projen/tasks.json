@@ -46,25 +46,14 @@
     },
     "test:compile": {
       "name": "test:compile",
-      "description": "compiles the test code",
-      "steps": [
-        {
-          "exec": "tsc --noEmit --project tsconfig.jest.json"
-        }
-      ]
+      "description": "compiles the test code"
     },
     "test": {
       "name": "test",
       "description": "Run tests",
       "steps": [
         {
-          "exec": "rm -fr lib/"
-        },
-        {
           "spawn": "test:compile"
-        },
-        {
-          "exec": "jest --passWithNoTests --all --updateSnapshot"
         }
       ]
     },
@@ -83,24 +72,6 @@
         },
         {
           "spawn": "package"
-        }
-      ]
-    },
-    "test:watch": {
-      "name": "test:watch",
-      "description": "Run jest in watch mode",
-      "steps": [
-        {
-          "exec": "jest --watch"
-        }
-      ]
-    },
-    "test:update": {
-      "name": "test:update",
-      "description": "Update jest snapshots",
-      "steps": [
-        {
-          "exec": "jest --updateSnapshot"
         }
       ]
     },
@@ -159,7 +130,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @cdktf/provider-project @types/jest @types/node cdktf-cli cdktf constructs dot-prop jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak npm-check-updates standard-version ts-jest typescript cdktf constructs"
+          "exec": "yarn upgrade @cdktf/provider-project @types/node cdktf-cli cdktf constructs dot-prop jsii jsii-diff jsii-docgen jsii-pacmak npm-check-updates standard-version typescript cdktf constructs"
         },
         {
           "exec": "npx projen"
