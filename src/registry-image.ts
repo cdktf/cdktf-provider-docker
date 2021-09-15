@@ -12,13 +12,13 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#insecure_skip_verify RegistryImage#insecure_skip_verify}
   */
-  readonly insecureSkipVerify?: boolean;
+  readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#keep_remotely RegistryImage#keep_remotely}
   */
-  readonly keepRemotely?: boolean;
+  readonly keepRemotely?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image.
   * 
@@ -133,7 +133,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#build_args RegistryImage#build_args}
   */
-  readonly buildArgs?: { [key: string]: string };
+  readonly buildArgs?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * BuildID is an optional identifier that can be passed together with the build request. The 
   * 
@@ -205,7 +205,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#force_remove RegistryImage#force_remove}
   */
-  readonly forceRemove?: boolean;
+  readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * Isolation represents the isolation technology of a container. The supported values are 
   * 
@@ -217,7 +217,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#labels RegistryImage#labels}
   */
-  readonly labels?: { [key: string]: string };
+  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Set memory limit for build
   * 
@@ -241,7 +241,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#no_cache RegistryImage#no_cache}
   */
-  readonly noCache?: boolean;
+  readonly noCache?: boolean | cdktf.IResolvable;
   /**
   * Set platform if server is multi-platform capable
   * 
@@ -253,7 +253,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#pull_parent RegistryImage#pull_parent}
   */
-  readonly pullParent?: boolean;
+  readonly pullParent?: boolean | cdktf.IResolvable;
   /**
   * A Git repository URI or HTTP/HTTPS context URI
   * 
@@ -265,7 +265,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#remove RegistryImage#remove}
   */
-  readonly remove?: boolean;
+  readonly remove?: boolean | cdktf.IResolvable;
   /**
   * The security options
   * 
@@ -289,13 +289,13 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#squash RegistryImage#squash}
   */
-  readonly squash?: boolean;
+  readonly squash?: boolean | cdktf.IResolvable;
   /**
   * Suppress the build output and print image ID on success
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#suppress_output RegistryImage#suppress_output}
   */
-  readonly suppressOutput?: boolean;
+  readonly suppressOutput?: boolean | cdktf.IResolvable;
   /**
   * Set the target build stage to build
   * 
@@ -366,6 +366,11 @@ function registryImageBuildToTerraform(struct?: RegistryImageBuild): any {
 */
 export class RegistryImage extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_registry_image";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -404,11 +409,11 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
-  private _insecureSkipVerify?: boolean;
+  private _insecureSkipVerify?: boolean | cdktf.IResolvable;
   public get insecureSkipVerify() {
     return this.getBooleanAttribute('insecure_skip_verify');
   }
-  public set insecureSkipVerify(value: boolean ) {
+  public set insecureSkipVerify(value: boolean | cdktf.IResolvable ) {
     this._insecureSkipVerify = value;
   }
   public resetInsecureSkipVerify() {
@@ -420,11 +425,11 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // keep_remotely - computed: false, optional: true, required: false
-  private _keepRemotely?: boolean;
+  private _keepRemotely?: boolean | cdktf.IResolvable;
   public get keepRemotely() {
     return this.getBooleanAttribute('keep_remotely');
   }
-  public set keepRemotely(value: boolean ) {
+  public set keepRemotely(value: boolean | cdktf.IResolvable ) {
     this._keepRemotely = value;
   }
   public resetKeepRemotely() {

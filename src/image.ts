@@ -12,13 +12,13 @@ export interface ImageConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#force_remove Image#force_remove}
   */
-  readonly forceRemove?: boolean;
+  readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#keep_locally Image#keep_locally}
   */
-  readonly keepLocally?: boolean;
+  readonly keepLocally?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image, including any tags or SHA256 repo digests.
   * 
@@ -50,7 +50,7 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#build_arg Image#build_arg}
   */
-  readonly buildArg?: { [key: string]: string };
+  readonly buildArg?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the Dockerfile. Defaults to `Dockerfile`.
   * 
@@ -62,19 +62,19 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#force_remove Image#force_remove}
   */
-  readonly forceRemove?: boolean;
+  readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * Set metadata for an image
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#label Image#label}
   */
-  readonly label?: { [key: string]: string };
+  readonly label?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Do not use cache when building the image
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#no_cache Image#no_cache}
   */
-  readonly noCache?: boolean;
+  readonly noCache?: boolean | cdktf.IResolvable;
   /**
   * Context path
   * 
@@ -86,7 +86,7 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#remove Image#remove}
   */
-  readonly remove?: boolean;
+  readonly remove?: boolean | cdktf.IResolvable;
   /**
   * Name and optionally a tag in the 'name:tag' format
   * 
@@ -121,6 +121,11 @@ function imageBuildToTerraform(struct?: ImageBuild): any {
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}
 */
 export class Image extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_image";
 
   // ===========
   // INITIALIZER
@@ -157,11 +162,11 @@ export class Image extends cdktf.TerraformResource {
   // ==========
 
   // force_remove - computed: false, optional: true, required: false
-  private _forceRemove?: boolean;
+  private _forceRemove?: boolean | cdktf.IResolvable;
   public get forceRemove() {
     return this.getBooleanAttribute('force_remove');
   }
-  public set forceRemove(value: boolean ) {
+  public set forceRemove(value: boolean | cdktf.IResolvable ) {
     this._forceRemove = value;
   }
   public resetForceRemove() {
@@ -178,11 +183,11 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // keep_locally - computed: false, optional: true, required: false
-  private _keepLocally?: boolean;
+  private _keepLocally?: boolean | cdktf.IResolvable;
   public get keepLocally() {
     return this.getBooleanAttribute('keep_locally');
   }
-  public set keepLocally(value: boolean ) {
+  public set keepLocally(value: boolean | cdktf.IResolvable ) {
     this._keepLocally = value;
   }
   public resetKeepLocally() {

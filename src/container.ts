@@ -12,7 +12,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#attach Container#attach}
   */
-  readonly attach?: boolean;
+  readonly attach?: boolean | cdktf.IResolvable;
   /**
   * The command to use to start the container. For example, to run `/usr/bin/myprogram -f baz.conf` set the command to be `["/usr/bin/myprogram","-","baz.con"]`.
   * 
@@ -96,7 +96,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#init Container#init}
   */
-  readonly init?: boolean;
+  readonly init?: boolean | cdktf.IResolvable;
   /**
   * IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`.
   * 
@@ -120,13 +120,13 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#log_opts Container#log_opts}
   */
-  readonly logOpts?: { [key: string]: string };
+  readonly logOpts?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Save the container logs (`attach` must be enabled). Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#logs Container#logs}
   */
-  readonly logs?: boolean;
+  readonly logs?: boolean | cdktf.IResolvable;
   /**
   * The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'.
   * 
@@ -150,7 +150,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#must_run Container#must_run}
   */
-  readonly mustRun?: boolean;
+  readonly mustRun?: boolean | cdktf.IResolvable;
   /**
   * The name of the container.
   * 
@@ -186,25 +186,25 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#privileged Container#privileged}
   */
-  readonly privileged?: boolean;
+  readonly privileged?: boolean | cdktf.IResolvable;
   /**
   * Publish all ports of the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#publish_all_ports Container#publish_all_ports}
   */
-  readonly publishAllPorts?: boolean;
+  readonly publishAllPorts?: boolean | cdktf.IResolvable;
   /**
   * If `true`, the container will be started as readonly. Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#remove_volumes Container#remove_volumes}
   */
-  readonly removeVolumes?: boolean;
+  readonly removeVolumes?: boolean | cdktf.IResolvable;
   /**
   * The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`.
   * 
@@ -216,7 +216,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#rm Container#rm}
   */
-  readonly rm?: boolean;
+  readonly rm?: boolean | cdktf.IResolvable;
   /**
   * List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration.
   * 
@@ -234,37 +234,37 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#start Container#start}
   */
-  readonly start?: boolean;
+  readonly start?: boolean | cdktf.IResolvable;
   /**
   * If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#stdin_open Container#stdin_open}
   */
-  readonly stdinOpen?: boolean;
+  readonly stdinOpen?: boolean | cdktf.IResolvable;
   /**
   * Key/value pairs for the storage driver options, e.g. `size`: `120G`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#storage_opts Container#storage_opts}
   */
-  readonly storageOpts?: { [key: string]: string };
+  readonly storageOpts?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A map of kernel parameters (sysctls) to set in the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#sysctls Container#sysctls}
   */
-  readonly sysctls?: { [key: string]: string };
+  readonly sysctls?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tmpfs Container#tmpfs}
   */
-  readonly tmpfs?: { [key: string]: string };
+  readonly tmpfs?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#tty Container#tty}
   */
-  readonly tty?: boolean;
+  readonly tty?: boolean | cdktf.IResolvable;
   /**
   * User used for run the first process. Format is `user` or `user:group` which user and group can be passed literraly or by name.
   * 
@@ -604,13 +604,13 @@ export interface ContainerMountsVolumeOptions {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#driver_options Container#driver_options}
   */
-  readonly driverOptions?: { [key: string]: string };
+  readonly driverOptions?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Populate volume with data from the target.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#no_copy Container#no_copy}
   */
-  readonly noCopy?: boolean;
+  readonly noCopy?: boolean | cdktf.IResolvable;
   /**
   * labels block
   * 
@@ -635,7 +635,7 @@ export interface ContainerMounts {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Mount source (e.g. a volume name, a host path).
   * 
@@ -809,7 +809,7 @@ export interface ContainerUpload {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#executable Container#executable}
   */
-  readonly executable?: boolean;
+  readonly executable?: boolean | cdktf.IResolvable;
   /**
   * Path to the file in the container where is upload goes to
   * 
@@ -866,7 +866,7 @@ export interface ContainerVolumes {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container.html#read_only Container#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * The name of the docker volume which should be mounted.
   * 
@@ -891,6 +891,11 @@ function containerVolumesToTerraform(struct?: ContainerVolumes): any {
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}
 */
 export class Container extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_container";
 
   // ===========
   // INITIALIZER
@@ -978,11 +983,11 @@ export class Container extends cdktf.TerraformResource {
   // ==========
 
   // attach - computed: false, optional: true, required: false
-  private _attach?: boolean;
+  private _attach?: boolean | cdktf.IResolvable;
   public get attach() {
     return this.getBooleanAttribute('attach');
   }
-  public set attach(value: boolean ) {
+  public set attach(value: boolean | cdktf.IResolvable ) {
     this._attach = value;
   }
   public resetAttach() {
@@ -1224,11 +1229,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // init - computed: true, optional: true, required: false
-  private _init?: boolean;
+  private _init?: boolean | cdktf.IResolvable;
   public get init() {
     return this.getBooleanAttribute('init');
   }
-  public set init(value: boolean) {
+  public set init(value: boolean | cdktf.IResolvable) {
     this._init = value;
   }
   public resetInit() {
@@ -1298,11 +1303,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // log_opts - computed: false, optional: true, required: false
-  private _logOpts?: { [key: string]: string };
+  private _logOpts?: { [key: string]: string } | cdktf.IResolvable;
   public get logOpts() {
     return this.interpolationForAttribute('log_opts') as any;
   }
-  public set logOpts(value: { [key: string]: string } ) {
+  public set logOpts(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._logOpts = value;
   }
   public resetLogOpts() {
@@ -1314,11 +1319,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // logs - computed: false, optional: true, required: false
-  private _logs?: boolean;
+  private _logs?: boolean | cdktf.IResolvable;
   public get logs() {
     return this.getBooleanAttribute('logs');
   }
-  public set logs(value: boolean ) {
+  public set logs(value: boolean | cdktf.IResolvable ) {
     this._logs = value;
   }
   public resetLogs() {
@@ -1378,11 +1383,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // must_run - computed: false, optional: true, required: false
-  private _mustRun?: boolean;
+  private _mustRun?: boolean | cdktf.IResolvable;
   public get mustRun() {
     return this.getBooleanAttribute('must_run');
   }
-  public set mustRun(value: boolean ) {
+  public set mustRun(value: boolean | cdktf.IResolvable ) {
     this._mustRun = value;
   }
   public resetMustRun() {
@@ -1476,11 +1481,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean;
+  private _privileged?: boolean | cdktf.IResolvable;
   public get privileged() {
     return this.getBooleanAttribute('privileged');
   }
-  public set privileged(value: boolean ) {
+  public set privileged(value: boolean | cdktf.IResolvable ) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -1492,11 +1497,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // publish_all_ports - computed: false, optional: true, required: false
-  private _publishAllPorts?: boolean;
+  private _publishAllPorts?: boolean | cdktf.IResolvable;
   public get publishAllPorts() {
     return this.getBooleanAttribute('publish_all_ports');
   }
-  public set publishAllPorts(value: boolean ) {
+  public set publishAllPorts(value: boolean | cdktf.IResolvable ) {
     this._publishAllPorts = value;
   }
   public resetPublishAllPorts() {
@@ -1508,11 +1513,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean;
+  private _readOnly?: boolean | cdktf.IResolvable;
   public get readOnly() {
     return this.getBooleanAttribute('read_only');
   }
-  public set readOnly(value: boolean ) {
+  public set readOnly(value: boolean | cdktf.IResolvable ) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1524,11 +1529,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // remove_volumes - computed: false, optional: true, required: false
-  private _removeVolumes?: boolean;
+  private _removeVolumes?: boolean | cdktf.IResolvable;
   public get removeVolumes() {
     return this.getBooleanAttribute('remove_volumes');
   }
-  public set removeVolumes(value: boolean ) {
+  public set removeVolumes(value: boolean | cdktf.IResolvable ) {
     this._removeVolumes = value;
   }
   public resetRemoveVolumes() {
@@ -1556,11 +1561,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // rm - computed: false, optional: true, required: false
-  private _rm?: boolean;
+  private _rm?: boolean | cdktf.IResolvable;
   public get rm() {
     return this.getBooleanAttribute('rm');
   }
-  public set rm(value: boolean ) {
+  public set rm(value: boolean | cdktf.IResolvable ) {
     this._rm = value;
   }
   public resetRm() {
@@ -1604,11 +1609,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // start - computed: false, optional: true, required: false
-  private _start?: boolean;
+  private _start?: boolean | cdktf.IResolvable;
   public get start() {
     return this.getBooleanAttribute('start');
   }
-  public set start(value: boolean ) {
+  public set start(value: boolean | cdktf.IResolvable ) {
     this._start = value;
   }
   public resetStart() {
@@ -1620,11 +1625,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // stdin_open - computed: false, optional: true, required: false
-  private _stdinOpen?: boolean;
+  private _stdinOpen?: boolean | cdktf.IResolvable;
   public get stdinOpen() {
     return this.getBooleanAttribute('stdin_open');
   }
-  public set stdinOpen(value: boolean ) {
+  public set stdinOpen(value: boolean | cdktf.IResolvable ) {
     this._stdinOpen = value;
   }
   public resetStdinOpen() {
@@ -1636,11 +1641,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // storage_opts - computed: false, optional: true, required: false
-  private _storageOpts?: { [key: string]: string };
+  private _storageOpts?: { [key: string]: string } | cdktf.IResolvable;
   public get storageOpts() {
     return this.interpolationForAttribute('storage_opts') as any;
   }
-  public set storageOpts(value: { [key: string]: string } ) {
+  public set storageOpts(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._storageOpts = value;
   }
   public resetStorageOpts() {
@@ -1652,11 +1657,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // sysctls - computed: false, optional: true, required: false
-  private _sysctls?: { [key: string]: string };
+  private _sysctls?: { [key: string]: string } | cdktf.IResolvable;
   public get sysctls() {
     return this.interpolationForAttribute('sysctls') as any;
   }
-  public set sysctls(value: { [key: string]: string } ) {
+  public set sysctls(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._sysctls = value;
   }
   public resetSysctls() {
@@ -1668,11 +1673,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // tmpfs - computed: false, optional: true, required: false
-  private _tmpfs?: { [key: string]: string };
+  private _tmpfs?: { [key: string]: string } | cdktf.IResolvable;
   public get tmpfs() {
     return this.interpolationForAttribute('tmpfs') as any;
   }
-  public set tmpfs(value: { [key: string]: string } ) {
+  public set tmpfs(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._tmpfs = value;
   }
   public resetTmpfs() {
@@ -1684,11 +1689,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // tty - computed: false, optional: true, required: false
-  private _tty?: boolean;
+  private _tty?: boolean | cdktf.IResolvable;
   public get tty() {
     return this.getBooleanAttribute('tty');
   }
-  public set tty(value: boolean ) {
+  public set tty(value: boolean | cdktf.IResolvable ) {
     this._tty = value;
   }
   public resetTty() {

@@ -12,7 +12,7 @@ export interface DataDockerRegistryImageConfig extends cdktf.TerraformMetaArgume
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
   */
-  readonly insecureSkipVerify?: boolean;
+  readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image, including any tags. e.g. `alpine:latest`
   * 
@@ -25,6 +25,11 @@ export interface DataDockerRegistryImageConfig extends cdktf.TerraformMetaArgume
 * Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}
 */
 export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_registry_image";
 
   // ===========
   // INITIALIZER
@@ -62,11 +67,11 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
-  private _insecureSkipVerify?: boolean;
+  private _insecureSkipVerify?: boolean | cdktf.IResolvable;
   public get insecureSkipVerify() {
     return this.getBooleanAttribute('insecure_skip_verify');
   }
-  public set insecureSkipVerify(value: boolean ) {
+  public set insecureSkipVerify(value: boolean | cdktf.IResolvable ) {
     this._insecureSkipVerify = value;
   }
   public resetInsecureSkipVerify() {

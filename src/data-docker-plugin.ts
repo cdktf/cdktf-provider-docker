@@ -26,6 +26,11 @@ export interface DataDockerPluginConfig extends cdktf.TerraformMetaArguments {
 */
 export class DataDockerPlugin extends cdktf.TerraformDataSource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_plugin";
+
   // ===========
   // INITIALIZER
   // ===========

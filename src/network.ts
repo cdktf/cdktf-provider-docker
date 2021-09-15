@@ -12,13 +12,13 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}
   */
-  readonly attachable?: boolean;
+  readonly attachable?: boolean | cdktf.IResolvable;
   /**
   * Requests daemon to check for networks with same name.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}
   */
-  readonly checkDuplicate?: boolean;
+  readonly checkDuplicate?: boolean | cdktf.IResolvable;
   /**
   * The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
   * 
@@ -30,13 +30,13 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}
   */
-  readonly ingress?: boolean;
+  readonly ingress?: boolean | cdktf.IResolvable;
   /**
   * Whether the network is internal.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}
   */
-  readonly internal?: boolean;
+  readonly internal?: boolean | cdktf.IResolvable;
   /**
   * Driver used by the custom IP scheme of the network. Defaults to `default`
   * 
@@ -48,7 +48,7 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}
   */
-  readonly ipv6?: boolean;
+  readonly ipv6?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker network.
   * 
@@ -60,7 +60,7 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * ipam_config block
   * 
@@ -80,7 +80,7 @@ export interface NetworkIpamConfig {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#aux_address Network#aux_address}
   */
-  readonly auxAddress?: { [key: string]: string };
+  readonly auxAddress?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The IP address of the gateway
   * 
@@ -140,6 +140,11 @@ function networkLabelsToTerraform(struct?: NetworkLabels): any {
 */
 export class Network extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_network";
+
   // ===========
   // INITIALIZER
   // ===========
@@ -180,11 +185,11 @@ export class Network extends cdktf.TerraformResource {
   // ==========
 
   // attachable - computed: false, optional: true, required: false
-  private _attachable?: boolean;
+  private _attachable?: boolean | cdktf.IResolvable;
   public get attachable() {
     return this.getBooleanAttribute('attachable');
   }
-  public set attachable(value: boolean ) {
+  public set attachable(value: boolean | cdktf.IResolvable ) {
     this._attachable = value;
   }
   public resetAttachable() {
@@ -196,11 +201,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // check_duplicate - computed: false, optional: true, required: false
-  private _checkDuplicate?: boolean;
+  private _checkDuplicate?: boolean | cdktf.IResolvable;
   public get checkDuplicate() {
     return this.getBooleanAttribute('check_duplicate');
   }
-  public set checkDuplicate(value: boolean ) {
+  public set checkDuplicate(value: boolean | cdktf.IResolvable ) {
     this._checkDuplicate = value;
   }
   public resetCheckDuplicate() {
@@ -233,11 +238,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // ingress - computed: false, optional: true, required: false
-  private _ingress?: boolean;
+  private _ingress?: boolean | cdktf.IResolvable;
   public get ingress() {
     return this.getBooleanAttribute('ingress');
   }
-  public set ingress(value: boolean ) {
+  public set ingress(value: boolean | cdktf.IResolvable ) {
     this._ingress = value;
   }
   public resetIngress() {
@@ -249,11 +254,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // internal - computed: true, optional: true, required: false
-  private _internal?: boolean;
+  private _internal?: boolean | cdktf.IResolvable;
   public get internal() {
     return this.getBooleanAttribute('internal');
   }
-  public set internal(value: boolean) {
+  public set internal(value: boolean | cdktf.IResolvable) {
     this._internal = value;
   }
   public resetInternal() {
@@ -281,11 +286,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // ipv6 - computed: false, optional: true, required: false
-  private _ipv6?: boolean;
+  private _ipv6?: boolean | cdktf.IResolvable;
   public get ipv6() {
     return this.getBooleanAttribute('ipv6');
   }
-  public set ipv6(value: boolean ) {
+  public set ipv6(value: boolean | cdktf.IResolvable ) {
     this._ipv6 = value;
   }
   public resetIpv6() {
@@ -310,11 +315,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // options - computed: true, optional: true, required: false
-  private _options?: { [key: string]: string }
-  public get options(): { [key: string]: string } {
+  private _options?: { [key: string]: string } | cdktf.IResolvable
+  public get options(): { [key: string]: string } | cdktf.IResolvable {
     return this.interpolationForAttribute('options') as any; // Getting the computed value is not yet implemented
   }
-  public set options(value: { [key: string]: string }) {
+  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
     this._options = value;
   }
   public resetOptions() {

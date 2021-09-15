@@ -42,6 +42,11 @@ export class DataDockerNetworkIpamConfig extends cdktf.ComplexComputedList {
 */
 export class DataDockerNetwork extends cdktf.TerraformDataSource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_network";
+
   // ===========
   // INITIALIZER
   // ===========

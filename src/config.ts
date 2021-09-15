@@ -26,6 +26,11 @@ export interface ConfigConfig extends cdktf.TerraformMetaArguments {
 */
 export class Config extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_config";
+
   // ===========
   // INITIALIZER
   // ===========
