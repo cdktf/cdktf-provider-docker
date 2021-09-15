@@ -227,7 +227,7 @@ export interface ServiceMode {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#global Service#global}
   */
-  readonly global?: boolean;
+  readonly global?: boolean | cdktf.IResolvable;
   /**
   * replicated block
   * 
@@ -540,13 +540,13 @@ export interface ServiceTaskSpecContainerSpecMountsVolumeOptions {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#driver_options Service#driver_options}
   */
-  readonly driverOptions?: { [key: string]: string };
+  readonly driverOptions?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Populate volume with data from the target
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#no_copy Service#no_copy}
   */
-  readonly noCopy?: boolean;
+  readonly noCopy?: boolean | cdktf.IResolvable;
   /**
   * labels block
   * 
@@ -571,7 +571,7 @@ export interface ServiceTaskSpecContainerSpecMounts {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#read_only Service#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Mount source (e.g. a volume name, a host path)
   * 
@@ -652,7 +652,7 @@ export interface ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#disable Service#disable}
   */
-  readonly disable?: boolean;
+  readonly disable?: boolean | cdktf.IResolvable;
   /**
   * SELinux level label
   * 
@@ -788,7 +788,7 @@ export interface ServiceTaskSpecContainerSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#env Service#env}
   */
-  readonly env?: { [key: string]: string };
+  readonly env?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * A list of additional groups that the container process will run as
   * 
@@ -818,7 +818,7 @@ export interface ServiceTaskSpecContainerSpec {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#read_only Service#read_only}
   */
-  readonly readOnly?: boolean;
+  readonly readOnly?: boolean | cdktf.IResolvable;
   /**
   * Amount of time to wait for the container to terminate before forcefully removing it (ms|s|m|h). If not specified or '0s' the destroy will not check if all tasks/containers of the service terminate.
   * 
@@ -925,7 +925,7 @@ export interface ServiceTaskSpecLogDriver {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service.html#options Service#options}
   */
-  readonly options?: { [key: string]: string };
+  readonly options?: { [key: string]: string } | cdktf.IResolvable;
 }
 
 function serviceTaskSpecLogDriverToTerraform(struct?: ServiceTaskSpecLogDriver): any {
@@ -1253,6 +1253,11 @@ function serviceUpdateConfigToTerraform(struct?: ServiceUpdateConfig): any {
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}
 */
 export class Service extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_service";
 
   // ===========
   // INITIALIZER

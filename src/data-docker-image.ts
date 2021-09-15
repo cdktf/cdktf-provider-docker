@@ -20,6 +20,11 @@ export interface DataDockerImageConfig extends cdktf.TerraformMetaArguments {
 */
 export class DataDockerImage extends cdktf.TerraformDataSource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_image";
+
   // ===========
   // INITIALIZER
   // ===========

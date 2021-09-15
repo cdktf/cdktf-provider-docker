@@ -100,6 +100,11 @@ function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAu
 */
 export class DockerProvider extends cdktf.TerraformProvider {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker";
+
   // ===========
   // INITIALIZER
   // ===========

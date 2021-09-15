@@ -18,7 +18,7 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}
   */
-  readonly driverOpts?: { [key: string]: string };
+  readonly driverOpts?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The name of the Docker volume (will be generated if not provided).
   * 
@@ -60,6 +60,11 @@ function volumeLabelsToTerraform(struct?: VolumeLabels): any {
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}
 */
 export class Volume extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_volume";
 
   // ===========
   // INITIALIZER
@@ -110,11 +115,11 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // driver_opts - computed: false, optional: true, required: false
-  private _driverOpts?: { [key: string]: string };
+  private _driverOpts?: { [key: string]: string } | cdktf.IResolvable;
   public get driverOpts() {
     return this.interpolationForAttribute('driver_opts') as any;
   }
-  public set driverOpts(value: { [key: string]: string } ) {
+  public set driverOpts(value: { [key: string]: string } | cdktf.IResolvable ) {
     this._driverOpts = value;
   }
   public resetDriverOpts() {

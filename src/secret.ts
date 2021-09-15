@@ -55,6 +55,11 @@ function secretLabelsToTerraform(struct?: SecretLabels): any {
 */
 export class Secret extends cdktf.TerraformResource {
 
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_secret";
+
   // ===========
   // INITIALIZER
   // ===========

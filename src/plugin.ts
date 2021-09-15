@@ -24,7 +24,7 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#enabled Plugin#enabled}
   */
-  readonly enabled?: boolean;
+  readonly enabled?: boolean | cdktf.IResolvable;
   /**
   * The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`
   * 
@@ -36,19 +36,19 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#force_destroy Plugin#force_destroy}
   */
-  readonly forceDestroy?: boolean;
+  readonly forceDestroy?: boolean | cdktf.IResolvable;
   /**
   * If true, then the plugin is disabled forcibly
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#force_disable Plugin#force_disable}
   */
-  readonly forceDisable?: boolean;
+  readonly forceDisable?: boolean | cdktf.IResolvable;
   /**
   * If true, grant all permissions necessary to run the plugin
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#grant_all_permissions Plugin#grant_all_permissions}
   */
-  readonly grantAllPermissions?: boolean;
+  readonly grantAllPermissions?: boolean | cdktf.IResolvable;
   /**
   * Docker Plugin name
   * 
@@ -90,6 +90,11 @@ function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermissions): any
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin}
 */
 export class Plugin extends cdktf.TerraformResource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType: string = "docker_plugin";
 
   // ===========
   // INITIALIZER
@@ -161,11 +166,11 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // enabled - computed: false, optional: true, required: false
-  private _enabled?: boolean;
+  private _enabled?: boolean | cdktf.IResolvable;
   public get enabled() {
     return this.getBooleanAttribute('enabled');
   }
-  public set enabled(value: boolean ) {
+  public set enabled(value: boolean | cdktf.IResolvable ) {
     this._enabled = value;
   }
   public resetEnabled() {
@@ -193,11 +198,11 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // force_destroy - computed: false, optional: true, required: false
-  private _forceDestroy?: boolean;
+  private _forceDestroy?: boolean | cdktf.IResolvable;
   public get forceDestroy() {
     return this.getBooleanAttribute('force_destroy');
   }
-  public set forceDestroy(value: boolean ) {
+  public set forceDestroy(value: boolean | cdktf.IResolvable ) {
     this._forceDestroy = value;
   }
   public resetForceDestroy() {
@@ -209,11 +214,11 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // force_disable - computed: false, optional: true, required: false
-  private _forceDisable?: boolean;
+  private _forceDisable?: boolean | cdktf.IResolvable;
   public get forceDisable() {
     return this.getBooleanAttribute('force_disable');
   }
-  public set forceDisable(value: boolean ) {
+  public set forceDisable(value: boolean | cdktf.IResolvable ) {
     this._forceDisable = value;
   }
   public resetForceDisable() {
@@ -225,11 +230,11 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // grant_all_permissions - computed: false, optional: true, required: false
-  private _grantAllPermissions?: boolean;
+  private _grantAllPermissions?: boolean | cdktf.IResolvable;
   public get grantAllPermissions() {
     return this.getBooleanAttribute('grant_all_permissions');
   }
-  public set grantAllPermissions(value: boolean ) {
+  public set grantAllPermissions(value: boolean | cdktf.IResolvable ) {
     this._grantAllPermissions = value;
   }
   public resetGrantAllPermissions() {
