@@ -30,7 +30,7 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#build RegistryImage#build}
   */
-  readonly buildAttribute?: RegistryImageBuild[];
+  readonly buildAttribute?: RegistryImageBuild;
 }
 export interface RegistryImageBuildAuthConfig {
   /**
@@ -85,6 +85,9 @@ export interface RegistryImageBuildAuthConfig {
 
 function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBuildAuthConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     auth: cdktf.stringToTerraform(struct!.auth),
     email: cdktf.stringToTerraform(struct!.email),
@@ -120,6 +123,9 @@ export interface RegistryImageBuildUlimit {
 
 function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildUlimit): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     hard: cdktf.numberToTerraform(struct!.hard),
     name: cdktf.stringToTerraform(struct!.name),
@@ -322,8 +328,11 @@ export interface RegistryImageBuild {
   readonly ulimit?: RegistryImageBuildUlimit[];
 }
 
-function registryImageBuildToTerraform(struct?: RegistryImageBuild): any {
+function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputReference | RegistryImageBuild): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     build_args: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.buildArgs),
     build_id: cdktf.stringToTerraform(struct!.buildId),
@@ -360,6 +369,529 @@ function registryImageBuildToTerraform(struct?: RegistryImageBuild): any {
   }
 }
 
+export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param isSingleItem True if this is a block, false if it's a list
+  */
+  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+    super(terraformResource, terraformAttribute, isSingleItem);
+  }
+
+  // build_args - computed: false, optional: true, required: false
+  private _buildArgs?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get buildArgs() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('build_args') as any;
+  }
+  public set buildArgs(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._buildArgs = value;
+  }
+  public resetBuildArgs() {
+    this._buildArgs = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get buildArgsInput() {
+    return this._buildArgs
+  }
+
+  // build_id - computed: false, optional: true, required: false
+  private _buildId?: string | undefined; 
+  public get buildId() {
+    return this.getStringAttribute('build_id');
+  }
+  public set buildId(value: string | undefined) {
+    this._buildId = value;
+  }
+  public resetBuildId() {
+    this._buildId = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get buildIdInput() {
+    return this._buildId
+  }
+
+  // cache_from - computed: false, optional: true, required: false
+  private _cacheFrom?: string[] | undefined; 
+  public get cacheFrom() {
+    return this.getListAttribute('cache_from');
+  }
+  public set cacheFrom(value: string[] | undefined) {
+    this._cacheFrom = value;
+  }
+  public resetCacheFrom() {
+    this._cacheFrom = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cacheFromInput() {
+    return this._cacheFrom
+  }
+
+  // cgroup_parent - computed: false, optional: true, required: false
+  private _cgroupParent?: string | undefined; 
+  public get cgroupParent() {
+    return this.getStringAttribute('cgroup_parent');
+  }
+  public set cgroupParent(value: string | undefined) {
+    this._cgroupParent = value;
+  }
+  public resetCgroupParent() {
+    this._cgroupParent = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cgroupParentInput() {
+    return this._cgroupParent
+  }
+
+  // context - computed: false, optional: false, required: true
+  private _context?: string; 
+  public get context() {
+    return this.getStringAttribute('context');
+  }
+  public set context(value: string) {
+    this._context = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get contextInput() {
+    return this._context
+  }
+
+  // cpu_period - computed: false, optional: true, required: false
+  private _cpuPeriod?: number | undefined; 
+  public get cpuPeriod() {
+    return this.getNumberAttribute('cpu_period');
+  }
+  public set cpuPeriod(value: number | undefined) {
+    this._cpuPeriod = value;
+  }
+  public resetCpuPeriod() {
+    this._cpuPeriod = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cpuPeriodInput() {
+    return this._cpuPeriod
+  }
+
+  // cpu_quota - computed: false, optional: true, required: false
+  private _cpuQuota?: number | undefined; 
+  public get cpuQuota() {
+    return this.getNumberAttribute('cpu_quota');
+  }
+  public set cpuQuota(value: number | undefined) {
+    this._cpuQuota = value;
+  }
+  public resetCpuQuota() {
+    this._cpuQuota = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cpuQuotaInput() {
+    return this._cpuQuota
+  }
+
+  // cpu_set_cpus - computed: false, optional: true, required: false
+  private _cpuSetCpus?: string | undefined; 
+  public get cpuSetCpus() {
+    return this.getStringAttribute('cpu_set_cpus');
+  }
+  public set cpuSetCpus(value: string | undefined) {
+    this._cpuSetCpus = value;
+  }
+  public resetCpuSetCpus() {
+    this._cpuSetCpus = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cpuSetCpusInput() {
+    return this._cpuSetCpus
+  }
+
+  // cpu_set_mems - computed: false, optional: true, required: false
+  private _cpuSetMems?: string | undefined; 
+  public get cpuSetMems() {
+    return this.getStringAttribute('cpu_set_mems');
+  }
+  public set cpuSetMems(value: string | undefined) {
+    this._cpuSetMems = value;
+  }
+  public resetCpuSetMems() {
+    this._cpuSetMems = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cpuSetMemsInput() {
+    return this._cpuSetMems
+  }
+
+  // cpu_shares - computed: false, optional: true, required: false
+  private _cpuShares?: number | undefined; 
+  public get cpuShares() {
+    return this.getNumberAttribute('cpu_shares');
+  }
+  public set cpuShares(value: number | undefined) {
+    this._cpuShares = value;
+  }
+  public resetCpuShares() {
+    this._cpuShares = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cpuSharesInput() {
+    return this._cpuShares
+  }
+
+  // dockerfile - computed: false, optional: true, required: false
+  private _dockerfile?: string | undefined; 
+  public get dockerfile() {
+    return this.getStringAttribute('dockerfile');
+  }
+  public set dockerfile(value: string | undefined) {
+    this._dockerfile = value;
+  }
+  public resetDockerfile() {
+    this._dockerfile = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get dockerfileInput() {
+    return this._dockerfile
+  }
+
+  // extra_hosts - computed: false, optional: true, required: false
+  private _extraHosts?: string[] | undefined; 
+  public get extraHosts() {
+    return this.getListAttribute('extra_hosts');
+  }
+  public set extraHosts(value: string[] | undefined) {
+    this._extraHosts = value;
+  }
+  public resetExtraHosts() {
+    this._extraHosts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get extraHostsInput() {
+    return this._extraHosts
+  }
+
+  // force_remove - computed: false, optional: true, required: false
+  private _forceRemove?: boolean | cdktf.IResolvable | undefined; 
+  public get forceRemove() {
+    return this.getBooleanAttribute('force_remove') as any;
+  }
+  public set forceRemove(value: boolean | cdktf.IResolvable | undefined) {
+    this._forceRemove = value;
+  }
+  public resetForceRemove() {
+    this._forceRemove = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get forceRemoveInput() {
+    return this._forceRemove
+  }
+
+  // isolation - computed: false, optional: true, required: false
+  private _isolation?: string | undefined; 
+  public get isolation() {
+    return this.getStringAttribute('isolation');
+  }
+  public set isolation(value: string | undefined) {
+    this._isolation = value;
+  }
+  public resetIsolation() {
+    this._isolation = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get isolationInput() {
+    return this._isolation
+  }
+
+  // labels - computed: false, optional: true, required: false
+  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  public get labels() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('labels') as any;
+  }
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+    this._labels = value;
+  }
+  public resetLabels() {
+    this._labels = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelsInput() {
+    return this._labels
+  }
+
+  // memory - computed: false, optional: true, required: false
+  private _memory?: number | undefined; 
+  public get memory() {
+    return this.getNumberAttribute('memory');
+  }
+  public set memory(value: number | undefined) {
+    this._memory = value;
+  }
+  public resetMemory() {
+    this._memory = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get memoryInput() {
+    return this._memory
+  }
+
+  // memory_swap - computed: false, optional: true, required: false
+  private _memorySwap?: number | undefined; 
+  public get memorySwap() {
+    return this.getNumberAttribute('memory_swap');
+  }
+  public set memorySwap(value: number | undefined) {
+    this._memorySwap = value;
+  }
+  public resetMemorySwap() {
+    this._memorySwap = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get memorySwapInput() {
+    return this._memorySwap
+  }
+
+  // network_mode - computed: false, optional: true, required: false
+  private _networkMode?: string | undefined; 
+  public get networkMode() {
+    return this.getStringAttribute('network_mode');
+  }
+  public set networkMode(value: string | undefined) {
+    this._networkMode = value;
+  }
+  public resetNetworkMode() {
+    this._networkMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get networkModeInput() {
+    return this._networkMode
+  }
+
+  // no_cache - computed: false, optional: true, required: false
+  private _noCache?: boolean | cdktf.IResolvable | undefined; 
+  public get noCache() {
+    return this.getBooleanAttribute('no_cache') as any;
+  }
+  public set noCache(value: boolean | cdktf.IResolvable | undefined) {
+    this._noCache = value;
+  }
+  public resetNoCache() {
+    this._noCache = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get noCacheInput() {
+    return this._noCache
+  }
+
+  // platform - computed: false, optional: true, required: false
+  private _platform?: string | undefined; 
+  public get platform() {
+    return this.getStringAttribute('platform');
+  }
+  public set platform(value: string | undefined) {
+    this._platform = value;
+  }
+  public resetPlatform() {
+    this._platform = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get platformInput() {
+    return this._platform
+  }
+
+  // pull_parent - computed: false, optional: true, required: false
+  private _pullParent?: boolean | cdktf.IResolvable | undefined; 
+  public get pullParent() {
+    return this.getBooleanAttribute('pull_parent') as any;
+  }
+  public set pullParent(value: boolean | cdktf.IResolvable | undefined) {
+    this._pullParent = value;
+  }
+  public resetPullParent() {
+    this._pullParent = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get pullParentInput() {
+    return this._pullParent
+  }
+
+  // remote_context - computed: false, optional: true, required: false
+  private _remoteContext?: string | undefined; 
+  public get remoteContext() {
+    return this.getStringAttribute('remote_context');
+  }
+  public set remoteContext(value: string | undefined) {
+    this._remoteContext = value;
+  }
+  public resetRemoteContext() {
+    this._remoteContext = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get remoteContextInput() {
+    return this._remoteContext
+  }
+
+  // remove - computed: false, optional: true, required: false
+  private _remove?: boolean | cdktf.IResolvable | undefined; 
+  public get remove() {
+    return this.getBooleanAttribute('remove') as any;
+  }
+  public set remove(value: boolean | cdktf.IResolvable | undefined) {
+    this._remove = value;
+  }
+  public resetRemove() {
+    this._remove = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get removeInput() {
+    return this._remove
+  }
+
+  // security_opt - computed: false, optional: true, required: false
+  private _securityOpt?: string[] | undefined; 
+  public get securityOpt() {
+    return this.getListAttribute('security_opt');
+  }
+  public set securityOpt(value: string[] | undefined) {
+    this._securityOpt = value;
+  }
+  public resetSecurityOpt() {
+    this._securityOpt = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get securityOptInput() {
+    return this._securityOpt
+  }
+
+  // session_id - computed: false, optional: true, required: false
+  private _sessionId?: string | undefined; 
+  public get sessionId() {
+    return this.getStringAttribute('session_id');
+  }
+  public set sessionId(value: string | undefined) {
+    this._sessionId = value;
+  }
+  public resetSessionId() {
+    this._sessionId = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sessionIdInput() {
+    return this._sessionId
+  }
+
+  // shm_size - computed: false, optional: true, required: false
+  private _shmSize?: number | undefined; 
+  public get shmSize() {
+    return this.getNumberAttribute('shm_size');
+  }
+  public set shmSize(value: number | undefined) {
+    this._shmSize = value;
+  }
+  public resetShmSize() {
+    this._shmSize = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get shmSizeInput() {
+    return this._shmSize
+  }
+
+  // squash - computed: false, optional: true, required: false
+  private _squash?: boolean | cdktf.IResolvable | undefined; 
+  public get squash() {
+    return this.getBooleanAttribute('squash') as any;
+  }
+  public set squash(value: boolean | cdktf.IResolvable | undefined) {
+    this._squash = value;
+  }
+  public resetSquash() {
+    this._squash = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get squashInput() {
+    return this._squash
+  }
+
+  // suppress_output - computed: false, optional: true, required: false
+  private _suppressOutput?: boolean | cdktf.IResolvable | undefined; 
+  public get suppressOutput() {
+    return this.getBooleanAttribute('suppress_output') as any;
+  }
+  public set suppressOutput(value: boolean | cdktf.IResolvable | undefined) {
+    this._suppressOutput = value;
+  }
+  public resetSuppressOutput() {
+    this._suppressOutput = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get suppressOutputInput() {
+    return this._suppressOutput
+  }
+
+  // target - computed: false, optional: true, required: false
+  private _target?: string | undefined; 
+  public get target() {
+    return this.getStringAttribute('target');
+  }
+  public set target(value: string | undefined) {
+    this._target = value;
+  }
+  public resetTarget() {
+    this._target = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetInput() {
+    return this._target
+  }
+
+  // version - computed: false, optional: true, required: false
+  private _version?: string | undefined; 
+  public get version() {
+    return this.getStringAttribute('version');
+  }
+  public set version(value: string | undefined) {
+    this._version = value;
+  }
+  public resetVersion() {
+    this._version = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get versionInput() {
+    return this._version
+  }
+
+  // auth_config - computed: false, optional: true, required: false
+  private _authConfig?: RegistryImageBuildAuthConfig[] | undefined; 
+  public get authConfig() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('auth_config') as any;
+  }
+  public set authConfig(value: RegistryImageBuildAuthConfig[] | undefined) {
+    this._authConfig = value;
+  }
+  public resetAuthConfig() {
+    this._authConfig = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get authConfigInput() {
+    return this._authConfig
+  }
+
+  // ulimit - computed: false, optional: true, required: false
+  private _ulimit?: RegistryImageBuildUlimit[] | undefined; 
+  public get ulimit() {
+    // Getting the computed value is not yet implemented
+    return this.interpolationForAttribute('ulimit') as any;
+  }
+  public set ulimit(value: RegistryImageBuildUlimit[] | undefined) {
+    this._ulimit = value;
+  }
+  public resetUlimit() {
+    this._ulimit = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ulimitInput() {
+    return this._ulimit
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image}
@@ -409,11 +941,11 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
-  private _insecureSkipVerify?: boolean | cdktf.IResolvable;
+  private _insecureSkipVerify?: boolean | cdktf.IResolvable | undefined; 
   public get insecureSkipVerify() {
-    return this.getBooleanAttribute('insecure_skip_verify');
+    return this.getBooleanAttribute('insecure_skip_verify') as any;
   }
-  public set insecureSkipVerify(value: boolean | cdktf.IResolvable ) {
+  public set insecureSkipVerify(value: boolean | cdktf.IResolvable | undefined) {
     this._insecureSkipVerify = value;
   }
   public resetInsecureSkipVerify() {
@@ -425,11 +957,11 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // keep_remotely - computed: false, optional: true, required: false
-  private _keepRemotely?: boolean | cdktf.IResolvable;
+  private _keepRemotely?: boolean | cdktf.IResolvable | undefined; 
   public get keepRemotely() {
-    return this.getBooleanAttribute('keep_remotely');
+    return this.getBooleanAttribute('keep_remotely') as any;
   }
-  public set keepRemotely(value: boolean | cdktf.IResolvable ) {
+  public set keepRemotely(value: boolean | cdktf.IResolvable | undefined) {
     this._keepRemotely = value;
   }
   public resetKeepRemotely() {
@@ -441,7 +973,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // name - computed: false, optional: false, required: true
-  private _name: string;
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
@@ -459,11 +991,12 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // build - computed: false, optional: true, required: false
-  private _build?: RegistryImageBuild[];
+  private _build?: RegistryImageBuild | undefined; 
+  private __buildOutput = new RegistryImageBuildOutputReference(this as any, "build", true);
   public get buildAttribute() {
-    return this.interpolationForAttribute('build') as any;
+    return this.__buildOutput;
   }
-  public set buildAttribute(value: RegistryImageBuild[] ) {
+  public putBuildAttribute(value: RegistryImageBuild | undefined) {
     this._build = value;
   }
   public resetBuildAttribute() {
@@ -483,7 +1016,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       insecure_skip_verify: cdktf.booleanToTerraform(this._insecureSkipVerify),
       keep_remotely: cdktf.booleanToTerraform(this._keepRemotely),
       name: cdktf.stringToTerraform(this._name),
-      build: cdktf.listMapper(registryImageBuildToTerraform)(this._build),
+      build: registryImageBuildToTerraform(this._build),
     };
   }
 }

@@ -49,6 +49,9 @@ export interface VolumeLabels {
 
 function volumeLabelsToTerraform(struct?: VolumeLabels): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     label: cdktf.stringToTerraform(struct!.label),
     value: cdktf.stringToTerraform(struct!.value),
@@ -99,11 +102,11 @@ export class Volume extends cdktf.TerraformResource {
   // ==========
 
   // driver - computed: true, optional: true, required: false
-  private _driver?: string;
+  private _driver?: string | undefined; 
   public get driver() {
     return this.getStringAttribute('driver');
   }
-  public set driver(value: string) {
+  public set driver(value: string | undefined) {
     this._driver = value;
   }
   public resetDriver() {
@@ -115,11 +118,12 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // driver_opts - computed: false, optional: true, required: false
-  private _driverOpts?: { [key: string]: string } | cdktf.IResolvable;
+  private _driverOpts?: { [key: string]: string } | cdktf.IResolvable | undefined; 
   public get driverOpts() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('driver_opts') as any;
   }
-  public set driverOpts(value: { [key: string]: string } | cdktf.IResolvable ) {
+  public set driverOpts(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
     this._driverOpts = value;
   }
   public resetDriverOpts() {
@@ -141,11 +145,11 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // name - computed: true, optional: true, required: false
-  private _name?: string;
+  private _name?: string | undefined; 
   public get name() {
     return this.getStringAttribute('name');
   }
-  public set name(value: string) {
+  public set name(value: string | undefined) {
     this._name = value;
   }
   public resetName() {
@@ -157,11 +161,12 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: VolumeLabels[];
+  private _labels?: VolumeLabels[] | undefined; 
   public get labels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: VolumeLabels[] ) {
+  public set labels(value: VolumeLabels[] | undefined) {
     this._labels = value;
   }
   public resetLabels() {
