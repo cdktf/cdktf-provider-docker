@@ -62,7 +62,7 @@ export class Config extends cdktf.TerraformResource {
   // ==========
 
   // data - computed: false, optional: false, required: true
-  private _data: string;
+  private _data?: string; 
   public get data() {
     return this.getStringAttribute('data');
   }
@@ -80,7 +80,7 @@ export class Config extends cdktf.TerraformResource {
   }
 
   // name - computed: false, optional: false, required: true
-  private _name: string;
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }

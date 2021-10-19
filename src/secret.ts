@@ -43,6 +43,9 @@ export interface SecretLabels {
 
 function secretLabelsToTerraform(struct?: SecretLabels): any {
   if (!cdktf.canInspect(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
   return {
     label: cdktf.stringToTerraform(struct!.label),
     value: cdktf.stringToTerraform(struct!.value),
@@ -92,7 +95,7 @@ export class Secret extends cdktf.TerraformResource {
   // ==========
 
   // data - computed: false, optional: false, required: true
-  private _data: string;
+  private _data?: string; 
   public get data() {
     return this.getStringAttribute('data');
   }
@@ -110,7 +113,7 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // name - computed: false, optional: false, required: true
-  private _name: string;
+  private _name?: string; 
   public get name() {
     return this.getStringAttribute('name');
   }
@@ -123,11 +126,12 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: SecretLabels[];
+  private _labels?: SecretLabels[] | undefined; 
   public get labels() {
+    // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: SecretLabels[] ) {
+  public set labels(value: SecretLabels[] | undefined) {
     this._labels = value;
   }
   public resetLabels() {
