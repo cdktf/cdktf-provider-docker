@@ -77,7 +77,7 @@ export interface PluginGrantPermissions {
   readonly value: string[];
 }
 
-function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermissions): any {
+export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermissions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -137,11 +137,11 @@ export class Plugin extends cdktf.TerraformResource {
   // ==========
 
   // alias - computed: true, optional: true, required: false
-  private _alias?: string | undefined; 
+  private _alias?: string; 
   public get alias() {
     return this.getStringAttribute('alias');
   }
-  public set alias(value: string | undefined) {
+  public set alias(value: string) {
     this._alias = value;
   }
   public resetAlias() {
@@ -149,15 +149,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get aliasInput() {
-    return this._alias
+    return this._alias;
   }
 
   // enable_timeout - computed: false, optional: true, required: false
-  private _enableTimeout?: number | undefined; 
+  private _enableTimeout?: number; 
   public get enableTimeout() {
     return this.getNumberAttribute('enable_timeout');
   }
-  public set enableTimeout(value: number | undefined) {
+  public set enableTimeout(value: number) {
     this._enableTimeout = value;
   }
   public resetEnableTimeout() {
@@ -165,15 +165,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get enableTimeoutInput() {
-    return this._enableTimeout
+    return this._enableTimeout;
   }
 
   // enabled - computed: false, optional: true, required: false
-  private _enabled?: boolean | cdktf.IResolvable | undefined; 
+  private _enabled?: boolean | cdktf.IResolvable; 
   public get enabled() {
     return this.getBooleanAttribute('enabled') as any;
   }
-  public set enabled(value: boolean | cdktf.IResolvable | undefined) {
+  public set enabled(value: boolean | cdktf.IResolvable) {
     this._enabled = value;
   }
   public resetEnabled() {
@@ -181,15 +181,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get enabledInput() {
-    return this._enabled
+    return this._enabled;
   }
 
   // env - computed: true, optional: true, required: false
-  private _env?: string[] | undefined; 
+  private _env?: string[]; 
   public get env() {
     return this.getListAttribute('env');
   }
-  public set env(value: string[] | undefined) {
+  public set env(value: string[]) {
     this._env = value;
   }
   public resetEnv() {
@@ -197,15 +197,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get envInput() {
-    return this._env
+    return this._env;
   }
 
   // force_destroy - computed: false, optional: true, required: false
-  private _forceDestroy?: boolean | cdktf.IResolvable | undefined; 
+  private _forceDestroy?: boolean | cdktf.IResolvable; 
   public get forceDestroy() {
     return this.getBooleanAttribute('force_destroy') as any;
   }
-  public set forceDestroy(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceDestroy(value: boolean | cdktf.IResolvable) {
     this._forceDestroy = value;
   }
   public resetForceDestroy() {
@@ -213,15 +213,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get forceDestroyInput() {
-    return this._forceDestroy
+    return this._forceDestroy;
   }
 
   // force_disable - computed: false, optional: true, required: false
-  private _forceDisable?: boolean | cdktf.IResolvable | undefined; 
+  private _forceDisable?: boolean | cdktf.IResolvable; 
   public get forceDisable() {
     return this.getBooleanAttribute('force_disable') as any;
   }
-  public set forceDisable(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceDisable(value: boolean | cdktf.IResolvable) {
     this._forceDisable = value;
   }
   public resetForceDisable() {
@@ -229,15 +229,15 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get forceDisableInput() {
-    return this._forceDisable
+    return this._forceDisable;
   }
 
   // grant_all_permissions - computed: false, optional: true, required: false
-  private _grantAllPermissions?: boolean | cdktf.IResolvable | undefined; 
+  private _grantAllPermissions?: boolean | cdktf.IResolvable; 
   public get grantAllPermissions() {
     return this.getBooleanAttribute('grant_all_permissions') as any;
   }
-  public set grantAllPermissions(value: boolean | cdktf.IResolvable | undefined) {
+  public set grantAllPermissions(value: boolean | cdktf.IResolvable) {
     this._grantAllPermissions = value;
   }
   public resetGrantAllPermissions() {
@@ -245,7 +245,7 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get grantAllPermissionsInput() {
-    return this._grantAllPermissions
+    return this._grantAllPermissions;
   }
 
   // id - computed: true, optional: true, required: false
@@ -263,7 +263,7 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // plugin_reference - computed: true, optional: false, required: false
@@ -272,12 +272,12 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // grant_permissions - computed: false, optional: true, required: false
-  private _grantPermissions?: PluginGrantPermissions[] | undefined; 
+  private _grantPermissions?: PluginGrantPermissions[]; 
   public get grantPermissions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('grant_permissions') as any;
   }
-  public set grantPermissions(value: PluginGrantPermissions[] | undefined) {
+  public set grantPermissions(value: PluginGrantPermissions[]) {
     this._grantPermissions = value;
   }
   public resetGrantPermissions() {
@@ -285,7 +285,7 @@ export class Plugin extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get grantPermissionsInput() {
-    return this._grantPermissions
+    return this._grantPermissions;
   }
 
   // =========

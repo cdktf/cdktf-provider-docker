@@ -83,7 +83,7 @@ export interface DockerProviderRegistryAuth {
   readonly username?: string;
 }
 
-function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuthOutputReference | DockerProviderRegistryAuth): any {
+export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuth): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -97,93 +97,6 @@ function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAu
   }
 }
 
-export class DockerProviderRegistryAuthOutputReference extends cdktf.ComplexObject {
-  /**
-  * @param terraformResource The parent resource
-  * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
-  */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
-  }
-
-  // address - computed: false, optional: false, required: true
-  private _address?: string; 
-  public get address() {
-    return this._address;
-  }
-  public set address(value: string| undefined) {
-    this._address = value;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get addressInput() {
-    return this._address
-  }
-
-  // config_file - computed: false, optional: true, required: false
-  private _configFile?: string | undefined; 
-  public get configFile() {
-    return this._configFile;
-  }
-  public set configFile(value: string | undefined| undefined) {
-    this._configFile = value;
-  }
-  public resetConfigFile() {
-    this._configFile = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get configFileInput() {
-    return this._configFile
-  }
-
-  // config_file_content - computed: false, optional: true, required: false
-  private _configFileContent?: string | undefined; 
-  public get configFileContent() {
-    return this._configFileContent;
-  }
-  public set configFileContent(value: string | undefined| undefined) {
-    this._configFileContent = value;
-  }
-  public resetConfigFileContent() {
-    this._configFileContent = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get configFileContentInput() {
-    return this._configFileContent
-  }
-
-  // password - computed: false, optional: true, required: false
-  private _password?: string | undefined; 
-  public get password() {
-    return this._password;
-  }
-  public set password(value: string | undefined| undefined) {
-    this._password = value;
-  }
-  public resetPassword() {
-    this._password = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get passwordInput() {
-    return this._password
-  }
-
-  // username - computed: false, optional: true, required: false
-  private _username?: string | undefined; 
-  public get username() {
-    return this._username;
-  }
-  public set username(value: string | undefined| undefined) {
-    this._username = value;
-  }
-  public resetUsername() {
-    this._username = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get usernameInput() {
-    return this._username
-  }
-}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/docker docker}
@@ -229,11 +142,11 @@ export class DockerProvider extends cdktf.TerraformProvider {
   // ==========
 
   // ca_material - computed: false, optional: true, required: false
-  private _caMaterial?: string | undefined; 
+  private _caMaterial?: string; 
   public get caMaterial() {
     return this._caMaterial;
   }
-  public set caMaterial(value: string | undefined| undefined) {
+  public set caMaterial(value: string | undefined) {
     this._caMaterial = value;
   }
   public resetCaMaterial() {
@@ -241,15 +154,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get caMaterialInput() {
-    return this._caMaterial
+    return this._caMaterial;
   }
 
   // cert_material - computed: false, optional: true, required: false
-  private _certMaterial?: string | undefined; 
+  private _certMaterial?: string; 
   public get certMaterial() {
     return this._certMaterial;
   }
-  public set certMaterial(value: string | undefined| undefined) {
+  public set certMaterial(value: string | undefined) {
     this._certMaterial = value;
   }
   public resetCertMaterial() {
@@ -257,15 +170,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get certMaterialInput() {
-    return this._certMaterial
+    return this._certMaterial;
   }
 
   // cert_path - computed: false, optional: true, required: false
-  private _certPath?: string | undefined; 
+  private _certPath?: string; 
   public get certPath() {
     return this._certPath;
   }
-  public set certPath(value: string | undefined| undefined) {
+  public set certPath(value: string | undefined) {
     this._certPath = value;
   }
   public resetCertPath() {
@@ -273,15 +186,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get certPathInput() {
-    return this._certPath
+    return this._certPath;
   }
 
   // host - computed: false, optional: true, required: false
-  private _host?: string | undefined; 
+  private _host?: string; 
   public get host() {
     return this._host;
   }
-  public set host(value: string | undefined| undefined) {
+  public set host(value: string | undefined) {
     this._host = value;
   }
   public resetHost() {
@@ -289,15 +202,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // key_material - computed: false, optional: true, required: false
-  private _keyMaterial?: string | undefined; 
+  private _keyMaterial?: string; 
   public get keyMaterial() {
     return this._keyMaterial;
   }
-  public set keyMaterial(value: string | undefined| undefined) {
+  public set keyMaterial(value: string | undefined) {
     this._keyMaterial = value;
   }
   public resetKeyMaterial() {
@@ -305,15 +218,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get keyMaterialInput() {
-    return this._keyMaterial
+    return this._keyMaterial;
   }
 
   // alias - computed: false, optional: true, required: false
-  private _alias?: string | undefined; 
+  private _alias?: string; 
   public get alias() {
     return this._alias;
   }
-  public set alias(value: string | undefined| undefined) {
+  public set alias(value: string | undefined) {
     this._alias = value;
   }
   public resetAlias() {
@@ -321,15 +234,15 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get aliasInput() {
-    return this._alias
+    return this._alias;
   }
 
   // registry_auth - computed: false, optional: true, required: false
-  private _registryAuth?: DockerProviderRegistryAuth | undefined; 
+  private _registryAuth?: DockerProviderRegistryAuth; 
   public get registryAuth() {
     return this._registryAuth;
   }
-  public set registryAuth(value: DockerProviderRegistryAuth | undefined| undefined) {
+  public set registryAuth(value: DockerProviderRegistryAuth | undefined) {
     this._registryAuth = value;
   }
   public resetRegistryAuth() {
@@ -337,7 +250,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
   // Temporarily expose input value. Use with caution.
   public get registryAuthInput() {
-    return this._registryAuth
+    return this._registryAuth;
   }
 
   // =========

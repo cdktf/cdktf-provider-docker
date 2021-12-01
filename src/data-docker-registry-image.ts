@@ -67,11 +67,11 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
-  private _insecureSkipVerify?: boolean | cdktf.IResolvable | undefined; 
+  private _insecureSkipVerify?: boolean | cdktf.IResolvable; 
   public get insecureSkipVerify() {
     return this.getBooleanAttribute('insecure_skip_verify') as any;
   }
-  public set insecureSkipVerify(value: boolean | cdktf.IResolvable | undefined) {
+  public set insecureSkipVerify(value: boolean | cdktf.IResolvable) {
     this._insecureSkipVerify = value;
   }
   public resetInsecureSkipVerify() {
@@ -79,7 +79,7 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   }
   // Temporarily expose input value. Use with caution.
   public get insecureSkipVerifyInput() {
-    return this._insecureSkipVerify
+    return this._insecureSkipVerify;
   }
 
   // name - computed: false, optional: false, required: true
@@ -92,7 +92,7 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // sha256_digest - computed: true, optional: false, required: false

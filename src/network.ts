@@ -101,7 +101,7 @@ export interface NetworkIpamConfig {
   readonly subnet?: string;
 }
 
-function networkIpamConfigToTerraform(struct?: NetworkIpamConfig): any {
+export function networkIpamConfigToTerraform(struct?: NetworkIpamConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -129,7 +129,7 @@ export interface NetworkLabels {
   readonly value: string;
 }
 
-function networkLabelsToTerraform(struct?: NetworkLabels): any {
+export function networkLabelsToTerraform(struct?: NetworkLabels): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -191,11 +191,11 @@ export class Network extends cdktf.TerraformResource {
   // ==========
 
   // attachable - computed: false, optional: true, required: false
-  private _attachable?: boolean | cdktf.IResolvable | undefined; 
+  private _attachable?: boolean | cdktf.IResolvable; 
   public get attachable() {
     return this.getBooleanAttribute('attachable') as any;
   }
-  public set attachable(value: boolean | cdktf.IResolvable | undefined) {
+  public set attachable(value: boolean | cdktf.IResolvable) {
     this._attachable = value;
   }
   public resetAttachable() {
@@ -203,15 +203,15 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get attachableInput() {
-    return this._attachable
+    return this._attachable;
   }
 
   // check_duplicate - computed: false, optional: true, required: false
-  private _checkDuplicate?: boolean | cdktf.IResolvable | undefined; 
+  private _checkDuplicate?: boolean | cdktf.IResolvable; 
   public get checkDuplicate() {
     return this.getBooleanAttribute('check_duplicate') as any;
   }
-  public set checkDuplicate(value: boolean | cdktf.IResolvable | undefined) {
+  public set checkDuplicate(value: boolean | cdktf.IResolvable) {
     this._checkDuplicate = value;
   }
   public resetCheckDuplicate() {
@@ -219,15 +219,15 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get checkDuplicateInput() {
-    return this._checkDuplicate
+    return this._checkDuplicate;
   }
 
   // driver - computed: true, optional: true, required: false
-  private _driver?: string | undefined; 
+  private _driver?: string; 
   public get driver() {
     return this.getStringAttribute('driver');
   }
-  public set driver(value: string | undefined) {
+  public set driver(value: string) {
     this._driver = value;
   }
   public resetDriver() {
@@ -235,7 +235,7 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get driverInput() {
-    return this._driver
+    return this._driver;
   }
 
   // id - computed: true, optional: true, required: false
@@ -244,11 +244,11 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // ingress - computed: false, optional: true, required: false
-  private _ingress?: boolean | cdktf.IResolvable | undefined; 
+  private _ingress?: boolean | cdktf.IResolvable; 
   public get ingress() {
     return this.getBooleanAttribute('ingress') as any;
   }
-  public set ingress(value: boolean | cdktf.IResolvable | undefined) {
+  public set ingress(value: boolean | cdktf.IResolvable) {
     this._ingress = value;
   }
   public resetIngress() {
@@ -256,15 +256,15 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ingressInput() {
-    return this._ingress
+    return this._ingress;
   }
 
   // internal - computed: true, optional: true, required: false
-  private _internal?: boolean | cdktf.IResolvable | undefined; 
+  private _internal?: boolean | cdktf.IResolvable; 
   public get internal() {
     return this.getBooleanAttribute('internal') as any;
   }
-  public set internal(value: boolean | cdktf.IResolvable | undefined) {
+  public set internal(value: boolean | cdktf.IResolvable) {
     this._internal = value;
   }
   public resetInternal() {
@@ -272,15 +272,15 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get internalInput() {
-    return this._internal
+    return this._internal;
   }
 
   // ipam_driver - computed: false, optional: true, required: false
-  private _ipamDriver?: string | undefined; 
+  private _ipamDriver?: string; 
   public get ipamDriver() {
     return this.getStringAttribute('ipam_driver');
   }
-  public set ipamDriver(value: string | undefined) {
+  public set ipamDriver(value: string) {
     this._ipamDriver = value;
   }
   public resetIpamDriver() {
@@ -288,15 +288,15 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ipamDriverInput() {
-    return this._ipamDriver
+    return this._ipamDriver;
   }
 
   // ipv6 - computed: false, optional: true, required: false
-  private _ipv6?: boolean | cdktf.IResolvable | undefined; 
+  private _ipv6?: boolean | cdktf.IResolvable; 
   public get ipv6() {
     return this.getBooleanAttribute('ipv6') as any;
   }
-  public set ipv6(value: boolean | cdktf.IResolvable | undefined) {
+  public set ipv6(value: boolean | cdktf.IResolvable) {
     this._ipv6 = value;
   }
   public resetIpv6() {
@@ -304,7 +304,7 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ipv6Input() {
-    return this._ipv6
+    return this._ipv6;
   }
 
   // name - computed: false, optional: false, required: true
@@ -317,16 +317,16 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // options - computed: true, optional: true, required: false
-  private _options?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _options?: { [key: string]: string } | cdktf.IResolvable; 
   public get options() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('options') as any;
   }
-  public set options(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set options(value: { [key: string]: string } | cdktf.IResolvable) {
     this._options = value;
   }
   public resetOptions() {
@@ -334,7 +334,7 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get optionsInput() {
-    return this._options
+    return this._options;
   }
 
   // scope - computed: true, optional: false, required: false
@@ -343,12 +343,12 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // ipam_config - computed: false, optional: true, required: false
-  private _ipamConfig?: NetworkIpamConfig[] | undefined; 
+  private _ipamConfig?: NetworkIpamConfig[]; 
   public get ipamConfig() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ipam_config') as any;
   }
-  public set ipamConfig(value: NetworkIpamConfig[] | undefined) {
+  public set ipamConfig(value: NetworkIpamConfig[]) {
     this._ipamConfig = value;
   }
   public resetIpamConfig() {
@@ -356,16 +356,16 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ipamConfigInput() {
-    return this._ipamConfig
+    return this._ipamConfig;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: NetworkLabels[] | undefined; 
+  private _labels?: NetworkLabels[]; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: NetworkLabels[] | undefined) {
+  public set labels(value: NetworkLabels[]) {
     this._labels = value;
   }
   public resetLabels() {
@@ -373,7 +373,7 @@ export class Network extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // =========
