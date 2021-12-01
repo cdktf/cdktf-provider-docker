@@ -402,7 +402,7 @@ export interface ContainerCapabilities {
   readonly drop?: string[];
 }
 
-function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities): any {
+export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -423,12 +423,37 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ContainerCapabilities | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._add) {
+      hasAnyValues = true;
+      internalValueResult.add = this._add;
+    }
+    if (this._drop) {
+      hasAnyValues = true;
+      internalValueResult.drop = this._drop;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerCapabilities | undefined) {
+    if (value === undefined) {
+      this._add = undefined;
+      this._drop = undefined;
+    }
+    else {
+      this._add = value.add;
+      this._drop = value.drop;
+    }
+  }
+
   // add - computed: false, optional: true, required: false
-  private _add?: string[] | undefined; 
+  private _add?: string[]; 
   public get add() {
     return this.getListAttribute('add');
   }
-  public set add(value: string[] | undefined) {
+  public set add(value: string[]) {
     this._add = value;
   }
   public resetAdd() {
@@ -436,15 +461,15 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get addInput() {
-    return this._add
+    return this._add;
   }
 
   // drop - computed: false, optional: true, required: false
-  private _drop?: string[] | undefined; 
+  private _drop?: string[]; 
   public get drop() {
     return this.getListAttribute('drop');
   }
-  public set drop(value: string[] | undefined) {
+  public set drop(value: string[]) {
     this._drop = value;
   }
   public resetDrop() {
@@ -452,7 +477,7 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get dropInput() {
-    return this._drop
+    return this._drop;
   }
 }
 export interface ContainerDevices {
@@ -476,7 +501,7 @@ export interface ContainerDevices {
   readonly permissions?: string;
 }
 
-function containerDevicesToTerraform(struct?: ContainerDevices): any {
+export function containerDevicesToTerraform(struct?: ContainerDevices): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -521,7 +546,7 @@ export interface ContainerHealthcheck {
   readonly timeout?: string;
 }
 
-function containerHealthcheckToTerraform(struct?: ContainerHealthcheckOutputReference | ContainerHealthcheck): any {
+export function containerHealthcheckToTerraform(struct?: ContainerHealthcheckOutputReference | ContainerHealthcheck): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -545,12 +570,55 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ContainerHealthcheck | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._interval) {
+      hasAnyValues = true;
+      internalValueResult.interval = this._interval;
+    }
+    if (this._retries) {
+      hasAnyValues = true;
+      internalValueResult.retries = this._retries;
+    }
+    if (this._startPeriod) {
+      hasAnyValues = true;
+      internalValueResult.startPeriod = this._startPeriod;
+    }
+    if (this._test) {
+      hasAnyValues = true;
+      internalValueResult.test = this._test;
+    }
+    if (this._timeout) {
+      hasAnyValues = true;
+      internalValueResult.timeout = this._timeout;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerHealthcheck | undefined) {
+    if (value === undefined) {
+      this._interval = undefined;
+      this._retries = undefined;
+      this._startPeriod = undefined;
+      this._test = undefined;
+      this._timeout = undefined;
+    }
+    else {
+      this._interval = value.interval;
+      this._retries = value.retries;
+      this._startPeriod = value.startPeriod;
+      this._test = value.test;
+      this._timeout = value.timeout;
+    }
+  }
+
   // interval - computed: false, optional: true, required: false
-  private _interval?: string | undefined; 
+  private _interval?: string; 
   public get interval() {
     return this.getStringAttribute('interval');
   }
-  public set interval(value: string | undefined) {
+  public set interval(value: string) {
     this._interval = value;
   }
   public resetInterval() {
@@ -558,15 +626,15 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get intervalInput() {
-    return this._interval
+    return this._interval;
   }
 
   // retries - computed: false, optional: true, required: false
-  private _retries?: number | undefined; 
+  private _retries?: number; 
   public get retries() {
     return this.getNumberAttribute('retries');
   }
-  public set retries(value: number | undefined) {
+  public set retries(value: number) {
     this._retries = value;
   }
   public resetRetries() {
@@ -574,15 +642,15 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get retriesInput() {
-    return this._retries
+    return this._retries;
   }
 
   // start_period - computed: false, optional: true, required: false
-  private _startPeriod?: string | undefined; 
+  private _startPeriod?: string; 
   public get startPeriod() {
     return this.getStringAttribute('start_period');
   }
-  public set startPeriod(value: string | undefined) {
+  public set startPeriod(value: string) {
     this._startPeriod = value;
   }
   public resetStartPeriod() {
@@ -590,7 +658,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get startPeriodInput() {
-    return this._startPeriod
+    return this._startPeriod;
   }
 
   // test - computed: false, optional: false, required: true
@@ -603,15 +671,15 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get testInput() {
-    return this._test
+    return this._test;
   }
 
   // timeout - computed: false, optional: true, required: false
-  private _timeout?: string | undefined; 
+  private _timeout?: string; 
   public get timeout() {
     return this.getStringAttribute('timeout');
   }
-  public set timeout(value: string | undefined) {
+  public set timeout(value: string) {
     this._timeout = value;
   }
   public resetTimeout() {
@@ -619,7 +687,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get timeoutInput() {
-    return this._timeout
+    return this._timeout;
   }
 }
 export interface ContainerHost {
@@ -637,7 +705,7 @@ export interface ContainerHost {
   readonly ip: string;
 }
 
-function containerHostToTerraform(struct?: ContainerHost): any {
+export function containerHostToTerraform(struct?: ContainerHost): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -663,7 +731,7 @@ export interface ContainerLabels {
   readonly value: string;
 }
 
-function containerLabelsToTerraform(struct?: ContainerLabels): any {
+export function containerLabelsToTerraform(struct?: ContainerLabels): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -683,7 +751,7 @@ export interface ContainerMountsBindOptions {
   readonly propagation?: string;
 }
 
-function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBindOptionsOutputReference | ContainerMountsBindOptions): any {
+export function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBindOptionsOutputReference | ContainerMountsBindOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -703,12 +771,31 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ContainerMountsBindOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._propagation) {
+      hasAnyValues = true;
+      internalValueResult.propagation = this._propagation;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerMountsBindOptions | undefined) {
+    if (value === undefined) {
+      this._propagation = undefined;
+    }
+    else {
+      this._propagation = value.propagation;
+    }
+  }
+
   // propagation - computed: false, optional: true, required: false
-  private _propagation?: string | undefined; 
+  private _propagation?: string; 
   public get propagation() {
     return this.getStringAttribute('propagation');
   }
-  public set propagation(value: string | undefined) {
+  public set propagation(value: string) {
     this._propagation = value;
   }
   public resetPropagation() {
@@ -716,7 +803,7 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
   }
   // Temporarily expose input value. Use with caution.
   public get propagationInput() {
-    return this._propagation
+    return this._propagation;
   }
 }
 export interface ContainerMountsTmpfsOptions {
@@ -734,7 +821,7 @@ export interface ContainerMountsTmpfsOptions {
   readonly sizeBytes?: number;
 }
 
-function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsTmpfsOptionsOutputReference | ContainerMountsTmpfsOptions): any {
+export function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsTmpfsOptionsOutputReference | ContainerMountsTmpfsOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -755,12 +842,37 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ContainerMountsTmpfsOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._mode) {
+      hasAnyValues = true;
+      internalValueResult.mode = this._mode;
+    }
+    if (this._sizeBytes) {
+      hasAnyValues = true;
+      internalValueResult.sizeBytes = this._sizeBytes;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerMountsTmpfsOptions | undefined) {
+    if (value === undefined) {
+      this._mode = undefined;
+      this._sizeBytes = undefined;
+    }
+    else {
+      this._mode = value.mode;
+      this._sizeBytes = value.sizeBytes;
+    }
+  }
+
   // mode - computed: false, optional: true, required: false
-  private _mode?: number | undefined; 
+  private _mode?: number; 
   public get mode() {
     return this.getNumberAttribute('mode');
   }
-  public set mode(value: number | undefined) {
+  public set mode(value: number) {
     this._mode = value;
   }
   public resetMode() {
@@ -768,15 +880,15 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   }
   // Temporarily expose input value. Use with caution.
   public get modeInput() {
-    return this._mode
+    return this._mode;
   }
 
   // size_bytes - computed: false, optional: true, required: false
-  private _sizeBytes?: number | undefined; 
+  private _sizeBytes?: number; 
   public get sizeBytes() {
     return this.getNumberAttribute('size_bytes');
   }
-  public set sizeBytes(value: number | undefined) {
+  public set sizeBytes(value: number) {
     this._sizeBytes = value;
   }
   public resetSizeBytes() {
@@ -784,7 +896,7 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   }
   // Temporarily expose input value. Use with caution.
   public get sizeBytesInput() {
-    return this._sizeBytes
+    return this._sizeBytes;
   }
 }
 export interface ContainerMountsVolumeOptionsLabels {
@@ -802,7 +914,7 @@ export interface ContainerMountsVolumeOptionsLabels {
   readonly value: string;
 }
 
-function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsVolumeOptionsLabels): any {
+export function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsVolumeOptionsLabels): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -840,7 +952,7 @@ export interface ContainerMountsVolumeOptions {
   readonly labels?: ContainerMountsVolumeOptionsLabels[];
 }
 
-function containerMountsVolumeOptionsToTerraform(struct?: ContainerMountsVolumeOptionsOutputReference | ContainerMountsVolumeOptions): any {
+export function containerMountsVolumeOptionsToTerraform(struct?: ContainerMountsVolumeOptionsOutputReference | ContainerMountsVolumeOptions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -863,12 +975,49 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ContainerMountsVolumeOptions | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._driverName) {
+      hasAnyValues = true;
+      internalValueResult.driverName = this._driverName;
+    }
+    if (this._driverOptions) {
+      hasAnyValues = true;
+      internalValueResult.driverOptions = this._driverOptions;
+    }
+    if (this._noCopy) {
+      hasAnyValues = true;
+      internalValueResult.noCopy = this._noCopy;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerMountsVolumeOptions | undefined) {
+    if (value === undefined) {
+      this._driverName = undefined;
+      this._driverOptions = undefined;
+      this._noCopy = undefined;
+      this._labels = undefined;
+    }
+    else {
+      this._driverName = value.driverName;
+      this._driverOptions = value.driverOptions;
+      this._noCopy = value.noCopy;
+      this._labels = value.labels;
+    }
+  }
+
   // driver_name - computed: false, optional: true, required: false
-  private _driverName?: string | undefined; 
+  private _driverName?: string; 
   public get driverName() {
     return this.getStringAttribute('driver_name');
   }
-  public set driverName(value: string | undefined) {
+  public set driverName(value: string) {
     this._driverName = value;
   }
   public resetDriverName() {
@@ -876,16 +1025,16 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get driverNameInput() {
-    return this._driverName
+    return this._driverName;
   }
 
   // driver_options - computed: false, optional: true, required: false
-  private _driverOptions?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _driverOptions?: { [key: string]: string } | cdktf.IResolvable; 
   public get driverOptions() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('driver_options') as any;
   }
-  public set driverOptions(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set driverOptions(value: { [key: string]: string } | cdktf.IResolvable) {
     this._driverOptions = value;
   }
   public resetDriverOptions() {
@@ -893,15 +1042,15 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get driverOptionsInput() {
-    return this._driverOptions
+    return this._driverOptions;
   }
 
   // no_copy - computed: false, optional: true, required: false
-  private _noCopy?: boolean | cdktf.IResolvable | undefined; 
+  private _noCopy?: boolean | cdktf.IResolvable; 
   public get noCopy() {
     return this.getBooleanAttribute('no_copy') as any;
   }
-  public set noCopy(value: boolean | cdktf.IResolvable | undefined) {
+  public set noCopy(value: boolean | cdktf.IResolvable) {
     this._noCopy = value;
   }
   public resetNoCopy() {
@@ -909,16 +1058,16 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get noCopyInput() {
-    return this._noCopy
+    return this._noCopy;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ContainerMountsVolumeOptionsLabels[] | undefined; 
+  private _labels?: ContainerMountsVolumeOptionsLabels[]; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: ContainerMountsVolumeOptionsLabels[] | undefined) {
+  public set labels(value: ContainerMountsVolumeOptionsLabels[]) {
     this._labels = value;
   }
   public resetLabels() {
@@ -926,7 +1075,7 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 }
 export interface ContainerMounts {
@@ -974,7 +1123,7 @@ export interface ContainerMounts {
   readonly volumeOptions?: ContainerMountsVolumeOptions;
 }
 
-function containerMountsToTerraform(struct?: ContainerMounts): any {
+export function containerMountsToTerraform(struct?: ContainerMounts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1017,7 +1166,7 @@ export interface ContainerNetworksAdvanced {
   readonly name: string;
 }
 
-function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced): any {
+export function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1057,7 +1206,7 @@ export interface ContainerPorts {
   readonly protocol?: string;
 }
 
-function containerPortsToTerraform(struct?: ContainerPorts): any {
+export function containerPortsToTerraform(struct?: ContainerPorts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1091,7 +1240,7 @@ export interface ContainerUlimit {
   readonly soft: number;
 }
 
-function containerUlimitToTerraform(struct?: ContainerUlimit): any {
+export function containerUlimitToTerraform(struct?: ContainerUlimit): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1142,7 +1291,7 @@ export interface ContainerUpload {
   readonly sourceHash?: string;
 }
 
-function containerUploadToTerraform(struct?: ContainerUpload): any {
+export function containerUploadToTerraform(struct?: ContainerUpload): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1190,7 +1339,7 @@ export interface ContainerVolumes {
   readonly volumeName?: string;
 }
 
-function containerVolumesToTerraform(struct?: ContainerVolumes): any {
+export function containerVolumesToTerraform(struct?: ContainerVolumes): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -1283,9 +1432,9 @@ export class Container extends cdktf.TerraformResource {
     this._user = config.user;
     this._usernsMode = config.usernsMode;
     this._workingDir = config.workingDir;
-    this._capabilities = config.capabilities;
+    this._capabilities.internalValue = config.capabilities;
     this._devices = config.devices;
-    this._healthcheck = config.healthcheck;
+    this._healthcheck.internalValue = config.healthcheck;
     this._host = config.host;
     this._labels = config.labels;
     this._mounts = config.mounts;
@@ -1301,11 +1450,11 @@ export class Container extends cdktf.TerraformResource {
   // ==========
 
   // attach - computed: false, optional: true, required: false
-  private _attach?: boolean | cdktf.IResolvable | undefined; 
+  private _attach?: boolean | cdktf.IResolvable; 
   public get attach() {
     return this.getBooleanAttribute('attach') as any;
   }
-  public set attach(value: boolean | cdktf.IResolvable | undefined) {
+  public set attach(value: boolean | cdktf.IResolvable) {
     this._attach = value;
   }
   public resetAttach() {
@@ -1313,7 +1462,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get attachInput() {
-    return this._attach
+    return this._attach;
   }
 
   // bridge - computed: true, optional: false, required: false
@@ -1322,11 +1471,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // command - computed: true, optional: true, required: false
-  private _command?: string[] | undefined; 
+  private _command?: string[]; 
   public get command() {
     return this.getListAttribute('command');
   }
-  public set command(value: string[] | undefined) {
+  public set command(value: string[]) {
     this._command = value;
   }
   public resetCommand() {
@@ -1334,7 +1483,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get commandInput() {
-    return this._command
+    return this._command;
   }
 
   // container_logs - computed: true, optional: false, required: false
@@ -1343,11 +1492,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // cpu_set - computed: false, optional: true, required: false
-  private _cpuSet?: string | undefined; 
+  private _cpuSet?: string; 
   public get cpuSet() {
     return this.getStringAttribute('cpu_set');
   }
-  public set cpuSet(value: string | undefined) {
+  public set cpuSet(value: string) {
     this._cpuSet = value;
   }
   public resetCpuSet() {
@@ -1355,15 +1504,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuSetInput() {
-    return this._cpuSet
+    return this._cpuSet;
   }
 
   // cpu_shares - computed: false, optional: true, required: false
-  private _cpuShares?: number | undefined; 
+  private _cpuShares?: number; 
   public get cpuShares() {
     return this.getNumberAttribute('cpu_shares');
   }
-  public set cpuShares(value: number | undefined) {
+  public set cpuShares(value: number) {
     this._cpuShares = value;
   }
   public resetCpuShares() {
@@ -1371,15 +1520,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuSharesInput() {
-    return this._cpuShares
+    return this._cpuShares;
   }
 
   // destroy_grace_seconds - computed: false, optional: true, required: false
-  private _destroyGraceSeconds?: number | undefined; 
+  private _destroyGraceSeconds?: number; 
   public get destroyGraceSeconds() {
     return this.getNumberAttribute('destroy_grace_seconds');
   }
-  public set destroyGraceSeconds(value: number | undefined) {
+  public set destroyGraceSeconds(value: number) {
     this._destroyGraceSeconds = value;
   }
   public resetDestroyGraceSeconds() {
@@ -1387,15 +1536,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get destroyGraceSecondsInput() {
-    return this._destroyGraceSeconds
+    return this._destroyGraceSeconds;
   }
 
   // dns - computed: false, optional: true, required: false
-  private _dns?: string[] | undefined; 
+  private _dns?: string[]; 
   public get dns() {
     return this.getListAttribute('dns');
   }
-  public set dns(value: string[] | undefined) {
+  public set dns(value: string[]) {
     this._dns = value;
   }
   public resetDns() {
@@ -1403,15 +1552,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get dnsInput() {
-    return this._dns
+    return this._dns;
   }
 
   // dns_opts - computed: false, optional: true, required: false
-  private _dnsOpts?: string[] | undefined; 
+  private _dnsOpts?: string[]; 
   public get dnsOpts() {
     return this.getListAttribute('dns_opts');
   }
-  public set dnsOpts(value: string[] | undefined) {
+  public set dnsOpts(value: string[]) {
     this._dnsOpts = value;
   }
   public resetDnsOpts() {
@@ -1419,15 +1568,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get dnsOptsInput() {
-    return this._dnsOpts
+    return this._dnsOpts;
   }
 
   // dns_search - computed: false, optional: true, required: false
-  private _dnsSearch?: string[] | undefined; 
+  private _dnsSearch?: string[]; 
   public get dnsSearch() {
     return this.getListAttribute('dns_search');
   }
-  public set dnsSearch(value: string[] | undefined) {
+  public set dnsSearch(value: string[]) {
     this._dnsSearch = value;
   }
   public resetDnsSearch() {
@@ -1435,15 +1584,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get dnsSearchInput() {
-    return this._dnsSearch
+    return this._dnsSearch;
   }
 
   // domainname - computed: false, optional: true, required: false
-  private _domainname?: string | undefined; 
+  private _domainname?: string; 
   public get domainname() {
     return this.getStringAttribute('domainname');
   }
-  public set domainname(value: string | undefined) {
+  public set domainname(value: string) {
     this._domainname = value;
   }
   public resetDomainname() {
@@ -1451,15 +1600,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get domainnameInput() {
-    return this._domainname
+    return this._domainname;
   }
 
   // entrypoint - computed: true, optional: true, required: false
-  private _entrypoint?: string[] | undefined; 
+  private _entrypoint?: string[]; 
   public get entrypoint() {
     return this.getListAttribute('entrypoint');
   }
-  public set entrypoint(value: string[] | undefined) {
+  public set entrypoint(value: string[]) {
     this._entrypoint = value;
   }
   public resetEntrypoint() {
@@ -1467,15 +1616,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get entrypointInput() {
-    return this._entrypoint
+    return this._entrypoint;
   }
 
   // env - computed: true, optional: true, required: false
-  private _env?: string[] | undefined; 
+  private _env?: string[]; 
   public get env() {
     return this.getListAttribute('env');
   }
-  public set env(value: string[] | undefined) {
+  public set env(value: string[]) {
     this._env = value;
   }
   public resetEnv() {
@@ -1483,7 +1632,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get envInput() {
-    return this._env
+    return this._env;
   }
 
   // exit_code - computed: true, optional: false, required: false
@@ -1497,11 +1646,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // group_add - computed: false, optional: true, required: false
-  private _groupAdd?: string[] | undefined; 
+  private _groupAdd?: string[]; 
   public get groupAdd() {
     return this.getListAttribute('group_add');
   }
-  public set groupAdd(value: string[] | undefined) {
+  public set groupAdd(value: string[]) {
     this._groupAdd = value;
   }
   public resetGroupAdd() {
@@ -1509,15 +1658,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get groupAddInput() {
-    return this._groupAdd
+    return this._groupAdd;
   }
 
   // hostname - computed: true, optional: true, required: false
-  private _hostname?: string | undefined; 
+  private _hostname?: string; 
   public get hostname() {
     return this.getStringAttribute('hostname');
   }
-  public set hostname(value: string | undefined) {
+  public set hostname(value: string) {
     this._hostname = value;
   }
   public resetHostname() {
@@ -1525,7 +1674,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get hostnameInput() {
-    return this._hostname
+    return this._hostname;
   }
 
   // id - computed: true, optional: true, required: false
@@ -1543,15 +1692,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get imageInput() {
-    return this._image
+    return this._image;
   }
 
   // init - computed: true, optional: true, required: false
-  private _init?: boolean | cdktf.IResolvable | undefined; 
+  private _init?: boolean | cdktf.IResolvable; 
   public get init() {
     return this.getBooleanAttribute('init') as any;
   }
-  public set init(value: boolean | cdktf.IResolvable | undefined) {
+  public set init(value: boolean | cdktf.IResolvable) {
     this._init = value;
   }
   public resetInit() {
@@ -1559,7 +1708,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get initInput() {
-    return this._init
+    return this._init;
   }
 
   // ip_address - computed: true, optional: false, required: false
@@ -1573,11 +1722,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // ipc_mode - computed: true, optional: true, required: false
-  private _ipcMode?: string | undefined; 
+  private _ipcMode?: string; 
   public get ipcMode() {
     return this.getStringAttribute('ipc_mode');
   }
-  public set ipcMode(value: string | undefined) {
+  public set ipcMode(value: string) {
     this._ipcMode = value;
   }
   public resetIpcMode() {
@@ -1585,15 +1734,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ipcModeInput() {
-    return this._ipcMode
+    return this._ipcMode;
   }
 
   // links - computed: false, optional: true, required: false
-  private _links?: string[] | undefined; 
+  private _links?: string[]; 
   public get links() {
     return this.getListAttribute('links');
   }
-  public set links(value: string[] | undefined) {
+  public set links(value: string[]) {
     this._links = value;
   }
   public resetLinks() {
@@ -1601,15 +1750,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get linksInput() {
-    return this._links
+    return this._links;
   }
 
   // log_driver - computed: false, optional: true, required: false
-  private _logDriver?: string | undefined; 
+  private _logDriver?: string; 
   public get logDriver() {
     return this.getStringAttribute('log_driver');
   }
-  public set logDriver(value: string | undefined) {
+  public set logDriver(value: string) {
     this._logDriver = value;
   }
   public resetLogDriver() {
@@ -1617,16 +1766,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get logDriverInput() {
-    return this._logDriver
+    return this._logDriver;
   }
 
   // log_opts - computed: false, optional: true, required: false
-  private _logOpts?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _logOpts?: { [key: string]: string } | cdktf.IResolvable; 
   public get logOpts() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('log_opts') as any;
   }
-  public set logOpts(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set logOpts(value: { [key: string]: string } | cdktf.IResolvable) {
     this._logOpts = value;
   }
   public resetLogOpts() {
@@ -1634,15 +1783,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get logOptsInput() {
-    return this._logOpts
+    return this._logOpts;
   }
 
   // logs - computed: false, optional: true, required: false
-  private _logs?: boolean | cdktf.IResolvable | undefined; 
+  private _logs?: boolean | cdktf.IResolvable; 
   public get logs() {
     return this.getBooleanAttribute('logs') as any;
   }
-  public set logs(value: boolean | cdktf.IResolvable | undefined) {
+  public set logs(value: boolean | cdktf.IResolvable) {
     this._logs = value;
   }
   public resetLogs() {
@@ -1650,15 +1799,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get logsInput() {
-    return this._logs
+    return this._logs;
   }
 
   // max_retry_count - computed: false, optional: true, required: false
-  private _maxRetryCount?: number | undefined; 
+  private _maxRetryCount?: number; 
   public get maxRetryCount() {
     return this.getNumberAttribute('max_retry_count');
   }
-  public set maxRetryCount(value: number | undefined) {
+  public set maxRetryCount(value: number) {
     this._maxRetryCount = value;
   }
   public resetMaxRetryCount() {
@@ -1666,15 +1815,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get maxRetryCountInput() {
-    return this._maxRetryCount
+    return this._maxRetryCount;
   }
 
   // memory - computed: false, optional: true, required: false
-  private _memory?: number | undefined; 
+  private _memory?: number; 
   public get memory() {
     return this.getNumberAttribute('memory');
   }
-  public set memory(value: number | undefined) {
+  public set memory(value: number) {
     this._memory = value;
   }
   public resetMemory() {
@@ -1682,15 +1831,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get memoryInput() {
-    return this._memory
+    return this._memory;
   }
 
   // memory_swap - computed: false, optional: true, required: false
-  private _memorySwap?: number | undefined; 
+  private _memorySwap?: number; 
   public get memorySwap() {
     return this.getNumberAttribute('memory_swap');
   }
-  public set memorySwap(value: number | undefined) {
+  public set memorySwap(value: number) {
     this._memorySwap = value;
   }
   public resetMemorySwap() {
@@ -1698,15 +1847,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get memorySwapInput() {
-    return this._memorySwap
+    return this._memorySwap;
   }
 
   // must_run - computed: false, optional: true, required: false
-  private _mustRun?: boolean | cdktf.IResolvable | undefined; 
+  private _mustRun?: boolean | cdktf.IResolvable; 
   public get mustRun() {
     return this.getBooleanAttribute('must_run') as any;
   }
-  public set mustRun(value: boolean | cdktf.IResolvable | undefined) {
+  public set mustRun(value: boolean | cdktf.IResolvable) {
     this._mustRun = value;
   }
   public resetMustRun() {
@@ -1714,7 +1863,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get mustRunInput() {
-    return this._mustRun
+    return this._mustRun;
   }
 
   // name - computed: false, optional: false, required: true
@@ -1727,15 +1876,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // network_alias - computed: false, optional: true, required: false
-  private _networkAlias?: string[] | undefined; 
+  private _networkAlias?: string[]; 
   public get networkAlias() {
     return this.getListAttribute('network_alias');
   }
-  public set networkAlias(value: string[] | undefined) {
+  public set networkAlias(value: string[]) {
     this._networkAlias = value;
   }
   public resetNetworkAlias() {
@@ -1743,7 +1892,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get networkAliasInput() {
-    return this._networkAlias
+    return this._networkAlias;
   }
 
   // network_data - computed: true, optional: false, required: false
@@ -1752,11 +1901,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // network_mode - computed: false, optional: true, required: false
-  private _networkMode?: string | undefined; 
+  private _networkMode?: string; 
   public get networkMode() {
     return this.getStringAttribute('network_mode');
   }
-  public set networkMode(value: string | undefined) {
+  public set networkMode(value: string) {
     this._networkMode = value;
   }
   public resetNetworkMode() {
@@ -1764,15 +1913,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get networkModeInput() {
-    return this._networkMode
+    return this._networkMode;
   }
 
   // networks - computed: false, optional: true, required: false
-  private _networks?: string[] | undefined; 
+  private _networks?: string[]; 
   public get networks() {
     return this.getListAttribute('networks');
   }
-  public set networks(value: string[] | undefined) {
+  public set networks(value: string[]) {
     this._networks = value;
   }
   public resetNetworks() {
@@ -1780,15 +1929,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get networksInput() {
-    return this._networks
+    return this._networks;
   }
 
   // pid_mode - computed: false, optional: true, required: false
-  private _pidMode?: string | undefined; 
+  private _pidMode?: string; 
   public get pidMode() {
     return this.getStringAttribute('pid_mode');
   }
-  public set pidMode(value: string | undefined) {
+  public set pidMode(value: string) {
     this._pidMode = value;
   }
   public resetPidMode() {
@@ -1796,15 +1945,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get pidModeInput() {
-    return this._pidMode
+    return this._pidMode;
   }
 
   // privileged - computed: false, optional: true, required: false
-  private _privileged?: boolean | cdktf.IResolvable | undefined; 
+  private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
     return this.getBooleanAttribute('privileged') as any;
   }
-  public set privileged(value: boolean | cdktf.IResolvable | undefined) {
+  public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
   }
   public resetPrivileged() {
@@ -1812,15 +1961,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get privilegedInput() {
-    return this._privileged
+    return this._privileged;
   }
 
   // publish_all_ports - computed: false, optional: true, required: false
-  private _publishAllPorts?: boolean | cdktf.IResolvable | undefined; 
+  private _publishAllPorts?: boolean | cdktf.IResolvable; 
   public get publishAllPorts() {
     return this.getBooleanAttribute('publish_all_ports') as any;
   }
-  public set publishAllPorts(value: boolean | cdktf.IResolvable | undefined) {
+  public set publishAllPorts(value: boolean | cdktf.IResolvable) {
     this._publishAllPorts = value;
   }
   public resetPublishAllPorts() {
@@ -1828,15 +1977,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get publishAllPortsInput() {
-    return this._publishAllPorts
+    return this._publishAllPorts;
   }
 
   // read_only - computed: false, optional: true, required: false
-  private _readOnly?: boolean | cdktf.IResolvable | undefined; 
+  private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
     return this.getBooleanAttribute('read_only') as any;
   }
-  public set readOnly(value: boolean | cdktf.IResolvable | undefined) {
+  public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
   }
   public resetReadOnly() {
@@ -1844,15 +1993,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get readOnlyInput() {
-    return this._readOnly
+    return this._readOnly;
   }
 
   // remove_volumes - computed: false, optional: true, required: false
-  private _removeVolumes?: boolean | cdktf.IResolvable | undefined; 
+  private _removeVolumes?: boolean | cdktf.IResolvable; 
   public get removeVolumes() {
     return this.getBooleanAttribute('remove_volumes') as any;
   }
-  public set removeVolumes(value: boolean | cdktf.IResolvable | undefined) {
+  public set removeVolumes(value: boolean | cdktf.IResolvable) {
     this._removeVolumes = value;
   }
   public resetRemoveVolumes() {
@@ -1860,15 +2009,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get removeVolumesInput() {
-    return this._removeVolumes
+    return this._removeVolumes;
   }
 
   // restart - computed: false, optional: true, required: false
-  private _restart?: string | undefined; 
+  private _restart?: string; 
   public get restart() {
     return this.getStringAttribute('restart');
   }
-  public set restart(value: string | undefined) {
+  public set restart(value: string) {
     this._restart = value;
   }
   public resetRestart() {
@@ -1876,15 +2025,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get restartInput() {
-    return this._restart
+    return this._restart;
   }
 
   // rm - computed: false, optional: true, required: false
-  private _rm?: boolean | cdktf.IResolvable | undefined; 
+  private _rm?: boolean | cdktf.IResolvable; 
   public get rm() {
     return this.getBooleanAttribute('rm') as any;
   }
-  public set rm(value: boolean | cdktf.IResolvable | undefined) {
+  public set rm(value: boolean | cdktf.IResolvable) {
     this._rm = value;
   }
   public resetRm() {
@@ -1892,15 +2041,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get rmInput() {
-    return this._rm
+    return this._rm;
   }
 
   // security_opts - computed: true, optional: true, required: false
-  private _securityOpts?: string[] | undefined; 
+  private _securityOpts?: string[]; 
   public get securityOpts() {
     return this.getListAttribute('security_opts');
   }
-  public set securityOpts(value: string[] | undefined) {
+  public set securityOpts(value: string[]) {
     this._securityOpts = value;
   }
   public resetSecurityOpts() {
@@ -1908,15 +2057,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get securityOptsInput() {
-    return this._securityOpts
+    return this._securityOpts;
   }
 
   // shm_size - computed: true, optional: true, required: false
-  private _shmSize?: number | undefined; 
+  private _shmSize?: number; 
   public get shmSize() {
     return this.getNumberAttribute('shm_size');
   }
-  public set shmSize(value: number | undefined) {
+  public set shmSize(value: number) {
     this._shmSize = value;
   }
   public resetShmSize() {
@@ -1924,15 +2073,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get shmSizeInput() {
-    return this._shmSize
+    return this._shmSize;
   }
 
   // start - computed: false, optional: true, required: false
-  private _start?: boolean | cdktf.IResolvable | undefined; 
+  private _start?: boolean | cdktf.IResolvable; 
   public get start() {
     return this.getBooleanAttribute('start') as any;
   }
-  public set start(value: boolean | cdktf.IResolvable | undefined) {
+  public set start(value: boolean | cdktf.IResolvable) {
     this._start = value;
   }
   public resetStart() {
@@ -1940,15 +2089,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get startInput() {
-    return this._start
+    return this._start;
   }
 
   // stdin_open - computed: false, optional: true, required: false
-  private _stdinOpen?: boolean | cdktf.IResolvable | undefined; 
+  private _stdinOpen?: boolean | cdktf.IResolvable; 
   public get stdinOpen() {
     return this.getBooleanAttribute('stdin_open') as any;
   }
-  public set stdinOpen(value: boolean | cdktf.IResolvable | undefined) {
+  public set stdinOpen(value: boolean | cdktf.IResolvable) {
     this._stdinOpen = value;
   }
   public resetStdinOpen() {
@@ -1956,16 +2105,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get stdinOpenInput() {
-    return this._stdinOpen
+    return this._stdinOpen;
   }
 
   // storage_opts - computed: false, optional: true, required: false
-  private _storageOpts?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _storageOpts?: { [key: string]: string } | cdktf.IResolvable; 
   public get storageOpts() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('storage_opts') as any;
   }
-  public set storageOpts(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set storageOpts(value: { [key: string]: string } | cdktf.IResolvable) {
     this._storageOpts = value;
   }
   public resetStorageOpts() {
@@ -1973,16 +2122,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get storageOptsInput() {
-    return this._storageOpts
+    return this._storageOpts;
   }
 
   // sysctls - computed: false, optional: true, required: false
-  private _sysctls?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _sysctls?: { [key: string]: string } | cdktf.IResolvable; 
   public get sysctls() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('sysctls') as any;
   }
-  public set sysctls(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set sysctls(value: { [key: string]: string } | cdktf.IResolvable) {
     this._sysctls = value;
   }
   public resetSysctls() {
@@ -1990,16 +2139,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get sysctlsInput() {
-    return this._sysctls
+    return this._sysctls;
   }
 
   // tmpfs - computed: false, optional: true, required: false
-  private _tmpfs?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _tmpfs?: { [key: string]: string } | cdktf.IResolvable; 
   public get tmpfs() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('tmpfs') as any;
   }
-  public set tmpfs(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set tmpfs(value: { [key: string]: string } | cdktf.IResolvable) {
     this._tmpfs = value;
   }
   public resetTmpfs() {
@@ -2007,15 +2156,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get tmpfsInput() {
-    return this._tmpfs
+    return this._tmpfs;
   }
 
   // tty - computed: false, optional: true, required: false
-  private _tty?: boolean | cdktf.IResolvable | undefined; 
+  private _tty?: boolean | cdktf.IResolvable; 
   public get tty() {
     return this.getBooleanAttribute('tty') as any;
   }
-  public set tty(value: boolean | cdktf.IResolvable | undefined) {
+  public set tty(value: boolean | cdktf.IResolvable) {
     this._tty = value;
   }
   public resetTty() {
@@ -2023,15 +2172,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ttyInput() {
-    return this._tty
+    return this._tty;
   }
 
   // user - computed: false, optional: true, required: false
-  private _user?: string | undefined; 
+  private _user?: string; 
   public get user() {
     return this.getStringAttribute('user');
   }
-  public set user(value: string | undefined) {
+  public set user(value: string) {
     this._user = value;
   }
   public resetUser() {
@@ -2039,15 +2188,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get userInput() {
-    return this._user
+    return this._user;
   }
 
   // userns_mode - computed: false, optional: true, required: false
-  private _usernsMode?: string | undefined; 
+  private _usernsMode?: string; 
   public get usernsMode() {
     return this.getStringAttribute('userns_mode');
   }
-  public set usernsMode(value: string | undefined) {
+  public set usernsMode(value: string) {
     this._usernsMode = value;
   }
   public resetUsernsMode() {
@@ -2055,15 +2204,15 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get usernsModeInput() {
-    return this._usernsMode
+    return this._usernsMode;
   }
 
   // working_dir - computed: false, optional: true, required: false
-  private _workingDir?: string | undefined; 
+  private _workingDir?: string; 
   public get workingDir() {
     return this.getStringAttribute('working_dir');
   }
-  public set workingDir(value: string | undefined) {
+  public set workingDir(value: string) {
     this._workingDir = value;
   }
   public resetWorkingDir() {
@@ -2071,33 +2220,32 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get workingDirInput() {
-    return this._workingDir
+    return this._workingDir;
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities?: ContainerCapabilities | undefined; 
-  private __capabilitiesOutput = new ContainerCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new ContainerCapabilitiesOutputReference(this as any, "capabilities", true);
   public get capabilities() {
-    return this.__capabilitiesOutput;
+    return this._capabilities;
   }
-  public putCapabilities(value: ContainerCapabilities | undefined) {
-    this._capabilities = value;
+  public putCapabilities(value: ContainerCapabilities) {
+    this._capabilities.internalValue = value;
   }
   public resetCapabilities() {
-    this._capabilities = undefined;
+    this._capabilities.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get capabilitiesInput() {
-    return this._capabilities
+    return this._capabilities.internalValue;
   }
 
   // devices - computed: false, optional: true, required: false
-  private _devices?: ContainerDevices[] | undefined; 
+  private _devices?: ContainerDevices[]; 
   public get devices() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('devices') as any;
   }
-  public set devices(value: ContainerDevices[] | undefined) {
+  public set devices(value: ContainerDevices[]) {
     this._devices = value;
   }
   public resetDevices() {
@@ -2105,33 +2253,32 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get devicesInput() {
-    return this._devices
+    return this._devices;
   }
 
   // healthcheck - computed: false, optional: true, required: false
-  private _healthcheck?: ContainerHealthcheck | undefined; 
-  private __healthcheckOutput = new ContainerHealthcheckOutputReference(this as any, "healthcheck", true);
+  private _healthcheck = new ContainerHealthcheckOutputReference(this as any, "healthcheck", true);
   public get healthcheck() {
-    return this.__healthcheckOutput;
+    return this._healthcheck;
   }
-  public putHealthcheck(value: ContainerHealthcheck | undefined) {
-    this._healthcheck = value;
+  public putHealthcheck(value: ContainerHealthcheck) {
+    this._healthcheck.internalValue = value;
   }
   public resetHealthcheck() {
-    this._healthcheck = undefined;
+    this._healthcheck.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get healthcheckInput() {
-    return this._healthcheck
+    return this._healthcheck.internalValue;
   }
 
   // host - computed: false, optional: true, required: false
-  private _host?: ContainerHost[] | undefined; 
+  private _host?: ContainerHost[]; 
   public get host() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('host') as any;
   }
-  public set host(value: ContainerHost[] | undefined) {
+  public set host(value: ContainerHost[]) {
     this._host = value;
   }
   public resetHost() {
@@ -2139,16 +2286,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get hostInput() {
-    return this._host
+    return this._host;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ContainerLabels[] | undefined; 
+  private _labels?: ContainerLabels[]; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: ContainerLabels[] | undefined) {
+  public set labels(value: ContainerLabels[]) {
     this._labels = value;
   }
   public resetLabels() {
@@ -2156,16 +2303,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // mounts - computed: false, optional: true, required: false
-  private _mounts?: ContainerMounts[] | undefined; 
+  private _mounts?: ContainerMounts[]; 
   public get mounts() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('mounts') as any;
   }
-  public set mounts(value: ContainerMounts[] | undefined) {
+  public set mounts(value: ContainerMounts[]) {
     this._mounts = value;
   }
   public resetMounts() {
@@ -2173,16 +2320,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get mountsInput() {
-    return this._mounts
+    return this._mounts;
   }
 
   // networks_advanced - computed: false, optional: true, required: false
-  private _networksAdvanced?: ContainerNetworksAdvanced[] | undefined; 
+  private _networksAdvanced?: ContainerNetworksAdvanced[]; 
   public get networksAdvanced() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('networks_advanced') as any;
   }
-  public set networksAdvanced(value: ContainerNetworksAdvanced[] | undefined) {
+  public set networksAdvanced(value: ContainerNetworksAdvanced[]) {
     this._networksAdvanced = value;
   }
   public resetNetworksAdvanced() {
@@ -2190,16 +2337,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get networksAdvancedInput() {
-    return this._networksAdvanced
+    return this._networksAdvanced;
   }
 
   // ports - computed: false, optional: true, required: false
-  private _ports?: ContainerPorts[] | undefined; 
+  private _ports?: ContainerPorts[]; 
   public get ports() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ports') as any;
   }
-  public set ports(value: ContainerPorts[] | undefined) {
+  public set ports(value: ContainerPorts[]) {
     this._ports = value;
   }
   public resetPorts() {
@@ -2207,16 +2354,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get portsInput() {
-    return this._ports
+    return this._ports;
   }
 
   // ulimit - computed: false, optional: true, required: false
-  private _ulimit?: ContainerUlimit[] | undefined; 
+  private _ulimit?: ContainerUlimit[]; 
   public get ulimit() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ulimit') as any;
   }
-  public set ulimit(value: ContainerUlimit[] | undefined) {
+  public set ulimit(value: ContainerUlimit[]) {
     this._ulimit = value;
   }
   public resetUlimit() {
@@ -2224,16 +2371,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get ulimitInput() {
-    return this._ulimit
+    return this._ulimit;
   }
 
   // upload - computed: false, optional: true, required: false
-  private _upload?: ContainerUpload[] | undefined; 
+  private _upload?: ContainerUpload[]; 
   public get upload() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('upload') as any;
   }
-  public set upload(value: ContainerUpload[] | undefined) {
+  public set upload(value: ContainerUpload[]) {
     this._upload = value;
   }
   public resetUpload() {
@@ -2241,16 +2388,16 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get uploadInput() {
-    return this._upload
+    return this._upload;
   }
 
   // volumes - computed: false, optional: true, required: false
-  private _volumes?: ContainerVolumes[] | undefined; 
+  private _volumes?: ContainerVolumes[]; 
   public get volumes() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('volumes') as any;
   }
-  public set volumes(value: ContainerVolumes[] | undefined) {
+  public set volumes(value: ContainerVolumes[]) {
     this._volumes = value;
   }
   public resetVolumes() {
@@ -2258,7 +2405,7 @@ export class Container extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get volumesInput() {
-    return this._volumes
+    return this._volumes;
   }
 
   // =========
@@ -2313,9 +2460,9 @@ export class Container extends cdktf.TerraformResource {
       user: cdktf.stringToTerraform(this._user),
       userns_mode: cdktf.stringToTerraform(this._usernsMode),
       working_dir: cdktf.stringToTerraform(this._workingDir),
-      capabilities: containerCapabilitiesToTerraform(this._capabilities),
+      capabilities: containerCapabilitiesToTerraform(this._capabilities.internalValue),
       devices: cdktf.listMapper(containerDevicesToTerraform)(this._devices),
-      healthcheck: containerHealthcheckToTerraform(this._healthcheck),
+      healthcheck: containerHealthcheckToTerraform(this._healthcheck.internalValue),
       host: cdktf.listMapper(containerHostToTerraform)(this._host),
       labels: cdktf.listMapper(containerLabelsToTerraform)(this._labels),
       mounts: cdktf.listMapper(containerMountsToTerraform)(this._mounts),

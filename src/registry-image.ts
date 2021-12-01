@@ -83,7 +83,7 @@ export interface RegistryImageBuildAuthConfig {
   readonly userName?: string;
 }
 
-function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBuildAuthConfig): any {
+export function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBuildAuthConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -121,7 +121,7 @@ export interface RegistryImageBuildUlimit {
   readonly soft: number;
 }
 
-function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildUlimit): any {
+export function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildUlimit): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -328,7 +328,7 @@ export interface RegistryImageBuild {
   readonly ulimit?: RegistryImageBuildUlimit[];
 }
 
-function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputReference | RegistryImageBuild): any {
+export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputReference | RegistryImageBuild): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -379,13 +379,218 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): RegistryImageBuild | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._buildArgs) {
+      hasAnyValues = true;
+      internalValueResult.buildArgs = this._buildArgs;
+    }
+    if (this._buildId) {
+      hasAnyValues = true;
+      internalValueResult.buildId = this._buildId;
+    }
+    if (this._cacheFrom) {
+      hasAnyValues = true;
+      internalValueResult.cacheFrom = this._cacheFrom;
+    }
+    if (this._cgroupParent) {
+      hasAnyValues = true;
+      internalValueResult.cgroupParent = this._cgroupParent;
+    }
+    if (this._context) {
+      hasAnyValues = true;
+      internalValueResult.context = this._context;
+    }
+    if (this._cpuPeriod) {
+      hasAnyValues = true;
+      internalValueResult.cpuPeriod = this._cpuPeriod;
+    }
+    if (this._cpuQuota) {
+      hasAnyValues = true;
+      internalValueResult.cpuQuota = this._cpuQuota;
+    }
+    if (this._cpuSetCpus) {
+      hasAnyValues = true;
+      internalValueResult.cpuSetCpus = this._cpuSetCpus;
+    }
+    if (this._cpuSetMems) {
+      hasAnyValues = true;
+      internalValueResult.cpuSetMems = this._cpuSetMems;
+    }
+    if (this._cpuShares) {
+      hasAnyValues = true;
+      internalValueResult.cpuShares = this._cpuShares;
+    }
+    if (this._dockerfile) {
+      hasAnyValues = true;
+      internalValueResult.dockerfile = this._dockerfile;
+    }
+    if (this._extraHosts) {
+      hasAnyValues = true;
+      internalValueResult.extraHosts = this._extraHosts;
+    }
+    if (this._forceRemove) {
+      hasAnyValues = true;
+      internalValueResult.forceRemove = this._forceRemove;
+    }
+    if (this._isolation) {
+      hasAnyValues = true;
+      internalValueResult.isolation = this._isolation;
+    }
+    if (this._labels) {
+      hasAnyValues = true;
+      internalValueResult.labels = this._labels;
+    }
+    if (this._memory) {
+      hasAnyValues = true;
+      internalValueResult.memory = this._memory;
+    }
+    if (this._memorySwap) {
+      hasAnyValues = true;
+      internalValueResult.memorySwap = this._memorySwap;
+    }
+    if (this._networkMode) {
+      hasAnyValues = true;
+      internalValueResult.networkMode = this._networkMode;
+    }
+    if (this._noCache) {
+      hasAnyValues = true;
+      internalValueResult.noCache = this._noCache;
+    }
+    if (this._platform) {
+      hasAnyValues = true;
+      internalValueResult.platform = this._platform;
+    }
+    if (this._pullParent) {
+      hasAnyValues = true;
+      internalValueResult.pullParent = this._pullParent;
+    }
+    if (this._remoteContext) {
+      hasAnyValues = true;
+      internalValueResult.remoteContext = this._remoteContext;
+    }
+    if (this._remove) {
+      hasAnyValues = true;
+      internalValueResult.remove = this._remove;
+    }
+    if (this._securityOpt) {
+      hasAnyValues = true;
+      internalValueResult.securityOpt = this._securityOpt;
+    }
+    if (this._sessionId) {
+      hasAnyValues = true;
+      internalValueResult.sessionId = this._sessionId;
+    }
+    if (this._shmSize) {
+      hasAnyValues = true;
+      internalValueResult.shmSize = this._shmSize;
+    }
+    if (this._squash) {
+      hasAnyValues = true;
+      internalValueResult.squash = this._squash;
+    }
+    if (this._suppressOutput) {
+      hasAnyValues = true;
+      internalValueResult.suppressOutput = this._suppressOutput;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target;
+    }
+    if (this._version) {
+      hasAnyValues = true;
+      internalValueResult.version = this._version;
+    }
+    if (this._authConfig) {
+      hasAnyValues = true;
+      internalValueResult.authConfig = this._authConfig;
+    }
+    if (this._ulimit) {
+      hasAnyValues = true;
+      internalValueResult.ulimit = this._ulimit;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RegistryImageBuild | undefined) {
+    if (value === undefined) {
+      this._buildArgs = undefined;
+      this._buildId = undefined;
+      this._cacheFrom = undefined;
+      this._cgroupParent = undefined;
+      this._context = undefined;
+      this._cpuPeriod = undefined;
+      this._cpuQuota = undefined;
+      this._cpuSetCpus = undefined;
+      this._cpuSetMems = undefined;
+      this._cpuShares = undefined;
+      this._dockerfile = undefined;
+      this._extraHosts = undefined;
+      this._forceRemove = undefined;
+      this._isolation = undefined;
+      this._labels = undefined;
+      this._memory = undefined;
+      this._memorySwap = undefined;
+      this._networkMode = undefined;
+      this._noCache = undefined;
+      this._platform = undefined;
+      this._pullParent = undefined;
+      this._remoteContext = undefined;
+      this._remove = undefined;
+      this._securityOpt = undefined;
+      this._sessionId = undefined;
+      this._shmSize = undefined;
+      this._squash = undefined;
+      this._suppressOutput = undefined;
+      this._target = undefined;
+      this._version = undefined;
+      this._authConfig = undefined;
+      this._ulimit = undefined;
+    }
+    else {
+      this._buildArgs = value.buildArgs;
+      this._buildId = value.buildId;
+      this._cacheFrom = value.cacheFrom;
+      this._cgroupParent = value.cgroupParent;
+      this._context = value.context;
+      this._cpuPeriod = value.cpuPeriod;
+      this._cpuQuota = value.cpuQuota;
+      this._cpuSetCpus = value.cpuSetCpus;
+      this._cpuSetMems = value.cpuSetMems;
+      this._cpuShares = value.cpuShares;
+      this._dockerfile = value.dockerfile;
+      this._extraHosts = value.extraHosts;
+      this._forceRemove = value.forceRemove;
+      this._isolation = value.isolation;
+      this._labels = value.labels;
+      this._memory = value.memory;
+      this._memorySwap = value.memorySwap;
+      this._networkMode = value.networkMode;
+      this._noCache = value.noCache;
+      this._platform = value.platform;
+      this._pullParent = value.pullParent;
+      this._remoteContext = value.remoteContext;
+      this._remove = value.remove;
+      this._securityOpt = value.securityOpt;
+      this._sessionId = value.sessionId;
+      this._shmSize = value.shmSize;
+      this._squash = value.squash;
+      this._suppressOutput = value.suppressOutput;
+      this._target = value.target;
+      this._version = value.version;
+      this._authConfig = value.authConfig;
+      this._ulimit = value.ulimit;
+    }
+  }
+
   // build_args - computed: false, optional: true, required: false
-  private _buildArgs?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _buildArgs?: { [key: string]: string } | cdktf.IResolvable; 
   public get buildArgs() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('build_args') as any;
   }
-  public set buildArgs(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set buildArgs(value: { [key: string]: string } | cdktf.IResolvable) {
     this._buildArgs = value;
   }
   public resetBuildArgs() {
@@ -393,15 +598,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get buildArgsInput() {
-    return this._buildArgs
+    return this._buildArgs;
   }
 
   // build_id - computed: false, optional: true, required: false
-  private _buildId?: string | undefined; 
+  private _buildId?: string; 
   public get buildId() {
     return this.getStringAttribute('build_id');
   }
-  public set buildId(value: string | undefined) {
+  public set buildId(value: string) {
     this._buildId = value;
   }
   public resetBuildId() {
@@ -409,15 +614,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get buildIdInput() {
-    return this._buildId
+    return this._buildId;
   }
 
   // cache_from - computed: false, optional: true, required: false
-  private _cacheFrom?: string[] | undefined; 
+  private _cacheFrom?: string[]; 
   public get cacheFrom() {
     return this.getListAttribute('cache_from');
   }
-  public set cacheFrom(value: string[] | undefined) {
+  public set cacheFrom(value: string[]) {
     this._cacheFrom = value;
   }
   public resetCacheFrom() {
@@ -425,15 +630,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cacheFromInput() {
-    return this._cacheFrom
+    return this._cacheFrom;
   }
 
   // cgroup_parent - computed: false, optional: true, required: false
-  private _cgroupParent?: string | undefined; 
+  private _cgroupParent?: string; 
   public get cgroupParent() {
     return this.getStringAttribute('cgroup_parent');
   }
-  public set cgroupParent(value: string | undefined) {
+  public set cgroupParent(value: string) {
     this._cgroupParent = value;
   }
   public resetCgroupParent() {
@@ -441,7 +646,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cgroupParentInput() {
-    return this._cgroupParent
+    return this._cgroupParent;
   }
 
   // context - computed: false, optional: false, required: true
@@ -454,15 +659,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get contextInput() {
-    return this._context
+    return this._context;
   }
 
   // cpu_period - computed: false, optional: true, required: false
-  private _cpuPeriod?: number | undefined; 
+  private _cpuPeriod?: number; 
   public get cpuPeriod() {
     return this.getNumberAttribute('cpu_period');
   }
-  public set cpuPeriod(value: number | undefined) {
+  public set cpuPeriod(value: number) {
     this._cpuPeriod = value;
   }
   public resetCpuPeriod() {
@@ -470,15 +675,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuPeriodInput() {
-    return this._cpuPeriod
+    return this._cpuPeriod;
   }
 
   // cpu_quota - computed: false, optional: true, required: false
-  private _cpuQuota?: number | undefined; 
+  private _cpuQuota?: number; 
   public get cpuQuota() {
     return this.getNumberAttribute('cpu_quota');
   }
-  public set cpuQuota(value: number | undefined) {
+  public set cpuQuota(value: number) {
     this._cpuQuota = value;
   }
   public resetCpuQuota() {
@@ -486,15 +691,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuQuotaInput() {
-    return this._cpuQuota
+    return this._cpuQuota;
   }
 
   // cpu_set_cpus - computed: false, optional: true, required: false
-  private _cpuSetCpus?: string | undefined; 
+  private _cpuSetCpus?: string; 
   public get cpuSetCpus() {
     return this.getStringAttribute('cpu_set_cpus');
   }
-  public set cpuSetCpus(value: string | undefined) {
+  public set cpuSetCpus(value: string) {
     this._cpuSetCpus = value;
   }
   public resetCpuSetCpus() {
@@ -502,15 +707,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuSetCpusInput() {
-    return this._cpuSetCpus
+    return this._cpuSetCpus;
   }
 
   // cpu_set_mems - computed: false, optional: true, required: false
-  private _cpuSetMems?: string | undefined; 
+  private _cpuSetMems?: string; 
   public get cpuSetMems() {
     return this.getStringAttribute('cpu_set_mems');
   }
-  public set cpuSetMems(value: string | undefined) {
+  public set cpuSetMems(value: string) {
     this._cpuSetMems = value;
   }
   public resetCpuSetMems() {
@@ -518,15 +723,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuSetMemsInput() {
-    return this._cpuSetMems
+    return this._cpuSetMems;
   }
 
   // cpu_shares - computed: false, optional: true, required: false
-  private _cpuShares?: number | undefined; 
+  private _cpuShares?: number; 
   public get cpuShares() {
     return this.getNumberAttribute('cpu_shares');
   }
-  public set cpuShares(value: number | undefined) {
+  public set cpuShares(value: number) {
     this._cpuShares = value;
   }
   public resetCpuShares() {
@@ -534,15 +739,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get cpuSharesInput() {
-    return this._cpuShares
+    return this._cpuShares;
   }
 
   // dockerfile - computed: false, optional: true, required: false
-  private _dockerfile?: string | undefined; 
+  private _dockerfile?: string; 
   public get dockerfile() {
     return this.getStringAttribute('dockerfile');
   }
-  public set dockerfile(value: string | undefined) {
+  public set dockerfile(value: string) {
     this._dockerfile = value;
   }
   public resetDockerfile() {
@@ -550,15 +755,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get dockerfileInput() {
-    return this._dockerfile
+    return this._dockerfile;
   }
 
   // extra_hosts - computed: false, optional: true, required: false
-  private _extraHosts?: string[] | undefined; 
+  private _extraHosts?: string[]; 
   public get extraHosts() {
     return this.getListAttribute('extra_hosts');
   }
-  public set extraHosts(value: string[] | undefined) {
+  public set extraHosts(value: string[]) {
     this._extraHosts = value;
   }
   public resetExtraHosts() {
@@ -566,15 +771,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get extraHostsInput() {
-    return this._extraHosts
+    return this._extraHosts;
   }
 
   // force_remove - computed: false, optional: true, required: false
-  private _forceRemove?: boolean | cdktf.IResolvable | undefined; 
+  private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
     return this.getBooleanAttribute('force_remove') as any;
   }
-  public set forceRemove(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
   }
   public resetForceRemove() {
@@ -582,15 +787,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get forceRemoveInput() {
-    return this._forceRemove
+    return this._forceRemove;
   }
 
   // isolation - computed: false, optional: true, required: false
-  private _isolation?: string | undefined; 
+  private _isolation?: string; 
   public get isolation() {
     return this.getStringAttribute('isolation');
   }
-  public set isolation(value: string | undefined) {
+  public set isolation(value: string) {
     this._isolation = value;
   }
   public resetIsolation() {
@@ -598,16 +803,16 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get isolationInput() {
-    return this._isolation
+    return this._isolation;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('labels') as any;
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -615,15 +820,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels
+    return this._labels;
   }
 
   // memory - computed: false, optional: true, required: false
-  private _memory?: number | undefined; 
+  private _memory?: number; 
   public get memory() {
     return this.getNumberAttribute('memory');
   }
-  public set memory(value: number | undefined) {
+  public set memory(value: number) {
     this._memory = value;
   }
   public resetMemory() {
@@ -631,15 +836,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get memoryInput() {
-    return this._memory
+    return this._memory;
   }
 
   // memory_swap - computed: false, optional: true, required: false
-  private _memorySwap?: number | undefined; 
+  private _memorySwap?: number; 
   public get memorySwap() {
     return this.getNumberAttribute('memory_swap');
   }
-  public set memorySwap(value: number | undefined) {
+  public set memorySwap(value: number) {
     this._memorySwap = value;
   }
   public resetMemorySwap() {
@@ -647,15 +852,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get memorySwapInput() {
-    return this._memorySwap
+    return this._memorySwap;
   }
 
   // network_mode - computed: false, optional: true, required: false
-  private _networkMode?: string | undefined; 
+  private _networkMode?: string; 
   public get networkMode() {
     return this.getStringAttribute('network_mode');
   }
-  public set networkMode(value: string | undefined) {
+  public set networkMode(value: string) {
     this._networkMode = value;
   }
   public resetNetworkMode() {
@@ -663,15 +868,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get networkModeInput() {
-    return this._networkMode
+    return this._networkMode;
   }
 
   // no_cache - computed: false, optional: true, required: false
-  private _noCache?: boolean | cdktf.IResolvable | undefined; 
+  private _noCache?: boolean | cdktf.IResolvable; 
   public get noCache() {
     return this.getBooleanAttribute('no_cache') as any;
   }
-  public set noCache(value: boolean | cdktf.IResolvable | undefined) {
+  public set noCache(value: boolean | cdktf.IResolvable) {
     this._noCache = value;
   }
   public resetNoCache() {
@@ -679,15 +884,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get noCacheInput() {
-    return this._noCache
+    return this._noCache;
   }
 
   // platform - computed: false, optional: true, required: false
-  private _platform?: string | undefined; 
+  private _platform?: string; 
   public get platform() {
     return this.getStringAttribute('platform');
   }
-  public set platform(value: string | undefined) {
+  public set platform(value: string) {
     this._platform = value;
   }
   public resetPlatform() {
@@ -695,15 +900,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get platformInput() {
-    return this._platform
+    return this._platform;
   }
 
   // pull_parent - computed: false, optional: true, required: false
-  private _pullParent?: boolean | cdktf.IResolvable | undefined; 
+  private _pullParent?: boolean | cdktf.IResolvable; 
   public get pullParent() {
     return this.getBooleanAttribute('pull_parent') as any;
   }
-  public set pullParent(value: boolean | cdktf.IResolvable | undefined) {
+  public set pullParent(value: boolean | cdktf.IResolvable) {
     this._pullParent = value;
   }
   public resetPullParent() {
@@ -711,15 +916,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get pullParentInput() {
-    return this._pullParent
+    return this._pullParent;
   }
 
   // remote_context - computed: false, optional: true, required: false
-  private _remoteContext?: string | undefined; 
+  private _remoteContext?: string; 
   public get remoteContext() {
     return this.getStringAttribute('remote_context');
   }
-  public set remoteContext(value: string | undefined) {
+  public set remoteContext(value: string) {
     this._remoteContext = value;
   }
   public resetRemoteContext() {
@@ -727,15 +932,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get remoteContextInput() {
-    return this._remoteContext
+    return this._remoteContext;
   }
 
   // remove - computed: false, optional: true, required: false
-  private _remove?: boolean | cdktf.IResolvable | undefined; 
+  private _remove?: boolean | cdktf.IResolvable; 
   public get remove() {
     return this.getBooleanAttribute('remove') as any;
   }
-  public set remove(value: boolean | cdktf.IResolvable | undefined) {
+  public set remove(value: boolean | cdktf.IResolvable) {
     this._remove = value;
   }
   public resetRemove() {
@@ -743,15 +948,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get removeInput() {
-    return this._remove
+    return this._remove;
   }
 
   // security_opt - computed: false, optional: true, required: false
-  private _securityOpt?: string[] | undefined; 
+  private _securityOpt?: string[]; 
   public get securityOpt() {
     return this.getListAttribute('security_opt');
   }
-  public set securityOpt(value: string[] | undefined) {
+  public set securityOpt(value: string[]) {
     this._securityOpt = value;
   }
   public resetSecurityOpt() {
@@ -759,15 +964,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get securityOptInput() {
-    return this._securityOpt
+    return this._securityOpt;
   }
 
   // session_id - computed: false, optional: true, required: false
-  private _sessionId?: string | undefined; 
+  private _sessionId?: string; 
   public get sessionId() {
     return this.getStringAttribute('session_id');
   }
-  public set sessionId(value: string | undefined) {
+  public set sessionId(value: string) {
     this._sessionId = value;
   }
   public resetSessionId() {
@@ -775,15 +980,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get sessionIdInput() {
-    return this._sessionId
+    return this._sessionId;
   }
 
   // shm_size - computed: false, optional: true, required: false
-  private _shmSize?: number | undefined; 
+  private _shmSize?: number; 
   public get shmSize() {
     return this.getNumberAttribute('shm_size');
   }
-  public set shmSize(value: number | undefined) {
+  public set shmSize(value: number) {
     this._shmSize = value;
   }
   public resetShmSize() {
@@ -791,15 +996,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get shmSizeInput() {
-    return this._shmSize
+    return this._shmSize;
   }
 
   // squash - computed: false, optional: true, required: false
-  private _squash?: boolean | cdktf.IResolvable | undefined; 
+  private _squash?: boolean | cdktf.IResolvable; 
   public get squash() {
     return this.getBooleanAttribute('squash') as any;
   }
-  public set squash(value: boolean | cdktf.IResolvable | undefined) {
+  public set squash(value: boolean | cdktf.IResolvable) {
     this._squash = value;
   }
   public resetSquash() {
@@ -807,15 +1012,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get squashInput() {
-    return this._squash
+    return this._squash;
   }
 
   // suppress_output - computed: false, optional: true, required: false
-  private _suppressOutput?: boolean | cdktf.IResolvable | undefined; 
+  private _suppressOutput?: boolean | cdktf.IResolvable; 
   public get suppressOutput() {
     return this.getBooleanAttribute('suppress_output') as any;
   }
-  public set suppressOutput(value: boolean | cdktf.IResolvable | undefined) {
+  public set suppressOutput(value: boolean | cdktf.IResolvable) {
     this._suppressOutput = value;
   }
   public resetSuppressOutput() {
@@ -823,15 +1028,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get suppressOutputInput() {
-    return this._suppressOutput
+    return this._suppressOutput;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: string | undefined; 
+  private _target?: string; 
   public get target() {
     return this.getStringAttribute('target');
   }
-  public set target(value: string | undefined) {
+  public set target(value: string) {
     this._target = value;
   }
   public resetTarget() {
@@ -839,15 +1044,15 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target;
   }
 
   // version - computed: false, optional: true, required: false
-  private _version?: string | undefined; 
+  private _version?: string; 
   public get version() {
     return this.getStringAttribute('version');
   }
-  public set version(value: string | undefined) {
+  public set version(value: string) {
     this._version = value;
   }
   public resetVersion() {
@@ -855,16 +1060,16 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get versionInput() {
-    return this._version
+    return this._version;
   }
 
   // auth_config - computed: false, optional: true, required: false
-  private _authConfig?: RegistryImageBuildAuthConfig[] | undefined; 
+  private _authConfig?: RegistryImageBuildAuthConfig[]; 
   public get authConfig() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('auth_config') as any;
   }
-  public set authConfig(value: RegistryImageBuildAuthConfig[] | undefined) {
+  public set authConfig(value: RegistryImageBuildAuthConfig[]) {
     this._authConfig = value;
   }
   public resetAuthConfig() {
@@ -872,16 +1077,16 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get authConfigInput() {
-    return this._authConfig
+    return this._authConfig;
   }
 
   // ulimit - computed: false, optional: true, required: false
-  private _ulimit?: RegistryImageBuildUlimit[] | undefined; 
+  private _ulimit?: RegistryImageBuildUlimit[]; 
   public get ulimit() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('ulimit') as any;
   }
-  public set ulimit(value: RegistryImageBuildUlimit[] | undefined) {
+  public set ulimit(value: RegistryImageBuildUlimit[]) {
     this._ulimit = value;
   }
   public resetUlimit() {
@@ -889,7 +1094,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get ulimitInput() {
-    return this._ulimit
+    return this._ulimit;
   }
 }
 
@@ -928,7 +1133,7 @@ export class RegistryImage extends cdktf.TerraformResource {
     this._insecureSkipVerify = config.insecureSkipVerify;
     this._keepRemotely = config.keepRemotely;
     this._name = config.name;
-    this._build = config.buildAttribute;
+    this._build.internalValue = config.buildAttribute;
   }
 
   // ==========
@@ -941,11 +1146,11 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
-  private _insecureSkipVerify?: boolean | cdktf.IResolvable | undefined; 
+  private _insecureSkipVerify?: boolean | cdktf.IResolvable; 
   public get insecureSkipVerify() {
     return this.getBooleanAttribute('insecure_skip_verify') as any;
   }
-  public set insecureSkipVerify(value: boolean | cdktf.IResolvable | undefined) {
+  public set insecureSkipVerify(value: boolean | cdktf.IResolvable) {
     this._insecureSkipVerify = value;
   }
   public resetInsecureSkipVerify() {
@@ -953,15 +1158,15 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get insecureSkipVerifyInput() {
-    return this._insecureSkipVerify
+    return this._insecureSkipVerify;
   }
 
   // keep_remotely - computed: false, optional: true, required: false
-  private _keepRemotely?: boolean | cdktf.IResolvable | undefined; 
+  private _keepRemotely?: boolean | cdktf.IResolvable; 
   public get keepRemotely() {
     return this.getBooleanAttribute('keep_remotely') as any;
   }
-  public set keepRemotely(value: boolean | cdktf.IResolvable | undefined) {
+  public set keepRemotely(value: boolean | cdktf.IResolvable) {
     this._keepRemotely = value;
   }
   public resetKeepRemotely() {
@@ -969,7 +1174,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get keepRemotelyInput() {
-    return this._keepRemotely
+    return this._keepRemotely;
   }
 
   // name - computed: false, optional: false, required: true
@@ -982,7 +1187,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // sha256_digest - computed: true, optional: false, required: false
@@ -991,20 +1196,19 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // build - computed: false, optional: true, required: false
-  private _build?: RegistryImageBuild | undefined; 
-  private __buildOutput = new RegistryImageBuildOutputReference(this as any, "build", true);
+  private _build = new RegistryImageBuildOutputReference(this as any, "build", true);
   public get buildAttribute() {
-    return this.__buildOutput;
+    return this._build;
   }
-  public putBuildAttribute(value: RegistryImageBuild | undefined) {
-    this._build = value;
+  public putBuildAttribute(value: RegistryImageBuild) {
+    this._build.internalValue = value;
   }
   public resetBuildAttribute() {
-    this._build = undefined;
+    this._build.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get buildAttributeInput() {
-    return this._build
+    return this._build.internalValue;
   }
 
   // =========
@@ -1016,7 +1220,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       insecure_skip_verify: cdktf.booleanToTerraform(this._insecureSkipVerify),
       keep_remotely: cdktf.booleanToTerraform(this._keepRemotely),
       name: cdktf.stringToTerraform(this._name),
-      build: registryImageBuildToTerraform(this._build),
+      build: registryImageBuildToTerraform(this._build.internalValue),
     };
   }
 }

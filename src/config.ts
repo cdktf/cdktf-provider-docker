@@ -71,7 +71,7 @@ export class Config extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get dataInput() {
-    return this._data
+    return this._data;
   }
 
   // id - computed: true, optional: true, required: false
@@ -89,7 +89,7 @@ export class Config extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // =========

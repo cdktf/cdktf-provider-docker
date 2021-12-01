@@ -62,11 +62,11 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   // ==========
 
   // alias - computed: false, optional: true, required: false
-  private _alias?: string | undefined; 
+  private _alias?: string; 
   public get alias() {
     return this.getStringAttribute('alias');
   }
-  public set alias(value: string | undefined) {
+  public set alias(value: string) {
     this._alias = value;
   }
   public resetAlias() {
@@ -74,7 +74,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   }
   // Temporarily expose input value. Use with caution.
   public get aliasInput() {
-    return this._alias
+    return this._alias;
   }
 
   // enabled - computed: true, optional: false, required: false
@@ -93,11 +93,11 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   }
 
   // id - computed: false, optional: true, required: false
-  private _id?: string | undefined; 
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
   }
-  public set id(value: string | undefined) {
+  public set id(value: string) {
     this._id = value;
   }
   public resetId() {
@@ -105,7 +105,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   }
   // Temporarily expose input value. Use with caution.
   public get idInput() {
-    return this._id
+    return this._id;
   }
 
   // name - computed: true, optional: false, required: false

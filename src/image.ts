@@ -101,7 +101,7 @@ export interface ImageBuild {
   readonly target?: string;
 }
 
-function imageBuildToTerraform(struct?: ImageBuildOutputReference | ImageBuild): any {
+export function imageBuildToTerraform(struct?: ImageBuildOutputReference | ImageBuild): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -129,13 +129,80 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
+  public get internalValue(): ImageBuild | undefined {
+    let hasAnyValues = false;
+    const internalValueResult: any = {};
+    if (this._buildArg) {
+      hasAnyValues = true;
+      internalValueResult.buildArg = this._buildArg;
+    }
+    if (this._dockerfile) {
+      hasAnyValues = true;
+      internalValueResult.dockerfile = this._dockerfile;
+    }
+    if (this._forceRemove) {
+      hasAnyValues = true;
+      internalValueResult.forceRemove = this._forceRemove;
+    }
+    if (this._label) {
+      hasAnyValues = true;
+      internalValueResult.label = this._label;
+    }
+    if (this._noCache) {
+      hasAnyValues = true;
+      internalValueResult.noCache = this._noCache;
+    }
+    if (this._path) {
+      hasAnyValues = true;
+      internalValueResult.path = this._path;
+    }
+    if (this._remove) {
+      hasAnyValues = true;
+      internalValueResult.remove = this._remove;
+    }
+    if (this._tag) {
+      hasAnyValues = true;
+      internalValueResult.tag = this._tag;
+    }
+    if (this._target) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ImageBuild | undefined) {
+    if (value === undefined) {
+      this._buildArg = undefined;
+      this._dockerfile = undefined;
+      this._forceRemove = undefined;
+      this._label = undefined;
+      this._noCache = undefined;
+      this._path = undefined;
+      this._remove = undefined;
+      this._tag = undefined;
+      this._target = undefined;
+    }
+    else {
+      this._buildArg = value.buildArg;
+      this._dockerfile = value.dockerfile;
+      this._forceRemove = value.forceRemove;
+      this._label = value.label;
+      this._noCache = value.noCache;
+      this._path = value.path;
+      this._remove = value.remove;
+      this._tag = value.tag;
+      this._target = value.target;
+    }
+  }
+
   // build_arg - computed: false, optional: true, required: false
-  private _buildArg?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _buildArg?: { [key: string]: string } | cdktf.IResolvable; 
   public get buildArg() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('build_arg') as any;
   }
-  public set buildArg(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set buildArg(value: { [key: string]: string } | cdktf.IResolvable) {
     this._buildArg = value;
   }
   public resetBuildArg() {
@@ -143,15 +210,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get buildArgInput() {
-    return this._buildArg
+    return this._buildArg;
   }
 
   // dockerfile - computed: false, optional: true, required: false
-  private _dockerfile?: string | undefined; 
+  private _dockerfile?: string; 
   public get dockerfile() {
     return this.getStringAttribute('dockerfile');
   }
-  public set dockerfile(value: string | undefined) {
+  public set dockerfile(value: string) {
     this._dockerfile = value;
   }
   public resetDockerfile() {
@@ -159,15 +226,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get dockerfileInput() {
-    return this._dockerfile
+    return this._dockerfile;
   }
 
   // force_remove - computed: false, optional: true, required: false
-  private _forceRemove?: boolean | cdktf.IResolvable | undefined; 
+  private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
     return this.getBooleanAttribute('force_remove') as any;
   }
-  public set forceRemove(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
   }
   public resetForceRemove() {
@@ -175,16 +242,16 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get forceRemoveInput() {
-    return this._forceRemove
+    return this._forceRemove;
   }
 
   // label - computed: false, optional: true, required: false
-  private _label?: { [key: string]: string } | cdktf.IResolvable | undefined; 
+  private _label?: { [key: string]: string } | cdktf.IResolvable; 
   public get label() {
     // Getting the computed value is not yet implemented
     return this.interpolationForAttribute('label') as any;
   }
-  public set label(value: { [key: string]: string } | cdktf.IResolvable | undefined) {
+  public set label(value: { [key: string]: string } | cdktf.IResolvable) {
     this._label = value;
   }
   public resetLabel() {
@@ -192,15 +259,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get labelInput() {
-    return this._label
+    return this._label;
   }
 
   // no_cache - computed: false, optional: true, required: false
-  private _noCache?: boolean | cdktf.IResolvable | undefined; 
+  private _noCache?: boolean | cdktf.IResolvable; 
   public get noCache() {
     return this.getBooleanAttribute('no_cache') as any;
   }
-  public set noCache(value: boolean | cdktf.IResolvable | undefined) {
+  public set noCache(value: boolean | cdktf.IResolvable) {
     this._noCache = value;
   }
   public resetNoCache() {
@@ -208,7 +275,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get noCacheInput() {
-    return this._noCache
+    return this._noCache;
   }
 
   // path - computed: false, optional: false, required: true
@@ -221,15 +288,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get pathInput() {
-    return this._path
+    return this._path;
   }
 
   // remove - computed: false, optional: true, required: false
-  private _remove?: boolean | cdktf.IResolvable | undefined; 
+  private _remove?: boolean | cdktf.IResolvable; 
   public get remove() {
     return this.getBooleanAttribute('remove') as any;
   }
-  public set remove(value: boolean | cdktf.IResolvable | undefined) {
+  public set remove(value: boolean | cdktf.IResolvable) {
     this._remove = value;
   }
   public resetRemove() {
@@ -237,15 +304,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get removeInput() {
-    return this._remove
+    return this._remove;
   }
 
   // tag - computed: false, optional: true, required: false
-  private _tag?: string[] | undefined; 
+  private _tag?: string[]; 
   public get tag() {
     return this.getListAttribute('tag');
   }
-  public set tag(value: string[] | undefined) {
+  public set tag(value: string[]) {
     this._tag = value;
   }
   public resetTag() {
@@ -253,15 +320,15 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get tagInput() {
-    return this._tag
+    return this._tag;
   }
 
   // target - computed: false, optional: true, required: false
-  private _target?: string | undefined; 
+  private _target?: string; 
   public get target() {
     return this.getStringAttribute('target');
   }
-  public set target(value: string | undefined) {
+  public set target(value: string) {
     this._target = value;
   }
   public resetTarget() {
@@ -269,7 +336,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
   // Temporarily expose input value. Use with caution.
   public get targetInput() {
-    return this._target
+    return this._target;
   }
 }
 
@@ -310,7 +377,7 @@ export class Image extends cdktf.TerraformResource {
     this._name = config.name;
     this._pullTrigger = config.pullTrigger;
     this._pullTriggers = config.pullTriggers;
-    this._build = config.buildAttribute;
+    this._build.internalValue = config.buildAttribute;
   }
 
   // ==========
@@ -318,11 +385,11 @@ export class Image extends cdktf.TerraformResource {
   // ==========
 
   // force_remove - computed: false, optional: true, required: false
-  private _forceRemove?: boolean | cdktf.IResolvable | undefined; 
+  private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
     return this.getBooleanAttribute('force_remove') as any;
   }
-  public set forceRemove(value: boolean | cdktf.IResolvable | undefined) {
+  public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
   }
   public resetForceRemove() {
@@ -330,7 +397,7 @@ export class Image extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get forceRemoveInput() {
-    return this._forceRemove
+    return this._forceRemove;
   }
 
   // id - computed: true, optional: true, required: false
@@ -339,11 +406,11 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // keep_locally - computed: false, optional: true, required: false
-  private _keepLocally?: boolean | cdktf.IResolvable | undefined; 
+  private _keepLocally?: boolean | cdktf.IResolvable; 
   public get keepLocally() {
     return this.getBooleanAttribute('keep_locally') as any;
   }
-  public set keepLocally(value: boolean | cdktf.IResolvable | undefined) {
+  public set keepLocally(value: boolean | cdktf.IResolvable) {
     this._keepLocally = value;
   }
   public resetKeepLocally() {
@@ -351,7 +418,7 @@ export class Image extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get keepLocallyInput() {
-    return this._keepLocally
+    return this._keepLocally;
   }
 
   // latest - computed: true, optional: false, required: false
@@ -369,7 +436,7 @@ export class Image extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
-    return this._name
+    return this._name;
   }
 
   // output - computed: true, optional: false, required: false
@@ -378,11 +445,11 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // pull_trigger - computed: false, optional: true, required: false
-  private _pullTrigger?: string | undefined; 
+  private _pullTrigger?: string; 
   public get pullTrigger() {
     return this.getStringAttribute('pull_trigger');
   }
-  public set pullTrigger(value: string | undefined) {
+  public set pullTrigger(value: string) {
     this._pullTrigger = value;
   }
   public resetPullTrigger() {
@@ -390,15 +457,15 @@ export class Image extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get pullTriggerInput() {
-    return this._pullTrigger
+    return this._pullTrigger;
   }
 
   // pull_triggers - computed: false, optional: true, required: false
-  private _pullTriggers?: string[] | undefined; 
+  private _pullTriggers?: string[]; 
   public get pullTriggers() {
     return this.getListAttribute('pull_triggers');
   }
-  public set pullTriggers(value: string[] | undefined) {
+  public set pullTriggers(value: string[]) {
     this._pullTriggers = value;
   }
   public resetPullTriggers() {
@@ -406,7 +473,7 @@ export class Image extends cdktf.TerraformResource {
   }
   // Temporarily expose input value. Use with caution.
   public get pullTriggersInput() {
-    return this._pullTriggers
+    return this._pullTriggers;
   }
 
   // repo_digest - computed: true, optional: false, required: false
@@ -415,20 +482,19 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // build - computed: false, optional: true, required: false
-  private _build?: ImageBuild | undefined; 
-  private __buildOutput = new ImageBuildOutputReference(this as any, "build", true);
+  private _build = new ImageBuildOutputReference(this as any, "build", true);
   public get buildAttribute() {
-    return this.__buildOutput;
+    return this._build;
   }
-  public putBuildAttribute(value: ImageBuild | undefined) {
-    this._build = value;
+  public putBuildAttribute(value: ImageBuild) {
+    this._build.internalValue = value;
   }
   public resetBuildAttribute() {
-    this._build = undefined;
+    this._build.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get buildAttributeInput() {
-    return this._build
+    return this._build.internalValue;
   }
 
   // =========
@@ -442,7 +508,7 @@ export class Image extends cdktf.TerraformResource {
       name: cdktf.stringToTerraform(this._name),
       pull_trigger: cdktf.stringToTerraform(this._pullTrigger),
       pull_triggers: cdktf.listMapper(cdktf.stringToTerraform)(this._pullTriggers),
-      build: imageBuildToTerraform(this._build),
+      build: imageBuildToTerraform(this._build.internalValue),
     };
   }
 }
