@@ -370,6 +370,8 @@ export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputR
 }
 
 export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -380,7 +382,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): RegistryImageBuild | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._buildArgs) {
       hasAnyValues = true;
@@ -515,6 +517,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: RegistryImageBuild | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._buildArgs = undefined;
       this._buildId = undefined;
       this._cacheFrom = undefined;
@@ -549,6 +552,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
       this._ulimit = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._buildArgs = value.buildArgs;
       this._buildId = value.buildId;
       this._cacheFrom = value.cacheFrom;

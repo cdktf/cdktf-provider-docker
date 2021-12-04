@@ -120,6 +120,8 @@ export function imageBuildToTerraform(struct?: ImageBuildOutputReference | Image
 }
 
 export class ImageBuildOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -130,7 +132,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ImageBuild | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._buildArg) {
       hasAnyValues = true;
@@ -173,6 +175,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ImageBuild | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._buildArg = undefined;
       this._dockerfile = undefined;
       this._forceRemove = undefined;
@@ -184,6 +187,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
       this._target = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._buildArg = value.buildArg;
       this._dockerfile = value.dockerfile;
       this._forceRemove = value.forceRemove;

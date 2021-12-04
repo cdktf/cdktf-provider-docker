@@ -414,6 +414,8 @@ export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesO
 }
 
 export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -424,7 +426,7 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ContainerCapabilities | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._add) {
       hasAnyValues = true;
@@ -439,10 +441,12 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ContainerCapabilities | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._add = undefined;
       this._drop = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._add = value.add;
       this._drop = value.drop;
     }
@@ -561,6 +565,8 @@ export function containerHealthcheckToTerraform(struct?: ContainerHealthcheckOut
 }
 
 export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -571,7 +577,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ContainerHealthcheck | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._interval) {
       hasAnyValues = true;
@@ -598,6 +604,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ContainerHealthcheck | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._interval = undefined;
       this._retries = undefined;
       this._startPeriod = undefined;
@@ -605,6 +612,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
       this._timeout = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._interval = value.interval;
       this._retries = value.retries;
       this._startPeriod = value.startPeriod;
@@ -762,6 +770,8 @@ export function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBi
 }
 
 export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -772,7 +782,7 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
   }
 
   public get internalValue(): ContainerMountsBindOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._propagation) {
       hasAnyValues = true;
@@ -783,9 +793,11 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
 
   public set internalValue(value: ContainerMountsBindOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._propagation = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._propagation = value.propagation;
     }
   }
@@ -833,6 +845,8 @@ export function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsT
 }
 
 export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -843,7 +857,7 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   }
 
   public get internalValue(): ContainerMountsTmpfsOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._mode) {
       hasAnyValues = true;
@@ -858,10 +872,12 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
 
   public set internalValue(value: ContainerMountsTmpfsOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._mode = undefined;
       this._sizeBytes = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._mode = value.mode;
       this._sizeBytes = value.sizeBytes;
     }
@@ -966,6 +982,8 @@ export function containerMountsVolumeOptionsToTerraform(struct?: ContainerMounts
 }
 
 export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -976,7 +994,7 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): ContainerMountsVolumeOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driverName) {
       hasAnyValues = true;
@@ -999,12 +1017,14 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: ContainerMountsVolumeOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driverName = undefined;
       this._driverOptions = undefined;
       this._noCopy = undefined;
       this._labels = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driverName = value.driverName;
       this._driverOptions = value.driverOptions;
       this._noCopy = value.noCopy;

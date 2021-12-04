@@ -96,6 +96,8 @@ export function serviceAuthToTerraform(struct?: ServiceAuthOutputReference | Ser
 }
 
 export class ServiceAuthOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -106,7 +108,7 @@ export class ServiceAuthOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceAuth | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._password) {
       hasAnyValues = true;
@@ -125,11 +127,13 @@ export class ServiceAuthOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceAuth | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._password = undefined;
       this._serverAddress = undefined;
       this._username = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._password = value.password;
       this._serverAddress = value.serverAddress;
       this._username = value.username;
@@ -208,6 +212,8 @@ export function serviceConvergeConfigToTerraform(struct?: ServiceConvergeConfigO
 }
 
 export class ServiceConvergeConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -218,7 +224,7 @@ export class ServiceConvergeConfigOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceConvergeConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._delay) {
       hasAnyValues = true;
@@ -233,10 +239,12 @@ export class ServiceConvergeConfigOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceConvergeConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._delay = undefined;
       this._timeout = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._delay = value.delay;
       this._timeout = value.timeout;
     }
@@ -348,6 +356,8 @@ export function serviceEndpointSpecToTerraform(struct?: ServiceEndpointSpecOutpu
 }
 
 export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -358,7 +368,7 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceEndpointSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._mode) {
       hasAnyValues = true;
@@ -373,10 +383,12 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceEndpointSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._mode = undefined;
       this._ports = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._mode = value.mode;
       this._ports = value.ports;
     }
@@ -461,6 +473,8 @@ export function serviceModeReplicatedToTerraform(struct?: ServiceModeReplicatedO
 }
 
 export class ServiceModeReplicatedOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -471,7 +485,7 @@ export class ServiceModeReplicatedOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceModeReplicated | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._replicas) {
       hasAnyValues = true;
@@ -482,9 +496,11 @@ export class ServiceModeReplicatedOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceModeReplicated | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._replicas = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._replicas = value.replicas;
     }
   }
@@ -532,6 +548,8 @@ export function serviceModeToTerraform(struct?: ServiceModeOutputReference | Ser
 }
 
 export class ServiceModeOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -542,13 +560,13 @@ export class ServiceModeOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceMode | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._global) {
       hasAnyValues = true;
       internalValueResult.global = this._global;
     }
-    if (this._replicated) {
+    if (this._replicated?.internalValue) {
       hasAnyValues = true;
       internalValueResult.replicated = this._replicated?.internalValue;
     }
@@ -557,10 +575,12 @@ export class ServiceModeOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceMode | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._global = undefined;
       this._replicated.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._global = value.global;
       this._replicated.internalValue = value.replicated;
     }
@@ -653,6 +673,8 @@ export function serviceRollbackConfigToTerraform(struct?: ServiceRollbackConfigO
 }
 
 export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -663,7 +685,7 @@ export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceRollbackConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._delay) {
       hasAnyValues = true;
@@ -694,6 +716,7 @@ export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceRollbackConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._delay = undefined;
       this._failureAction = undefined;
       this._maxFailureRatio = undefined;
@@ -702,6 +725,7 @@ export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
       this._parallelism = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._delay = value.delay;
       this._failureAction = value.failureAction;
       this._maxFailureRatio = value.maxFailureRatio;
@@ -895,6 +919,8 @@ export function serviceTaskSpecContainerSpecDnsConfigToTerraform(struct?: Servic
 }
 
 export class ServiceTaskSpecContainerSpecDnsConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -905,7 +931,7 @@ export class ServiceTaskSpecContainerSpecDnsConfigOutputReference extends cdktf.
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecDnsConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._nameservers) {
       hasAnyValues = true;
@@ -924,11 +950,13 @@ export class ServiceTaskSpecContainerSpecDnsConfigOutputReference extends cdktf.
 
   public set internalValue(value: ServiceTaskSpecContainerSpecDnsConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._nameservers = undefined;
       this._options = undefined;
       this._search = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._nameservers = value.nameservers;
       this._options = value.options;
       this._search = value.search;
@@ -1028,6 +1056,8 @@ export function serviceTaskSpecContainerSpecHealthcheckToTerraform(struct?: Serv
 }
 
 export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1038,7 +1068,7 @@ export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdkt
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecHealthcheck | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._interval) {
       hasAnyValues = true;
@@ -1065,6 +1095,7 @@ export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdkt
 
   public set internalValue(value: ServiceTaskSpecContainerSpecHealthcheck | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._interval = undefined;
       this._retries = undefined;
       this._startPeriod = undefined;
@@ -1072,6 +1103,7 @@ export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdkt
       this._timeout = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._interval = value.interval;
       this._retries = value.retries;
       this._startPeriod = value.startPeriod;
@@ -1229,6 +1261,8 @@ export function serviceTaskSpecContainerSpecMountsBindOptionsToTerraform(struct?
 }
 
 export class ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1239,7 +1273,7 @@ export class ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference extend
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsBindOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._propagation) {
       hasAnyValues = true;
@@ -1250,9 +1284,11 @@ export class ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference extend
 
   public set internalValue(value: ServiceTaskSpecContainerSpecMountsBindOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._propagation = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._propagation = value.propagation;
     }
   }
@@ -1300,6 +1336,8 @@ export function serviceTaskSpecContainerSpecMountsTmpfsOptionsToTerraform(struct
 }
 
 export class ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1310,7 +1348,7 @@ export class ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference exten
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsTmpfsOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._mode) {
       hasAnyValues = true;
@@ -1325,10 +1363,12 @@ export class ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference exten
 
   public set internalValue(value: ServiceTaskSpecContainerSpecMountsTmpfsOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._mode = undefined;
       this._sizeBytes = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._mode = value.mode;
       this._sizeBytes = value.sizeBytes;
     }
@@ -1433,6 +1473,8 @@ export function serviceTaskSpecContainerSpecMountsVolumeOptionsToTerraform(struc
 }
 
 export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1443,7 +1485,7 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsVolumeOptions | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._driverName) {
       hasAnyValues = true;
@@ -1466,12 +1508,14 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
 
   public set internalValue(value: ServiceTaskSpecContainerSpecMountsVolumeOptions | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._driverName = undefined;
       this._driverOptions = undefined;
       this._noCopy = undefined;
       this._labels = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._driverName = value.driverName;
       this._driverOptions = value.driverOptions;
       this._noCopy = value.noCopy;
@@ -1633,6 +1677,8 @@ export function serviceTaskSpecContainerSpecPrivilegesCredentialSpecToTerraform(
 }
 
 export class ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1643,7 +1689,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesCredentialSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._file) {
       hasAnyValues = true;
@@ -1658,10 +1704,12 @@ export class ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
 
   public set internalValue(value: ServiceTaskSpecContainerSpecPrivilegesCredentialSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._file = undefined;
       this._registry = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._file = value.file;
       this._registry = value.registry;
     }
@@ -1747,6 +1795,8 @@ export function serviceTaskSpecContainerSpecPrivilegesSeLinuxContextToTerraform(
 }
 
 export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1757,7 +1807,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._disable) {
       hasAnyValues = true;
@@ -1784,6 +1834,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
 
   public set internalValue(value: ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._disable = undefined;
       this._level = undefined;
       this._role = undefined;
@@ -1791,6 +1842,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
       this._user = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._disable = value.disable;
       this._level = value.level;
       this._role = value.role;
@@ -1906,6 +1958,8 @@ export function serviceTaskSpecContainerSpecPrivilegesToTerraform(struct?: Servi
 }
 
 export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -1916,13 +1970,13 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivileges | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._credentialSpec) {
+    if (this._credentialSpec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.credentialSpec = this._credentialSpec?.internalValue;
     }
-    if (this._seLinuxContext) {
+    if (this._seLinuxContext?.internalValue) {
       hasAnyValues = true;
       internalValueResult.seLinuxContext = this._seLinuxContext?.internalValue;
     }
@@ -1931,10 +1985,12 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
 
   public set internalValue(value: ServiceTaskSpecContainerSpecPrivileges | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._credentialSpec.internalValue = undefined;
       this._seLinuxContext.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._credentialSpec.internalValue = value.credentialSpec;
       this._seLinuxContext.internalValue = value.seLinuxContext;
     }
@@ -2179,6 +2235,8 @@ export function serviceTaskSpecContainerSpecToTerraform(struct?: ServiceTaskSpec
 }
 
 export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2189,7 +2247,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._args) {
       hasAnyValues = true;
@@ -2243,11 +2301,11 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.configs = this._configs;
     }
-    if (this._dnsConfig) {
+    if (this._dnsConfig?.internalValue) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._healthcheck) {
+    if (this._healthcheck?.internalValue) {
       hasAnyValues = true;
       internalValueResult.healthcheck = this._healthcheck?.internalValue;
     }
@@ -2263,7 +2321,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.mounts = this._mounts;
     }
-    if (this._privileges) {
+    if (this._privileges?.internalValue) {
       hasAnyValues = true;
       internalValueResult.privileges = this._privileges?.internalValue;
     }
@@ -2276,6 +2334,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: ServiceTaskSpecContainerSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._args = undefined;
       this._command = undefined;
       this._dir = undefined;
@@ -2298,6 +2357,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       this._secrets = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._args = value.args;
       this._command = value.command;
       this._dir = value.dir;
@@ -2671,6 +2731,8 @@ export function serviceTaskSpecLogDriverToTerraform(struct?: ServiceTaskSpecLogD
 }
 
 export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2681,7 +2743,7 @@ export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject
   }
 
   public get internalValue(): ServiceTaskSpecLogDriver | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._name) {
       hasAnyValues = true;
@@ -2696,10 +2758,12 @@ export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject
 
   public set internalValue(value: ServiceTaskSpecLogDriver | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._name = undefined;
       this._options = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._name = value.name;
       this._options = value.options;
     }
@@ -2802,6 +2866,8 @@ export function serviceTaskSpecPlacementToTerraform(struct?: ServiceTaskSpecPlac
 }
 
 export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2812,7 +2878,7 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
   }
 
   public get internalValue(): ServiceTaskSpecPlacement | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._constraints) {
       hasAnyValues = true;
@@ -2835,12 +2901,14 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
 
   public set internalValue(value: ServiceTaskSpecPlacement | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._constraints = undefined;
       this._maxReplicas = undefined;
       this._prefs = undefined;
       this._platforms = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._constraints = value.constraints;
       this._maxReplicas = value.maxReplicas;
       this._prefs = value.prefs;
@@ -2940,6 +3008,8 @@ export function serviceTaskSpecResourcesLimitsToTerraform(struct?: ServiceTaskSp
 }
 
 export class ServiceTaskSpecResourcesLimitsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -2950,7 +3020,7 @@ export class ServiceTaskSpecResourcesLimitsOutputReference extends cdktf.Complex
   }
 
   public get internalValue(): ServiceTaskSpecResourcesLimits | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._memoryBytes) {
       hasAnyValues = true;
@@ -2965,10 +3035,12 @@ export class ServiceTaskSpecResourcesLimitsOutputReference extends cdktf.Complex
 
   public set internalValue(value: ServiceTaskSpecResourcesLimits | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._memoryBytes = undefined;
       this._nanoCpus = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._memoryBytes = value.memoryBytes;
       this._nanoCpus = value.nanoCpus;
     }
@@ -3033,6 +3105,8 @@ export function serviceTaskSpecResourcesReservationGenericResourcesToTerraform(s
 }
 
 export class ServiceTaskSpecResourcesReservationGenericResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3043,7 +3117,7 @@ export class ServiceTaskSpecResourcesReservationGenericResourcesOutputReference 
   }
 
   public get internalValue(): ServiceTaskSpecResourcesReservationGenericResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._discreteResourcesSpec) {
       hasAnyValues = true;
@@ -3058,10 +3132,12 @@ export class ServiceTaskSpecResourcesReservationGenericResourcesOutputReference 
 
   public set internalValue(value: ServiceTaskSpecResourcesReservationGenericResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._discreteResourcesSpec = undefined;
       this._namedResourcesSpec = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._discreteResourcesSpec = value.discreteResourcesSpec;
       this._namedResourcesSpec = value.namedResourcesSpec;
     }
@@ -3133,6 +3209,8 @@ export function serviceTaskSpecResourcesReservationToTerraform(struct?: ServiceT
 }
 
 export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3143,7 +3221,7 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
   }
 
   public get internalValue(): ServiceTaskSpecResourcesReservation | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._memoryBytes) {
       hasAnyValues = true;
@@ -3153,7 +3231,7 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
       hasAnyValues = true;
       internalValueResult.nanoCpus = this._nanoCpus;
     }
-    if (this._genericResources) {
+    if (this._genericResources?.internalValue) {
       hasAnyValues = true;
       internalValueResult.genericResources = this._genericResources?.internalValue;
     }
@@ -3162,11 +3240,13 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
 
   public set internalValue(value: ServiceTaskSpecResourcesReservation | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._memoryBytes = undefined;
       this._nanoCpus = undefined;
       this._genericResources.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._memoryBytes = value.memoryBytes;
       this._nanoCpus = value.nanoCpus;
       this._genericResources.internalValue = value.genericResources;
@@ -3248,6 +3328,8 @@ export function serviceTaskSpecResourcesToTerraform(struct?: ServiceTaskSpecReso
 }
 
 export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3258,13 +3340,13 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
   }
 
   public get internalValue(): ServiceTaskSpecResources | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits) {
+    if (this._limits?.internalValue) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits?.internalValue;
     }
-    if (this._reservation) {
+    if (this._reservation?.internalValue) {
       hasAnyValues = true;
       internalValueResult.reservation = this._reservation?.internalValue;
     }
@@ -3273,10 +3355,12 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
 
   public set internalValue(value: ServiceTaskSpecResources | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._limits.internalValue = undefined;
       this._reservation.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._limits.internalValue = value.limits;
       this._reservation.internalValue = value.reservation;
     }
@@ -3355,6 +3439,8 @@ export function serviceTaskSpecRestartPolicyToTerraform(struct?: ServiceTaskSpec
 }
 
 export class ServiceTaskSpecRestartPolicyOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3365,7 +3451,7 @@ export class ServiceTaskSpecRestartPolicyOutputReference extends cdktf.ComplexOb
   }
 
   public get internalValue(): ServiceTaskSpecRestartPolicy | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._condition) {
       hasAnyValues = true;
@@ -3388,12 +3474,14 @@ export class ServiceTaskSpecRestartPolicyOutputReference extends cdktf.ComplexOb
 
   public set internalValue(value: ServiceTaskSpecRestartPolicy | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._condition = undefined;
       this._delay = undefined;
       this._maxAttempts = undefined;
       this._window = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._condition = value.condition;
       this._delay = value.delay;
       this._maxAttempts = value.maxAttempts;
@@ -3534,6 +3622,8 @@ export function serviceTaskSpecToTerraform(struct?: ServiceTaskSpecOutputReferen
 }
 
 export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3544,7 +3634,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceTaskSpec | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._forceUpdate) {
       hasAnyValues = true;
@@ -3558,23 +3648,23 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.runtime = this._runtime;
     }
-    if (this._containerSpec) {
+    if (this._containerSpec?.internalValue) {
       hasAnyValues = true;
       internalValueResult.containerSpec = this._containerSpec?.internalValue;
     }
-    if (this._logDriver) {
+    if (this._logDriver?.internalValue) {
       hasAnyValues = true;
       internalValueResult.logDriver = this._logDriver?.internalValue;
     }
-    if (this._placement) {
+    if (this._placement?.internalValue) {
       hasAnyValues = true;
       internalValueResult.placement = this._placement?.internalValue;
     }
-    if (this._resources) {
+    if (this._resources?.internalValue) {
       hasAnyValues = true;
       internalValueResult.resources = this._resources?.internalValue;
     }
-    if (this._restartPolicy) {
+    if (this._restartPolicy?.internalValue) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy?.internalValue;
     }
@@ -3583,6 +3673,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceTaskSpec | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._forceUpdate = undefined;
       this._networks = undefined;
       this._runtime = undefined;
@@ -3593,6 +3684,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
       this._restartPolicy.internalValue = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._forceUpdate = value.forceUpdate;
       this._networks = value.networks;
       this._runtime = value.runtime;
@@ -3784,6 +3876,8 @@ export function serviceUpdateConfigToTerraform(struct?: ServiceUpdateConfigOutpu
 }
 
 export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
@@ -3794,7 +3888,7 @@ export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
   }
 
   public get internalValue(): ServiceUpdateConfig | undefined {
-    let hasAnyValues = false;
+    let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._delay) {
       hasAnyValues = true;
@@ -3825,6 +3919,7 @@ export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
 
   public set internalValue(value: ServiceUpdateConfig | undefined) {
     if (value === undefined) {
+      this.isEmptyObject = false;
       this._delay = undefined;
       this._failureAction = undefined;
       this._maxFailureRatio = undefined;
@@ -3833,6 +3928,7 @@ export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
       this._parallelism = undefined;
     }
     else {
+      this.isEmptyObject = Object.keys(value).length === 0;
       this._delay = value.delay;
       this._failureAction = value.failureAction;
       this._maxFailureRatio = value.maxFailureRatio;
