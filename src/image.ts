@@ -134,39 +134,39 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ImageBuild | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._buildArg) {
+    if (this._buildArg !== undefined) {
       hasAnyValues = true;
       internalValueResult.buildArg = this._buildArg;
     }
-    if (this._dockerfile) {
+    if (this._dockerfile !== undefined) {
       hasAnyValues = true;
       internalValueResult.dockerfile = this._dockerfile;
     }
-    if (this._forceRemove) {
+    if (this._forceRemove !== undefined) {
       hasAnyValues = true;
       internalValueResult.forceRemove = this._forceRemove;
     }
-    if (this._label) {
+    if (this._label !== undefined) {
       hasAnyValues = true;
       internalValueResult.label = this._label;
     }
-    if (this._noCache) {
+    if (this._noCache !== undefined) {
       hasAnyValues = true;
       internalValueResult.noCache = this._noCache;
     }
-    if (this._path) {
+    if (this._path !== undefined) {
       hasAnyValues = true;
       internalValueResult.path = this._path;
     }
-    if (this._remove) {
+    if (this._remove !== undefined) {
       hasAnyValues = true;
       internalValueResult.remove = this._remove;
     }
-    if (this._tag) {
+    if (this._tag !== undefined) {
       hasAnyValues = true;
       internalValueResult.tag = this._tag;
     }
-    if (this._target) {
+    if (this._target !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target;
     }

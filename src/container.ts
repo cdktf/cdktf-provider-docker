@@ -428,11 +428,11 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ContainerCapabilities | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._add) {
+    if (this._add !== undefined) {
       hasAnyValues = true;
       internalValueResult.add = this._add;
     }
-    if (this._drop) {
+    if (this._drop !== undefined) {
       hasAnyValues = true;
       internalValueResult.drop = this._drop;
     }
@@ -579,23 +579,23 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ContainerHealthcheck | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._interval) {
+    if (this._interval !== undefined) {
       hasAnyValues = true;
       internalValueResult.interval = this._interval;
     }
-    if (this._retries) {
+    if (this._retries !== undefined) {
       hasAnyValues = true;
       internalValueResult.retries = this._retries;
     }
-    if (this._startPeriod) {
+    if (this._startPeriod !== undefined) {
       hasAnyValues = true;
       internalValueResult.startPeriod = this._startPeriod;
     }
-    if (this._test) {
+    if (this._test !== undefined) {
       hasAnyValues = true;
       internalValueResult.test = this._test;
     }
-    if (this._timeout) {
+    if (this._timeout !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeout = this._timeout;
     }
@@ -784,7 +784,7 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
   public get internalValue(): ContainerMountsBindOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._propagation) {
+    if (this._propagation !== undefined) {
       hasAnyValues = true;
       internalValueResult.propagation = this._propagation;
     }
@@ -859,11 +859,11 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   public get internalValue(): ContainerMountsTmpfsOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._mode) {
+    if (this._mode !== undefined) {
       hasAnyValues = true;
       internalValueResult.mode = this._mode;
     }
-    if (this._sizeBytes) {
+    if (this._sizeBytes !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeBytes = this._sizeBytes;
     }
@@ -996,19 +996,19 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   public get internalValue(): ContainerMountsVolumeOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driverName) {
+    if (this._driverName !== undefined) {
       hasAnyValues = true;
       internalValueResult.driverName = this._driverName;
     }
-    if (this._driverOptions) {
+    if (this._driverOptions !== undefined) {
       hasAnyValues = true;
       internalValueResult.driverOptions = this._driverOptions;
     }
-    if (this._noCopy) {
+    if (this._noCopy !== undefined) {
       hasAnyValues = true;
       internalValueResult.noCopy = this._noCopy;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
