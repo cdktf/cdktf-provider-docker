@@ -384,131 +384,131 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   public get internalValue(): RegistryImageBuild | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._buildArgs) {
+    if (this._buildArgs !== undefined) {
       hasAnyValues = true;
       internalValueResult.buildArgs = this._buildArgs;
     }
-    if (this._buildId) {
+    if (this._buildId !== undefined) {
       hasAnyValues = true;
       internalValueResult.buildId = this._buildId;
     }
-    if (this._cacheFrom) {
+    if (this._cacheFrom !== undefined) {
       hasAnyValues = true;
       internalValueResult.cacheFrom = this._cacheFrom;
     }
-    if (this._cgroupParent) {
+    if (this._cgroupParent !== undefined) {
       hasAnyValues = true;
       internalValueResult.cgroupParent = this._cgroupParent;
     }
-    if (this._context) {
+    if (this._context !== undefined) {
       hasAnyValues = true;
       internalValueResult.context = this._context;
     }
-    if (this._cpuPeriod) {
+    if (this._cpuPeriod !== undefined) {
       hasAnyValues = true;
       internalValueResult.cpuPeriod = this._cpuPeriod;
     }
-    if (this._cpuQuota) {
+    if (this._cpuQuota !== undefined) {
       hasAnyValues = true;
       internalValueResult.cpuQuota = this._cpuQuota;
     }
-    if (this._cpuSetCpus) {
+    if (this._cpuSetCpus !== undefined) {
       hasAnyValues = true;
       internalValueResult.cpuSetCpus = this._cpuSetCpus;
     }
-    if (this._cpuSetMems) {
+    if (this._cpuSetMems !== undefined) {
       hasAnyValues = true;
       internalValueResult.cpuSetMems = this._cpuSetMems;
     }
-    if (this._cpuShares) {
+    if (this._cpuShares !== undefined) {
       hasAnyValues = true;
       internalValueResult.cpuShares = this._cpuShares;
     }
-    if (this._dockerfile) {
+    if (this._dockerfile !== undefined) {
       hasAnyValues = true;
       internalValueResult.dockerfile = this._dockerfile;
     }
-    if (this._extraHosts) {
+    if (this._extraHosts !== undefined) {
       hasAnyValues = true;
       internalValueResult.extraHosts = this._extraHosts;
     }
-    if (this._forceRemove) {
+    if (this._forceRemove !== undefined) {
       hasAnyValues = true;
       internalValueResult.forceRemove = this._forceRemove;
     }
-    if (this._isolation) {
+    if (this._isolation !== undefined) {
       hasAnyValues = true;
       internalValueResult.isolation = this._isolation;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._memory) {
+    if (this._memory !== undefined) {
       hasAnyValues = true;
       internalValueResult.memory = this._memory;
     }
-    if (this._memorySwap) {
+    if (this._memorySwap !== undefined) {
       hasAnyValues = true;
       internalValueResult.memorySwap = this._memorySwap;
     }
-    if (this._networkMode) {
+    if (this._networkMode !== undefined) {
       hasAnyValues = true;
       internalValueResult.networkMode = this._networkMode;
     }
-    if (this._noCache) {
+    if (this._noCache !== undefined) {
       hasAnyValues = true;
       internalValueResult.noCache = this._noCache;
     }
-    if (this._platform) {
+    if (this._platform !== undefined) {
       hasAnyValues = true;
       internalValueResult.platform = this._platform;
     }
-    if (this._pullParent) {
+    if (this._pullParent !== undefined) {
       hasAnyValues = true;
       internalValueResult.pullParent = this._pullParent;
     }
-    if (this._remoteContext) {
+    if (this._remoteContext !== undefined) {
       hasAnyValues = true;
       internalValueResult.remoteContext = this._remoteContext;
     }
-    if (this._remove) {
+    if (this._remove !== undefined) {
       hasAnyValues = true;
       internalValueResult.remove = this._remove;
     }
-    if (this._securityOpt) {
+    if (this._securityOpt !== undefined) {
       hasAnyValues = true;
       internalValueResult.securityOpt = this._securityOpt;
     }
-    if (this._sessionId) {
+    if (this._sessionId !== undefined) {
       hasAnyValues = true;
       internalValueResult.sessionId = this._sessionId;
     }
-    if (this._shmSize) {
+    if (this._shmSize !== undefined) {
       hasAnyValues = true;
       internalValueResult.shmSize = this._shmSize;
     }
-    if (this._squash) {
+    if (this._squash !== undefined) {
       hasAnyValues = true;
       internalValueResult.squash = this._squash;
     }
-    if (this._suppressOutput) {
+    if (this._suppressOutput !== undefined) {
       hasAnyValues = true;
       internalValueResult.suppressOutput = this._suppressOutput;
     }
-    if (this._target) {
+    if (this._target !== undefined) {
       hasAnyValues = true;
       internalValueResult.target = this._target;
     }
-    if (this._version) {
+    if (this._version !== undefined) {
       hasAnyValues = true;
       internalValueResult.version = this._version;
     }
-    if (this._authConfig) {
+    if (this._authConfig !== undefined) {
       hasAnyValues = true;
       internalValueResult.authConfig = this._authConfig;
     }
-    if (this._ulimit) {
+    if (this._ulimit !== undefined) {
       hasAnyValues = true;
       internalValueResult.ulimit = this._ulimit;
     }

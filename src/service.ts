@@ -110,15 +110,15 @@ export class ServiceAuthOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceAuth | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._password) {
+    if (this._password !== undefined) {
       hasAnyValues = true;
       internalValueResult.password = this._password;
     }
-    if (this._serverAddress) {
+    if (this._serverAddress !== undefined) {
       hasAnyValues = true;
       internalValueResult.serverAddress = this._serverAddress;
     }
-    if (this._username) {
+    if (this._username !== undefined) {
       hasAnyValues = true;
       internalValueResult.username = this._username;
     }
@@ -226,11 +226,11 @@ export class ServiceConvergeConfigOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceConvergeConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._delay) {
+    if (this._delay !== undefined) {
       hasAnyValues = true;
       internalValueResult.delay = this._delay;
     }
-    if (this._timeout) {
+    if (this._timeout !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeout = this._timeout;
     }
@@ -370,11 +370,11 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceEndpointSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._mode) {
+    if (this._mode !== undefined) {
       hasAnyValues = true;
       internalValueResult.mode = this._mode;
     }
-    if (this._ports) {
+    if (this._ports !== undefined) {
       hasAnyValues = true;
       internalValueResult.ports = this._ports;
     }
@@ -487,7 +487,7 @@ export class ServiceModeReplicatedOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceModeReplicated | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._replicas) {
+    if (this._replicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.replicas = this._replicas;
     }
@@ -562,11 +562,11 @@ export class ServiceModeOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceMode | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._global) {
+    if (this._global !== undefined) {
       hasAnyValues = true;
       internalValueResult.global = this._global;
     }
-    if (this._replicated?.internalValue) {
+    if (this._replicated?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.replicated = this._replicated?.internalValue;
     }
@@ -687,27 +687,27 @@ export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceRollbackConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._delay) {
+    if (this._delay !== undefined) {
       hasAnyValues = true;
       internalValueResult.delay = this._delay;
     }
-    if (this._failureAction) {
+    if (this._failureAction !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureAction = this._failureAction;
     }
-    if (this._maxFailureRatio) {
+    if (this._maxFailureRatio !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxFailureRatio = this._maxFailureRatio;
     }
-    if (this._monitor) {
+    if (this._monitor !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitor = this._monitor;
     }
-    if (this._order) {
+    if (this._order !== undefined) {
       hasAnyValues = true;
       internalValueResult.order = this._order;
     }
-    if (this._parallelism) {
+    if (this._parallelism !== undefined) {
       hasAnyValues = true;
       internalValueResult.parallelism = this._parallelism;
     }
@@ -933,15 +933,15 @@ export class ServiceTaskSpecContainerSpecDnsConfigOutputReference extends cdktf.
   public get internalValue(): ServiceTaskSpecContainerSpecDnsConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._nameservers) {
+    if (this._nameservers !== undefined) {
       hasAnyValues = true;
       internalValueResult.nameservers = this._nameservers;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
-    if (this._search) {
+    if (this._search !== undefined) {
       hasAnyValues = true;
       internalValueResult.search = this._search;
     }
@@ -1070,23 +1070,23 @@ export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdkt
   public get internalValue(): ServiceTaskSpecContainerSpecHealthcheck | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._interval) {
+    if (this._interval !== undefined) {
       hasAnyValues = true;
       internalValueResult.interval = this._interval;
     }
-    if (this._retries) {
+    if (this._retries !== undefined) {
       hasAnyValues = true;
       internalValueResult.retries = this._retries;
     }
-    if (this._startPeriod) {
+    if (this._startPeriod !== undefined) {
       hasAnyValues = true;
       internalValueResult.startPeriod = this._startPeriod;
     }
-    if (this._test) {
+    if (this._test !== undefined) {
       hasAnyValues = true;
       internalValueResult.test = this._test;
     }
-    if (this._timeout) {
+    if (this._timeout !== undefined) {
       hasAnyValues = true;
       internalValueResult.timeout = this._timeout;
     }
@@ -1275,7 +1275,7 @@ export class ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference extend
   public get internalValue(): ServiceTaskSpecContainerSpecMountsBindOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._propagation) {
+    if (this._propagation !== undefined) {
       hasAnyValues = true;
       internalValueResult.propagation = this._propagation;
     }
@@ -1350,11 +1350,11 @@ export class ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference exten
   public get internalValue(): ServiceTaskSpecContainerSpecMountsTmpfsOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._mode) {
+    if (this._mode !== undefined) {
       hasAnyValues = true;
       internalValueResult.mode = this._mode;
     }
-    if (this._sizeBytes) {
+    if (this._sizeBytes !== undefined) {
       hasAnyValues = true;
       internalValueResult.sizeBytes = this._sizeBytes;
     }
@@ -1487,19 +1487,19 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
   public get internalValue(): ServiceTaskSpecContainerSpecMountsVolumeOptions | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._driverName) {
+    if (this._driverName !== undefined) {
       hasAnyValues = true;
       internalValueResult.driverName = this._driverName;
     }
-    if (this._driverOptions) {
+    if (this._driverOptions !== undefined) {
       hasAnyValues = true;
       internalValueResult.driverOptions = this._driverOptions;
     }
-    if (this._noCopy) {
+    if (this._noCopy !== undefined) {
       hasAnyValues = true;
       internalValueResult.noCopy = this._noCopy;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
@@ -1691,11 +1691,11 @@ export class ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesCredentialSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._file) {
+    if (this._file !== undefined) {
       hasAnyValues = true;
       internalValueResult.file = this._file;
     }
-    if (this._registry) {
+    if (this._registry !== undefined) {
       hasAnyValues = true;
       internalValueResult.registry = this._registry;
     }
@@ -1809,23 +1809,23 @@ export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._disable) {
+    if (this._disable !== undefined) {
       hasAnyValues = true;
       internalValueResult.disable = this._disable;
     }
-    if (this._level) {
+    if (this._level !== undefined) {
       hasAnyValues = true;
       internalValueResult.level = this._level;
     }
-    if (this._role) {
+    if (this._role !== undefined) {
       hasAnyValues = true;
       internalValueResult.role = this._role;
     }
-    if (this._type) {
+    if (this._type !== undefined) {
       hasAnyValues = true;
       internalValueResult.type = this._type;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
@@ -1972,11 +1972,11 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
   public get internalValue(): ServiceTaskSpecContainerSpecPrivileges | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._credentialSpec?.internalValue) {
+    if (this._credentialSpec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.credentialSpec = this._credentialSpec?.internalValue;
     }
-    if (this._seLinuxContext?.internalValue) {
+    if (this._seLinuxContext?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.seLinuxContext = this._seLinuxContext?.internalValue;
     }
@@ -2249,83 +2249,83 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   public get internalValue(): ServiceTaskSpecContainerSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._args) {
+    if (this._args !== undefined) {
       hasAnyValues = true;
       internalValueResult.args = this._args;
     }
-    if (this._command) {
+    if (this._command !== undefined) {
       hasAnyValues = true;
       internalValueResult.command = this._command;
     }
-    if (this._dir) {
+    if (this._dir !== undefined) {
       hasAnyValues = true;
       internalValueResult.dir = this._dir;
     }
-    if (this._env) {
+    if (this._env !== undefined) {
       hasAnyValues = true;
       internalValueResult.env = this._env;
     }
-    if (this._groups) {
+    if (this._groups !== undefined) {
       hasAnyValues = true;
       internalValueResult.groups = this._groups;
     }
-    if (this._hostname) {
+    if (this._hostname !== undefined) {
       hasAnyValues = true;
       internalValueResult.hostname = this._hostname;
     }
-    if (this._image) {
+    if (this._image !== undefined) {
       hasAnyValues = true;
       internalValueResult.image = this._image;
     }
-    if (this._isolation) {
+    if (this._isolation !== undefined) {
       hasAnyValues = true;
       internalValueResult.isolation = this._isolation;
     }
-    if (this._readOnly) {
+    if (this._readOnly !== undefined) {
       hasAnyValues = true;
       internalValueResult.readOnly = this._readOnly;
     }
-    if (this._stopGracePeriod) {
+    if (this._stopGracePeriod !== undefined) {
       hasAnyValues = true;
       internalValueResult.stopGracePeriod = this._stopGracePeriod;
     }
-    if (this._stopSignal) {
+    if (this._stopSignal !== undefined) {
       hasAnyValues = true;
       internalValueResult.stopSignal = this._stopSignal;
     }
-    if (this._user) {
+    if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._configs) {
+    if (this._configs !== undefined) {
       hasAnyValues = true;
       internalValueResult.configs = this._configs;
     }
-    if (this._dnsConfig?.internalValue) {
+    if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.dnsConfig = this._dnsConfig?.internalValue;
     }
-    if (this._healthcheck?.internalValue) {
+    if (this._healthcheck?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.healthcheck = this._healthcheck?.internalValue;
     }
-    if (this._hosts) {
+    if (this._hosts !== undefined) {
       hasAnyValues = true;
       internalValueResult.hosts = this._hosts;
     }
-    if (this._labels) {
+    if (this._labels !== undefined) {
       hasAnyValues = true;
       internalValueResult.labels = this._labels;
     }
-    if (this._mounts) {
+    if (this._mounts !== undefined) {
       hasAnyValues = true;
       internalValueResult.mounts = this._mounts;
     }
-    if (this._privileges?.internalValue) {
+    if (this._privileges?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileges = this._privileges?.internalValue;
     }
-    if (this._secrets) {
+    if (this._secrets !== undefined) {
       hasAnyValues = true;
       internalValueResult.secrets = this._secrets;
     }
@@ -2745,11 +2745,11 @@ export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject
   public get internalValue(): ServiceTaskSpecLogDriver | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._name) {
+    if (this._name !== undefined) {
       hasAnyValues = true;
       internalValueResult.name = this._name;
     }
-    if (this._options) {
+    if (this._options !== undefined) {
       hasAnyValues = true;
       internalValueResult.options = this._options;
     }
@@ -2880,19 +2880,19 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
   public get internalValue(): ServiceTaskSpecPlacement | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._constraints) {
+    if (this._constraints !== undefined) {
       hasAnyValues = true;
       internalValueResult.constraints = this._constraints;
     }
-    if (this._maxReplicas) {
+    if (this._maxReplicas !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxReplicas = this._maxReplicas;
     }
-    if (this._prefs) {
+    if (this._prefs !== undefined) {
       hasAnyValues = true;
       internalValueResult.prefs = this._prefs;
     }
-    if (this._platforms) {
+    if (this._platforms !== undefined) {
       hasAnyValues = true;
       internalValueResult.platforms = this._platforms;
     }
@@ -3022,11 +3022,11 @@ export class ServiceTaskSpecResourcesLimitsOutputReference extends cdktf.Complex
   public get internalValue(): ServiceTaskSpecResourcesLimits | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._memoryBytes) {
+    if (this._memoryBytes !== undefined) {
       hasAnyValues = true;
       internalValueResult.memoryBytes = this._memoryBytes;
     }
-    if (this._nanoCpus) {
+    if (this._nanoCpus !== undefined) {
       hasAnyValues = true;
       internalValueResult.nanoCpus = this._nanoCpus;
     }
@@ -3119,11 +3119,11 @@ export class ServiceTaskSpecResourcesReservationGenericResourcesOutputReference 
   public get internalValue(): ServiceTaskSpecResourcesReservationGenericResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._discreteResourcesSpec) {
+    if (this._discreteResourcesSpec !== undefined) {
       hasAnyValues = true;
       internalValueResult.discreteResourcesSpec = this._discreteResourcesSpec;
     }
-    if (this._namedResourcesSpec) {
+    if (this._namedResourcesSpec !== undefined) {
       hasAnyValues = true;
       internalValueResult.namedResourcesSpec = this._namedResourcesSpec;
     }
@@ -3223,15 +3223,15 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
   public get internalValue(): ServiceTaskSpecResourcesReservation | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._memoryBytes) {
+    if (this._memoryBytes !== undefined) {
       hasAnyValues = true;
       internalValueResult.memoryBytes = this._memoryBytes;
     }
-    if (this._nanoCpus) {
+    if (this._nanoCpus !== undefined) {
       hasAnyValues = true;
       internalValueResult.nanoCpus = this._nanoCpus;
     }
-    if (this._genericResources?.internalValue) {
+    if (this._genericResources?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.genericResources = this._genericResources?.internalValue;
     }
@@ -3342,11 +3342,11 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
   public get internalValue(): ServiceTaskSpecResources | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._limits?.internalValue) {
+    if (this._limits?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.limits = this._limits?.internalValue;
     }
-    if (this._reservation?.internalValue) {
+    if (this._reservation?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.reservation = this._reservation?.internalValue;
     }
@@ -3453,19 +3453,19 @@ export class ServiceTaskSpecRestartPolicyOutputReference extends cdktf.ComplexOb
   public get internalValue(): ServiceTaskSpecRestartPolicy | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._condition) {
+    if (this._condition !== undefined) {
       hasAnyValues = true;
       internalValueResult.condition = this._condition;
     }
-    if (this._delay) {
+    if (this._delay !== undefined) {
       hasAnyValues = true;
       internalValueResult.delay = this._delay;
     }
-    if (this._maxAttempts) {
+    if (this._maxAttempts !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxAttempts = this._maxAttempts;
     }
-    if (this._window) {
+    if (this._window !== undefined) {
       hasAnyValues = true;
       internalValueResult.window = this._window;
     }
@@ -3636,35 +3636,35 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceTaskSpec | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._forceUpdate) {
+    if (this._forceUpdate !== undefined) {
       hasAnyValues = true;
       internalValueResult.forceUpdate = this._forceUpdate;
     }
-    if (this._networks) {
+    if (this._networks !== undefined) {
       hasAnyValues = true;
       internalValueResult.networks = this._networks;
     }
-    if (this._runtime) {
+    if (this._runtime !== undefined) {
       hasAnyValues = true;
       internalValueResult.runtime = this._runtime;
     }
-    if (this._containerSpec?.internalValue) {
+    if (this._containerSpec?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.containerSpec = this._containerSpec?.internalValue;
     }
-    if (this._logDriver?.internalValue) {
+    if (this._logDriver?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.logDriver = this._logDriver?.internalValue;
     }
-    if (this._placement?.internalValue) {
+    if (this._placement?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.placement = this._placement?.internalValue;
     }
-    if (this._resources?.internalValue) {
+    if (this._resources?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.resources = this._resources?.internalValue;
     }
-    if (this._restartPolicy?.internalValue) {
+    if (this._restartPolicy?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.restartPolicy = this._restartPolicy?.internalValue;
     }
@@ -3890,27 +3890,27 @@ export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
   public get internalValue(): ServiceUpdateConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
-    if (this._delay) {
+    if (this._delay !== undefined) {
       hasAnyValues = true;
       internalValueResult.delay = this._delay;
     }
-    if (this._failureAction) {
+    if (this._failureAction !== undefined) {
       hasAnyValues = true;
       internalValueResult.failureAction = this._failureAction;
     }
-    if (this._maxFailureRatio) {
+    if (this._maxFailureRatio !== undefined) {
       hasAnyValues = true;
       internalValueResult.maxFailureRatio = this._maxFailureRatio;
     }
-    if (this._monitor) {
+    if (this._monitor !== undefined) {
       hasAnyValues = true;
       internalValueResult.monitor = this._monitor;
     }
-    if (this._order) {
+    if (this._order !== undefined) {
       hasAnyValues = true;
       internalValueResult.order = this._order;
     }
-    if (this._parallelism) {
+    if (this._parallelism !== undefined) {
       hasAnyValues = true;
       internalValueResult.parallelism = this._parallelism;
     }
