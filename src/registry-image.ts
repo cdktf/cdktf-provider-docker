@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/registry_image.html
+// https://www.terraform.io/docs/providers/docker/r/registry_image
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,25 +10,25 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#insecure_skip_verify RegistryImage#insecure_skip_verify}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#insecure_skip_verify RegistryImage#insecure_skip_verify}
   */
   readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#keep_remotely RegistryImage#keep_remotely}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#keep_remotely RegistryImage#keep_remotely}
   */
   readonly keepRemotely?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#name RegistryImage#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#name RegistryImage#name}
   */
   readonly name: string;
   /**
   * build block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#build RegistryImage#build}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build RegistryImage#build}
   */
   readonly buildAttribute?: RegistryImageBuild;
 }
@@ -36,49 +36,49 @@ export interface RegistryImageBuildAuthConfig {
   /**
   * the auth token
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#auth RegistryImage#auth}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#auth RegistryImage#auth}
   */
   readonly auth?: string;
   /**
   * the user emal
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#email RegistryImage#email}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#email RegistryImage#email}
   */
   readonly email?: string;
   /**
   * hostname of the registry
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#host_name RegistryImage#host_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#host_name RegistryImage#host_name}
   */
   readonly hostName: string;
   /**
   * the identity token
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#identity_token RegistryImage#identity_token}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#identity_token RegistryImage#identity_token}
   */
   readonly identityToken?: string;
   /**
   * the registry password
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#password RegistryImage#password}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#password RegistryImage#password}
   */
   readonly password?: string;
   /**
   * the registry token
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#registry_token RegistryImage#registry_token}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#registry_token RegistryImage#registry_token}
   */
   readonly registryToken?: string;
   /**
   * the server address
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#server_address RegistryImage#server_address}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#server_address RegistryImage#server_address}
   */
   readonly serverAddress?: string;
   /**
   * the registry user name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#user_name RegistryImage#user_name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#user_name RegistryImage#user_name}
   */
   readonly userName?: string;
 }
@@ -104,19 +104,19 @@ export interface RegistryImageBuildUlimit {
   /**
   * soft limit
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#hard RegistryImage#hard}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#hard RegistryImage#hard}
   */
   readonly hard: number;
   /**
   * type of ulimit, e.g. `nofile`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#name RegistryImage#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#name RegistryImage#name}
   */
   readonly name: string;
   /**
   * hard limit
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#soft RegistryImage#soft}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#soft RegistryImage#soft}
   */
   readonly soft: number;
 }
@@ -137,193 +137,193 @@ export interface RegistryImageBuild {
   /**
   * Pairs for build-time variables in the form TODO
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#build_args RegistryImage#build_args}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build_args RegistryImage#build_args}
   */
   readonly buildArgs?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * BuildID is an optional identifier that can be passed together with the build request. The 
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#build_id RegistryImage#build_id}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build_id RegistryImage#build_id}
   */
   readonly buildId?: string;
   /**
   * Images to consider as cache sources
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cache_from RegistryImage#cache_from}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cache_from RegistryImage#cache_from}
   */
   readonly cacheFrom?: string[];
   /**
   * Optional parent cgroup for the container
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cgroup_parent RegistryImage#cgroup_parent}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cgroup_parent RegistryImage#cgroup_parent}
   */
   readonly cgroupParent?: string;
   /**
   * The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#context RegistryImage#context}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#context RegistryImage#context}
   */
   readonly context: string;
   /**
   * The length of a CPU period in microseconds
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cpu_period RegistryImage#cpu_period}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cpu_period RegistryImage#cpu_period}
   */
   readonly cpuPeriod?: number;
   /**
   * Microseconds of CPU time that the container can get in a CPU period
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cpu_quota RegistryImage#cpu_quota}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cpu_quota RegistryImage#cpu_quota}
   */
   readonly cpuQuota?: number;
   /**
   * CPUs in which to allow execution (e.g., `0-3`, `0`, `1`)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cpu_set_cpus RegistryImage#cpu_set_cpus}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cpu_set_cpus RegistryImage#cpu_set_cpus}
   */
   readonly cpuSetCpus?: string;
   /**
   * MEMs in which to allow execution (`0-3`, `0`, `1`)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cpu_set_mems RegistryImage#cpu_set_mems}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cpu_set_mems RegistryImage#cpu_set_mems}
   */
   readonly cpuSetMems?: string;
   /**
   * CPU shares (relative weight)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#cpu_shares RegistryImage#cpu_shares}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#cpu_shares RegistryImage#cpu_shares}
   */
   readonly cpuShares?: number;
   /**
   * Dockerfile file. Defaults to `Dockerfile`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#dockerfile RegistryImage#dockerfile}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#dockerfile RegistryImage#dockerfile}
   */
   readonly dockerfile?: string;
   /**
   * A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"]
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#extra_hosts RegistryImage#extra_hosts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#extra_hosts RegistryImage#extra_hosts}
   */
   readonly extraHosts?: string[];
   /**
   * Always remove intermediate containers
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#force_remove RegistryImage#force_remove}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#force_remove RegistryImage#force_remove}
   */
   readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * Isolation represents the isolation technology of a container. The supported values are 
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#isolation RegistryImage#isolation}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#isolation RegistryImage#isolation}
   */
   readonly isolation?: string;
   /**
   * User-defined key/value metadata
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#labels RegistryImage#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#labels RegistryImage#labels}
   */
   readonly labels?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Set memory limit for build
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#memory RegistryImage#memory}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#memory RegistryImage#memory}
   */
   readonly memory?: number;
   /**
   * Total memory (memory + swap), -1 to enable unlimited swap
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#memory_swap RegistryImage#memory_swap}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#memory_swap RegistryImage#memory_swap}
   */
   readonly memorySwap?: number;
   /**
   * Set the networking mode for the RUN instructions during build
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#network_mode RegistryImage#network_mode}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#network_mode RegistryImage#network_mode}
   */
   readonly networkMode?: string;
   /**
   * Do not use the cache when building the image
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#no_cache RegistryImage#no_cache}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#no_cache RegistryImage#no_cache}
   */
   readonly noCache?: boolean | cdktf.IResolvable;
   /**
   * Set platform if server is multi-platform capable
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#platform RegistryImage#platform}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#platform RegistryImage#platform}
   */
   readonly platform?: string;
   /**
   * Attempt to pull the image even if an older image exists locally
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#pull_parent RegistryImage#pull_parent}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#pull_parent RegistryImage#pull_parent}
   */
   readonly pullParent?: boolean | cdktf.IResolvable;
   /**
   * A Git repository URI or HTTP/HTTPS context URI
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#remote_context RegistryImage#remote_context}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#remote_context RegistryImage#remote_context}
   */
   readonly remoteContext?: string;
   /**
   * Remove intermediate containers after a successful build (default behavior)
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#remove RegistryImage#remove}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#remove RegistryImage#remove}
   */
   readonly remove?: boolean | cdktf.IResolvable;
   /**
   * The security options
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#security_opt RegistryImage#security_opt}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#security_opt RegistryImage#security_opt}
   */
   readonly securityOpt?: string[];
   /**
   * Set an ID for the build session
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#session_id RegistryImage#session_id}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#session_id RegistryImage#session_id}
   */
   readonly sessionId?: string;
   /**
   * Size of /dev/shm in bytes. The size must be greater than 0
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#shm_size RegistryImage#shm_size}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#shm_size RegistryImage#shm_size}
   */
   readonly shmSize?: number;
   /**
   * If true the new layers are squashed into a new image with a single new layer
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#squash RegistryImage#squash}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#squash RegistryImage#squash}
   */
   readonly squash?: boolean | cdktf.IResolvable;
   /**
   * Suppress the build output and print image ID on success
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#suppress_output RegistryImage#suppress_output}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#suppress_output RegistryImage#suppress_output}
   */
   readonly suppressOutput?: boolean | cdktf.IResolvable;
   /**
   * Set the target build stage to build
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#target RegistryImage#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#target RegistryImage#target}
   */
   readonly target?: string;
   /**
   * Version of the unerlying builder to use
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#version RegistryImage#version}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#version RegistryImage#version}
   */
   readonly version?: string;
   /**
   * auth_config block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#auth_config RegistryImage#auth_config}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#auth_config RegistryImage#auth_config}
   */
   readonly authConfig?: RegistryImageBuildAuthConfig[];
   /**
   * ulimit block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html#ulimit RegistryImage#ulimit}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#ulimit RegistryImage#ulimit}
   */
   readonly ulimit?: RegistryImageBuildUlimit[];
 }
@@ -1103,7 +1103,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image}
 */
 export class RegistryImage extends cdktf.TerraformResource {
 
@@ -1117,7 +1117,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

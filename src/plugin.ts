@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/plugin.html
+// https://www.terraform.io/docs/providers/docker/r/plugin
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,55 +10,55 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   /**
   * Docker Plugin alias
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#alias Plugin#alias}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#alias Plugin#alias}
   */
   readonly alias?: string;
   /**
   * HTTP client timeout to enable the plugin
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#enable_timeout Plugin#enable_timeout}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#enable_timeout Plugin#enable_timeout}
   */
   readonly enableTimeout?: number;
   /**
   * If `true` the plugin is enabled. Defaults to `true`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#enabled Plugin#enabled}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#enabled Plugin#enabled}
   */
   readonly enabled?: boolean | cdktf.IResolvable;
   /**
   * The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#env Plugin#env}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#env Plugin#env}
   */
   readonly env?: string[];
   /**
   * If true, then the plugin is destroyed forcibly
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#force_destroy Plugin#force_destroy}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#force_destroy Plugin#force_destroy}
   */
   readonly forceDestroy?: boolean | cdktf.IResolvable;
   /**
   * If true, then the plugin is disabled forcibly
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#force_disable Plugin#force_disable}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#force_disable Plugin#force_disable}
   */
   readonly forceDisable?: boolean | cdktf.IResolvable;
   /**
   * If true, grant all permissions necessary to run the plugin
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#grant_all_permissions Plugin#grant_all_permissions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#grant_all_permissions Plugin#grant_all_permissions}
   */
   readonly grantAllPermissions?: boolean | cdktf.IResolvable;
   /**
   * Docker Plugin name
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#name Plugin#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#name Plugin#name}
   */
   readonly name: string;
   /**
   * grant_permissions block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#grant_permissions Plugin#grant_permissions}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#grant_permissions Plugin#grant_permissions}
   */
   readonly grantPermissions?: PluginGrantPermissions[];
 }
@@ -66,13 +66,13 @@ export interface PluginGrantPermissions {
   /**
   * The name of the permission
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#name Plugin#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#name Plugin#name}
   */
   readonly name: string;
   /**
   * The value of the permission
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin.html#value Plugin#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#value Plugin#value}
   */
   readonly value: string[];
 }
@@ -90,7 +90,7 @@ export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermission
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}
 */
 export class Plugin extends cdktf.TerraformResource {
 
@@ -104,7 +104,7 @@ export class Plugin extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

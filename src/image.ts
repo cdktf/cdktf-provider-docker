@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/image.html
+// https://www.terraform.io/docs/providers/docker/r/image
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,37 +10,37 @@ export interface ImageConfig extends cdktf.TerraformMetaArguments {
   /**
   * If true, then the image is removed forcibly when the resource is destroyed.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#force_remove Image#force_remove}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#force_remove Image#force_remove}
   */
   readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#keep_locally Image#keep_locally}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#keep_locally Image#keep_locally}
   */
   readonly keepLocally?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image, including any tags or SHA256 repo digests.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#name Image#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#name Image#name}
   */
   readonly name: string;
   /**
   * A value which cause an image pull when changed
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_trigger Image#pull_trigger}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_trigger Image#pull_trigger}
   */
   readonly pullTrigger?: string;
   /**
   * List of values which cause an image pull when changed. This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#pull_triggers Image#pull_triggers}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_triggers Image#pull_triggers}
   */
   readonly pullTriggers?: string[];
   /**
   * build block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#build Image#build}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build Image#build}
   */
   readonly buildAttribute?: ImageBuild;
 }
@@ -48,55 +48,55 @@ export interface ImageBuild {
   /**
   * Set build-time variables
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#build_arg Image#build_arg}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build_arg Image#build_arg}
   */
   readonly buildArg?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Name of the Dockerfile. Defaults to `Dockerfile`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#dockerfile Image#dockerfile}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#dockerfile Image#dockerfile}
   */
   readonly dockerfile?: string;
   /**
   * Always remove intermediate containers
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#force_remove Image#force_remove}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#force_remove Image#force_remove}
   */
   readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
   * Set metadata for an image
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#label Image#label}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#label Image#label}
   */
   readonly label?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * Do not use cache when building the image
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#no_cache Image#no_cache}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#no_cache Image#no_cache}
   */
   readonly noCache?: boolean | cdktf.IResolvable;
   /**
   * Context path
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#path Image#path}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#path Image#path}
   */
   readonly path: string;
   /**
   * Remove intermediate containers after a successful build. Defaults to  `true`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#remove Image#remove}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#remove Image#remove}
   */
   readonly remove?: boolean | cdktf.IResolvable;
   /**
   * Name and optionally a tag in the 'name:tag' format
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#tag Image#tag}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#tag Image#tag}
   */
   readonly tag?: string[];
   /**
   * Set the target build stage to build
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image.html#target Image#target}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#target Image#target}
   */
   readonly target?: string;
 }
@@ -345,7 +345,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/image docker_image}
 */
 export class Image extends cdktf.TerraformResource {
 
@@ -359,7 +359,7 @@ export class Image extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/image docker_image} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

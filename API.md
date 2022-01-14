@@ -4,28 +4,28 @@
 
 Name|Description
 ----|-----------
-[Config](#cdktf-provider-docker-config)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}.
-[Container](#cdktf-provider-docker-container)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}.
+[Config](#cdktf-provider-docker-config)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/config docker_config}.
+[Container](#cdktf-provider-docker-container)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/container docker_container}.
 [ContainerCapabilitiesOutputReference](#cdktf-provider-docker-containercapabilitiesoutputreference)|*No description*
 [ContainerHealthcheckOutputReference](#cdktf-provider-docker-containerhealthcheckoutputreference)|*No description*
 [ContainerMountsBindOptionsOutputReference](#cdktf-provider-docker-containermountsbindoptionsoutputreference)|*No description*
 [ContainerMountsTmpfsOptionsOutputReference](#cdktf-provider-docker-containermountstmpfsoptionsoutputreference)|*No description*
 [ContainerMountsVolumeOptionsOutputReference](#cdktf-provider-docker-containermountsvolumeoptionsoutputreference)|*No description*
 [ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)|*No description*
-[DataDockerImage](#cdktf-provider-docker-datadockerimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/image.html docker_image}.
-[DataDockerNetwork](#cdktf-provider-docker-datadockernetwork)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network}.
+[DataDockerImage](#cdktf-provider-docker-datadockerimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}.
+[DataDockerNetwork](#cdktf-provider-docker-datadockernetwork)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}.
 [DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)|*No description*
-[DataDockerPlugin](#cdktf-provider-docker-datadockerplugin)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin.html docker_plugin}.
-[DataDockerRegistryImage](#cdktf-provider-docker-datadockerregistryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}.
+[DataDockerPlugin](#cdktf-provider-docker-datadockerplugin)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin docker_plugin}.
+[DataDockerRegistryImage](#cdktf-provider-docker-datadockerregistryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image}.
 [DockerProvider](#cdktf-provider-docker-dockerprovider)|Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
-[Image](#cdktf-provider-docker-image)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}.
+[Image](#cdktf-provider-docker-image)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/image docker_image}.
 [ImageBuildOutputReference](#cdktf-provider-docker-imagebuildoutputreference)|*No description*
-[Network](#cdktf-provider-docker-network)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}.
-[Plugin](#cdktf-provider-docker-plugin)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin}.
-[RegistryImage](#cdktf-provider-docker-registryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image}.
+[Network](#cdktf-provider-docker-network)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}.
+[Plugin](#cdktf-provider-docker-plugin)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}.
+[RegistryImage](#cdktf-provider-docker-registryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image}.
 [RegistryImageBuildOutputReference](#cdktf-provider-docker-registryimagebuildoutputreference)|*No description*
-[Secret](#cdktf-provider-docker-secret)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}.
-[Service](#cdktf-provider-docker-service)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}.
+[Secret](#cdktf-provider-docker-secret)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}.
+[Service](#cdktf-provider-docker-service)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/service docker_service}.
 [ServiceAuthOutputReference](#cdktf-provider-docker-serviceauthoutputreference)|*No description*
 [ServiceConvergeConfigOutputReference](#cdktf-provider-docker-serviceconvergeconfigoutputreference)|*No description*
 [ServiceEndpointSpecOutputReference](#cdktf-provider-docker-serviceendpointspecoutputreference)|*No description*
@@ -50,7 +50,7 @@ Name|Description
 [ServiceTaskSpecResourcesReservationOutputReference](#cdktf-provider-docker-servicetaskspecresourcesreservationoutputreference)|*No description*
 [ServiceTaskSpecRestartPolicyOutputReference](#cdktf-provider-docker-servicetaskspecrestartpolicyoutputreference)|*No description*
 [ServiceUpdateConfigOutputReference](#cdktf-provider-docker-serviceupdateconfigoutputreference)|*No description*
-[Volume](#cdktf-provider-docker-volume)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}.
+[Volume](#cdktf-provider-docker-volume)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}.
 
 
 **Structs**
@@ -134,7 +134,7 @@ Name|Description
 
 ## class Config  <a id="cdktf-provider-docker-config"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/config docker_config}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -142,7 +142,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/config docker_config} Resource.
 
 ```ts
 new Config(scope: Construct, id: string, config: ConfigConfig)
@@ -191,7 +191,7 @@ __Returns__:
 
 ## class Container  <a id="cdktf-provider-docker-container"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/container docker_container}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -199,7 +199,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/container.html docker_container} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/container docker_container} Resource.
 
 ```ts
 new Container(scope: Construct, id: string, config: ContainerConfig)
@@ -1510,7 +1510,7 @@ Name | Type | Description
 
 ## class DataDockerImage  <a id="cdktf-provider-docker-datadockerimage"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/d/image.html docker_image}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -1518,7 +1518,7 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/d/image.html docker_image} Data Source.
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/image docker_image} Data Source.
 
 ```ts
 new DataDockerImage(scope: Construct, id: string, config: DataDockerImageConfig)
@@ -1565,7 +1565,7 @@ __Returns__:
 
 ## class DataDockerNetwork  <a id="cdktf-provider-docker-datadockernetwork"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -1573,7 +1573,7 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network} Data Source.
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/network docker_network} Data Source.
 
 ```ts
 new DataDockerNetwork(scope: Construct, id: string, config: DataDockerNetworkConfig)
@@ -1681,7 +1681,7 @@ Name | Type | Description
 
 ## class DataDockerPlugin  <a id="cdktf-provider-docker-datadockerplugin"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin.html docker_plugin}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin docker_plugin}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -1689,7 +1689,7 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/d/plugin.html docker_plugin} Data Source.
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/plugin docker_plugin} Data Source.
 
 ```ts
 new DataDockerPlugin(scope: Construct, id: string, config?: DataDockerPluginConfig)
@@ -1766,7 +1766,7 @@ __Returns__:
 
 ## class DataDockerRegistryImage  <a id="cdktf-provider-docker-datadockerregistryimage"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
@@ -1774,7 +1774,7 @@ __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image} Data Source.
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image} Data Source.
 
 ```ts
 new DataDockerRegistryImage(scope: Construct, id: string, config: DataDockerRegistryImageConfig)
@@ -1987,7 +1987,7 @@ __Returns__:
 
 ## class Image  <a id="cdktf-provider-docker-image"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/image docker_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -1995,7 +1995,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/image.html docker_image} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/image docker_image} Resource.
 
 ```ts
 new Image(scope: Construct, id: string, config: ImageConfig)
@@ -2288,7 +2288,7 @@ resetTarget(): void
 
 ## class Network  <a id="cdktf-provider-docker-network"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2296,7 +2296,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/network docker_network} Resource.
 
 ```ts
 new Network(scope: Construct, id: string, config: NetworkConfig)
@@ -2493,7 +2493,7 @@ __Returns__:
 
 ## class Plugin  <a id="cdktf-provider-docker-plugin"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2501,7 +2501,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/plugin.html docker_plugin} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin} Resource.
 
 ```ts
 new Plugin(scope: Construct, id: string, config: PluginConfig)
@@ -2668,7 +2668,7 @@ __Returns__:
 
 ## class RegistryImage  <a id="cdktf-provider-docker-registryimage"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -2676,7 +2676,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/registry_image.html docker_registry_image} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image} Resource.
 
 ```ts
 new RegistryImage(scope: Construct, id: string, config: RegistryImageConfig)
@@ -3282,7 +3282,7 @@ resetVersion(): void
 
 ## class Secret  <a id="cdktf-provider-docker-secret"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -3290,7 +3290,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret} Resource.
 
 ```ts
 new Secret(scope: Construct, id: string, config: SecretConfig)
@@ -3354,7 +3354,7 @@ __Returns__:
 
 ## class Service  <a id="cdktf-provider-docker-service"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/service docker_service}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -3362,7 +3362,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/service.html docker_service} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/service docker_service} Resource.
 
 ```ts
 new Service(scope: Construct, id: string, config: ServiceConfig)
@@ -5897,7 +5897,7 @@ resetParallelism(): void
 
 ## class Volume  <a id="cdktf-provider-docker-volume"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}.
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
@@ -5905,7 +5905,7 @@ __Extends__: [TerraformResource](#cdktf-terraformresource)
 ### Initializer
 
 
-Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume} Resource.
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume} Resource.
 
 ```ts
 new Volume(scope: Construct, id: string, config?: VolumeConfig)

@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/config.html
+// https://www.terraform.io/docs/providers/docker/r/config
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface ConfigConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded config data
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config.html#data Config#data}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config#data Config#data}
   */
   readonly data: string;
   /**
   * User-defined name of the config
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config.html#name Config#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config#name Config#name}
   */
   readonly name: string;
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/config docker_config}
 */
 export class Config extends cdktf.TerraformResource {
 
@@ -36,7 +36,7 @@ export class Config extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/config.html docker_config} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/config docker_config} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

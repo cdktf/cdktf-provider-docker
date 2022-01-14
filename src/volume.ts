@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/volume.html
+// https://www.terraform.io/docs/providers/docker/r/volume
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,25 +10,25 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   /**
   * Driver type for the volume. Defaults to `local`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver Volume#driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#driver Volume#driver}
   */
   readonly driver?: string;
   /**
   * Options specific to the driver.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#driver_opts Volume#driver_opts}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#driver_opts Volume#driver_opts}
   */
   readonly driverOpts?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The name of the Docker volume (will be generated if not provided).
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#name Volume#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#name Volume#name}
   */
   readonly name?: string;
   /**
   * labels block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#labels Volume#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#labels Volume#labels}
   */
   readonly labels?: VolumeLabels[];
 }
@@ -36,13 +36,13 @@ export interface VolumeLabels {
   /**
   * Name of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#label Volume#label}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#label Volume#label}
   */
   readonly label: string;
   /**
   * Value of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume.html#value Volume#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#value Volume#value}
   */
   readonly value: string;
 }
@@ -60,7 +60,7 @@ export function volumeLabelsToTerraform(struct?: VolumeLabels): any {
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}
 */
 export class Volume extends cdktf.TerraformResource {
 
@@ -74,7 +74,7 @@ export class Volume extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume.html docker_volume} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
