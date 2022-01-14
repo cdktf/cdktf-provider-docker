@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/d/image.html
+// https://www.terraform.io/docs/providers/docker/d/image
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,13 +10,13 @@ export interface DataDockerImageConfig extends cdktf.TerraformMetaArguments {
   /**
   * The name of the Docker image, including any tags or SHA256 repo digests.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/image.html#name DataDockerImage#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/image#name DataDockerImage#name}
   */
   readonly name: string;
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/d/image.html docker_image}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}
 */
 export class DataDockerImage extends cdktf.TerraformDataSource {
 
@@ -30,7 +30,7 @@ export class DataDockerImage extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/image.html docker_image} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/image docker_image} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

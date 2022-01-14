@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/secret.html
+// https://www.terraform.io/docs/providers/docker/r/secret
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded secret data
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#data Secret#data}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#data Secret#data}
   */
   readonly data: string;
   /**
   * User-defined name of the secret
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#name Secret#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#name Secret#name}
   */
   readonly name: string;
   /**
   * labels block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#labels Secret#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#labels Secret#labels}
   */
   readonly labels?: SecretLabels[];
 }
@@ -30,13 +30,13 @@ export interface SecretLabels {
   /**
   * Name of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#label Secret#label}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#label Secret#label}
   */
   readonly label: string;
   /**
   * Value of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret.html#value Secret#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#value Secret#value}
   */
   readonly value: string;
 }
@@ -54,7 +54,7 @@ export function secretLabelsToTerraform(struct?: SecretLabels): any {
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}
 */
 export class Secret extends cdktf.TerraformResource {
 
@@ -68,7 +68,7 @@ export class Secret extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret.html docker_secret} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

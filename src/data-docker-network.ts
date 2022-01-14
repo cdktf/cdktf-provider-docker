@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/d/network.html
+// https://www.terraform.io/docs/providers/docker/d/network
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,7 +10,7 @@ export interface DataDockerNetworkConfig extends cdktf.TerraformMetaArguments {
   /**
   * The name of the Docker network.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network.html#name DataDockerNetwork#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/network#name DataDockerNetwork#name}
   */
   readonly name: string;
 }
@@ -39,7 +39,7 @@ export class DataDockerNetworkIpamConfig extends cdktf.ComplexComputedList {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}
 */
 export class DataDockerNetwork extends cdktf.TerraformDataSource {
 
@@ -53,7 +53,7 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/network.html docker_network} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/network docker_network} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

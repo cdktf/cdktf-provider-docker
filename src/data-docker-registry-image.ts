@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/d/registry_image.html
+// https://www.terraform.io/docs/providers/docker/d/registry_image
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,19 +10,19 @@ export interface DataDockerRegistryImageConfig extends cdktf.TerraformMetaArgume
   /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
   */
   readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image, including any tags. e.g. `alpine:latest`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html#name DataDockerRegistryImage#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image#name DataDockerRegistryImage#name}
   */
   readonly name: string;
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image}
 */
 export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
 
@@ -36,7 +36,7 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/registry_image.html docker_registry_image} Data Source
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

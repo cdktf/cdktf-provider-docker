@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/network.html
+// https://www.terraform.io/docs/providers/docker/r/network
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,67 +10,67 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   /**
   * Enable manual container attachment to the network.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#attachable Network#attachable}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#attachable Network#attachable}
   */
   readonly attachable?: boolean | cdktf.IResolvable;
   /**
   * Requests daemon to check for networks with same name.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#check_duplicate Network#check_duplicate}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#check_duplicate Network#check_duplicate}
   */
   readonly checkDuplicate?: boolean | cdktf.IResolvable;
   /**
   * The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#driver Network#driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#driver Network#driver}
   */
   readonly driver?: string;
   /**
   * Create swarm routing-mesh network. Defaults to `false`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ingress Network#ingress}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ingress Network#ingress}
   */
   readonly ingress?: boolean | cdktf.IResolvable;
   /**
   * Whether the network is internal.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#internal Network#internal}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#internal Network#internal}
   */
   readonly internal?: boolean | cdktf.IResolvable;
   /**
   * Driver used by the custom IP scheme of the network. Defaults to `default`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_driver Network#ipam_driver}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_driver Network#ipam_driver}
   */
   readonly ipamDriver?: string;
   /**
   * Enable IPv6 networking. Defaults to `false`.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipv6 Network#ipv6}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipv6 Network#ipv6}
   */
   readonly ipv6?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker network.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#name Network#name}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#name Network#name}
   */
   readonly name: string;
   /**
   * Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#options Network#options}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#options Network#options}
   */
   readonly options?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * ipam_config block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ipam_config Network#ipam_config}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_config Network#ipam_config}
   */
   readonly ipamConfig?: NetworkIpamConfig[];
   /**
   * labels block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#labels Network#labels}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#labels Network#labels}
   */
   readonly labels?: NetworkLabels[];
 }
@@ -78,25 +78,25 @@ export interface NetworkIpamConfig {
   /**
   * Auxiliary IPv4 or IPv6 addresses used by Network driver
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#aux_address Network#aux_address}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#aux_address Network#aux_address}
   */
   readonly auxAddress?: { [key: string]: string } | cdktf.IResolvable;
   /**
   * The IP address of the gateway
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#gateway Network#gateway}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#gateway Network#gateway}
   */
   readonly gateway?: string;
   /**
   * The ip range in CIDR form
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#ip_range Network#ip_range}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ip_range Network#ip_range}
   */
   readonly ipRange?: string;
   /**
   * The subnet in CIDR form
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#subnet Network#subnet}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#subnet Network#subnet}
   */
   readonly subnet?: string;
 }
@@ -118,13 +118,13 @@ export interface NetworkLabels {
   /**
   * Name of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#label Network#label}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#label Network#label}
   */
   readonly label: string;
   /**
   * Value of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network.html#value Network#value}
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#value Network#value}
   */
   readonly value: string;
 }
@@ -142,7 +142,7 @@ export function networkLabelsToTerraform(struct?: NetworkLabels): any {
 
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network}
+* Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}
 */
 export class Network extends cdktf.TerraformResource {
 
@@ -156,7 +156,7 @@ export class Network extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/network.html docker_network} Resource
+  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/network docker_network} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
