@@ -187,13 +187,13 @@ export class ServiceAuthOutputReference extends cdktf.ComplexObject {
 }
 export interface ServiceConvergeConfig {
   /**
-  * The interval to check if the desired state is reached (ms|s). Defaults to `7s`.
+  * The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
   */
   readonly delay?: string;
   /**
-  * The timeout of the service to reach the desired state (s|m). Defaults to `3m`
+  * The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#timeout Service#timeout}
   */
@@ -290,7 +290,7 @@ export interface ServiceEndpointSpecPorts {
   */
   readonly name?: string;
   /**
-  * Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp'. Defaults to `tcp`.
+  * Rrepresents the protocol of a port: `tcp`, `udp` or `sctp`. Defaults to `tcp`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#protocol Service#protocol}
   */
@@ -893,7 +893,7 @@ export interface ServiceTaskSpecContainerSpecDnsConfig {
   */
   readonly nameservers: string[];
   /**
-  * A list of internal resolver variables to be modified (e.g., debug, ndots:3, etc.)
+  * A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.)
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#options Service#options}
   */
@@ -2839,7 +2839,7 @@ export interface ServiceTaskSpecPlacement {
   */
   readonly maxReplicas?: number;
   /**
-  * Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence, e.g.: spread=node.role.manager
+  * Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence, e.g.: `spread=node.role.manager`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#prefs Service#prefs}
   */
@@ -2989,7 +2989,7 @@ export interface ServiceTaskSpecResourcesLimits {
   */
   readonly memoryBytes?: number;
   /**
-  * CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least 1000000
+  * CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#nano_cpus Service#nano_cpus}
   */
@@ -3183,7 +3183,7 @@ export interface ServiceTaskSpecResourcesReservation {
   */
   readonly memoryBytes?: number;
   /**
-  * CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000
+  * CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least `1000000`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#nano_cpus Service#nano_cpus}
   */
@@ -3823,13 +3823,13 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
 }
 export interface ServiceUpdateConfig {
   /**
-  * Delay between task updates (ns|us|ms|s|m|h). Defaults to `0s`.
+  * Delay between task updates `(ns|us|ms|s|m|h)`. Defaults to `0s`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
   */
   readonly delay?: string;
   /**
-  * Action on update failure: pause | continue | rollback. Defaults to `pause`.
+  * Action on update failure: `pause`, `continue` or `rollback`. Defaults to `pause`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#failure_action Service#failure_action}
   */

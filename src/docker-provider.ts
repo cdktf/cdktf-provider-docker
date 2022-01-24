@@ -38,6 +38,12 @@ export interface DockerProviderConfig {
   */
   readonly keyMaterial?: string;
   /**
+  * Additional SSH option flags to be appended when using `ssh://` protocol
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#ssh_opts DockerProvider#ssh_opts}
+  */
+  readonly sshOpts?: string[];
+  /**
   * Alias name
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#alias DockerProvider#alias}
@@ -133,6 +139,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
     this._certPath = config.certPath;
     this._host = config.host;
     this._keyMaterial = config.keyMaterial;
+    this._sshOpts = config.sshOpts;
     this._alias = config.alias;
     this._registryAuth = config.registryAuth;
   }
@@ -221,6 +228,22 @@ export class DockerProvider extends cdktf.TerraformProvider {
     return this._keyMaterial;
   }
 
+  // ssh_opts - computed: false, optional: true, required: false
+  private _sshOpts?: string[]; 
+  public get sshOpts() {
+    return this._sshOpts;
+  }
+  public set sshOpts(value: string[] | undefined) {
+    this._sshOpts = value;
+  }
+  public resetSshOpts() {
+    this._sshOpts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sshOptsInput() {
+    return this._sshOpts;
+  }
+
   // alias - computed: false, optional: true, required: false
   private _alias?: string; 
   public get alias() {
@@ -264,6 +287,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       cert_path: cdktf.stringToTerraform(this._certPath),
       host: cdktf.stringToTerraform(this._host),
       key_material: cdktf.stringToTerraform(this._keyMaterial),
+      ssh_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._sshOpts),
       alias: cdktf.stringToTerraform(this._alias),
       registry_auth: dockerProviderRegistryAuthToTerraform(this._registryAuth),
     };
