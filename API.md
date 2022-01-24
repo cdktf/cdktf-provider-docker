@@ -235,7 +235,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **ipcMode** (<code>string</code>)  IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`. __*Optional*__
   * **labels** (<code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code>)  labels block. __*Optional*__
   * **links** (<code>Array<string></code>)  Set of links for link based connectivity between containers that are running on the same host. __*Optional*__
-  * **logDriver** (<code>string</code>)  The logging driver to use for the container. Defaults to `json-file`. __*Optional*__
+  * **logDriver** (<code>string</code>)  The logging driver to use for the container. __*Optional*__
   * **logOpts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Key/value pairs to use as options for the logging driver. __*Optional*__
   * **logs** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Save the container logs (`attach` must be enabled). Defaults to `false`. __*Optional*__
   * **maxRetryCount** (<code>number</code>)  The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. __*Optional*__
@@ -254,7 +254,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **readOnly** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the container will be started as readonly. Defaults to `false`. __*Optional*__
   * **removeVolumes** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. __*Optional*__
   * **restart** (<code>string</code>)  The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. __*Optional*__
-  * **rm** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the container will be automatically removed after his execution. __*Optional*__
+  * **rm** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the container will be automatically removed when it exits. Defaults to `false`. __*Optional*__
   * **securityOpts** (<code>Array<string></code>)  List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. __*Optional*__
   * **shmSize** (<code>number</code>)  Size of `/dev/shm` in MBs. __*Optional*__
   * **start** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container will be started after creation. __*Optional*__
@@ -1860,6 +1860,7 @@ new DockerProvider(scope: Construct, id: string, config?: DockerProviderConfig)
   * **host** (<code>string</code>)  The Docker daemon address. __*Optional*__
   * **keyMaterial** (<code>string</code>)  PEM-encoded content of Docker client private key. __*Optional*__
   * **registryAuth** (<code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code>)  registry_auth block. __*Optional*__
+  * **sshOpts** (<code>Array<string></code>)  Additional SSH option flags to be appended when using `ssh://` protocol. __*Optional*__
 
 
 
@@ -1882,6 +1883,8 @@ Name | Type | Description
 **keyMaterialInput**? | <code>string</code> | __*Optional*__
 **registryAuth**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | __*Optional*__
 **registryAuthInput**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | __*Optional*__
+**sshOpts**? | <code>Array<string></code> | __*Optional*__
+**sshOptsInput**? | <code>Array<string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
@@ -1965,6 +1968,18 @@ resetKeyMaterial(): void
 
 ```ts
 resetRegistryAuth(): void
+```
+
+
+
+
+
+#### resetSshOpts() <a id="cdktf-provider-docker-dockerprovider-resetsshopts"></a>
+
+
+
+```ts
+resetSshOpts(): void
 ```
 
 
@@ -2728,7 +2743,7 @@ putBuildAttribute(value: RegistryImageBuild): void
   * **context** (<code>string</code>)  The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'. 
   * **authConfig** (<code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code>)  auth_config block. __*Optional*__
   * **buildArgs** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Pairs for build-time variables in the form TODO. __*Optional*__
-  * **buildId** (<code>string</code>)  BuildID is an optional identifier that can be passed together with the build request. The. __*Optional*__
+  * **buildId** (<code>string</code>)  BuildID is an optional identifier that can be passed together with the build request. __*Optional*__
   * **cacheFrom** (<code>Array<string></code>)  Images to consider as cache sources. __*Optional*__
   * **cgroupParent** (<code>string</code>)  Optional parent cgroup for the container. __*Optional*__
   * **cpuPeriod** (<code>number</code>)  The length of a CPU period in microseconds. __*Optional*__
@@ -2756,7 +2771,7 @@ putBuildAttribute(value: RegistryImageBuild): void
   * **suppressOutput** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Suppress the build output and print image ID on success. __*Optional*__
   * **target** (<code>string</code>)  Set the target build stage to build. __*Optional*__
   * **ulimit** (<code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code>)  ulimit block. __*Optional*__
-  * **version** (<code>string</code>)  Version of the unerlying builder to use. __*Optional*__
+  * **version** (<code>string</code>)  Version of the underlying builder to use. __*Optional*__
 
 
 
@@ -3441,8 +3456,8 @@ putConvergeConfig(value: ServiceConvergeConfig): void
 ```
 
 * **value** (<code>[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)</code>)  *No description*
-  * **delay** (<code>string</code>)  The interval to check if the desired state is reached (ms|s). Defaults to `7s`. __*Optional*__
-  * **timeout** (<code>string</code>)  The timeout of the service to reach the desired state (s|m). Defaults to `3m`. __*Optional*__
+  * **delay** (<code>string</code>)  The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`. __*Optional*__
+  * **timeout** (<code>string</code>)  The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`. __*Optional*__
 
 
 
@@ -3526,8 +3541,8 @@ putUpdateConfig(value: ServiceUpdateConfig): void
 ```
 
 * **value** (<code>[ServiceUpdateConfig](#cdktf-provider-docker-serviceupdateconfig)</code>)  *No description*
-  * **delay** (<code>string</code>)  Delay between task updates (ns|us|ms|s|m|h). Defaults to `0s`. __*Optional*__
-  * **failureAction** (<code>string</code>)  Action on update failure: pause | continue | rollback. Defaults to `pause`. __*Optional*__
+  * **delay** (<code>string</code>)  Delay between task updates `(ns|us|ms|s|m|h)`. Defaults to `0s`. __*Optional*__
+  * **failureAction** (<code>string</code>)  Action on update failure: `pause`, `continue` or `rollback`. Defaults to `pause`. __*Optional*__
   * **maxFailureRatio** (<code>string</code>)  Failure rate to tolerate during an update. Defaults to `0.0`. __*Optional*__
   * **monitor** (<code>string</code>)  Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`. __*Optional*__
   * **order** (<code>string</code>)  Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`. __*Optional*__
@@ -4490,7 +4505,7 @@ putDnsConfig(value: ServiceTaskSpecContainerSpecDnsConfig): void
 
 * **value** (<code>[ServiceTaskSpecContainerSpecDnsConfig](#cdktf-provider-docker-servicetaskspeccontainerspecdnsconfig)</code>)  *No description*
   * **nameservers** (<code>Array<string></code>)  The IP addresses of the name servers. 
-  * **options** (<code>Array<string></code>)  A list of internal resolver variables to be modified (e.g., debug, ndots:3, etc.). __*Optional*__
+  * **options** (<code>Array<string></code>)  A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.). __*Optional*__
   * **search** (<code>Array<string></code>)  A search list for host-name lookup. __*Optional*__
 
 
@@ -5491,7 +5506,7 @@ putLimits(value: ServiceTaskSpecResourcesLimits): void
 
 * **value** (<code>[ServiceTaskSpecResourcesLimits](#cdktf-provider-docker-servicetaskspecresourceslimits)</code>)  *No description*
   * **memoryBytes** (<code>number</code>)  The amounf of memory in bytes the container allocates. __*Optional*__
-  * **nanoCpus** (<code>number</code>)  CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least 1000000. __*Optional*__
+  * **nanoCpus** (<code>number</code>)  CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`. __*Optional*__
 
 
 
@@ -5507,7 +5522,7 @@ putReservation(value: ServiceTaskSpecResourcesReservation): void
 * **value** (<code>[ServiceTaskSpecResourcesReservation](#cdktf-provider-docker-servicetaskspecresourcesreservation)</code>)  *No description*
   * **genericResources** (<code>[ServiceTaskSpecResourcesReservationGenericResources](#cdktf-provider-docker-servicetaskspecresourcesreservationgenericresources)</code>)  generic_resources block. __*Optional*__
   * **memoryBytes** (<code>number</code>)  The amounf of memory in bytes the container allocates. __*Optional*__
-  * **nanoCpus** (<code>number</code>)  CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000. __*Optional*__
+  * **nanoCpus** (<code>number</code>)  CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least `1000000`. __*Optional*__
 
 
 
@@ -6074,7 +6089,7 @@ Name | Type | Description
 **labels**? | <code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **links**? | <code>Array<string></code> | Set of links for link based connectivity between containers that are running on the same host.<br/>__*Optional*__
-**logDriver**? | <code>string</code> | The logging driver to use for the container. Defaults to `json-file`.<br/>__*Optional*__
+**logDriver**? | <code>string</code> | The logging driver to use for the container.<br/>__*Optional*__
 **logOpts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Key/value pairs to use as options for the logging driver.<br/>__*Optional*__
 **logs**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Save the container logs (`attach` must be enabled). Defaults to `false`.<br/>__*Optional*__
 **maxRetryCount**? | <code>number</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'.<br/>__*Optional*__
@@ -6094,7 +6109,7 @@ Name | Type | Description
 **readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the container will be started as readonly. Defaults to `false`.<br/>__*Optional*__
 **removeVolumes**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.<br/>__*Optional*__
 **restart**? | <code>string</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`.<br/>__*Optional*__
-**rm**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the container will be automatically removed after his execution.<br/>__*Optional*__
+**rm**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`.<br/>__*Optional*__
 **securityOpts**? | <code>Array<string></code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration.<br/>__*Optional*__
 **shmSize**? | <code>number</code> | Size of `/dev/shm` in MBs.<br/>__*Optional*__
 **start**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container will be started after creation.<br/>__*Optional*__
@@ -6416,6 +6431,7 @@ Name | Type | Description
 **host**? | <code>string</code> | The Docker daemon address.<br/>__*Optional*__
 **keyMaterial**? | <code>string</code> | PEM-encoded content of Docker client private key.<br/>__*Optional*__
 **registryAuth**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | registry_auth block.<br/>__*Optional*__
+**sshOpts**? | <code>Array<string></code> | Additional SSH option flags to be appended when using `ssh://` protocol.<br/>__*Optional*__
 
 
 
@@ -6587,7 +6603,7 @@ Name | Type | Description
 **context** | <code>string</code> | The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'.
 **authConfig**? | <code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | auth_config block.<br/>__*Optional*__
 **buildArgs**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Pairs for build-time variables in the form TODO.<br/>__*Optional*__
-**buildId**? | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request. The.<br/>__*Optional*__
+**buildId**? | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request.<br/>__*Optional*__
 **cacheFrom**? | <code>Array<string></code> | Images to consider as cache sources.<br/>__*Optional*__
 **cgroupParent**? | <code>string</code> | Optional parent cgroup for the container.<br/>__*Optional*__
 **cpuPeriod**? | <code>number</code> | The length of a CPU period in microseconds.<br/>__*Optional*__
@@ -6615,7 +6631,7 @@ Name | Type | Description
 **suppressOutput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Suppress the build output and print image ID on success.<br/>__*Optional*__
 **target**? | <code>string</code> | Set the target build stage to build.<br/>__*Optional*__
 **ulimit**? | <code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | ulimit block.<br/>__*Optional*__
-**version**? | <code>string</code> | Version of the unerlying builder to use.<br/>__*Optional*__
+**version**? | <code>string</code> | Version of the underlying builder to use.<br/>__*Optional*__
 
 
 
@@ -6756,8 +6772,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**delay**? | <code>string</code> | The interval to check if the desired state is reached (ms|s). Defaults to `7s`.<br/>__*Optional*__
-**timeout**? | <code>string</code> | The timeout of the service to reach the desired state (s|m). Defaults to `3m`.<br/>__*Optional*__
+**delay**? | <code>string</code> | The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`.<br/>__*Optional*__
+**timeout**? | <code>string</code> | The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`.<br/>__*Optional*__
 
 
 
@@ -6786,7 +6802,7 @@ Name | Type | Description
 -----|------|-------------
 **targetPort** | <code>number</code> | The port inside the container.
 **name**? | <code>string</code> | A random name for the port.<br/>__*Optional*__
-**protocol**? | <code>string</code> | Rrepresents the protocol of a port: 'tcp', 'udp' or 'sctp'. Defaults to `tcp`.<br/>__*Optional*__
+**protocol**? | <code>string</code> | Rrepresents the protocol of a port: `tcp`, `udp` or `sctp`. Defaults to `tcp`.<br/>__*Optional*__
 **publishMode**? | <code>string</code> | Represents the mode in which the port is to be published: 'ingress' or 'host'. Defaults to `ingress`.<br/>__*Optional*__
 **publishedPort**? | <code>number</code> | The port on the swarm hosts.<br/>__*Optional*__
 
@@ -6931,7 +6947,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **nameservers** | <code>Array<string></code> | The IP addresses of the name servers.
-**options**? | <code>Array<string></code> | A list of internal resolver variables to be modified (e.g., debug, ndots:3, etc.).<br/>__*Optional*__
+**options**? | <code>Array<string></code> | A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).<br/>__*Optional*__
 **search**? | <code>Array<string></code> | A search list for host-name lookup.<br/>__*Optional*__
 
 
@@ -7188,7 +7204,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **memoryBytes**? | <code>number</code> | The amounf of memory in bytes the container allocates.<br/>__*Optional*__
-**nanoCpus**? | <code>number</code> | CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least 1000000.<br/>__*Optional*__
+**nanoCpus**? | <code>number</code> | CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`.<br/>__*Optional*__
 
 
 
@@ -7203,7 +7219,7 @@ Name | Type | Description
 -----|------|-------------
 **genericResources**? | <code>[ServiceTaskSpecResourcesReservationGenericResources](#cdktf-provider-docker-servicetaskspecresourcesreservationgenericresources)</code> | generic_resources block.<br/>__*Optional*__
 **memoryBytes**? | <code>number</code> | The amounf of memory in bytes the container allocates.<br/>__*Optional*__
-**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least 1000000.<br/>__*Optional*__
+**nanoCpus**? | <code>number</code> | CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least `1000000`.<br/>__*Optional*__
 
 
 
@@ -7246,8 +7262,8 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**delay**? | <code>string</code> | Delay between task updates (ns|us|ms|s|m|h). Defaults to `0s`.<br/>__*Optional*__
-**failureAction**? | <code>string</code> | Action on update failure: pause | continue | rollback. Defaults to `pause`.<br/>__*Optional*__
+**delay**? | <code>string</code> | Delay between task updates `(ns|us|ms|s|m|h)`. Defaults to `0s`.<br/>__*Optional*__
+**failureAction**? | <code>string</code> | Action on update failure: `pause`, `continue` or `rollback`. Defaults to `pause`.<br/>__*Optional*__
 **maxFailureRatio**? | <code>string</code> | Failure rate to tolerate during an update. Defaults to `0.0`.<br/>__*Optional*__
 **monitor**? | <code>string</code> | Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.<br/>__*Optional*__
 **order**? | <code>string</code> | Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.<br/>__*Optional*__

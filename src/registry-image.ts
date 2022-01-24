@@ -141,7 +141,7 @@ export interface RegistryImageBuild {
   */
   readonly buildArgs?: { [key: string]: string } | cdktf.IResolvable;
   /**
-  * BuildID is an optional identifier that can be passed together with the build request. The 
+  * BuildID is an optional identifier that can be passed together with the build request. The same identifier can be used to gracefully cancel the build with the cancel request.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build_id RegistryImage#build_id}
   */
@@ -309,7 +309,7 @@ export interface RegistryImageBuild {
   */
   readonly target?: string;
   /**
-  * Version of the unerlying builder to use
+  * Version of the underlying builder to use
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#version RegistryImage#version}
   */

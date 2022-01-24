@@ -110,7 +110,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly links?: string[];
   /**
-  * The logging driver to use for the container. Defaults to `json-file`.
+  * The logging driver to use for the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#log_driver Container#log_driver}
   */
@@ -212,7 +212,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly restart?: string;
   /**
-  * If `true`, then the container will be automatically removed after his execution. Terraform won't check this container after creation. Defaults to `false`.
+  * If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#rm Container#rm}
   */
@@ -1773,7 +1773,7 @@ export class Container extends cdktf.TerraformResource {
     return this._links;
   }
 
-  // log_driver - computed: false, optional: true, required: false
+  // log_driver - computed: true, optional: true, required: false
   private _logDriver?: string; 
   public get logDriver() {
     return this.getStringAttribute('log_driver');
