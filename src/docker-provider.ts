@@ -90,7 +90,7 @@ export interface DockerProviderRegistryAuth {
 }
 
 export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuth): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
