@@ -60,7 +60,7 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#grant_permissions Plugin#grant_permissions}
   */
-  readonly grantPermissions?: PluginGrantPermissions[];
+  readonly grantPermissions?: PluginGrantPermissions[] | cdktf.IResolvable;
 }
 export interface PluginGrantPermissions {
   /**
@@ -77,8 +77,8 @@ export interface PluginGrantPermissions {
   readonly value: string[];
 }
 
-export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermissions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermissions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -171,7 +171,7 @@ export class Plugin extends cdktf.TerraformResource {
   // enabled - computed: false, optional: true, required: false
   private _enabled?: boolean | cdktf.IResolvable; 
   public get enabled() {
-    return this.getBooleanAttribute('enabled') as any;
+    return this.getBooleanAttribute('enabled');
   }
   public set enabled(value: boolean | cdktf.IResolvable) {
     this._enabled = value;
@@ -187,7 +187,7 @@ export class Plugin extends cdktf.TerraformResource {
   // env - computed: true, optional: true, required: false
   private _env?: string[]; 
   public get env() {
-    return this.getListAttribute('env');
+    return cdktf.Fn.tolist(this.getListAttribute('env'));
   }
   public set env(value: string[]) {
     this._env = value;
@@ -203,7 +203,7 @@ export class Plugin extends cdktf.TerraformResource {
   // force_destroy - computed: false, optional: true, required: false
   private _forceDestroy?: boolean | cdktf.IResolvable; 
   public get forceDestroy() {
-    return this.getBooleanAttribute('force_destroy') as any;
+    return this.getBooleanAttribute('force_destroy');
   }
   public set forceDestroy(value: boolean | cdktf.IResolvable) {
     this._forceDestroy = value;
@@ -219,7 +219,7 @@ export class Plugin extends cdktf.TerraformResource {
   // force_disable - computed: false, optional: true, required: false
   private _forceDisable?: boolean | cdktf.IResolvable; 
   public get forceDisable() {
-    return this.getBooleanAttribute('force_disable') as any;
+    return this.getBooleanAttribute('force_disable');
   }
   public set forceDisable(value: boolean | cdktf.IResolvable) {
     this._forceDisable = value;
@@ -235,7 +235,7 @@ export class Plugin extends cdktf.TerraformResource {
   // grant_all_permissions - computed: false, optional: true, required: false
   private _grantAllPermissions?: boolean | cdktf.IResolvable; 
   public get grantAllPermissions() {
-    return this.getBooleanAttribute('grant_all_permissions') as any;
+    return this.getBooleanAttribute('grant_all_permissions');
   }
   public set grantAllPermissions(value: boolean | cdktf.IResolvable) {
     this._grantAllPermissions = value;
@@ -272,12 +272,12 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // grant_permissions - computed: false, optional: true, required: false
-  private _grantPermissions?: PluginGrantPermissions[]; 
+  private _grantPermissions?: PluginGrantPermissions[] | cdktf.IResolvable; 
   public get grantPermissions() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('grant_permissions') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('grant_permissions')));
   }
-  public set grantPermissions(value: PluginGrantPermissions[]) {
+  public set grantPermissions(value: PluginGrantPermissions[] | cdktf.IResolvable) {
     this._grantPermissions = value;
   }
   public resetGrantPermissions() {

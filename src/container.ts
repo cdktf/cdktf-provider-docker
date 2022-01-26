@@ -120,7 +120,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#log_opts Container#log_opts}
   */
-  readonly logOpts?: { [key: string]: string } | cdktf.IResolvable;
+  readonly logOpts?: { [key: string]: string };
   /**
   * Save the container logs (`attach` must be enabled). Defaults to `false`.
   * 
@@ -246,19 +246,19 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#storage_opts Container#storage_opts}
   */
-  readonly storageOpts?: { [key: string]: string } | cdktf.IResolvable;
+  readonly storageOpts?: { [key: string]: string };
   /**
   * A map of kernel parameters (sysctls) to set in the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#sysctls Container#sysctls}
   */
-  readonly sysctls?: { [key: string]: string } | cdktf.IResolvable;
+  readonly sysctls?: { [key: string]: string };
   /**
   * A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#tmpfs Container#tmpfs}
   */
-  readonly tmpfs?: { [key: string]: string } | cdktf.IResolvable;
+  readonly tmpfs?: { [key: string]: string };
   /**
   * If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
   * 
@@ -294,7 +294,7 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#devices Container#devices}
   */
-  readonly devices?: ContainerDevices[];
+  readonly devices?: ContainerDevices[] | cdktf.IResolvable;
   /**
   * healthcheck block
   * 
@@ -306,49 +306,49 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#host Container#host}
   */
-  readonly host?: ContainerHost[];
+  readonly host?: ContainerHost[] | cdktf.IResolvable;
   /**
   * labels block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#labels Container#labels}
   */
-  readonly labels?: ContainerLabels[];
+  readonly labels?: ContainerLabels[] | cdktf.IResolvable;
   /**
   * mounts block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#mounts Container#mounts}
   */
-  readonly mounts?: ContainerMounts[];
+  readonly mounts?: ContainerMounts[] | cdktf.IResolvable;
   /**
   * networks_advanced block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#networks_advanced Container#networks_advanced}
   */
-  readonly networksAdvanced?: ContainerNetworksAdvanced[];
+  readonly networksAdvanced?: ContainerNetworksAdvanced[] | cdktf.IResolvable;
   /**
   * ports block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ports Container#ports}
   */
-  readonly ports?: ContainerPorts[];
+  readonly ports?: ContainerPorts[] | cdktf.IResolvable;
   /**
   * ulimit block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ulimit Container#ulimit}
   */
-  readonly ulimit?: ContainerUlimit[];
+  readonly ulimit?: ContainerUlimit[] | cdktf.IResolvable;
   /**
   * upload block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#upload Container#upload}
   */
-  readonly upload?: ContainerUpload[];
+  readonly upload?: ContainerUpload[] | cdktf.IResolvable;
   /**
   * volumes block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#volumes Container#volumes}
   */
-  readonly volumes?: ContainerVolumes[];
+  readonly volumes?: ContainerVolumes[] | cdktf.IResolvable;
 }
 export class ContainerNetworkData extends cdktf.ComplexComputedList {
 
@@ -402,8 +402,8 @@ export interface ContainerCapabilities {
   readonly drop?: string[];
 }
 
-export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -421,7 +421,7 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -455,7 +455,7 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   // add - computed: false, optional: true, required: false
   private _add?: string[]; 
   public get add() {
-    return this.getListAttribute('add');
+    return cdktf.Fn.tolist(this.getListAttribute('add'));
   }
   public set add(value: string[]) {
     this._add = value;
@@ -471,7 +471,7 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   // drop - computed: false, optional: true, required: false
   private _drop?: string[]; 
   public get drop() {
-    return this.getListAttribute('drop');
+    return cdktf.Fn.tolist(this.getListAttribute('drop'));
   }
   public set drop(value: string[]) {
     this._drop = value;
@@ -505,8 +505,8 @@ export interface ContainerDevices {
   readonly permissions?: string;
 }
 
-export function containerDevicesToTerraform(struct?: ContainerDevices): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerDevicesToTerraform(struct?: ContainerDevices | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -551,7 +551,7 @@ export interface ContainerHealthcheck {
 }
 
 export function containerHealthcheckToTerraform(struct?: ContainerHealthcheckOutputReference | ContainerHealthcheck): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -572,7 +572,7 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -713,8 +713,8 @@ export interface ContainerHost {
   readonly ip: string;
 }
 
-export function containerHostToTerraform(struct?: ContainerHost): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerHostToTerraform(struct?: ContainerHost | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -739,8 +739,8 @@ export interface ContainerLabels {
   readonly value: string;
 }
 
-export function containerLabelsToTerraform(struct?: ContainerLabels): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerLabelsToTerraform(struct?: ContainerLabels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -760,7 +760,7 @@ export interface ContainerMountsBindOptions {
 }
 
 export function containerMountsBindOptionsToTerraform(struct?: ContainerMountsBindOptionsOutputReference | ContainerMountsBindOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -777,7 +777,7 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -834,7 +834,7 @@ export interface ContainerMountsTmpfsOptions {
 }
 
 export function containerMountsTmpfsOptionsToTerraform(struct?: ContainerMountsTmpfsOptionsOutputReference | ContainerMountsTmpfsOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -852,7 +852,7 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -930,8 +930,8 @@ export interface ContainerMountsVolumeOptionsLabels {
   readonly value: string;
 }
 
-export function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsVolumeOptionsLabels): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerMountsVolumeOptionsLabelsToTerraform(struct?: ContainerMountsVolumeOptionsLabels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -953,7 +953,7 @@ export interface ContainerMountsVolumeOptions {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#driver_options Container#driver_options}
   */
-  readonly driverOptions?: { [key: string]: string } | cdktf.IResolvable;
+  readonly driverOptions?: { [key: string]: string };
   /**
   * Populate volume with data from the target.
   * 
@@ -965,17 +965,17 @@ export interface ContainerMountsVolumeOptions {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#labels Container#labels}
   */
-  readonly labels?: ContainerMountsVolumeOptionsLabels[];
+  readonly labels?: ContainerMountsVolumeOptionsLabels[] | cdktf.IResolvable;
 }
 
 export function containerMountsVolumeOptionsToTerraform(struct?: ContainerMountsVolumeOptionsOutputReference | ContainerMountsVolumeOptions): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
     driver_name: cdktf.stringToTerraform(struct!.driverName),
-    driver_options: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.driverOptions),
+    driver_options: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.driverOptions),
     no_copy: cdktf.booleanToTerraform(struct!.noCopy),
     labels: cdktf.listMapper(containerMountsVolumeOptionsLabelsToTerraform)(struct!.labels),
   }
@@ -989,7 +989,7 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -1049,12 +1049,11 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
 
   // driver_options - computed: false, optional: true, required: false
-  private _driverOptions?: { [key: string]: string } | cdktf.IResolvable; 
+  private _driverOptions?: { [key: string]: string }; 
   public get driverOptions() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('driver_options') as any;
+    return this.getStringMapAttribute('driver_options');
   }
-  public set driverOptions(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set driverOptions(value: { [key: string]: string }) {
     this._driverOptions = value;
   }
   public resetDriverOptions() {
@@ -1068,7 +1067,7 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   // no_copy - computed: false, optional: true, required: false
   private _noCopy?: boolean | cdktf.IResolvable; 
   public get noCopy() {
-    return this.getBooleanAttribute('no_copy') as any;
+    return this.getBooleanAttribute('no_copy');
   }
   public set noCopy(value: boolean | cdktf.IResolvable) {
     this._noCopy = value;
@@ -1082,12 +1081,12 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ContainerMountsVolumeOptionsLabels[]; 
+  private _labels?: ContainerMountsVolumeOptionsLabels[] | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
   }
-  public set labels(value: ContainerMountsVolumeOptionsLabels[]) {
+  public set labels(value: ContainerMountsVolumeOptionsLabels[] | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -1143,8 +1142,8 @@ export interface ContainerMounts {
   readonly volumeOptions?: ContainerMountsVolumeOptions;
 }
 
-export function containerMountsToTerraform(struct?: ContainerMounts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerMountsToTerraform(struct?: ContainerMounts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1186,8 +1185,8 @@ export interface ContainerNetworksAdvanced {
   readonly name: string;
 }
 
-export function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksAdvanced | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1226,8 +1225,8 @@ export interface ContainerPorts {
   readonly protocol?: string;
 }
 
-export function containerPortsToTerraform(struct?: ContainerPorts): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerPortsToTerraform(struct?: ContainerPorts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1260,8 +1259,8 @@ export interface ContainerUlimit {
   readonly soft: number;
 }
 
-export function containerUlimitToTerraform(struct?: ContainerUlimit): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerUlimitToTerraform(struct?: ContainerUlimit | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1311,8 +1310,8 @@ export interface ContainerUpload {
   readonly sourceHash?: string;
 }
 
-export function containerUploadToTerraform(struct?: ContainerUpload): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerUploadToTerraform(struct?: ContainerUpload | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1359,8 +1358,8 @@ export interface ContainerVolumes {
   readonly volumeName?: string;
 }
 
-export function containerVolumesToTerraform(struct?: ContainerVolumes): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function containerVolumesToTerraform(struct?: ContainerVolumes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -1472,7 +1471,7 @@ export class Container extends cdktf.TerraformResource {
   // attach - computed: false, optional: true, required: false
   private _attach?: boolean | cdktf.IResolvable; 
   public get attach() {
-    return this.getBooleanAttribute('attach') as any;
+    return this.getBooleanAttribute('attach');
   }
   public set attach(value: boolean | cdktf.IResolvable) {
     this._attach = value;
@@ -1562,7 +1561,7 @@ export class Container extends cdktf.TerraformResource {
   // dns - computed: false, optional: true, required: false
   private _dns?: string[]; 
   public get dns() {
-    return this.getListAttribute('dns');
+    return cdktf.Fn.tolist(this.getListAttribute('dns'));
   }
   public set dns(value: string[]) {
     this._dns = value;
@@ -1578,7 +1577,7 @@ export class Container extends cdktf.TerraformResource {
   // dns_opts - computed: false, optional: true, required: false
   private _dnsOpts?: string[]; 
   public get dnsOpts() {
-    return this.getListAttribute('dns_opts');
+    return cdktf.Fn.tolist(this.getListAttribute('dns_opts'));
   }
   public set dnsOpts(value: string[]) {
     this._dnsOpts = value;
@@ -1594,7 +1593,7 @@ export class Container extends cdktf.TerraformResource {
   // dns_search - computed: false, optional: true, required: false
   private _dnsSearch?: string[]; 
   public get dnsSearch() {
-    return this.getListAttribute('dns_search');
+    return cdktf.Fn.tolist(this.getListAttribute('dns_search'));
   }
   public set dnsSearch(value: string[]) {
     this._dnsSearch = value;
@@ -1642,7 +1641,7 @@ export class Container extends cdktf.TerraformResource {
   // env - computed: true, optional: true, required: false
   private _env?: string[]; 
   public get env() {
-    return this.getListAttribute('env');
+    return cdktf.Fn.tolist(this.getListAttribute('env'));
   }
   public set env(value: string[]) {
     this._env = value;
@@ -1668,7 +1667,7 @@ export class Container extends cdktf.TerraformResource {
   // group_add - computed: false, optional: true, required: false
   private _groupAdd?: string[]; 
   public get groupAdd() {
-    return this.getListAttribute('group_add');
+    return cdktf.Fn.tolist(this.getListAttribute('group_add'));
   }
   public set groupAdd(value: string[]) {
     this._groupAdd = value;
@@ -1718,7 +1717,7 @@ export class Container extends cdktf.TerraformResource {
   // init - computed: true, optional: true, required: false
   private _init?: boolean | cdktf.IResolvable; 
   public get init() {
-    return this.getBooleanAttribute('init') as any;
+    return this.getBooleanAttribute('init');
   }
   public set init(value: boolean | cdktf.IResolvable) {
     this._init = value;
@@ -1760,7 +1759,7 @@ export class Container extends cdktf.TerraformResource {
   // links - computed: false, optional: true, required: false
   private _links?: string[]; 
   public get links() {
-    return this.getListAttribute('links');
+    return cdktf.Fn.tolist(this.getListAttribute('links'));
   }
   public set links(value: string[]) {
     this._links = value;
@@ -1790,12 +1789,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // log_opts - computed: false, optional: true, required: false
-  private _logOpts?: { [key: string]: string } | cdktf.IResolvable; 
+  private _logOpts?: { [key: string]: string }; 
   public get logOpts() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('log_opts') as any;
+    return this.getStringMapAttribute('log_opts');
   }
-  public set logOpts(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set logOpts(value: { [key: string]: string }) {
     this._logOpts = value;
   }
   public resetLogOpts() {
@@ -1809,7 +1807,7 @@ export class Container extends cdktf.TerraformResource {
   // logs - computed: false, optional: true, required: false
   private _logs?: boolean | cdktf.IResolvable; 
   public get logs() {
-    return this.getBooleanAttribute('logs') as any;
+    return this.getBooleanAttribute('logs');
   }
   public set logs(value: boolean | cdktf.IResolvable) {
     this._logs = value;
@@ -1873,7 +1871,7 @@ export class Container extends cdktf.TerraformResource {
   // must_run - computed: false, optional: true, required: false
   private _mustRun?: boolean | cdktf.IResolvable; 
   public get mustRun() {
-    return this.getBooleanAttribute('must_run') as any;
+    return this.getBooleanAttribute('must_run');
   }
   public set mustRun(value: boolean | cdktf.IResolvable) {
     this._mustRun = value;
@@ -1902,7 +1900,7 @@ export class Container extends cdktf.TerraformResource {
   // network_alias - computed: false, optional: true, required: false
   private _networkAlias?: string[]; 
   public get networkAlias() {
-    return this.getListAttribute('network_alias');
+    return cdktf.Fn.tolist(this.getListAttribute('network_alias'));
   }
   public set networkAlias(value: string[]) {
     this._networkAlias = value;
@@ -1917,7 +1915,7 @@ export class Container extends cdktf.TerraformResource {
 
   // network_data - computed: true, optional: false, required: false
   public networkData(index: string) {
-    return new ContainerNetworkData(this, 'network_data', index);
+    return new ContainerNetworkData(this, 'network_data', index, false);
   }
 
   // network_mode - computed: false, optional: true, required: false
@@ -1939,7 +1937,7 @@ export class Container extends cdktf.TerraformResource {
   // networks - computed: false, optional: true, required: false
   private _networks?: string[]; 
   public get networks() {
-    return this.getListAttribute('networks');
+    return cdktf.Fn.tolist(this.getListAttribute('networks'));
   }
   public set networks(value: string[]) {
     this._networks = value;
@@ -1971,7 +1969,7 @@ export class Container extends cdktf.TerraformResource {
   // privileged - computed: false, optional: true, required: false
   private _privileged?: boolean | cdktf.IResolvable; 
   public get privileged() {
-    return this.getBooleanAttribute('privileged') as any;
+    return this.getBooleanAttribute('privileged');
   }
   public set privileged(value: boolean | cdktf.IResolvable) {
     this._privileged = value;
@@ -1987,7 +1985,7 @@ export class Container extends cdktf.TerraformResource {
   // publish_all_ports - computed: false, optional: true, required: false
   private _publishAllPorts?: boolean | cdktf.IResolvable; 
   public get publishAllPorts() {
-    return this.getBooleanAttribute('publish_all_ports') as any;
+    return this.getBooleanAttribute('publish_all_ports');
   }
   public set publishAllPorts(value: boolean | cdktf.IResolvable) {
     this._publishAllPorts = value;
@@ -2003,7 +2001,7 @@ export class Container extends cdktf.TerraformResource {
   // read_only - computed: false, optional: true, required: false
   private _readOnly?: boolean | cdktf.IResolvable; 
   public get readOnly() {
-    return this.getBooleanAttribute('read_only') as any;
+    return this.getBooleanAttribute('read_only');
   }
   public set readOnly(value: boolean | cdktf.IResolvable) {
     this._readOnly = value;
@@ -2019,7 +2017,7 @@ export class Container extends cdktf.TerraformResource {
   // remove_volumes - computed: false, optional: true, required: false
   private _removeVolumes?: boolean | cdktf.IResolvable; 
   public get removeVolumes() {
-    return this.getBooleanAttribute('remove_volumes') as any;
+    return this.getBooleanAttribute('remove_volumes');
   }
   public set removeVolumes(value: boolean | cdktf.IResolvable) {
     this._removeVolumes = value;
@@ -2051,7 +2049,7 @@ export class Container extends cdktf.TerraformResource {
   // rm - computed: false, optional: true, required: false
   private _rm?: boolean | cdktf.IResolvable; 
   public get rm() {
-    return this.getBooleanAttribute('rm') as any;
+    return this.getBooleanAttribute('rm');
   }
   public set rm(value: boolean | cdktf.IResolvable) {
     this._rm = value;
@@ -2067,7 +2065,7 @@ export class Container extends cdktf.TerraformResource {
   // security_opts - computed: true, optional: true, required: false
   private _securityOpts?: string[]; 
   public get securityOpts() {
-    return this.getListAttribute('security_opts');
+    return cdktf.Fn.tolist(this.getListAttribute('security_opts'));
   }
   public set securityOpts(value: string[]) {
     this._securityOpts = value;
@@ -2099,7 +2097,7 @@ export class Container extends cdktf.TerraformResource {
   // start - computed: false, optional: true, required: false
   private _start?: boolean | cdktf.IResolvable; 
   public get start() {
-    return this.getBooleanAttribute('start') as any;
+    return this.getBooleanAttribute('start');
   }
   public set start(value: boolean | cdktf.IResolvable) {
     this._start = value;
@@ -2115,7 +2113,7 @@ export class Container extends cdktf.TerraformResource {
   // stdin_open - computed: false, optional: true, required: false
   private _stdinOpen?: boolean | cdktf.IResolvable; 
   public get stdinOpen() {
-    return this.getBooleanAttribute('stdin_open') as any;
+    return this.getBooleanAttribute('stdin_open');
   }
   public set stdinOpen(value: boolean | cdktf.IResolvable) {
     this._stdinOpen = value;
@@ -2129,12 +2127,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // storage_opts - computed: false, optional: true, required: false
-  private _storageOpts?: { [key: string]: string } | cdktf.IResolvable; 
+  private _storageOpts?: { [key: string]: string }; 
   public get storageOpts() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('storage_opts') as any;
+    return this.getStringMapAttribute('storage_opts');
   }
-  public set storageOpts(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set storageOpts(value: { [key: string]: string }) {
     this._storageOpts = value;
   }
   public resetStorageOpts() {
@@ -2146,12 +2143,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // sysctls - computed: false, optional: true, required: false
-  private _sysctls?: { [key: string]: string } | cdktf.IResolvable; 
+  private _sysctls?: { [key: string]: string }; 
   public get sysctls() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('sysctls') as any;
+    return this.getStringMapAttribute('sysctls');
   }
-  public set sysctls(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set sysctls(value: { [key: string]: string }) {
     this._sysctls = value;
   }
   public resetSysctls() {
@@ -2163,12 +2159,11 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // tmpfs - computed: false, optional: true, required: false
-  private _tmpfs?: { [key: string]: string } | cdktf.IResolvable; 
+  private _tmpfs?: { [key: string]: string }; 
   public get tmpfs() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('tmpfs') as any;
+    return this.getStringMapAttribute('tmpfs');
   }
-  public set tmpfs(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set tmpfs(value: { [key: string]: string }) {
     this._tmpfs = value;
   }
   public resetTmpfs() {
@@ -2182,7 +2177,7 @@ export class Container extends cdktf.TerraformResource {
   // tty - computed: false, optional: true, required: false
   private _tty?: boolean | cdktf.IResolvable; 
   public get tty() {
-    return this.getBooleanAttribute('tty') as any;
+    return this.getBooleanAttribute('tty');
   }
   public set tty(value: boolean | cdktf.IResolvable) {
     this._tty = value;
@@ -2244,7 +2239,7 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new ContainerCapabilitiesOutputReference(this as any, "capabilities", true);
+  private _capabilities = new ContainerCapabilitiesOutputReference(this, "capabilities", true);
   public get capabilities() {
     return this._capabilities;
   }
@@ -2260,12 +2255,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // devices - computed: false, optional: true, required: false
-  private _devices?: ContainerDevices[]; 
+  private _devices?: ContainerDevices[] | cdktf.IResolvable; 
   public get devices() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('devices') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('devices')));
   }
-  public set devices(value: ContainerDevices[]) {
+  public set devices(value: ContainerDevices[] | cdktf.IResolvable) {
     this._devices = value;
   }
   public resetDevices() {
@@ -2277,7 +2272,7 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // healthcheck - computed: false, optional: true, required: false
-  private _healthcheck = new ContainerHealthcheckOutputReference(this as any, "healthcheck", true);
+  private _healthcheck = new ContainerHealthcheckOutputReference(this, "healthcheck", true);
   public get healthcheck() {
     return this._healthcheck;
   }
@@ -2293,12 +2288,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // host - computed: false, optional: true, required: false
-  private _host?: ContainerHost[]; 
+  private _host?: ContainerHost[] | cdktf.IResolvable; 
   public get host() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('host') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('host')));
   }
-  public set host(value: ContainerHost[]) {
+  public set host(value: ContainerHost[] | cdktf.IResolvable) {
     this._host = value;
   }
   public resetHost() {
@@ -2310,12 +2305,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ContainerLabels[]; 
+  private _labels?: ContainerLabels[] | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
   }
-  public set labels(value: ContainerLabels[]) {
+  public set labels(value: ContainerLabels[] | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -2327,12 +2322,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // mounts - computed: false, optional: true, required: false
-  private _mounts?: ContainerMounts[]; 
+  private _mounts?: ContainerMounts[] | cdktf.IResolvable; 
   public get mounts() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('mounts') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('mounts')));
   }
-  public set mounts(value: ContainerMounts[]) {
+  public set mounts(value: ContainerMounts[] | cdktf.IResolvable) {
     this._mounts = value;
   }
   public resetMounts() {
@@ -2344,12 +2339,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // networks_advanced - computed: false, optional: true, required: false
-  private _networksAdvanced?: ContainerNetworksAdvanced[]; 
+  private _networksAdvanced?: ContainerNetworksAdvanced[] | cdktf.IResolvable; 
   public get networksAdvanced() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('networks_advanced') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('networks_advanced')));
   }
-  public set networksAdvanced(value: ContainerNetworksAdvanced[]) {
+  public set networksAdvanced(value: ContainerNetworksAdvanced[] | cdktf.IResolvable) {
     this._networksAdvanced = value;
   }
   public resetNetworksAdvanced() {
@@ -2361,12 +2356,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // ports - computed: false, optional: true, required: false
-  private _ports?: ContainerPorts[]; 
+  private _ports?: ContainerPorts[] | cdktf.IResolvable; 
   public get ports() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ports') as any;
+    return this.interpolationForAttribute('ports');
   }
-  public set ports(value: ContainerPorts[]) {
+  public set ports(value: ContainerPorts[] | cdktf.IResolvable) {
     this._ports = value;
   }
   public resetPorts() {
@@ -2378,12 +2373,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // ulimit - computed: false, optional: true, required: false
-  private _ulimit?: ContainerUlimit[]; 
+  private _ulimit?: ContainerUlimit[] | cdktf.IResolvable; 
   public get ulimit() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ulimit') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('ulimit')));
   }
-  public set ulimit(value: ContainerUlimit[]) {
+  public set ulimit(value: ContainerUlimit[] | cdktf.IResolvable) {
     this._ulimit = value;
   }
   public resetUlimit() {
@@ -2395,12 +2390,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // upload - computed: false, optional: true, required: false
-  private _upload?: ContainerUpload[]; 
+  private _upload?: ContainerUpload[] | cdktf.IResolvable; 
   public get upload() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('upload') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('upload')));
   }
-  public set upload(value: ContainerUpload[]) {
+  public set upload(value: ContainerUpload[] | cdktf.IResolvable) {
     this._upload = value;
   }
   public resetUpload() {
@@ -2412,12 +2407,12 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // volumes - computed: false, optional: true, required: false
-  private _volumes?: ContainerVolumes[]; 
+  private _volumes?: ContainerVolumes[] | cdktf.IResolvable; 
   public get volumes() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('volumes') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('volumes')));
   }
-  public set volumes(value: ContainerVolumes[]) {
+  public set volumes(value: ContainerVolumes[] | cdktf.IResolvable) {
     this._volumes = value;
   }
   public resetVolumes() {
@@ -2452,7 +2447,7 @@ export class Container extends cdktf.TerraformResource {
       ipc_mode: cdktf.stringToTerraform(this._ipcMode),
       links: cdktf.listMapper(cdktf.stringToTerraform)(this._links),
       log_driver: cdktf.stringToTerraform(this._logDriver),
-      log_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._logOpts),
+      log_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._logOpts),
       logs: cdktf.booleanToTerraform(this._logs),
       max_retry_count: cdktf.numberToTerraform(this._maxRetryCount),
       memory: cdktf.numberToTerraform(this._memory),
@@ -2473,9 +2468,9 @@ export class Container extends cdktf.TerraformResource {
       shm_size: cdktf.numberToTerraform(this._shmSize),
       start: cdktf.booleanToTerraform(this._start),
       stdin_open: cdktf.booleanToTerraform(this._stdinOpen),
-      storage_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._storageOpts),
-      sysctls: cdktf.hashMapper(cdktf.anyToTerraform)(this._sysctls),
-      tmpfs: cdktf.hashMapper(cdktf.anyToTerraform)(this._tmpfs),
+      storage_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._storageOpts),
+      sysctls: cdktf.hashMapper(cdktf.stringToTerraform)(this._sysctls),
+      tmpfs: cdktf.hashMapper(cdktf.stringToTerraform)(this._tmpfs),
       tty: cdktf.booleanToTerraform(this._tty),
       user: cdktf.stringToTerraform(this._user),
       userns_mode: cdktf.stringToTerraform(this._usernsMode),

@@ -79,17 +79,17 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
 
   // enabled - computed: true, optional: false, required: false
   public get enabled() {
-    return this.getBooleanAttribute('enabled') as any;
+    return this.getBooleanAttribute('enabled');
   }
 
   // env - computed: true, optional: false, required: false
   public get env() {
-    return this.getListAttribute('env');
+    return cdktf.Fn.tolist(this.getListAttribute('env'));
   }
 
   // grant_all_permissions - computed: true, optional: false, required: false
   public get grantAllPermissions() {
-    return this.getBooleanAttribute('grant_all_permissions') as any;
+    return this.getBooleanAttribute('grant_all_permissions');
   }
 
   // id - computed: false, optional: true, required: false

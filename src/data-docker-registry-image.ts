@@ -69,7 +69,7 @@ export class DataDockerRegistryImage extends cdktf.TerraformDataSource {
   // insecure_skip_verify - computed: false, optional: true, required: false
   private _insecureSkipVerify?: boolean | cdktf.IResolvable; 
   public get insecureSkipVerify() {
-    return this.getBooleanAttribute('insecure_skip_verify') as any;
+    return this.getBooleanAttribute('insecure_skip_verify');
   }
   public set insecureSkipVerify(value: boolean | cdktf.IResolvable) {
     this._insecureSkipVerify = value;

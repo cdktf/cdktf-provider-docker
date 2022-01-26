@@ -50,7 +50,7 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build_arg Image#build_arg}
   */
-  readonly buildArg?: { [key: string]: string } | cdktf.IResolvable;
+  readonly buildArg?: { [key: string]: string };
   /**
   * Name of the Dockerfile. Defaults to `Dockerfile`.
   * 
@@ -68,7 +68,7 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#label Image#label}
   */
-  readonly label?: { [key: string]: string } | cdktf.IResolvable;
+  readonly label?: { [key: string]: string };
   /**
   * Do not use cache when building the image
   * 
@@ -101,16 +101,16 @@ export interface ImageBuild {
   readonly target?: string;
 }
 
-export function imageBuildToTerraform(struct?: ImageBuildOutputReference | ImageBuild): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function imageBuildToTerraform(struct?: ImageBuildOutputReference | ImageBuild | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    build_arg: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.buildArg),
+    build_arg: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.buildArg),
     dockerfile: cdktf.stringToTerraform(struct!.dockerfile),
     force_remove: cdktf.booleanToTerraform(struct!.forceRemove),
-    label: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.label),
+    label: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.label),
     no_cache: cdktf.booleanToTerraform(struct!.noCache),
     path: cdktf.stringToTerraform(struct!.path),
     remove: cdktf.booleanToTerraform(struct!.remove),
@@ -127,7 +127,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -201,12 +201,11 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // build_arg - computed: false, optional: true, required: false
-  private _buildArg?: { [key: string]: string } | cdktf.IResolvable; 
+  private _buildArg?: { [key: string]: string }; 
   public get buildArg() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('build_arg') as any;
+    return this.getStringMapAttribute('build_arg');
   }
-  public set buildArg(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set buildArg(value: { [key: string]: string }) {
     this._buildArg = value;
   }
   public resetBuildArg() {
@@ -236,7 +235,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   // force_remove - computed: false, optional: true, required: false
   private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
-    return this.getBooleanAttribute('force_remove') as any;
+    return this.getBooleanAttribute('force_remove');
   }
   public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
@@ -250,12 +249,11 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // label - computed: false, optional: true, required: false
-  private _label?: { [key: string]: string } | cdktf.IResolvable; 
+  private _label?: { [key: string]: string }; 
   public get label() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('label') as any;
+    return this.getStringMapAttribute('label');
   }
-  public set label(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set label(value: { [key: string]: string }) {
     this._label = value;
   }
   public resetLabel() {
@@ -269,7 +267,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   // no_cache - computed: false, optional: true, required: false
   private _noCache?: boolean | cdktf.IResolvable; 
   public get noCache() {
-    return this.getBooleanAttribute('no_cache') as any;
+    return this.getBooleanAttribute('no_cache');
   }
   public set noCache(value: boolean | cdktf.IResolvable) {
     this._noCache = value;
@@ -298,7 +296,7 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   // remove - computed: false, optional: true, required: false
   private _remove?: boolean | cdktf.IResolvable; 
   public get remove() {
-    return this.getBooleanAttribute('remove') as any;
+    return this.getBooleanAttribute('remove');
   }
   public set remove(value: boolean | cdktf.IResolvable) {
     this._remove = value;
@@ -391,7 +389,7 @@ export class Image extends cdktf.TerraformResource {
   // force_remove - computed: false, optional: true, required: false
   private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
-    return this.getBooleanAttribute('force_remove') as any;
+    return this.getBooleanAttribute('force_remove');
   }
   public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
@@ -412,7 +410,7 @@ export class Image extends cdktf.TerraformResource {
   // keep_locally - computed: false, optional: true, required: false
   private _keepLocally?: boolean | cdktf.IResolvable; 
   public get keepLocally() {
-    return this.getBooleanAttribute('keep_locally') as any;
+    return this.getBooleanAttribute('keep_locally');
   }
   public set keepLocally(value: boolean | cdktf.IResolvable) {
     this._keepLocally = value;
@@ -467,7 +465,7 @@ export class Image extends cdktf.TerraformResource {
   // pull_triggers - computed: false, optional: true, required: false
   private _pullTriggers?: string[]; 
   public get pullTriggers() {
-    return this.getListAttribute('pull_triggers');
+    return cdktf.Fn.tolist(this.getListAttribute('pull_triggers'));
   }
   public set pullTriggers(value: string[]) {
     this._pullTriggers = value;
@@ -486,7 +484,7 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // build - computed: false, optional: true, required: false
-  private _build = new ImageBuildOutputReference(this as any, "build", true);
+  private _build = new ImageBuildOutputReference(this, "build", true);
   public get buildAttribute() {
     return this._build;
   }

@@ -24,7 +24,7 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#labels Secret#labels}
   */
-  readonly labels?: SecretLabels[];
+  readonly labels?: SecretLabels[] | cdktf.IResolvable;
 }
 export interface SecretLabels {
   /**
@@ -41,8 +41,8 @@ export interface SecretLabels {
   readonly value: string;
 }
 
-export function secretLabelsToTerraform(struct?: SecretLabels): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function secretLabelsToTerraform(struct?: SecretLabels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -126,12 +126,12 @@ export class Secret extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: SecretLabels[]; 
+  private _labels?: SecretLabels[] | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
   }
-  public set labels(value: SecretLabels[]) {
+  public set labels(value: SecretLabels[] | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {

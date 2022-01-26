@@ -18,8 +18,7 @@ export class DataDockerNetworkIpamConfig extends cdktf.ComplexComputedList {
 
   // aux_address - computed: true, optional: false, required: false
   public get auxAddress() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('aux_address') as any;
+    return this.getStringMapAttribute('aux_address');
   }
 
   // gateway - computed: true, optional: false, required: false
@@ -89,12 +88,12 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
 
   // internal - computed: true, optional: false, required: false
   public get internal() {
-    return this.getBooleanAttribute('internal') as any;
+    return this.getBooleanAttribute('internal');
   }
 
   // ipam_config - computed: true, optional: false, required: false
   public ipamConfig(index: string) {
-    return new DataDockerNetworkIpamConfig(this, 'ipam_config', index);
+    return new DataDockerNetworkIpamConfig(this, 'ipam_config', index, true);
   }
 
   // name - computed: false, optional: false, required: true
@@ -111,7 +110,7 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
   }
 
   // options - computed: true, optional: false, required: false
-  public options(key: string): string {
+  public options(key: string): string | cdktf.IResolvable {
     return new cdktf.StringMap(this, 'options').lookup(key);
   }
 

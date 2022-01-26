@@ -136,7 +136,7 @@ Name|Description
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/config docker_config}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -151,7 +151,7 @@ new Config(scope: Construct, id: string, config: ConfigConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ConfigConfig](#cdktf-provider-docker-configconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -193,7 +193,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/container docker_container}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -208,7 +208,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ContainerConfig](#cdktf-provider-docker-containerconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -220,7 +220,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **cpuSet** (<code>string</code>)  A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. __*Optional*__
   * **cpuShares** (<code>number</code>)  CPU shares (relative weight) for the container. __*Optional*__
   * **destroyGraceSeconds** (<code>number</code>)  If defined will attempt to stop the container before destroying. __*Optional*__
-  * **devices** (<code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code>)  devices block. __*Optional*__
+  * **devices** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code>)  devices block. __*Optional*__
   * **dns** (<code>Array<string></code>)  DNS servers to use. __*Optional*__
   * **dnsOpts** (<code>Array<string></code>)  DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. __*Optional*__
   * **dnsSearch** (<code>Array<string></code>)  DNS search domains that are used when bare unqualified hostnames are used inside of the container. __*Optional*__
@@ -229,26 +229,26 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **env** (<code>Array<string></code>)  Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`. __*Optional*__
   * **groupAdd** (<code>Array<string></code>)  Additional groups for the container user. __*Optional*__
   * **healthcheck** (<code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code>)  healthcheck block. __*Optional*__
-  * **host** (<code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code>)  host block. __*Optional*__
+  * **host** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code>)  host block. __*Optional*__
   * **hostname** (<code>string</code>)  Hostname of the container. __*Optional*__
   * **init** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Configured whether an init process should be injected for this container. __*Optional*__
   * **ipcMode** (<code>string</code>)  IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`. __*Optional*__
-  * **labels** (<code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code>)  labels block. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code>)  labels block. __*Optional*__
   * **links** (<code>Array<string></code>)  Set of links for link based connectivity between containers that are running on the same host. __*Optional*__
   * **logDriver** (<code>string</code>)  The logging driver to use for the container. __*Optional*__
-  * **logOpts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Key/value pairs to use as options for the logging driver. __*Optional*__
+  * **logOpts** (<code>Map<string, string></code>)  Key/value pairs to use as options for the logging driver. __*Optional*__
   * **logs** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Save the container logs (`attach` must be enabled). Defaults to `false`. __*Optional*__
   * **maxRetryCount** (<code>number</code>)  The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. __*Optional*__
   * **memory** (<code>number</code>)  The memory limit for the container in MBs. __*Optional*__
   * **memorySwap** (<code>number</code>)  The total memory limit (memory + swap) for the container in MBs. __*Optional*__
-  * **mounts** (<code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code>)  mounts block. __*Optional*__
+  * **mounts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code>)  mounts block. __*Optional*__
   * **mustRun** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container will be kept running. __*Optional*__
   * **networkAlias** (<code>Array<string></code>)  Set an alias for the container in all specified networks. __*Optional*__
   * **networkMode** (<code>string</code>)  Network mode of the container. __*Optional*__
   * **networks** (<code>Array<string></code>)  ID of the networks in which the container is. __*Optional*__
-  * **networksAdvanced** (<code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code>)  networks_advanced block. __*Optional*__
+  * **networksAdvanced** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code>)  networks_advanced block. __*Optional*__
   * **pidMode** (<code>string</code>)  he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`. __*Optional*__
-  * **ports** (<code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code>)  ports block. __*Optional*__
+  * **ports** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code>)  ports block. __*Optional*__
   * **privileged** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the container runs in privileged mode. __*Optional*__
   * **publishAllPorts** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Publish all ports of the container. __*Optional*__
   * **readOnly** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the container will be started as readonly. Defaults to `false`. __*Optional*__
@@ -259,15 +259,15 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **shmSize** (<code>number</code>)  Size of `/dev/shm` in MBs. __*Optional*__
   * **start** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container will be started after creation. __*Optional*__
   * **stdinOpen** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. __*Optional*__
-  * **storageOpts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Key/value pairs for the storage driver options, e.g. `size`: `120G`. __*Optional*__
-  * **sysctls** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of kernel parameters (sysctls) to set in the container. __*Optional*__
-  * **tmpfs** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. __*Optional*__
+  * **storageOpts** (<code>Map<string, string></code>)  Key/value pairs for the storage driver options, e.g. `size`: `120G`. __*Optional*__
+  * **sysctls** (<code>Map<string, string></code>)  A map of kernel parameters (sysctls) to set in the container. __*Optional*__
+  * **tmpfs** (<code>Map<string, string></code>)  A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. __*Optional*__
   * **tty** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. __*Optional*__
-  * **ulimit** (<code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code>)  ulimit block. __*Optional*__
-  * **upload** (<code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code>)  upload block. __*Optional*__
+  * **ulimit** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code>)  ulimit block. __*Optional*__
+  * **upload** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code>)  upload block. __*Optional*__
   * **user** (<code>string</code>)  User used for run the first process. __*Optional*__
   * **usernsMode** (<code>string</code>)  Sets the usernamespace mode for the container when usernamespace remapping option is enabled. __*Optional*__
-  * **volumes** (<code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code>)  volumes block. __*Optional*__
+  * **volumes** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code>)  volumes block. __*Optional*__
   * **workingDir** (<code>string</code>)  The working directory for commands to run in. __*Optional*__
 
 
@@ -285,7 +285,7 @@ Name | Type | Description
 **cpuSet** | <code>string</code> | <span></span>
 **cpuShares** | <code>number</code> | <span></span>
 **destroyGraceSeconds** | <code>number</code> | <span></span>
-**devices** | <code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | <span></span>
+**devices** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | <span></span>
 **dns** | <code>Array<string></code> | <span></span>
 **dnsOpts** | <code>Array<string></code> | <span></span>
 **dnsSearch** | <code>Array<string></code> | <span></span>
@@ -296,7 +296,7 @@ Name | Type | Description
 **gateway** | <code>string</code> | <span></span>
 **groupAdd** | <code>Array<string></code> | <span></span>
 **healthcheck** | <code>[ContainerHealthcheckOutputReference](#cdktf-provider-docker-containerhealthcheckoutputreference)</code> | <span></span>
-**host** | <code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | <span></span>
+**host** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | <span></span>
 **hostname** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **image** | <code>string</code> | <span></span>
@@ -304,23 +304,23 @@ Name | Type | Description
 **ipAddress** | <code>string</code> | <span></span>
 **ipPrefixLength** | <code>number</code> | <span></span>
 **ipcMode** | <code>string</code> | <span></span>
-**labels** | <code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | <span></span>
 **links** | <code>Array<string></code> | <span></span>
 **logDriver** | <code>string</code> | <span></span>
-**logOpts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**logOpts** | <code>Map<string, string></code> | <span></span>
 **logs** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **maxRetryCount** | <code>number</code> | <span></span>
 **memory** | <code>number</code> | <span></span>
 **memorySwap** | <code>number</code> | <span></span>
-**mounts** | <code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | <span></span>
+**mounts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | <span></span>
 **mustRun** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **networkAlias** | <code>Array<string></code> | <span></span>
 **networkMode** | <code>string</code> | <span></span>
 **networks** | <code>Array<string></code> | <span></span>
-**networksAdvanced** | <code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | <span></span>
+**networksAdvanced** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | <span></span>
 **pidMode** | <code>string</code> | <span></span>
-**ports** | <code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | <span></span>
+**ports** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | <span></span>
 **privileged** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **publishAllPorts** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **readOnly** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
@@ -331,15 +331,15 @@ Name | Type | Description
 **shmSize** | <code>number</code> | <span></span>
 **start** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **stdinOpen** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**storageOpts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
-**sysctls** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
-**tmpfs** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**storageOpts** | <code>Map<string, string></code> | <span></span>
+**sysctls** | <code>Map<string, string></code> | <span></span>
+**tmpfs** | <code>Map<string, string></code> | <span></span>
 **tty** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**ulimit** | <code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | <span></span>
-**upload** | <code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | <span></span>
+**ulimit** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | <span></span>
+**upload** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | <span></span>
 **user** | <code>string</code> | <span></span>
 **usernsMode** | <code>string</code> | <span></span>
-**volumes** | <code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | <span></span>
+**volumes** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | <span></span>
 **workingDir** | <code>string</code> | <span></span>
 **attachInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **capabilitiesInput**? | <code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code> | __*Optional*__
@@ -347,7 +347,7 @@ Name | Type | Description
 **cpuSetInput**? | <code>string</code> | __*Optional*__
 **cpuSharesInput**? | <code>number</code> | __*Optional*__
 **destroyGraceSecondsInput**? | <code>number</code> | __*Optional*__
-**devicesInput**? | <code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | __*Optional*__
+**devicesInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | __*Optional*__
 **dnsInput**? | <code>Array<string></code> | __*Optional*__
 **dnsOptsInput**? | <code>Array<string></code> | __*Optional*__
 **dnsSearchInput**? | <code>Array<string></code> | __*Optional*__
@@ -356,28 +356,28 @@ Name | Type | Description
 **envInput**? | <code>Array<string></code> | __*Optional*__
 **groupAddInput**? | <code>Array<string></code> | __*Optional*__
 **healthcheckInput**? | <code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code> | __*Optional*__
-**hostInput**? | <code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | __*Optional*__
+**hostInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | __*Optional*__
 **hostnameInput**? | <code>string</code> | __*Optional*__
 **imageInput**? | <code>string</code> | __*Optional*__
 **initInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **ipcModeInput**? | <code>string</code> | __*Optional*__
-**labelsInput**? | <code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | __*Optional*__
 **linksInput**? | <code>Array<string></code> | __*Optional*__
 **logDriverInput**? | <code>string</code> | __*Optional*__
-**logOptsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**logOptsInput**? | <code>Map<string, string></code> | __*Optional*__
 **logsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **maxRetryCountInput**? | <code>number</code> | __*Optional*__
 **memoryInput**? | <code>number</code> | __*Optional*__
 **memorySwapInput**? | <code>number</code> | __*Optional*__
-**mountsInput**? | <code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | __*Optional*__
+**mountsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | __*Optional*__
 **mustRunInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 **networkAliasInput**? | <code>Array<string></code> | __*Optional*__
 **networkModeInput**? | <code>string</code> | __*Optional*__
-**networksAdvancedInput**? | <code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | __*Optional*__
+**networksAdvancedInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | __*Optional*__
 **networksInput**? | <code>Array<string></code> | __*Optional*__
 **pidModeInput**? | <code>string</code> | __*Optional*__
-**portsInput**? | <code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | __*Optional*__
+**portsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | __*Optional*__
 **privilegedInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **publishAllPortsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **readOnlyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
@@ -388,15 +388,15 @@ Name | Type | Description
 **shmSizeInput**? | <code>number</code> | __*Optional*__
 **startInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **stdinOpenInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**storageOptsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
-**sysctlsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
-**tmpfsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**storageOptsInput**? | <code>Map<string, string></code> | __*Optional*__
+**sysctlsInput**? | <code>Map<string, string></code> | __*Optional*__
+**tmpfsInput**? | <code>Map<string, string></code> | __*Optional*__
 **ttyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**ulimitInput**? | <code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | __*Optional*__
-**uploadInput**? | <code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | __*Optional*__
+**ulimitInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | __*Optional*__
+**uploadInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | __*Optional*__
 **userInput**? | <code>string</code> | __*Optional*__
 **usernsModeInput**? | <code>string</code> | __*Optional*__
-**volumesInput**? | <code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | __*Optional*__
+**volumesInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | __*Optional*__
 **workingDirInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -1127,6 +1127,7 @@ __Returns__:
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -1135,10 +1136,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerCapabilitiesOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ContainerCapabilitiesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -1188,6 +1189,7 @@ resetDrop(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -1196,10 +1198,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerHealthcheckOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ContainerHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -1279,6 +1281,7 @@ resetTimeout(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -1287,10 +1290,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsBindOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -1326,6 +1329,7 @@ resetPropagation(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -1334,10 +1338,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsTmpfsOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -1387,6 +1391,7 @@ resetSizeBytes(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -1395,10 +1400,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsVolumeOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -1410,13 +1415,13 @@ new ContainerMountsVolumeOptionsOutputReference(terraformResource: ITerraformRes
 Name | Type | Description 
 -----|------|-------------
 **driverName** | <code>string</code> | <span></span>
-**driverOptions** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
-**labels** | <code>Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | <span></span>
+**driverOptions** | <code>Map<string, string></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | <span></span>
 **noCopy** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **driverNameInput**? | <code>string</code> | __*Optional*__
-**driverOptionsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**driverOptionsInput**? | <code>Map<string, string></code> | __*Optional*__
 **internalValue**? | <code>[ContainerMountsVolumeOptions](#cdktf-provider-docker-containermountsvolumeoptions)</code> | __*Optional*__
-**labelsInput**? | <code>Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | __*Optional*__
 **noCopyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 
 ### Methods
@@ -1476,6 +1481,7 @@ resetNoCopy(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 ### Initializer
@@ -1484,12 +1490,13 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ContainerNetworkData(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
+new ContainerNetworkData(terraformResource: IInterpolatingParent, terraformAttribute: string, complexComputedListIndex: string, wrapsSet?: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
 * **complexComputedListIndex** (<code>string</code>)  *No description*
+* **wrapsSet** (<code>boolean</code>)  *No description*
 
 
 
@@ -1512,7 +1519,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -1527,7 +1534,7 @@ new DataDockerImage(scope: Construct, id: string, config: DataDockerImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerImageConfig](#cdktf-provider-docker-datadockerimageconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -1567,7 +1574,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -1582,7 +1589,7 @@ new DataDockerNetwork(scope: Construct, id: string, config: DataDockerNetworkCon
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerNetworkConfig](#cdktf-provider-docker-datadockernetworkconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -1597,7 +1604,7 @@ Name | Type | Description
 -----|------|-------------
 **driver** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
-**internal** | <code>any</code> | <span></span>
+**internal** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **scope** | <code>string</code> | <span></span>
 **nameInput**? | <code>string</code> | __*Optional*__
@@ -1624,13 +1631,13 @@ __Returns__:
 
 
 ```ts
-options(key: string): string
+options(key: string): string &#124; IResolvable
 ```
 
 * **key** (<code>string</code>)  *No description*
 
 __Returns__:
-* <code>string</code>
+* <code>string &#124; [IResolvable](#cdktf-iresolvable)</code>
 
 #### protected synthesizeAttributes() <a id="cdktf-provider-docker-datadockernetwork-synthesizeattributes"></a>
 
@@ -1650,6 +1657,7 @@ __Returns__:
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 ### Initializer
@@ -1658,12 +1666,13 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataDockerNetworkIpamConfig(terraformResource: ITerraformResource, terraformAttribute: string, complexComputedListIndex: string)
+new DataDockerNetworkIpamConfig(terraformResource: IInterpolatingParent, terraformAttribute: string, complexComputedListIndex: string, wrapsSet?: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  *No description*
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  *No description*
 * **terraformAttribute** (<code>string</code>)  *No description*
 * **complexComputedListIndex** (<code>string</code>)  *No description*
+* **wrapsSet** (<code>boolean</code>)  *No description*
 
 
 
@@ -1672,7 +1681,7 @@ new DataDockerNetworkIpamConfig(terraformResource: ITerraformResource, terraform
 
 Name | Type | Description 
 -----|------|-------------
-**auxAddress** | <code>any</code> | <span></span>
+**auxAddress** | <code>Map<string, string></code> | <span></span>
 **gateway** | <code>string</code> | <span></span>
 **ipRange** | <code>string</code> | <span></span>
 **subnet** | <code>string</code> | <span></span>
@@ -1683,7 +1692,7 @@ Name | Type | Description
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin docker_plugin}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -1698,7 +1707,7 @@ new DataDockerPlugin(scope: Construct, id: string, config?: DataDockerPluginConf
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerPluginConfig](#cdktf-provider-docker-datadockerpluginconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -1713,9 +1722,9 @@ new DataDockerPlugin(scope: Construct, id: string, config?: DataDockerPluginConf
 Name | Type | Description 
 -----|------|-------------
 **alias** | <code>string</code> | <span></span>
-**enabled** | <code>any</code> | <span></span>
+**enabled** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **env** | <code>Array<string></code> | <span></span>
-**grantAllPermissions** | <code>any</code> | <span></span>
+**grantAllPermissions** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **pluginReference** | <code>string</code> | <span></span>
@@ -1768,7 +1777,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
 
 ### Initializer
@@ -1783,7 +1792,7 @@ new DataDockerRegistryImage(scope: Construct, id: string, config: DataDockerRegi
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerRegistryImageConfig](#cdktf-provider-docker-datadockerregistryimageconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -2004,7 +2013,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/image docker_image}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2019,7 +2028,7 @@ new Image(scope: Construct, id: string, config: ImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ImageConfig](#cdktf-provider-docker-imageconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -2068,10 +2077,10 @@ putBuildAttribute(value: ImageBuild): void
 
 * **value** (<code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code>)  *No description*
   * **path** (<code>string</code>)  Context path. 
-  * **buildArg** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Set build-time variables. __*Optional*__
+  * **buildArg** (<code>Map<string, string></code>)  Set build-time variables. __*Optional*__
   * **dockerfile** (<code>string</code>)  Name of the Dockerfile. Defaults to `Dockerfile`. __*Optional*__
   * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Always remove intermediate containers. __*Optional*__
-  * **label** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Set metadata for an image. __*Optional*__
+  * **label** (<code>Map<string, string></code>)  Set metadata for an image. __*Optional*__
   * **noCache** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Do not use cache when building the image. __*Optional*__
   * **remove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Remove intermediate containers after a successful build. Defaults to  `true`. __*Optional*__
   * **tag** (<code>Array<string></code>)  Name and optionally a tag in the 'name:tag' format. __*Optional*__
@@ -2158,6 +2167,7 @@ __Returns__:
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -2166,10 +2176,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ImageBuildOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -2180,20 +2190,20 @@ new ImageBuildOutputReference(terraformResource: ITerraformResource, terraformAt
 
 Name | Type | Description 
 -----|------|-------------
-**buildArg** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**buildArg** | <code>Map<string, string></code> | <span></span>
 **dockerfile** | <code>string</code> | <span></span>
 **forceRemove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**label** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**label** | <code>Map<string, string></code> | <span></span>
 **noCache** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **path** | <code>string</code> | <span></span>
 **remove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **tag** | <code>Array<string></code> | <span></span>
 **target** | <code>string</code> | <span></span>
-**buildArgInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**buildArgInput**? | <code>Map<string, string></code> | __*Optional*__
 **dockerfileInput**? | <code>string</code> | __*Optional*__
 **forceRemoveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **internalValue**? | <code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code> | __*Optional*__
-**labelInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**labelInput**? | <code>Map<string, string></code> | __*Optional*__
 **noCacheInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **pathInput**? | <code>string</code> | __*Optional*__
 **removeInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
@@ -2305,7 +2315,7 @@ resetTarget(): void
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2320,7 +2330,7 @@ new Network(scope: Construct, id: string, config: NetworkConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[NetworkConfig](#cdktf-provider-docker-networkconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -2330,11 +2340,11 @@ new Network(scope: Construct, id: string, config: NetworkConfig)
   * **driver** (<code>string</code>)  The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. __*Optional*__
   * **ingress** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Create swarm routing-mesh network. Defaults to `false`. __*Optional*__
   * **internal** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Whether the network is internal. __*Optional*__
-  * **ipamConfig** (<code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code>)  ipam_config block. __*Optional*__
+  * **ipamConfig** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code>)  ipam_config block. __*Optional*__
   * **ipamDriver** (<code>string</code>)  Driver used by the custom IP scheme of the network. Defaults to `default`. __*Optional*__
   * **ipv6** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Enable IPv6 networking. Defaults to `false`. __*Optional*__
-  * **labels** (<code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code>)  labels block. __*Optional*__
-  * **options** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code>)  labels block. __*Optional*__
+  * **options** (<code>Map<string, string></code>)  Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. __*Optional*__
 
 
 
@@ -2349,24 +2359,24 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **ingress** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **internal** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**ipamConfig** | <code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | <span></span>
+**ipamConfig** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | <span></span>
 **ipamDriver** | <code>string</code> | <span></span>
 **ipv6** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**labels** | <code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**options** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**options** | <code>Map<string, string></code> | <span></span>
 **scope** | <code>string</code> | <span></span>
 **attachableInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **checkDuplicateInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **driverInput**? | <code>string</code> | __*Optional*__
 **ingressInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **internalInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**ipamConfigInput**? | <code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | __*Optional*__
+**ipamConfigInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | __*Optional*__
 **ipamDriverInput**? | <code>string</code> | __*Optional*__
 **ipv6Input**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**labelsInput**? | <code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
-**optionsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**optionsInput**? | <code>Map<string, string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
@@ -2510,7 +2520,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2525,7 +2535,7 @@ new Plugin(scope: Construct, id: string, config: PluginConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PluginConfig](#cdktf-provider-docker-pluginconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -2537,7 +2547,7 @@ new Plugin(scope: Construct, id: string, config: PluginConfig)
   * **forceDestroy** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the plugin is destroyed forcibly. __*Optional*__
   * **forceDisable** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the plugin is disabled forcibly. __*Optional*__
   * **grantAllPermissions** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, grant all permissions necessary to run the plugin. __*Optional*__
-  * **grantPermissions** (<code>Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code>)  grant_permissions block. __*Optional*__
+  * **grantPermissions** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code>)  grant_permissions block. __*Optional*__
 
 
 
@@ -2553,7 +2563,7 @@ Name | Type | Description
 **forceDestroy** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **forceDisable** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **grantAllPermissions** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**grantPermissions** | <code>Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | <span></span>
+**grantPermissions** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **pluginReference** | <code>string</code> | <span></span>
@@ -2564,7 +2574,7 @@ Name | Type | Description
 **forceDestroyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **forceDisableInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **grantAllPermissionsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**grantPermissionsInput**? | <code>Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | __*Optional*__
+**grantPermissionsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -2685,7 +2695,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -2700,7 +2710,7 @@ new RegistryImage(scope: Construct, id: string, config: RegistryImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[RegistryImageConfig](#cdktf-provider-docker-registryimageconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -2741,8 +2751,8 @@ putBuildAttribute(value: RegistryImageBuild): void
 
 * **value** (<code>[RegistryImageBuild](#cdktf-provider-docker-registryimagebuild)</code>)  *No description*
   * **context** (<code>string</code>)  The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'. 
-  * **authConfig** (<code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code>)  auth_config block. __*Optional*__
-  * **buildArgs** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Pairs for build-time variables in the form TODO. __*Optional*__
+  * **authConfig** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code>)  auth_config block. __*Optional*__
+  * **buildArgs** (<code>Map<string, string></code>)  Pairs for build-time variables in the form TODO. __*Optional*__
   * **buildId** (<code>string</code>)  BuildID is an optional identifier that can be passed together with the build request. __*Optional*__
   * **cacheFrom** (<code>Array<string></code>)  Images to consider as cache sources. __*Optional*__
   * **cgroupParent** (<code>string</code>)  Optional parent cgroup for the container. __*Optional*__
@@ -2755,7 +2765,7 @@ putBuildAttribute(value: RegistryImageBuild): void
   * **extraHosts** (<code>Array<string></code>)  A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"]. __*Optional*__
   * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Always remove intermediate containers. __*Optional*__
   * **isolation** (<code>string</code>)  Isolation represents the isolation technology of a container. The supported values are. __*Optional*__
-  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  User-defined key/value metadata. __*Optional*__
+  * **labels** (<code>Map<string, string></code>)  User-defined key/value metadata. __*Optional*__
   * **memory** (<code>number</code>)  Set memory limit for build. __*Optional*__
   * **memorySwap** (<code>number</code>)  Total memory (memory + swap), -1 to enable unlimited swap. __*Optional*__
   * **networkMode** (<code>string</code>)  Set the networking mode for the RUN instructions during build. __*Optional*__
@@ -2770,7 +2780,7 @@ putBuildAttribute(value: RegistryImageBuild): void
   * **squash** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true the new layers are squashed into a new image with a single new layer. __*Optional*__
   * **suppressOutput** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Suppress the build output and print image ID on success. __*Optional*__
   * **target** (<code>string</code>)  Set the target build stage to build. __*Optional*__
-  * **ulimit** (<code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code>)  ulimit block. __*Optional*__
+  * **ulimit** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code>)  ulimit block. __*Optional*__
   * **version** (<code>string</code>)  Version of the underlying builder to use. __*Optional*__
 
 
@@ -2830,6 +2840,7 @@ __Returns__:
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -2838,10 +2849,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new RegistryImageBuildOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new RegistryImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -2852,8 +2863,8 @@ new RegistryImageBuildOutputReference(terraformResource: ITerraformResource, ter
 
 Name | Type | Description 
 -----|------|-------------
-**authConfig** | <code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | <span></span>
-**buildArgs** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**authConfig** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | <span></span>
+**buildArgs** | <code>Map<string, string></code> | <span></span>
 **buildId** | <code>string</code> | <span></span>
 **cacheFrom** | <code>Array<string></code> | <span></span>
 **cgroupParent** | <code>string</code> | <span></span>
@@ -2867,7 +2878,7 @@ Name | Type | Description
 **extraHosts** | <code>Array<string></code> | <span></span>
 **forceRemove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **isolation** | <code>string</code> | <span></span>
-**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**labels** | <code>Map<string, string></code> | <span></span>
 **memory** | <code>number</code> | <span></span>
 **memorySwap** | <code>number</code> | <span></span>
 **networkMode** | <code>string</code> | <span></span>
@@ -2882,10 +2893,10 @@ Name | Type | Description
 **squash** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **suppressOutput** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **target** | <code>string</code> | <span></span>
-**ulimit** | <code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | <span></span>
+**ulimit** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | <span></span>
 **version** | <code>string</code> | <span></span>
-**authConfigInput**? | <code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | __*Optional*__
-**buildArgsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**authConfigInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | __*Optional*__
+**buildArgsInput**? | <code>Map<string, string></code> | __*Optional*__
 **buildIdInput**? | <code>string</code> | __*Optional*__
 **cacheFromInput**? | <code>Array<string></code> | __*Optional*__
 **cgroupParentInput**? | <code>string</code> | __*Optional*__
@@ -2900,7 +2911,7 @@ Name | Type | Description
 **forceRemoveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **internalValue**? | <code>[RegistryImageBuild](#cdktf-provider-docker-registryimagebuild)</code> | __*Optional*__
 **isolationInput**? | <code>string</code> | __*Optional*__
-**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**labelsInput**? | <code>Map<string, string></code> | __*Optional*__
 **memoryInput**? | <code>number</code> | __*Optional*__
 **memorySwapInput**? | <code>number</code> | __*Optional*__
 **networkModeInput**? | <code>string</code> | __*Optional*__
@@ -2915,7 +2926,7 @@ Name | Type | Description
 **squashInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **suppressOutputInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **targetInput**? | <code>string</code> | __*Optional*__
-**ulimitInput**? | <code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | __*Optional*__
+**ulimitInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | __*Optional*__
 **versionInput**? | <code>string</code> | __*Optional*__
 
 ### Methods
@@ -3299,7 +3310,7 @@ resetVersion(): void
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -3314,13 +3325,13 @@ new Secret(scope: Construct, id: string, config: SecretConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[SecretConfig](#cdktf-provider-docker-secretconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **data** (<code>string</code>)  Base64-url-safe-encoded secret data. 
   * **name** (<code>string</code>)  User-defined name of the secret. 
-  * **labels** (<code>Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code>)  labels block. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code>)  labels block. __*Optional*__
 
 
 
@@ -3331,10 +3342,10 @@ Name | Type | Description
 -----|------|-------------
 **data** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
-**labels** | <code>Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **dataInput**? | <code>string</code> | __*Optional*__
-**labelsInput**? | <code>Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -3371,7 +3382,7 @@ __Returns__:
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/service docker_service}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -3386,7 +3397,7 @@ new Service(scope: Construct, id: string, config: ServiceConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ServiceConfig](#cdktf-provider-docker-serviceconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
@@ -3395,7 +3406,7 @@ new Service(scope: Construct, id: string, config: ServiceConfig)
   * **auth** (<code>[ServiceAuth](#cdktf-provider-docker-serviceauth)</code>)  auth block. __*Optional*__
   * **convergeConfig** (<code>[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)</code>)  converge_config block. __*Optional*__
   * **endpointSpec** (<code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code>)  endpoint_spec block. __*Optional*__
-  * **labels** (<code>Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code>)  labels block. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code>)  labels block. __*Optional*__
   * **mode** (<code>[ServiceMode](#cdktf-provider-docker-servicemode)</code>)  mode block. __*Optional*__
   * **rollbackConfig** (<code>[ServiceRollbackConfig](#cdktf-provider-docker-servicerollbackconfig)</code>)  rollback_config block. __*Optional*__
   * **updateConfig** (<code>[ServiceUpdateConfig](#cdktf-provider-docker-serviceupdateconfig)</code>)  update_config block. __*Optional*__
@@ -3411,7 +3422,7 @@ Name | Type | Description
 **convergeConfig** | <code>[ServiceConvergeConfigOutputReference](#cdktf-provider-docker-serviceconvergeconfigoutputreference)</code> | <span></span>
 **endpointSpec** | <code>[ServiceEndpointSpecOutputReference](#cdktf-provider-docker-serviceendpointspecoutputreference)</code> | <span></span>
 **id** | <code>string</code> | <span></span>
-**labels** | <code>Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | <span></span>
 **mode** | <code>[ServiceModeOutputReference](#cdktf-provider-docker-servicemodeoutputreference)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **rollbackConfig** | <code>[ServiceRollbackConfigOutputReference](#cdktf-provider-docker-servicerollbackconfigoutputreference)</code> | <span></span>
@@ -3420,7 +3431,7 @@ Name | Type | Description
 **authInput**? | <code>[ServiceAuth](#cdktf-provider-docker-serviceauth)</code> | __*Optional*__
 **convergeConfigInput**? | <code>[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)</code> | __*Optional*__
 **endpointSpecInput**? | <code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code> | __*Optional*__
-**labelsInput**? | <code>Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | __*Optional*__
 **modeInput**? | <code>[ServiceMode](#cdktf-provider-docker-servicemode)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 **rollbackConfigInput**? | <code>[ServiceRollbackConfig](#cdktf-provider-docker-servicerollbackconfig)</code> | __*Optional*__
@@ -3472,7 +3483,7 @@ putEndpointSpec(value: ServiceEndpointSpec): void
 
 * **value** (<code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code>)  *No description*
   * **mode** (<code>string</code>)  The mode of resolution to use for internal load balancing between tasks. __*Optional*__
-  * **ports** (<code>Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code>)  ports block. __*Optional*__
+  * **ports** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code>)  ports block. __*Optional*__
 
 
 
@@ -3653,6 +3664,7 @@ __Returns__:
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3661,10 +3673,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceAuthOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceAuthOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -3716,6 +3728,7 @@ resetUsername(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3724,10 +3737,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceConvergeConfigOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceConvergeConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -3777,6 +3790,7 @@ resetTimeout(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3785,10 +3799,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceEndpointSpecOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceEndpointSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -3800,10 +3814,10 @@ new ServiceEndpointSpecOutputReference(terraformResource: ITerraformResource, te
 Name | Type | Description 
 -----|------|-------------
 **mode** | <code>string</code> | <span></span>
-**ports** | <code>Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | <span></span>
+**ports** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | <span></span>
 **internalValue**? | <code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code> | __*Optional*__
 **modeInput**? | <code>string</code> | __*Optional*__
-**portsInput**? | <code>Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | __*Optional*__
+**portsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | __*Optional*__
 
 ### Methods
 
@@ -3838,6 +3852,7 @@ resetPorts(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3846,10 +3861,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceModeOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceModeOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -3913,6 +3928,7 @@ resetReplicated(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3921,10 +3937,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceModeReplicatedOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceModeReplicatedOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -3960,6 +3976,7 @@ resetReplicas(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -3968,10 +3985,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceRollbackConfigOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceRollbackConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4077,6 +4094,7 @@ resetParallelism(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4085,10 +4103,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4140,6 +4158,7 @@ resetSearch(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4148,10 +4167,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4231,6 +4250,7 @@ resetTimeout(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4239,10 +4259,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4278,6 +4298,7 @@ resetPropagation(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4286,10 +4307,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4339,6 +4360,7 @@ resetSizeBytes(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4347,10 +4369,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4362,13 +4384,13 @@ new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformReso
 Name | Type | Description 
 -----|------|-------------
 **driverName** | <code>string</code> | <span></span>
-**driverOptions** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
-**labels** | <code>Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | <span></span>
+**driverOptions** | <code>Map<string, string></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | <span></span>
 **noCopy** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **driverNameInput**? | <code>string</code> | __*Optional*__
-**driverOptionsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**driverOptionsInput**? | <code>Map<string, string></code> | __*Optional*__
 **internalValue**? | <code>[ServiceTaskSpecContainerSpecMountsVolumeOptions](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptions)</code> | __*Optional*__
-**labelsInput**? | <code>Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | __*Optional*__
 **noCopyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 
 ### Methods
@@ -4428,6 +4450,7 @@ resetNoCopy(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4436,10 +4459,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4452,42 +4475,42 @@ Name | Type | Description
 -----|------|-------------
 **args** | <code>Array<string></code> | <span></span>
 **command** | <code>Array<string></code> | <span></span>
-**configs** | <code>Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | <span></span>
+**configs** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | <span></span>
 **dir** | <code>string</code> | <span></span>
 **dnsConfig** | <code>[ServiceTaskSpecContainerSpecDnsConfigOutputReference](#cdktf-provider-docker-servicetaskspeccontainerspecdnsconfigoutputreference)</code> | <span></span>
-**env** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**env** | <code>Map<string, string></code> | <span></span>
 **groups** | <code>Array<string></code> | <span></span>
 **healthcheck** | <code>[ServiceTaskSpecContainerSpecHealthcheckOutputReference](#cdktf-provider-docker-servicetaskspeccontainerspechealthcheckoutputreference)</code> | <span></span>
 **hostname** | <code>string</code> | <span></span>
-**hosts** | <code>Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | <span></span>
+**hosts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | <span></span>
 **image** | <code>string</code> | <span></span>
 **isolation** | <code>string</code> | <span></span>
-**labels** | <code>Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | <span></span>
-**mounts** | <code>Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | <span></span>
+**mounts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | <span></span>
 **privileges** | <code>[ServiceTaskSpecContainerSpecPrivilegesOutputReference](#cdktf-provider-docker-servicetaskspeccontainerspecprivilegesoutputreference)</code> | <span></span>
 **readOnly** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**secrets** | <code>Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | <span></span>
+**secrets** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | <span></span>
 **stopGracePeriod** | <code>string</code> | <span></span>
 **stopSignal** | <code>string</code> | <span></span>
 **user** | <code>string</code> | <span></span>
 **argsInput**? | <code>Array<string></code> | __*Optional*__
 **commandInput**? | <code>Array<string></code> | __*Optional*__
-**configsInput**? | <code>Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | __*Optional*__
+**configsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | __*Optional*__
 **dirInput**? | <code>string</code> | __*Optional*__
 **dnsConfigInput**? | <code>[ServiceTaskSpecContainerSpecDnsConfig](#cdktf-provider-docker-servicetaskspeccontainerspecdnsconfig)</code> | __*Optional*__
-**envInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**envInput**? | <code>Map<string, string></code> | __*Optional*__
 **groupsInput**? | <code>Array<string></code> | __*Optional*__
 **healthcheckInput**? | <code>[ServiceTaskSpecContainerSpecHealthcheck](#cdktf-provider-docker-servicetaskspeccontainerspechealthcheck)</code> | __*Optional*__
 **hostnameInput**? | <code>string</code> | __*Optional*__
-**hostsInput**? | <code>Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | __*Optional*__
+**hostsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | __*Optional*__
 **imageInput**? | <code>string</code> | __*Optional*__
 **internalValue**? | <code>[ServiceTaskSpecContainerSpec](#cdktf-provider-docker-servicetaskspeccontainerspec)</code> | __*Optional*__
 **isolationInput**? | <code>string</code> | __*Optional*__
-**labelsInput**? | <code>Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | __*Optional*__
-**mountsInput**? | <code>Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | __*Optional*__
+**mountsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | __*Optional*__
 **privilegesInput**? | <code>[ServiceTaskSpecContainerSpecPrivileges](#cdktf-provider-docker-servicetaskspeccontainerspecprivileges)</code> | __*Optional*__
 **readOnlyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**secretsInput**? | <code>Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | __*Optional*__
+**secretsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | __*Optional*__
 **stopGracePeriodInput**? | <code>string</code> | __*Optional*__
 **stopSignalInput**? | <code>string</code> | __*Optional*__
 **userInput**? | <code>string</code> | __*Optional*__
@@ -4778,6 +4801,7 @@ resetUser(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4786,10 +4810,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4839,6 +4863,7 @@ resetRegistry(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4847,10 +4872,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -4933,6 +4958,7 @@ resetSeLinuxContext(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -4941,10 +4967,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5036,6 +5062,7 @@ resetUser(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5044,10 +5071,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecLogDriverOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecLogDriverOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5059,10 +5086,10 @@ new ServiceTaskSpecLogDriverOutputReference(terraformResource: ITerraformResourc
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | <span></span>
-**options** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**options** | <code>Map<string, string></code> | <span></span>
 **internalValue**? | <code>[ServiceTaskSpecLogDriver](#cdktf-provider-docker-servicetaskspeclogdriver)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
-**optionsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
+**optionsInput**? | <code>Map<string, string></code> | __*Optional*__
 
 ### Methods
 
@@ -5085,6 +5112,7 @@ resetOptions(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5093,10 +5121,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5140,20 +5168,20 @@ putContainerSpec(value: ServiceTaskSpecContainerSpec): void
   * **image** (<code>string</code>)  The image name to use for the containers of the service, like `nginx:1.17.6`. Also use the data-source or resource of `docker_image` with the `repo_digest` or `docker_registry_image` with the `name` attribute for this, as shown in the examples. 
   * **args** (<code>Array<string></code>)  Arguments to the command. __*Optional*__
   * **command** (<code>Array<string></code>)  The command/entrypoint to be run in the image. __*Optional*__
-  * **configs** (<code>Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code>)  configs block. __*Optional*__
+  * **configs** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code>)  configs block. __*Optional*__
   * **dir** (<code>string</code>)  The working directory for commands to run in. __*Optional*__
   * **dnsConfig** (<code>[ServiceTaskSpecContainerSpecDnsConfig](#cdktf-provider-docker-servicetaskspeccontainerspecdnsconfig)</code>)  dns_config block. __*Optional*__
-  * **env** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  A list of environment variables in the form VAR="value". __*Optional*__
+  * **env** (<code>Map<string, string></code>)  A list of environment variables in the form VAR="value". __*Optional*__
   * **groups** (<code>Array<string></code>)  A list of additional groups that the container process will run as. __*Optional*__
   * **healthcheck** (<code>[ServiceTaskSpecContainerSpecHealthcheck](#cdktf-provider-docker-servicetaskspeccontainerspechealthcheck)</code>)  healthcheck block. __*Optional*__
   * **hostname** (<code>string</code>)  The hostname to use for the container, as a valid RFC 1123 hostname. __*Optional*__
-  * **hosts** (<code>Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code>)  hosts block. __*Optional*__
+  * **hosts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code>)  hosts block. __*Optional*__
   * **isolation** (<code>string</code>)  Isolation technology of the containers running the service. (Windows only). Defaults to `default`. __*Optional*__
-  * **labels** (<code>Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code>)  labels block. __*Optional*__
-  * **mounts** (<code>Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code>)  mounts block. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code>)  labels block. __*Optional*__
+  * **mounts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code>)  mounts block. __*Optional*__
   * **privileges** (<code>[ServiceTaskSpecContainerSpecPrivileges](#cdktf-provider-docker-servicetaskspeccontainerspecprivileges)</code>)  privileges block. __*Optional*__
   * **readOnly** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Mount the container's root filesystem as read only. __*Optional*__
-  * **secrets** (<code>Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code>)  secrets block. __*Optional*__
+  * **secrets** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code>)  secrets block. __*Optional*__
   * **stopGracePeriod** (<code>string</code>)  Amount of time to wait for the container to terminate before forcefully removing it (ms|s|m|h). __*Optional*__
   * **stopSignal** (<code>string</code>)  Signal to stop the container. __*Optional*__
   * **user** (<code>string</code>)  The user inside the container. __*Optional*__
@@ -5171,7 +5199,7 @@ putLogDriver(value: ServiceTaskSpecLogDriver): void
 
 * **value** (<code>[ServiceTaskSpecLogDriver](#cdktf-provider-docker-servicetaskspeclogdriver)</code>)  *No description*
   * **name** (<code>string</code>)  The logging driver to use. 
-  * **options** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  The options for the logging driver. __*Optional*__
+  * **options** (<code>Map<string, string></code>)  The options for the logging driver. __*Optional*__
 
 
 
@@ -5187,7 +5215,7 @@ putPlacement(value: ServiceTaskSpecPlacement): void
 * **value** (<code>[ServiceTaskSpecPlacement](#cdktf-provider-docker-servicetaskspecplacement)</code>)  *No description*
   * **constraints** (<code>Array<string></code>)  An array of constraints. e.g.: `node.role==manager`. __*Optional*__
   * **maxReplicas** (<code>number</code>)  Maximum number of replicas for per node (default value is `0`, which is unlimited). __*Optional*__
-  * **platforms** (<code>Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code>)  platforms block. __*Optional*__
+  * **platforms** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code>)  platforms block. __*Optional*__
   * **prefs** (<code>Array<string></code>)  Preferences provide a way to make the scheduler aware of factors such as topology. __*Optional*__
 
 
@@ -5315,6 +5343,7 @@ resetRuntime(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5323,10 +5352,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecPlacementOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecPlacementOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5339,12 +5368,12 @@ Name | Type | Description
 -----|------|-------------
 **constraints** | <code>Array<string></code> | <span></span>
 **maxReplicas** | <code>number</code> | <span></span>
-**platforms** | <code>Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | <span></span>
+**platforms** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | <span></span>
 **prefs** | <code>Array<string></code> | <span></span>
 **constraintsInput**? | <code>Array<string></code> | __*Optional*__
 **internalValue**? | <code>[ServiceTaskSpecPlacement](#cdktf-provider-docker-servicetaskspecplacement)</code> | __*Optional*__
 **maxReplicasInput**? | <code>number</code> | __*Optional*__
-**platformsInput**? | <code>Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | __*Optional*__
+**platformsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | __*Optional*__
 **prefsInput**? | <code>Array<string></code> | __*Optional*__
 
 ### Methods
@@ -5404,6 +5433,7 @@ resetPrefs(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5412,10 +5442,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesLimitsOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesLimitsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5465,6 +5495,7 @@ resetNanoCpus(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5473,10 +5504,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5557,6 +5588,7 @@ resetReservation(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5565,10 +5597,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5618,6 +5650,7 @@ resetNamedResourcesSpec(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5626,10 +5659,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesReservationOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesReservationOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5708,6 +5741,7 @@ resetNanoCpus(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5716,10 +5750,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecRestartPolicyOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecRestartPolicyOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5797,6 +5831,7 @@ resetWindow(): void
 
 
 
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [ComplexObject](#cdktf-complexobject)
 
 ### Initializer
@@ -5805,10 +5840,10 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceUpdateConfigOutputReference(terraformResource: ITerraformResource, terraformAttribute: string, isSingleItem: boolean)
+new ServiceUpdateConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
 ```
 
-* **terraformResource** (<code>[ITerraformResource](#cdktf-iterraformresource)</code>)  The parent resource.
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
 * **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
@@ -5914,7 +5949,7 @@ resetParallelism(): void
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
 __Extends__: [TerraformResource](#cdktf-terraformresource)
 
 ### Initializer
@@ -5929,13 +5964,13 @@ new Volume(scope: Construct, id: string, config?: VolumeConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[VolumeConfig](#cdktf-provider-docker-volumeconfig)</code>)  *No description*
-  * **count** (<code>number &#124; [IResolvable](#cdktf-iresolvable)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **driver** (<code>string</code>)  Driver type for the volume. Defaults to `local`. __*Optional*__
-  * **driverOpts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code>)  Options specific to the driver. __*Optional*__
-  * **labels** (<code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code>)  labels block. __*Optional*__
+  * **driverOpts** (<code>Map<string, string></code>)  Options specific to the driver. __*Optional*__
+  * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code>)  labels block. __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker volume (will be generated if not provided). __*Optional*__
 
 
@@ -5946,14 +5981,14 @@ new Volume(scope: Construct, id: string, config?: VolumeConfig)
 Name | Type | Description 
 -----|------|-------------
 **driver** | <code>string</code> | <span></span>
-**driverOpts** | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | <span></span>
+**driverOpts** | <code>Map<string, string></code> | <span></span>
 **id** | <code>string</code> | <span></span>
-**labels** | <code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | <span></span>
+**labels** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | <span></span>
 **mountpoint** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **driverInput**? | <code>string</code> | __*Optional*__
-**driverOptsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | __*Optional*__
-**labelsInput**? | <code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | __*Optional*__
+**driverOptsInput**? | <code>Map<string, string></code> | __*Optional*__
+**labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -6033,7 +6068,7 @@ Name | Type | Description
 -----|------|-------------
 **data** | <code>string</code> | Base64-url-safe-encoded config data.
 **name** | <code>string</code> | User-defined name of the config.
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -6068,12 +6103,12 @@ Name | Type | Description
 **attach**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.<br/>__*Optional*__
 **capabilities**? | <code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code> | capabilities block.<br/>__*Optional*__
 **command**? | <code>Array<string></code> | The command to use to start the container.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **cpuSet**? | <code>string</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.<br/>__*Optional*__
 **cpuShares**? | <code>number</code> | CPU shares (relative weight) for the container.<br/>__*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **destroyGraceSeconds**? | <code>number</code> | If defined will attempt to stop the container before destroying.<br/>__*Optional*__
-**devices**? | <code>Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | devices block.<br/>__*Optional*__
+**devices**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerDevices](#cdktf-provider-docker-containerdevices)></code> | devices block.<br/>__*Optional*__
 **dns**? | <code>Array<string></code> | DNS servers to use.<br/>__*Optional*__
 **dnsOpts**? | <code>Array<string></code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options.<br/>__*Optional*__
 **dnsSearch**? | <code>Array<string></code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container.<br/>__*Optional*__
@@ -6082,27 +6117,27 @@ Name | Type | Description
 **env**? | <code>Array<string></code> | Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`.<br/>__*Optional*__
 **groupAdd**? | <code>Array<string></code> | Additional groups for the container user.<br/>__*Optional*__
 **healthcheck**? | <code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code> | healthcheck block.<br/>__*Optional*__
-**host**? | <code>Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | host block.<br/>__*Optional*__
+**host**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | host block.<br/>__*Optional*__
 **hostname**? | <code>string</code> | Hostname of the container.<br/>__*Optional*__
 **init**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Configured whether an init process should be injected for this container.<br/>__*Optional*__
 **ipcMode**? | <code>string</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`.<br/>__*Optional*__
-**labels**? | <code>Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | labels block.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerLabels](#cdktf-provider-docker-containerlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **links**? | <code>Array<string></code> | Set of links for link based connectivity between containers that are running on the same host.<br/>__*Optional*__
 **logDriver**? | <code>string</code> | The logging driver to use for the container.<br/>__*Optional*__
-**logOpts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Key/value pairs to use as options for the logging driver.<br/>__*Optional*__
+**logOpts**? | <code>Map<string, string></code> | Key/value pairs to use as options for the logging driver.<br/>__*Optional*__
 **logs**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Save the container logs (`attach` must be enabled). Defaults to `false`.<br/>__*Optional*__
 **maxRetryCount**? | <code>number</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'.<br/>__*Optional*__
 **memory**? | <code>number</code> | The memory limit for the container in MBs.<br/>__*Optional*__
 **memorySwap**? | <code>number</code> | The total memory limit (memory + swap) for the container in MBs.<br/>__*Optional*__
-**mounts**? | <code>Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | mounts block.<br/>__*Optional*__
+**mounts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMounts](#cdktf-provider-docker-containermounts)></code> | mounts block.<br/>__*Optional*__
 **mustRun**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container will be kept running.<br/>__*Optional*__
 **networkAlias**? | <code>Array<string></code> | Set an alias for the container in all specified networks.<br/>__*Optional*__
 **networkMode**? | <code>string</code> | Network mode of the container.<br/>__*Optional*__
 **networks**? | <code>Array<string></code> | ID of the networks in which the container is.<br/>__*Optional*__
-**networksAdvanced**? | <code>Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | networks_advanced block.<br/>__*Optional*__
+**networksAdvanced**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | networks_advanced block.<br/>__*Optional*__
 **pidMode**? | <code>string</code> | he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`.<br/>__*Optional*__
-**ports**? | <code>Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | ports block.<br/>__*Optional*__
+**ports**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | ports block.<br/>__*Optional*__
 **privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the container runs in privileged mode.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **publishAllPorts**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Publish all ports of the container.<br/>__*Optional*__
@@ -6114,15 +6149,15 @@ Name | Type | Description
 **shmSize**? | <code>number</code> | Size of `/dev/shm` in MBs.<br/>__*Optional*__
 **start**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container will be started after creation.<br/>__*Optional*__
 **stdinOpen**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.<br/>__*Optional*__
-**storageOpts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`.<br/>__*Optional*__
-**sysctls**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of kernel parameters (sysctls) to set in the container.<br/>__*Optional*__
-**tmpfs**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.<br/>__*Optional*__
+**storageOpts**? | <code>Map<string, string></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`.<br/>__*Optional*__
+**sysctls**? | <code>Map<string, string></code> | A map of kernel parameters (sysctls) to set in the container.<br/>__*Optional*__
+**tmpfs**? | <code>Map<string, string></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.<br/>__*Optional*__
 **tty**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.<br/>__*Optional*__
-**ulimit**? | <code>Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | ulimit block.<br/>__*Optional*__
-**upload**? | <code>Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | upload block.<br/>__*Optional*__
+**ulimit**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUlimit](#cdktf-provider-docker-containerulimit)></code> | ulimit block.<br/>__*Optional*__
+**upload**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerUpload](#cdktf-provider-docker-containerupload)></code> | upload block.<br/>__*Optional*__
 **user**? | <code>string</code> | User used for run the first process.<br/>__*Optional*__
 **usernsMode**? | <code>string</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled.<br/>__*Optional*__
-**volumes**? | <code>Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | volumes block.<br/>__*Optional*__
+**volumes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerVolumes](#cdktf-provider-docker-containervolumes)></code> | volumes block.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | The working directory for commands to run in.<br/>__*Optional*__
 
 
@@ -6243,8 +6278,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **driverName**? | <code>string</code> | Name of the driver to use to create the volume.<br/>__*Optional*__
-**driverOptions**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | key/value map of driver specific options.<br/>__*Optional*__
-**labels**? | <code>Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | labels block.<br/>__*Optional*__
+**driverOptions**? | <code>Map<string, string></code> | key/value map of driver specific options.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)></code> | labels block.<br/>__*Optional*__
 **noCopy**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Populate volume with data from the target.<br/>__*Optional*__
 
 
@@ -6355,7 +6390,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags or SHA256 repo digests.
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -6372,7 +6407,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker network.
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -6389,7 +6424,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **alias**? | <code>string</code> | The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **id**? | <code>string</code> | The ID of the plugin, which has precedence over the `alias` of both are given.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -6407,7 +6442,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`.
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **insecureSkipVerify**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -6462,10 +6497,10 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **path** | <code>string</code> | Context path.
-**buildArg**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Set build-time variables.<br/>__*Optional*__
+**buildArg**? | <code>Map<string, string></code> | Set build-time variables.<br/>__*Optional*__
 **dockerfile**? | <code>string</code> | Name of the Dockerfile. Defaults to `Dockerfile`.<br/>__*Optional*__
 **forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Always remove intermediate containers.<br/>__*Optional*__
-**label**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Set metadata for an image.<br/>__*Optional*__
+**label**? | <code>Map<string, string></code> | Set metadata for an image.<br/>__*Optional*__
 **noCache**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Do not use cache when building the image.<br/>__*Optional*__
 **remove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Remove intermediate containers after a successful build. Defaults to  `true`.<br/>__*Optional*__
 **tag**? | <code>Array<string></code> | Name and optionally a tag in the 'name:tag' format.<br/>__*Optional*__
@@ -6484,7 +6519,7 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags or SHA256 repo digests.
 **buildAttribute**? | <code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code> | build block.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the image is removed forcibly when the resource is destroyed.<br/>__*Optional*__
 **keepLocally**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the Docker image won't be deleted on destroy operation.<br/>__*Optional*__
@@ -6507,17 +6542,17 @@ Name | Type | Description
 **name** | <code>string</code> | The name of the Docker network.
 **attachable**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable manual container attachment to the network.<br/>__*Optional*__
 **checkDuplicate**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Requests daemon to check for networks with same name.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **driver**? | <code>string</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.<br/>__*Optional*__
 **ingress**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Create swarm routing-mesh network. Defaults to `false`.<br/>__*Optional*__
 **internal**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the network is internal.<br/>__*Optional*__
-**ipamConfig**? | <code>Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | ipam_config block.<br/>__*Optional*__
+**ipamConfig**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkIpamConfig](#cdktf-provider-docker-networkipamconfig)></code> | ipam_config block.<br/>__*Optional*__
 **ipamDriver**? | <code>string</code> | Driver used by the custom IP scheme of the network. Defaults to `default`.<br/>__*Optional*__
 **ipv6**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable IPv6 networking. Defaults to `false`.<br/>__*Optional*__
-**labels**? | <code>Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | labels block.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[NetworkLabels](#cdktf-provider-docker-networklabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.<br/>__*Optional*__
+**options**? | <code>Map<string, string></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
 
@@ -6531,7 +6566,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**auxAddress**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Auxiliary IPv4 or IPv6 addresses used by Network driver.<br/>__*Optional*__
+**auxAddress**? | <code>Map<string, string></code> | Auxiliary IPv4 or IPv6 addresses used by Network driver.<br/>__*Optional*__
 **gateway**? | <code>string</code> | The IP address of the gateway.<br/>__*Optional*__
 **ipRange**? | <code>string</code> | The ip range in CIDR form.<br/>__*Optional*__
 **subnet**? | <code>string</code> | The subnet in CIDR form.<br/>__*Optional*__
@@ -6563,7 +6598,7 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | Docker Plugin name.
 **alias**? | <code>string</code> | Docker Plugin alias.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **enableTimeout**? | <code>number</code> | HTTP client timeout to enable the plugin.<br/>__*Optional*__
 **enabled**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true` the plugin is enabled. Defaults to `true`.<br/>__*Optional*__
@@ -6571,7 +6606,7 @@ Name | Type | Description
 **forceDestroy**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the plugin is destroyed forcibly.<br/>__*Optional*__
 **forceDisable**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the plugin is disabled forcibly.<br/>__*Optional*__
 **grantAllPermissions**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, grant all permissions necessary to run the plugin.<br/>__*Optional*__
-**grantPermissions**? | <code>Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | grant_permissions block.<br/>__*Optional*__
+**grantPermissions**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[PluginGrantPermissions](#cdktf-provider-docker-plugingrantpermissions)></code> | grant_permissions block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
@@ -6601,8 +6636,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **context** | <code>string</code> | The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'.
-**authConfig**? | <code>Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | auth_config block.<br/>__*Optional*__
-**buildArgs**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Pairs for build-time variables in the form TODO.<br/>__*Optional*__
+**authConfig**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimagebuildauthconfig)></code> | auth_config block.<br/>__*Optional*__
+**buildArgs**? | <code>Map<string, string></code> | Pairs for build-time variables in the form TODO.<br/>__*Optional*__
 **buildId**? | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request.<br/>__*Optional*__
 **cacheFrom**? | <code>Array<string></code> | Images to consider as cache sources.<br/>__*Optional*__
 **cgroupParent**? | <code>string</code> | Optional parent cgroup for the container.<br/>__*Optional*__
@@ -6615,7 +6650,7 @@ Name | Type | Description
 **extraHosts**? | <code>Array<string></code> | A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].<br/>__*Optional*__
 **forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Always remove intermediate containers.<br/>__*Optional*__
 **isolation**? | <code>string</code> | Isolation represents the isolation technology of a container. The supported values are.<br/>__*Optional*__
-**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | User-defined key/value metadata.<br/>__*Optional*__
+**labels**? | <code>Map<string, string></code> | User-defined key/value metadata.<br/>__*Optional*__
 **memory**? | <code>number</code> | Set memory limit for build.<br/>__*Optional*__
 **memorySwap**? | <code>number</code> | Total memory (memory + swap), -1 to enable unlimited swap.<br/>__*Optional*__
 **networkMode**? | <code>string</code> | Set the networking mode for the RUN instructions during build.<br/>__*Optional*__
@@ -6630,7 +6665,7 @@ Name | Type | Description
 **squash**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true the new layers are squashed into a new image with a single new layer.<br/>__*Optional*__
 **suppressOutput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Suppress the build output and print image ID on success.<br/>__*Optional*__
 **target**? | <code>string</code> | Set the target build stage to build.<br/>__*Optional*__
-**ulimit**? | <code>Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | ulimit block.<br/>__*Optional*__
+**ulimit**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[RegistryImageBuildUlimit](#cdktf-provider-docker-registryimagebuildulimit)></code> | ulimit block.<br/>__*Optional*__
 **version**? | <code>string</code> | Version of the underlying builder to use.<br/>__*Optional*__
 
 
@@ -6681,7 +6716,7 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image.
 **buildAttribute**? | <code>[RegistryImageBuild](#cdktf-provider-docker-registryimagebuild)</code> | build block.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **insecureSkipVerify**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.<br/>__*Optional*__
 **keepRemotely**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the Docker image won't be deleted on destroy operation.<br/>__*Optional*__
@@ -6701,9 +6736,9 @@ Name | Type | Description
 -----|------|-------------
 **data** | <code>string</code> | Base64-url-safe-encoded secret data.
 **name** | <code>string</code> | User-defined name of the secret.
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
-**labels**? | <code>Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | labels block.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 
@@ -6751,10 +6786,10 @@ Name | Type | Description
 **taskSpec** | <code>[ServiceTaskSpec](#cdktf-provider-docker-servicetaskspec)</code> | task_spec block.
 **auth**? | <code>[ServiceAuth](#cdktf-provider-docker-serviceauth)</code> | auth block.<br/>__*Optional*__
 **convergeConfig**? | <code>[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)</code> | converge_config block.<br/>__*Optional*__
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **endpointSpec**? | <code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code> | endpoint_spec block.<br/>__*Optional*__
-**labels**? | <code>Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | labels block.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **mode**? | <code>[ServiceMode](#cdktf-provider-docker-servicemode)</code> | mode block.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
@@ -6787,7 +6822,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **mode**? | <code>string</code> | The mode of resolution to use for internal load balancing between tasks.<br/>__*Optional*__
-**ports**? | <code>Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | ports block.<br/>__*Optional*__
+**ports**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceEndpointSpecPorts](#cdktf-provider-docker-serviceendpointspecports)></code> | ports block.<br/>__*Optional*__
 
 
 
@@ -6899,20 +6934,20 @@ Name | Type | Description
 **image** | <code>string</code> | The image name to use for the containers of the service, like `nginx:1.17.6`. Also use the data-source or resource of `docker_image` with the `repo_digest` or `docker_registry_image` with the `name` attribute for this, as shown in the examples.
 **args**? | <code>Array<string></code> | Arguments to the command.<br/>__*Optional*__
 **command**? | <code>Array<string></code> | The command/entrypoint to be run in the image.<br/>__*Optional*__
-**configs**? | <code>Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | configs block.<br/>__*Optional*__
+**configs**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecConfigs](#cdktf-provider-docker-servicetaskspeccontainerspecconfigs)></code> | configs block.<br/>__*Optional*__
 **dir**? | <code>string</code> | The working directory for commands to run in.<br/>__*Optional*__
 **dnsConfig**? | <code>[ServiceTaskSpecContainerSpecDnsConfig](#cdktf-provider-docker-servicetaskspeccontainerspecdnsconfig)</code> | dns_config block.<br/>__*Optional*__
-**env**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | A list of environment variables in the form VAR="value".<br/>__*Optional*__
+**env**? | <code>Map<string, string></code> | A list of environment variables in the form VAR="value".<br/>__*Optional*__
 **groups**? | <code>Array<string></code> | A list of additional groups that the container process will run as.<br/>__*Optional*__
 **healthcheck**? | <code>[ServiceTaskSpecContainerSpecHealthcheck](#cdktf-provider-docker-servicetaskspeccontainerspechealthcheck)</code> | healthcheck block.<br/>__*Optional*__
 **hostname**? | <code>string</code> | The hostname to use for the container, as a valid RFC 1123 hostname.<br/>__*Optional*__
-**hosts**? | <code>Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | hosts block.<br/>__*Optional*__
+**hosts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecHosts](#cdktf-provider-docker-servicetaskspeccontainerspechosts)></code> | hosts block.<br/>__*Optional*__
 **isolation**? | <code>string</code> | Isolation technology of the containers running the service. (Windows only). Defaults to `default`.<br/>__*Optional*__
-**labels**? | <code>Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | labels block.<br/>__*Optional*__
-**mounts**? | <code>Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | mounts block.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecLabels](#cdktf-provider-docker-servicetaskspeccontainerspeclabels)></code> | labels block.<br/>__*Optional*__
+**mounts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMounts](#cdktf-provider-docker-servicetaskspeccontainerspecmounts)></code> | mounts block.<br/>__*Optional*__
 **privileges**? | <code>[ServiceTaskSpecContainerSpecPrivileges](#cdktf-provider-docker-servicetaskspeccontainerspecprivileges)</code> | privileges block.<br/>__*Optional*__
 **readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Mount the container's root filesystem as read only.<br/>__*Optional*__
-**secrets**? | <code>Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | secrets block.<br/>__*Optional*__
+**secrets**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecSecrets](#cdktf-provider-docker-servicetaskspeccontainerspecsecrets)></code> | secrets block.<br/>__*Optional*__
 **stopGracePeriod**? | <code>string</code> | Amount of time to wait for the container to terminate before forcefully removing it (ms|s|m|h).<br/>__*Optional*__
 **stopSignal**? | <code>string</code> | Signal to stop the container.<br/>__*Optional*__
 **user**? | <code>string</code> | The user inside the container.<br/>__*Optional*__
@@ -7053,8 +7088,8 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **driverName**? | <code>string</code> | Name of the driver to use to create the volume.<br/>__*Optional*__
-**driverOptions**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | key/value map of driver specific options.<br/>__*Optional*__
-**labels**? | <code>Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | labels block.<br/>__*Optional*__
+**driverOptions**? | <code>Map<string, string></code> | key/value map of driver specific options.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels](#cdktf-provider-docker-servicetaskspeccontainerspecmountsvolumeoptionslabels)></code> | labels block.<br/>__*Optional*__
 **noCopy**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Populate volume with data from the target.<br/>__*Optional*__
 
 
@@ -7146,7 +7181,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The logging driver to use.
-**options**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | The options for the logging driver.<br/>__*Optional*__
+**options**? | <code>Map<string, string></code> | The options for the logging driver.<br/>__*Optional*__
 
 
 
@@ -7161,7 +7196,7 @@ Name | Type | Description
 -----|------|-------------
 **constraints**? | <code>Array<string></code> | An array of constraints. e.g.: `node.role==manager`.<br/>__*Optional*__
 **maxReplicas**? | <code>number</code> | Maximum number of replicas for per node (default value is `0`, which is unlimited).<br/>__*Optional*__
-**platforms**? | <code>Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | platforms block.<br/>__*Optional*__
+**platforms**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceTaskSpecPlacementPlatforms](#cdktf-provider-docker-servicetaskspecplacementplatforms)></code> | platforms block.<br/>__*Optional*__
 **prefs**? | <code>Array<string></code> | Preferences provide a way to make the scheduler aware of factors such as topology.<br/>__*Optional*__
 
 
@@ -7280,11 +7315,11 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**count**?🔹 | <code>number &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **driver**? | <code>string</code> | Driver type for the volume. Defaults to `local`.<br/>__*Optional*__
-**driverOpts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Map<string, string></code> | Options specific to the driver.<br/>__*Optional*__
-**labels**? | <code>Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | labels block.<br/>__*Optional*__
+**driverOpts**? | <code>Map<string, string></code> | Options specific to the driver.<br/>__*Optional*__
+**labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **name**? | <code>string</code> | The name of the Docker volume (will be generated if not provided).<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__

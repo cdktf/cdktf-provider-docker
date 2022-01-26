@@ -18,7 +18,7 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#driver_opts Volume#driver_opts}
   */
-  readonly driverOpts?: { [key: string]: string } | cdktf.IResolvable;
+  readonly driverOpts?: { [key: string]: string };
   /**
   * The name of the Docker volume (will be generated if not provided).
   * 
@@ -30,7 +30,7 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#labels Volume#labels}
   */
-  readonly labels?: VolumeLabels[];
+  readonly labels?: VolumeLabels[] | cdktf.IResolvable;
 }
 export interface VolumeLabels {
   /**
@@ -47,8 +47,8 @@ export interface VolumeLabels {
   readonly value: string;
 }
 
-export function volumeLabelsToTerraform(struct?: VolumeLabels): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function volumeLabelsToTerraform(struct?: VolumeLabels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -118,12 +118,11 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // driver_opts - computed: false, optional: true, required: false
-  private _driverOpts?: { [key: string]: string } | cdktf.IResolvable; 
+  private _driverOpts?: { [key: string]: string }; 
   public get driverOpts() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('driver_opts') as any;
+    return this.getStringMapAttribute('driver_opts');
   }
-  public set driverOpts(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set driverOpts(value: { [key: string]: string }) {
     this._driverOpts = value;
   }
   public resetDriverOpts() {
@@ -161,12 +160,12 @@ export class Volume extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: VolumeLabels[]; 
+  private _labels?: VolumeLabels[] | cdktf.IResolvable; 
   public get labels() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
   }
-  public set labels(value: VolumeLabels[]) {
+  public set labels(value: VolumeLabels[] | cdktf.IResolvable) {
     this._labels = value;
   }
   public resetLabels() {
@@ -184,7 +183,7 @@ export class Volume extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       driver: cdktf.stringToTerraform(this._driver),
-      driver_opts: cdktf.hashMapper(cdktf.anyToTerraform)(this._driverOpts),
+      driver_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._driverOpts),
       name: cdktf.stringToTerraform(this._name),
       labels: cdktf.listMapper(volumeLabelsToTerraform)(this._labels),
     };

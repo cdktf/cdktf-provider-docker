@@ -83,8 +83,8 @@ export interface RegistryImageBuildAuthConfig {
   readonly userName?: string;
 }
 
-export function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBuildAuthConfig): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBuildAuthConfig | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -121,8 +121,8 @@ export interface RegistryImageBuildUlimit {
   readonly soft: number;
 }
 
-export function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildUlimit): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+export function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildUlimit | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
@@ -139,7 +139,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build_args RegistryImage#build_args}
   */
-  readonly buildArgs?: { [key: string]: string } | cdktf.IResolvable;
+  readonly buildArgs?: { [key: string]: string };
   /**
   * BuildID is an optional identifier that can be passed together with the build request. The same identifier can be used to gracefully cancel the build with the cancel request.
   * 
@@ -223,7 +223,7 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#labels RegistryImage#labels}
   */
-  readonly labels?: { [key: string]: string } | cdktf.IResolvable;
+  readonly labels?: { [key: string]: string };
   /**
   * Set memory limit for build
   * 
@@ -319,22 +319,22 @@ export interface RegistryImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#auth_config RegistryImage#auth_config}
   */
-  readonly authConfig?: RegistryImageBuildAuthConfig[];
+  readonly authConfig?: RegistryImageBuildAuthConfig[] | cdktf.IResolvable;
   /**
   * ulimit block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#ulimit RegistryImage#ulimit}
   */
-  readonly ulimit?: RegistryImageBuildUlimit[];
+  readonly ulimit?: RegistryImageBuildUlimit[] | cdktf.IResolvable;
 }
 
 export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputReference | RegistryImageBuild): any {
-  if (!cdktf.canInspect(struct)) { return struct; }
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    build_args: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.buildArgs),
+    build_args: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.buildArgs),
     build_id: cdktf.stringToTerraform(struct!.buildId),
     cache_from: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cacheFrom),
     cgroup_parent: cdktf.stringToTerraform(struct!.cgroupParent),
@@ -348,7 +348,7 @@ export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputR
     extra_hosts: cdktf.listMapper(cdktf.stringToTerraform)(struct!.extraHosts),
     force_remove: cdktf.booleanToTerraform(struct!.forceRemove),
     isolation: cdktf.stringToTerraform(struct!.isolation),
-    labels: cdktf.hashMapper(cdktf.anyToTerraform)(struct!.labels),
+    labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
     memory: cdktf.numberToTerraform(struct!.memory),
     memory_swap: cdktf.numberToTerraform(struct!.memorySwap),
     network_mode: cdktf.stringToTerraform(struct!.networkMode),
@@ -377,7 +377,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   * @param terraformAttribute The attribute on the parent resource this class is referencing
   * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.ITerraformResource, terraformAttribute: string, isSingleItem: boolean) {
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
     super(terraformResource, terraformAttribute, isSingleItem);
   }
 
@@ -589,12 +589,11 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // build_args - computed: false, optional: true, required: false
-  private _buildArgs?: { [key: string]: string } | cdktf.IResolvable; 
+  private _buildArgs?: { [key: string]: string }; 
   public get buildArgs() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('build_args') as any;
+    return this.getStringMapAttribute('build_args');
   }
-  public set buildArgs(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set buildArgs(value: { [key: string]: string }) {
     this._buildArgs = value;
   }
   public resetBuildArgs() {
@@ -781,7 +780,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // force_remove - computed: false, optional: true, required: false
   private _forceRemove?: boolean | cdktf.IResolvable; 
   public get forceRemove() {
-    return this.getBooleanAttribute('force_remove') as any;
+    return this.getBooleanAttribute('force_remove');
   }
   public set forceRemove(value: boolean | cdktf.IResolvable) {
     this._forceRemove = value;
@@ -811,12 +810,11 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: { [key: string]: string } | cdktf.IResolvable; 
+  private _labels?: { [key: string]: string }; 
   public get labels() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('labels') as any;
+    return this.getStringMapAttribute('labels');
   }
-  public set labels(value: { [key: string]: string } | cdktf.IResolvable) {
+  public set labels(value: { [key: string]: string }) {
     this._labels = value;
   }
   public resetLabels() {
@@ -878,7 +876,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // no_cache - computed: false, optional: true, required: false
   private _noCache?: boolean | cdktf.IResolvable; 
   public get noCache() {
-    return this.getBooleanAttribute('no_cache') as any;
+    return this.getBooleanAttribute('no_cache');
   }
   public set noCache(value: boolean | cdktf.IResolvable) {
     this._noCache = value;
@@ -910,7 +908,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // pull_parent - computed: false, optional: true, required: false
   private _pullParent?: boolean | cdktf.IResolvable; 
   public get pullParent() {
-    return this.getBooleanAttribute('pull_parent') as any;
+    return this.getBooleanAttribute('pull_parent');
   }
   public set pullParent(value: boolean | cdktf.IResolvable) {
     this._pullParent = value;
@@ -942,7 +940,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // remove - computed: false, optional: true, required: false
   private _remove?: boolean | cdktf.IResolvable; 
   public get remove() {
-    return this.getBooleanAttribute('remove') as any;
+    return this.getBooleanAttribute('remove');
   }
   public set remove(value: boolean | cdktf.IResolvable) {
     this._remove = value;
@@ -1006,7 +1004,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // squash - computed: false, optional: true, required: false
   private _squash?: boolean | cdktf.IResolvable; 
   public get squash() {
-    return this.getBooleanAttribute('squash') as any;
+    return this.getBooleanAttribute('squash');
   }
   public set squash(value: boolean | cdktf.IResolvable) {
     this._squash = value;
@@ -1022,7 +1020,7 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   // suppress_output - computed: false, optional: true, required: false
   private _suppressOutput?: boolean | cdktf.IResolvable; 
   public get suppressOutput() {
-    return this.getBooleanAttribute('suppress_output') as any;
+    return this.getBooleanAttribute('suppress_output');
   }
   public set suppressOutput(value: boolean | cdktf.IResolvable) {
     this._suppressOutput = value;
@@ -1068,12 +1066,12 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // auth_config - computed: false, optional: true, required: false
-  private _authConfig?: RegistryImageBuildAuthConfig[]; 
+  private _authConfig?: RegistryImageBuildAuthConfig[] | cdktf.IResolvable; 
   public get authConfig() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('auth_config') as any;
+    return this.interpolationForAttribute('auth_config');
   }
-  public set authConfig(value: RegistryImageBuildAuthConfig[]) {
+  public set authConfig(value: RegistryImageBuildAuthConfig[] | cdktf.IResolvable) {
     this._authConfig = value;
   }
   public resetAuthConfig() {
@@ -1085,12 +1083,12 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // ulimit - computed: false, optional: true, required: false
-  private _ulimit?: RegistryImageBuildUlimit[]; 
+  private _ulimit?: RegistryImageBuildUlimit[] | cdktf.IResolvable; 
   public get ulimit() {
     // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ulimit') as any;
+    return this.interpolationForAttribute('ulimit');
   }
-  public set ulimit(value: RegistryImageBuildUlimit[]) {
+  public set ulimit(value: RegistryImageBuildUlimit[] | cdktf.IResolvable) {
     this._ulimit = value;
   }
   public resetUlimit() {
@@ -1152,7 +1150,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   // insecure_skip_verify - computed: false, optional: true, required: false
   private _insecureSkipVerify?: boolean | cdktf.IResolvable; 
   public get insecureSkipVerify() {
-    return this.getBooleanAttribute('insecure_skip_verify') as any;
+    return this.getBooleanAttribute('insecure_skip_verify');
   }
   public set insecureSkipVerify(value: boolean | cdktf.IResolvable) {
     this._insecureSkipVerify = value;
@@ -1168,7 +1166,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   // keep_remotely - computed: false, optional: true, required: false
   private _keepRemotely?: boolean | cdktf.IResolvable; 
   public get keepRemotely() {
-    return this.getBooleanAttribute('keep_remotely') as any;
+    return this.getBooleanAttribute('keep_remotely');
   }
   public set keepRemotely(value: boolean | cdktf.IResolvable) {
     this._keepRemotely = value;
@@ -1200,7 +1198,7 @@ export class RegistryImage extends cdktf.TerraformResource {
   }
 
   // build - computed: false, optional: true, required: false
-  private _build = new RegistryImageBuildOutputReference(this as any, "build", true);
+  private _build = new RegistryImageBuildOutputReference(this, "build", true);
   public get buildAttribute() {
     return this._build;
   }
