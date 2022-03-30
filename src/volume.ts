@@ -67,7 +67,7 @@ export class Volume extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_volume";
+  public static readonly tfResourceType = "docker_volume";
 
   // ===========
   // INITIALIZER
@@ -84,7 +84,9 @@ export class Volume extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_volume',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

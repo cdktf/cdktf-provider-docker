@@ -149,7 +149,7 @@ export class Network extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_network";
+  public static readonly tfResourceType = "docker_network";
 
   // ===========
   // INITIALIZER
@@ -166,7 +166,9 @@ export class Network extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_network',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

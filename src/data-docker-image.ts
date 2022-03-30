@@ -23,7 +23,7 @@ export class DataDockerImage extends cdktf.TerraformDataSource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_image";
+  public static readonly tfResourceType = "docker_image";
 
   // ===========
   // INITIALIZER
@@ -40,7 +40,9 @@ export class DataDockerImage extends cdktf.TerraformDataSource {
     super(scope, id, {
       terraformResourceType: 'docker_image',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

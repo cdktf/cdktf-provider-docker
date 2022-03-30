@@ -29,7 +29,7 @@ export class Config extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_config";
+  public static readonly tfResourceType = "docker_config";
 
   // ===========
   // INITIALIZER
@@ -46,7 +46,9 @@ export class Config extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_config',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
