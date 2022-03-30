@@ -350,7 +350,45 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly volumes?: ContainerVolumes[] | cdktf.IResolvable;
 }
-export class ContainerNetworkData extends cdktf.ComplexComputedList {
+export interface ContainerNetworkData {
+}
+
+export function containerNetworkDataToTerraform(struct?: ContainerNetworkData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+export class ContainerNetworkDataOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ContainerNetworkData | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ContainerNetworkData | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
 
   // gateway - computed: true, optional: false, required: false
   public get gateway() {
@@ -387,6 +425,25 @@ export class ContainerNetworkData extends cdktf.ComplexComputedList {
     return this.getStringAttribute('network_name');
   }
 }
+
+export class ContainerNetworkDataList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ContainerNetworkDataOutputReference {
+    return new ContainerNetworkDataOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ContainerCapabilities {
   /**
   * List of linux capabilities to add.
@@ -402,7 +459,7 @@ export interface ContainerCapabilities {
   readonly drop?: string[];
 }
 
-export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities | cdktf.IResolvable): any {
+export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesOutputReference | ContainerCapabilities): any {
   if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -419,10 +476,9 @@ export class ContainerCapabilitiesOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ContainerCapabilities | undefined {
@@ -570,10 +626,9 @@ export class ContainerHealthcheckOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ContainerHealthcheck | undefined {
@@ -775,10 +830,9 @@ export class ContainerMountsBindOptionsOutputReference extends cdktf.ComplexObje
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ContainerMountsBindOptions | undefined {
@@ -850,10 +904,9 @@ export class ContainerMountsTmpfsOptionsOutputReference extends cdktf.ComplexObj
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ContainerMountsTmpfsOptions | undefined {
@@ -987,10 +1040,9 @@ export class ContainerMountsVolumeOptionsOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ContainerMountsVolumeOptions | undefined {
@@ -1381,7 +1433,7 @@ export class Container extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_container";
+  public static readonly tfResourceType = "docker_container";
 
   // ===========
   // INITIALIZER
@@ -1398,7 +1450,9 @@ export class Container extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -1914,8 +1968,9 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // network_data - computed: true, optional: false, required: false
-  public networkData(index: string) {
-    return new ContainerNetworkData(this, 'network_data', index, false);
+  private _networkData = new ContainerNetworkDataList(this, "network_data", false);
+  public get networkData() {
+    return this._networkData;
   }
 
   // network_mode - computed: false, optional: true, required: false
@@ -2239,7 +2294,7 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // capabilities - computed: false, optional: true, required: false
-  private _capabilities = new ContainerCapabilitiesOutputReference(this, "capabilities", true);
+  private _capabilities = new ContainerCapabilitiesOutputReference(this, "capabilities");
   public get capabilities() {
     return this._capabilities;
   }
@@ -2272,7 +2327,7 @@ export class Container extends cdktf.TerraformResource {
   }
 
   // healthcheck - computed: false, optional: true, required: false
-  private _healthcheck = new ContainerHealthcheckOutputReference(this, "healthcheck", true);
+  private _healthcheck = new ContainerHealthcheckOutputReference(this, "healthcheck");
   public get healthcheck() {
     return this._healthcheck;
   }

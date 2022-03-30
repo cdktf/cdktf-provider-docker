@@ -61,7 +61,7 @@ export class Secret extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_secret";
+  public static readonly tfResourceType = "docker_secret";
 
   // ===========
   // INITIALIZER
@@ -78,7 +78,9 @@ export class Secret extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_secret',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

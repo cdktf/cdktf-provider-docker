@@ -11,10 +11,12 @@ Name|Description
 [ContainerMountsBindOptionsOutputReference](#cdktf-provider-docker-containermountsbindoptionsoutputreference)|*No description*
 [ContainerMountsTmpfsOptionsOutputReference](#cdktf-provider-docker-containermountstmpfsoptionsoutputreference)|*No description*
 [ContainerMountsVolumeOptionsOutputReference](#cdktf-provider-docker-containermountsvolumeoptionsoutputreference)|*No description*
-[ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)|*No description*
+[ContainerNetworkDataList](#cdktf-provider-docker-containernetworkdatalist)|*No description*
+[ContainerNetworkDataOutputReference](#cdktf-provider-docker-containernetworkdataoutputreference)|*No description*
 [DataDockerImage](#cdktf-provider-docker-datadockerimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}.
 [DataDockerNetwork](#cdktf-provider-docker-datadockernetwork)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}.
-[DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)|*No description*
+[DataDockerNetworkIpamConfigList](#cdktf-provider-docker-datadockernetworkipamconfiglist)|*No description*
+[DataDockerNetworkIpamConfigOutputReference](#cdktf-provider-docker-datadockernetworkipamconfigoutputreference)|*No description*
 [DataDockerPlugin](#cdktf-provider-docker-datadockerplugin)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/plugin docker_plugin}.
 [DataDockerRegistryImage](#cdktf-provider-docker-datadockerregistryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/registry_image docker_registry_image}.
 [DockerProvider](#cdktf-provider-docker-dockerprovider)|Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
@@ -69,6 +71,7 @@ Name|Description
 [ContainerMountsTmpfsOptions](#cdktf-provider-docker-containermountstmpfsoptions)|*No description*
 [ContainerMountsVolumeOptions](#cdktf-provider-docker-containermountsvolumeoptions)|*No description*
 [ContainerMountsVolumeOptionsLabels](#cdktf-provider-docker-containermountsvolumeoptionslabels)|*No description*
+[ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)|*No description*
 [ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)|*No description*
 [ContainerPorts](#cdktf-provider-docker-containerports)|*No description*
 [ContainerUlimit](#cdktf-provider-docker-containerulimit)|*No description*
@@ -76,6 +79,7 @@ Name|Description
 [ContainerVolumes](#cdktf-provider-docker-containervolumes)|*No description*
 [DataDockerImageConfig](#cdktf-provider-docker-datadockerimageconfig)|*No description*
 [DataDockerNetworkConfig](#cdktf-provider-docker-datadockernetworkconfig)|*No description*
+[DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)|*No description*
 [DataDockerPluginConfig](#cdktf-provider-docker-datadockerpluginconfig)|*No description*
 [DataDockerRegistryImageConfig](#cdktf-provider-docker-datadockerregistryimageconfig)|*No description*
 [DockerProviderConfig](#cdktf-provider-docker-dockerproviderconfig)|*No description*
@@ -316,6 +320,7 @@ Name | Type | Description
 **mustRun** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **networkAlias** | <code>Array<string></code> | <span></span>
+**networkData** | <code>[ContainerNetworkDataList](#cdktf-provider-docker-containernetworkdatalist)</code> | <span></span>
 **networkMode** | <code>string</code> | <span></span>
 **networks** | <code>Array<string></code> | <span></span>
 **networksAdvanced** | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerNetworksAdvanced](#cdktf-provider-docker-containernetworksadvanced)></code> | <span></span>
@@ -402,19 +407,6 @@ Name | Type | Description
 
 ### Methods
 
-
-#### networkData(index) <a id="cdktf-provider-docker-container-networkdata"></a>
-
-
-
-```ts
-networkData(index: string): ContainerNetworkData
-```
-
-* **index** (<code>string</code>)  *No description*
-
-__Returns__:
-* <code>[ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)</code>
 
 #### putCapabilities(value) <a id="cdktf-provider-docker-container-putcapabilities"></a>
 
@@ -1136,12 +1128,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerCapabilitiesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ContainerCapabilitiesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -1198,12 +1189,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ContainerHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -1290,12 +1280,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -1338,12 +1327,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -1400,12 +1388,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ContainerMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ContainerMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -1477,12 +1464,12 @@ resetNoCopy(): void
 
 
 
-## class ContainerNetworkData  <a id="cdktf-provider-docker-containernetworkdata"></a>
+## class ContainerNetworkDataList  <a id="cdktf-provider-docker-containernetworkdatalist"></a>
 
 
 
-__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
-__Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
+__Implements__: [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Extends__: [ComplexList](#cdktf-complexlist)
 
 ### Initializer
 
@@ -1490,13 +1477,62 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new ContainerNetworkData(terraformResource: IInterpolatingParent, terraformAttribute: string, complexComputedListIndex: string, wrapsSet?: boolean)
+new ContainerNetworkDataList(terraformResource: IInterpolatingParent, terraformAttribute: string, wrapsSet: boolean)
 ```
 
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  *No description*
-* **terraformAttribute** (<code>string</code>)  *No description*
-* **complexComputedListIndex** (<code>string</code>)  *No description*
-* **wrapsSet** (<code>boolean</code>)  *No description*
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
+* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
+* **wrapsSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**terraformAttribute** | <code>string</code> | The attribute on the parent resource this class is referencing.
+**terraformResource** | <code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code> | The parent resource.
+**wrapsSet** | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+### Methods
+
+
+#### get(index) <a id="cdktf-provider-docker-containernetworkdatalist-get"></a>
+
+
+
+```ts
+get(index: number): ContainerNetworkDataOutputReference
+```
+
+* **index** (<code>number</code>)  the index of the item to return.
+
+__Returns__:
+* <code>[ContainerNetworkDataOutputReference](#cdktf-provider-docker-containernetworkdataoutputreference)</code>
+
+
+
+## class ContainerNetworkDataOutputReference  <a id="cdktf-provider-docker-containernetworkdataoutputreference"></a>
+
+
+
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
+__Extends__: [ComplexObject](#cdktf-complexobject)
+
+### Initializer
+
+
+
+
+```ts
+new ContainerNetworkDataOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean)
+```
+
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
+* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
+* **complexObjectIndex** (<code>number</code>)  the index of this item in the list.
+* **complexObjectIsFromSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
 
 
 
@@ -1512,6 +1548,7 @@ Name | Type | Description
 **ipPrefixLength** | <code>number</code> | <span></span>
 **ipv6Gateway** | <code>string</code> | <span></span>
 **networkName** | <code>string</code> | <span></span>
+**internalValue**? | <code>[ContainerNetworkData](#cdktf-provider-docker-containernetworkdata)</code> | __*Optional*__
 
 
 
@@ -1605,6 +1642,7 @@ Name | Type | Description
 **driver** | <code>string</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **internal** | <code>[IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**ipamConfig** | <code>[DataDockerNetworkIpamConfigList](#cdktf-provider-docker-datadockernetworkipamconfiglist)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **scope** | <code>string</code> | <span></span>
 **nameInput**? | <code>string</code> | __*Optional*__
@@ -1612,19 +1650,6 @@ Name | Type | Description
 
 ### Methods
 
-
-#### ipamConfig(index) <a id="cdktf-provider-docker-datadockernetwork-ipamconfig"></a>
-
-
-
-```ts
-ipamConfig(index: string): DataDockerNetworkIpamConfig
-```
-
-* **index** (<code>string</code>)  *No description*
-
-__Returns__:
-* <code>[DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)</code>
 
 #### options(key) <a id="cdktf-provider-docker-datadockernetwork-options"></a>
 
@@ -1653,12 +1678,12 @@ __Returns__:
 
 
 
-## class DataDockerNetworkIpamConfig  <a id="cdktf-provider-docker-datadockernetworkipamconfig"></a>
+## class DataDockerNetworkIpamConfigList  <a id="cdktf-provider-docker-datadockernetworkipamconfiglist"></a>
 
 
 
-__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
-__Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
+__Implements__: [ITerraformAddressable](#cdktf-iterraformaddressable)
+__Extends__: [ComplexList](#cdktf-complexlist)
 
 ### Initializer
 
@@ -1666,13 +1691,12 @@ __Extends__: [ComplexComputedList](#cdktf-complexcomputedlist)
 
 
 ```ts
-new DataDockerNetworkIpamConfig(terraformResource: IInterpolatingParent, terraformAttribute: string, complexComputedListIndex: string, wrapsSet?: boolean)
+new DataDockerNetworkIpamConfigList(terraformResource: IInterpolatingParent, terraformAttribute: string, wrapsSet: boolean)
 ```
 
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  *No description*
-* **terraformAttribute** (<code>string</code>)  *No description*
-* **complexComputedListIndex** (<code>string</code>)  *No description*
-* **wrapsSet** (<code>boolean</code>)  *No description*
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
+* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
+* **wrapsSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
 
 
 
@@ -1681,10 +1705,76 @@ new DataDockerNetworkIpamConfig(terraformResource: IInterpolatingParent, terrafo
 
 Name | Type | Description 
 -----|------|-------------
-**auxAddress** | <code>Map<string, string></code> | <span></span>
+**terraformAttribute** | <code>string</code> | The attribute on the parent resource this class is referencing.
+**terraformResource** | <code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code> | The parent resource.
+**wrapsSet** | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+### Methods
+
+
+#### get(index) <a id="cdktf-provider-docker-datadockernetworkipamconfiglist-get"></a>
+
+
+
+```ts
+get(index: number): DataDockerNetworkIpamConfigOutputReference
+```
+
+* **index** (<code>number</code>)  the index of the item to return.
+
+__Returns__:
+* <code>[DataDockerNetworkIpamConfigOutputReference](#cdktf-provider-docker-datadockernetworkipamconfigoutputreference)</code>
+
+
+
+## class DataDockerNetworkIpamConfigOutputReference  <a id="cdktf-provider-docker-datadockernetworkipamconfigoutputreference"></a>
+
+
+
+__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent)
+__Extends__: [ComplexObject](#cdktf-complexobject)
+
+### Initializer
+
+
+
+
+```ts
+new DataDockerNetworkIpamConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean)
+```
+
+* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
+* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
+* **complexObjectIndex** (<code>number</code>)  the index of this item in the list.
+* **complexObjectIsFromSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
 **gateway** | <code>string</code> | <span></span>
 **ipRange** | <code>string</code> | <span></span>
 **subnet** | <code>string</code> | <span></span>
+**internalValue**? | <code>[DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetworkipamconfig)</code> | __*Optional*__
+
+### Methods
+
+
+#### auxAddress(key) <a id="cdktf-provider-docker-datadockernetworkipamconfigoutputreference-auxaddress"></a>
+
+
+
+```ts
+auxAddress(key: string): string &#124; IResolvable
+```
+
+* **key** (<code>string</code>)  *No description*
+
+__Returns__:
+* <code>string &#124; [IResolvable](#cdktf-iresolvable)</code>
 
 
 
@@ -2176,12 +2266,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -2849,12 +2938,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new RegistryImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new RegistryImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3673,12 +3761,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceAuthOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceAuthOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3737,12 +3824,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceConvergeConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceConvergeConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3799,12 +3885,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceEndpointSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceEndpointSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3861,12 +3946,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceModeOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceModeOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3937,12 +4021,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceModeReplicatedOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceModeReplicatedOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -3985,12 +4068,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceRollbackConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceRollbackConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4103,12 +4185,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4167,12 +4248,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4259,12 +4339,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4307,12 +4386,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4369,12 +4447,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4459,12 +4536,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4810,12 +4886,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4872,12 +4947,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -4967,12 +5041,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5071,12 +5144,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecLogDriverOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecLogDriverOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5121,12 +5193,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5352,12 +5423,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecPlacementOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecPlacementOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5442,12 +5512,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesLimitsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesLimitsOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5504,12 +5573,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5597,12 +5665,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5659,12 +5726,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecResourcesReservationOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecResourcesReservationOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5750,12 +5816,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceTaskSpecRestartPolicyOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceTaskSpecRestartPolicyOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -5840,12 +5905,11 @@ __Extends__: [ComplexObject](#cdktf-complexobject)
 
 
 ```ts
-new ServiceUpdateConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean)
+new ServiceUpdateConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
 ```
 
 * **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
 * **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **isSingleItem** (<code>boolean</code>)  True if this is a block, false if it's a list.
 
 
 
@@ -6298,6 +6362,12 @@ Name | Type | Description
 
 
 
+## struct ContainerNetworkData  <a id="cdktf-provider-docker-containernetworkdata"></a>
+
+
+
+
+
 ## struct ContainerNetworksAdvanced  <a id="cdktf-provider-docker-containernetworksadvanced"></a>
 
 
@@ -6411,6 +6481,12 @@ Name | Type | Description
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+
+
+
+## struct DataDockerNetworkIpamConfig  <a id="cdktf-provider-docker-datadockernetworkipamconfig"></a>
+
+
 
 
 

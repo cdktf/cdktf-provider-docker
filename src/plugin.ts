@@ -97,7 +97,7 @@ export class Plugin extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_plugin";
+  public static readonly tfResourceType = "docker_plugin";
 
   // ===========
   // INITIALIZER
@@ -114,7 +114,9 @@ export class Plugin extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_plugin',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

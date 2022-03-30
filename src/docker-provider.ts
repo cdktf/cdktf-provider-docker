@@ -112,7 +112,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker";
+  public static readonly tfResourceType = "docker";
 
   // ===========
   // INITIALIZER
@@ -130,6 +130,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'docker',
       terraformGeneratorMetadata: {
         providerName: 'docker',
+        providerVersion: '2.16.0',
         providerVersionConstraint: '~> 2.12'
       },
       terraformProviderSource: 'kreuzwerker/docker'

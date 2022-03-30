@@ -101,10 +101,9 @@ export class ServiceAuthOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceAuth | undefined {
@@ -217,10 +216,9 @@ export class ServiceConvergeConfigOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceConvergeConfig | undefined {
@@ -361,10 +359,9 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceEndpointSpec | undefined {
@@ -478,10 +475,9 @@ export class ServiceModeReplicatedOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceModeReplicated | undefined {
@@ -553,10 +549,9 @@ export class ServiceModeOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceMode | undefined {
@@ -603,7 +598,7 @@ export class ServiceModeOutputReference extends cdktf.ComplexObject {
   }
 
   // replicated - computed: false, optional: true, required: false
-  private _replicated = new ServiceModeReplicatedOutputReference(this, "replicated", true);
+  private _replicated = new ServiceModeReplicatedOutputReference(this, "replicated");
   public get replicated() {
     return this._replicated;
   }
@@ -678,10 +673,9 @@ export class ServiceRollbackConfigOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceRollbackConfig | undefined {
@@ -924,10 +918,9 @@ export class ServiceTaskSpecContainerSpecDnsConfigOutputReference extends cdktf.
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecDnsConfig | undefined {
@@ -1061,10 +1054,9 @@ export class ServiceTaskSpecContainerSpecHealthcheckOutputReference extends cdkt
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecHealthcheck | undefined {
@@ -1266,10 +1258,9 @@ export class ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference extend
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsBindOptions | undefined {
@@ -1341,10 +1332,9 @@ export class ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference exten
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsTmpfsOptions | undefined {
@@ -1478,10 +1468,9 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecMountsVolumeOptions | undefined {
@@ -1681,10 +1670,9 @@ export class ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesCredentialSpec | undefined {
@@ -1799,10 +1787,9 @@ export class ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext | undefined {
@@ -1962,10 +1949,9 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpecPrivileges | undefined {
@@ -1996,7 +1982,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
   }
 
   // credential_spec - computed: false, optional: true, required: false
-  private _credentialSpec = new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(this, "credential_spec", true);
+  private _credentialSpec = new ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(this, "credential_spec");
   public get credentialSpec() {
     return this._credentialSpec;
   }
@@ -2012,7 +1998,7 @@ export class ServiceTaskSpecContainerSpecPrivilegesOutputReference extends cdktf
   }
 
   // se_linux_context - computed: false, optional: true, required: false
-  private _seLinuxContext = new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(this, "se_linux_context", true);
+  private _seLinuxContext = new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(this, "se_linux_context");
   public get seLinuxContext() {
     return this._seLinuxContext;
   }
@@ -2239,10 +2225,9 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecContainerSpec | undefined {
@@ -2587,7 +2572,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // dns_config - computed: false, optional: true, required: false
-  private _dnsConfig = new ServiceTaskSpecContainerSpecDnsConfigOutputReference(this, "dns_config", true);
+  private _dnsConfig = new ServiceTaskSpecContainerSpecDnsConfigOutputReference(this, "dns_config");
   public get dnsConfig() {
     return this._dnsConfig;
   }
@@ -2603,7 +2588,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // healthcheck - computed: false, optional: true, required: false
-  private _healthcheck = new ServiceTaskSpecContainerSpecHealthcheckOutputReference(this, "healthcheck", true);
+  private _healthcheck = new ServiceTaskSpecContainerSpecHealthcheckOutputReference(this, "healthcheck");
   public get healthcheck() {
     return this._healthcheck;
   }
@@ -2670,7 +2655,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // privileges - computed: false, optional: true, required: false
-  private _privileges = new ServiceTaskSpecContainerSpecPrivilegesOutputReference(this, "privileges", true);
+  private _privileges = new ServiceTaskSpecContainerSpecPrivilegesOutputReference(this, "privileges");
   public get privileges() {
     return this._privileges;
   }
@@ -2734,10 +2719,9 @@ export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecLogDriver | undefined {
@@ -2868,10 +2852,9 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecPlacement | undefined {
@@ -3010,10 +2993,9 @@ export class ServiceTaskSpecResourcesLimitsOutputReference extends cdktf.Complex
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecResourcesLimits | undefined {
@@ -3107,10 +3089,9 @@ export class ServiceTaskSpecResourcesReservationGenericResourcesOutputReference 
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecResourcesReservationGenericResources | undefined {
@@ -3211,10 +3192,9 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecResourcesReservation | undefined {
@@ -3283,7 +3263,7 @@ export class ServiceTaskSpecResourcesReservationOutputReference extends cdktf.Co
   }
 
   // generic_resources - computed: false, optional: true, required: false
-  private _genericResources = new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(this, "generic_resources", true);
+  private _genericResources = new ServiceTaskSpecResourcesReservationGenericResourcesOutputReference(this, "generic_resources");
   public get genericResources() {
     return this._genericResources;
   }
@@ -3330,10 +3310,9 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecResources | undefined {
@@ -3364,7 +3343,7 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
   }
 
   // limits - computed: false, optional: true, required: false
-  private _limits = new ServiceTaskSpecResourcesLimitsOutputReference(this, "limits", true);
+  private _limits = new ServiceTaskSpecResourcesLimitsOutputReference(this, "limits");
   public get limits() {
     return this._limits;
   }
@@ -3380,7 +3359,7 @@ export class ServiceTaskSpecResourcesOutputReference extends cdktf.ComplexObject
   }
 
   // reservation - computed: false, optional: true, required: false
-  private _reservation = new ServiceTaskSpecResourcesReservationOutputReference(this, "reservation", true);
+  private _reservation = new ServiceTaskSpecResourcesReservationOutputReference(this, "reservation");
   public get reservation() {
     return this._reservation;
   }
@@ -3441,10 +3420,9 @@ export class ServiceTaskSpecRestartPolicyOutputReference extends cdktf.ComplexOb
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpecRestartPolicy | undefined {
@@ -3624,10 +3602,9 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceTaskSpec | undefined {
@@ -3742,7 +3719,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // container_spec - computed: false, optional: false, required: true
-  private _containerSpec = new ServiceTaskSpecContainerSpecOutputReference(this, "container_spec", true);
+  private _containerSpec = new ServiceTaskSpecContainerSpecOutputReference(this, "container_spec");
   public get containerSpec() {
     return this._containerSpec;
   }
@@ -3755,7 +3732,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // log_driver - computed: false, optional: true, required: false
-  private _logDriver = new ServiceTaskSpecLogDriverOutputReference(this, "log_driver", true);
+  private _logDriver = new ServiceTaskSpecLogDriverOutputReference(this, "log_driver");
   public get logDriver() {
     return this._logDriver;
   }
@@ -3771,7 +3748,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // placement - computed: false, optional: true, required: false
-  private _placement = new ServiceTaskSpecPlacementOutputReference(this, "placement", true);
+  private _placement = new ServiceTaskSpecPlacementOutputReference(this, "placement");
   public get placement() {
     return this._placement;
   }
@@ -3787,7 +3764,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // resources - computed: false, optional: true, required: false
-  private _resources = new ServiceTaskSpecResourcesOutputReference(this, "resources", true);
+  private _resources = new ServiceTaskSpecResourcesOutputReference(this, "resources");
   public get resources() {
     return this._resources;
   }
@@ -3803,7 +3780,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // restart_policy - computed: false, optional: true, required: false
-  private _restartPolicy = new ServiceTaskSpecRestartPolicyOutputReference(this, "restart_policy", true);
+  private _restartPolicy = new ServiceTaskSpecRestartPolicyOutputReference(this, "restart_policy");
   public get restartPolicy() {
     return this._restartPolicy;
   }
@@ -3878,10 +3855,9 @@ export class ServiceUpdateConfigOutputReference extends cdktf.ComplexObject {
   /**
   * @param terraformResource The parent resource
   * @param terraformAttribute The attribute on the parent resource this class is referencing
-  * @param isSingleItem True if this is a block, false if it's a list
   */
-  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, isSingleItem: boolean) {
-    super(terraformResource, terraformAttribute, isSingleItem);
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string) {
+    super(terraformResource, terraformAttribute, false, 0);
   }
 
   public get internalValue(): ServiceUpdateConfig | undefined {
@@ -4040,7 +4016,7 @@ export class Service extends cdktf.TerraformResource {
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType: string = "docker_service";
+  public static readonly tfResourceType = "docker_service";
 
   // ===========
   // INITIALIZER
@@ -4057,7 +4033,9 @@ export class Service extends cdktf.TerraformResource {
     super(scope, id, {
       terraformResourceType: 'docker_service',
       terraformGeneratorMetadata: {
-        providerName: 'docker'
+        providerName: 'docker',
+        providerVersion: '2.16.0',
+        providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -4098,7 +4076,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // auth - computed: false, optional: true, required: false
-  private _auth = new ServiceAuthOutputReference(this, "auth", true);
+  private _auth = new ServiceAuthOutputReference(this, "auth");
   public get auth() {
     return this._auth;
   }
@@ -4114,7 +4092,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // converge_config - computed: false, optional: true, required: false
-  private _convergeConfig = new ServiceConvergeConfigOutputReference(this, "converge_config", true);
+  private _convergeConfig = new ServiceConvergeConfigOutputReference(this, "converge_config");
   public get convergeConfig() {
     return this._convergeConfig;
   }
@@ -4130,7 +4108,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // endpoint_spec - computed: false, optional: true, required: false
-  private _endpointSpec = new ServiceEndpointSpecOutputReference(this, "endpoint_spec", true);
+  private _endpointSpec = new ServiceEndpointSpecOutputReference(this, "endpoint_spec");
   public get endpointSpec() {
     return this._endpointSpec;
   }
@@ -4163,7 +4141,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // mode - computed: false, optional: true, required: false
-  private _mode = new ServiceModeOutputReference(this, "mode", true);
+  private _mode = new ServiceModeOutputReference(this, "mode");
   public get mode() {
     return this._mode;
   }
@@ -4179,7 +4157,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // rollback_config - computed: false, optional: true, required: false
-  private _rollbackConfig = new ServiceRollbackConfigOutputReference(this, "rollback_config", true);
+  private _rollbackConfig = new ServiceRollbackConfigOutputReference(this, "rollback_config");
   public get rollbackConfig() {
     return this._rollbackConfig;
   }
@@ -4195,7 +4173,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // task_spec - computed: false, optional: false, required: true
-  private _taskSpec = new ServiceTaskSpecOutputReference(this, "task_spec", true);
+  private _taskSpec = new ServiceTaskSpecOutputReference(this, "task_spec");
   public get taskSpec() {
     return this._taskSpec;
   }
@@ -4208,7 +4186,7 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // update_config - computed: false, optional: true, required: false
-  private _updateConfig = new ServiceUpdateConfigOutputReference(this, "update_config", true);
+  private _updateConfig = new ServiceUpdateConfigOutputReference(this, "update_config");
   public get updateConfig() {
     return this._updateConfig;
   }
