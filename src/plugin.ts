@@ -50,6 +50,13 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   */
   readonly grantAllPermissions?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#id Plugin#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * Docker Plugin name
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#name Plugin#name}
@@ -88,6 +95,102 @@ export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermission
   }
 }
 
+export class PluginGrantPermissionsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): PluginGrantPermissions | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: PluginGrantPermissions | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+      this._value = value.value;
+    }
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: string[]; 
+  public get value() {
+    return cdktf.Fn.tolist(this.getListAttribute('value'));
+  }
+  public set value(value: string[]) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class PluginGrantPermissionsList extends cdktf.ComplexList {
+  public internalValue? : PluginGrantPermissions[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): PluginGrantPermissionsOutputReference {
+    return new PluginGrantPermissionsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}
@@ -130,8 +233,9 @@ export class Plugin extends cdktf.TerraformResource {
     this._forceDestroy = config.forceDestroy;
     this._forceDisable = config.forceDisable;
     this._grantAllPermissions = config.grantAllPermissions;
+    this._id = config.id;
     this._name = config.name;
-    this._grantPermissions = config.grantPermissions;
+    this._grantPermissions.internalValue = config.grantPermissions;
   }
 
   // ==========
@@ -251,8 +355,19 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // name - computed: false, optional: false, required: true
@@ -274,20 +389,19 @@ export class Plugin extends cdktf.TerraformResource {
   }
 
   // grant_permissions - computed: false, optional: true, required: false
-  private _grantPermissions?: PluginGrantPermissions[] | cdktf.IResolvable; 
+  private _grantPermissions = new PluginGrantPermissionsList(this, "grant_permissions", true);
   public get grantPermissions() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('grant_permissions')));
+    return this._grantPermissions;
   }
-  public set grantPermissions(value: PluginGrantPermissions[] | cdktf.IResolvable) {
-    this._grantPermissions = value;
+  public putGrantPermissions(value: PluginGrantPermissions[] | cdktf.IResolvable) {
+    this._grantPermissions.internalValue = value;
   }
   public resetGrantPermissions() {
-    this._grantPermissions = undefined;
+    this._grantPermissions.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get grantPermissionsInput() {
-    return this._grantPermissions;
+    return this._grantPermissions.internalValue;
   }
 
   // =========
@@ -303,8 +417,9 @@ export class Plugin extends cdktf.TerraformResource {
       force_destroy: cdktf.booleanToTerraform(this._forceDestroy),
       force_disable: cdktf.booleanToTerraform(this._forceDisable),
       grant_all_permissions: cdktf.booleanToTerraform(this._grantAllPermissions),
+      id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
-      grant_permissions: cdktf.listMapper(pluginGrantPermissionsToTerraform)(this._grantPermissions),
+      grant_permissions: cdktf.listMapper(pluginGrantPermissionsToTerraform)(this._grantPermissions.internalValue),
     };
   }
 }

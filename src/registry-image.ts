@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#id RegistryImage#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#insecure_skip_verify RegistryImage#insecure_skip_verify}
@@ -100,6 +107,237 @@ export function registryImageBuildAuthConfigToTerraform(struct?: RegistryImageBu
   }
 }
 
+export class RegistryImageBuildAuthConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): RegistryImageBuildAuthConfig | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._auth !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.auth = this._auth;
+    }
+    if (this._email !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.email = this._email;
+    }
+    if (this._hostName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.hostName = this._hostName;
+    }
+    if (this._identityToken !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.identityToken = this._identityToken;
+    }
+    if (this._password !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.password = this._password;
+    }
+    if (this._registryToken !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.registryToken = this._registryToken;
+    }
+    if (this._serverAddress !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.serverAddress = this._serverAddress;
+    }
+    if (this._userName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.userName = this._userName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RegistryImageBuildAuthConfig | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._auth = undefined;
+      this._email = undefined;
+      this._hostName = undefined;
+      this._identityToken = undefined;
+      this._password = undefined;
+      this._registryToken = undefined;
+      this._serverAddress = undefined;
+      this._userName = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._auth = value.auth;
+      this._email = value.email;
+      this._hostName = value.hostName;
+      this._identityToken = value.identityToken;
+      this._password = value.password;
+      this._registryToken = value.registryToken;
+      this._serverAddress = value.serverAddress;
+      this._userName = value.userName;
+    }
+  }
+
+  // auth - computed: false, optional: true, required: false
+  private _auth?: string; 
+  public get auth() {
+    return this.getStringAttribute('auth');
+  }
+  public set auth(value: string) {
+    this._auth = value;
+  }
+  public resetAuth() {
+    this._auth = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get authInput() {
+    return this._auth;
+  }
+
+  // email - computed: false, optional: true, required: false
+  private _email?: string; 
+  public get email() {
+    return this.getStringAttribute('email');
+  }
+  public set email(value: string) {
+    this._email = value;
+  }
+  public resetEmail() {
+    this._email = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get emailInput() {
+    return this._email;
+  }
+
+  // host_name - computed: false, optional: false, required: true
+  private _hostName?: string; 
+  public get hostName() {
+    return this.getStringAttribute('host_name');
+  }
+  public set hostName(value: string) {
+    this._hostName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostNameInput() {
+    return this._hostName;
+  }
+
+  // identity_token - computed: false, optional: true, required: false
+  private _identityToken?: string; 
+  public get identityToken() {
+    return this.getStringAttribute('identity_token');
+  }
+  public set identityToken(value: string) {
+    this._identityToken = value;
+  }
+  public resetIdentityToken() {
+    this._identityToken = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get identityTokenInput() {
+    return this._identityToken;
+  }
+
+  // password - computed: false, optional: true, required: false
+  private _password?: string; 
+  public get password() {
+    return this.getStringAttribute('password');
+  }
+  public set password(value: string) {
+    this._password = value;
+  }
+  public resetPassword() {
+    this._password = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get passwordInput() {
+    return this._password;
+  }
+
+  // registry_token - computed: false, optional: true, required: false
+  private _registryToken?: string; 
+  public get registryToken() {
+    return this.getStringAttribute('registry_token');
+  }
+  public set registryToken(value: string) {
+    this._registryToken = value;
+  }
+  public resetRegistryToken() {
+    this._registryToken = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get registryTokenInput() {
+    return this._registryToken;
+  }
+
+  // server_address - computed: false, optional: true, required: false
+  private _serverAddress?: string; 
+  public get serverAddress() {
+    return this.getStringAttribute('server_address');
+  }
+  public set serverAddress(value: string) {
+    this._serverAddress = value;
+  }
+  public resetServerAddress() {
+    this._serverAddress = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get serverAddressInput() {
+    return this._serverAddress;
+  }
+
+  // user_name - computed: false, optional: true, required: false
+  private _userName?: string; 
+  public get userName() {
+    return this.getStringAttribute('user_name');
+  }
+  public set userName(value: string) {
+    this._userName = value;
+  }
+  public resetUserName() {
+    this._userName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get userNameInput() {
+    return this._userName;
+  }
+}
+
+export class RegistryImageBuildAuthConfigList extends cdktf.ComplexList {
+  public internalValue? : RegistryImageBuildAuthConfig[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): RegistryImageBuildAuthConfigOutputReference {
+    return new RegistryImageBuildAuthConfigOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface RegistryImageBuildUlimit {
   /**
   * soft limit
@@ -133,6 +371,121 @@ export function registryImageBuildUlimitToTerraform(struct?: RegistryImageBuildU
   }
 }
 
+export class RegistryImageBuildUlimitOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): RegistryImageBuildUlimit | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._hard !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.hard = this._hard;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._soft !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.soft = this._soft;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: RegistryImageBuildUlimit | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._hard = undefined;
+      this._name = undefined;
+      this._soft = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._hard = value.hard;
+      this._name = value.name;
+      this._soft = value.soft;
+    }
+  }
+
+  // hard - computed: false, optional: false, required: true
+  private _hard?: number; 
+  public get hard() {
+    return this.getNumberAttribute('hard');
+  }
+  public set hard(value: number) {
+    this._hard = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hardInput() {
+    return this._hard;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // soft - computed: false, optional: false, required: true
+  private _soft?: number; 
+  public get soft() {
+    return this.getNumberAttribute('soft');
+  }
+  public set soft(value: number) {
+    this._soft = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get softInput() {
+    return this._soft;
+  }
+}
+
+export class RegistryImageBuildUlimitList extends cdktf.ComplexList {
+  public internalValue? : RegistryImageBuildUlimit[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): RegistryImageBuildUlimitOutputReference {
+    return new RegistryImageBuildUlimitOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface RegistryImageBuild {
   /**
   * Pairs for build-time variables in the form TODO
@@ -503,13 +856,13 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.version = this._version;
     }
-    if (this._authConfig !== undefined) {
+    if (this._authConfig?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.authConfig = this._authConfig;
+      internalValueResult.authConfig = this._authConfig?.internalValue;
     }
-    if (this._ulimit !== undefined) {
+    if (this._ulimit?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.ulimit = this._ulimit;
+      internalValueResult.ulimit = this._ulimit?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -547,8 +900,8 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
       this._suppressOutput = undefined;
       this._target = undefined;
       this._version = undefined;
-      this._authConfig = undefined;
-      this._ulimit = undefined;
+      this._authConfig.internalValue = undefined;
+      this._ulimit.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -582,8 +935,8 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
       this._suppressOutput = value.suppressOutput;
       this._target = value.target;
       this._version = value.version;
-      this._authConfig = value.authConfig;
-      this._ulimit = value.ulimit;
+      this._authConfig.internalValue = value.authConfig;
+      this._ulimit.internalValue = value.ulimit;
     }
   }
 
@@ -1065,37 +1418,35 @@ export class RegistryImageBuildOutputReference extends cdktf.ComplexObject {
   }
 
   // auth_config - computed: false, optional: true, required: false
-  private _authConfig?: RegistryImageBuildAuthConfig[] | cdktf.IResolvable; 
+  private _authConfig = new RegistryImageBuildAuthConfigList(this, "auth_config", false);
   public get authConfig() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('auth_config');
+    return this._authConfig;
   }
-  public set authConfig(value: RegistryImageBuildAuthConfig[] | cdktf.IResolvable) {
-    this._authConfig = value;
+  public putAuthConfig(value: RegistryImageBuildAuthConfig[] | cdktf.IResolvable) {
+    this._authConfig.internalValue = value;
   }
   public resetAuthConfig() {
-    this._authConfig = undefined;
+    this._authConfig.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get authConfigInput() {
-    return this._authConfig;
+    return this._authConfig.internalValue;
   }
 
   // ulimit - computed: false, optional: true, required: false
-  private _ulimit?: RegistryImageBuildUlimit[] | cdktf.IResolvable; 
+  private _ulimit = new RegistryImageBuildUlimitList(this, "ulimit", false);
   public get ulimit() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ulimit');
+    return this._ulimit;
   }
-  public set ulimit(value: RegistryImageBuildUlimit[] | cdktf.IResolvable) {
-    this._ulimit = value;
+  public putUlimit(value: RegistryImageBuildUlimit[] | cdktf.IResolvable) {
+    this._ulimit.internalValue = value;
   }
   public resetUlimit() {
-    this._ulimit = undefined;
+    this._ulimit.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get ulimitInput() {
-    return this._ulimit;
+    return this._ulimit.internalValue;
   }
 }
 
@@ -1133,6 +1484,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._insecureSkipVerify = config.insecureSkipVerify;
     this._keepRemotely = config.keepRemotely;
     this._name = config.name;
@@ -1144,8 +1496,19 @@ export class RegistryImage extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // insecure_skip_verify - computed: false, optional: true, required: false
@@ -1220,6 +1583,7 @@ export class RegistryImage extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       insecure_skip_verify: cdktf.booleanToTerraform(this._insecureSkipVerify),
       keep_remotely: cdktf.booleanToTerraform(this._keepRemotely),
       name: cdktf.stringToTerraform(this._name),
