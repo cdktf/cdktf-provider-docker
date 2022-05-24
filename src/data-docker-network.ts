@@ -55,8 +55,9 @@ export class DataDockerNetworkIpamConfigOutputReference extends cdktf.ComplexObj
   }
 
   // aux_address - computed: true, optional: false, required: false
-  public auxAddress(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'aux_address').lookup(key);
+  private _auxAddress = new cdktf.StringMap(this, "aux_address");
+  public get auxAddress() {
+    return this._auxAddress;
   }
 
   // gateway - computed: true, optional: false, required: false
@@ -170,8 +171,9 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
   }
 
   // options - computed: true, optional: false, required: false
-  public options(key: string): string | cdktf.IResolvable {
-    return new cdktf.StringMap(this, 'options').lookup(key);
+  private _options = new cdktf.StringMap(this, "options");
+  public get options() {
+    return this._options;
   }
 
   // scope - computed: true, optional: false, required: false

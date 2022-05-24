@@ -14,6 +14,13 @@ export interface ImageConfig extends cdktf.TerraformMetaArguments {
   */
   readonly forceRemove?: boolean | cdktf.IResolvable;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#id Image#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#keep_locally Image#keep_locally}
@@ -376,6 +383,7 @@ export class Image extends cdktf.TerraformResource {
       lifecycle: config.lifecycle
     });
     this._forceRemove = config.forceRemove;
+    this._id = config.id;
     this._keepLocally = config.keepLocally;
     this._name = config.name;
     this._pullTrigger = config.pullTrigger;
@@ -404,8 +412,19 @@ export class Image extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // keep_locally - computed: false, optional: true, required: false
@@ -507,6 +526,7 @@ export class Image extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       force_remove: cdktf.booleanToTerraform(this._forceRemove),
+      id: cdktf.stringToTerraform(this._id),
       keep_locally: cdktf.booleanToTerraform(this._keepLocally),
       name: cdktf.stringToTerraform(this._name),
       pull_trigger: cdktf.stringToTerraform(this._pullTrigger),

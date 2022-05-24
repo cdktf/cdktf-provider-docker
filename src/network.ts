@@ -26,6 +26,13 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   */
   readonly driver?: string;
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#id Network#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * Create swarm routing-mesh network. Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ingress Network#ingress}
@@ -114,6 +121,152 @@ export function networkIpamConfigToTerraform(struct?: NetworkIpamConfig | cdktf.
   }
 }
 
+export class NetworkIpamConfigOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkIpamConfig | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._auxAddress !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.auxAddress = this._auxAddress;
+    }
+    if (this._gateway !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.gateway = this._gateway;
+    }
+    if (this._ipRange !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ipRange = this._ipRange;
+    }
+    if (this._subnet !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.subnet = this._subnet;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkIpamConfig | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._auxAddress = undefined;
+      this._gateway = undefined;
+      this._ipRange = undefined;
+      this._subnet = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._auxAddress = value.auxAddress;
+      this._gateway = value.gateway;
+      this._ipRange = value.ipRange;
+      this._subnet = value.subnet;
+    }
+  }
+
+  // aux_address - computed: false, optional: true, required: false
+  private _auxAddress?: { [key: string]: string }; 
+  public get auxAddress() {
+    return this.getStringMapAttribute('aux_address');
+  }
+  public set auxAddress(value: { [key: string]: string }) {
+    this._auxAddress = value;
+  }
+  public resetAuxAddress() {
+    this._auxAddress = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get auxAddressInput() {
+    return this._auxAddress;
+  }
+
+  // gateway - computed: false, optional: true, required: false
+  private _gateway?: string; 
+  public get gateway() {
+    return this.getStringAttribute('gateway');
+  }
+  public set gateway(value: string) {
+    this._gateway = value;
+  }
+  public resetGateway() {
+    this._gateway = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get gatewayInput() {
+    return this._gateway;
+  }
+
+  // ip_range - computed: false, optional: true, required: false
+  private _ipRange?: string; 
+  public get ipRange() {
+    return this.getStringAttribute('ip_range');
+  }
+  public set ipRange(value: string) {
+    this._ipRange = value;
+  }
+  public resetIpRange() {
+    this._ipRange = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipRangeInput() {
+    return this._ipRange;
+  }
+
+  // subnet - computed: false, optional: true, required: false
+  private _subnet?: string; 
+  public get subnet() {
+    return this.getStringAttribute('subnet');
+  }
+  public set subnet(value: string) {
+    this._subnet = value;
+  }
+  public resetSubnet() {
+    this._subnet = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get subnetInput() {
+    return this._subnet;
+  }
+}
+
+export class NetworkIpamConfigList extends cdktf.ComplexList {
+  public internalValue? : NetworkIpamConfig[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkIpamConfigOutputReference {
+    return new NetworkIpamConfigOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface NetworkLabels {
   /**
   * Name of the label
@@ -140,6 +293,102 @@ export function networkLabelsToTerraform(struct?: NetworkLabels | cdktf.IResolva
   }
 }
 
+export class NetworkLabelsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): NetworkLabels | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._label !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.label = this._label;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: NetworkLabels | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._label = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._label = value.label;
+      this._value = value.value;
+    }
+  }
+
+  // label - computed: false, optional: false, required: true
+  private _label?: string; 
+  public get label() {
+    return this.getStringAttribute('label');
+  }
+  public set label(value: string) {
+    this._label = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelInput() {
+    return this._label;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class NetworkLabelsList extends cdktf.ComplexList {
+  public internalValue? : NetworkLabels[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): NetworkLabelsOutputReference {
+    return new NetworkLabelsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 
 /**
 * Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}
@@ -178,14 +427,15 @@ export class Network extends cdktf.TerraformResource {
     this._attachable = config.attachable;
     this._checkDuplicate = config.checkDuplicate;
     this._driver = config.driver;
+    this._id = config.id;
     this._ingress = config.ingress;
     this._internal = config.internal;
     this._ipamDriver = config.ipamDriver;
     this._ipv6 = config.ipv6;
     this._name = config.name;
     this._options = config.options;
-    this._ipamConfig = config.ipamConfig;
-    this._labels = config.labels;
+    this._ipamConfig.internalValue = config.ipamConfig;
+    this._labels.internalValue = config.labels;
   }
 
   // ==========
@@ -241,8 +491,19 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // ingress - computed: false, optional: true, required: false
@@ -344,37 +605,35 @@ export class Network extends cdktf.TerraformResource {
   }
 
   // ipam_config - computed: false, optional: true, required: false
-  private _ipamConfig?: NetworkIpamConfig[] | cdktf.IResolvable; 
+  private _ipamConfig = new NetworkIpamConfigList(this, "ipam_config", true);
   public get ipamConfig() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('ipam_config')));
+    return this._ipamConfig;
   }
-  public set ipamConfig(value: NetworkIpamConfig[] | cdktf.IResolvable) {
-    this._ipamConfig = value;
+  public putIpamConfig(value: NetworkIpamConfig[] | cdktf.IResolvable) {
+    this._ipamConfig.internalValue = value;
   }
   public resetIpamConfig() {
-    this._ipamConfig = undefined;
+    this._ipamConfig.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get ipamConfigInput() {
-    return this._ipamConfig;
+    return this._ipamConfig.internalValue;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: NetworkLabels[] | cdktf.IResolvable; 
+  private _labels = new NetworkLabelsList(this, "labels", true);
   public get labels() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
+    return this._labels;
   }
-  public set labels(value: NetworkLabels[] | cdktf.IResolvable) {
-    this._labels = value;
+  public putLabels(value: NetworkLabels[] | cdktf.IResolvable) {
+    this._labels.internalValue = value;
   }
   public resetLabels() {
-    this._labels = undefined;
+    this._labels.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels;
+    return this._labels.internalValue;
   }
 
   // =========
@@ -386,14 +645,15 @@ export class Network extends cdktf.TerraformResource {
       attachable: cdktf.booleanToTerraform(this._attachable),
       check_duplicate: cdktf.booleanToTerraform(this._checkDuplicate),
       driver: cdktf.stringToTerraform(this._driver),
+      id: cdktf.stringToTerraform(this._id),
       ingress: cdktf.booleanToTerraform(this._ingress),
       internal: cdktf.booleanToTerraform(this._internal),
       ipam_driver: cdktf.stringToTerraform(this._ipamDriver),
       ipv6: cdktf.booleanToTerraform(this._ipv6),
       name: cdktf.stringToTerraform(this._name),
       options: cdktf.hashMapper(cdktf.stringToTerraform)(this._options),
-      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform)(this._ipamConfig),
-      labels: cdktf.listMapper(networkLabelsToTerraform)(this._labels),
+      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform)(this._ipamConfig.internalValue),
+      labels: cdktf.listMapper(networkLabelsToTerraform)(this._labels.internalValue),
     };
   }
 }

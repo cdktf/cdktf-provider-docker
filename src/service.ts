@@ -8,6 +8,13 @@ import * as cdktf from 'cdktf';
 
 export interface ServiceConfig extends cdktf.TerraformMetaArguments {
   /**
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#id Service#id}
+  *
+  * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+  * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+  */
+  readonly id?: string;
+  /**
   * Name of the service
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
@@ -327,6 +334,171 @@ export function serviceEndpointSpecPortsToTerraform(struct?: ServiceEndpointSpec
   }
 }
 
+export class ServiceEndpointSpecPortsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceEndpointSpecPorts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    if (this._protocol !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.protocol = this._protocol;
+    }
+    if (this._publishMode !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.publishMode = this._publishMode;
+    }
+    if (this._publishedPort !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.publishedPort = this._publishedPort;
+    }
+    if (this._targetPort !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.targetPort = this._targetPort;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceEndpointSpecPorts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._name = undefined;
+      this._protocol = undefined;
+      this._publishMode = undefined;
+      this._publishedPort = undefined;
+      this._targetPort = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._name = value.name;
+      this._protocol = value.protocol;
+      this._publishMode = value.publishMode;
+      this._publishedPort = value.publishedPort;
+      this._targetPort = value.targetPort;
+    }
+  }
+
+  // name - computed: false, optional: true, required: false
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  public resetName() {
+    this._name = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+
+  // protocol - computed: false, optional: true, required: false
+  private _protocol?: string; 
+  public get protocol() {
+    return this.getStringAttribute('protocol');
+  }
+  public set protocol(value: string) {
+    this._protocol = value;
+  }
+  public resetProtocol() {
+    this._protocol = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get protocolInput() {
+    return this._protocol;
+  }
+
+  // publish_mode - computed: false, optional: true, required: false
+  private _publishMode?: string; 
+  public get publishMode() {
+    return this.getStringAttribute('publish_mode');
+  }
+  public set publishMode(value: string) {
+    this._publishMode = value;
+  }
+  public resetPublishMode() {
+    this._publishMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get publishModeInput() {
+    return this._publishMode;
+  }
+
+  // published_port - computed: true, optional: true, required: false
+  private _publishedPort?: number; 
+  public get publishedPort() {
+    return this.getNumberAttribute('published_port');
+  }
+  public set publishedPort(value: number) {
+    this._publishedPort = value;
+  }
+  public resetPublishedPort() {
+    this._publishedPort = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get publishedPortInput() {
+    return this._publishedPort;
+  }
+
+  // target_port - computed: false, optional: false, required: true
+  private _targetPort?: number; 
+  public get targetPort() {
+    return this.getNumberAttribute('target_port');
+  }
+  public set targetPort(value: number) {
+    this._targetPort = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetPortInput() {
+    return this._targetPort;
+  }
+}
+
+export class ServiceEndpointSpecPortsList extends cdktf.ComplexList {
+  public internalValue? : ServiceEndpointSpecPorts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceEndpointSpecPortsOutputReference {
+    return new ServiceEndpointSpecPortsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceEndpointSpec {
   /**
   * The mode of resolution to use for internal load balancing between tasks
@@ -371,9 +543,9 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.mode = this._mode;
     }
-    if (this._ports !== undefined) {
+    if (this._ports?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.ports = this._ports;
+      internalValueResult.ports = this._ports?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -382,12 +554,12 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
     if (value === undefined) {
       this.isEmptyObject = false;
       this._mode = undefined;
-      this._ports = undefined;
+      this._ports.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._mode = value.mode;
-      this._ports = value.ports;
+      this._ports.internalValue = value.ports;
     }
   }
 
@@ -408,20 +580,19 @@ export class ServiceEndpointSpecOutputReference extends cdktf.ComplexObject {
   }
 
   // ports - computed: false, optional: true, required: false
-  private _ports?: ServiceEndpointSpecPorts[] | cdktf.IResolvable; 
+  private _ports = new ServiceEndpointSpecPortsList(this, "ports", false);
   public get ports() {
-    // Getting the computed value is not yet implemented
-    return this.interpolationForAttribute('ports');
+    return this._ports;
   }
-  public set ports(value: ServiceEndpointSpecPorts[] | cdktf.IResolvable) {
-    this._ports = value;
+  public putPorts(value: ServiceEndpointSpecPorts[] | cdktf.IResolvable) {
+    this._ports.internalValue = value;
   }
   public resetPorts() {
-    this._ports = undefined;
+    this._ports.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get portsInput() {
-    return this._ports;
+    return this._ports.internalValue;
   }
 }
 export interface ServiceLabels {
@@ -450,6 +621,102 @@ export function serviceLabelsToTerraform(struct?: ServiceLabels | cdktf.IResolva
   }
 }
 
+export class ServiceLabelsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceLabels | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._label !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.label = this._label;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceLabels | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._label = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._label = value.label;
+      this._value = value.value;
+    }
+  }
+
+  // label - computed: false, optional: false, required: true
+  private _label?: string; 
+  public get label() {
+    return this.getStringAttribute('label');
+  }
+  public set label(value: string) {
+    this._label = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelInput() {
+    return this._label;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class ServiceLabelsList extends cdktf.ComplexList {
+  public internalValue? : ServiceLabels[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceLabelsOutputReference {
+    return new ServiceLabelsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceModeReplicated {
   /**
   * The amount of replicas of the service. Defaults to `1`
@@ -879,6 +1146,190 @@ export function serviceTaskSpecContainerSpecConfigsToTerraform(struct?: ServiceT
   }
 }
 
+export class ServiceTaskSpecContainerSpecConfigsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecConfigs | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._configId !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.configId = this._configId;
+    }
+    if (this._configName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.configName = this._configName;
+    }
+    if (this._fileGid !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileGid = this._fileGid;
+    }
+    if (this._fileMode !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileMode = this._fileMode;
+    }
+    if (this._fileName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileName = this._fileName;
+    }
+    if (this._fileUid !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileUid = this._fileUid;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecConfigs | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._configId = undefined;
+      this._configName = undefined;
+      this._fileGid = undefined;
+      this._fileMode = undefined;
+      this._fileName = undefined;
+      this._fileUid = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._configId = value.configId;
+      this._configName = value.configName;
+      this._fileGid = value.fileGid;
+      this._fileMode = value.fileMode;
+      this._fileName = value.fileName;
+      this._fileUid = value.fileUid;
+    }
+  }
+
+  // config_id - computed: false, optional: false, required: true
+  private _configId?: string; 
+  public get configId() {
+    return this.getStringAttribute('config_id');
+  }
+  public set configId(value: string) {
+    this._configId = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configIdInput() {
+    return this._configId;
+  }
+
+  // config_name - computed: false, optional: true, required: false
+  private _configName?: string; 
+  public get configName() {
+    return this.getStringAttribute('config_name');
+  }
+  public set configName(value: string) {
+    this._configName = value;
+  }
+  public resetConfigName() {
+    this._configName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get configNameInput() {
+    return this._configName;
+  }
+
+  // file_gid - computed: false, optional: true, required: false
+  private _fileGid?: string; 
+  public get fileGid() {
+    return this.getStringAttribute('file_gid');
+  }
+  public set fileGid(value: string) {
+    this._fileGid = value;
+  }
+  public resetFileGid() {
+    this._fileGid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileGidInput() {
+    return this._fileGid;
+  }
+
+  // file_mode - computed: false, optional: true, required: false
+  private _fileMode?: number; 
+  public get fileMode() {
+    return this.getNumberAttribute('file_mode');
+  }
+  public set fileMode(value: number) {
+    this._fileMode = value;
+  }
+  public resetFileMode() {
+    this._fileMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileModeInput() {
+    return this._fileMode;
+  }
+
+  // file_name - computed: false, optional: false, required: true
+  private _fileName?: string; 
+  public get fileName() {
+    return this.getStringAttribute('file_name');
+  }
+  public set fileName(value: string) {
+    this._fileName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileNameInput() {
+    return this._fileName;
+  }
+
+  // file_uid - computed: false, optional: true, required: false
+  private _fileUid?: string; 
+  public get fileUid() {
+    return this.getStringAttribute('file_uid');
+  }
+  public set fileUid(value: string) {
+    this._fileUid = value;
+  }
+  public resetFileUid() {
+    this._fileUid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileUidInput() {
+    return this._fileUid;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecConfigsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecConfigs[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecConfigsOutputReference {
+    return new ServiceTaskSpecContainerSpecConfigsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpecDnsConfig {
   /**
   * The IP addresses of the name servers
@@ -1207,6 +1658,102 @@ export function serviceTaskSpecContainerSpecHostsToTerraform(struct?: ServiceTas
   }
 }
 
+export class ServiceTaskSpecContainerSpecHostsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecHosts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._host !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.host = this._host;
+    }
+    if (this._ip !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.ip = this._ip;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecHosts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._host = undefined;
+      this._ip = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._host = value.host;
+      this._ip = value.ip;
+    }
+  }
+
+  // host - computed: false, optional: false, required: true
+  private _host?: string; 
+  public get host() {
+    return this.getStringAttribute('host');
+  }
+  public set host(value: string) {
+    this._host = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get hostInput() {
+    return this._host;
+  }
+
+  // ip - computed: false, optional: false, required: true
+  private _ip?: string; 
+  public get ip() {
+    return this.getStringAttribute('ip');
+  }
+  public set ip(value: string) {
+    this._ip = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipInput() {
+    return this._ip;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecHostsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecHosts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecHostsOutputReference {
+    return new ServiceTaskSpecContainerSpecHostsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpecLabels {
   /**
   * Name of the label
@@ -1233,6 +1780,102 @@ export function serviceTaskSpecContainerSpecLabelsToTerraform(struct?: ServiceTa
   }
 }
 
+export class ServiceTaskSpecContainerSpecLabelsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecLabels | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._label !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.label = this._label;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecLabels | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._label = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._label = value.label;
+      this._value = value.value;
+    }
+  }
+
+  // label - computed: false, optional: false, required: true
+  private _label?: string; 
+  public get label() {
+    return this.getStringAttribute('label');
+  }
+  public set label(value: string) {
+    this._label = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelInput() {
+    return this._label;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecLabelsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecLabels[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecLabelsOutputReference {
+    return new ServiceTaskSpecContainerSpecLabelsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpecMountsBindOptions {
   /**
   * Bind propagation refers to whether or not mounts created within a given bind-mount or named volume can be propagated to replicas of that mount. See the [docs](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation) for details. Defaults to `rprivate`
@@ -1422,6 +2065,102 @@ export function serviceTaskSpecContainerSpecMountsVolumeOptionsLabelsToTerraform
   }
 }
 
+export class ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._label !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.label = this._label;
+    }
+    if (this._value !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.value = this._value;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._label = undefined;
+      this._value = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._label = value.label;
+      this._value = value.value;
+    }
+  }
+
+  // label - computed: false, optional: false, required: true
+  private _label?: string; 
+  public get label() {
+    return this.getStringAttribute('label');
+  }
+  public set label(value: string) {
+    this._label = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get labelInput() {
+    return this._label;
+  }
+
+  // value - computed: false, optional: false, required: true
+  private _value?: string; 
+  public get value() {
+    return this.getStringAttribute('value');
+  }
+  public set value(value: string) {
+    this._value = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get valueInput() {
+    return this._value;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference {
+    return new ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpecMountsVolumeOptions {
   /**
   * Name of the driver to use to create the volume
@@ -1488,9 +2227,9 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
       hasAnyValues = true;
       internalValueResult.noCopy = this._noCopy;
     }
-    if (this._labels !== undefined) {
+    if (this._labels?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.labels = this._labels;
+      internalValueResult.labels = this._labels?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -1501,14 +2240,14 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
       this._driverName = undefined;
       this._driverOptions = undefined;
       this._noCopy = undefined;
-      this._labels = undefined;
+      this._labels.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._driverName = value.driverName;
       this._driverOptions = value.driverOptions;
       this._noCopy = value.noCopy;
-      this._labels = value.labels;
+      this._labels.internalValue = value.labels;
     }
   }
 
@@ -1561,20 +2300,19 @@ export class ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference exte
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] | cdktf.IResolvable; 
+  private _labels = new ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList(this, "labels", true);
   public get labels() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
+    return this._labels;
   }
-  public set labels(value: ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] | cdktf.IResolvable) {
-    this._labels = value;
+  public putLabels(value: ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] | cdktf.IResolvable) {
+    this._labels.internalValue = value;
   }
   public resetLabels() {
-    this._labels = undefined;
+    this._labels.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels;
+    return this._labels.internalValue;
   }
 }
 export interface ServiceTaskSpecContainerSpecMounts {
@@ -1638,6 +2376,212 @@ export function serviceTaskSpecContainerSpecMountsToTerraform(struct?: ServiceTa
   }
 }
 
+export class ServiceTaskSpecContainerSpecMountsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecMounts | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._readOnly !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.readOnly = this._readOnly;
+    }
+    if (this._source !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.source = this._source;
+    }
+    if (this._target !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.target = this._target;
+    }
+    if (this._type !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.type = this._type;
+    }
+    if (this._bindOptions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.bindOptions = this._bindOptions?.internalValue;
+    }
+    if (this._tmpfsOptions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.tmpfsOptions = this._tmpfsOptions?.internalValue;
+    }
+    if (this._volumeOptions?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.volumeOptions = this._volumeOptions?.internalValue;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecMounts | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._readOnly = undefined;
+      this._source = undefined;
+      this._target = undefined;
+      this._type = undefined;
+      this._bindOptions.internalValue = undefined;
+      this._tmpfsOptions.internalValue = undefined;
+      this._volumeOptions.internalValue = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._readOnly = value.readOnly;
+      this._source = value.source;
+      this._target = value.target;
+      this._type = value.type;
+      this._bindOptions.internalValue = value.bindOptions;
+      this._tmpfsOptions.internalValue = value.tmpfsOptions;
+      this._volumeOptions.internalValue = value.volumeOptions;
+    }
+  }
+
+  // read_only - computed: false, optional: true, required: false
+  private _readOnly?: boolean | cdktf.IResolvable; 
+  public get readOnly() {
+    return this.getBooleanAttribute('read_only');
+  }
+  public set readOnly(value: boolean | cdktf.IResolvable) {
+    this._readOnly = value;
+  }
+  public resetReadOnly() {
+    this._readOnly = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get readOnlyInput() {
+    return this._readOnly;
+  }
+
+  // source - computed: false, optional: true, required: false
+  private _source?: string; 
+  public get source() {
+    return this.getStringAttribute('source');
+  }
+  public set source(value: string) {
+    this._source = value;
+  }
+  public resetSource() {
+    this._source = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sourceInput() {
+    return this._source;
+  }
+
+  // target - computed: false, optional: false, required: true
+  private _target?: string; 
+  public get target() {
+    return this.getStringAttribute('target');
+  }
+  public set target(value: string) {
+    this._target = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get targetInput() {
+    return this._target;
+  }
+
+  // type - computed: false, optional: false, required: true
+  private _type?: string; 
+  public get type() {
+    return this.getStringAttribute('type');
+  }
+  public set type(value: string) {
+    this._type = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get typeInput() {
+    return this._type;
+  }
+
+  // bind_options - computed: false, optional: true, required: false
+  private _bindOptions = new ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(this, "bind_options");
+  public get bindOptions() {
+    return this._bindOptions;
+  }
+  public putBindOptions(value: ServiceTaskSpecContainerSpecMountsBindOptions) {
+    this._bindOptions.internalValue = value;
+  }
+  public resetBindOptions() {
+    this._bindOptions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get bindOptionsInput() {
+    return this._bindOptions.internalValue;
+  }
+
+  // tmpfs_options - computed: false, optional: true, required: false
+  private _tmpfsOptions = new ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(this, "tmpfs_options");
+  public get tmpfsOptions() {
+    return this._tmpfsOptions;
+  }
+  public putTmpfsOptions(value: ServiceTaskSpecContainerSpecMountsTmpfsOptions) {
+    this._tmpfsOptions.internalValue = value;
+  }
+  public resetTmpfsOptions() {
+    this._tmpfsOptions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tmpfsOptionsInput() {
+    return this._tmpfsOptions.internalValue;
+  }
+
+  // volume_options - computed: false, optional: true, required: false
+  private _volumeOptions = new ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(this, "volume_options");
+  public get volumeOptions() {
+    return this._volumeOptions;
+  }
+  public putVolumeOptions(value: ServiceTaskSpecContainerSpecMountsVolumeOptions) {
+    this._volumeOptions.internalValue = value;
+  }
+  public resetVolumeOptions() {
+    this._volumeOptions.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get volumeOptionsInput() {
+    return this._volumeOptions.internalValue;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecMountsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecMounts[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecMountsOutputReference {
+    return new ServiceTaskSpecContainerSpecMountsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpecPrivilegesCredentialSpec {
   /**
   * Load credential spec from this file
@@ -2067,6 +3011,190 @@ export function serviceTaskSpecContainerSpecSecretsToTerraform(struct?: ServiceT
   }
 }
 
+export class ServiceTaskSpecContainerSpecSecretsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecContainerSpecSecrets | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._fileGid !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileGid = this._fileGid;
+    }
+    if (this._fileMode !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileMode = this._fileMode;
+    }
+    if (this._fileName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileName = this._fileName;
+    }
+    if (this._fileUid !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.fileUid = this._fileUid;
+    }
+    if (this._secretId !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.secretId = this._secretId;
+    }
+    if (this._secretName !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.secretName = this._secretName;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecContainerSpecSecrets | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._fileGid = undefined;
+      this._fileMode = undefined;
+      this._fileName = undefined;
+      this._fileUid = undefined;
+      this._secretId = undefined;
+      this._secretName = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._fileGid = value.fileGid;
+      this._fileMode = value.fileMode;
+      this._fileName = value.fileName;
+      this._fileUid = value.fileUid;
+      this._secretId = value.secretId;
+      this._secretName = value.secretName;
+    }
+  }
+
+  // file_gid - computed: false, optional: true, required: false
+  private _fileGid?: string; 
+  public get fileGid() {
+    return this.getStringAttribute('file_gid');
+  }
+  public set fileGid(value: string) {
+    this._fileGid = value;
+  }
+  public resetFileGid() {
+    this._fileGid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileGidInput() {
+    return this._fileGid;
+  }
+
+  // file_mode - computed: false, optional: true, required: false
+  private _fileMode?: number; 
+  public get fileMode() {
+    return this.getNumberAttribute('file_mode');
+  }
+  public set fileMode(value: number) {
+    this._fileMode = value;
+  }
+  public resetFileMode() {
+    this._fileMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileModeInput() {
+    return this._fileMode;
+  }
+
+  // file_name - computed: false, optional: false, required: true
+  private _fileName?: string; 
+  public get fileName() {
+    return this.getStringAttribute('file_name');
+  }
+  public set fileName(value: string) {
+    this._fileName = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileNameInput() {
+    return this._fileName;
+  }
+
+  // file_uid - computed: false, optional: true, required: false
+  private _fileUid?: string; 
+  public get fileUid() {
+    return this.getStringAttribute('file_uid');
+  }
+  public set fileUid(value: string) {
+    this._fileUid = value;
+  }
+  public resetFileUid() {
+    this._fileUid = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get fileUidInput() {
+    return this._fileUid;
+  }
+
+  // secret_id - computed: false, optional: false, required: true
+  private _secretId?: string; 
+  public get secretId() {
+    return this.getStringAttribute('secret_id');
+  }
+  public set secretId(value: string) {
+    this._secretId = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretIdInput() {
+    return this._secretId;
+  }
+
+  // secret_name - computed: false, optional: true, required: false
+  private _secretName?: string; 
+  public get secretName() {
+    return this.getStringAttribute('secret_name');
+  }
+  public set secretName(value: string) {
+    this._secretName = value;
+  }
+  public resetSecretName() {
+    this._secretName = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get secretNameInput() {
+    return this._secretName;
+  }
+}
+
+export class ServiceTaskSpecContainerSpecSecretsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecContainerSpecSecrets[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecContainerSpecSecretsOutputReference {
+    return new ServiceTaskSpecContainerSpecSecretsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecContainerSpec {
   /**
   * Arguments to the command
@@ -2281,9 +3409,9 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.user = this._user;
     }
-    if (this._configs !== undefined) {
+    if (this._configs?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.configs = this._configs;
+      internalValueResult.configs = this._configs?.internalValue;
     }
     if (this._dnsConfig?.internalValue !== undefined) {
       hasAnyValues = true;
@@ -2293,25 +3421,25 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.healthcheck = this._healthcheck?.internalValue;
     }
-    if (this._hosts !== undefined) {
+    if (this._hosts?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.hosts = this._hosts;
+      internalValueResult.hosts = this._hosts?.internalValue;
     }
-    if (this._labels !== undefined) {
+    if (this._labels?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.labels = this._labels;
+      internalValueResult.labels = this._labels?.internalValue;
     }
-    if (this._mounts !== undefined) {
+    if (this._mounts?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.mounts = this._mounts;
+      internalValueResult.mounts = this._mounts?.internalValue;
     }
     if (this._privileges?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.privileges = this._privileges?.internalValue;
     }
-    if (this._secrets !== undefined) {
+    if (this._secrets?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.secrets = this._secrets;
+      internalValueResult.secrets = this._secrets?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -2331,14 +3459,14 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       this._stopGracePeriod = undefined;
       this._stopSignal = undefined;
       this._user = undefined;
-      this._configs = undefined;
+      this._configs.internalValue = undefined;
       this._dnsConfig.internalValue = undefined;
       this._healthcheck.internalValue = undefined;
-      this._hosts = undefined;
-      this._labels = undefined;
-      this._mounts = undefined;
+      this._hosts.internalValue = undefined;
+      this._labels.internalValue = undefined;
+      this._mounts.internalValue = undefined;
       this._privileges.internalValue = undefined;
-      this._secrets = undefined;
+      this._secrets.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
@@ -2354,14 +3482,14 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       this._stopGracePeriod = value.stopGracePeriod;
       this._stopSignal = value.stopSignal;
       this._user = value.user;
-      this._configs = value.configs;
+      this._configs.internalValue = value.configs;
       this._dnsConfig.internalValue = value.dnsConfig;
       this._healthcheck.internalValue = value.healthcheck;
-      this._hosts = value.hosts;
-      this._labels = value.labels;
-      this._mounts = value.mounts;
+      this._hosts.internalValue = value.hosts;
+      this._labels.internalValue = value.labels;
+      this._mounts.internalValue = value.mounts;
       this._privileges.internalValue = value.privileges;
-      this._secrets = value.secrets;
+      this._secrets.internalValue = value.secrets;
     }
   }
 
@@ -2555,20 +3683,19 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // configs - computed: false, optional: true, required: false
-  private _configs?: ServiceTaskSpecContainerSpecConfigs[] | cdktf.IResolvable; 
+  private _configs = new ServiceTaskSpecContainerSpecConfigsList(this, "configs", true);
   public get configs() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('configs')));
+    return this._configs;
   }
-  public set configs(value: ServiceTaskSpecContainerSpecConfigs[] | cdktf.IResolvable) {
-    this._configs = value;
+  public putConfigs(value: ServiceTaskSpecContainerSpecConfigs[] | cdktf.IResolvable) {
+    this._configs.internalValue = value;
   }
   public resetConfigs() {
-    this._configs = undefined;
+    this._configs.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get configsInput() {
-    return this._configs;
+    return this._configs.internalValue;
   }
 
   // dns_config - computed: false, optional: true, required: false
@@ -2604,54 +3731,51 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // hosts - computed: false, optional: true, required: false
-  private _hosts?: ServiceTaskSpecContainerSpecHosts[] | cdktf.IResolvable; 
+  private _hosts = new ServiceTaskSpecContainerSpecHostsList(this, "hosts", true);
   public get hosts() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('hosts')));
+    return this._hosts;
   }
-  public set hosts(value: ServiceTaskSpecContainerSpecHosts[] | cdktf.IResolvable) {
-    this._hosts = value;
+  public putHosts(value: ServiceTaskSpecContainerSpecHosts[] | cdktf.IResolvable) {
+    this._hosts.internalValue = value;
   }
   public resetHosts() {
-    this._hosts = undefined;
+    this._hosts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get hostsInput() {
-    return this._hosts;
+    return this._hosts.internalValue;
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ServiceTaskSpecContainerSpecLabels[] | cdktf.IResolvable; 
+  private _labels = new ServiceTaskSpecContainerSpecLabelsList(this, "labels", true);
   public get labels() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
+    return this._labels;
   }
-  public set labels(value: ServiceTaskSpecContainerSpecLabels[] | cdktf.IResolvable) {
-    this._labels = value;
+  public putLabels(value: ServiceTaskSpecContainerSpecLabels[] | cdktf.IResolvable) {
+    this._labels.internalValue = value;
   }
   public resetLabels() {
-    this._labels = undefined;
+    this._labels.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels;
+    return this._labels.internalValue;
   }
 
   // mounts - computed: false, optional: true, required: false
-  private _mounts?: ServiceTaskSpecContainerSpecMounts[] | cdktf.IResolvable; 
+  private _mounts = new ServiceTaskSpecContainerSpecMountsList(this, "mounts", true);
   public get mounts() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('mounts')));
+    return this._mounts;
   }
-  public set mounts(value: ServiceTaskSpecContainerSpecMounts[] | cdktf.IResolvable) {
-    this._mounts = value;
+  public putMounts(value: ServiceTaskSpecContainerSpecMounts[] | cdktf.IResolvable) {
+    this._mounts.internalValue = value;
   }
   public resetMounts() {
-    this._mounts = undefined;
+    this._mounts.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get mountsInput() {
-    return this._mounts;
+    return this._mounts.internalValue;
   }
 
   // privileges - computed: false, optional: true, required: false
@@ -2671,20 +3795,19 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   }
 
   // secrets - computed: false, optional: true, required: false
-  private _secrets?: ServiceTaskSpecContainerSpecSecrets[] | cdktf.IResolvable; 
+  private _secrets = new ServiceTaskSpecContainerSpecSecretsList(this, "secrets", true);
   public get secrets() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('secrets')));
+    return this._secrets;
   }
-  public set secrets(value: ServiceTaskSpecContainerSpecSecrets[] | cdktf.IResolvable) {
-    this._secrets = value;
+  public putSecrets(value: ServiceTaskSpecContainerSpecSecrets[] | cdktf.IResolvable) {
+    this._secrets.internalValue = value;
   }
   public resetSecrets() {
-    this._secrets = undefined;
+    this._secrets.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get secretsInput() {
-    return this._secrets;
+    return this._secrets.internalValue;
   }
 }
 export interface ServiceTaskSpecLogDriver {
@@ -2806,6 +3929,102 @@ export function serviceTaskSpecPlacementPlatformsToTerraform(struct?: ServiceTas
   }
 }
 
+export class ServiceTaskSpecPlacementPlatformsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecPlacementPlatforms | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._architecture !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.architecture = this._architecture;
+    }
+    if (this._os !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.os = this._os;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecPlacementPlatforms | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._architecture = undefined;
+      this._os = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._architecture = value.architecture;
+      this._os = value.os;
+    }
+  }
+
+  // architecture - computed: false, optional: false, required: true
+  private _architecture?: string; 
+  public get architecture() {
+    return this.getStringAttribute('architecture');
+  }
+  public set architecture(value: string) {
+    this._architecture = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get architectureInput() {
+    return this._architecture;
+  }
+
+  // os - computed: false, optional: false, required: true
+  private _os?: string; 
+  public get os() {
+    return this.getStringAttribute('os');
+  }
+  public set os(value: string) {
+    this._os = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get osInput() {
+    return this._os;
+  }
+}
+
+export class ServiceTaskSpecPlacementPlatformsList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecPlacementPlatforms[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecPlacementPlatformsOutputReference {
+    return new ServiceTaskSpecPlacementPlatformsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
 export interface ServiceTaskSpecPlacement {
   /**
   * An array of constraints. e.g.: `node.role==manager`
@@ -2872,9 +4091,9 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
       hasAnyValues = true;
       internalValueResult.prefs = this._prefs;
     }
-    if (this._platforms !== undefined) {
+    if (this._platforms?.internalValue !== undefined) {
       hasAnyValues = true;
-      internalValueResult.platforms = this._platforms;
+      internalValueResult.platforms = this._platforms?.internalValue;
     }
     return hasAnyValues ? internalValueResult : undefined;
   }
@@ -2885,14 +4104,14 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
       this._constraints = undefined;
       this._maxReplicas = undefined;
       this._prefs = undefined;
-      this._platforms = undefined;
+      this._platforms.internalValue = undefined;
     }
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._constraints = value.constraints;
       this._maxReplicas = value.maxReplicas;
       this._prefs = value.prefs;
-      this._platforms = value.platforms;
+      this._platforms.internalValue = value.platforms;
     }
   }
 
@@ -2945,20 +4164,19 @@ export class ServiceTaskSpecPlacementOutputReference extends cdktf.ComplexObject
   }
 
   // platforms - computed: false, optional: true, required: false
-  private _platforms?: ServiceTaskSpecPlacementPlatforms[] | cdktf.IResolvable; 
+  private _platforms = new ServiceTaskSpecPlacementPlatformsList(this, "platforms", true);
   public get platforms() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('platforms')));
+    return this._platforms;
   }
-  public set platforms(value: ServiceTaskSpecPlacementPlatforms[] | cdktf.IResolvable) {
-    this._platforms = value;
+  public putPlatforms(value: ServiceTaskSpecPlacementPlatforms[] | cdktf.IResolvable) {
+    this._platforms.internalValue = value;
   }
   public resetPlatforms() {
-    this._platforms = undefined;
+    this._platforms.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get platformsInput() {
-    return this._platforms;
+    return this._platforms.internalValue;
   }
 }
 export interface ServiceTaskSpecResourcesLimits {
@@ -4042,11 +5260,12 @@ export class Service extends cdktf.TerraformResource {
       count: config.count,
       lifecycle: config.lifecycle
     });
+    this._id = config.id;
     this._name = config.name;
     this._auth.internalValue = config.auth;
     this._convergeConfig.internalValue = config.convergeConfig;
     this._endpointSpec.internalValue = config.endpointSpec;
-    this._labels = config.labels;
+    this._labels.internalValue = config.labels;
     this._mode.internalValue = config.mode;
     this._rollbackConfig.internalValue = config.rollbackConfig;
     this._taskSpec.internalValue = config.taskSpec;
@@ -4058,8 +5277,19 @@ export class Service extends cdktf.TerraformResource {
   // ==========
 
   // id - computed: true, optional: true, required: false
+  private _id?: string; 
   public get id() {
     return this.getStringAttribute('id');
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  public resetId() {
+    this._id = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get idInput() {
+    return this._id;
   }
 
   // name - computed: false, optional: false, required: true
@@ -4124,20 +5354,19 @@ export class Service extends cdktf.TerraformResource {
   }
 
   // labels - computed: false, optional: true, required: false
-  private _labels?: ServiceLabels[] | cdktf.IResolvable; 
+  private _labels = new ServiceLabelsList(this, "labels", true);
   public get labels() {
-    // Getting the computed value is not yet implemented
-    return cdktf.Token.asAny(cdktf.Fn.tolist(this.interpolationForAttribute('labels')));
+    return this._labels;
   }
-  public set labels(value: ServiceLabels[] | cdktf.IResolvable) {
-    this._labels = value;
+  public putLabels(value: ServiceLabels[] | cdktf.IResolvable) {
+    this._labels.internalValue = value;
   }
   public resetLabels() {
-    this._labels = undefined;
+    this._labels.internalValue = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get labelsInput() {
-    return this._labels;
+    return this._labels.internalValue;
   }
 
   // mode - computed: false, optional: true, required: false
@@ -4207,11 +5436,12 @@ export class Service extends cdktf.TerraformResource {
 
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
+      id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
       auth: serviceAuthToTerraform(this._auth.internalValue),
       converge_config: serviceConvergeConfigToTerraform(this._convergeConfig.internalValue),
       endpoint_spec: serviceEndpointSpecToTerraform(this._endpointSpec.internalValue),
-      labels: cdktf.listMapper(serviceLabelsToTerraform)(this._labels),
+      labels: cdktf.listMapper(serviceLabelsToTerraform)(this._labels.internalValue),
       mode: serviceModeToTerraform(this._mode.internalValue),
       rollback_config: serviceRollbackConfigToTerraform(this._rollbackConfig.internalValue),
       task_spec: serviceTaskSpecToTerraform(this._taskSpec.internalValue),
