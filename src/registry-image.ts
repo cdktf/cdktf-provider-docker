@@ -1476,7 +1476,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       terraformResourceType: 'docker_registry_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.16.0',
+        providerVersion: '2.17.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
