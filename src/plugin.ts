@@ -218,7 +218,7 @@ export class Plugin extends cdktf.TerraformResource {
       terraformResourceType: 'docker_plugin',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.17.0',
+        providerVersion: '2.18.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

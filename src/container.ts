@@ -225,6 +225,12 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly rm?: boolean | cdktf.IResolvable;
   /**
+  * Runtime to use for the container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#runtime Container#runtime}
+  */
+  readonly runtime?: string;
+  /**
   * List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#security_opts Container#security_opts}
@@ -248,6 +254,18 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stdin_open Container#stdin_open}
   */
   readonly stdinOpen?: boolean | cdktf.IResolvable;
+  /**
+  * Signal to stop a container (default `SIGTERM`).
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stop_signal Container#stop_signal}
+  */
+  readonly stopSignal?: string;
+  /**
+  * Timeout (in seconds) to stop a container.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stop_timeout Container#stop_timeout}
+  */
+  readonly stopTimeout?: number;
   /**
   * Key/value pairs for the storage driver options, e.g. `size`: `120G`
   * 
@@ -2828,7 +2846,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.17.0',
+        providerVersion: '2.18.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -2872,10 +2890,13 @@ export class Container extends cdktf.TerraformResource {
     this._removeVolumes = config.removeVolumes;
     this._restart = config.restart;
     this._rm = config.rm;
+    this._runtime = config.runtime;
     this._securityOpts = config.securityOpts;
     this._shmSize = config.shmSize;
     this._start = config.start;
     this._stdinOpen = config.stdinOpen;
+    this._stopSignal = config.stopSignal;
+    this._stopTimeout = config.stopTimeout;
     this._storageOpts = config.storageOpts;
     this._sysctls = config.sysctls;
     this._tmpfs = config.tmpfs;
@@ -3506,6 +3527,22 @@ export class Container extends cdktf.TerraformResource {
     return this._rm;
   }
 
+  // runtime - computed: true, optional: true, required: false
+  private _runtime?: string; 
+  public get runtime() {
+    return this.getStringAttribute('runtime');
+  }
+  public set runtime(value: string) {
+    this._runtime = value;
+  }
+  public resetRuntime() {
+    this._runtime = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get runtimeInput() {
+    return this._runtime;
+  }
+
   // security_opts - computed: true, optional: true, required: false
   private _securityOpts?: string[]; 
   public get securityOpts() {
@@ -3568,6 +3605,38 @@ export class Container extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get stdinOpenInput() {
     return this._stdinOpen;
+  }
+
+  // stop_signal - computed: true, optional: true, required: false
+  private _stopSignal?: string; 
+  public get stopSignal() {
+    return this.getStringAttribute('stop_signal');
+  }
+  public set stopSignal(value: string) {
+    this._stopSignal = value;
+  }
+  public resetStopSignal() {
+    this._stopSignal = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stopSignalInput() {
+    return this._stopSignal;
+  }
+
+  // stop_timeout - computed: true, optional: true, required: false
+  private _stopTimeout?: number; 
+  public get stopTimeout() {
+    return this.getNumberAttribute('stop_timeout');
+  }
+  public set stopTimeout(value: number) {
+    this._stopTimeout = value;
+  }
+  public resetStopTimeout() {
+    this._stopTimeout = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get stopTimeoutInput() {
+    return this._stopTimeout;
   }
 
   // storage_opts - computed: false, optional: true, required: false
@@ -3900,10 +3969,13 @@ export class Container extends cdktf.TerraformResource {
       remove_volumes: cdktf.booleanToTerraform(this._removeVolumes),
       restart: cdktf.stringToTerraform(this._restart),
       rm: cdktf.booleanToTerraform(this._rm),
+      runtime: cdktf.stringToTerraform(this._runtime),
       security_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._securityOpts),
       shm_size: cdktf.numberToTerraform(this._shmSize),
       start: cdktf.booleanToTerraform(this._start),
       stdin_open: cdktf.booleanToTerraform(this._stdinOpen),
+      stop_signal: cdktf.stringToTerraform(this._stopSignal),
+      stop_timeout: cdktf.numberToTerraform(this._stopTimeout),
       storage_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._storageOpts),
       sysctls: cdktf.hashMapper(cdktf.stringToTerraform)(this._sysctls),
       tmpfs: cdktf.hashMapper(cdktf.stringToTerraform)(this._tmpfs),

@@ -326,10 +326,13 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **removeVolumes** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. __*Optional*__
   * **restart** (<code>string</code>)  The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. __*Optional*__
   * **rm** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the container will be automatically removed when it exits. Defaults to `false`. __*Optional*__
+  * **runtime** (<code>string</code>)  Runtime to use for the container. __*Optional*__
   * **securityOpts** (<code>Array<string></code>)  List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. __*Optional*__
   * **shmSize** (<code>number</code>)  Size of `/dev/shm` in MBs. __*Optional*__
   * **start** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container will be started after creation. __*Optional*__
   * **stdinOpen** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. __*Optional*__
+  * **stopSignal** (<code>string</code>)  Signal to stop a container (default `SIGTERM`). __*Optional*__
+  * **stopTimeout** (<code>number</code>)  Timeout (in seconds) to stop a container. __*Optional*__
   * **storageOpts** (<code>Map<string, string></code>)  Key/value pairs for the storage driver options, e.g. `size`: `120G`. __*Optional*__
   * **sysctls** (<code>Map<string, string></code>)  A map of kernel parameters (sysctls) to set in the container. __*Optional*__
   * **tmpfs** (<code>Map<string, string></code>)  A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. __*Optional*__
@@ -399,10 +402,13 @@ Name | Type | Description
 **removeVolumes** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **restart** | <code>string</code> | <span></span>
 **rm** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**runtime** | <code>string</code> | <span></span>
 **securityOpts** | <code>Array<string></code> | <span></span>
 **shmSize** | <code>number</code> | <span></span>
 **start** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **stdinOpen** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**stopSignal** | <code>string</code> | <span></span>
+**stopTimeout** | <code>number</code> | <span></span>
 **storageOpts** | <code>Map<string, string></code> | <span></span>
 **sysctls** | <code>Map<string, string></code> | <span></span>
 **tmpfs** | <code>Map<string, string></code> | <span></span>
@@ -457,10 +463,13 @@ Name | Type | Description
 **removeVolumesInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **restartInput**? | <code>string</code> | __*Optional*__
 **rmInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**runtimeInput**? | <code>string</code> | __*Optional*__
 **securityOptsInput**? | <code>Array<string></code> | __*Optional*__
 **shmSizeInput**? | <code>number</code> | __*Optional*__
 **startInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **stdinOpenInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**stopSignalInput**? | <code>string</code> | __*Optional*__
+**stopTimeoutInput**? | <code>number</code> | __*Optional*__
 **storageOptsInput**? | <code>Map<string, string></code> | __*Optional*__
 **sysctlsInput**? | <code>Map<string, string></code> | __*Optional*__
 **tmpfsInput**? | <code>Map<string, string></code> | __*Optional*__
@@ -1130,6 +1139,18 @@ resetRm(): void
 
 
 
+#### resetRuntime() <a id="cdktf-provider-docker-container-resetruntime"></a>
+
+
+
+```ts
+resetRuntime(): void
+```
+
+
+
+
+
 #### resetSecurityOpts() <a id="cdktf-provider-docker-container-resetsecurityopts"></a>
 
 
@@ -1172,6 +1193,30 @@ resetStart(): void
 
 ```ts
 resetStdinOpen(): void
+```
+
+
+
+
+
+#### resetStopSignal() <a id="cdktf-provider-docker-container-resetstopsignal"></a>
+
+
+
+```ts
+resetStopSignal(): void
+```
+
+
+
+
+
+#### resetStopTimeout() <a id="cdktf-provider-docker-container-resetstoptimeout"></a>
+
+
+
+```ts
+resetStopTimeout(): void
 ```
 
 
@@ -9790,10 +9835,13 @@ Name | Type | Description
 **removeVolumes**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.<br/>__*Optional*__
 **restart**? | <code>string</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`.<br/>__*Optional*__
 **rm**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`.<br/>__*Optional*__
+**runtime**? | <code>string</code> | Runtime to use for the container.<br/>__*Optional*__
 **securityOpts**? | <code>Array<string></code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration.<br/>__*Optional*__
 **shmSize**? | <code>number</code> | Size of `/dev/shm` in MBs.<br/>__*Optional*__
 **start**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container will be started after creation.<br/>__*Optional*__
 **stdinOpen**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.<br/>__*Optional*__
+**stopSignal**? | <code>string</code> | Signal to stop a container (default `SIGTERM`).<br/>__*Optional*__
+**stopTimeout**? | <code>number</code> | Timeout (in seconds) to stop a container.<br/>__*Optional*__
 **storageOpts**? | <code>Map<string, string></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`.<br/>__*Optional*__
 **sysctls**? | <code>Map<string, string></code> | A map of kernel parameters (sysctls) to set in the container.<br/>__*Optional*__
 **tmpfs**? | <code>Map<string, string></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.<br/>__*Optional*__
