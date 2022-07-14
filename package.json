@@ -105,7 +105,7 @@
   "cdktf": {
     "provider": {
       "name": "registry.terraform.io/kreuzwerker/docker",
-      "version": "2.18.0"
+      "version": "2.18.1"
     }
   },
   "resolutions": {
