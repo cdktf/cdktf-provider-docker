@@ -50,7 +50,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
       terraformResourceType: 'docker_plugin',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.18.0',
+        providerVersion: '2.18.1',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
