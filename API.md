@@ -297,6 +297,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **domainname** (<code>string</code>)  Domain name of the container. __*Optional*__
   * **entrypoint** (<code>Array<string></code>)  The command to use as the Entrypoint for the container. __*Optional*__
   * **env** (<code>Array<string></code>)  Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`. __*Optional*__
+  * **gpus** (<code>string</code>)  GPU devices to add to the container. __*Optional*__
   * **groupAdd** (<code>Array<string></code>)  Additional groups for the container user. __*Optional*__
   * **healthcheck** (<code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code>)  healthcheck block. __*Optional*__
   * **host** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code>)  host block. __*Optional*__
@@ -368,6 +369,7 @@ Name | Type | Description
 **env** | <code>Array<string></code> | <span></span>
 **exitCode** | <code>number</code> | <span></span>
 **gateway** | <code>string</code> | <span></span>
+**gpus** | <code>string</code> | <span></span>
 **groupAdd** | <code>Array<string></code> | <span></span>
 **healthcheck** | <code>[ContainerHealthcheckOutputReference](#cdktf-provider-docker-containerhealthcheckoutputreference)</code> | <span></span>
 **host** | <code>[ContainerHostList](#cdktf-provider-docker-containerhostlist)</code> | <span></span>
@@ -432,6 +434,7 @@ Name | Type | Description
 **domainnameInput**? | <code>string</code> | __*Optional*__
 **entrypointInput**? | <code>Array<string></code> | __*Optional*__
 **envInput**? | <code>Array<string></code> | __*Optional*__
+**gpusInput**? | <code>string</code> | __*Optional*__
 **groupAddInput**? | <code>Array<string></code> | __*Optional*__
 **healthcheckInput**? | <code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code> | __*Optional*__
 **hostInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | __*Optional*__
@@ -785,6 +788,18 @@ resetEntrypoint(): void
 
 ```ts
 resetEnv(): void
+```
+
+
+
+
+
+#### resetGpus() <a id="cdktf-provider-docker-container-resetgpus"></a>
+
+
+
+```ts
+resetGpus(): void
 ```
 
 
@@ -3450,7 +3465,7 @@ new DockerProvider(scope: Construct, id: string, config?: DockerProviderConfig)
   * **certPath** (<code>string</code>)  Path to directory with Docker TLS config. __*Optional*__
   * **host** (<code>string</code>)  The Docker daemon address. __*Optional*__
   * **keyMaterial** (<code>string</code>)  PEM-encoded content of Docker client private key. __*Optional*__
-  * **registryAuth** (<code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code>)  registry_auth block. __*Optional*__
+  * **registryAuth** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)></code>)  registry_auth block. __*Optional*__
   * **sshOpts** (<code>Array<string></code>)  Additional SSH option flags to be appended when using `ssh://` protocol. __*Optional*__
 
 
@@ -3472,8 +3487,8 @@ Name | Type | Description
 **hostInput**? | <code>string</code> | __*Optional*__
 **keyMaterial**? | <code>string</code> | __*Optional*__
 **keyMaterialInput**? | <code>string</code> | __*Optional*__
-**registryAuth**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | __*Optional*__
-**registryAuthInput**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | __*Optional*__
+**registryAuth**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)></code> | __*Optional*__
+**registryAuthInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)></code> | __*Optional*__
 **sshOpts**? | <code>Array<string></code> | __*Optional*__
 **sshOptsInput**? | <code>Array<string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
@@ -9804,6 +9819,7 @@ Name | Type | Description
 **domainname**? | <code>string</code> | Domain name of the container.<br/>__*Optional*__
 **entrypoint**? | <code>Array<string></code> | The command to use as the Entrypoint for the container.<br/>__*Optional*__
 **env**? | <code>Array<string></code> | Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`.<br/>__*Optional*__
+**gpus**? | <code>string</code> | GPU devices to add to the container.<br/>__*Optional*__
 **groupAdd**? | <code>Array<string></code> | Additional groups for the container user.<br/>__*Optional*__
 **healthcheck**? | <code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code> | healthcheck block.<br/>__*Optional*__
 **host**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerHost](#cdktf-provider-docker-containerhost)></code> | host block.<br/>__*Optional*__
@@ -10172,7 +10188,7 @@ Name | Type | Description
 **certPath**? | <code>string</code> | Path to directory with Docker TLS config.<br/>__*Optional*__
 **host**? | <code>string</code> | The Docker daemon address.<br/>__*Optional*__
 **keyMaterial**? | <code>string</code> | PEM-encoded content of Docker client private key.<br/>__*Optional*__
-**registryAuth**? | <code>[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)</code> | registry_auth block.<br/>__*Optional*__
+**registryAuth**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[DockerProviderRegistryAuth](#cdktf-provider-docker-dockerproviderregistryauth)></code> | registry_auth block.<br/>__*Optional*__
 **sshOpts**? | <code>Array<string></code> | Additional SSH option flags to be appended when using `ssh://` protocol.<br/>__*Optional*__
 
 
@@ -10188,9 +10204,9 @@ Name | Type | Description
 -----|------|-------------
 **address** | <code>string</code> | Address of the registry.
 **configFile**? | <code>string</code> | Path to docker json file for registry auth.<br/>__*Optional*__
-**configFileContent**? | <code>string</code> | Plain content of the docker json file for registry auth.<br/>__*Optional*__
-**password**? | <code>string</code> | Password for the registry.<br/>__*Optional*__
-**username**? | <code>string</code> | Username for the registry.<br/>__*Optional*__
+**configFileContent**? | <code>string</code> | Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.<br/>__*Optional*__
+**password**? | <code>string</code> | Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.<br/>__*Optional*__
+**username**? | <code>string</code> | Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.<br/>__*Optional*__
 
 
 

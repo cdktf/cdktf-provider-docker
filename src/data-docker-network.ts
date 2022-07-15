@@ -121,7 +121,7 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
       terraformResourceType: 'docker_network',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

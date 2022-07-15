@@ -74,6 +74,12 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly env?: string[];
   /**
+  * GPU devices to add to the container. Currently, only the value `all` is supported. Passing any other value will result in unexpected behavior.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#gpus Container#gpus}
+  */
+  readonly gpus?: string;
+  /**
   * Additional groups for the container user
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#group_add Container#group_add}
@@ -2846,7 +2852,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -2865,6 +2871,7 @@ export class Container extends cdktf.TerraformResource {
     this._domainname = config.domainname;
     this._entrypoint = config.entrypoint;
     this._env = config.env;
+    this._gpus = config.gpus;
     this._groupAdd = config.groupAdd;
     this._hostname = config.hostname;
     this._id = config.id;
@@ -3115,6 +3122,22 @@ export class Container extends cdktf.TerraformResource {
   // gateway - computed: true, optional: false, required: false
   public get gateway() {
     return this.getStringAttribute('gateway');
+  }
+
+  // gpus - computed: false, optional: true, required: false
+  private _gpus?: string; 
+  public get gpus() {
+    return this.getStringAttribute('gpus');
+  }
+  public set gpus(value: string) {
+    this._gpus = value;
+  }
+  public resetGpus() {
+    this._gpus = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get gpusInput() {
+    return this._gpus;
   }
 
   // group_add - computed: false, optional: true, required: false
@@ -3944,6 +3967,7 @@ export class Container extends cdktf.TerraformResource {
       domainname: cdktf.stringToTerraform(this._domainname),
       entrypoint: cdktf.listMapper(cdktf.stringToTerraform)(this._entrypoint),
       env: cdktf.listMapper(cdktf.stringToTerraform)(this._env),
+      gpus: cdktf.stringToTerraform(this._gpus),
       group_add: cdktf.listMapper(cdktf.stringToTerraform)(this._groupAdd),
       hostname: cdktf.stringToTerraform(this._hostname),
       id: cdktf.stringToTerraform(this._id),

@@ -54,7 +54,7 @@ export interface DockerProviderConfig {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#registry_auth DockerProvider#registry_auth}
   */
-  readonly registryAuth?: DockerProviderRegistryAuth;
+  readonly registryAuth?: DockerProviderRegistryAuth[] | cdktf.IResolvable;
 }
 export interface DockerProviderRegistryAuth {
   /**
@@ -64,32 +64,32 @@ export interface DockerProviderRegistryAuth {
   */
   readonly address: string;
   /**
-  * Path to docker json file for registry auth
+  * Path to docker json file for registry auth. Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file DockerProvider#config_file}
   */
   readonly configFile?: string;
   /**
-  * Plain content of the docker json file for registry auth
+  * Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file_content DockerProvider#config_file_content}
   */
   readonly configFileContent?: string;
   /**
-  * Password for the registry
+  * Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#password DockerProvider#password}
   */
   readonly password?: string;
   /**
-  * Username for the registry
+  * Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#username DockerProvider#username}
   */
   readonly username?: string;
 }
 
-export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuth): any {
+export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderRegistryAuth | cdktf.IResolvable): any {
   if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -130,7 +130,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'docker',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.18.1',
+        providerVersion: '2.19.0',
         providerVersionConstraint: '~> 2.12'
       },
       terraformProviderSource: 'kreuzwerker/docker'
@@ -262,11 +262,11 @@ export class DockerProvider extends cdktf.TerraformProvider {
   }
 
   // registry_auth - computed: false, optional: true, required: false
-  private _registryAuth?: DockerProviderRegistryAuth; 
+  private _registryAuth?: DockerProviderRegistryAuth[] | cdktf.IResolvable; 
   public get registryAuth() {
     return this._registryAuth;
   }
-  public set registryAuth(value: DockerProviderRegistryAuth | undefined) {
+  public set registryAuth(value: DockerProviderRegistryAuth[] | cdktf.IResolvable | undefined) {
     this._registryAuth = value;
   }
   public resetRegistryAuth() {
@@ -290,7 +290,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       key_material: cdktf.stringToTerraform(this._keyMaterial),
       ssh_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._sshOpts),
       alias: cdktf.stringToTerraform(this._alias),
-      registry_auth: dockerProviderRegistryAuthToTerraform(this._registryAuth),
+      registry_auth: cdktf.listMapper(dockerProviderRegistryAuthToTerraform)(this._registryAuth),
     };
   }
 }
