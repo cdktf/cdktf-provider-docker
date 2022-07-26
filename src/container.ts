@@ -496,8 +496,8 @@ export function containerCapabilitiesToTerraform(struct?: ContainerCapabilitiesO
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    add: cdktf.listMapper(cdktf.stringToTerraform)(struct!.add),
-    drop: cdktf.listMapper(cdktf.stringToTerraform)(struct!.drop),
+    add: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.add),
+    drop: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.drop),
   }
 }
 
@@ -767,7 +767,7 @@ export function containerHealthcheckToTerraform(struct?: ContainerHealthcheckOut
     interval: cdktf.stringToTerraform(struct!.interval),
     retries: cdktf.numberToTerraform(struct!.retries),
     start_period: cdktf.stringToTerraform(struct!.startPeriod),
-    test: cdktf.listMapper(cdktf.stringToTerraform)(struct!.test),
+    test: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.test),
     timeout: cdktf.stringToTerraform(struct!.timeout),
   }
 }
@@ -1470,7 +1470,7 @@ export function containerMountsVolumeOptionsToTerraform(struct?: ContainerMounts
     driver_name: cdktf.stringToTerraform(struct!.driverName),
     driver_options: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.driverOptions),
     no_copy: cdktf.booleanToTerraform(struct!.noCopy),
-    labels: cdktf.listMapper(containerMountsVolumeOptionsLabelsToTerraform)(struct!.labels),
+    labels: cdktf.listMapper(containerMountsVolumeOptionsLabelsToTerraform, true)(struct!.labels),
   }
 }
 
@@ -1888,7 +1888,7 @@ export function containerNetworksAdvancedToTerraform(struct?: ContainerNetworksA
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    aliases: cdktf.listMapper(cdktf.stringToTerraform)(struct!.aliases),
+    aliases: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.aliases),
     ipv4_address: cdktf.stringToTerraform(struct!.ipv4Address),
     ipv6_address: cdktf.stringToTerraform(struct!.ipv6Address),
     name: cdktf.stringToTerraform(struct!.name),
@@ -2858,7 +2858,10 @@ export class Container extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._attach = config.attach;
     this._command = config.command;
@@ -3957,24 +3960,24 @@ export class Container extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       attach: cdktf.booleanToTerraform(this._attach),
-      command: cdktf.listMapper(cdktf.stringToTerraform)(this._command),
+      command: cdktf.listMapper(cdktf.stringToTerraform, false)(this._command),
       cpu_set: cdktf.stringToTerraform(this._cpuSet),
       cpu_shares: cdktf.numberToTerraform(this._cpuShares),
       destroy_grace_seconds: cdktf.numberToTerraform(this._destroyGraceSeconds),
-      dns: cdktf.listMapper(cdktf.stringToTerraform)(this._dns),
-      dns_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._dnsOpts),
-      dns_search: cdktf.listMapper(cdktf.stringToTerraform)(this._dnsSearch),
+      dns: cdktf.listMapper(cdktf.stringToTerraform, false)(this._dns),
+      dns_opts: cdktf.listMapper(cdktf.stringToTerraform, false)(this._dnsOpts),
+      dns_search: cdktf.listMapper(cdktf.stringToTerraform, false)(this._dnsSearch),
       domainname: cdktf.stringToTerraform(this._domainname),
-      entrypoint: cdktf.listMapper(cdktf.stringToTerraform)(this._entrypoint),
-      env: cdktf.listMapper(cdktf.stringToTerraform)(this._env),
+      entrypoint: cdktf.listMapper(cdktf.stringToTerraform, false)(this._entrypoint),
+      env: cdktf.listMapper(cdktf.stringToTerraform, false)(this._env),
       gpus: cdktf.stringToTerraform(this._gpus),
-      group_add: cdktf.listMapper(cdktf.stringToTerraform)(this._groupAdd),
+      group_add: cdktf.listMapper(cdktf.stringToTerraform, false)(this._groupAdd),
       hostname: cdktf.stringToTerraform(this._hostname),
       id: cdktf.stringToTerraform(this._id),
       image: cdktf.stringToTerraform(this._image),
       init: cdktf.booleanToTerraform(this._init),
       ipc_mode: cdktf.stringToTerraform(this._ipcMode),
-      links: cdktf.listMapper(cdktf.stringToTerraform)(this._links),
+      links: cdktf.listMapper(cdktf.stringToTerraform, false)(this._links),
       log_driver: cdktf.stringToTerraform(this._logDriver),
       log_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._logOpts),
       logs: cdktf.booleanToTerraform(this._logs),
@@ -3983,9 +3986,9 @@ export class Container extends cdktf.TerraformResource {
       memory_swap: cdktf.numberToTerraform(this._memorySwap),
       must_run: cdktf.booleanToTerraform(this._mustRun),
       name: cdktf.stringToTerraform(this._name),
-      network_alias: cdktf.listMapper(cdktf.stringToTerraform)(this._networkAlias),
+      network_alias: cdktf.listMapper(cdktf.stringToTerraform, false)(this._networkAlias),
       network_mode: cdktf.stringToTerraform(this._networkMode),
-      networks: cdktf.listMapper(cdktf.stringToTerraform)(this._networks),
+      networks: cdktf.listMapper(cdktf.stringToTerraform, false)(this._networks),
       pid_mode: cdktf.stringToTerraform(this._pidMode),
       privileged: cdktf.booleanToTerraform(this._privileged),
       publish_all_ports: cdktf.booleanToTerraform(this._publishAllPorts),
@@ -3994,7 +3997,7 @@ export class Container extends cdktf.TerraformResource {
       restart: cdktf.stringToTerraform(this._restart),
       rm: cdktf.booleanToTerraform(this._rm),
       runtime: cdktf.stringToTerraform(this._runtime),
-      security_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._securityOpts),
+      security_opts: cdktf.listMapper(cdktf.stringToTerraform, false)(this._securityOpts),
       shm_size: cdktf.numberToTerraform(this._shmSize),
       start: cdktf.booleanToTerraform(this._start),
       stdin_open: cdktf.booleanToTerraform(this._stdinOpen),
@@ -4008,16 +4011,16 @@ export class Container extends cdktf.TerraformResource {
       userns_mode: cdktf.stringToTerraform(this._usernsMode),
       working_dir: cdktf.stringToTerraform(this._workingDir),
       capabilities: containerCapabilitiesToTerraform(this._capabilities.internalValue),
-      devices: cdktf.listMapper(containerDevicesToTerraform)(this._devices.internalValue),
+      devices: cdktf.listMapper(containerDevicesToTerraform, true)(this._devices.internalValue),
       healthcheck: containerHealthcheckToTerraform(this._healthcheck.internalValue),
-      host: cdktf.listMapper(containerHostToTerraform)(this._host.internalValue),
-      labels: cdktf.listMapper(containerLabelsToTerraform)(this._labels.internalValue),
-      mounts: cdktf.listMapper(containerMountsToTerraform)(this._mounts.internalValue),
-      networks_advanced: cdktf.listMapper(containerNetworksAdvancedToTerraform)(this._networksAdvanced.internalValue),
-      ports: cdktf.listMapper(containerPortsToTerraform)(this._ports.internalValue),
-      ulimit: cdktf.listMapper(containerUlimitToTerraform)(this._ulimit.internalValue),
-      upload: cdktf.listMapper(containerUploadToTerraform)(this._upload.internalValue),
-      volumes: cdktf.listMapper(containerVolumesToTerraform)(this._volumes.internalValue),
+      host: cdktf.listMapper(containerHostToTerraform, true)(this._host.internalValue),
+      labels: cdktf.listMapper(containerLabelsToTerraform, true)(this._labels.internalValue),
+      mounts: cdktf.listMapper(containerMountsToTerraform, true)(this._mounts.internalValue),
+      networks_advanced: cdktf.listMapper(containerNetworksAdvancedToTerraform, true)(this._networksAdvanced.internalValue),
+      ports: cdktf.listMapper(containerPortsToTerraform, true)(this._ports.internalValue),
+      ulimit: cdktf.listMapper(containerUlimitToTerraform, true)(this._ulimit.internalValue),
+      upload: cdktf.listMapper(containerUploadToTerraform, true)(this._upload.internalValue),
+      volumes: cdktf.listMapper(containerVolumesToTerraform, true)(this._volumes.internalValue),
     };
   }
 }

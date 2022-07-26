@@ -188,7 +188,10 @@ export class Secret extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._data = config.data;
     this._id = config.id;
@@ -267,7 +270,7 @@ export class Secret extends cdktf.TerraformResource {
       data: cdktf.stringToTerraform(this._data),
       id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
-      labels: cdktf.listMapper(secretLabelsToTerraform)(this._labels.internalValue),
+      labels: cdktf.listMapper(secretLabelsToTerraform, true)(this._labels.internalValue),
     };
   }
 }

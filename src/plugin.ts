@@ -91,7 +91,7 @@ export function pluginGrantPermissionsToTerraform(struct?: PluginGrantPermission
   }
   return {
     name: cdktf.stringToTerraform(struct!.name),
-    value: cdktf.listMapper(cdktf.stringToTerraform)(struct!.value),
+    value: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.value),
   }
 }
 
@@ -224,7 +224,10 @@ export class Plugin extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._alias = config.alias;
     this._enableTimeout = config.enableTimeout;
@@ -413,13 +416,13 @@ export class Plugin extends cdktf.TerraformResource {
       alias: cdktf.stringToTerraform(this._alias),
       enable_timeout: cdktf.numberToTerraform(this._enableTimeout),
       enabled: cdktf.booleanToTerraform(this._enabled),
-      env: cdktf.listMapper(cdktf.stringToTerraform)(this._env),
+      env: cdktf.listMapper(cdktf.stringToTerraform, false)(this._env),
       force_destroy: cdktf.booleanToTerraform(this._forceDestroy),
       force_disable: cdktf.booleanToTerraform(this._forceDisable),
       grant_all_permissions: cdktf.booleanToTerraform(this._grantAllPermissions),
       id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
-      grant_permissions: cdktf.listMapper(pluginGrantPermissionsToTerraform)(this._grantPermissions.internalValue),
+      grant_permissions: cdktf.listMapper(pluginGrantPermissionsToTerraform, true)(this._grantPermissions.internalValue),
     };
   }
 }

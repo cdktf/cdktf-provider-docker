@@ -521,7 +521,7 @@ export function serviceEndpointSpecToTerraform(struct?: ServiceEndpointSpecOutpu
   }
   return {
     mode: cdktf.stringToTerraform(struct!.mode),
-    ports: cdktf.listMapper(serviceEndpointSpecPortsToTerraform)(struct!.ports),
+    ports: cdktf.listMapper(serviceEndpointSpecPortsToTerraform, true)(struct!.ports),
   }
 }
 
@@ -1357,9 +1357,9 @@ export function serviceTaskSpecContainerSpecDnsConfigToTerraform(struct?: Servic
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    nameservers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.nameservers),
-    options: cdktf.listMapper(cdktf.stringToTerraform)(struct!.options),
-    search: cdktf.listMapper(cdktf.stringToTerraform)(struct!.search),
+    nameservers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nameservers),
+    options: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.options),
+    search: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.search),
   }
 }
 
@@ -1494,7 +1494,7 @@ export function serviceTaskSpecContainerSpecHealthcheckToTerraform(struct?: Serv
     interval: cdktf.stringToTerraform(struct!.interval),
     retries: cdktf.numberToTerraform(struct!.retries),
     start_period: cdktf.stringToTerraform(struct!.startPeriod),
-    test: cdktf.listMapper(cdktf.stringToTerraform)(struct!.test),
+    test: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.test),
     timeout: cdktf.stringToTerraform(struct!.timeout),
   }
 }
@@ -2197,7 +2197,7 @@ export function serviceTaskSpecContainerSpecMountsVolumeOptionsToTerraform(struc
     driver_name: cdktf.stringToTerraform(struct!.driverName),
     driver_options: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.driverOptions),
     no_copy: cdktf.booleanToTerraform(struct!.noCopy),
-    labels: cdktf.listMapper(serviceTaskSpecContainerSpecMountsVolumeOptionsLabelsToTerraform)(struct!.labels),
+    labels: cdktf.listMapper(serviceTaskSpecContainerSpecMountsVolumeOptionsLabelsToTerraform, true)(struct!.labels),
   }
 }
 
@@ -3324,11 +3324,11 @@ export function serviceTaskSpecContainerSpecToTerraform(struct?: ServiceTaskSpec
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    args: cdktf.listMapper(cdktf.stringToTerraform)(struct!.args),
-    command: cdktf.listMapper(cdktf.stringToTerraform)(struct!.command),
+    args: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.args),
+    command: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.command),
     dir: cdktf.stringToTerraform(struct!.dir),
     env: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.env),
-    groups: cdktf.listMapper(cdktf.stringToTerraform)(struct!.groups),
+    groups: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.groups),
     hostname: cdktf.stringToTerraform(struct!.hostname),
     image: cdktf.stringToTerraform(struct!.image),
     isolation: cdktf.stringToTerraform(struct!.isolation),
@@ -3336,14 +3336,14 @@ export function serviceTaskSpecContainerSpecToTerraform(struct?: ServiceTaskSpec
     stop_grace_period: cdktf.stringToTerraform(struct!.stopGracePeriod),
     stop_signal: cdktf.stringToTerraform(struct!.stopSignal),
     user: cdktf.stringToTerraform(struct!.user),
-    configs: cdktf.listMapper(serviceTaskSpecContainerSpecConfigsToTerraform)(struct!.configs),
+    configs: cdktf.listMapper(serviceTaskSpecContainerSpecConfigsToTerraform, true)(struct!.configs),
     dns_config: serviceTaskSpecContainerSpecDnsConfigToTerraform(struct!.dnsConfig),
     healthcheck: serviceTaskSpecContainerSpecHealthcheckToTerraform(struct!.healthcheck),
-    hosts: cdktf.listMapper(serviceTaskSpecContainerSpecHostsToTerraform)(struct!.hosts),
-    labels: cdktf.listMapper(serviceTaskSpecContainerSpecLabelsToTerraform)(struct!.labels),
-    mounts: cdktf.listMapper(serviceTaskSpecContainerSpecMountsToTerraform)(struct!.mounts),
+    hosts: cdktf.listMapper(serviceTaskSpecContainerSpecHostsToTerraform, true)(struct!.hosts),
+    labels: cdktf.listMapper(serviceTaskSpecContainerSpecLabelsToTerraform, true)(struct!.labels),
+    mounts: cdktf.listMapper(serviceTaskSpecContainerSpecMountsToTerraform, true)(struct!.mounts),
     privileges: serviceTaskSpecContainerSpecPrivilegesToTerraform(struct!.privileges),
-    secrets: cdktf.listMapper(serviceTaskSpecContainerSpecSecretsToTerraform)(struct!.secrets),
+    secrets: cdktf.listMapper(serviceTaskSpecContainerSpecSecretsToTerraform, true)(struct!.secrets),
   }
 }
 
@@ -4058,10 +4058,10 @@ export function serviceTaskSpecPlacementToTerraform(struct?: ServiceTaskSpecPlac
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    constraints: cdktf.listMapper(cdktf.stringToTerraform)(struct!.constraints),
+    constraints: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.constraints),
     max_replicas: cdktf.numberToTerraform(struct!.maxReplicas),
-    prefs: cdktf.listMapper(cdktf.stringToTerraform)(struct!.prefs),
-    platforms: cdktf.listMapper(serviceTaskSpecPlacementPlatformsToTerraform)(struct!.platforms),
+    prefs: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.prefs),
+    platforms: cdktf.listMapper(serviceTaskSpecPlacementPlatformsToTerraform, true)(struct!.platforms),
   }
 }
 
@@ -4296,8 +4296,8 @@ export function serviceTaskSpecResourcesReservationGenericResourcesToTerraform(s
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
   }
   return {
-    discrete_resources_spec: cdktf.listMapper(cdktf.stringToTerraform)(struct!.discreteResourcesSpec),
-    named_resources_spec: cdktf.listMapper(cdktf.stringToTerraform)(struct!.namedResourcesSpec),
+    discrete_resources_spec: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.discreteResourcesSpec),
+    named_resources_spec: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.namedResourcesSpec),
   }
 }
 
@@ -4804,7 +4804,7 @@ export function serviceTaskSpecToTerraform(struct?: ServiceTaskSpecOutputReferen
   }
   return {
     force_update: cdktf.numberToTerraform(struct!.forceUpdate),
-    networks: cdktf.listMapper(cdktf.stringToTerraform)(struct!.networks),
+    networks: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.networks),
     runtime: cdktf.stringToTerraform(struct!.runtime),
     container_spec: serviceTaskSpecContainerSpecToTerraform(struct!.containerSpec),
     log_driver: serviceTaskSpecLogDriverToTerraform(struct!.logDriver),
@@ -5258,7 +5258,10 @@ export class Service extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._name = config.name;
@@ -5441,7 +5444,7 @@ export class Service extends cdktf.TerraformResource {
       auth: serviceAuthToTerraform(this._auth.internalValue),
       converge_config: serviceConvergeConfigToTerraform(this._convergeConfig.internalValue),
       endpoint_spec: serviceEndpointSpecToTerraform(this._endpointSpec.internalValue),
-      labels: cdktf.listMapper(serviceLabelsToTerraform)(this._labels.internalValue),
+      labels: cdktf.listMapper(serviceLabelsToTerraform, true)(this._labels.internalValue),
       mode: serviceModeToTerraform(this._mode.internalValue),
       rollback_config: serviceRollbackConfigToTerraform(this._rollbackConfig.internalValue),
       task_spec: serviceTaskSpecToTerraform(this._taskSpec.internalValue),

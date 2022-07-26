@@ -121,7 +121,7 @@ export function imageBuildToTerraform(struct?: ImageBuildOutputReference | Image
     no_cache: cdktf.booleanToTerraform(struct!.noCache),
     path: cdktf.stringToTerraform(struct!.path),
     remove: cdktf.booleanToTerraform(struct!.remove),
-    tag: cdktf.listMapper(cdktf.stringToTerraform)(struct!.tag),
+    tag: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.tag),
     target: cdktf.stringToTerraform(struct!.target),
   }
 }
@@ -380,7 +380,10 @@ export class Image extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._forceRemove = config.forceRemove;
     this._id = config.id;
@@ -530,7 +533,7 @@ export class Image extends cdktf.TerraformResource {
       keep_locally: cdktf.booleanToTerraform(this._keepLocally),
       name: cdktf.stringToTerraform(this._name),
       pull_trigger: cdktf.stringToTerraform(this._pullTrigger),
-      pull_triggers: cdktf.listMapper(cdktf.stringToTerraform)(this._pullTriggers),
+      pull_triggers: cdktf.listMapper(cdktf.stringToTerraform, false)(this._pullTriggers),
       build: imageBuildToTerraform(this._build.internalValue),
     };
   }

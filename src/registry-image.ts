@@ -689,7 +689,7 @@ export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputR
   return {
     build_args: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.buildArgs),
     build_id: cdktf.stringToTerraform(struct!.buildId),
-    cache_from: cdktf.listMapper(cdktf.stringToTerraform)(struct!.cacheFrom),
+    cache_from: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.cacheFrom),
     cgroup_parent: cdktf.stringToTerraform(struct!.cgroupParent),
     context: cdktf.stringToTerraform(struct!.context),
     cpu_period: cdktf.numberToTerraform(struct!.cpuPeriod),
@@ -698,7 +698,7 @@ export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputR
     cpu_set_mems: cdktf.stringToTerraform(struct!.cpuSetMems),
     cpu_shares: cdktf.numberToTerraform(struct!.cpuShares),
     dockerfile: cdktf.stringToTerraform(struct!.dockerfile),
-    extra_hosts: cdktf.listMapper(cdktf.stringToTerraform)(struct!.extraHosts),
+    extra_hosts: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.extraHosts),
     force_remove: cdktf.booleanToTerraform(struct!.forceRemove),
     isolation: cdktf.stringToTerraform(struct!.isolation),
     labels: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.labels),
@@ -710,15 +710,15 @@ export function registryImageBuildToTerraform(struct?: RegistryImageBuildOutputR
     pull_parent: cdktf.booleanToTerraform(struct!.pullParent),
     remote_context: cdktf.stringToTerraform(struct!.remoteContext),
     remove: cdktf.booleanToTerraform(struct!.remove),
-    security_opt: cdktf.listMapper(cdktf.stringToTerraform)(struct!.securityOpt),
+    security_opt: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.securityOpt),
     session_id: cdktf.stringToTerraform(struct!.sessionId),
     shm_size: cdktf.numberToTerraform(struct!.shmSize),
     squash: cdktf.booleanToTerraform(struct!.squash),
     suppress_output: cdktf.booleanToTerraform(struct!.suppressOutput),
     target: cdktf.stringToTerraform(struct!.target),
     version: cdktf.stringToTerraform(struct!.version),
-    auth_config: cdktf.listMapper(registryImageBuildAuthConfigToTerraform)(struct!.authConfig),
-    ulimit: cdktf.listMapper(registryImageBuildUlimitToTerraform)(struct!.ulimit),
+    auth_config: cdktf.listMapper(registryImageBuildAuthConfigToTerraform, true)(struct!.authConfig),
+    ulimit: cdktf.listMapper(registryImageBuildUlimitToTerraform, true)(struct!.ulimit),
   }
 }
 
@@ -1482,7 +1482,10 @@ export class RegistryImage extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._id = config.id;
     this._insecureSkipVerify = config.insecureSkipVerify;

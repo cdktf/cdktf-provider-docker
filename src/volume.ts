@@ -194,7 +194,10 @@ export class Volume extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._driver = config.driver;
     this._driverOpts = config.driverOpts;
@@ -302,7 +305,7 @@ export class Volume extends cdktf.TerraformResource {
       driver_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._driverOpts),
       id: cdktf.stringToTerraform(this._id),
       name: cdktf.stringToTerraform(this._name),
-      labels: cdktf.listMapper(volumeLabelsToTerraform)(this._labels.internalValue),
+      labels: cdktf.listMapper(volumeLabelsToTerraform, true)(this._labels.internalValue),
     };
   }
 }

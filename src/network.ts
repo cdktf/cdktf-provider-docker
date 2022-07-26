@@ -422,7 +422,10 @@ export class Network extends cdktf.TerraformResource {
       provider: config.provider,
       dependsOn: config.dependsOn,
       count: config.count,
-      lifecycle: config.lifecycle
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
     });
     this._attachable = config.attachable;
     this._checkDuplicate = config.checkDuplicate;
@@ -652,8 +655,8 @@ export class Network extends cdktf.TerraformResource {
       ipv6: cdktf.booleanToTerraform(this._ipv6),
       name: cdktf.stringToTerraform(this._name),
       options: cdktf.hashMapper(cdktf.stringToTerraform)(this._options),
-      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform)(this._ipamConfig.internalValue),
-      labels: cdktf.listMapper(networkLabelsToTerraform)(this._labels.internalValue),
+      ipam_config: cdktf.listMapper(networkIpamConfigToTerraform, true)(this._ipamConfig.internalValue),
+      labels: cdktf.listMapper(networkLabelsToTerraform, true)(this._labels.internalValue),
     };
   }
 }
