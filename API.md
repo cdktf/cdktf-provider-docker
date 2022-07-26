@@ -207,10 +207,13 @@ new Config(scope: Construct, id: string, config: ConfigConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ConfigConfig](#cdktf-provider-docker-configconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **data** (<code>string</code>)  Base64-url-safe-encoded config data. 
   * **name** (<code>string</code>)  User-defined name of the config. 
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config#id Config#id}. __*Optional*__
@@ -278,10 +281,13 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ContainerConfig](#cdktf-provider-docker-containerconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **image** (<code>string</code>)  The ID of the image to back this container. 
   * **name** (<code>string</code>)  The name of the container. 
   * **attach** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. __*Optional*__
@@ -3077,10 +3083,13 @@ new DataDockerImage(scope: Construct, id: string, config: DataDockerImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerImageConfig](#cdktf-provider-docker-datadockerimageconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker image, including any tags or SHA256 repo digests. 
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/image#id DataDockerImage#id}. __*Optional*__
 
@@ -3146,10 +3155,13 @@ new DataDockerNetwork(scope: Construct, id: string, config: DataDockerNetworkCon
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerNetworkConfig](#cdktf-provider-docker-datadockernetworkconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker network. 
 
 
@@ -3290,10 +3302,13 @@ new DataDockerPlugin(scope: Construct, id: string, config?: DataDockerPluginConf
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerPluginConfig](#cdktf-provider-docker-datadockerpluginconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **alias** (<code>string</code>)  The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value. __*Optional*__
   * **id** (<code>string</code>)  The ID of the plugin, which has precedence over the `alias` of both are given. __*Optional*__
 
@@ -3375,10 +3390,13 @@ new DataDockerRegistryImage(scope: Construct, id: string, config: DataDockerRegi
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[DataDockerRegistryImageConfig](#cdktf-provider-docker-datadockerregistryimageconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker image, including any tags. e.g. `alpine:latest`. 
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image#id DataDockerRegistryImage#id}. __*Optional*__
   * **insecureSkipVerify** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. __*Optional*__
@@ -3625,10 +3643,13 @@ new Image(scope: Construct, id: string, config: ImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ImageConfig](#cdktf-provider-docker-imageconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker image, including any tags or SHA256 repo digests. 
   * **buildAttribute** (<code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code>)  build block. __*Optional*__
   * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the image is removed forcibly when the resource is destroyed. __*Optional*__
@@ -3940,10 +3961,13 @@ new Network(scope: Construct, id: string, config: NetworkConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[NetworkConfig](#cdktf-provider-docker-networkconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker network. 
   * **attachable** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Enable manual container attachment to the network. __*Optional*__
   * **checkDuplicate** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Requests daemon to check for networks with same name. __*Optional*__
@@ -4412,10 +4436,13 @@ new Plugin(scope: Construct, id: string, config: PluginConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[PluginConfig](#cdktf-provider-docker-pluginconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  Docker Plugin name. 
   * **alias** (<code>string</code>)  Docker Plugin alias. __*Optional*__
   * **enabled** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true` the plugin is enabled. Defaults to `true`. __*Optional*__
@@ -4700,10 +4727,13 @@ new RegistryImage(scope: Construct, id: string, config: RegistryImageConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[RegistryImageConfig](#cdktf-provider-docker-registryimageconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker image. 
   * **buildAttribute** (<code>[RegistryImageBuild](#cdktf-provider-docker-registryimagebuild)</code>)  build block. __*Optional*__
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#id RegistryImage#id}. __*Optional*__
@@ -5627,10 +5657,13 @@ new Secret(scope: Construct, id: string, config: SecretConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[SecretConfig](#cdktf-provider-docker-secretconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **data** (<code>string</code>)  Base64-url-safe-encoded secret data. 
   * **name** (<code>string</code>)  User-defined name of the secret. 
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#id Secret#id}. __*Optional*__
@@ -5812,10 +5845,13 @@ new Service(scope: Construct, id: string, config: ServiceConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[ServiceConfig](#cdktf-provider-docker-serviceconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  Name of the service. 
   * **taskSpec** (<code>[ServiceTaskSpec](#cdktf-provider-docker-servicetaskspec)</code>)  task_spec block. 
   * **auth** (<code>[ServiceAuth](#cdktf-provider-docker-serviceauth)</code>)  auth block. __*Optional*__
@@ -9554,10 +9590,13 @@ new Volume(scope: Construct, id: string, config?: VolumeConfig)
 * **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
 * **id** (<code>string</code>)  The scoped construct ID.
 * **config** (<code>[VolumeConfig](#cdktf-provider-docker-volumeconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
   * **count** (<code>number</code>)  *No description* __*Optional*__
   * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
   * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **driver** (<code>string</code>)  Driver type for the volume. Defaults to `local`. __*Optional*__
   * **driverOpts** (<code>Map<string, string></code>)  Options specific to the driver. __*Optional*__
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#id Volume#id}. __*Optional*__
@@ -9771,11 +9810,14 @@ Name | Type | Description
 -----|------|-------------
 **data** | <code>string</code> | Base64-url-safe-encoded config data.
 **name** | <code>string</code> | User-defined name of the config.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/config#id Config#id}.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -9807,6 +9849,7 @@ Name | Type | Description
 **attach**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.<br/>__*Optional*__
 **capabilities**? | <code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code> | capabilities block.<br/>__*Optional*__
 **command**? | <code>Array<string></code> | The command to use to start the container.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **cpuSet**? | <code>string</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.<br/>__*Optional*__
 **cpuShares**? | <code>number</code> | CPU shares (relative weight) for the container.<br/>__*Optional*__
@@ -9819,6 +9862,7 @@ Name | Type | Description
 **domainname**? | <code>string</code> | Domain name of the container.<br/>__*Optional*__
 **entrypoint**? | <code>Array<string></code> | The command to use as the Entrypoint for the container.<br/>__*Optional*__
 **env**? | <code>Array<string></code> | Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **gpus**? | <code>string</code> | GPU devices to add to the container.<br/>__*Optional*__
 **groupAdd**? | <code>Array<string></code> | Additional groups for the container user.<br/>__*Optional*__
 **healthcheck**? | <code>[ContainerHealthcheck](#cdktf-provider-docker-containerhealthcheck)</code> | healthcheck block.<br/>__*Optional*__
@@ -9846,6 +9890,7 @@ Name | Type | Description
 **ports**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ContainerPorts](#cdktf-provider-docker-containerports)></code> | ports block.<br/>__*Optional*__
 **privileged**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the container runs in privileged mode.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 **publishAllPorts**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Publish all ports of the container.<br/>__*Optional*__
 **readOnly**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the container will be started as readonly. Defaults to `false`.<br/>__*Optional*__
 **removeVolumes**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.<br/>__*Optional*__
@@ -10105,11 +10150,14 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags or SHA256 repo digests.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/image#id DataDockerImage#id}.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10123,10 +10171,13 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker network.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10146,11 +10197,14 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **alias**? | <code>string</code> | The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | The ID of the plugin, which has precedence over the `alias` of both are given.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10164,12 +10218,15 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/registry_image#id DataDockerRegistryImage#id}.<br/>__*Optional*__
 **insecureSkipVerify**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10242,13 +10299,16 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image, including any tags or SHA256 repo digests.
 **buildAttribute**? | <code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code> | build block.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the image is removed forcibly when the resource is destroyed.<br/>__*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#id Image#id}.<br/>__*Optional*__
 **keepLocally**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the Docker image won't be deleted on destroy operation.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 **pullTrigger**? | <code>string</code> | A value which cause an image pull when changed.<br/>__*Optional*__
 **pullTriggers**? | <code>Array<string></code> | List of values which cause an image pull when changed.<br/>__*Optional*__
 
@@ -10266,9 +10326,11 @@ Name | Type | Description
 **name** | <code>string</code> | The name of the Docker network.
 **attachable**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable manual container attachment to the network.<br/>__*Optional*__
 **checkDuplicate**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Requests daemon to check for networks with same name.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **driver**? | <code>string</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#id Network#id}.<br/>__*Optional*__
 **ingress**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Create swarm routing-mesh network. Defaults to `false`.<br/>__*Optional*__
 **internal**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the network is internal.<br/>__*Optional*__
@@ -10279,6 +10341,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **options**? | <code>Map<string, string></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10323,11 +10386,13 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | Docker Plugin name.
 **alias**? | <code>string</code> | Docker Plugin alias.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **enableTimeout**? | <code>number</code> | HTTP client timeout to enable the plugin.<br/>__*Optional*__
 **enabled**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true` the plugin is enabled. Defaults to `true`.<br/>__*Optional*__
 **env**? | <code>Array<string></code> | The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **forceDestroy**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the plugin is destroyed forcibly.<br/>__*Optional*__
 **forceDisable**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the plugin is disabled forcibly.<br/>__*Optional*__
 **grantAllPermissions**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, grant all permissions necessary to run the plugin.<br/>__*Optional*__
@@ -10335,6 +10400,7 @@ Name | Type | Description
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#id Plugin#id}.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10442,13 +10508,16 @@ Name | Type | Description
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image.
 **buildAttribute**? | <code>[RegistryImageBuild](#cdktf-provider-docker-registryimagebuild)</code> | build block.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#id RegistryImage#id}.<br/>__*Optional*__
 **insecureSkipVerify**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.<br/>__*Optional*__
 **keepRemotely**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the Docker image won't be deleted on destroy operation.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10463,12 +10532,15 @@ Name | Type | Description
 -----|------|-------------
 **data** | <code>string</code> | Base64-url-safe-encoded secret data.
 **name** | <code>string</code> | User-defined name of the secret.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#id Secret#id}.<br/>__*Optional*__
 **labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[SecretLabels](#cdktf-provider-docker-secretlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 
@@ -10513,15 +10585,18 @@ Name | Type | Description
 **name** | <code>string</code> | Name of the service.
 **taskSpec** | <code>[ServiceTaskSpec](#cdktf-provider-docker-servicetaskspec)</code> | task_spec block.
 **auth**? | <code>[ServiceAuth](#cdktf-provider-docker-serviceauth)</code> | auth block.<br/>__*Optional*__
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **convergeConfig**? | <code>[ServiceConvergeConfig](#cdktf-provider-docker-serviceconvergeconfig)</code> | converge_config block.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **endpointSpec**? | <code>[ServiceEndpointSpec](#cdktf-provider-docker-serviceendpointspec)</code> | endpoint_spec block.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#id Service#id}.<br/>__*Optional*__
 **labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[ServiceLabels](#cdktf-provider-docker-servicelabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **mode**? | <code>[ServiceMode](#cdktf-provider-docker-servicemode)</code> | mode block.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 **rollbackConfig**? | <code>[ServiceRollbackConfig](#cdktf-provider-docker-servicerollbackconfig)</code> | rollback_config block.<br/>__*Optional*__
 **updateConfig**? | <code>[ServiceUpdateConfig](#cdktf-provider-docker-serviceupdateconfig)</code> | update_config block.<br/>__*Optional*__
 
@@ -11044,15 +11119,18 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **driver**? | <code>string</code> | Driver type for the volume. Defaults to `local`.<br/>__*Optional*__
 **driverOpts**? | <code>Map<string, string></code> | Options specific to the driver.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/volume#id Volume#id}.<br/>__*Optional*__
 **labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[VolumeLabels](#cdktf-provider-docker-volumelabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **name**? | <code>string</code> | The name of the Docker volume (will be generated if not provided).<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 

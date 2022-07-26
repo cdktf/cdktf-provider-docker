@@ -288,9 +288,9 @@ export class DockerProvider extends cdktf.TerraformProvider {
       cert_path: cdktf.stringToTerraform(this._certPath),
       host: cdktf.stringToTerraform(this._host),
       key_material: cdktf.stringToTerraform(this._keyMaterial),
-      ssh_opts: cdktf.listMapper(cdktf.stringToTerraform)(this._sshOpts),
+      ssh_opts: cdktf.listMapper(cdktf.stringToTerraform, false)(this._sshOpts),
       alias: cdktf.stringToTerraform(this._alias),
-      registry_auth: cdktf.listMapper(dockerProviderRegistryAuthToTerraform)(this._registryAuth),
+      registry_auth: cdktf.listMapper(dockerProviderRegistryAuthToTerraform, true)(this._registryAuth),
     };
   }
 }
