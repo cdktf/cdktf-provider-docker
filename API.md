@@ -102,6 +102,7 @@ Name|Description
 [ServiceTaskSpecResourcesReservationOutputReference](#cdktf-provider-docker-servicetaskspecresourcesreservationoutputreference)|*No description*
 [ServiceTaskSpecRestartPolicyOutputReference](#cdktf-provider-docker-servicetaskspecrestartpolicyoutputreference)|*No description*
 [ServiceUpdateConfigOutputReference](#cdktf-provider-docker-serviceupdateconfigoutputreference)|*No description*
+[Tag](#cdktf-provider-docker-tag)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/tag docker_tag}.
 [Volume](#cdktf-provider-docker-volume)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}.
 [VolumeLabelsList](#cdktf-provider-docker-volumelabelslist)|*No description*
 [VolumeLabelsOutputReference](#cdktf-provider-docker-volumelabelsoutputreference)|*No description*
@@ -183,6 +184,7 @@ Name|Description
 [ServiceTaskSpecResourcesReservationGenericResources](#cdktf-provider-docker-servicetaskspecresourcesreservationgenericresources)|*No description*
 [ServiceTaskSpecRestartPolicy](#cdktf-provider-docker-servicetaskspecrestartpolicy)|*No description*
 [ServiceUpdateConfig](#cdktf-provider-docker-serviceupdateconfig)|*No description*
+[TagConfig](#cdktf-provider-docker-tagconfig)|*No description*
 [VolumeConfig](#cdktf-provider-docker-volumeconfig)|*No description*
 [VolumeLabels](#cdktf-provider-docker-volumelabels)|*No description*
 
@@ -9571,6 +9573,81 @@ resetParallelism(): void
 
 
 
+## class Tag  <a id="cdktf-provider-docker-tag"></a>
+
+Represents a {@link https://www.terraform.io/docs/providers/docker/r/tag docker_tag}.
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
+__Extends__: [TerraformResource](#cdktf-terraformresource)
+
+### Initializer
+
+
+Create a new {@link https://www.terraform.io/docs/providers/docker/r/tag docker_tag} Resource.
+
+```ts
+new Tag(scope: Construct, id: string, config: TagConfig)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
+* **config** (<code>[TagConfig](#cdktf-provider-docker-tagconfig)</code>)  *No description*
+  * **connection** (<code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
+  * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
+  * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
+  * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code>)  *No description* __*Optional*__
+  * **sourceImage** (<code>string</code>)  Name of the source image. 
+  * **targetImage** (<code>string</code>)  Name of the target image. 
+  * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#id Tag#id}. __*Optional*__
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**id** | <code>string</code> | <span></span>
+**sourceImage** | <code>string</code> | <span></span>
+**sourceImageId** | <code>string</code> | <span></span>
+**targetImage** | <code>string</code> | <span></span>
+**idInput**? | <code>string</code> | __*Optional*__
+**sourceImageInput**? | <code>string</code> | __*Optional*__
+**targetImageInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
+
+### Methods
+
+
+#### resetId() <a id="cdktf-provider-docker-tag-resetid"></a>
+
+
+
+```ts
+resetId(): void
+```
+
+
+
+
+
+#### protected synthesizeAttributes() <a id="cdktf-provider-docker-tag-synthesizeattributes"></a>
+
+
+
+```ts
+protected synthesizeAttributes(): Map<string, any>
+```
+
+
+__Returns__:
+* <code>Map<string, any></code>
+
+
+
 ## class Volume  <a id="cdktf-provider-docker-volume"></a>
 
 Represents a {@link https://www.terraform.io/docs/providers/docker/r/volume docker_volume}.
@@ -11107,6 +11184,28 @@ Name | Type | Description
 **monitor**? | <code>string</code> | Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.<br/>__*Optional*__
 **order**? | <code>string</code> | Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.<br/>__*Optional*__
 **parallelism**? | <code>number</code> | Maximum number of tasks to be updated in one iteration. Defaults to `1`.<br/>__*Optional*__
+
+
+
+## struct TagConfig  <a id="cdktf-provider-docker-tagconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**sourceImage** | <code>string</code> | Name of the source image.
+**targetImage** | <code>string</code> | Name of the target image.
+**connection**?🔹 | <code>[ISSHProvisionerConnection](#cdktf-isshprovisionerconnection) &#124; [IWinrmProvisionerConnection](#cdktf-iwinrmprovisionerconnection)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
+**dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
+**id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#id Tag#id}.<br/>__*Optional*__
+**lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
+**provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 
 
 

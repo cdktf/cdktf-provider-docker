@@ -7,6 +7,7 @@ export * from './plugin';
 export * from './registry-image';
 export * from './secret';
 export * from './service';
+export * from './tag';
 export * from './volume';
 export * from './data-docker-image';
 export * from './data-docker-network';
