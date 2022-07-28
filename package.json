@@ -53,7 +53,7 @@
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.63.1",
     "npm-check-updates": "^15",
-    "projen": "^0.60.4",
+    "projen": "^0.60.5",
     "standard-version": "^9",
     "typescript": "^3.9.10"
   },
@@ -110,7 +110,7 @@
   "cdktf": {
     "provider": {
       "name": "registry.terraform.io/kreuzwerker/docker",
-      "version": "2.19.0"
+      "version": "2.20.0"
     }
   },
   "resolutions": {
