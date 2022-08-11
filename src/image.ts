@@ -45,6 +45,12 @@ export interface ImageConfig extends cdktf.TerraformMetaArguments {
   */
   readonly pullTriggers?: string[];
   /**
+  * A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. This can be used to rebuild an image when contents of source code folders change
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#triggers Image#triggers}
+  */
+  readonly triggers?: { [key: string]: string };
+  /**
   * build block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build Image#build}
@@ -374,7 +380,7 @@ export class Image extends cdktf.TerraformResource {
       terraformResourceType: 'docker_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.20.0',
+        providerVersion: '2.20.2',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -391,6 +397,7 @@ export class Image extends cdktf.TerraformResource {
     this._name = config.name;
     this._pullTrigger = config.pullTrigger;
     this._pullTriggers = config.pullTriggers;
+    this._triggers = config.triggers;
     this._build.internalValue = config.buildAttribute;
   }
 
@@ -506,6 +513,22 @@ export class Image extends cdktf.TerraformResource {
     return this.getStringAttribute('repo_digest');
   }
 
+  // triggers - computed: false, optional: true, required: false
+  private _triggers?: { [key: string]: string }; 
+  public get triggers() {
+    return this.getStringMapAttribute('triggers');
+  }
+  public set triggers(value: { [key: string]: string }) {
+    this._triggers = value;
+  }
+  public resetTriggers() {
+    this._triggers = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get triggersInput() {
+    return this._triggers;
+  }
+
   // build - computed: false, optional: true, required: false
   private _build = new ImageBuildOutputReference(this, "build");
   public get buildAttribute() {
@@ -534,6 +557,7 @@ export class Image extends cdktf.TerraformResource {
       name: cdktf.stringToTerraform(this._name),
       pull_trigger: cdktf.stringToTerraform(this._pullTrigger),
       pull_triggers: cdktf.listMapper(cdktf.stringToTerraform, false)(this._pullTriggers),
+      triggers: cdktf.hashMapper(cdktf.stringToTerraform)(this._triggers),
       build: imageBuildToTerraform(this._build.internalValue),
     };
   }

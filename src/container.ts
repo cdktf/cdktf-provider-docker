@@ -1875,7 +1875,7 @@ export interface ContainerNetworksAdvanced {
   */
   readonly ipv6Address?: string;
   /**
-  * The name of the network.
+  * The name or id of the network to use. You can use `name` or `id` attribute from a `docker_network` resource.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#name Container#name}
   */
@@ -2852,7 +2852,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.20.0',
+        providerVersion: '2.20.2',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
