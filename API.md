@@ -3659,6 +3659,7 @@ new Image(scope: Construct, id: string, config: ImageConfig)
   * **keepLocally** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the Docker image won't be deleted on destroy operation. __*Optional*__
   * **pullTrigger** (<code>string</code>)  A value which cause an image pull when changed. __*Optional*__
   * **pullTriggers** (<code>Array<string></code>)  List of values which cause an image pull when changed. __*Optional*__
+  * **triggers** (<code>Map<string, string></code>)  A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. __*Optional*__
 
 
 
@@ -3677,6 +3678,7 @@ Name | Type | Description
 **pullTrigger** | <code>string</code> | <span></span>
 **pullTriggers** | <code>Array<string></code> | <span></span>
 **repoDigest** | <code>string</code> | <span></span>
+**triggers** | <code>Map<string, string></code> | <span></span>
 **buildAttributeInput**? | <code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code> | __*Optional*__
 **forceRemoveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **idInput**? | <code>string</code> | __*Optional*__
@@ -3684,6 +3686,7 @@ Name | Type | Description
 **nameInput**? | <code>string</code> | __*Optional*__
 **pullTriggerInput**? | <code>string</code> | __*Optional*__
 **pullTriggersInput**? | <code>Array<string></code> | __*Optional*__
+**triggersInput**? | <code>Map<string, string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
@@ -3777,6 +3780,18 @@ resetPullTrigger(): void
 
 ```ts
 resetPullTriggers(): void
+```
+
+
+
+
+
+#### resetTriggers() <a id="cdktf-provider-docker-image-resettriggers"></a>
+
+
+
+```ts
+resetTriggers(): void
 ```
 
 
@@ -10144,7 +10159,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**name** | <code>string</code> | The name of the network.
+**name** | <code>string</code> | The name or id of the network to use.
 **aliases**? | <code>Array<string></code> | The network aliases of the container in the specific network.<br/>__*Optional*__
 **ipv4Address**? | <code>string</code> | The IPV4 address of the container in the specific network.<br/>__*Optional*__
 **ipv6Address**? | <code>string</code> | The IPV6 address of the container in the specific network.<br/>__*Optional*__
@@ -10388,6 +10403,7 @@ Name | Type | Description
 **provisioners**?🔹 | <code>Array<[IFileProvisioner](#cdktf-ifileprovisioner) &#124; [ILocalExecProvisioner](#cdktf-ilocalexecprovisioner) &#124; [IRemoteExecProvisioner](#cdktf-iremoteexecprovisioner)></code> | __*Optional*__
 **pullTrigger**? | <code>string</code> | A value which cause an image pull when changed.<br/>__*Optional*__
 **pullTriggers**? | <code>Array<string></code> | List of values which cause an image pull when changed.<br/>__*Optional*__
+**triggers**? | <code>Map<string, string></code> | A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced.<br/>__*Optional*__
 
 
 

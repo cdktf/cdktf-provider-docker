@@ -54,7 +54,7 @@ export class Config extends cdktf.TerraformResource {
       terraformResourceType: 'docker_config',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.20.0',
+        providerVersion: '2.20.2',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
