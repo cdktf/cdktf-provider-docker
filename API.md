@@ -3655,7 +3655,6 @@ new Image(scope: Construct, id: string, config: ImageConfig)
   * **name** (<code>string</code>)  The name of the Docker image, including any tags or SHA256 repo digests. 
   * **buildAttribute** (<code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code>)  build block. __*Optional*__
   * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the image is removed forcibly when the resource is destroyed. __*Optional*__
-  * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#id Image#id}. __*Optional*__
   * **keepLocally** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the Docker image won't be deleted on destroy operation. __*Optional*__
   * **pullTrigger** (<code>string</code>)  A value which cause an image pull when changed. __*Optional*__
   * **pullTriggers** (<code>Array<string></code>)  List of values which cause an image pull when changed. __*Optional*__
@@ -3671,6 +3670,7 @@ Name | Type | Description
 **buildAttribute** | <code>[ImageBuildOutputReference](#cdktf-provider-docker-imagebuildoutputreference)</code> | <span></span>
 **forceRemove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **id** | <code>string</code> | <span></span>
+**imageId** | <code>string</code> | <span></span>
 **keepLocally** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **latest** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
@@ -3681,7 +3681,6 @@ Name | Type | Description
 **triggers** | <code>Map<string, string></code> | <span></span>
 **buildAttributeInput**? | <code>[ImageBuild](#cdktf-provider-docker-imagebuild)</code> | __*Optional*__
 **forceRemoveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**idInput**? | <code>string</code> | __*Optional*__
 **keepLocallyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 **pullTriggerInput**? | <code>string</code> | __*Optional*__
@@ -3732,18 +3731,6 @@ resetBuildAttribute(): void
 
 ```ts
 resetForceRemove(): void
-```
-
-
-
-
-
-#### resetId() <a id="cdktf-provider-docker-image-resetid"></a>
-
-
-
-```ts
-resetId(): void
 ```
 
 
@@ -10396,7 +10383,6 @@ Name | Type | Description
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
 **forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
 **forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the image is removed forcibly when the resource is destroyed.<br/>__*Optional*__
-**id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#id Image#id}.<br/>__*Optional*__
 **keepLocally**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true, then the Docker image won't be deleted on destroy operation.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__

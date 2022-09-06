@@ -48,7 +48,7 @@ export class DataDockerImage extends cdktf.TerraformDataSource {
       terraformResourceType: 'docker_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.20.3',
+        providerVersion: '2.21.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
