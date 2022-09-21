@@ -295,6 +295,7 @@ new Container(scope: Construct, id: string, config: ContainerConfig)
   * **attach** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. __*Optional*__
   * **capabilities** (<code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code>)  capabilities block. __*Optional*__
   * **command** (<code>Array<string></code>)  The command to use to start the container. __*Optional*__
+  * **containerReadRefreshTimeoutMilliseconds** (<code>number</code>)  The total number of milliseconds to wait for the container to reach status 'running'. __*Optional*__
   * **cpuSet** (<code>string</code>)  A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. __*Optional*__
   * **cpuShares** (<code>number</code>)  CPU shares (relative weight) for the container. __*Optional*__
   * **destroyGraceSeconds** (<code>number</code>)  If defined will attempt to stop the container before destroying. __*Optional*__
@@ -365,6 +366,7 @@ Name | Type | Description
 **capabilities** | <code>[ContainerCapabilitiesOutputReference](#cdktf-provider-docker-containercapabilitiesoutputreference)</code> | <span></span>
 **command** | <code>Array<string></code> | <span></span>
 **containerLogs** | <code>string</code> | <span></span>
+**containerReadRefreshTimeoutMilliseconds** | <code>number</code> | <span></span>
 **cpuSet** | <code>string</code> | <span></span>
 **cpuShares** | <code>number</code> | <span></span>
 **destroyGraceSeconds** | <code>number</code> | <span></span>
@@ -432,6 +434,7 @@ Name | Type | Description
 **attachInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **capabilitiesInput**? | <code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code> | __*Optional*__
 **commandInput**? | <code>Array<string></code> | __*Optional*__
+**containerReadRefreshTimeoutMillisecondsInput**? | <code>number</code> | __*Optional*__
 **cpuSetInput**? | <code>string</code> | __*Optional*__
 **cpuSharesInput**? | <code>number</code> | __*Optional*__
 **destroyGraceSecondsInput**? | <code>number</code> | __*Optional*__
@@ -676,6 +679,18 @@ resetCapabilities(): void
 
 ```ts
 resetCommand(): void
+```
+
+
+
+
+
+#### resetContainerReadRefreshTimeoutMilliseconds() <a id="cdktf-provider-docker-container-resetcontainerreadrefreshtimeoutmilliseconds"></a>
+
+
+
+```ts
+resetContainerReadRefreshTimeoutMilliseconds(): void
 ```
 
 
@@ -9929,6 +9944,7 @@ Name | Type | Description
 **capabilities**? | <code>[ContainerCapabilities](#cdktf-provider-docker-containercapabilities)</code> | capabilities block.<br/>__*Optional*__
 **command**? | <code>Array<string></code> | The command to use to start the container.<br/>__*Optional*__
 **connection**?🔹 | <code>[SSHProvisionerConnection](#cdktf-sshprovisionerconnection) &#124; [WinrmProvisionerConnection](#cdktf-winrmprovisionerconnection)</code> | __*Optional*__
+**containerReadRefreshTimeoutMilliseconds**? | <code>number</code> | The total number of milliseconds to wait for the container to reach status 'running'.<br/>__*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **cpuSet**? | <code>string</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.<br/>__*Optional*__
 **cpuShares**? | <code>number</code> | CPU shares (relative weight) for the container.<br/>__*Optional*__

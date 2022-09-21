@@ -20,6 +20,12 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly command?: string[];
   /**
+  * The total number of milliseconds to wait for the container to reach status 'running'
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#container_read_refresh_timeout_milliseconds Container#container_read_refresh_timeout_milliseconds}
+  */
+  readonly containerReadRefreshTimeoutMilliseconds?: number;
+  /**
   * A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#cpu_set Container#cpu_set}
@@ -2852,7 +2858,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.21.0',
+        providerVersion: '2.22.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -2865,6 +2871,7 @@ export class Container extends cdktf.TerraformResource {
     });
     this._attach = config.attach;
     this._command = config.command;
+    this._containerReadRefreshTimeoutMilliseconds = config.containerReadRefreshTimeoutMilliseconds;
     this._cpuSet = config.cpuSet;
     this._cpuShares = config.cpuShares;
     this._destroyGraceSeconds = config.destroyGraceSeconds;
@@ -2971,6 +2978,22 @@ export class Container extends cdktf.TerraformResource {
   // container_logs - computed: true, optional: false, required: false
   public get containerLogs() {
     return this.getStringAttribute('container_logs');
+  }
+
+  // container_read_refresh_timeout_milliseconds - computed: false, optional: true, required: false
+  private _containerReadRefreshTimeoutMilliseconds?: number; 
+  public get containerReadRefreshTimeoutMilliseconds() {
+    return this.getNumberAttribute('container_read_refresh_timeout_milliseconds');
+  }
+  public set containerReadRefreshTimeoutMilliseconds(value: number) {
+    this._containerReadRefreshTimeoutMilliseconds = value;
+  }
+  public resetContainerReadRefreshTimeoutMilliseconds() {
+    this._containerReadRefreshTimeoutMilliseconds = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get containerReadRefreshTimeoutMillisecondsInput() {
+    return this._containerReadRefreshTimeoutMilliseconds;
   }
 
   // cpu_set - computed: false, optional: true, required: false
@@ -3961,6 +3984,7 @@ export class Container extends cdktf.TerraformResource {
     return {
       attach: cdktf.booleanToTerraform(this._attach),
       command: cdktf.listMapper(cdktf.stringToTerraform, false)(this._command),
+      container_read_refresh_timeout_milliseconds: cdktf.numberToTerraform(this._containerReadRefreshTimeoutMilliseconds),
       cpu_set: cdktf.stringToTerraform(this._cpuSet),
       cpu_shares: cdktf.numberToTerraform(this._cpuShares),
       destroy_grace_seconds: cdktf.numberToTerraform(this._destroyGraceSeconds),
