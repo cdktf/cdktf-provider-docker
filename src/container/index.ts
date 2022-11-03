@@ -315,6 +315,18 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly usernsMode?: string;
   /**
+  * If `true`, then the Docker container is waited for being healthy state after creation. If `false`, then the container health state is not checked. Defaults to `false`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#wait Container#wait}
+  */
+  readonly wait?: boolean | cdktf.IResolvable;
+  /**
+  * The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#wait_timeout Container#wait_timeout}
+  */
+  readonly waitTimeout?: number;
+  /**
   * The working directory for commands to run in.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#working_dir Container#working_dir}
@@ -2858,7 +2870,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.22.0',
+        providerVersion: '2.23.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -2920,6 +2932,8 @@ export class Container extends cdktf.TerraformResource {
     this._tty = config.tty;
     this._user = config.user;
     this._usernsMode = config.usernsMode;
+    this._wait = config.wait;
+    this._waitTimeout = config.waitTimeout;
     this._workingDir = config.workingDir;
     this._capabilities.internalValue = config.capabilities;
     this._devices.internalValue = config.devices;
@@ -3784,6 +3798,38 @@ export class Container extends cdktf.TerraformResource {
     return this._usernsMode;
   }
 
+  // wait - computed: false, optional: true, required: false
+  private _wait?: boolean | cdktf.IResolvable; 
+  public get wait() {
+    return this.getBooleanAttribute('wait');
+  }
+  public set wait(value: boolean | cdktf.IResolvable) {
+    this._wait = value;
+  }
+  public resetWait() {
+    this._wait = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitInput() {
+    return this._wait;
+  }
+
+  // wait_timeout - computed: false, optional: true, required: false
+  private _waitTimeout?: number; 
+  public get waitTimeout() {
+    return this.getNumberAttribute('wait_timeout');
+  }
+  public set waitTimeout(value: number) {
+    this._waitTimeout = value;
+  }
+  public resetWaitTimeout() {
+    this._waitTimeout = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get waitTimeoutInput() {
+    return this._waitTimeout;
+  }
+
   // working_dir - computed: false, optional: true, required: false
   private _workingDir?: string; 
   public get workingDir() {
@@ -4033,6 +4079,8 @@ export class Container extends cdktf.TerraformResource {
       tty: cdktf.booleanToTerraform(this._tty),
       user: cdktf.stringToTerraform(this._user),
       userns_mode: cdktf.stringToTerraform(this._usernsMode),
+      wait: cdktf.booleanToTerraform(this._wait),
+      wait_timeout: cdktf.numberToTerraform(this._waitTimeout),
       working_dir: cdktf.stringToTerraform(this._workingDir),
       capabilities: containerCapabilitiesToTerraform(this._capabilities.internalValue),
       devices: cdktf.listMapper(containerDevicesToTerraform, true)(this._devices.internalValue),

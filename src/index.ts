@@ -10,6 +10,7 @@ export * as service from './service';
 export * as tag from './tag';
 export * as volume from './volume';
 export * as dataDockerImage from './data-docker-image';
+export * as dataDockerLogs from './data-docker-logs';
 export * as dataDockerNetwork from './data-docker-network';
 export * as dataDockerPlugin from './data-docker-plugin';
 export * as dataDockerRegistryImage from './data-docker-registry-image';
