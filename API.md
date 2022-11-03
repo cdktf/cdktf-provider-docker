@@ -34,6 +34,7 @@ Name|Description
 [container.ContainerVolumesList](#cdktf-provider-docker-container-containervolumeslist)|*No description*
 [container.ContainerVolumesOutputReference](#cdktf-provider-docker-container-containervolumesoutputreference)|*No description*
 [dataDockerImage.DataDockerImage](#cdktf-provider-docker-datadockerimage-datadockerimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/image docker_image}.
+[dataDockerLogs.DataDockerLogs](#cdktf-provider-docker-datadockerlogs-datadockerlogs)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/logs docker_logs}.
 [dataDockerNetwork.DataDockerNetwork](#cdktf-provider-docker-datadockernetwork-datadockernetwork)|Represents a {@link https://www.terraform.io/docs/providers/docker/d/network docker_network}.
 [dataDockerNetwork.DataDockerNetworkIpamConfigList](#cdktf-provider-docker-datadockernetwork-datadockernetworkipamconfiglist)|*No description*
 [dataDockerNetwork.DataDockerNetworkIpamConfigOutputReference](#cdktf-provider-docker-datadockernetwork-datadockernetworkipamconfigoutputreference)|*No description*
@@ -131,6 +132,7 @@ Name|Description
 [container.ContainerUpload](#cdktf-provider-docker-container-containerupload)|*No description*
 [container.ContainerVolumes](#cdktf-provider-docker-container-containervolumes)|*No description*
 [dataDockerImage.DataDockerImageConfig](#cdktf-provider-docker-datadockerimage-datadockerimageconfig)|*No description*
+[dataDockerLogs.DataDockerLogsConfig](#cdktf-provider-docker-datadockerlogs-datadockerlogsconfig)|*No description*
 [dataDockerNetwork.DataDockerNetworkConfig](#cdktf-provider-docker-datadockernetwork-datadockernetworkconfig)|*No description*
 [dataDockerNetwork.DataDockerNetworkIpamConfig](#cdktf-provider-docker-datadockernetwork-datadockernetworkipamconfig)|*No description*
 [dataDockerPlugin.DataDockerPluginConfig](#cdktf-provider-docker-datadockerplugin-datadockerpluginconfig)|*No description*
@@ -356,6 +358,8 @@ new container.Container(scope: Construct, id: string, config: ContainerConfig)
   * **user** (<code>string</code>)  User used for run the first process. __*Optional*__
   * **usernsMode** (<code>string</code>)  Sets the usernamespace mode for the container when usernamespace remapping option is enabled. __*Optional*__
   * **volumes** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerVolumes](#cdktf-provider-docker-container-containervolumes)></code>)  volumes block. __*Optional*__
+  * **wait** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container is waited for being healthy state after creation. __*Optional*__
+  * **waitTimeout** (<code>number</code>)  The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. __*Optional*__
   * **workingDir** (<code>string</code>)  The working directory for commands to run in. __*Optional*__
 
 
@@ -434,6 +438,8 @@ Name | Type | Description
 **user** | <code>string</code> | <span></span>
 **usernsMode** | <code>string</code> | <span></span>
 **volumes** | <code>[container.ContainerVolumesList](#cdktf-provider-docker-container-containervolumeslist)</code> | <span></span>
+**wait** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**waitTimeout** | <code>number</code> | <span></span>
 **workingDir** | <code>string</code> | <span></span>
 **attachInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **capabilitiesInput**? | <code>[container.ContainerCapabilities](#cdktf-provider-docker-container-containercapabilities)</code> | __*Optional*__
@@ -497,6 +503,8 @@ Name | Type | Description
 **userInput**? | <code>string</code> | __*Optional*__
 **usernsModeInput**? | <code>string</code> | __*Optional*__
 **volumesInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerVolumes](#cdktf-provider-docker-container-containervolumes)></code> | __*Optional*__
+**waitInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**waitTimeoutInput**? | <code>number</code> | __*Optional*__
 **workingDirInput**? | <code>string</code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
@@ -1367,6 +1375,30 @@ resetUsernsMode(): void
 
 ```ts
 resetVolumes(): void
+```
+
+
+
+
+
+#### resetWait() <a id="cdktf-provider-docker-container-container-resetwait"></a>
+
+
+
+```ts
+resetWait(): void
+```
+
+
+
+
+
+#### resetWaitTimeout() <a id="cdktf-provider-docker-container-container-resetwaittimeout"></a>
+
+
+
+```ts
+resetWaitTimeout(): void
 ```
 
 
@@ -3200,6 +3232,230 @@ resetId(): void
 
 
 #### protected synthesizeAttributes() <a id="cdktf-provider-docker-datadockerimage-datadockerimage-synthesizeattributes"></a>
+
+
+
+```ts
+protected synthesizeAttributes(): Map<string, any>
+```
+
+
+__Returns__:
+* <code>Map<string, any></code>
+
+
+
+## class DataDockerLogs  <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs"></a>
+
+Represents a {@link https://www.terraform.io/docs/providers/docker/d/logs docker_logs}.
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [ITerraformResource](#cdktf-iterraformresource), [ITerraformDependable](#cdktf-iterraformdependable), [ITerraformAddressable](#cdktf-iterraformaddressable), [IInterpolatingParent](#cdktf-iinterpolatingparent)
+__Submodule__: dataDockerLogs
+
+__Extends__: [TerraformDataSource](#cdktf-terraformdatasource)
+
+### Initializer
+
+
+Create a new {@link https://www.terraform.io/docs/providers/docker/d/logs docker_logs} Data Source.
+
+```ts
+new dataDockerLogs.DataDockerLogs(scope: Construct, id: string, config: DataDockerLogsConfig)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  The scope in which to define this construct.
+* **id** (<code>string</code>)  The scoped construct ID.
+* **config** (<code>[dataDockerLogs.DataDockerLogsConfig](#cdktf-provider-docker-datadockerlogs-datadockerlogsconfig)</code>)  *No description*
+  * **connection** (<code>[SSHProvisionerConnection](#cdktf-sshprovisionerconnection) &#124; [WinrmProvisionerConnection](#cdktf-winrmprovisionerconnection)</code>)  *No description* __*Optional*__
+  * **count** (<code>number</code>)  *No description* __*Optional*__
+  * **dependsOn** (<code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code>)  *No description* __*Optional*__
+  * **forEach** (<code>[ITerraformIterator](#cdktf-iterraformiterator)</code>)  *No description* __*Optional*__
+  * **lifecycle** (<code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code>)  *No description* __*Optional*__
+  * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
+  * **provisioners** (<code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code>)  *No description* __*Optional*__
+  * **name** (<code>string</code>)  The name of the Docker Container. 
+  * **details** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#details DataDockerLogs#details}. __*Optional*__
+  * **discardHeaders** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Discard headers that docker appends to each log entry. __*Optional*__
+  * **follow** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#follow DataDockerLogs#follow}. __*Optional*__
+  * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#id DataDockerLogs#id}. __*Optional*__
+  * **logsListStringEnabled** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true populate computed value `logs_list_string`. __*Optional*__
+  * **showStderr** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stderr DataDockerLogs#show_stderr}. __*Optional*__
+  * **showStdout** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stdout DataDockerLogs#show_stdout}. __*Optional*__
+  * **since** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#since DataDockerLogs#since}. __*Optional*__
+  * **tail** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#tail DataDockerLogs#tail}. __*Optional*__
+  * **timestamps** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#timestamps DataDockerLogs#timestamps}. __*Optional*__
+  * **until** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#until DataDockerLogs#until}. __*Optional*__
+
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**details** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**discardHeaders** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**follow** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**id** | <code>string</code> | <span></span>
+**logsListString** | <code>Array<string></code> | <span></span>
+**logsListStringEnabled** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**name** | <code>string</code> | <span></span>
+**showStderr** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**showStdout** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**since** | <code>string</code> | <span></span>
+**tail** | <code>string</code> | <span></span>
+**timestamps** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
+**until** | <code>string</code> | <span></span>
+**detailsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**discardHeadersInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**followInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**idInput**? | <code>string</code> | __*Optional*__
+**logsListStringEnabledInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**nameInput**? | <code>string</code> | __*Optional*__
+**showStderrInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**showStdoutInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**sinceInput**? | <code>string</code> | __*Optional*__
+**tailInput**? | <code>string</code> | __*Optional*__
+**timestampsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
+**untilInput**? | <code>string</code> | __*Optional*__
+*static* **tfResourceType** | <code>string</code> | <span></span>
+
+### Methods
+
+
+#### resetDetails() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetdetails"></a>
+
+
+
+```ts
+resetDetails(): void
+```
+
+
+
+
+
+#### resetDiscardHeaders() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetdiscardheaders"></a>
+
+
+
+```ts
+resetDiscardHeaders(): void
+```
+
+
+
+
+
+#### resetFollow() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetfollow"></a>
+
+
+
+```ts
+resetFollow(): void
+```
+
+
+
+
+
+#### resetId() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetid"></a>
+
+
+
+```ts
+resetId(): void
+```
+
+
+
+
+
+#### resetLogsListStringEnabled() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetlogsliststringenabled"></a>
+
+
+
+```ts
+resetLogsListStringEnabled(): void
+```
+
+
+
+
+
+#### resetShowStderr() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetshowstderr"></a>
+
+
+
+```ts
+resetShowStderr(): void
+```
+
+
+
+
+
+#### resetShowStdout() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetshowstdout"></a>
+
+
+
+```ts
+resetShowStdout(): void
+```
+
+
+
+
+
+#### resetSince() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetsince"></a>
+
+
+
+```ts
+resetSince(): void
+```
+
+
+
+
+
+#### resetTail() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resettail"></a>
+
+
+
+```ts
+resetTail(): void
+```
+
+
+
+
+
+#### resetTimestamps() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resettimestamps"></a>
+
+
+
+```ts
+resetTimestamps(): void
+```
+
+
+
+
+
+#### resetUntil() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-resetuntil"></a>
+
+
+
+```ts
+resetUntil(): void
+```
+
+
+
+
+
+#### protected synthesizeAttributes() <a id="cdktf-provider-docker-datadockerlogs-datadockerlogs-synthesizeattributes"></a>
 
 
 
@@ -10211,6 +10467,8 @@ Name | Type | Description
 **user**? | <code>string</code> | User used for run the first process.<br/>__*Optional*__
 **usernsMode**? | <code>string</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled.<br/>__*Optional*__
 **volumes**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerVolumes](#cdktf-provider-docker-container-containervolumes)></code> | volumes block.<br/>__*Optional*__
+**wait**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container is waited for being healthy state after creation.<br/>__*Optional*__
+**waitTimeout**? | <code>number</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`.<br/>__*Optional*__
 **workingDir**? | <code>string</code> | The working directory for commands to run in.<br/>__*Optional*__
 
 
@@ -10457,6 +10715,37 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **provisioners**?🔹 | <code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code> | __*Optional*__
+
+
+
+## struct DataDockerLogsConfig  <a id="cdktf-provider-docker-datadockerlogs-datadockerlogsconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**name** | <code>string</code> | The name of the Docker Container.
+**connection**?🔹 | <code>[SSHProvisionerConnection](#cdktf-sshprovisionerconnection) &#124; [WinrmProvisionerConnection](#cdktf-winrmprovisionerconnection)</code> | __*Optional*__
+**count**?🔹 | <code>number</code> | __*Optional*__
+**dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
+**details**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#details DataDockerLogs#details}.<br/>__*Optional*__
+**discardHeaders**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Discard headers that docker appends to each log entry.<br/>__*Optional*__
+**follow**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#follow DataDockerLogs#follow}.<br/>__*Optional*__
+**forEach**?🔹 | <code>[ITerraformIterator](#cdktf-iterraformiterator)</code> | __*Optional*__
+**id**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#id DataDockerLogs#id}.<br/>__*Optional*__
+**lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
+**logsListStringEnabled**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true populate computed value `logs_list_string`.<br/>__*Optional*__
+**provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
+**provisioners**?🔹 | <code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code> | __*Optional*__
+**showStderr**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stderr DataDockerLogs#show_stderr}.<br/>__*Optional*__
+**showStdout**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stdout DataDockerLogs#show_stdout}.<br/>__*Optional*__
+**since**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#since DataDockerLogs#since}.<br/>__*Optional*__
+**tail**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#tail DataDockerLogs#tail}.<br/>__*Optional*__
+**timestamps**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#timestamps DataDockerLogs#timestamps}.<br/>__*Optional*__
+**until**? | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#until DataDockerLogs#until}.<br/>__*Optional*__
 
 
 
