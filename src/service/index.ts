@@ -5252,7 +5252,7 @@ export class Service extends cdktf.TerraformResource {
       terraformResourceType: 'docker_service',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.0',
+        providerVersion: '2.23.1',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
