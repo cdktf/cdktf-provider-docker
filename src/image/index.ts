@@ -373,7 +373,7 @@ export class Image extends cdktf.TerraformResource {
       terraformResourceType: 'docker_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

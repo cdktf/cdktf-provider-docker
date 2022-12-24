@@ -33,6 +33,12 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   */
   readonly name: string;
   /**
+  * A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. This can be used to rebuild an image when contents of source code folders change or to repush a local image
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#triggers RegistryImage#triggers}
+  */
+  readonly triggers?: { [key: string]: string };
+  /**
   * build block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#build RegistryImage#build}
@@ -1476,7 +1482,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       terraformResourceType: 'docker_registry_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -1491,6 +1497,7 @@ export class RegistryImage extends cdktf.TerraformResource {
     this._insecureSkipVerify = config.insecureSkipVerify;
     this._keepRemotely = config.keepRemotely;
     this._name = config.name;
+    this._triggers = config.triggers;
     this._build.internalValue = config.buildAttribute;
   }
 
@@ -1564,6 +1571,22 @@ export class RegistryImage extends cdktf.TerraformResource {
     return this.getStringAttribute('sha256_digest');
   }
 
+  // triggers - computed: false, optional: true, required: false
+  private _triggers?: { [key: string]: string }; 
+  public get triggers() {
+    return this.getStringMapAttribute('triggers');
+  }
+  public set triggers(value: { [key: string]: string }) {
+    this._triggers = value;
+  }
+  public resetTriggers() {
+    this._triggers = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get triggersInput() {
+    return this._triggers;
+  }
+
   // build - computed: false, optional: true, required: false
   private _build = new RegistryImageBuildOutputReference(this, "build");
   public get buildAttribute() {
@@ -1590,6 +1613,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       insecure_skip_verify: cdktf.booleanToTerraform(this._insecureSkipVerify),
       keep_remotely: cdktf.booleanToTerraform(this._keepRemotely),
       name: cdktf.stringToTerraform(this._name),
+      triggers: cdktf.hashMapper(cdktf.stringToTerraform)(this._triggers),
       build: registryImageBuildToTerraform(this._build.internalValue),
     };
   }

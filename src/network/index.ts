@@ -51,6 +51,12 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   */
   readonly ipamDriver?: string;
   /**
+  * Provide explicit options to the IPAM driver. Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_options Network#ipam_options}
+  */
+  readonly ipamOptions?: { [key: string]: string };
+  /**
   * Enable IPv6 networking. Defaults to `false`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipv6 Network#ipv6}
@@ -416,7 +422,7 @@ export class Network extends cdktf.TerraformResource {
       terraformResourceType: 'docker_network',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -434,6 +440,7 @@ export class Network extends cdktf.TerraformResource {
     this._ingress = config.ingress;
     this._internal = config.internal;
     this._ipamDriver = config.ipamDriver;
+    this._ipamOptions = config.ipamOptions;
     this._ipv6 = config.ipv6;
     this._name = config.name;
     this._options = config.options;
@@ -557,6 +564,22 @@ export class Network extends cdktf.TerraformResource {
     return this._ipamDriver;
   }
 
+  // ipam_options - computed: false, optional: true, required: false
+  private _ipamOptions?: { [key: string]: string }; 
+  public get ipamOptions() {
+    return this.getStringMapAttribute('ipam_options');
+  }
+  public set ipamOptions(value: { [key: string]: string }) {
+    this._ipamOptions = value;
+  }
+  public resetIpamOptions() {
+    this._ipamOptions = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get ipamOptionsInput() {
+    return this._ipamOptions;
+  }
+
   // ipv6 - computed: false, optional: true, required: false
   private _ipv6?: boolean | cdktf.IResolvable; 
   public get ipv6() {
@@ -652,6 +675,7 @@ export class Network extends cdktf.TerraformResource {
       ingress: cdktf.booleanToTerraform(this._ingress),
       internal: cdktf.booleanToTerraform(this._internal),
       ipam_driver: cdktf.stringToTerraform(this._ipamDriver),
+      ipam_options: cdktf.hashMapper(cdktf.stringToTerraform)(this._ipamOptions),
       ipv6: cdktf.booleanToTerraform(this._ipv6),
       name: cdktf.stringToTerraform(this._name),
       options: cdktf.hashMapper(cdktf.stringToTerraform)(this._options),

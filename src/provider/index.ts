@@ -64,6 +64,12 @@ export interface DockerProviderRegistryAuth {
   */
   readonly address: string;
   /**
+  * Setting this to `true` will tell the provider that this registry does not need authentication. Due to the docker internals, the provider will use dummy credentials (see https://github.com/kreuzwerker/terraform-provider-docker/issues/470 for more information). Defaults to `false`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#auth_disabled DockerProvider#auth_disabled}
+  */
+  readonly authDisabled?: boolean | cdktf.IResolvable;
+  /**
   * Path to docker json file for registry auth. Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file DockerProvider#config_file}
@@ -96,6 +102,7 @@ export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderReg
   }
   return {
     address: cdktf.stringToTerraform(struct!.address),
+    auth_disabled: cdktf.booleanToTerraform(struct!.authDisabled),
     config_file: cdktf.stringToTerraform(struct!.configFile),
     config_file_content: cdktf.stringToTerraform(struct!.configFileContent),
     password: cdktf.stringToTerraform(struct!.password),
@@ -130,7 +137,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'docker',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       terraformProviderSource: 'kreuzwerker/docker'
