@@ -300,6 +300,7 @@ new container.Container(scope: Construct, id: string, config: ContainerConfig)
   * **name** (<code>string</code>)  The name of the container. 
   * **attach** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. __*Optional*__
   * **capabilities** (<code>[container.ContainerCapabilities](#cdktf-provider-docker-container-containercapabilities)</code>)  capabilities block. __*Optional*__
+  * **cgroupnsMode** (<code>string</code>)  Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. __*Optional*__
   * **command** (<code>Array<string></code>)  The command to use to start the container. __*Optional*__
   * **containerReadRefreshTimeoutMilliseconds** (<code>number</code>)  The total number of milliseconds to wait for the container to reach status 'running'. __*Optional*__
   * **cpuSet** (<code>string</code>)  A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. __*Optional*__
@@ -372,6 +373,7 @@ Name | Type | Description
 **attach** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **bridge** | <code>string</code> | <span></span>
 **capabilities** | <code>[container.ContainerCapabilitiesOutputReference](#cdktf-provider-docker-container-containercapabilitiesoutputreference)</code> | <span></span>
+**cgroupnsMode** | <code>string</code> | <span></span>
 **command** | <code>Array<string></code> | <span></span>
 **containerLogs** | <code>string</code> | <span></span>
 **containerReadRefreshTimeoutMilliseconds** | <code>number</code> | <span></span>
@@ -443,6 +445,7 @@ Name | Type | Description
 **workingDir** | <code>string</code> | <span></span>
 **attachInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **capabilitiesInput**? | <code>[container.ContainerCapabilities](#cdktf-provider-docker-container-containercapabilities)</code> | __*Optional*__
+**cgroupnsModeInput**? | <code>string</code> | __*Optional*__
 **commandInput**? | <code>Array<string></code> | __*Optional*__
 **containerReadRefreshTimeoutMillisecondsInput**? | <code>number</code> | __*Optional*__
 **cpuSetInput**? | <code>string</code> | __*Optional*__
@@ -679,6 +682,18 @@ resetAttach(): void
 
 ```ts
 resetCapabilities(): void
+```
+
+
+
+
+
+#### resetCgroupnsMode() <a id="cdktf-provider-docker-container-container-resetcgroupnsmode"></a>
+
+
+
+```ts
+resetCgroupnsMode(): void
 ```
 
 
@@ -4162,6 +4177,7 @@ new network.Network(scope: Construct, id: string, config: NetworkConfig)
   * **internal** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Whether the network is internal. __*Optional*__
   * **ipamConfig** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkIpamConfig](#cdktf-provider-docker-network-networkipamconfig)></code>)  ipam_config block. __*Optional*__
   * **ipamDriver** (<code>string</code>)  Driver used by the custom IP scheme of the network. Defaults to `default`. __*Optional*__
+  * **ipamOptions** (<code>Map<string, string></code>)  Provide explicit options to the IPAM driver. __*Optional*__
   * **ipv6** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Enable IPv6 networking. Defaults to `false`. __*Optional*__
   * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkLabels](#cdktf-provider-docker-network-networklabels)></code>)  labels block. __*Optional*__
   * **options** (<code>Map<string, string></code>)  Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. __*Optional*__
@@ -4181,6 +4197,7 @@ Name | Type | Description
 **internal** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **ipamConfig** | <code>[network.NetworkIpamConfigList](#cdktf-provider-docker-network-networkipamconfiglist)</code> | <span></span>
 **ipamDriver** | <code>string</code> | <span></span>
+**ipamOptions** | <code>Map<string, string></code> | <span></span>
 **ipv6** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **labels** | <code>[network.NetworkLabelsList](#cdktf-provider-docker-network-networklabelslist)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
@@ -4194,6 +4211,7 @@ Name | Type | Description
 **internalInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **ipamConfigInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkIpamConfig](#cdktf-provider-docker-network-networkipamconfig)></code> | __*Optional*__
 **ipamDriverInput**? | <code>string</code> | __*Optional*__
+**ipamOptionsInput**? | <code>Map<string, string></code> | __*Optional*__
 **ipv6Input**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkLabels](#cdktf-provider-docker-network-networklabels)></code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
@@ -4319,6 +4337,18 @@ resetIpamConfig(): void
 
 ```ts
 resetIpamDriver(): void
+```
+
+
+
+
+
+#### resetIpamOptions() <a id="cdktf-provider-docker-network-network-resetipamoptions"></a>
+
+
+
+```ts
+resetIpamOptions(): void
 ```
 
 
@@ -5108,6 +5138,7 @@ new registryImage.RegistryImage(scope: Construct, id: string, config: RegistryIm
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#id RegistryImage#id}. __*Optional*__
   * **insecureSkipVerify** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. __*Optional*__
   * **keepRemotely** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the Docker image won't be deleted on destroy operation. __*Optional*__
+  * **triggers** (<code>Map<string, string></code>)  A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. __*Optional*__
 
 
 
@@ -5122,11 +5153,13 @@ Name | Type | Description
 **keepRemotely** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **sha256Digest** | <code>string</code> | <span></span>
+**triggers** | <code>Map<string, string></code> | <span></span>
 **buildAttributeInput**? | <code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code> | __*Optional*__
 **idInput**? | <code>string</code> | __*Optional*__
 **insecureSkipVerifyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **keepRemotelyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
+**triggersInput**? | <code>Map<string, string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
@@ -5219,6 +5252,18 @@ resetInsecureSkipVerify(): void
 
 ```ts
 resetKeepRemotely(): void
+```
+
+
+
+
+
+#### resetTriggers() <a id="cdktf-provider-docker-registryimage-registryimage-resettriggers"></a>
+
+
+
+```ts
+resetTriggers(): void
 ```
 
 
@@ -10402,6 +10447,7 @@ Name | Type | Description
 **name** | <code>string</code> | The name of the container.
 **attach**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.<br/>__*Optional*__
 **capabilities**? | <code>[container.ContainerCapabilities](#cdktf-provider-docker-container-containercapabilities)</code> | capabilities block.<br/>__*Optional*__
+**cgroupnsMode**? | <code>string</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`.<br/>__*Optional*__
 **command**? | <code>Array<string></code> | The command to use to start the container.<br/>__*Optional*__
 **connection**?🔹 | <code>[SSHProvisionerConnection](#cdktf-sshprovisionerconnection) &#124; [WinrmProvisionerConnection](#cdktf-winrmprovisionerconnection)</code> | __*Optional*__
 **containerReadRefreshTimeoutMilliseconds**? | <code>number</code> | The total number of milliseconds to wait for the container to reach status 'running'.<br/>__*Optional*__
@@ -10887,6 +10933,7 @@ Name | Type | Description
 **internal**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Whether the network is internal.<br/>__*Optional*__
 **ipamConfig**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkIpamConfig](#cdktf-provider-docker-network-networkipamconfig)></code> | ipam_config block.<br/>__*Optional*__
 **ipamDriver**? | <code>string</code> | Driver used by the custom IP scheme of the network. Defaults to `default`.<br/>__*Optional*__
+**ipamOptions**? | <code>Map<string, string></code> | Provide explicit options to the IPAM driver.<br/>__*Optional*__
 **ipv6**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Enable IPv6 networking. Defaults to `false`.<br/>__*Optional*__
 **labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[network.NetworkLabels](#cdktf-provider-docker-network-networklabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
@@ -10999,6 +11046,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **address** | <code>string</code> | Address of the registry.
+**authDisabled**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Setting this to `true` will tell the provider that this registry does not need authentication.<br/>__*Optional*__
 **configFile**? | <code>string</code> | Path to docker json file for registry auth.<br/>__*Optional*__
 **configFileContent**? | <code>string</code> | Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.<br/>__*Optional*__
 **password**? | <code>string</code> | Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.<br/>__*Optional*__
@@ -11106,6 +11154,7 @@ Name | Type | Description
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **provisioners**?🔹 | <code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code> | __*Optional*__
+**triggers**? | <code>Map<string, string></code> | A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced.<br/>__*Optional*__
 
 
 

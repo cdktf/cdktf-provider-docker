@@ -92,7 +92,7 @@ export class DataDockerLogs extends cdktf.TerraformDataSource {
       terraformResourceType: 'docker_logs',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

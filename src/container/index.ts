@@ -14,7 +14,13 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly attach?: boolean | cdktf.IResolvable;
   /**
-  * The command to use to start the container. For example, to run `/usr/bin/myprogram -f baz.conf` set the command to be `["/usr/bin/myprogram","-","baz.con"]`.
+  * Cgroup namespace mode to use for the container. Possible values are: `private`, `host`.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#cgroupns_mode Container#cgroupns_mode}
+  */
+  readonly cgroupnsMode?: string;
+  /**
+  * The command to use to start the container. For example, to run `/usr/bin/myprogram -f baz.conf` set the command to be `["/usr/bin/myprogram","-f","baz.con"]`.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#command Container#command}
   */
@@ -2870,7 +2876,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.23.1',
+        providerVersion: '2.24.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
@@ -2882,6 +2888,7 @@ export class Container extends cdktf.TerraformResource {
       forEach: config.forEach
     });
     this._attach = config.attach;
+    this._cgroupnsMode = config.cgroupnsMode;
     this._command = config.command;
     this._containerReadRefreshTimeoutMilliseconds = config.containerReadRefreshTimeoutMilliseconds;
     this._cpuSet = config.cpuSet;
@@ -2971,6 +2978,22 @@ export class Container extends cdktf.TerraformResource {
   // bridge - computed: true, optional: false, required: false
   public get bridge() {
     return this.getStringAttribute('bridge');
+  }
+
+  // cgroupns_mode - computed: false, optional: true, required: false
+  private _cgroupnsMode?: string; 
+  public get cgroupnsMode() {
+    return this.getStringAttribute('cgroupns_mode');
+  }
+  public set cgroupnsMode(value: string) {
+    this._cgroupnsMode = value;
+  }
+  public resetCgroupnsMode() {
+    this._cgroupnsMode = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get cgroupnsModeInput() {
+    return this._cgroupnsMode;
   }
 
   // command - computed: true, optional: true, required: false
@@ -4029,6 +4052,7 @@ export class Container extends cdktf.TerraformResource {
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
       attach: cdktf.booleanToTerraform(this._attach),
+      cgroupns_mode: cdktf.stringToTerraform(this._cgroupnsMode),
       command: cdktf.listMapper(cdktf.stringToTerraform, false)(this._command),
       container_read_refresh_timeout_milliseconds: cdktf.numberToTerraform(this._containerReadRefreshTimeoutMilliseconds),
       cpu_set: cdktf.stringToTerraform(this._cpuSet),
