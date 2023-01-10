@@ -33,7 +33,7 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   */
   readonly name: string;
   /**
-  * A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. This can be used to rebuild an image when contents of source code folders change or to repush a local image
+  * A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. This can be used to repush a local image
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#triggers RegistryImage#triggers}
   */
@@ -1482,7 +1482,7 @@ export class RegistryImage extends cdktf.TerraformResource {
       terraformResourceType: 'docker_registry_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.24.0',
+        providerVersion: '2.25.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

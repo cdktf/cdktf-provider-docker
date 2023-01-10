@@ -188,7 +188,7 @@ export class Volume extends cdktf.TerraformResource {
       terraformResourceType: 'docker_volume',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.24.0',
+        providerVersion: '2.25.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,

@@ -3263,6 +3263,12 @@ export interface ServiceTaskSpecContainerSpec {
   */
   readonly stopSignal?: string;
   /**
+  * Sysctls config (Linux only)
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#sysctl Service#sysctl}
+  */
+  readonly sysctl?: { [key: string]: string };
+  /**
   * The user inside the container
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#user Service#user}
@@ -3335,6 +3341,7 @@ export function serviceTaskSpecContainerSpecToTerraform(struct?: ServiceTaskSpec
     read_only: cdktf.booleanToTerraform(struct!.readOnly),
     stop_grace_period: cdktf.stringToTerraform(struct!.stopGracePeriod),
     stop_signal: cdktf.stringToTerraform(struct!.stopSignal),
+    sysctl: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.sysctl),
     user: cdktf.stringToTerraform(struct!.user),
     configs: cdktf.listMapper(serviceTaskSpecContainerSpecConfigsToTerraform, true)(struct!.configs),
     dns_config: serviceTaskSpecContainerSpecDnsConfigToTerraform(struct!.dnsConfig),
@@ -3405,6 +3412,10 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       hasAnyValues = true;
       internalValueResult.stopSignal = this._stopSignal;
     }
+    if (this._sysctl !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.sysctl = this._sysctl;
+    }
     if (this._user !== undefined) {
       hasAnyValues = true;
       internalValueResult.user = this._user;
@@ -3458,6 +3469,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       this._readOnly = undefined;
       this._stopGracePeriod = undefined;
       this._stopSignal = undefined;
+      this._sysctl = undefined;
       this._user = undefined;
       this._configs.internalValue = undefined;
       this._dnsConfig.internalValue = undefined;
@@ -3481,6 +3493,7 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
       this._readOnly = value.readOnly;
       this._stopGracePeriod = value.stopGracePeriod;
       this._stopSignal = value.stopSignal;
+      this._sysctl = value.sysctl;
       this._user = value.user;
       this._configs.internalValue = value.configs;
       this._dnsConfig.internalValue = value.dnsConfig;
@@ -3664,6 +3677,22 @@ export class ServiceTaskSpecContainerSpecOutputReference extends cdktf.ComplexOb
   // Temporarily expose input value. Use with caution.
   public get stopSignalInput() {
     return this._stopSignal;
+  }
+
+  // sysctl - computed: false, optional: true, required: false
+  private _sysctl?: { [key: string]: string }; 
+  public get sysctl() {
+    return this.getStringMapAttribute('sysctl');
+  }
+  public set sysctl(value: { [key: string]: string }) {
+    this._sysctl = value;
+  }
+  public resetSysctl() {
+    this._sysctl = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get sysctlInput() {
+    return this._sysctl;
   }
 
   // user - computed: false, optional: true, required: false
@@ -3901,6 +3930,160 @@ export class ServiceTaskSpecLogDriverOutputReference extends cdktf.ComplexObject
   // Temporarily expose input value. Use with caution.
   public get optionsInput() {
     return this._options;
+  }
+}
+export interface ServiceTaskSpecNetworksAdvanced {
+  /**
+  * The network aliases of the container in the specific network.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#aliases Service#aliases}
+  */
+  readonly aliases?: string[];
+  /**
+  * An array of driver options for the network, e.g. `opts1=value`
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#driver_opts Service#driver_opts}
+  */
+  readonly driverOpts?: string[];
+  /**
+  * The name/id of the network.
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
+  */
+  readonly name: string;
+}
+
+export function serviceTaskSpecNetworksAdvancedToTerraform(struct?: ServiceTaskSpecNetworksAdvanced | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+    aliases: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.aliases),
+    driver_opts: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.driverOpts),
+    name: cdktf.stringToTerraform(struct!.name),
+  }
+}
+
+export class ServiceTaskSpecNetworksAdvancedOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+  private resolvableValue?: cdktf.IResolvable;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): ServiceTaskSpecNetworksAdvanced | cdktf.IResolvable | undefined {
+    if (this.resolvableValue) {
+      return this.resolvableValue;
+    }
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    if (this._aliases !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.aliases = this._aliases;
+    }
+    if (this._driverOpts !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.driverOpts = this._driverOpts;
+    }
+    if (this._name !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.name = this._name;
+    }
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: ServiceTaskSpecNetworksAdvanced | cdktf.IResolvable | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+      this.resolvableValue = undefined;
+      this._aliases = undefined;
+      this._driverOpts = undefined;
+      this._name = undefined;
+    }
+    else if (cdktf.Tokenization.isResolvable(value)) {
+      this.isEmptyObject = false;
+      this.resolvableValue = value;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+      this.resolvableValue = undefined;
+      this._aliases = value.aliases;
+      this._driverOpts = value.driverOpts;
+      this._name = value.name;
+    }
+  }
+
+  // aliases - computed: false, optional: true, required: false
+  private _aliases?: string[]; 
+  public get aliases() {
+    return cdktf.Fn.tolist(this.getListAttribute('aliases'));
+  }
+  public set aliases(value: string[]) {
+    this._aliases = value;
+  }
+  public resetAliases() {
+    this._aliases = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get aliasesInput() {
+    return this._aliases;
+  }
+
+  // driver_opts - computed: false, optional: true, required: false
+  private _driverOpts?: string[]; 
+  public get driverOpts() {
+    return cdktf.Fn.tolist(this.getListAttribute('driver_opts'));
+  }
+  public set driverOpts(value: string[]) {
+    this._driverOpts = value;
+  }
+  public resetDriverOpts() {
+    this._driverOpts = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get driverOptsInput() {
+    return this._driverOpts;
+  }
+
+  // name - computed: false, optional: false, required: true
+  private _name?: string; 
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get nameInput() {
+    return this._name;
+  }
+}
+
+export class ServiceTaskSpecNetworksAdvancedList extends cdktf.ComplexList {
+  public internalValue? : ServiceTaskSpecNetworksAdvanced[] | cdktf.IResolvable
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): ServiceTaskSpecNetworksAdvancedOutputReference {
+    return new ServiceTaskSpecNetworksAdvancedOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
   }
 }
 export interface ServiceTaskSpecPlacementPlatforms {
@@ -4778,6 +4961,12 @@ export interface ServiceTaskSpec {
   */
   readonly logDriver?: ServiceTaskSpecLogDriver;
   /**
+  * networks_advanced block
+  * 
+  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#networks_advanced Service#networks_advanced}
+  */
+  readonly networksAdvanced?: ServiceTaskSpecNetworksAdvanced[] | cdktf.IResolvable;
+  /**
   * placement block
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#placement Service#placement}
@@ -4808,6 +4997,7 @@ export function serviceTaskSpecToTerraform(struct?: ServiceTaskSpecOutputReferen
     runtime: cdktf.stringToTerraform(struct!.runtime),
     container_spec: serviceTaskSpecContainerSpecToTerraform(struct!.containerSpec),
     log_driver: serviceTaskSpecLogDriverToTerraform(struct!.logDriver),
+    networks_advanced: cdktf.listMapper(serviceTaskSpecNetworksAdvancedToTerraform, true)(struct!.networksAdvanced),
     placement: serviceTaskSpecPlacementToTerraform(struct!.placement),
     resources: serviceTaskSpecResourcesToTerraform(struct!.resources),
     restart_policy: serviceTaskSpecRestartPolicyToTerraform(struct!.restartPolicy),
@@ -4848,6 +5038,10 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.logDriver = this._logDriver?.internalValue;
     }
+    if (this._networksAdvanced?.internalValue !== undefined) {
+      hasAnyValues = true;
+      internalValueResult.networksAdvanced = this._networksAdvanced?.internalValue;
+    }
     if (this._placement?.internalValue !== undefined) {
       hasAnyValues = true;
       internalValueResult.placement = this._placement?.internalValue;
@@ -4871,6 +5065,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
       this._runtime = undefined;
       this._containerSpec.internalValue = undefined;
       this._logDriver.internalValue = undefined;
+      this._networksAdvanced.internalValue = undefined;
       this._placement.internalValue = undefined;
       this._resources.internalValue = undefined;
       this._restartPolicy.internalValue = undefined;
@@ -4882,6 +5077,7 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
       this._runtime = value.runtime;
       this._containerSpec.internalValue = value.containerSpec;
       this._logDriver.internalValue = value.logDriver;
+      this._networksAdvanced.internalValue = value.networksAdvanced;
       this._placement.internalValue = value.placement;
       this._resources.internalValue = value.resources;
       this._restartPolicy.internalValue = value.restartPolicy;
@@ -4963,6 +5159,22 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get logDriverInput() {
     return this._logDriver.internalValue;
+  }
+
+  // networks_advanced - computed: false, optional: true, required: false
+  private _networksAdvanced = new ServiceTaskSpecNetworksAdvancedList(this, "networks_advanced", true);
+  public get networksAdvanced() {
+    return this._networksAdvanced;
+  }
+  public putNetworksAdvanced(value: ServiceTaskSpecNetworksAdvanced[] | cdktf.IResolvable) {
+    this._networksAdvanced.internalValue = value;
+  }
+  public resetNetworksAdvanced() {
+    this._networksAdvanced.internalValue = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get networksAdvancedInput() {
+    return this._networksAdvanced.internalValue;
   }
 
   // placement - computed: false, optional: true, required: false
@@ -5252,7 +5464,7 @@ export class Service extends cdktf.TerraformResource {
       terraformResourceType: 'docker_service',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.24.0',
+        providerVersion: '2.25.0',
         providerVersionConstraint: '~> 2.12'
       },
       provider: config.provider,
