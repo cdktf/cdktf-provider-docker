@@ -56,11 +56,6 @@ Name|Description
 [plugin.PluginGrantPermissionsOutputReference](#cdktf-provider-docker-plugin-plugingrantpermissionsoutputreference)|*No description*
 [provider.DockerProvider](#cdktf-provider-docker-provider-dockerprovider)|Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
 [registryImage.RegistryImage](#cdktf-provider-docker-registryimage-registryimage)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/registry_image docker_registry_image}.
-[registryImage.RegistryImageBuildAuthConfigList](#cdktf-provider-docker-registryimage-registryimagebuildauthconfiglist)|*No description*
-[registryImage.RegistryImageBuildAuthConfigOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference)|*No description*
-[registryImage.RegistryImageBuildOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildoutputreference)|*No description*
-[registryImage.RegistryImageBuildUlimitList](#cdktf-provider-docker-registryimage-registryimagebuildulimitlist)|*No description*
-[registryImage.RegistryImageBuildUlimitOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildulimitoutputreference)|*No description*
 [secret.Secret](#cdktf-provider-docker-secret-secret)|Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}.
 [secret.SecretLabelsList](#cdktf-provider-docker-secret-secretlabelslist)|*No description*
 [secret.SecretLabelsOutputReference](#cdktf-provider-docker-secret-secretlabelsoutputreference)|*No description*
@@ -154,9 +149,6 @@ Name|Description
 [plugin.PluginGrantPermissions](#cdktf-provider-docker-plugin-plugingrantpermissions)|*No description*
 [provider.DockerProviderConfig](#cdktf-provider-docker-provider-dockerproviderconfig)|*No description*
 [provider.DockerProviderRegistryAuth](#cdktf-provider-docker-provider-dockerproviderregistryauth)|*No description*
-[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)|*No description*
-[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)|*No description*
-[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)|*No description*
 [registryImage.RegistryImageConfig](#cdktf-provider-docker-registryimage-registryimageconfig)|*No description*
 [secret.SecretConfig](#cdktf-provider-docker-secret-secretconfig)|*No description*
 [secret.SecretLabels](#cdktf-provider-docker-secret-secretlabels)|*No description*
@@ -331,7 +323,6 @@ new container.Container(scope: Construct, id: string, config: ContainerConfig)
   * **init** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Configured whether an init process should be injected for this container. __*Optional*__
   * **ipcMode** (<code>string</code>)  IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`. __*Optional*__
   * **labels** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerLabels](#cdktf-provider-docker-container-containerlabels)></code>)  labels block. __*Optional*__
-  * **links** (<code>Array<string></code>)  Set of links for link based connectivity between containers that are running on the same host. __*Optional*__
   * **logDriver** (<code>string</code>)  The logging driver to use for the container. __*Optional*__
   * **logOpts** (<code>Map<string, string></code>)  Key/value pairs to use as options for the logging driver. __*Optional*__
   * **logs** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Save the container logs (`attach` must be enabled). Defaults to `false`. __*Optional*__
@@ -340,9 +331,7 @@ new container.Container(scope: Construct, id: string, config: ContainerConfig)
   * **memorySwap** (<code>number</code>)  The total memory limit (memory + swap) for the container in MBs. __*Optional*__
   * **mounts** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerMounts](#cdktf-provider-docker-container-containermounts)></code>)  mounts block. __*Optional*__
   * **mustRun** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, then the Docker container will be kept running. __*Optional*__
-  * **networkAlias** (<code>Array<string></code>)  Set an alias for the container in all specified networks. __*Optional*__
   * **networkMode** (<code>string</code>)  Network mode of the container. __*Optional*__
-  * **networks** (<code>Array<string></code>)  ID of the networks in which the container is. __*Optional*__
   * **networksAdvanced** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerNetworksAdvanced](#cdktf-provider-docker-container-containernetworksadvanced)></code>)  networks_advanced block. __*Optional*__
   * **pidMode** (<code>string</code>)  he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`. __*Optional*__
   * **ports** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerPorts](#cdktf-provider-docker-container-containerports)></code>)  ports block. __*Optional*__
@@ -397,7 +386,6 @@ Name | Type | Description
 **entrypoint** | <code>Array<string></code> | <span></span>
 **env** | <code>Array<string></code> | <span></span>
 **exitCode** | <code>number</code> | <span></span>
-**gateway** | <code>string</code> | <span></span>
 **gpus** | <code>string</code> | <span></span>
 **groupAdd** | <code>Array<string></code> | <span></span>
 **healthcheck** | <code>[container.ContainerHealthcheckOutputReference](#cdktf-provider-docker-container-containerhealthcheckoutputreference)</code> | <span></span>
@@ -406,11 +394,8 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **image** | <code>string</code> | <span></span>
 **init** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**ipAddress** | <code>string</code> | <span></span>
-**ipPrefixLength** | <code>number</code> | <span></span>
 **ipcMode** | <code>string</code> | <span></span>
 **labels** | <code>[container.ContainerLabelsList](#cdktf-provider-docker-container-containerlabelslist)</code> | <span></span>
-**links** | <code>Array<string></code> | <span></span>
 **logDriver** | <code>string</code> | <span></span>
 **logOpts** | <code>Map<string, string></code> | <span></span>
 **logs** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
@@ -420,10 +405,8 @@ Name | Type | Description
 **mounts** | <code>[container.ContainerMountsList](#cdktf-provider-docker-container-containermountslist)</code> | <span></span>
 **mustRun** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**networkAlias** | <code>Array<string></code> | <span></span>
 **networkData** | <code>[container.ContainerNetworkDataList](#cdktf-provider-docker-container-containernetworkdatalist)</code> | <span></span>
 **networkMode** | <code>string</code> | <span></span>
-**networks** | <code>Array<string></code> | <span></span>
 **networksAdvanced** | <code>[container.ContainerNetworksAdvancedList](#cdktf-provider-docker-container-containernetworksadvancedlist)</code> | <span></span>
 **pidMode** | <code>string</code> | <span></span>
 **ports** | <code>[container.ContainerPortsList](#cdktf-provider-docker-container-containerportslist)</code> | <span></span>
@@ -477,7 +460,6 @@ Name | Type | Description
 **initInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **ipcModeInput**? | <code>string</code> | __*Optional*__
 **labelsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerLabels](#cdktf-provider-docker-container-containerlabels)></code> | __*Optional*__
-**linksInput**? | <code>Array<string></code> | __*Optional*__
 **logDriverInput**? | <code>string</code> | __*Optional*__
 **logOptsInput**? | <code>Map<string, string></code> | __*Optional*__
 **logsInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
@@ -487,10 +469,8 @@ Name | Type | Description
 **mountsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerMounts](#cdktf-provider-docker-container-containermounts)></code> | __*Optional*__
 **mustRunInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
-**networkAliasInput**? | <code>Array<string></code> | __*Optional*__
 **networkModeInput**? | <code>string</code> | __*Optional*__
 **networksAdvancedInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerNetworksAdvanced](#cdktf-provider-docker-container-containernetworksadvanced)></code> | __*Optional*__
-**networksInput**? | <code>Array<string></code> | __*Optional*__
 **pidModeInput**? | <code>string</code> | __*Optional*__
 **portsInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerPorts](#cdktf-provider-docker-container-containerports)></code> | __*Optional*__
 **privilegedInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
@@ -961,18 +941,6 @@ resetLabels(): void
 
 
 
-#### resetLinks() <a id="cdktf-provider-docker-container-container-resetlinks"></a>
-
-
-
-```ts
-resetLinks(): void
-```
-
-
-
-
-
 #### resetLogDriver() <a id="cdktf-provider-docker-container-container-resetlogdriver"></a>
 
 
@@ -1069,36 +1037,12 @@ resetMustRun(): void
 
 
 
-#### resetNetworkAlias() <a id="cdktf-provider-docker-container-container-resetnetworkalias"></a>
-
-
-
-```ts
-resetNetworkAlias(): void
-```
-
-
-
-
-
 #### resetNetworkMode() <a id="cdktf-provider-docker-container-container-resetnetworkmode"></a>
 
 
 
 ```ts
 resetNetworkMode(): void
-```
-
-
-
-
-
-#### resetNetworks() <a id="cdktf-provider-docker-container-container-resetnetworks"></a>
-
-
-
-```ts
-resetNetworks(): void
 ```
 
 
@@ -3858,7 +3802,6 @@ new image.Image(scope: Construct, id: string, config: ImageConfig)
   * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the image is removed forcibly when the resource is destroyed. __*Optional*__
   * **keepLocally** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the Docker image won't be deleted on destroy operation. __*Optional*__
   * **platform** (<code>string</code>)  The platform to use when pulling the image. Defaults to the platform of the current machine. __*Optional*__
-  * **pullTrigger** (<code>string</code>)  A value which cause an image pull when changed. __*Optional*__
   * **pullTriggers** (<code>Array<string></code>)  List of values which cause an image pull when changed. __*Optional*__
   * **triggers** (<code>Map<string, string></code>)  A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. __*Optional*__
 
@@ -3874,11 +3817,8 @@ Name | Type | Description
 **id** | <code>string</code> | <span></span>
 **imageId** | <code>string</code> | <span></span>
 **keepLocally** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**latest** | <code>string</code> | <span></span>
 **name** | <code>string</code> | <span></span>
-**output** | <code>string</code> | <span></span>
 **platform** | <code>string</code> | <span></span>
-**pullTrigger** | <code>string</code> | <span></span>
 **pullTriggers** | <code>Array<string></code> | <span></span>
 **repoDigest** | <code>string</code> | <span></span>
 **triggers** | <code>Map<string, string></code> | <span></span>
@@ -3887,7 +3827,6 @@ Name | Type | Description
 **keepLocallyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **nameInput**? | <code>string</code> | __*Optional*__
 **platformInput**? | <code>string</code> | __*Optional*__
-**pullTriggerInput**? | <code>string</code> | __*Optional*__
 **pullTriggersInput**? | <code>Array<string></code> | __*Optional*__
 **triggersInput**? | <code>Map<string, string></code> | __*Optional*__
 *static* **tfResourceType** | <code>string</code> | <span></span>
@@ -3904,13 +3843,13 @@ putBuildAttribute(value: ImageBuild): void
 ```
 
 * **value** (<code>[image.ImageBuild](#cdktf-provider-docker-image-imagebuild)</code>)  *No description*
+  * **context** (<code>string</code>)  Value to specify the build context. 
   * **authConfig** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[image.ImageBuildAuthConfig](#cdktf-provider-docker-image-imagebuildauthconfig)></code>)  auth_config block. __*Optional*__
   * **buildArg** (<code>Map<string, string></code>)  Set build-time variables. __*Optional*__
   * **buildArgs** (<code>Map<string, string></code>)  Pairs for build-time variables in the form TODO. __*Optional*__
   * **buildId** (<code>string</code>)  BuildID is an optional identifier that can be passed together with the build request. __*Optional*__
   * **cacheFrom** (<code>Array<string></code>)  Images to consider as cache sources. __*Optional*__
   * **cgroupParent** (<code>string</code>)  Optional parent cgroup for the container. __*Optional*__
-  * **context** (<code>string</code>)  Value to specify the build context. __*Optional*__
   * **cpuPeriod** (<code>number</code>)  The length of a CPU period in microseconds. __*Optional*__
   * **cpuQuota** (<code>number</code>)  Microseconds of CPU time that the container can get in a CPU period. __*Optional*__
   * **cpuSetCpus** (<code>string</code>)  CPUs in which to allow execution (e.g., `0-3`, `0`, `1`). __*Optional*__
@@ -3926,7 +3865,6 @@ putBuildAttribute(value: ImageBuild): void
   * **memorySwap** (<code>number</code>)  Total memory (memory + swap), -1 to enable unlimited swap. __*Optional*__
   * **networkMode** (<code>string</code>)  Set the networking mode for the RUN instructions during build. __*Optional*__
   * **noCache** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Do not use the cache when building the image. __*Optional*__
-  * **path** (<code>string</code>)  Context path. __*Optional*__
   * **platform** (<code>string</code>)  Set platform if server is multi-platform capable. __*Optional*__
   * **pullParent** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Attempt to pull the image even if an older image exists locally. __*Optional*__
   * **remoteContext** (<code>string</code>)  A Git repository URI or HTTP/HTTPS context URI. __*Optional*__
@@ -3986,18 +3924,6 @@ resetKeepLocally(): void
 
 ```ts
 resetPlatform(): void
-```
-
-
-
-
-
-#### resetPullTrigger() <a id="cdktf-provider-docker-image-image-resetpulltrigger"></a>
-
-
-
-```ts
-resetPullTrigger(): void
 ```
 
 
@@ -4281,7 +4207,6 @@ Name | Type | Description
 **memorySwap** | <code>number</code> | <span></span>
 **networkMode** | <code>string</code> | <span></span>
 **noCache** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**path** | <code>string</code> | <span></span>
 **platform** | <code>string</code> | <span></span>
 **pullParent** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **remoteContext** | <code>string</code> | <span></span>
@@ -4318,7 +4243,6 @@ Name | Type | Description
 **memorySwapInput**? | <code>number</code> | __*Optional*__
 **networkModeInput**? | <code>string</code> | __*Optional*__
 **noCacheInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**pathInput**? | <code>string</code> | __*Optional*__
 **platformInput**? | <code>string</code> | __*Optional*__
 **pullParentInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **remoteContextInput**? | <code>string</code> | __*Optional*__
@@ -4428,18 +4352,6 @@ resetCacheFrom(): void
 
 ```ts
 resetCgroupParent(): void
-```
-
-
-
-
-
-#### resetContext() <a id="cdktf-provider-docker-image-imagebuildoutputreference-resetcontext"></a>
-
-
-
-```ts
-resetContext(): void
 ```
 
 
@@ -4620,18 +4532,6 @@ resetNetworkMode(): void
 
 ```ts
 resetNoCache(): void
-```
-
-
-
-
-
-#### resetPath() <a id="cdktf-provider-docker-image-imagebuildoutputreference-resetpath"></a>
-
-
-
-```ts
-resetPath(): void
 ```
 
 
@@ -5882,7 +5782,6 @@ new registryImage.RegistryImage(scope: Construct, id: string, config: RegistryIm
   * **provider** (<code>[TerraformProvider](#cdktf-terraformprovider)</code>)  *No description* __*Optional*__
   * **provisioners** (<code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code>)  *No description* __*Optional*__
   * **name** (<code>string</code>)  The name of the Docker image. 
-  * **buildAttribute** (<code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code>)  build block. __*Optional*__
   * **id** (<code>string</code>)  Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/registry_image#id RegistryImage#id}. __*Optional*__
   * **insecureSkipVerify** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. __*Optional*__
   * **keepRemotely** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true, then the Docker image won't be deleted on destroy operation. __*Optional*__
@@ -5895,14 +5794,12 @@ new registryImage.RegistryImage(scope: Construct, id: string, config: RegistryIm
 
 Name | Type | Description 
 -----|------|-------------
-**buildAttribute** | <code>[registryImage.RegistryImageBuildOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildoutputreference)</code> | <span></span>
 **id** | <code>string</code> | <span></span>
 **insecureSkipVerify** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **keepRemotely** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
 **name** | <code>string</code> | <span></span>
 **sha256Digest** | <code>string</code> | <span></span>
 **triggers** | <code>Map<string, string></code> | <span></span>
-**buildAttributeInput**? | <code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code> | __*Optional*__
 **idInput**? | <code>string</code> | __*Optional*__
 **insecureSkipVerifyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
 **keepRemotelyInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
@@ -5911,63 +5808,6 @@ Name | Type | Description
 *static* **tfResourceType** | <code>string</code> | <span></span>
 
 ### Methods
-
-
-#### putBuildAttribute(value) <a id="cdktf-provider-docker-registryimage-registryimage-putbuildattribute"></a>
-
-
-
-```ts
-putBuildAttribute(value: RegistryImageBuild): void
-```
-
-* **value** (<code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code>)  *No description*
-  * **context** (<code>string</code>)  The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'. 
-  * **authConfig** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)></code>)  auth_config block. __*Optional*__
-  * **buildArgs** (<code>Map<string, string></code>)  Pairs for build-time variables in the form TODO. __*Optional*__
-  * **buildId** (<code>string</code>)  BuildID is an optional identifier that can be passed together with the build request. __*Optional*__
-  * **cacheFrom** (<code>Array<string></code>)  Images to consider as cache sources. __*Optional*__
-  * **cgroupParent** (<code>string</code>)  Optional parent cgroup for the container. __*Optional*__
-  * **cpuPeriod** (<code>number</code>)  The length of a CPU period in microseconds. __*Optional*__
-  * **cpuQuota** (<code>number</code>)  Microseconds of CPU time that the container can get in a CPU period. __*Optional*__
-  * **cpuSetCpus** (<code>string</code>)  CPUs in which to allow execution (e.g., `0-3`, `0`, `1`). __*Optional*__
-  * **cpuSetMems** (<code>string</code>)  MEMs in which to allow execution (`0-3`, `0`, `1`). __*Optional*__
-  * **cpuShares** (<code>number</code>)  CPU shares (relative weight). __*Optional*__
-  * **dockerfile** (<code>string</code>)  Dockerfile file. Defaults to `Dockerfile`. __*Optional*__
-  * **extraHosts** (<code>Array<string></code>)  A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"]. __*Optional*__
-  * **forceRemove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Always remove intermediate containers. __*Optional*__
-  * **isolation** (<code>string</code>)  Isolation represents the isolation technology of a container. The supported values are. __*Optional*__
-  * **labels** (<code>Map<string, string></code>)  User-defined key/value metadata. __*Optional*__
-  * **memory** (<code>number</code>)  Set memory limit for build. __*Optional*__
-  * **memorySwap** (<code>number</code>)  Total memory (memory + swap), -1 to enable unlimited swap. __*Optional*__
-  * **networkMode** (<code>string</code>)  Set the networking mode for the RUN instructions during build. __*Optional*__
-  * **noCache** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Do not use the cache when building the image. __*Optional*__
-  * **platform** (<code>string</code>)  Set platform if server is multi-platform capable. __*Optional*__
-  * **pullParent** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Attempt to pull the image even if an older image exists locally. __*Optional*__
-  * **remoteContext** (<code>string</code>)  A Git repository URI or HTTP/HTTPS context URI. __*Optional*__
-  * **remove** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Remove intermediate containers after a successful build (default behavior). __*Optional*__
-  * **securityOpt** (<code>Array<string></code>)  The security options. __*Optional*__
-  * **sessionId** (<code>string</code>)  Set an ID for the build session. __*Optional*__
-  * **shmSize** (<code>number</code>)  Size of /dev/shm in bytes. The size must be greater than 0. __*Optional*__
-  * **squash** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  If true the new layers are squashed into a new image with a single new layer. __*Optional*__
-  * **suppressOutput** (<code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code>)  Suppress the build output and print image ID on success. __*Optional*__
-  * **target** (<code>string</code>)  Set the target build stage to build. __*Optional*__
-  * **ulimit** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)></code>)  ulimit block. __*Optional*__
-  * **version** (<code>string</code>)  Version of the underlying builder to use. __*Optional*__
-
-
-
-
-#### resetBuildAttribute() <a id="cdktf-provider-docker-registryimage-registryimage-resetbuildattribute"></a>
-
-
-
-```ts
-resetBuildAttribute(): void
-```
-
-
-
 
 
 #### resetId() <a id="cdktf-provider-docker-registryimage-registryimage-resetid"></a>
@@ -6029,784 +5869,6 @@ protected synthesizeAttributes(): Map<string, any>
 
 __Returns__:
 * <code>Map<string, any></code>
-
-
-
-## class RegistryImageBuildAuthConfigList  <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfiglist"></a>
-
-
-
-__Implements__: [ITerraformAddressable](#cdktf-iterraformaddressable), [IResolvable](#cdktf-iresolvable)
-__Submodule__: registryImage
-
-__Extends__: [ComplexList](#cdktf-complexlist)
-
-### Initializer
-
-
-
-
-```ts
-new registryImage.RegistryImageBuildAuthConfigList(terraformResource: IInterpolatingParent, terraformAttribute: string, wrapsSet: boolean)
-```
-
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
-* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **wrapsSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-
-
-
-### Properties
-
-
-Name | Type | Description 
------|------|-------------
-**terraformAttribute** | <code>string</code> | The attribute on the parent resource this class is referencing.
-**terraformResource** | <code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code> | The parent resource.
-**wrapsSet** | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-**internalValue**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)></code> | __*Optional*__
-
-### Methods
-
-
-#### get(index) <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfiglist-get"></a>
-
-
-
-```ts
-get(index: number): RegistryImageBuildAuthConfigOutputReference
-```
-
-* **index** (<code>number</code>)  the index of the item to return.
-
-__Returns__:
-* <code>[registryImage.RegistryImageBuildAuthConfigOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference)</code>
-
-
-
-## class RegistryImageBuildAuthConfigOutputReference  <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference"></a>
-
-
-
-__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent), [IResolvable](#cdktf-iresolvable), [ITerraformAddressable](#cdktf-iterraformaddressable)
-__Submodule__: registryImage
-
-__Extends__: [ComplexObject](#cdktf-complexobject)
-
-### Initializer
-
-
-
-
-```ts
-new registryImage.RegistryImageBuildAuthConfigOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean)
-```
-
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
-* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **complexObjectIndex** (<code>number</code>)  the index of this item in the list.
-* **complexObjectIsFromSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-
-
-
-### Properties
-
-
-Name | Type | Description 
------|------|-------------
-**auth** | <code>string</code> | <span></span>
-**email** | <code>string</code> | <span></span>
-**hostName** | <code>string</code> | <span></span>
-**identityToken** | <code>string</code> | <span></span>
-**password** | <code>string</code> | <span></span>
-**registryToken** | <code>string</code> | <span></span>
-**serverAddress** | <code>string</code> | <span></span>
-**userName** | <code>string</code> | <span></span>
-**authInput**? | <code>string</code> | __*Optional*__
-**emailInput**? | <code>string</code> | __*Optional*__
-**hostNameInput**? | <code>string</code> | __*Optional*__
-**identityTokenInput**? | <code>string</code> | __*Optional*__
-**internalValue**? | <code>[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig) &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**passwordInput**? | <code>string</code> | __*Optional*__
-**registryTokenInput**? | <code>string</code> | __*Optional*__
-**serverAddressInput**? | <code>string</code> | __*Optional*__
-**userNameInput**? | <code>string</code> | __*Optional*__
-
-### Methods
-
-
-#### resetAuth() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetauth"></a>
-
-
-
-```ts
-resetAuth(): void
-```
-
-
-
-
-
-#### resetEmail() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetemail"></a>
-
-
-
-```ts
-resetEmail(): void
-```
-
-
-
-
-
-#### resetIdentityToken() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetidentitytoken"></a>
-
-
-
-```ts
-resetIdentityToken(): void
-```
-
-
-
-
-
-#### resetPassword() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetpassword"></a>
-
-
-
-```ts
-resetPassword(): void
-```
-
-
-
-
-
-#### resetRegistryToken() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetregistrytoken"></a>
-
-
-
-```ts
-resetRegistryToken(): void
-```
-
-
-
-
-
-#### resetServerAddress() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetserveraddress"></a>
-
-
-
-```ts
-resetServerAddress(): void
-```
-
-
-
-
-
-#### resetUserName() <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfigoutputreference-resetusername"></a>
-
-
-
-```ts
-resetUserName(): void
-```
-
-
-
-
-
-
-
-## class RegistryImageBuildOutputReference  <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference"></a>
-
-
-
-__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent), [IResolvable](#cdktf-iresolvable), [ITerraformAddressable](#cdktf-iterraformaddressable)
-__Submodule__: registryImage
-
-__Extends__: [ComplexObject](#cdktf-complexobject)
-
-### Initializer
-
-
-
-
-```ts
-new registryImage.RegistryImageBuildOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string)
-```
-
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
-* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-
-
-
-### Properties
-
-
-Name | Type | Description 
------|------|-------------
-**authConfig** | <code>[registryImage.RegistryImageBuildAuthConfigList](#cdktf-provider-docker-registryimage-registryimagebuildauthconfiglist)</code> | <span></span>
-**buildArgs** | <code>Map<string, string></code> | <span></span>
-**buildId** | <code>string</code> | <span></span>
-**cacheFrom** | <code>Array<string></code> | <span></span>
-**cgroupParent** | <code>string</code> | <span></span>
-**context** | <code>string</code> | <span></span>
-**cpuPeriod** | <code>number</code> | <span></span>
-**cpuQuota** | <code>number</code> | <span></span>
-**cpuSetCpus** | <code>string</code> | <span></span>
-**cpuSetMems** | <code>string</code> | <span></span>
-**cpuShares** | <code>number</code> | <span></span>
-**dockerfile** | <code>string</code> | <span></span>
-**extraHosts** | <code>Array<string></code> | <span></span>
-**forceRemove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**isolation** | <code>string</code> | <span></span>
-**labels** | <code>Map<string, string></code> | <span></span>
-**memory** | <code>number</code> | <span></span>
-**memorySwap** | <code>number</code> | <span></span>
-**networkMode** | <code>string</code> | <span></span>
-**noCache** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**platform** | <code>string</code> | <span></span>
-**pullParent** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**remoteContext** | <code>string</code> | <span></span>
-**remove** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**securityOpt** | <code>Array<string></code> | <span></span>
-**sessionId** | <code>string</code> | <span></span>
-**shmSize** | <code>number</code> | <span></span>
-**squash** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**suppressOutput** | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | <span></span>
-**target** | <code>string</code> | <span></span>
-**ulimit** | <code>[registryImage.RegistryImageBuildUlimitList](#cdktf-provider-docker-registryimage-registryimagebuildulimitlist)</code> | <span></span>
-**version** | <code>string</code> | <span></span>
-**authConfigInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)></code> | __*Optional*__
-**buildArgsInput**? | <code>Map<string, string></code> | __*Optional*__
-**buildIdInput**? | <code>string</code> | __*Optional*__
-**cacheFromInput**? | <code>Array<string></code> | __*Optional*__
-**cgroupParentInput**? | <code>string</code> | __*Optional*__
-**contextInput**? | <code>string</code> | __*Optional*__
-**cpuPeriodInput**? | <code>number</code> | __*Optional*__
-**cpuQuotaInput**? | <code>number</code> | __*Optional*__
-**cpuSetCpusInput**? | <code>string</code> | __*Optional*__
-**cpuSetMemsInput**? | <code>string</code> | __*Optional*__
-**cpuSharesInput**? | <code>number</code> | __*Optional*__
-**dockerfileInput**? | <code>string</code> | __*Optional*__
-**extraHostsInput**? | <code>Array<string></code> | __*Optional*__
-**forceRemoveInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**internalValue**? | <code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code> | __*Optional*__
-**isolationInput**? | <code>string</code> | __*Optional*__
-**labelsInput**? | <code>Map<string, string></code> | __*Optional*__
-**memoryInput**? | <code>number</code> | __*Optional*__
-**memorySwapInput**? | <code>number</code> | __*Optional*__
-**networkModeInput**? | <code>string</code> | __*Optional*__
-**noCacheInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**platformInput**? | <code>string</code> | __*Optional*__
-**pullParentInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**remoteContextInput**? | <code>string</code> | __*Optional*__
-**removeInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**securityOptInput**? | <code>Array<string></code> | __*Optional*__
-**sessionIdInput**? | <code>string</code> | __*Optional*__
-**shmSizeInput**? | <code>number</code> | __*Optional*__
-**squashInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**suppressOutputInput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**targetInput**? | <code>string</code> | __*Optional*__
-**ulimitInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)></code> | __*Optional*__
-**versionInput**? | <code>string</code> | __*Optional*__
-
-### Methods
-
-
-#### putAuthConfig(value) <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-putauthconfig"></a>
-
-
-
-```ts
-putAuthConfig(value: IResolvable &#124; Array<RegistryImageBuildAuthConfig>): void
-```
-
-* **value** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)></code>)  *No description*
-
-
-
-
-#### putUlimit(value) <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-putulimit"></a>
-
-
-
-```ts
-putUlimit(value: IResolvable &#124; Array<RegistryImageBuildUlimit>): void
-```
-
-* **value** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)></code>)  *No description*
-
-
-
-
-#### resetAuthConfig() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetauthconfig"></a>
-
-
-
-```ts
-resetAuthConfig(): void
-```
-
-
-
-
-
-#### resetBuildArgs() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetbuildargs"></a>
-
-
-
-```ts
-resetBuildArgs(): void
-```
-
-
-
-
-
-#### resetBuildId() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetbuildid"></a>
-
-
-
-```ts
-resetBuildId(): void
-```
-
-
-
-
-
-#### resetCacheFrom() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcachefrom"></a>
-
-
-
-```ts
-resetCacheFrom(): void
-```
-
-
-
-
-
-#### resetCgroupParent() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcgroupparent"></a>
-
-
-
-```ts
-resetCgroupParent(): void
-```
-
-
-
-
-
-#### resetCpuPeriod() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcpuperiod"></a>
-
-
-
-```ts
-resetCpuPeriod(): void
-```
-
-
-
-
-
-#### resetCpuQuota() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcpuquota"></a>
-
-
-
-```ts
-resetCpuQuota(): void
-```
-
-
-
-
-
-#### resetCpuSetCpus() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcpusetcpus"></a>
-
-
-
-```ts
-resetCpuSetCpus(): void
-```
-
-
-
-
-
-#### resetCpuSetMems() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcpusetmems"></a>
-
-
-
-```ts
-resetCpuSetMems(): void
-```
-
-
-
-
-
-#### resetCpuShares() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetcpushares"></a>
-
-
-
-```ts
-resetCpuShares(): void
-```
-
-
-
-
-
-#### resetDockerfile() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetdockerfile"></a>
-
-
-
-```ts
-resetDockerfile(): void
-```
-
-
-
-
-
-#### resetExtraHosts() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetextrahosts"></a>
-
-
-
-```ts
-resetExtraHosts(): void
-```
-
-
-
-
-
-#### resetForceRemove() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetforceremove"></a>
-
-
-
-```ts
-resetForceRemove(): void
-```
-
-
-
-
-
-#### resetIsolation() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetisolation"></a>
-
-
-
-```ts
-resetIsolation(): void
-```
-
-
-
-
-
-#### resetLabels() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetlabels"></a>
-
-
-
-```ts
-resetLabels(): void
-```
-
-
-
-
-
-#### resetMemory() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetmemory"></a>
-
-
-
-```ts
-resetMemory(): void
-```
-
-
-
-
-
-#### resetMemorySwap() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetmemoryswap"></a>
-
-
-
-```ts
-resetMemorySwap(): void
-```
-
-
-
-
-
-#### resetNetworkMode() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetnetworkmode"></a>
-
-
-
-```ts
-resetNetworkMode(): void
-```
-
-
-
-
-
-#### resetNoCache() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetnocache"></a>
-
-
-
-```ts
-resetNoCache(): void
-```
-
-
-
-
-
-#### resetPlatform() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetplatform"></a>
-
-
-
-```ts
-resetPlatform(): void
-```
-
-
-
-
-
-#### resetPullParent() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetpullparent"></a>
-
-
-
-```ts
-resetPullParent(): void
-```
-
-
-
-
-
-#### resetRemoteContext() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetremotecontext"></a>
-
-
-
-```ts
-resetRemoteContext(): void
-```
-
-
-
-
-
-#### resetRemove() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetremove"></a>
-
-
-
-```ts
-resetRemove(): void
-```
-
-
-
-
-
-#### resetSecurityOpt() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetsecurityopt"></a>
-
-
-
-```ts
-resetSecurityOpt(): void
-```
-
-
-
-
-
-#### resetSessionId() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetsessionid"></a>
-
-
-
-```ts
-resetSessionId(): void
-```
-
-
-
-
-
-#### resetShmSize() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetshmsize"></a>
-
-
-
-```ts
-resetShmSize(): void
-```
-
-
-
-
-
-#### resetSquash() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetsquash"></a>
-
-
-
-```ts
-resetSquash(): void
-```
-
-
-
-
-
-#### resetSuppressOutput() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetsuppressoutput"></a>
-
-
-
-```ts
-resetSuppressOutput(): void
-```
-
-
-
-
-
-#### resetTarget() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resettarget"></a>
-
-
-
-```ts
-resetTarget(): void
-```
-
-
-
-
-
-#### resetUlimit() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetulimit"></a>
-
-
-
-```ts
-resetUlimit(): void
-```
-
-
-
-
-
-#### resetVersion() <a id="cdktf-provider-docker-registryimage-registryimagebuildoutputreference-resetversion"></a>
-
-
-
-```ts
-resetVersion(): void
-```
-
-
-
-
-
-
-
-## class RegistryImageBuildUlimitList  <a id="cdktf-provider-docker-registryimage-registryimagebuildulimitlist"></a>
-
-
-
-__Implements__: [ITerraformAddressable](#cdktf-iterraformaddressable), [IResolvable](#cdktf-iresolvable)
-__Submodule__: registryImage
-
-__Extends__: [ComplexList](#cdktf-complexlist)
-
-### Initializer
-
-
-
-
-```ts
-new registryImage.RegistryImageBuildUlimitList(terraformResource: IInterpolatingParent, terraformAttribute: string, wrapsSet: boolean)
-```
-
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
-* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **wrapsSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-
-
-
-### Properties
-
-
-Name | Type | Description 
------|------|-------------
-**terraformAttribute** | <code>string</code> | The attribute on the parent resource this class is referencing.
-**terraformResource** | <code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code> | The parent resource.
-**wrapsSet** | <code>boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-**internalValue**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)></code> | __*Optional*__
-
-### Methods
-
-
-#### get(index) <a id="cdktf-provider-docker-registryimage-registryimagebuildulimitlist-get"></a>
-
-
-
-```ts
-get(index: number): RegistryImageBuildUlimitOutputReference
-```
-
-* **index** (<code>number</code>)  the index of the item to return.
-
-__Returns__:
-* <code>[registryImage.RegistryImageBuildUlimitOutputReference](#cdktf-provider-docker-registryimage-registryimagebuildulimitoutputreference)</code>
-
-
-
-## class RegistryImageBuildUlimitOutputReference  <a id="cdktf-provider-docker-registryimage-registryimagebuildulimitoutputreference"></a>
-
-
-
-__Implements__: [IInterpolatingParent](#cdktf-iinterpolatingparent), [IResolvable](#cdktf-iresolvable), [ITerraformAddressable](#cdktf-iterraformaddressable)
-__Submodule__: registryImage
-
-__Extends__: [ComplexObject](#cdktf-complexobject)
-
-### Initializer
-
-
-
-
-```ts
-new registryImage.RegistryImageBuildUlimitOutputReference(terraformResource: IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean)
-```
-
-* **terraformResource** (<code>[IInterpolatingParent](#cdktf-iinterpolatingparent)</code>)  The parent resource.
-* **terraformAttribute** (<code>string</code>)  The attribute on the parent resource this class is referencing.
-* **complexObjectIndex** (<code>number</code>)  the index of this item in the list.
-* **complexObjectIsFromSet** (<code>boolean</code>)  whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
-
-
-
-### Properties
-
-
-Name | Type | Description 
------|------|-------------
-**hard** | <code>number</code> | <span></span>
-**name** | <code>string</code> | <span></span>
-**soft** | <code>number</code> | <span></span>
-**hardInput**? | <code>number</code> | __*Optional*__
-**internalValue**? | <code>[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit) &#124; [IResolvable](#cdktf-iresolvable)</code> | __*Optional*__
-**nameInput**? | <code>string</code> | __*Optional*__
-**softInput**? | <code>number</code> | __*Optional*__
 
 
 
@@ -7180,7 +6242,6 @@ putTaskSpec(value: ServiceTaskSpec): void
   * **containerSpec** (<code>[service.ServiceTaskSpecContainerSpec](#cdktf-provider-docker-service-servicetaskspeccontainerspec)</code>)  container_spec block. 
   * **forceUpdate** (<code>number</code>)  A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126). __*Optional*__
   * **logDriver** (<code>[service.ServiceTaskSpecLogDriver](#cdktf-provider-docker-service-servicetaskspeclogdriver)</code>)  log_driver block. __*Optional*__
-  * **networks** (<code>Array<string></code>)  Ids of the networks in which the  container will be put in. __*Optional*__
   * **networksAdvanced** (<code>[IResolvable](#cdktf-iresolvable) &#124; Array<[service.ServiceTaskSpecNetworksAdvanced](#cdktf-provider-docker-service-servicetaskspecnetworksadvanced)></code>)  networks_advanced block. __*Optional*__
   * **placement** (<code>[service.ServiceTaskSpecPlacement](#cdktf-provider-docker-service-servicetaskspecplacement)</code>)  placement block. __*Optional*__
   * **resources** (<code>[service.ServiceTaskSpecResources](#cdktf-provider-docker-service-servicetaskspecresources)</code>)  resources block. __*Optional*__
@@ -10052,7 +9113,6 @@ Name | Type | Description
 **containerSpec** | <code>[service.ServiceTaskSpecContainerSpecOutputReference](#cdktf-provider-docker-service-servicetaskspeccontainerspecoutputreference)</code> | <span></span>
 **forceUpdate** | <code>number</code> | <span></span>
 **logDriver** | <code>[service.ServiceTaskSpecLogDriverOutputReference](#cdktf-provider-docker-service-servicetaskspeclogdriveroutputreference)</code> | <span></span>
-**networks** | <code>Array<string></code> | <span></span>
 **networksAdvanced** | <code>[service.ServiceTaskSpecNetworksAdvancedList](#cdktf-provider-docker-service-servicetaskspecnetworksadvancedlist)</code> | <span></span>
 **placement** | <code>[service.ServiceTaskSpecPlacementOutputReference](#cdktf-provider-docker-service-servicetaskspecplacementoutputreference)</code> | <span></span>
 **resources** | <code>[service.ServiceTaskSpecResourcesOutputReference](#cdktf-provider-docker-service-servicetaskspecresourcesoutputreference)</code> | <span></span>
@@ -10063,7 +9123,6 @@ Name | Type | Description
 **internalValue**? | <code>[service.ServiceTaskSpec](#cdktf-provider-docker-service-servicetaskspec)</code> | __*Optional*__
 **logDriverInput**? | <code>[service.ServiceTaskSpecLogDriver](#cdktf-provider-docker-service-servicetaskspeclogdriver)</code> | __*Optional*__
 **networksAdvancedInput**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[service.ServiceTaskSpecNetworksAdvanced](#cdktf-provider-docker-service-servicetaskspecnetworksadvanced)></code> | __*Optional*__
-**networksInput**? | <code>Array<string></code> | __*Optional*__
 **placementInput**? | <code>[service.ServiceTaskSpecPlacement](#cdktf-provider-docker-service-servicetaskspecplacement)</code> | __*Optional*__
 **resourcesInput**? | <code>[service.ServiceTaskSpecResources](#cdktf-provider-docker-service-servicetaskspecresources)</code> | __*Optional*__
 **restartPolicyInput**? | <code>[service.ServiceTaskSpecRestartPolicy](#cdktf-provider-docker-service-servicetaskspecrestartpolicy)</code> | __*Optional*__
@@ -10201,18 +9260,6 @@ resetForceUpdate(): void
 
 ```ts
 resetLogDriver(): void
-```
-
-
-
-
-
-#### resetNetworks() <a id="cdktf-provider-docker-service-servicetaskspecoutputreference-resetnetworks"></a>
-
-
-
-```ts
-resetNetworks(): void
 ```
 
 
@@ -11384,7 +10431,6 @@ Name | Type | Description
 **ipcMode**? | <code>string</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`.<br/>__*Optional*__
 **labels**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerLabels](#cdktf-provider-docker-container-containerlabels)></code> | labels block.<br/>__*Optional*__
 **lifecycle**?🔹 | <code>[TerraformResourceLifecycle](#cdktf-terraformresourcelifecycle)</code> | __*Optional*__
-**links**? | <code>Array<string></code> | Set of links for link based connectivity between containers that are running on the same host.<br/>__*Optional*__
 **logDriver**? | <code>string</code> | The logging driver to use for the container.<br/>__*Optional*__
 **logOpts**? | <code>Map<string, string></code> | Key/value pairs to use as options for the logging driver.<br/>__*Optional*__
 **logs**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Save the container logs (`attach` must be enabled). Defaults to `false`.<br/>__*Optional*__
@@ -11393,9 +10439,7 @@ Name | Type | Description
 **memorySwap**? | <code>number</code> | The total memory limit (memory + swap) for the container in MBs.<br/>__*Optional*__
 **mounts**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerMounts](#cdktf-provider-docker-container-containermounts)></code> | mounts block.<br/>__*Optional*__
 **mustRun**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If `true`, then the Docker container will be kept running.<br/>__*Optional*__
-**networkAlias**? | <code>Array<string></code> | Set an alias for the container in all specified networks.<br/>__*Optional*__
 **networkMode**? | <code>string</code> | Network mode of the container.<br/>__*Optional*__
-**networks**? | <code>Array<string></code> | ID of the networks in which the container is.<br/>__*Optional*__
 **networksAdvanced**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerNetworksAdvanced](#cdktf-provider-docker-container-containernetworksadvanced)></code> | networks_advanced block.<br/>__*Optional*__
 **pidMode**? | <code>string</code> | he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`.<br/>__*Optional*__
 **ports**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[container.ContainerPorts](#cdktf-provider-docker-container-containerports)></code> | ports block.<br/>__*Optional*__
@@ -11783,13 +10827,13 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
+**context** | <code>string</code> | Value to specify the build context.
 **authConfig**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[image.ImageBuildAuthConfig](#cdktf-provider-docker-image-imagebuildauthconfig)></code> | auth_config block.<br/>__*Optional*__
 **buildArg**? | <code>Map<string, string></code> | Set build-time variables.<br/>__*Optional*__
 **buildArgs**? | <code>Map<string, string></code> | Pairs for build-time variables in the form TODO.<br/>__*Optional*__
 **buildId**? | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request.<br/>__*Optional*__
 **cacheFrom**? | <code>Array<string></code> | Images to consider as cache sources.<br/>__*Optional*__
 **cgroupParent**? | <code>string</code> | Optional parent cgroup for the container.<br/>__*Optional*__
-**context**? | <code>string</code> | Value to specify the build context.<br/>__*Optional*__
 **cpuPeriod**? | <code>number</code> | The length of a CPU period in microseconds.<br/>__*Optional*__
 **cpuQuota**? | <code>number</code> | Microseconds of CPU time that the container can get in a CPU period.<br/>__*Optional*__
 **cpuSetCpus**? | <code>string</code> | CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).<br/>__*Optional*__
@@ -11805,7 +10849,6 @@ Name | Type | Description
 **memorySwap**? | <code>number</code> | Total memory (memory + swap), -1 to enable unlimited swap.<br/>__*Optional*__
 **networkMode**? | <code>string</code> | Set the networking mode for the RUN instructions during build.<br/>__*Optional*__
 **noCache**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Do not use the cache when building the image.<br/>__*Optional*__
-**path**? | <code>string</code> | Context path.<br/>__*Optional*__
 **platform**? | <code>string</code> | Set platform if server is multi-platform capable.<br/>__*Optional*__
 **pullParent**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Attempt to pull the image even if an older image exists locally.<br/>__*Optional*__
 **remoteContext**? | <code>string</code> | A Git repository URI or HTTP/HTTPS context URI.<br/>__*Optional*__
@@ -11878,7 +10921,6 @@ Name | Type | Description
 **platform**? | <code>string</code> | The platform to use when pulling the image. Defaults to the platform of the current machine.<br/>__*Optional*__
 **provider**?🔹 | <code>[TerraformProvider](#cdktf-terraformprovider)</code> | __*Optional*__
 **provisioners**?🔹 | <code>Array<[FileProvisioner](#cdktf-fileprovisioner) &#124; [LocalExecProvisioner](#cdktf-localexecprovisioner) &#124; [RemoteExecProvisioner](#cdktf-remoteexecprovisioner)></code> | __*Optional*__
-**pullTrigger**? | <code>string</code> | A value which cause an image pull when changed.<br/>__*Optional*__
 **pullTriggers**? | <code>Array<string></code> | List of values which cause an image pull when changed.<br/>__*Optional*__
 **triggers**? | <code>Map<string, string></code> | A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced.<br/>__*Optional*__
 
@@ -12027,85 +11069,6 @@ Name | Type | Description
 
 
 
-## struct RegistryImageBuild  <a id="cdktf-provider-docker-registryimage-registryimagebuild"></a>
-
-
-
-
-
-
-Name | Type | Description 
------|------|-------------
-**context** | <code>string</code> | The absolute path to the context folder. You can use the helper function '${path.cwd}/context-dir'.
-**authConfig**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildAuthConfig](#cdktf-provider-docker-registryimage-registryimagebuildauthconfig)></code> | auth_config block.<br/>__*Optional*__
-**buildArgs**? | <code>Map<string, string></code> | Pairs for build-time variables in the form TODO.<br/>__*Optional*__
-**buildId**? | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request.<br/>__*Optional*__
-**cacheFrom**? | <code>Array<string></code> | Images to consider as cache sources.<br/>__*Optional*__
-**cgroupParent**? | <code>string</code> | Optional parent cgroup for the container.<br/>__*Optional*__
-**cpuPeriod**? | <code>number</code> | The length of a CPU period in microseconds.<br/>__*Optional*__
-**cpuQuota**? | <code>number</code> | Microseconds of CPU time that the container can get in a CPU period.<br/>__*Optional*__
-**cpuSetCpus**? | <code>string</code> | CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).<br/>__*Optional*__
-**cpuSetMems**? | <code>string</code> | MEMs in which to allow execution (`0-3`, `0`, `1`).<br/>__*Optional*__
-**cpuShares**? | <code>number</code> | CPU shares (relative weight).<br/>__*Optional*__
-**dockerfile**? | <code>string</code> | Dockerfile file. Defaults to `Dockerfile`.<br/>__*Optional*__
-**extraHosts**? | <code>Array<string></code> | A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].<br/>__*Optional*__
-**forceRemove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Always remove intermediate containers.<br/>__*Optional*__
-**isolation**? | <code>string</code> | Isolation represents the isolation technology of a container. The supported values are.<br/>__*Optional*__
-**labels**? | <code>Map<string, string></code> | User-defined key/value metadata.<br/>__*Optional*__
-**memory**? | <code>number</code> | Set memory limit for build.<br/>__*Optional*__
-**memorySwap**? | <code>number</code> | Total memory (memory + swap), -1 to enable unlimited swap.<br/>__*Optional*__
-**networkMode**? | <code>string</code> | Set the networking mode for the RUN instructions during build.<br/>__*Optional*__
-**noCache**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Do not use the cache when building the image.<br/>__*Optional*__
-**platform**? | <code>string</code> | Set platform if server is multi-platform capable.<br/>__*Optional*__
-**pullParent**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Attempt to pull the image even if an older image exists locally.<br/>__*Optional*__
-**remoteContext**? | <code>string</code> | A Git repository URI or HTTP/HTTPS context URI.<br/>__*Optional*__
-**remove**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Remove intermediate containers after a successful build (default behavior).<br/>__*Optional*__
-**securityOpt**? | <code>Array<string></code> | The security options.<br/>__*Optional*__
-**sessionId**? | <code>string</code> | Set an ID for the build session.<br/>__*Optional*__
-**shmSize**? | <code>number</code> | Size of /dev/shm in bytes. The size must be greater than 0.<br/>__*Optional*__
-**squash**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | If true the new layers are squashed into a new image with a single new layer.<br/>__*Optional*__
-**suppressOutput**? | <code>boolean &#124; [IResolvable](#cdktf-iresolvable)</code> | Suppress the build output and print image ID on success.<br/>__*Optional*__
-**target**? | <code>string</code> | Set the target build stage to build.<br/>__*Optional*__
-**ulimit**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[registryImage.RegistryImageBuildUlimit](#cdktf-provider-docker-registryimage-registryimagebuildulimit)></code> | ulimit block.<br/>__*Optional*__
-**version**? | <code>string</code> | Version of the underlying builder to use.<br/>__*Optional*__
-
-
-
-## struct RegistryImageBuildAuthConfig  <a id="cdktf-provider-docker-registryimage-registryimagebuildauthconfig"></a>
-
-
-
-
-
-
-Name | Type | Description 
------|------|-------------
-**hostName** | <code>string</code> | hostname of the registry.
-**auth**? | <code>string</code> | the auth token.<br/>__*Optional*__
-**email**? | <code>string</code> | the user emal.<br/>__*Optional*__
-**identityToken**? | <code>string</code> | the identity token.<br/>__*Optional*__
-**password**? | <code>string</code> | the registry password.<br/>__*Optional*__
-**registryToken**? | <code>string</code> | the registry token.<br/>__*Optional*__
-**serverAddress**? | <code>string</code> | the server address.<br/>__*Optional*__
-**userName**? | <code>string</code> | the registry user name.<br/>__*Optional*__
-
-
-
-## struct RegistryImageBuildUlimit  <a id="cdktf-provider-docker-registryimage-registryimagebuildulimit"></a>
-
-
-
-
-
-
-Name | Type | Description 
------|------|-------------
-**hard** | <code>number</code> | soft limit.
-**name** | <code>string</code> | type of ulimit, e.g. `nofile`.
-**soft** | <code>number</code> | hard limit.
-
-
-
 ## struct RegistryImageConfig  <a id="cdktf-provider-docker-registryimage-registryimageconfig"></a>
 
 
@@ -12116,7 +11079,6 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | The name of the Docker image.
-**buildAttribute**? | <code>[registryImage.RegistryImageBuild](#cdktf-provider-docker-registryimage-registryimagebuild)</code> | build block.<br/>__*Optional*__
 **connection**?🔹 | <code>[SSHProvisionerConnection](#cdktf-sshprovisionerconnection) &#124; [WinrmProvisionerConnection](#cdktf-winrmprovisionerconnection)</code> | __*Optional*__
 **count**?🔹 | <code>number</code> | __*Optional*__
 **dependsOn**?🔹 | <code>Array<[ITerraformDependable](#cdktf-iterraformdependable)></code> | __*Optional*__
@@ -12328,7 +11290,6 @@ Name | Type | Description
 **containerSpec** | <code>[service.ServiceTaskSpecContainerSpec](#cdktf-provider-docker-service-servicetaskspeccontainerspec)</code> | container_spec block.
 **forceUpdate**? | <code>number</code> | A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126).<br/>__*Optional*__
 **logDriver**? | <code>[service.ServiceTaskSpecLogDriver](#cdktf-provider-docker-service-servicetaskspeclogdriver)</code> | log_driver block.<br/>__*Optional*__
-**networks**? | <code>Array<string></code> | Ids of the networks in which the  container will be put in.<br/>__*Optional*__
 **networksAdvanced**? | <code>[IResolvable](#cdktf-iresolvable) &#124; Array<[service.ServiceTaskSpecNetworksAdvanced](#cdktf-provider-docker-service-servicetaskspecnetworksadvanced)></code> | networks_advanced block.<br/>__*Optional*__
 **placement**? | <code>[service.ServiceTaskSpecPlacement](#cdktf-provider-docker-service-servicetaskspecplacement)</code> | placement block.<br/>__*Optional*__
 **resources**? | <code>[service.ServiceTaskSpecResources](#cdktf-provider-docker-service-servicetaskspecresources)</code> | resources block.<br/>__*Optional*__
