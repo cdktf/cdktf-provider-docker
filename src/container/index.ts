@@ -129,12 +129,6 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly ipcMode?: string;
   /**
-  * Set of links for link based connectivity between containers that are running on the same host.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#links Container#links}
-  */
-  readonly links?: string[];
-  /**
   * The logging driver to use for the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#log_driver Container#log_driver}
@@ -183,23 +177,11 @@ export interface ContainerConfig extends cdktf.TerraformMetaArguments {
   */
   readonly name: string;
   /**
-  * Set an alias for the container in all specified networks
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#network_alias Container#network_alias}
-  */
-  readonly networkAlias?: string[];
-  /**
   * Network mode of the container.
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#network_mode Container#network_mode}
   */
   readonly networkMode?: string;
-  /**
-  * ID of the networks in which the container is.
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#networks Container#networks}
-  */
-  readonly networks?: string[];
   /**
   * he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`.
   * 
@@ -2876,8 +2858,8 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.25.0',
-        providerVersionConstraint: '~> 2.12'
+        providerVersion: '3.0.1',
+        providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -2907,7 +2889,6 @@ export class Container extends cdktf.TerraformResource {
     this._image = config.image;
     this._init = config.init;
     this._ipcMode = config.ipcMode;
-    this._links = config.links;
     this._logDriver = config.logDriver;
     this._logOpts = config.logOpts;
     this._logs = config.logs;
@@ -2916,9 +2897,7 @@ export class Container extends cdktf.TerraformResource {
     this._memorySwap = config.memorySwap;
     this._mustRun = config.mustRun;
     this._name = config.name;
-    this._networkAlias = config.networkAlias;
     this._networkMode = config.networkMode;
-    this._networks = config.networks;
     this._pidMode = config.pidMode;
     this._privileged = config.privileged;
     this._publishAllPorts = config.publishAllPorts;
@@ -3182,11 +3161,6 @@ export class Container extends cdktf.TerraformResource {
     return this.getNumberAttribute('exit_code');
   }
 
-  // gateway - computed: true, optional: false, required: false
-  public get gateway() {
-    return this.getStringAttribute('gateway');
-  }
-
   // gpus - computed: false, optional: true, required: false
   private _gpus?: string; 
   public get gpus() {
@@ -3280,16 +3254,6 @@ export class Container extends cdktf.TerraformResource {
     return this._init;
   }
 
-  // ip_address - computed: true, optional: false, required: false
-  public get ipAddress() {
-    return this.getStringAttribute('ip_address');
-  }
-
-  // ip_prefix_length - computed: true, optional: false, required: false
-  public get ipPrefixLength() {
-    return this.getNumberAttribute('ip_prefix_length');
-  }
-
   // ipc_mode - computed: true, optional: true, required: false
   private _ipcMode?: string; 
   public get ipcMode() {
@@ -3304,22 +3268,6 @@ export class Container extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get ipcModeInput() {
     return this._ipcMode;
-  }
-
-  // links - computed: false, optional: true, required: false
-  private _links?: string[]; 
-  public get links() {
-    return cdktf.Fn.tolist(this.getListAttribute('links'));
-  }
-  public set links(value: string[]) {
-    this._links = value;
-  }
-  public resetLinks() {
-    this._links = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get linksInput() {
-    return this._links;
   }
 
   // log_driver - computed: true, optional: true, required: false
@@ -3447,22 +3395,6 @@ export class Container extends cdktf.TerraformResource {
     return this._name;
   }
 
-  // network_alias - computed: false, optional: true, required: false
-  private _networkAlias?: string[]; 
-  public get networkAlias() {
-    return cdktf.Fn.tolist(this.getListAttribute('network_alias'));
-  }
-  public set networkAlias(value: string[]) {
-    this._networkAlias = value;
-  }
-  public resetNetworkAlias() {
-    this._networkAlias = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get networkAliasInput() {
-    return this._networkAlias;
-  }
-
   // network_data - computed: true, optional: false, required: false
   private _networkData = new ContainerNetworkDataList(this, "network_data", false);
   public get networkData() {
@@ -3483,22 +3415,6 @@ export class Container extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get networkModeInput() {
     return this._networkMode;
-  }
-
-  // networks - computed: false, optional: true, required: false
-  private _networks?: string[]; 
-  public get networks() {
-    return cdktf.Fn.tolist(this.getListAttribute('networks'));
-  }
-  public set networks(value: string[]) {
-    this._networks = value;
-  }
-  public resetNetworks() {
-    this._networks = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get networksInput() {
-    return this._networks;
   }
 
   // pid_mode - computed: false, optional: true, required: false
@@ -4071,7 +3987,6 @@ export class Container extends cdktf.TerraformResource {
       image: cdktf.stringToTerraform(this._image),
       init: cdktf.booleanToTerraform(this._init),
       ipc_mode: cdktf.stringToTerraform(this._ipcMode),
-      links: cdktf.listMapper(cdktf.stringToTerraform, false)(this._links),
       log_driver: cdktf.stringToTerraform(this._logDriver),
       log_opts: cdktf.hashMapper(cdktf.stringToTerraform)(this._logOpts),
       logs: cdktf.booleanToTerraform(this._logs),
@@ -4080,9 +3995,7 @@ export class Container extends cdktf.TerraformResource {
       memory_swap: cdktf.numberToTerraform(this._memorySwap),
       must_run: cdktf.booleanToTerraform(this._mustRun),
       name: cdktf.stringToTerraform(this._name),
-      network_alias: cdktf.listMapper(cdktf.stringToTerraform, false)(this._networkAlias),
       network_mode: cdktf.stringToTerraform(this._networkMode),
-      networks: cdktf.listMapper(cdktf.stringToTerraform, false)(this._networks),
       pid_mode: cdktf.stringToTerraform(this._pidMode),
       privileged: cdktf.booleanToTerraform(this._privileged),
       publish_all_ports: cdktf.booleanToTerraform(this._publishAllPorts),
