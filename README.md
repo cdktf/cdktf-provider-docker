@@ -1,5 +1,5 @@
 
-# Terraform CDK docker Provider ~> 2.12
+# Terraform CDK docker Provider ~> 3.0
 
 This repo builds and publishes the Terraform docker Provider bindings for [CDK for Terraform](https://cdk.tf).
 
@@ -49,7 +49,7 @@ You can also visit a hosted version of the documentation on [constructs.dev](htt
 
 ## Versioning
 
-This project is explicitly not tracking the Terraform docker Provider version 1:1. In fact, it always tracks `latest` of `~> 2.12` with every release. If there are scenarios where you explicitly have to pin your provider version, you can do so by generating the [provider constructs manually](https://cdk.tf/imports).
+This project is explicitly not tracking the Terraform docker Provider version 1:1. In fact, it always tracks `latest` of `~> 3.0` with every release. If there are scenarios where you explicitly have to pin your provider version, you can do so by generating the [provider constructs manually](https://cdk.tf/imports).
 
 These are the upstream dependencies:
 

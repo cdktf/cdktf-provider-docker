@@ -32,12 +32,6 @@ export interface ImageConfig extends cdktf.TerraformMetaArguments {
   */
   readonly platform?: string;
   /**
-  * A value which cause an image pull when changed
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_trigger Image#pull_trigger}
-  */
-  readonly pullTrigger?: string;
-  /**
   * List of values which cause an image pull when changed. This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_triggers Image#pull_triggers}
@@ -539,7 +533,7 @@ export interface ImageBuild {
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#context Image#context}
   */
-  readonly context?: string;
+  readonly context: string;
   /**
   * The length of a CPU period in microseconds
   * 
@@ -630,12 +624,6 @@ export interface ImageBuild {
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#no_cache Image#no_cache}
   */
   readonly noCache?: boolean | cdktf.IResolvable;
-  /**
-  * Context path
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#path Image#path}
-  */
-  readonly path?: string;
   /**
   * Set platform if server is multi-platform capable
   * 
@@ -749,7 +737,6 @@ export function imageBuildToTerraform(struct?: ImageBuildOutputReference | Image
     memory_swap: cdktf.numberToTerraform(struct!.memorySwap),
     network_mode: cdktf.stringToTerraform(struct!.networkMode),
     no_cache: cdktf.booleanToTerraform(struct!.noCache),
-    path: cdktf.stringToTerraform(struct!.path),
     platform: cdktf.stringToTerraform(struct!.platform),
     pull_parent: cdktf.booleanToTerraform(struct!.pullParent),
     remote_context: cdktf.stringToTerraform(struct!.remoteContext),
@@ -865,10 +852,6 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
       hasAnyValues = true;
       internalValueResult.noCache = this._noCache;
     }
-    if (this._path !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.path = this._path;
-    }
     if (this._platform !== undefined) {
       hasAnyValues = true;
       internalValueResult.platform = this._platform;
@@ -952,7 +935,6 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
       this._memorySwap = undefined;
       this._networkMode = undefined;
       this._noCache = undefined;
-      this._path = undefined;
       this._platform = undefined;
       this._pullParent = undefined;
       this._remoteContext = undefined;
@@ -991,7 +973,6 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
       this._memorySwap = value.memorySwap;
       this._networkMode = value.networkMode;
       this._noCache = value.noCache;
-      this._path = value.path;
       this._platform = value.platform;
       this._pullParent = value.pullParent;
       this._remoteContext = value.remoteContext;
@@ -1089,16 +1070,13 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
     return this._cgroupParent;
   }
 
-  // context - computed: false, optional: true, required: false
+  // context - computed: false, optional: false, required: true
   private _context?: string; 
   public get context() {
     return this.getStringAttribute('context');
   }
   public set context(value: string) {
     this._context = value;
-  }
-  public resetContext() {
-    this._context = undefined;
   }
   // Temporarily expose input value. Use with caution.
   public get contextInput() {
@@ -1343,22 +1321,6 @@ export class ImageBuildOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get noCacheInput() {
     return this._noCache;
-  }
-
-  // path - computed: false, optional: true, required: false
-  private _path?: string; 
-  public get path() {
-    return this.getStringAttribute('path');
-  }
-  public set path(value: string) {
-    this._path = value;
-  }
-  public resetPath() {
-    this._path = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pathInput() {
-    return this._path;
   }
 
   // platform - computed: false, optional: true, required: false
@@ -1612,8 +1574,8 @@ export class Image extends cdktf.TerraformResource {
       terraformResourceType: 'docker_image',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.25.0',
-        providerVersionConstraint: '~> 2.12'
+        providerVersion: '3.0.1',
+        providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
@@ -1627,7 +1589,6 @@ export class Image extends cdktf.TerraformResource {
     this._keepLocally = config.keepLocally;
     this._name = config.name;
     this._platform = config.platform;
-    this._pullTrigger = config.pullTrigger;
     this._pullTriggers = config.pullTriggers;
     this._triggers = config.triggers;
     this._build.internalValue = config.buildAttribute;
@@ -1679,11 +1640,6 @@ export class Image extends cdktf.TerraformResource {
     return this._keepLocally;
   }
 
-  // latest - computed: true, optional: false, required: false
-  public get latest() {
-    return this.getStringAttribute('latest');
-  }
-
   // name - computed: false, optional: false, required: true
   private _name?: string; 
   public get name() {
@@ -1695,11 +1651,6 @@ export class Image extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get nameInput() {
     return this._name;
-  }
-
-  // output - computed: true, optional: false, required: false
-  public get output() {
-    return this.getStringAttribute('output');
   }
 
   // platform - computed: false, optional: true, required: false
@@ -1716,22 +1667,6 @@ export class Image extends cdktf.TerraformResource {
   // Temporarily expose input value. Use with caution.
   public get platformInput() {
     return this._platform;
-  }
-
-  // pull_trigger - computed: false, optional: true, required: false
-  private _pullTrigger?: string; 
-  public get pullTrigger() {
-    return this.getStringAttribute('pull_trigger');
-  }
-  public set pullTrigger(value: string) {
-    this._pullTrigger = value;
-  }
-  public resetPullTrigger() {
-    this._pullTrigger = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get pullTriggerInput() {
-    return this._pullTrigger;
   }
 
   // pull_triggers - computed: false, optional: true, required: false
@@ -1797,7 +1732,6 @@ export class Image extends cdktf.TerraformResource {
       keep_locally: cdktf.booleanToTerraform(this._keepLocally),
       name: cdktf.stringToTerraform(this._name),
       platform: cdktf.stringToTerraform(this._platform),
-      pull_trigger: cdktf.stringToTerraform(this._pullTrigger),
       pull_triggers: cdktf.listMapper(cdktf.stringToTerraform, false)(this._pullTriggers),
       triggers: cdktf.hashMapper(cdktf.stringToTerraform)(this._triggers),
       build: imageBuildToTerraform(this._build.internalValue),

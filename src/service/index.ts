@@ -4937,12 +4937,6 @@ export interface ServiceTaskSpec {
   */
   readonly forceUpdate?: number;
   /**
-  * Ids of the networks in which the  container will be put in
-  * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#networks Service#networks}
-  */
-  readonly networks?: string[];
-  /**
   * Runtime is the type of runtime specified for the task executor. See the [types](https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go).
   * 
   * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#runtime Service#runtime}
@@ -4993,7 +4987,6 @@ export function serviceTaskSpecToTerraform(struct?: ServiceTaskSpecOutputReferen
   }
   return {
     force_update: cdktf.numberToTerraform(struct!.forceUpdate),
-    networks: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.networks),
     runtime: cdktf.stringToTerraform(struct!.runtime),
     container_spec: serviceTaskSpecContainerSpecToTerraform(struct!.containerSpec),
     log_driver: serviceTaskSpecLogDriverToTerraform(struct!.logDriver),
@@ -5021,10 +5014,6 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
     if (this._forceUpdate !== undefined) {
       hasAnyValues = true;
       internalValueResult.forceUpdate = this._forceUpdate;
-    }
-    if (this._networks !== undefined) {
-      hasAnyValues = true;
-      internalValueResult.networks = this._networks;
     }
     if (this._runtime !== undefined) {
       hasAnyValues = true;
@@ -5061,7 +5050,6 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
     if (value === undefined) {
       this.isEmptyObject = false;
       this._forceUpdate = undefined;
-      this._networks = undefined;
       this._runtime = undefined;
       this._containerSpec.internalValue = undefined;
       this._logDriver.internalValue = undefined;
@@ -5073,7 +5061,6 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
       this._forceUpdate = value.forceUpdate;
-      this._networks = value.networks;
       this._runtime = value.runtime;
       this._containerSpec.internalValue = value.containerSpec;
       this._logDriver.internalValue = value.logDriver;
@@ -5098,22 +5085,6 @@ export class ServiceTaskSpecOutputReference extends cdktf.ComplexObject {
   // Temporarily expose input value. Use with caution.
   public get forceUpdateInput() {
     return this._forceUpdate;
-  }
-
-  // networks - computed: false, optional: true, required: false
-  private _networks?: string[]; 
-  public get networks() {
-    return cdktf.Fn.tolist(this.getListAttribute('networks'));
-  }
-  public set networks(value: string[]) {
-    this._networks = value;
-  }
-  public resetNetworks() {
-    this._networks = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get networksInput() {
-    return this._networks;
   }
 
   // runtime - computed: true, optional: true, required: false
@@ -5464,8 +5435,8 @@ export class Service extends cdktf.TerraformResource {
       terraformResourceType: 'docker_service',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '2.25.0',
-        providerVersionConstraint: '~> 2.12'
+        providerVersion: '3.0.1',
+        providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
