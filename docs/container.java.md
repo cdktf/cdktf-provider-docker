@@ -10162,6 +10162,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipAddress">ipAddress</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipPrefixLength">ipPrefixLength</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipv6Gateway">ipv6Gateway</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress">macAddress</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.networkName">networkName</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkData">ContainerNetworkData</a></code> | *No description.* |
 
@@ -10245,6 +10246,16 @@ public java.lang.Number getIpPrefixLength();
 
 ```java
 public java.lang.String getIpv6Gateway();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `macAddress`<sup>Required</sup> <a name="macAddress" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress"></a>
+
+```java
+public java.lang.String getMacAddress();
 ```
 
 - *Type:* java.lang.String

@@ -457,6 +457,11 @@ export class ContainerNetworkDataOutputReference extends cdktf.ComplexObject {
     return this.getStringAttribute('ipv6_gateway');
   }
 
+  // mac_address - computed: true, optional: false, required: false
+  public get macAddress() {
+    return this.getStringAttribute('mac_address');
+  }
+
   // network_name - computed: true, optional: false, required: false
   public get networkName() {
     return this.getStringAttribute('network_name');
@@ -2858,7 +2863,7 @@ export class Container extends cdktf.TerraformResource {
       terraformResourceType: 'docker_container',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.0.1',
+        providerVersion: '3.0.2',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,

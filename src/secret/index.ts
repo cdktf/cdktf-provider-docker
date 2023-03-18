@@ -182,7 +182,7 @@ export class Secret extends cdktf.TerraformResource {
       terraformResourceType: 'docker_secret',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.0.1',
+        providerVersion: '3.0.2',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
