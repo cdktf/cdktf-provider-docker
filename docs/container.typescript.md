@@ -9139,6 +9139,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipAddress">ipAddress</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipPrefixLength">ipPrefixLength</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipv6Gateway">ipv6Gateway</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress">macAddress</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.networkName">networkName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkData">ContainerNetworkData</a></code> | *No description.* |
 
@@ -9222,6 +9223,16 @@ public readonly ipPrefixLength: number;
 
 ```typescript
 public readonly ipv6Gateway: string;
+```
+
+- *Type:* string
+
+---
+
+##### `macAddress`<sup>Required</sup> <a name="macAddress" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress"></a>
+
+```typescript
+public readonly macAddress: string;
 ```
 
 - *Type:* string

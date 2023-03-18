@@ -9,7 +9,7 @@ Represents a {@link https://www.terraform.io/docs/providers/docker/r/service doc
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.Service.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewService(scope Construct, id *string, config ServiceConfig) Service
 ```
@@ -426,7 +426,7 @@ func ResetUpdateConfig()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.service.Service.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsConstruct(x interface{}) *bool
 ```
@@ -458,7 +458,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.service.Service.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsTerraformElement(x interface{}) *bool
 ```
@@ -472,7 +472,7 @@ service.Service_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.service.Service.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsTerraformResource(x interface{}) *bool
 ```
@@ -891,7 +891,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceAuth.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceAuth {
 	ServerAddress: *string,
@@ -957,7 +957,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceConfig {
 	Connection: interface{},
@@ -968,15 +968,15 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Name: *string,
-	TaskSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpec,
-	Auth: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceAuth,
-	ConvergeConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceConvergeConfig,
-	EndpointSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceEndpointSpec,
+	TaskSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpec,
+	Auth: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceAuth,
+	ConvergeConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceConvergeConfig,
+	EndpointSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceEndpointSpec,
 	Id: *string,
 	Labels: interface{},
-	Mode: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceMode,
-	RollbackConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceRollbackConfig,
-	UpdateConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceUpdateConfig,
+	Mode: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceMode,
+	RollbackConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceRollbackConfig,
+	UpdateConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceUpdateConfig,
 }
 ```
 
@@ -1220,7 +1220,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceConvergeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceConvergeConfig {
 	Delay: *string,
@@ -1270,7 +1270,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceEndpointSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceEndpointSpec {
 	Mode: *string,
@@ -1320,7 +1320,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceEndpointSpecPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceEndpointSpecPorts {
 	TargetPort: *f64,
@@ -1418,7 +1418,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceLabels {
 	Label: *string,
@@ -1468,11 +1468,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceMode.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceMode {
 	Global: interface{},
-	Replicated: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceModeReplicated,
+	Replicated: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceModeReplicated,
 }
 ```
 
@@ -1518,7 +1518,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceModeReplicated.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceModeReplicated {
 	Replicas: *f64,
@@ -1552,7 +1552,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceRollbackConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceRollbackConfig {
 	Delay: *string,
@@ -1666,16 +1666,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpec {
-	ContainerSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpec,
+	ContainerSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpec,
 	ForceUpdate: *f64,
-	LogDriver: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecLogDriver,
+	LogDriver: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecLogDriver,
 	NetworksAdvanced: interface{},
-	Placement: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecPlacement,
-	Resources: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecResources,
-	RestartPolicy: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecRestartPolicy,
+	Placement: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecPlacement,
+	Resources: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResources,
+	RestartPolicy: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecRestartPolicy,
 	Runtime: *string,
 }
 ```
@@ -1812,7 +1812,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpec {
 	Image: *string,
@@ -1820,16 +1820,16 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
 	Command: *[]*string,
 	Configs: interface{},
 	Dir: *string,
-	DnsConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecDnsConfig,
+	DnsConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecDnsConfig,
 	Env: *map[string]*string,
 	Groups: *[]*string,
-	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecHealthcheck,
+	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecHealthcheck,
 	Hostname: *string,
 	Hosts: interface{},
 	Isolation: *string,
 	Labels: interface{},
 	Mounts: interface{},
-	Privileges: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecPrivileges,
+	Privileges: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivileges,
 	ReadOnly: interface{},
 	Secrets: interface{},
 	StopGracePeriod: *string,
@@ -2170,7 +2170,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecConfigs {
 	ConfigId: *string,
@@ -2286,7 +2286,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecDnsConfig {
 	Nameservers: *[]*string,
@@ -2352,7 +2352,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecHealthcheck {
 	Test: *[]*string,
@@ -2450,7 +2450,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecHosts {
 	Host: *string,
@@ -2500,7 +2500,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecLabels {
 	Label: *string,
@@ -2550,16 +2550,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMounts {
 	Target: *string,
 	Type: *string,
-	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecMountsBindOptions,
+	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsBindOptions,
 	ReadOnly: interface{},
 	Source: *string,
-	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions,
-	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecMountsVolumeOptions,
+	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions,
+	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions,
 }
 ```
 
@@ -2680,7 +2680,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsBindOptions {
 	Propagation: *string,
@@ -2716,7 +2716,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsTmpfsOptions {
 	Mode: *f64,
@@ -2766,7 +2766,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsVolumeOptions {
 	DriverName: *string,
@@ -2848,7 +2848,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels {
 	Label: *string,
@@ -2898,11 +2898,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivileges {
-	CredentialSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec,
-	SeLinuxContext: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext,
+	CredentialSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec,
+	SeLinuxContext: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext,
 }
 ```
 
@@ -2948,7 +2948,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec {
 	File: *string,
@@ -2998,7 +2998,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
 	Disable: interface{},
@@ -3096,7 +3096,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecSecrets {
 	FileName: *string,
@@ -3212,7 +3212,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecLogDriver.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecLogDriver {
 	Name: *string,
@@ -3262,7 +3262,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecNetworksAdvanced {
 	Name: *string,
@@ -3328,7 +3328,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacement.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecPlacement {
 	Constraints: *[]*string,
@@ -3412,7 +3412,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecPlacementPlatforms {
 	Architecture: *string,
@@ -3462,11 +3462,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResources {
-	Limits: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecResourcesLimits,
-	Reservation: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecResourcesReservation,
+	Limits: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesLimits,
+	Reservation: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesReservation,
 }
 ```
 
@@ -3512,7 +3512,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesLimits.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesLimits {
 	MemoryBytes: *f64,
@@ -3562,10 +3562,10 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservation.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesReservation {
-	GenericResources: github.com/cdktf/cdktf-provider-docker-go/docker/v6.service.ServiceTaskSpecResourcesReservationGenericResources,
+	GenericResources: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesReservationGenericResources,
 	MemoryBytes: *f64,
 	NanoCpus: *f64,
 }
@@ -3628,7 +3628,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationGenericResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesReservationGenericResources {
 	DiscreteResourcesSpec: *[]*string,
@@ -3678,7 +3678,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecRestartPolicy {
 	Condition: *string,
@@ -3760,7 +3760,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceUpdateConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceUpdateConfig {
 	Delay: *string,
@@ -3876,7 +3876,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceAuthOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceAuthOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceAuthOutputReference
 ```
@@ -4205,7 +4205,7 @@ func InternalValue() ServiceAuth
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceConvergeConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceConvergeConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceConvergeConfigOutputReference
 ```
@@ -4512,7 +4512,7 @@ func InternalValue() ServiceConvergeConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceEndpointSpecOutputReference
 ```
@@ -4832,7 +4832,7 @@ func InternalValue() ServiceEndpointSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceEndpointSpecPortsList
 ```
@@ -4975,7 +4975,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceEndpointSpecPortsOutputReference
 ```
@@ -5380,7 +5380,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceLabelsList
 ```
@@ -5523,7 +5523,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceLabelsOutputReference
 ```
@@ -5834,7 +5834,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceModeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceModeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceModeOutputReference
 ```
@@ -6154,7 +6154,7 @@ func InternalValue() ServiceMode
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceModeReplicatedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceModeReplicatedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceModeReplicatedOutputReference
 ```
@@ -6432,7 +6432,7 @@ func InternalValue() ServiceModeReplicated
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceRollbackConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceRollbackConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceRollbackConfigOutputReference
 ```
@@ -6855,7 +6855,7 @@ func InternalValue() ServiceRollbackConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecConfigsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecConfigsList
 ```
@@ -6998,7 +6998,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecConfigsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecConfigsOutputReference
 ```
@@ -7425,7 +7425,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecDnsConfigOutputReference
 ```
@@ -7754,7 +7754,7 @@ func InternalValue() ServiceTaskSpecContainerSpecDnsConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheckOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecHealthcheckOutputReference
 ```
@@ -8141,7 +8141,7 @@ func InternalValue() ServiceTaskSpecContainerSpecHealthcheck
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHostsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecHostsList
 ```
@@ -8284,7 +8284,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHostsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecHostsOutputReference
 ```
@@ -8595,7 +8595,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecLabelsList
 ```
@@ -8738,7 +8738,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecLabelsOutputReference
 ```
@@ -9049,7 +9049,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference
 ```
@@ -9327,7 +9327,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsBindOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecMountsList
 ```
@@ -9470,7 +9470,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecMountsOutputReference
 ```
@@ -9965,7 +9965,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference
 ```
@@ -10272,7 +10272,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsTmpfsOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList
 ```
@@ -10415,7 +10415,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference
 ```
@@ -10726,7 +10726,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference
 ```
@@ -11104,7 +11104,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsVolumeOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecOutputReference
 ```
@@ -12059,7 +12059,7 @@ func InternalValue() ServiceTaskSpecContainerSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
 ```
@@ -12366,7 +12366,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivilegesCredentialSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesOutputReference
 ```
@@ -12699,7 +12699,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivileges
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
 ```
@@ -13093,7 +13093,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecSecretsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecSecretsList
 ```
@@ -13236,7 +13236,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecSecretsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecSecretsOutputReference
 ```
@@ -13663,7 +13663,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecLogDriverOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecLogDriverOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecLogDriverOutputReference
 ```
@@ -13963,7 +13963,7 @@ func InternalValue() ServiceTaskSpecLogDriver
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecNetworksAdvancedList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecNetworksAdvancedList
 ```
@@ -14106,7 +14106,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecNetworksAdvancedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecNetworksAdvancedOutputReference
 ```
@@ -14453,7 +14453,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecOutputReference
 ```
@@ -15005,7 +15005,7 @@ func InternalValue() ServiceTaskSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecPlacementOutputReference
 ```
@@ -15383,7 +15383,7 @@ func InternalValue() ServiceTaskSpecPlacement
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementPlatformsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecPlacementPlatformsList
 ```
@@ -15526,7 +15526,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementPlatformsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecPlacementPlatformsOutputReference
 ```
@@ -15837,7 +15837,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesLimitsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesLimitsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesLimitsOutputReference
 ```
@@ -16144,7 +16144,7 @@ func InternalValue() ServiceTaskSpecResourcesLimits
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesOutputReference
 ```
@@ -16477,7 +16477,7 @@ func InternalValue() ServiceTaskSpecResources
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationGenericResourcesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesReservationGenericResourcesOutputReference
 ```
@@ -16784,7 +16784,7 @@ func InternalValue() ServiceTaskSpecResourcesReservationGenericResources
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesReservationOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesReservationOutputReference
 ```
@@ -17133,7 +17133,7 @@ func InternalValue() ServiceTaskSpecResourcesReservation
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecRestartPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecRestartPolicyOutputReference
 ```
@@ -17498,7 +17498,7 @@ func InternalValue() ServiceTaskSpecRestartPolicy
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceUpdateConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v6/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceUpdateConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceUpdateConfigOutputReference
 ```

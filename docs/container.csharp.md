@@ -9279,6 +9279,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipAddress">IpAddress</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipPrefixLength">IpPrefixLength</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipv6Gateway">Ipv6Gateway</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress">MacAddress</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.networkName">NetworkName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkData">ContainerNetworkData</a></code> | *No description.* |
 
@@ -9362,6 +9363,16 @@ public double IpPrefixLength { get; }
 
 ```csharp
 public string Ipv6Gateway { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `MacAddress`<sup>Required</sup> <a name="MacAddress" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress"></a>
+
+```csharp
+public string MacAddress { get; }
 ```
 
 - *Type:* string

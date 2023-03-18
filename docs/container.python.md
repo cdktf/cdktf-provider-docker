@@ -10625,6 +10625,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipAddress">ip_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipPrefixLength">ip_prefix_length</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.ipv6Gateway">ipv6_gateway</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress">mac_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.networkName">network_name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.internalValue">internal_value</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerNetworkData">ContainerNetworkData</a></code> | *No description.* |
 
@@ -10708,6 +10709,16 @@ ip_prefix_length: typing.Union[int, float]
 
 ```python
 ipv6_gateway: str
+```
+
+- *Type:* str
+
+---
+
+##### `mac_address`<sup>Required</sup> <a name="mac_address" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.property.macAddress"></a>
+
+```python
+mac_address: str
 ```
 
 - *Type:* str
