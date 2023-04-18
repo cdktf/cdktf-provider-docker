@@ -1,6 +1,6 @@
 # `docker_network`
 
-Refer to the Terraform Registory for docs: [`docker_network`](https://www.terraform.io/docs/providers/docker/r/network).
+Refer to the Terraform Registory for docs: [`docker_network`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network).
 
 # `network` Submodule <a name="`network` Submodule" id="@cdktf/provider-docker.network"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`docker_network`](https://www.terraf
 
 ### Network <a name="Network" id="@cdktf/provider-docker.network.Network"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/network docker_network}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network docker_network}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.Network.Initializer"></a>
 
@@ -449,7 +449,7 @@ Network.IsTerraformResource(object X);
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -570,10 +570,10 @@ public object Connection { get; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.network.Network.property.count"></a>
 
 ```csharp
-public double Count { get; }
+public object Count { get; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -926,7 +926,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new NetworkConfig {
     object Connection = null,
-    double Count = null,
+    object Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
@@ -953,7 +953,7 @@ new NetworkConfig {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -963,7 +963,7 @@ new NetworkConfig {
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">Attachable</a></code> | <code>object</code> | Enable manual container attachment to the network. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">CheckDuplicate</a></code> | <code>object</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.driver">Driver</a></code> | <code>string</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#id Network#id}. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#id Network#id}. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">Ingress</a></code> | <code>object</code> | Create swarm routing-mesh network. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">Internal</a></code> | <code>object</code> | Whether the network is internal. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">IpamConfig</a></code> | <code>object</code> | ipam_config block. |
@@ -988,10 +988,10 @@ public object Connection { get; set; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.network.NetworkConfig.property.count"></a>
 
 ```csharp
-public double Count { get; set; }
+public object Count { get; set; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -1055,7 +1055,7 @@ public string Name { get; set; }
 
 The name of the Docker network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#name Network#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#name Network#name}
 
 ---
 
@@ -1069,7 +1069,7 @@ public object Attachable { get; set; }
 
 Enable manual container attachment to the network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#attachable Network#attachable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#attachable Network#attachable}
 
 ---
 
@@ -1083,7 +1083,7 @@ public object CheckDuplicate { get; set; }
 
 Requests daemon to check for networks with same name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#check_duplicate Network#check_duplicate}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#check_duplicate Network#check_duplicate}
 
 ---
 
@@ -1097,7 +1097,7 @@ public string Driver { get; set; }
 
 The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#driver Network#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#driver Network#driver}
 
 ---
 
@@ -1109,7 +1109,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#id Network#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#id Network#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1126,7 +1126,7 @@ public object Ingress { get; set; }
 
 Create swarm routing-mesh network. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ingress Network#ingress}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ingress Network#ingress}
 
 ---
 
@@ -1140,7 +1140,7 @@ public object Internal { get; set; }
 
 Whether the network is internal.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#internal Network#internal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#internal Network#internal}
 
 ---
 
@@ -1154,7 +1154,7 @@ public object IpamConfig { get; set; }
 
 ipam_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_config Network#ipam_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ipam_config Network#ipam_config}
 
 ---
 
@@ -1168,7 +1168,7 @@ public string IpamDriver { get; set; }
 
 Driver used by the custom IP scheme of the network. Defaults to `default`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_driver Network#ipam_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ipam_driver Network#ipam_driver}
 
 ---
 
@@ -1184,7 +1184,7 @@ Provide explicit options to the IPAM driver.
 
 Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipam_options Network#ipam_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ipam_options Network#ipam_options}
 
 ---
 
@@ -1198,7 +1198,7 @@ public object Ipv6 { get; set; }
 
 Enable IPv6 networking. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ipv6 Network#ipv6}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ipv6 Network#ipv6}
 
 ---
 
@@ -1212,7 +1212,7 @@ public object Labels { get; set; }
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#labels Network#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#labels Network#labels}
 
 ---
 
@@ -1226,7 +1226,7 @@ public System.Collections.Generic.IDictionary<string, string> Options { get; set
 
 Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#options Network#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#options Network#options}
 
 ---
 
@@ -1266,7 +1266,7 @@ public System.Collections.Generic.IDictionary<string, string> AuxAddress { get; 
 
 Auxiliary IPv4 or IPv6 addresses used by Network driver.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#aux_address Network#aux_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#aux_address Network#aux_address}
 
 ---
 
@@ -1280,7 +1280,7 @@ public string Gateway { get; set; }
 
 The IP address of the gateway.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#gateway Network#gateway}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#gateway Network#gateway}
 
 ---
 
@@ -1294,7 +1294,7 @@ public string IpRange { get; set; }
 
 The ip range in CIDR form.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#ip_range Network#ip_range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#ip_range Network#ip_range}
 
 ---
 
@@ -1308,7 +1308,7 @@ public string Subnet { get; set; }
 
 The subnet in CIDR form.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#subnet Network#subnet}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#subnet Network#subnet}
 
 ---
 
@@ -1344,7 +1344,7 @@ public string Label { get; set; }
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#label Network#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#label Network#label}
 
 ---
 
@@ -1358,7 +1358,7 @@ public string Value { get; set; }
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/network#value Network#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network#value Network#value}
 
 ---
 

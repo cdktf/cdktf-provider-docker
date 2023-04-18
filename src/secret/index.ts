@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/r/secret
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -10,11 +10,11 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded secret data
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#data Secret#data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#data Secret#data}
   */
   readonly data: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#id Secret#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#id Secret#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -23,13 +23,13 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * User-defined name of the secret
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#name Secret#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#name Secret#name}
   */
   readonly name: string;
   /**
   * labels block
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#labels Secret#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#labels Secret#labels}
   */
   readonly labels?: SecretLabels[] | cdktf.IResolvable;
 }
@@ -37,13 +37,13 @@ export interface SecretLabels {
   /**
   * Name of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#label Secret#label}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#label Secret#label}
   */
   readonly label: string;
   /**
   * Value of the label
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#value Secret#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#value Secret#value}
   */
   readonly value: string;
 }
@@ -157,7 +157,7 @@ export class SecretLabelsList extends cdktf.ComplexList {
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret docker_secret}
 */
 export class Secret extends cdktf.TerraformResource {
 
@@ -171,7 +171,7 @@ export class Secret extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret docker_secret} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

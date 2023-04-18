@@ -1,6 +1,6 @@
 # `provider`
 
-Refer to the Terraform Registory for docs: [`docker`](https://www.terraform.io/docs/providers/docker).
+Refer to the Terraform Registory for docs: [`docker`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs).
 
 # `provider` Submodule <a name="`provider` Submodule" id="@cdktf/provider-docker.provider"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`docker`](https://www.terraform.io/d
 
 ### DockerProvider <a name="DockerProvider" id="@cdktf/provider-docker.provider.DockerProvider"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker docker}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs docker}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.provider.DockerProvider.Initializer"></a>
 
@@ -590,7 +590,7 @@ public string Alias { get; set; }
 
 Alias name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#alias DockerProvider#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#alias DockerProvider#alias}
 
 ---
 
@@ -604,7 +604,7 @@ public string CaMaterial { get; set; }
 
 PEM-encoded content of Docker host CA certificate.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#ca_material DockerProvider#ca_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#ca_material DockerProvider#ca_material}
 
 ---
 
@@ -618,7 +618,7 @@ public string CertMaterial { get; set; }
 
 PEM-encoded content of Docker client certificate.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#cert_material DockerProvider#cert_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#cert_material DockerProvider#cert_material}
 
 ---
 
@@ -632,7 +632,7 @@ public string CertPath { get; set; }
 
 Path to directory with Docker TLS config.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#cert_path DockerProvider#cert_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#cert_path DockerProvider#cert_path}
 
 ---
 
@@ -646,7 +646,7 @@ public string Host { get; set; }
 
 The Docker daemon address.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#host DockerProvider#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#host DockerProvider#host}
 
 ---
 
@@ -660,7 +660,7 @@ public string KeyMaterial { get; set; }
 
 PEM-encoded content of Docker client private key.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#key_material DockerProvider#key_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#key_material DockerProvider#key_material}
 
 ---
 
@@ -674,7 +674,7 @@ public object RegistryAuth { get; set; }
 
 registry_auth block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#registry_auth DockerProvider#registry_auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#registry_auth DockerProvider#registry_auth}
 
 ---
 
@@ -688,7 +688,7 @@ public string[] SshOpts { get; set; }
 
 Additional SSH option flags to be appended when using `ssh://` protocol.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#ssh_opts DockerProvider#ssh_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#ssh_opts DockerProvider#ssh_opts}
 
 ---
 
@@ -732,7 +732,7 @@ public string Address { get; set; }
 
 Address of the registry.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#address DockerProvider#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#address DockerProvider#address}
 
 ---
 
@@ -748,7 +748,7 @@ Setting this to `true` will tell the provider that this registry does not need a
 
 Due to the docker internals, the provider will use dummy credentials (see https://github.com/kreuzwerker/terraform-provider-docker/issues/470 for more information). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#auth_disabled DockerProvider#auth_disabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#auth_disabled DockerProvider#auth_disabled}
 
 ---
 
@@ -764,7 +764,7 @@ Path to docker json file for registry auth.
 
 Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file DockerProvider#config_file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#config_file DockerProvider#config_file}
 
 ---
 
@@ -778,7 +778,7 @@ public string ConfigFileContent { get; set; }
 
 Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#config_file_content DockerProvider#config_file_content}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#config_file_content DockerProvider#config_file_content}
 
 ---
 
@@ -792,7 +792,7 @@ public string Password { get; set; }
 
 Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#password DockerProvider#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#password DockerProvider#password}
 
 ---
 
@@ -806,7 +806,7 @@ public string Username { get; set; }
 
 Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker#username DockerProvider#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs#username DockerProvider#username}
 
 ---
 

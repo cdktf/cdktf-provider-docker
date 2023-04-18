@@ -1,6 +1,6 @@
 # `docker_plugin`
 
-Refer to the Terraform Registory for docs: [`docker_plugin`](https://www.terraform.io/docs/providers/docker/r/plugin).
+Refer to the Terraform Registory for docs: [`docker_plugin`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin).
 
 # `plugin` Submodule <a name="`plugin` Submodule" id="@cdktf/provider-docker.plugin"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`docker_plugin`](https://www.terrafo
 
 ### Plugin <a name="Plugin" id="@cdktf/provider-docker.plugin.Plugin"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/plugin docker_plugin}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin docker_plugin}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.plugin.Plugin.Initializer"></a>
 
@@ -415,7 +415,7 @@ Plugin.IsTerraformResource(object X);
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -530,10 +530,10 @@ public object Connection { get; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.plugin.Plugin.property.count"></a>
 
 ```csharp
-public double Count { get; }
+public object Count { get; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -826,7 +826,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new PluginConfig {
     object Connection = null,
-    double Count = null,
+    object Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
@@ -850,7 +850,7 @@ new PluginConfig {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.count">Count</a></code> | <code>double</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -865,7 +865,7 @@ new PluginConfig {
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDisable">ForceDisable</a></code> | <code>object</code> | If true, then the plugin is disabled forcibly. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>object</code> | If true, grant all permissions necessary to run the plugin. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantPermissions">GrantPermissions</a></code> | <code>object</code> | grant_permissions block. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#id Plugin#id}. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#id Plugin#id}. |
 
 ---
 
@@ -882,10 +882,10 @@ public object Connection { get; set; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.plugin.PluginConfig.property.count"></a>
 
 ```csharp
-public double Count { get; set; }
+public object Count { get; set; }
 ```
 
-- *Type:* double
+- *Type:* object
 
 ---
 
@@ -949,7 +949,7 @@ public string Name { get; set; }
 
 Docker Plugin name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#name Plugin#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#name Plugin#name}
 
 ---
 
@@ -963,7 +963,7 @@ public string Alias { get; set; }
 
 Docker Plugin alias.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#alias Plugin#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#alias Plugin#alias}
 
 ---
 
@@ -977,7 +977,7 @@ public object Enabled { get; set; }
 
 If `true` the plugin is enabled. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#enabled Plugin#enabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#enabled Plugin#enabled}
 
 ---
 
@@ -991,7 +991,7 @@ public double EnableTimeout { get; set; }
 
 HTTP client timeout to enable the plugin.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#enable_timeout Plugin#enable_timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#enable_timeout Plugin#enable_timeout}
 
 ---
 
@@ -1005,7 +1005,7 @@ public string[] Env { get; set; }
 
 The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#env Plugin#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#env Plugin#env}
 
 ---
 
@@ -1019,7 +1019,7 @@ public object ForceDestroy { get; set; }
 
 If true, then the plugin is destroyed forcibly.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#force_destroy Plugin#force_destroy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#force_destroy Plugin#force_destroy}
 
 ---
 
@@ -1033,7 +1033,7 @@ public object ForceDisable { get; set; }
 
 If true, then the plugin is disabled forcibly.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#force_disable Plugin#force_disable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#force_disable Plugin#force_disable}
 
 ---
 
@@ -1047,7 +1047,7 @@ public object GrantAllPermissions { get; set; }
 
 If true, grant all permissions necessary to run the plugin.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#grant_all_permissions Plugin#grant_all_permissions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#grant_all_permissions Plugin#grant_all_permissions}
 
 ---
 
@@ -1061,7 +1061,7 @@ public object GrantPermissions { get; set; }
 
 grant_permissions block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#grant_permissions Plugin#grant_permissions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#grant_permissions Plugin#grant_permissions}
 
 ---
 
@@ -1073,7 +1073,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#id Plugin#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#id Plugin#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1112,7 +1112,7 @@ public string Name { get; set; }
 
 The name of the permission.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#name Plugin#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#name Plugin#name}
 
 ---
 
@@ -1126,7 +1126,7 @@ public string[] Value { get; set; }
 
 The value of the permission.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/plugin#value Plugin#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#value Plugin#value}
 
 ---
 
