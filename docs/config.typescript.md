@@ -1,3 +1,7 @@
+# `docker_config`
+
+Refer to the Terraform Registory for docs: [`docker_config`](https://www.terraform.io/docs/providers/docker/r/config).
+
 # `config` Submodule <a name="`config` Submodule" id="@cdktf/provider-docker.config"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

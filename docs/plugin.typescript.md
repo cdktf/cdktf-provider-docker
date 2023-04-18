@@ -1,3 +1,7 @@
+# `docker_plugin`
+
+Refer to the Terraform Registory for docs: [`docker_plugin`](https://www.terraform.io/docs/providers/docker/r/plugin).
+
 # `plugin` Submodule <a name="`plugin` Submodule" id="@cdktf/provider-docker.plugin"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
