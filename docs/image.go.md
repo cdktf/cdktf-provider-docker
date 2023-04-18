@@ -1,6 +1,6 @@
 # `docker_image`
 
-Refer to the Terraform Registory for docs: [`docker_image`](https://www.terraform.io/docs/providers/docker/r/image).
+Refer to the Terraform Registory for docs: [`docker_image`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image).
 
 # `image` Submodule <a name="`image` Submodule" id="@cdktf/provider-docker.image"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`docker_image`](https://www.terrafor
 
 ### Image <a name="Image" id="@cdktf/provider-docker.image.Image"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/image docker_image}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image docker_image}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.Image.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImage(scope Construct, id *string, config ImageConfig) Image
 ```
@@ -325,7 +325,7 @@ func ResetTriggers()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.image.Image.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.Image_IsConstruct(x interface{}) *bool
 ```
@@ -357,7 +357,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.image.Image.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.Image_IsTerraformElement(x interface{}) *bool
 ```
@@ -371,7 +371,7 @@ image.Image_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.image.Image.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.Image_IsTerraformResource(x interface{}) *bool
 ```
@@ -394,7 +394,7 @@ image.Image_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -505,10 +505,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.image.Image.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -757,7 +757,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageBuild.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 &image.ImageBuild {
 	Context: *string,
@@ -852,7 +852,7 @@ Value to specify the build context.
 
 Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#context Image#context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#context Image#context}
 
 ---
 
@@ -866,7 +866,7 @@ AuthConfig interface{}
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#auth_config Image#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#auth_config Image#auth_config}
 
 ---
 
@@ -880,7 +880,7 @@ BuildArg *map[string]*string
 
 Set build-time variables.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build_arg Image#build_arg}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_arg Image#build_arg}
 
 ---
 
@@ -894,7 +894,7 @@ BuildArgs *map[string]*string
 
 Pairs for build-time variables in the form TODO.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build_args Image#build_args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_args Image#build_args}
 
 ---
 
@@ -910,7 +910,7 @@ BuildID is an optional identifier that can be passed together with the build req
 
 The same identifier can be used to gracefully cancel the build with the cancel request.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build_id Image#build_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_id Image#build_id}
 
 ---
 
@@ -924,7 +924,7 @@ CacheFrom *[]*string
 
 Images to consider as cache sources.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cache_from Image#cache_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cache_from Image#cache_from}
 
 ---
 
@@ -938,7 +938,7 @@ CgroupParent *string
 
 Optional parent cgroup for the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cgroup_parent Image#cgroup_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
 
 ---
 
@@ -952,7 +952,7 @@ CpuPeriod *f64
 
 The length of a CPU period in microseconds.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cpu_period Image#cpu_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_period Image#cpu_period}
 
 ---
 
@@ -966,7 +966,7 @@ CpuQuota *f64
 
 Microseconds of CPU time that the container can get in a CPU period.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cpu_quota Image#cpu_quota}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_quota Image#cpu_quota}
 
 ---
 
@@ -980,7 +980,7 @@ CpuSetCpus *string
 
 CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cpu_set_cpus Image#cpu_set_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
 
 ---
 
@@ -994,7 +994,7 @@ CpuSetMems *string
 
 MEMs in which to allow execution (`0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cpu_set_mems Image#cpu_set_mems}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
 
 ---
 
@@ -1008,7 +1008,7 @@ CpuShares *f64
 
 CPU shares (relative weight).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#cpu_shares Image#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_shares Image#cpu_shares}
 
 ---
 
@@ -1022,7 +1022,7 @@ Dockerfile *string
 
 Name of the Dockerfile. Defaults to `Dockerfile`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#dockerfile Image#dockerfile}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#dockerfile Image#dockerfile}
 
 ---
 
@@ -1036,7 +1036,7 @@ ExtraHosts *[]*string
 
 A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#extra_hosts Image#extra_hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#extra_hosts Image#extra_hosts}
 
 ---
 
@@ -1050,7 +1050,7 @@ ForceRemove interface{}
 
 Always remove intermediate containers.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1064,7 +1064,7 @@ Isolation *string
 
 Isolation represents the isolation technology of a container. The supported values are.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#isolation Image#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#isolation Image#isolation}
 
 ---
 
@@ -1078,7 +1078,7 @@ Label *map[string]*string
 
 Set metadata for an image.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#label Image#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#label Image#label}
 
 ---
 
@@ -1092,7 +1092,7 @@ Labels *map[string]*string
 
 User-defined key/value metadata.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#labels Image#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#labels Image#labels}
 
 ---
 
@@ -1106,7 +1106,7 @@ Memory *f64
 
 Set memory limit for build.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#memory Image#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#memory Image#memory}
 
 ---
 
@@ -1120,7 +1120,7 @@ MemorySwap *f64
 
 Total memory (memory + swap), -1 to enable unlimited swap.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#memory_swap Image#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#memory_swap Image#memory_swap}
 
 ---
 
@@ -1134,7 +1134,7 @@ NetworkMode *string
 
 Set the networking mode for the RUN instructions during build.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#network_mode Image#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#network_mode Image#network_mode}
 
 ---
 
@@ -1148,7 +1148,7 @@ NoCache interface{}
 
 Do not use the cache when building the image.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#no_cache Image#no_cache}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#no_cache Image#no_cache}
 
 ---
 
@@ -1162,7 +1162,7 @@ Platform *string
 
 Set platform if server is multi-platform capable.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1176,7 +1176,7 @@ PullParent interface{}
 
 Attempt to pull the image even if an older image exists locally.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_parent Image#pull_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#pull_parent Image#pull_parent}
 
 ---
 
@@ -1190,7 +1190,7 @@ RemoteContext *string
 
 A Git repository URI or HTTP/HTTPS context URI.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#remote_context Image#remote_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#remote_context Image#remote_context}
 
 ---
 
@@ -1204,7 +1204,7 @@ Remove interface{}
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#remove Image#remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#remove Image#remove}
 
 ---
 
@@ -1218,7 +1218,7 @@ SecurityOpt *[]*string
 
 The security options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#security_opt Image#security_opt}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#security_opt Image#security_opt}
 
 ---
 
@@ -1232,7 +1232,7 @@ SessionId *string
 
 Set an ID for the build session.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#session_id Image#session_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#session_id Image#session_id}
 
 ---
 
@@ -1246,7 +1246,7 @@ ShmSize *f64
 
 Size of /dev/shm in bytes. The size must be greater than 0.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#shm_size Image#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#shm_size Image#shm_size}
 
 ---
 
@@ -1260,7 +1260,7 @@ Squash interface{}
 
 If true the new layers are squashed into a new image with a single new layer.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#squash Image#squash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#squash Image#squash}
 
 ---
 
@@ -1274,7 +1274,7 @@ SuppressOutput interface{}
 
 Suppress the build output and print image ID on success.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#suppress_output Image#suppress_output}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#suppress_output Image#suppress_output}
 
 ---
 
@@ -1288,7 +1288,7 @@ Tag *[]*string
 
 Name and optionally a tag in the 'name:tag' format.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#tag Image#tag}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#tag Image#tag}
 
 ---
 
@@ -1302,7 +1302,7 @@ Target *string
 
 Set the target build stage to build.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#target Image#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#target Image#target}
 
 ---
 
@@ -1316,7 +1316,7 @@ Ulimit interface{}
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#ulimit Image#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#ulimit Image#ulimit}
 
 ---
 
@@ -1330,7 +1330,7 @@ Version *string
 
 Version of the underlying builder to use.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#version Image#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#version Image#version}
 
 ---
 
@@ -1339,7 +1339,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageBuildAuthConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 &image.ImageBuildAuthConfig {
 	HostName: *string,
@@ -1378,7 +1378,7 @@ HostName *string
 
 hostname of the registry.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#host_name Image#host_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#host_name Image#host_name}
 
 ---
 
@@ -1392,7 +1392,7 @@ Auth *string
 
 the auth token.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#auth Image#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#auth Image#auth}
 
 ---
 
@@ -1406,7 +1406,7 @@ Email *string
 
 the user emal.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#email Image#email}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#email Image#email}
 
 ---
 
@@ -1420,7 +1420,7 @@ IdentityToken *string
 
 the identity token.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#identity_token Image#identity_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#identity_token Image#identity_token}
 
 ---
 
@@ -1434,7 +1434,7 @@ Password *string
 
 the registry password.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#password Image#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#password Image#password}
 
 ---
 
@@ -1448,7 +1448,7 @@ RegistryToken *string
 
 the registry token.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#registry_token Image#registry_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#registry_token Image#registry_token}
 
 ---
 
@@ -1462,7 +1462,7 @@ ServerAddress *string
 
 the server address.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#server_address Image#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#server_address Image#server_address}
 
 ---
 
@@ -1476,7 +1476,7 @@ UserName *string
 
 the registry user name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#user_name Image#user_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#user_name Image#user_name}
 
 ---
 
@@ -1485,7 +1485,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageBuildUlimit.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 &image.ImageBuildUlimit {
 	Hard: *f64,
@@ -1514,7 +1514,7 @@ Hard *f64
 
 soft limit.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#hard Image#hard}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#hard Image#hard}
 
 ---
 
@@ -1528,7 +1528,7 @@ Name *string
 
 type of ulimit, e.g. `nofile`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#name Image#name}
 
 ---
 
@@ -1542,7 +1542,7 @@ Soft *f64
 
 hard limit.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#soft Image#soft}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#soft Image#soft}
 
 ---
 
@@ -1551,18 +1551,18 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 &image.ImageConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Name: *string,
-	BuildAttribute: github.com/cdktf/cdktf-provider-docker-go/docker/v7.image.ImageBuild,
+	BuildAttribute: github.com/cdktf/cdktf-provider-docker-go/docker.image.ImageBuild,
 	ForceRemove: interface{},
 	KeepLocally: interface{},
 	Platform: *string,
@@ -1576,7 +1576,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -1605,10 +1605,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.image.ImageConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -1672,7 +1672,7 @@ Name *string
 
 The name of the Docker image, including any tags or SHA256 repo digests.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#name Image#name}
 
 ---
 
@@ -1686,7 +1686,7 @@ BuildAttribute ImageBuild
 
 build block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#build Image#build}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build Image#build}
 
 ---
 
@@ -1700,7 +1700,7 @@ ForceRemove interface{}
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1716,7 +1716,7 @@ If true, then the Docker image won't be deleted on destroy operation.
 
 If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#keep_locally Image#keep_locally}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#keep_locally Image#keep_locally}
 
 ---
 
@@ -1730,7 +1730,7 @@ Platform *string
 
 The platform to use when pulling the image. Defaults to the platform of the current machine.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1746,7 +1746,7 @@ List of values which cause an image pull when changed.
 
 This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#pull_triggers Image#pull_triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#pull_triggers Image#pull_triggers}
 
 ---
 
@@ -1762,7 +1762,7 @@ A map of arbitrary strings that, when changed, will force the `docker_image` res
 
 This can be used to rebuild an image when contents of source code folders change
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/image#triggers Image#triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#triggers Image#triggers}
 
 ---
 
@@ -1773,7 +1773,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildAuthConfigList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImageBuildAuthConfigList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ImageBuildAuthConfigList
 ```
@@ -1916,7 +1916,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImageBuildAuthConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ImageBuildAuthConfigOutputReference
 ```
@@ -2408,7 +2408,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImageBuildOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ImageBuildOutputReference
 ```
@@ -3691,7 +3691,7 @@ func InternalValue() ImageBuild
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildUlimitList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImageBuildUlimitList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ImageBuildUlimitList
 ```
@@ -3834,7 +3834,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/image"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/image"
 
 image.NewImageBuildUlimitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ImageBuildUlimitOutputReference
 ```

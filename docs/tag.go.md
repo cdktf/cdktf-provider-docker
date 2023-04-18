@@ -1,6 +1,6 @@
 # `docker_tag`
 
-Refer to the Terraform Registory for docs: [`docker_tag`](https://www.terraform.io/docs/providers/docker/r/tag).
+Refer to the Terraform Registory for docs: [`docker_tag`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag).
 
 # `tag` Submodule <a name="`tag` Submodule" id="@cdktf/provider-docker.tag"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`docker_tag`](https://www.terraform.
 
 ### Tag <a name="Tag" id="@cdktf/provider-docker.tag.Tag"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/tag docker_tag}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag docker_tag}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.tag.Tag.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.NewTag(scope Construct, id *string, config TagConfig) Tag
 ```
@@ -277,7 +277,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.tag.Tag.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsConstruct(x interface{}) *bool
 ```
@@ -309,7 +309,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.tag.Tag.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsTerraformElement(x interface{}) *bool
 ```
@@ -323,7 +323,7 @@ tag.Tag_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.tag.Tag.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsTerraformResource(x interface{}) *bool
 ```
@@ -346,7 +346,7 @@ tag.Tag_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.tag.Tag.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -447,10 +447,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.tag.Tag.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -599,11 +599,11 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.tag.TagConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 &tag.TagConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
@@ -620,7 +620,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -628,7 +628,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/tag"
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.provisioners">Provisioners</a></code> | <code>*[]interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.sourceImage">SourceImage</a></code> | <code>*string</code> | Name of the source image. |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.targetImage">TargetImage</a></code> | <code>*string</code> | Name of the target image. |
-| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#id Tag#id}. |
+| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#id Tag#id}. |
 
 ---
 
@@ -645,10 +645,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.tag.TagConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -712,7 +712,7 @@ SourceImage *string
 
 Name of the source image.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#source_image Tag#source_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#source_image Tag#source_image}
 
 ---
 
@@ -726,7 +726,7 @@ TargetImage *string
 
 Name of the target image.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#target_image Tag#target_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#target_image Tag#target_image}
 
 ---
 
@@ -738,7 +738,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/tag#id Tag#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#id Tag#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.

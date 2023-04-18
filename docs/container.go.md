@@ -1,6 +1,6 @@
 # `docker_container`
 
-Refer to the Terraform Registory for docs: [`docker_container`](https://www.terraform.io/docs/providers/docker/r/container).
+Refer to the Terraform Registory for docs: [`docker_container`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container).
 
 # `container` Submodule <a name="`container` Submodule" id="@cdktf/provider-docker.container"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`docker_container`](https://www.terr
 
 ### Container <a name="Container" id="@cdktf/provider-docker.container.Container"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/container docker_container}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container docker_container}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.Container.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainer(scope Construct, id *string, config ContainerConfig) Container
 ```
@@ -840,7 +840,7 @@ func ResetWorkingDir()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.container.Container.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsConstruct(x interface{}) *bool
 ```
@@ -872,7 +872,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.container.Container.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsTerraformElement(x interface{}) *bool
 ```
@@ -886,7 +886,7 @@ container.Container_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.container.Container.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsTerraformResource(x interface{}) *bool
 ```
@@ -909,7 +909,7 @@ container.Container_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -1133,10 +1133,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.container.Container.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -2515,7 +2515,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerCapabilities.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerCapabilities {
 	Add: *[]*string,
@@ -2542,7 +2542,7 @@ Add *[]*string
 
 List of linux capabilities to add.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#add Container#add}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#add Container#add}
 
 ---
 
@@ -2556,7 +2556,7 @@ Drop *[]*string
 
 List of linux capabilities to drop.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#drop Container#drop}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#drop Container#drop}
 
 ---
 
@@ -2565,11 +2565,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
@@ -2578,7 +2578,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
 	Image: *string,
 	Name: *string,
 	Attach: interface{},
-	Capabilities: github.com/cdktf/cdktf-provider-docker-go/docker/v7.container.ContainerCapabilities,
+	Capabilities: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerCapabilities,
 	CgroupnsMode: *string,
 	Command: *[]*string,
 	ContainerReadRefreshTimeoutMilliseconds: *f64,
@@ -2594,7 +2594,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
 	Env: *[]*string,
 	Gpus: *string,
 	GroupAdd: *[]*string,
-	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker/v7.container.ContainerHealthcheck,
+	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerHealthcheck,
 	Host: interface{},
 	Hostname: *string,
 	Id: *string,
@@ -2646,7 +2646,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -2674,7 +2674,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.healthcheck">Healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">Host</a></code> | <code>interface{}</code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.hostname">Hostname</a></code> | <code>*string</code> | Hostname of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#id Container#id}. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#id Container#id}. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">Init</a></code> | <code>interface{}</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ipcMode">IpcMode</a></code> | <code>*string</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">Labels</a></code> | <code>interface{}</code> | labels block. |
@@ -2731,10 +2731,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.container.ContainerConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -2800,7 +2800,7 @@ The ID of the image to back this container.
 
 The easiest way to get this value is to use the `docker_image` resource as is shown in the example.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#image Container#image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#image Container#image}
 
 ---
 
@@ -2814,7 +2814,7 @@ Name *string
 
 The name of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#name Container#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#name Container#name}
 
 ---
 
@@ -2828,7 +2828,7 @@ Attach interface{}
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#attach Container#attach}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#attach Container#attach}
 
 ---
 
@@ -2842,7 +2842,7 @@ Capabilities ContainerCapabilities
 
 capabilities block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#capabilities Container#capabilities}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#capabilities Container#capabilities}
 
 ---
 
@@ -2856,7 +2856,7 @@ CgroupnsMode *string
 
 Cgroup namespace mode to use for the container. Possible values are: `private`, `host`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#cgroupns_mode Container#cgroupns_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#cgroupns_mode Container#cgroupns_mode}
 
 ---
 
@@ -2872,7 +2872,7 @@ The command to use to start the container.
 
 For example, to run `/usr/bin/myprogram -f baz.conf` set the command to be `["/usr/bin/myprogram","-f","baz.con"]`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#command Container#command}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#command Container#command}
 
 ---
 
@@ -2886,7 +2886,7 @@ ContainerReadRefreshTimeoutMilliseconds *f64
 
 The total number of milliseconds to wait for the container to reach status 'running'.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#container_read_refresh_timeout_milliseconds Container#container_read_refresh_timeout_milliseconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#container_read_refresh_timeout_milliseconds Container#container_read_refresh_timeout_milliseconds}
 
 ---
 
@@ -2900,7 +2900,7 @@ CpuSet *string
 
 A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#cpu_set Container#cpu_set}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#cpu_set Container#cpu_set}
 
 ---
 
@@ -2914,7 +2914,7 @@ CpuShares *f64
 
 CPU shares (relative weight) for the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#cpu_shares Container#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#cpu_shares Container#cpu_shares}
 
 ---
 
@@ -2930,7 +2930,7 @@ If defined will attempt to stop the container before destroying.
 
 Container will be destroyed after `n` seconds or on successful stop.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#destroy_grace_seconds Container#destroy_grace_seconds}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#destroy_grace_seconds Container#destroy_grace_seconds}
 
 ---
 
@@ -2944,7 +2944,7 @@ Devices interface{}
 
 devices block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#devices Container#devices}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#devices Container#devices}
 
 ---
 
@@ -2958,7 +2958,7 @@ Dns *[]*string
 
 DNS servers to use.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#dns Container#dns}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#dns Container#dns}
 
 ---
 
@@ -2972,7 +2972,7 @@ DnsOpts *[]*string
 
 DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#dns_opts Container#dns_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#dns_opts Container#dns_opts}
 
 ---
 
@@ -2986,7 +2986,7 @@ DnsSearch *[]*string
 
 DNS search domains that are used when bare unqualified hostnames are used inside of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#dns_search Container#dns_search}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#dns_search Container#dns_search}
 
 ---
 
@@ -3000,7 +3000,7 @@ Domainname *string
 
 Domain name of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#domainname Container#domainname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#domainname Container#domainname}
 
 ---
 
@@ -3016,7 +3016,7 @@ The command to use as the Entrypoint for the container.
 
 The Entrypoint allows you to configure a container to run as an executable. For example, to run `/usr/bin/myprogram` when starting a container, set the entrypoint to be `"/usr/bin/myprogra"]`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#entrypoint Container#entrypoint}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#entrypoint Container#entrypoint}
 
 ---
 
@@ -3030,7 +3030,7 @@ Env *[]*string
 
 Environment variables to set in the form of `KEY=VALUE`, e.g. `DEBUG=0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#env Container#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#env Container#env}
 
 ---
 
@@ -3046,7 +3046,7 @@ GPU devices to add to the container.
 
 Currently, only the value `all` is supported. Passing any other value will result in unexpected behavior.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#gpus Container#gpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#gpus Container#gpus}
 
 ---
 
@@ -3060,7 +3060,7 @@ GroupAdd *[]*string
 
 Additional groups for the container user.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#group_add Container#group_add}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#group_add Container#group_add}
 
 ---
 
@@ -3074,7 +3074,7 @@ Healthcheck ContainerHealthcheck
 
 healthcheck block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#healthcheck Container#healthcheck}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#healthcheck Container#healthcheck}
 
 ---
 
@@ -3088,7 +3088,7 @@ Host interface{}
 
 host block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#host Container#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#host Container#host}
 
 ---
 
@@ -3102,7 +3102,7 @@ Hostname *string
 
 Hostname of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#hostname Container#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#hostname Container#hostname}
 
 ---
 
@@ -3114,7 +3114,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#id Container#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#id Container#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -3133,7 +3133,7 @@ Configured whether an init process should be injected for this container.
 
 If unset this will default to the `dockerd` defaults.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#init Container#init}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#init Container#init}
 
 ---
 
@@ -3147,7 +3147,7 @@ IpcMode *string
 
 IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ipc_mode Container#ipc_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ipc_mode Container#ipc_mode}
 
 ---
 
@@ -3161,7 +3161,7 @@ Labels interface{}
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#labels Container#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#labels Container#labels}
 
 ---
 
@@ -3175,7 +3175,7 @@ LogDriver *string
 
 The logging driver to use for the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#log_driver Container#log_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#log_driver Container#log_driver}
 
 ---
 
@@ -3189,7 +3189,7 @@ LogOpts *map[string]*string
 
 Key/value pairs to use as options for the logging driver.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#log_opts Container#log_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#log_opts Container#log_opts}
 
 ---
 
@@ -3203,7 +3203,7 @@ Logs interface{}
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#logs Container#logs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#logs Container#logs}
 
 ---
 
@@ -3217,7 +3217,7 @@ MaxRetryCount *f64
 
 The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#max_retry_count Container#max_retry_count}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#max_retry_count Container#max_retry_count}
 
 ---
 
@@ -3231,7 +3231,7 @@ Memory *f64
 
 The memory limit for the container in MBs.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#memory Container#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#memory Container#memory}
 
 ---
 
@@ -3247,7 +3247,7 @@ The total memory limit (memory + swap) for the container in MBs.
 
 This setting may compute to `-1` after `terraform apply` if the target host doesn't support memory swap, when that is the case docker will use a soft limitation.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#memory_swap Container#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#memory_swap Container#memory_swap}
 
 ---
 
@@ -3261,7 +3261,7 @@ Mounts interface{}
 
 mounts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#mounts Container#mounts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#mounts Container#mounts}
 
 ---
 
@@ -3277,7 +3277,7 @@ If `true`, then the Docker container will be kept running.
 
 If `false`, then as long as the container exists, Terraform assumes it is successful. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#must_run Container#must_run}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#must_run Container#must_run}
 
 ---
 
@@ -3291,7 +3291,7 @@ NetworkMode *string
 
 Network mode of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#network_mode Container#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#network_mode Container#network_mode}
 
 ---
 
@@ -3305,7 +3305,7 @@ NetworksAdvanced interface{}
 
 networks_advanced block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#networks_advanced Container#networks_advanced}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#networks_advanced Container#networks_advanced}
 
 ---
 
@@ -3319,7 +3319,7 @@ PidMode *string
 
 he PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#pid_mode Container#pid_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#pid_mode Container#pid_mode}
 
 ---
 
@@ -3333,7 +3333,7 @@ Ports interface{}
 
 ports block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ports Container#ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ports Container#ports}
 
 ---
 
@@ -3347,7 +3347,7 @@ Privileged interface{}
 
 If `true`, the container runs in privileged mode.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#privileged Container#privileged}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#privileged Container#privileged}
 
 ---
 
@@ -3361,7 +3361,7 @@ PublishAllPorts interface{}
 
 Publish all ports of the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#publish_all_ports Container#publish_all_ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#publish_all_ports Container#publish_all_ports}
 
 ---
 
@@ -3375,7 +3375,7 @@ ReadOnly interface{}
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#read_only Container#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#read_only Container#read_only}
 
 ---
 
@@ -3389,7 +3389,7 @@ RemoveVolumes interface{}
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#remove_volumes Container#remove_volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#remove_volumes Container#remove_volumes}
 
 ---
 
@@ -3403,7 +3403,7 @@ Restart *string
 
 The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#restart Container#restart}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#restart Container#restart}
 
 ---
 
@@ -3417,7 +3417,7 @@ Rm interface{}
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#rm Container#rm}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#rm Container#rm}
 
 ---
 
@@ -3431,7 +3431,7 @@ Runtime *string
 
 Runtime to use for the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#runtime Container#runtime}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#runtime Container#runtime}
 
 ---
 
@@ -3445,7 +3445,7 @@ SecurityOpts *[]*string
 
 List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#security_opts Container#security_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#security_opts Container#security_opts}
 
 ---
 
@@ -3459,7 +3459,7 @@ ShmSize *f64
 
 Size of `/dev/shm` in MBs.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#shm_size Container#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#shm_size Container#shm_size}
 
 ---
 
@@ -3475,7 +3475,7 @@ If `true`, then the Docker container will be started after creation.
 
 If `false`, then the container is only created. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#start Container#start}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#start Container#start}
 
 ---
 
@@ -3489,7 +3489,7 @@ StdinOpen interface{}
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stdin_open Container#stdin_open}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#stdin_open Container#stdin_open}
 
 ---
 
@@ -3503,7 +3503,7 @@ StopSignal *string
 
 Signal to stop a container (default `SIGTERM`).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stop_signal Container#stop_signal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#stop_signal Container#stop_signal}
 
 ---
 
@@ -3517,7 +3517,7 @@ StopTimeout *f64
 
 Timeout (in seconds) to stop a container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#stop_timeout Container#stop_timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#stop_timeout Container#stop_timeout}
 
 ---
 
@@ -3531,7 +3531,7 @@ StorageOpts *map[string]*string
 
 Key/value pairs for the storage driver options, e.g. `size`: `120G`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#storage_opts Container#storage_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#storage_opts Container#storage_opts}
 
 ---
 
@@ -3545,7 +3545,7 @@ Sysctls *map[string]*string
 
 A map of kernel parameters (sysctls) to set in the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#sysctls Container#sysctls}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#sysctls Container#sysctls}
 
 ---
 
@@ -3559,7 +3559,7 @@ Tmpfs *map[string]*string
 
 A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#tmpfs Container#tmpfs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#tmpfs Container#tmpfs}
 
 ---
 
@@ -3573,7 +3573,7 @@ Tty interface{}
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#tty Container#tty}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#tty Container#tty}
 
 ---
 
@@ -3587,7 +3587,7 @@ Ulimit interface{}
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ulimit Container#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ulimit Container#ulimit}
 
 ---
 
@@ -3601,7 +3601,7 @@ Upload interface{}
 
 upload block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#upload Container#upload}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#upload Container#upload}
 
 ---
 
@@ -3617,7 +3617,7 @@ User used for run the first process.
 
 Format is `user` or `user:group` which user and group can be passed literraly or by name.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#user Container#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#user Container#user}
 
 ---
 
@@ -3631,7 +3631,7 @@ UsernsMode *string
 
 Sets the usernamespace mode for the container when usernamespace remapping option is enabled.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#userns_mode Container#userns_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#userns_mode Container#userns_mode}
 
 ---
 
@@ -3645,7 +3645,7 @@ Volumes interface{}
 
 volumes block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#volumes Container#volumes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#volumes Container#volumes}
 
 ---
 
@@ -3661,7 +3661,7 @@ If `true`, then the Docker container is waited for being healthy state after cre
 
 If `false`, then the container health state is not checked. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#wait Container#wait}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#wait Container#wait}
 
 ---
 
@@ -3675,7 +3675,7 @@ WaitTimeout *f64
 
 The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#wait_timeout Container#wait_timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#wait_timeout Container#wait_timeout}
 
 ---
 
@@ -3689,7 +3689,7 @@ WorkingDir *string
 
 The working directory for commands to run in.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#working_dir Container#working_dir}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#working_dir Container#working_dir}
 
 ---
 
@@ -3698,7 +3698,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerDevices.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerDevices {
 	HostPath: *string,
@@ -3727,7 +3727,7 @@ HostPath *string
 
 The path on the host where the device is located.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#host_path Container#host_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#host_path Container#host_path}
 
 ---
 
@@ -3741,7 +3741,7 @@ ContainerPath *string
 
 The path in the container where the device will be bound.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#container_path Container#container_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#container_path Container#container_path}
 
 ---
 
@@ -3755,7 +3755,7 @@ Permissions *string
 
 The cgroup permissions given to the container to access the device. Defaults to `rwm`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#permissions Container#permissions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#permissions Container#permissions}
 
 ---
 
@@ -3764,7 +3764,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerHealthcheck.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerHealthcheck {
 	Test: *[]*string,
@@ -3799,7 +3799,7 @@ Command to run to check health.
 
 For example, to run `curl -f localhost/health` set the command to be `["CMD", "curl", "-f", "localhost/health"]`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#test Container#test}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#test Container#test}
 
 ---
 
@@ -3813,7 +3813,7 @@ Interval *string
 
 Time between running the check (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#interval Container#interval}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#interval Container#interval}
 
 ---
 
@@ -3827,7 +3827,7 @@ Retries *f64
 
 Consecutive failures needed to report unhealthy. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#retries Container#retries}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#retries Container#retries}
 
 ---
 
@@ -3841,7 +3841,7 @@ StartPeriod *string
 
 Start period for the container to initialize before counting retries towards unstable (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#start_period Container#start_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#start_period Container#start_period}
 
 ---
 
@@ -3855,7 +3855,7 @@ Timeout *string
 
 Maximum time to allow one check to run (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#timeout Container#timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#timeout Container#timeout}
 
 ---
 
@@ -3864,7 +3864,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerHost.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerHost {
 	Host: *string,
@@ -3891,7 +3891,7 @@ Host *string
 
 Hostname to add.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#host Container#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#host Container#host}
 
 ---
 
@@ -3905,7 +3905,7 @@ Ip *string
 
 IP address this hostname should resolve to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ip Container#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ip Container#ip}
 
 ---
 
@@ -3914,7 +3914,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerLabels {
 	Label: *string,
@@ -3941,7 +3941,7 @@ Label *string
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#label Container#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#label Container#label}
 
 ---
 
@@ -3955,7 +3955,7 @@ Value *string
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#value Container#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#value Container#value}
 
 ---
 
@@ -3964,16 +3964,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMounts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMounts {
 	Target: *string,
 	Type: *string,
-	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.container.ContainerMountsBindOptions,
+	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsBindOptions,
 	ReadOnly: interface{},
 	Source: *string,
-	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.container.ContainerMountsTmpfsOptions,
-	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.container.ContainerMountsVolumeOptions,
+	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsTmpfsOptions,
+	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsVolumeOptions,
 }
 ```
 
@@ -4001,7 +4001,7 @@ Target *string
 
 Container path.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#target Container#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#target Container#target}
 
 ---
 
@@ -4015,7 +4015,7 @@ Type *string
 
 The mount type.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#type Container#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#type Container#type}
 
 ---
 
@@ -4029,7 +4029,7 @@ BindOptions ContainerMountsBindOptions
 
 bind_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#bind_options Container#bind_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#bind_options Container#bind_options}
 
 ---
 
@@ -4043,7 +4043,7 @@ ReadOnly interface{}
 
 Whether the mount should be read-only.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#read_only Container#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#read_only Container#read_only}
 
 ---
 
@@ -4057,7 +4057,7 @@ Source *string
 
 Mount source (e.g. a volume name, a host path).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#source Container#source}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#source Container#source}
 
 ---
 
@@ -4071,7 +4071,7 @@ TmpfsOptions ContainerMountsTmpfsOptions
 
 tmpfs_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#tmpfs_options Container#tmpfs_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#tmpfs_options Container#tmpfs_options}
 
 ---
 
@@ -4085,7 +4085,7 @@ VolumeOptions ContainerMountsVolumeOptions
 
 volume_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#volume_options Container#volume_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#volume_options Container#volume_options}
 
 ---
 
@@ -4094,7 +4094,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsBindOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsBindOptions {
 	Propagation: *string,
@@ -4119,7 +4119,7 @@ Propagation *string
 
 A propagation mode with the value.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#propagation Container#propagation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#propagation Container#propagation}
 
 ---
 
@@ -4128,7 +4128,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsTmpfsOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsTmpfsOptions {
 	Mode: *f64,
@@ -4155,7 +4155,7 @@ Mode *f64
 
 The permission mode for the tmpfs mount in an integer.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#mode Container#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#mode Container#mode}
 
 ---
 
@@ -4169,7 +4169,7 @@ SizeBytes *f64
 
 The size for the tmpfs mount in bytes.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#size_bytes Container#size_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#size_bytes Container#size_bytes}
 
 ---
 
@@ -4178,7 +4178,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsVolumeOptions {
 	DriverName: *string,
@@ -4209,7 +4209,7 @@ DriverName *string
 
 Name of the driver to use to create the volume.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#driver_name Container#driver_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#driver_name Container#driver_name}
 
 ---
 
@@ -4223,7 +4223,7 @@ DriverOptions *map[string]*string
 
 key/value map of driver specific options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#driver_options Container#driver_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#driver_options Container#driver_options}
 
 ---
 
@@ -4237,7 +4237,7 @@ Labels interface{}
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#labels Container#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#labels Container#labels}
 
 ---
 
@@ -4251,7 +4251,7 @@ NoCopy interface{}
 
 Populate volume with data from the target.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#no_copy Container#no_copy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#no_copy Container#no_copy}
 
 ---
 
@@ -4260,7 +4260,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsVolumeOptionsLabels {
 	Label: *string,
@@ -4287,7 +4287,7 @@ Label *string
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#label Container#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#label Container#label}
 
 ---
 
@@ -4301,7 +4301,7 @@ Value *string
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#value Container#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#value Container#value}
 
 ---
 
@@ -4310,7 +4310,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerNetworkData.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerNetworkData {
 
@@ -4323,7 +4323,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerNetworksAdvanced.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerNetworksAdvanced {
 	Name: *string,
@@ -4356,7 +4356,7 @@ The name or id of the network to use.
 
 You can use `name` or `id` attribute from a `docker_network` resource.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#name Container#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#name Container#name}
 
 ---
 
@@ -4370,7 +4370,7 @@ Aliases *[]*string
 
 The network aliases of the container in the specific network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#aliases Container#aliases}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#aliases Container#aliases}
 
 ---
 
@@ -4384,7 +4384,7 @@ Ipv4Address *string
 
 The IPV4 address of the container in the specific network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ipv4_address Container#ipv4_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ipv4_address Container#ipv4_address}
 
 ---
 
@@ -4398,7 +4398,7 @@ Ipv6Address *string
 
 The IPV6 address of the container in the specific network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ipv6_address Container#ipv6_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ipv6_address Container#ipv6_address}
 
 ---
 
@@ -4407,7 +4407,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerPorts {
 	Internal: *f64,
@@ -4438,7 +4438,7 @@ Internal *f64
 
 Port within the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#internal Container#internal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#internal Container#internal}
 
 ---
 
@@ -4452,7 +4452,7 @@ External *f64
 
 Port exposed out of the container. If not given a free random port `>= 32768` will be used.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#external Container#external}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#external Container#external}
 
 ---
 
@@ -4466,7 +4466,7 @@ Ip *string
 
 IP address/mask that can access this port. Defaults to `0.0.0.0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#ip Container#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#ip Container#ip}
 
 ---
 
@@ -4480,7 +4480,7 @@ Protocol *string
 
 Protocol that can be used over this port. Defaults to `tcp`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#protocol Container#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#protocol Container#protocol}
 
 ---
 
@@ -4489,7 +4489,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerUlimit.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerUlimit {
 	Hard: *f64,
@@ -4518,7 +4518,7 @@ Hard *f64
 
 The hard limit.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#hard Container#hard}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#hard Container#hard}
 
 ---
 
@@ -4532,7 +4532,7 @@ Name *string
 
 The name of the ulimit.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#name Container#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#name Container#name}
 
 ---
 
@@ -4546,7 +4546,7 @@ Soft *f64
 
 The soft limit.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#soft Container#soft}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#soft Container#soft}
 
 ---
 
@@ -4555,7 +4555,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerUpload.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerUpload {
 	File: *string,
@@ -4590,7 +4590,7 @@ File *string
 
 Path to the file in the container where is upload goes to.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#file Container#file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#file Container#file}
 
 ---
 
@@ -4606,7 +4606,7 @@ Literal string value to use as the object content, which will be uploaded as UTF
 
 Conflicts with `content_base64` & `source`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#content Container#content}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#content Container#content}
 
 ---
 
@@ -4622,7 +4622,7 @@ Base64-encoded data that will be decoded and uploaded as raw bytes for the objec
 
 This allows safely uploading non-UTF8 binary data, but is recommended only for larger binary content such as the result of the `base64encode` interpolation function. See [here](https://github.com/terraform-providers/terraform-provider-docker/issues/48#issuecomment-374174588) for the reason. Conflicts with `content` & `source`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#content_base64 Container#content_base64}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#content_base64 Container#content_base64}
 
 ---
 
@@ -4636,7 +4636,7 @@ Executable interface{}
 
 If `true`, the file will be uploaded with user executable permission. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#executable Container#executable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#executable Container#executable}
 
 ---
 
@@ -4652,7 +4652,7 @@ A filename that references a file which will be uploaded as the object content.
 
 This allows for large file uploads that do not get stored in state. Conflicts with `content` & `content_base64`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#source Container#source}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#source Container#source}
 
 ---
 
@@ -4666,7 +4666,7 @@ SourceHash *string
 
 If using `source`, this will force an update if the file content has updated but the filename has not.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#source_hash Container#source_hash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#source_hash Container#source_hash}
 
 ---
 
@@ -4675,7 +4675,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerVolumes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerVolumes {
 	ContainerPath: *string,
@@ -4708,7 +4708,7 @@ ContainerPath *string
 
 The path in the container where the volume will be mounted.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#container_path Container#container_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#container_path Container#container_path}
 
 ---
 
@@ -4722,7 +4722,7 @@ FromContainer *string
 
 The container where the volume is coming from.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#from_container Container#from_container}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#from_container Container#from_container}
 
 ---
 
@@ -4736,7 +4736,7 @@ HostPath *string
 
 The path on the host where the volume is coming from.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#host_path Container#host_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#host_path Container#host_path}
 
 ---
 
@@ -4750,7 +4750,7 @@ ReadOnly interface{}
 
 If `true`, this volume will be readonly. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#read_only Container#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#read_only Container#read_only}
 
 ---
 
@@ -4764,7 +4764,7 @@ VolumeName *string
 
 The name of the docker volume which should be mounted.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/container#volume_name Container#volume_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#volume_name Container#volume_name}
 
 ---
 
@@ -4775,7 +4775,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerCapabilitiesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerCapabilitiesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerCapabilitiesOutputReference
 ```
@@ -5082,7 +5082,7 @@ func InternalValue() ContainerCapabilities
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerDevicesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerDevicesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerDevicesList
 ```
@@ -5225,7 +5225,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerDevicesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerDevicesOutputReference
 ```
@@ -5572,7 +5572,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHealthcheckOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHealthcheckOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerHealthcheckOutputReference
 ```
@@ -5959,7 +5959,7 @@ func InternalValue() ContainerHealthcheck
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHostList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHostList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerHostList
 ```
@@ -6102,7 +6102,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHostOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHostOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerHostOutputReference
 ```
@@ -6413,7 +6413,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerLabelsList
 ```
@@ -6556,7 +6556,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerLabelsOutputReference
 ```
@@ -6867,7 +6867,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsBindOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsBindOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsBindOptionsOutputReference
 ```
@@ -7145,7 +7145,7 @@ func InternalValue() ContainerMountsBindOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerMountsList
 ```
@@ -7288,7 +7288,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerMountsOutputReference
 ```
@@ -7783,7 +7783,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsTmpfsOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsTmpfsOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsTmpfsOptionsOutputReference
 ```
@@ -8090,7 +8090,7 @@ func InternalValue() ContainerMountsTmpfsOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerMountsVolumeOptionsLabelsList
 ```
@@ -8233,7 +8233,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerMountsVolumeOptionsLabelsOutputReference
 ```
@@ -8544,7 +8544,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsVolumeOptionsOutputReference
 ```
@@ -8922,7 +8922,7 @@ func InternalValue() ContainerMountsVolumeOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworkDataList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworkDataList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerNetworkDataList
 ```
@@ -9054,7 +9054,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworkDataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerNetworkDataOutputReference
 ```
@@ -9409,7 +9409,7 @@ func InternalValue() ContainerNetworkData
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworksAdvancedList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerNetworksAdvancedList
 ```
@@ -9552,7 +9552,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworksAdvancedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerNetworksAdvancedOutputReference
 ```
@@ -9928,7 +9928,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerPortsList
 ```
@@ -10071,7 +10071,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerPortsOutputReference
 ```
@@ -10447,7 +10447,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUlimitList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUlimitList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerUlimitList
 ```
@@ -10590,7 +10590,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUlimitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerUlimitOutputReference
 ```
@@ -10923,7 +10923,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUploadList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUploadList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerUploadList
 ```
@@ -11066,7 +11066,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUploadOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerUploadOutputReference
 ```
@@ -11500,7 +11500,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerVolumesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerVolumesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerVolumesList
 ```
@@ -11643,7 +11643,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerVolumesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerVolumesOutputReference
 ```

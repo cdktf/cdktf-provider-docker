@@ -1,4 +1,4 @@
-// https://www.terraform.io/docs/providers/docker/d/logs
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -8,21 +8,21 @@ import * as cdktf from 'cdktf';
 
 export interface DataDockerLogsConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#details DataDockerLogs#details}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#details DataDockerLogs#details}
   */
   readonly details?: boolean | cdktf.IResolvable;
   /**
   * Discard headers that docker appends to each log entry
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#discard_headers DataDockerLogs#discard_headers}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#discard_headers DataDockerLogs#discard_headers}
   */
   readonly discardHeaders?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#follow DataDockerLogs#follow}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#follow DataDockerLogs#follow}
   */
   readonly follow?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#id DataDockerLogs#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#id DataDockerLogs#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -31,43 +31,43 @@ export interface DataDockerLogsConfig extends cdktf.TerraformMetaArguments {
   /**
   * If true populate computed value `logs_list_string`
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#logs_list_string_enabled DataDockerLogs#logs_list_string_enabled}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#logs_list_string_enabled DataDockerLogs#logs_list_string_enabled}
   */
   readonly logsListStringEnabled?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker Container
   * 
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#name DataDockerLogs#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#name DataDockerLogs#name}
   */
   readonly name: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stderr DataDockerLogs#show_stderr}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#show_stderr DataDockerLogs#show_stderr}
   */
   readonly showStderr?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#show_stdout DataDockerLogs#show_stdout}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#show_stdout DataDockerLogs#show_stdout}
   */
   readonly showStdout?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#since DataDockerLogs#since}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#since DataDockerLogs#since}
   */
   readonly since?: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#tail DataDockerLogs#tail}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#tail DataDockerLogs#tail}
   */
   readonly tail?: string;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#timestamps DataDockerLogs#timestamps}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#timestamps DataDockerLogs#timestamps}
   */
   readonly timestamps?: boolean | cdktf.IResolvable;
   /**
-  * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/d/logs#until DataDockerLogs#until}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#until DataDockerLogs#until}
   */
   readonly until?: string;
 }
 
 /**
-* Represents a {@link https://www.terraform.io/docs/providers/docker/d/logs docker_logs}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs docker_logs}
 */
 export class DataDockerLogs extends cdktf.TerraformDataSource {
 
@@ -81,7 +81,7 @@ export class DataDockerLogs extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://www.terraform.io/docs/providers/docker/d/logs docker_logs} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs docker_logs} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope

@@ -1,6 +1,6 @@
 # `docker_secret`
 
-Refer to the Terraform Registory for docs: [`docker_secret`](https://www.terraform.io/docs/providers/docker/r/secret).
+Refer to the Terraform Registory for docs: [`docker_secret`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret).
 
 # `secret` Submodule <a name="`secret` Submodule" id="@cdktf/provider-docker.secret"></a>
 
@@ -8,7 +8,7 @@ Refer to the Terraform Registory for docs: [`docker_secret`](https://www.terrafo
 
 ### Secret <a name="Secret" id="@cdktf/provider-docker.secret.Secret"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/secret docker_secret}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret docker_secret}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.secret.Secret.Initializer"></a>
 
@@ -366,7 +366,7 @@ secret.Secret.isTerraformResource(x: any)
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.terraformResourceType">terraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.secret.Secret.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.secret.Secret.property.count">count</a></code> | <code>number \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.dependsOn">dependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.forEach">forEach</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.Secret.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -468,10 +468,10 @@ public readonly connection: SSHProvisionerConnection | WinrmProvisionerConnectio
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.secret.Secret.property.count"></a>
 
 ```typescript
-public readonly count: number;
+public readonly count: number | TerraformCount;
 ```
 
-- *Type:* number
+- *Type:* number | cdktf.TerraformCount
 
 ---
 
@@ -640,7 +640,7 @@ const secretConfig: secret.SecretConfig = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.count">count</a></code> | <code>number \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.dependsOn">dependsOn</a></code> | <code>cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.forEach">forEach</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -648,7 +648,7 @@ const secretConfig: secret.SecretConfig = { ... }
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.data">data</a></code> | <code>string</code> | Base64-url-safe-encoded secret data. |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.name">name</a></code> | <code>string</code> | User-defined name of the secret. |
-| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#id Secret#id}. |
+| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#id Secret#id}. |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.labels">labels</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a>[]</code> | labels block. |
 
 ---
@@ -666,10 +666,10 @@ public readonly connection: SSHProvisionerConnection | WinrmProvisionerConnectio
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.secret.SecretConfig.property.count"></a>
 
 ```typescript
-public readonly count: number;
+public readonly count: number | TerraformCount;
 ```
 
-- *Type:* number
+- *Type:* number | cdktf.TerraformCount
 
 ---
 
@@ -733,7 +733,7 @@ public readonly data: string;
 
 Base64-url-safe-encoded secret data.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#data Secret#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#data Secret#data}
 
 ---
 
@@ -747,7 +747,7 @@ public readonly name: string;
 
 User-defined name of the secret.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#name Secret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#name Secret#name}
 
 ---
 
@@ -759,7 +759,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#id Secret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#id Secret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -776,7 +776,7 @@ public readonly labels: IResolvable | SecretLabels[];
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#labels Secret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#labels Secret#labels}
 
 ---
 
@@ -809,7 +809,7 @@ public readonly label: string;
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#label Secret#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#label Secret#label}
 
 ---
 
@@ -823,7 +823,7 @@ public readonly value: string;
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/secret#value Secret#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#value Secret#value}
 
 ---
 

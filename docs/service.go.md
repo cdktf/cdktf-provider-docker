@@ -1,6 +1,6 @@
 # `docker_service`
 
-Refer to the Terraform Registory for docs: [`docker_service`](https://www.terraform.io/docs/providers/docker/r/service).
+Refer to the Terraform Registory for docs: [`docker_service`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service).
 
 # `service` Submodule <a name="`service` Submodule" id="@cdktf/provider-docker.service"></a>
 
@@ -8,12 +8,12 @@ Refer to the Terraform Registory for docs: [`docker_service`](https://www.terraf
 
 ### Service <a name="Service" id="@cdktf/provider-docker.service.Service"></a>
 
-Represents a {@link https://www.terraform.io/docs/providers/docker/r/service docker_service}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service docker_service}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.Service.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewService(scope Construct, id *string, config ServiceConfig) Service
 ```
@@ -430,7 +430,7 @@ func ResetUpdateConfig()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.service.Service.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsConstruct(x interface{}) *bool
 ```
@@ -462,7 +462,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.service.Service.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsTerraformElement(x interface{}) *bool
 ```
@@ -476,7 +476,7 @@ service.Service_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.service.Service.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.Service_IsTerraformResource(x interface{}) *bool
 ```
@@ -499,7 +499,7 @@ service.Service_IsTerraformResource(x interface{}) *bool
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformResourceType">TerraformResourceType</a></code> | <code>*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.dependsOn">DependsOn</a></code> | <code>*[]*string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -613,10 +613,10 @@ func Connection() interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.service.Service.property.count"></a>
 
 ```go
-func Count() *f64
+func Count() interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -895,7 +895,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceAuth.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceAuth {
 	ServerAddress: *string,
@@ -924,7 +924,7 @@ ServerAddress *string
 
 The address of the server for the authentication.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#server_address Service#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#server_address Service#server_address}
 
 ---
 
@@ -938,7 +938,7 @@ Password *string
 
 The password.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#password Service#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#password Service#password}
 
 ---
 
@@ -952,7 +952,7 @@ Username *string
 
 The username.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#username Service#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#username Service#username}
 
 ---
 
@@ -961,26 +961,26 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceConfig {
 	Connection: interface{},
-	Count: *f64,
+	Count: interface{},
 	DependsOn: *[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable,
 	ForEach: github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator,
 	Lifecycle: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle,
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Name: *string,
-	TaskSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpec,
-	Auth: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceAuth,
-	ConvergeConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceConvergeConfig,
-	EndpointSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceEndpointSpec,
+	TaskSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpec,
+	Auth: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceAuth,
+	ConvergeConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceConvergeConfig,
+	EndpointSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceEndpointSpec,
 	Id: *string,
 	Labels: interface{},
-	Mode: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceMode,
-	RollbackConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceRollbackConfig,
-	UpdateConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceUpdateConfig,
+	Mode: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceMode,
+	RollbackConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceRollbackConfig,
+	UpdateConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceUpdateConfig,
 }
 ```
 
@@ -989,7 +989,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.connection">Connection</a></code> | <code>interface{}</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">Count</a></code> | <code>*f64</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">Count</a></code> | <code>interface{}</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.dependsOn">DependsOn</a></code> | <code>*[]github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformDependable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.forEach">ForEach</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.lifecycle">Lifecycle</a></code> | <code>github.com/hashicorp/terraform-cdk-go/cdktf.TerraformResourceLifecycle</code> | *No description.* |
@@ -1000,7 +1000,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.auth">Auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.convergeConfig">ConvergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.endpointSpec">EndpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#id Service#id}. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">Id</a></code> | <code>*string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#id Service#id}. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">Labels</a></code> | <code>interface{}</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.mode">Mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.rollbackConfig">RollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
@@ -1021,10 +1021,10 @@ Connection interface{}
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.service.ServiceConfig.property.count"></a>
 
 ```go
-Count *f64
+Count interface{}
 ```
 
-- *Type:* *f64
+- *Type:* interface{}
 
 ---
 
@@ -1088,7 +1088,7 @@ Name *string
 
 Name of the service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#name Service#name}
 
 ---
 
@@ -1102,7 +1102,7 @@ TaskSpec ServiceTaskSpec
 
 task_spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#task_spec Service#task_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#task_spec Service#task_spec}
 
 ---
 
@@ -1116,7 +1116,7 @@ Auth ServiceAuth
 
 auth block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#auth Service#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#auth Service#auth}
 
 ---
 
@@ -1130,7 +1130,7 @@ ConvergeConfig ServiceConvergeConfig
 
 converge_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#converge_config Service#converge_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#converge_config Service#converge_config}
 
 ---
 
@@ -1144,7 +1144,7 @@ EndpointSpec ServiceEndpointSpec
 
 endpoint_spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#endpoint_spec Service#endpoint_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#endpoint_spec Service#endpoint_spec}
 
 ---
 
@@ -1156,7 +1156,7 @@ Id *string
 
 - *Type:* *string
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#id Service#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#id Service#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1173,7 +1173,7 @@ Labels interface{}
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -1187,7 +1187,7 @@ Mode ServiceMode
 
 mode block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -1201,7 +1201,7 @@ RollbackConfig ServiceRollbackConfig
 
 rollback_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#rollback_config Service#rollback_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#rollback_config Service#rollback_config}
 
 ---
 
@@ -1215,7 +1215,7 @@ UpdateConfig ServiceUpdateConfig
 
 update_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#update_config Service#update_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#update_config Service#update_config}
 
 ---
 
@@ -1224,7 +1224,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceConvergeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceConvergeConfig {
 	Delay: *string,
@@ -1251,7 +1251,7 @@ Delay *string
 
 The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -1265,7 +1265,7 @@ Timeout *string
 
 The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#timeout Service#timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#timeout Service#timeout}
 
 ---
 
@@ -1274,7 +1274,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceEndpointSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceEndpointSpec {
 	Mode: *string,
@@ -1301,7 +1301,7 @@ Mode *string
 
 The mode of resolution to use for internal load balancing between tasks.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -1315,7 +1315,7 @@ Ports interface{}
 
 ports block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#ports Service#ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#ports Service#ports}
 
 ---
 
@@ -1324,7 +1324,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceEndpointSpecPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceEndpointSpecPorts {
 	TargetPort: *f64,
@@ -1357,7 +1357,7 @@ TargetPort *f64
 
 The port inside the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#target_port Service#target_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#target_port Service#target_port}
 
 ---
 
@@ -1371,7 +1371,7 @@ Name *string
 
 A random name for the port.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#name Service#name}
 
 ---
 
@@ -1385,7 +1385,7 @@ Protocol *string
 
 Rrepresents the protocol of a port: `tcp`, `udp` or `sctp`. Defaults to `tcp`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#protocol Service#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#protocol Service#protocol}
 
 ---
 
@@ -1399,7 +1399,7 @@ PublishedPort *f64
 
 The port on the swarm hosts.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#published_port Service#published_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#published_port Service#published_port}
 
 ---
 
@@ -1413,7 +1413,7 @@ PublishMode *string
 
 Represents the mode in which the port is to be published: 'ingress' or 'host'. Defaults to `ingress`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#publish_mode Service#publish_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#publish_mode Service#publish_mode}
 
 ---
 
@@ -1422,7 +1422,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceLabels {
 	Label: *string,
@@ -1449,7 +1449,7 @@ Label *string
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#label Service#label}
 
 ---
 
@@ -1463,7 +1463,7 @@ Value *string
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#value Service#value}
 
 ---
 
@@ -1472,11 +1472,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceMode.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceMode {
 	Global: interface{},
-	Replicated: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceModeReplicated,
+	Replicated: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceModeReplicated,
 }
 ```
 
@@ -1499,7 +1499,7 @@ Global interface{}
 
 The global service mode. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#global Service#global}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#global Service#global}
 
 ---
 
@@ -1513,7 +1513,7 @@ Replicated ServiceModeReplicated
 
 replicated block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#replicated Service#replicated}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#replicated Service#replicated}
 
 ---
 
@@ -1522,7 +1522,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceModeReplicated.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceModeReplicated {
 	Replicas: *f64,
@@ -1547,7 +1547,7 @@ Replicas *f64
 
 The amount of replicas of the service. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#replicas Service#replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#replicas Service#replicas}
 
 ---
 
@@ -1556,7 +1556,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceRollbackConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceRollbackConfig {
 	Delay: *string,
@@ -1591,7 +1591,7 @@ Delay *string
 
 Delay between task rollbacks (ns|us|ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -1605,7 +1605,7 @@ FailureAction *string
 
 Action on rollback failure: pause | continue. Defaults to `pause`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#failure_action Service#failure_action}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#failure_action Service#failure_action}
 
 ---
 
@@ -1619,7 +1619,7 @@ MaxFailureRatio *string
 
 Failure rate to tolerate during a rollback. Defaults to `0.0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#max_failure_ratio Service#max_failure_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
 
 ---
 
@@ -1633,7 +1633,7 @@ Monitor *string
 
 Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#monitor Service#monitor}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#monitor Service#monitor}
 
 ---
 
@@ -1647,7 +1647,7 @@ Order *string
 
 Rollback order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#order Service#order}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#order Service#order}
 
 ---
 
@@ -1661,7 +1661,7 @@ Parallelism *f64
 
 Maximum number of tasks to be rollbacked in one iteration. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#parallelism Service#parallelism}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#parallelism Service#parallelism}
 
 ---
 
@@ -1670,16 +1670,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpec {
-	ContainerSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpec,
+	ContainerSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpec,
 	ForceUpdate: *f64,
-	LogDriver: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecLogDriver,
+	LogDriver: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecLogDriver,
 	NetworksAdvanced: interface{},
-	Placement: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecPlacement,
-	Resources: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecResources,
-	RestartPolicy: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecRestartPolicy,
+	Placement: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecPlacement,
+	Resources: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResources,
+	RestartPolicy: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecRestartPolicy,
 	Runtime: *string,
 }
 ```
@@ -1709,7 +1709,7 @@ ContainerSpec ServiceTaskSpecContainerSpec
 
 container_spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#container_spec Service#container_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#container_spec Service#container_spec}
 
 ---
 
@@ -1723,7 +1723,7 @@ ForceUpdate *f64
 
 A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#force_update Service#force_update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#force_update Service#force_update}
 
 ---
 
@@ -1737,7 +1737,7 @@ LogDriver ServiceTaskSpecLogDriver
 
 log_driver block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#log_driver Service#log_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#log_driver Service#log_driver}
 
 ---
 
@@ -1751,7 +1751,7 @@ NetworksAdvanced interface{}
 
 networks_advanced block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#networks_advanced Service#networks_advanced}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#networks_advanced Service#networks_advanced}
 
 ---
 
@@ -1765,7 +1765,7 @@ Placement ServiceTaskSpecPlacement
 
 placement block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#placement Service#placement}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#placement Service#placement}
 
 ---
 
@@ -1779,7 +1779,7 @@ Resources ServiceTaskSpecResources
 
 resources block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#resources Service#resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#resources Service#resources}
 
 ---
 
@@ -1793,7 +1793,7 @@ RestartPolicy ServiceTaskSpecRestartPolicy
 
 restart_policy block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#restart_policy Service#restart_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#restart_policy Service#restart_policy}
 
 ---
 
@@ -1807,7 +1807,7 @@ Runtime *string
 
 Runtime is the type of runtime specified for the task executor. See the [types](https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#runtime Service#runtime}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#runtime Service#runtime}
 
 ---
 
@@ -1816,7 +1816,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpec {
 	Image: *string,
@@ -1824,16 +1824,16 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
 	Command: *[]*string,
 	Configs: interface{},
 	Dir: *string,
-	DnsConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecDnsConfig,
+	DnsConfig: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecDnsConfig,
 	Env: *map[string]*string,
 	Groups: *[]*string,
-	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecHealthcheck,
+	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecHealthcheck,
 	Hostname: *string,
 	Hosts: interface{},
 	Isolation: *string,
 	Labels: interface{},
 	Mounts: interface{},
-	Privileges: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecPrivileges,
+	Privileges: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivileges,
 	ReadOnly: interface{},
 	Secrets: interface{},
 	StopGracePeriod: *string,
@@ -1881,7 +1881,7 @@ Image *string
 
 The image name to use for the containers of the service, like `nginx:1.17.6`. Also use the data-source or resource of `docker_image` with the `repo_digest` or `docker_registry_image` with the `name` attribute for this, as shown in the examples.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#image Service#image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#image Service#image}
 
 ---
 
@@ -1895,7 +1895,7 @@ Args *[]*string
 
 Arguments to the command.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#args Service#args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#args Service#args}
 
 ---
 
@@ -1911,7 +1911,7 @@ The command/entrypoint to be run in the image.
 
 According to the [docker cli](https://github.com/docker/cli/blob/v20.10.7/cli/command/service/opts.go#L705) the override of the entrypoint is also passed to the `command` property and there is no `entrypoint` attribute in the `ContainerSpec` of the service.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#command Service#command}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#command Service#command}
 
 ---
 
@@ -1925,7 +1925,7 @@ Configs interface{}
 
 configs block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#configs Service#configs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#configs Service#configs}
 
 ---
 
@@ -1939,7 +1939,7 @@ Dir *string
 
 The working directory for commands to run in.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#dir Service#dir}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#dir Service#dir}
 
 ---
 
@@ -1953,7 +1953,7 @@ DnsConfig ServiceTaskSpecContainerSpecDnsConfig
 
 dns_config block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#dns_config Service#dns_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#dns_config Service#dns_config}
 
 ---
 
@@ -1967,7 +1967,7 @@ Env *map[string]*string
 
 A list of environment variables in the form VAR="value".
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#env Service#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#env Service#env}
 
 ---
 
@@ -1981,7 +1981,7 @@ Groups *[]*string
 
 A list of additional groups that the container process will run as.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#groups Service#groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#groups Service#groups}
 
 ---
 
@@ -1995,7 +1995,7 @@ Healthcheck ServiceTaskSpecContainerSpecHealthcheck
 
 healthcheck block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#healthcheck Service#healthcheck}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#healthcheck Service#healthcheck}
 
 ---
 
@@ -2009,7 +2009,7 @@ Hostname *string
 
 The hostname to use for the container, as a valid RFC 1123 hostname.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#hostname Service#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#hostname Service#hostname}
 
 ---
 
@@ -2023,7 +2023,7 @@ Hosts interface{}
 
 hosts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#hosts Service#hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#hosts Service#hosts}
 
 ---
 
@@ -2037,7 +2037,7 @@ Isolation *string
 
 Isolation technology of the containers running the service. (Windows only). Defaults to `default`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#isolation Service#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#isolation Service#isolation}
 
 ---
 
@@ -2051,7 +2051,7 @@ Labels interface{}
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -2065,7 +2065,7 @@ Mounts interface{}
 
 mounts block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#mounts Service#mounts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#mounts Service#mounts}
 
 ---
 
@@ -2079,7 +2079,7 @@ Privileges ServiceTaskSpecContainerSpecPrivileges
 
 privileges block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#privileges Service#privileges}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#privileges Service#privileges}
 
 ---
 
@@ -2093,7 +2093,7 @@ ReadOnly interface{}
 
 Mount the container's root filesystem as read only.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#read_only Service#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#read_only Service#read_only}
 
 ---
 
@@ -2107,7 +2107,7 @@ Secrets interface{}
 
 secrets block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#secrets Service#secrets}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#secrets Service#secrets}
 
 ---
 
@@ -2123,7 +2123,7 @@ Amount of time to wait for the container to terminate before forcefully removing
 
 If not specified or '0s' the destroy will not check if all tasks/containers of the service terminate.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#stop_grace_period Service#stop_grace_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#stop_grace_period Service#stop_grace_period}
 
 ---
 
@@ -2137,7 +2137,7 @@ StopSignal *string
 
 Signal to stop the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#stop_signal Service#stop_signal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#stop_signal Service#stop_signal}
 
 ---
 
@@ -2151,7 +2151,7 @@ Sysctl *map[string]*string
 
 Sysctls config (Linux only).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#sysctl Service#sysctl}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#sysctl Service#sysctl}
 
 ---
 
@@ -2165,7 +2165,7 @@ User *string
 
 The user inside the container.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#user Service#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#user Service#user}
 
 ---
 
@@ -2174,7 +2174,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecConfigs {
 	ConfigId: *string,
@@ -2209,7 +2209,7 @@ ConfigId *string
 
 ID of the specific config that we're referencing.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#config_id Service#config_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#config_id Service#config_id}
 
 ---
 
@@ -2223,7 +2223,7 @@ FileName *string
 
 Represents the final filename in the filesystem.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_name Service#file_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_name Service#file_name}
 
 ---
 
@@ -2239,7 +2239,7 @@ Name of the config that this references, but this is just provided for lookup/di
 
 The config in the reference will be identified by its ID
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#config_name Service#config_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#config_name Service#config_name}
 
 ---
 
@@ -2253,7 +2253,7 @@ FileGid *string
 
 Represents the file GID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_gid Service#file_gid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_gid Service#file_gid}
 
 ---
 
@@ -2267,7 +2267,7 @@ FileMode *f64
 
 Represents represents the FileMode of the file. Defaults to `0o444`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_mode Service#file_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_mode Service#file_mode}
 
 ---
 
@@ -2281,7 +2281,7 @@ FileUid *string
 
 Represents the file UID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_uid Service#file_uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_uid Service#file_uid}
 
 ---
 
@@ -2290,7 +2290,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecDnsConfig {
 	Nameservers: *[]*string,
@@ -2319,7 +2319,7 @@ Nameservers *[]*string
 
 The IP addresses of the name servers.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#nameservers Service#nameservers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#nameservers Service#nameservers}
 
 ---
 
@@ -2333,7 +2333,7 @@ Options *[]*string
 
 A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#options Service#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#options Service#options}
 
 ---
 
@@ -2347,7 +2347,7 @@ Search *[]*string
 
 A search list for host-name lookup.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#search Service#search}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#search Service#search}
 
 ---
 
@@ -2356,7 +2356,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecHealthcheck {
 	Test: *[]*string,
@@ -2389,7 +2389,7 @@ Test *[]*string
 
 The test to perform as list.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#test Service#test}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#test Service#test}
 
 ---
 
@@ -2403,7 +2403,7 @@ Interval *string
 
 Time between running the check (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#interval Service#interval}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#interval Service#interval}
 
 ---
 
@@ -2417,7 +2417,7 @@ Retries *f64
 
 Consecutive failures needed to report unhealthy. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#retries Service#retries}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#retries Service#retries}
 
 ---
 
@@ -2431,7 +2431,7 @@ StartPeriod *string
 
 Start period for the container to initialize before counting retries towards unstable (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#start_period Service#start_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#start_period Service#start_period}
 
 ---
 
@@ -2445,7 +2445,7 @@ Timeout *string
 
 Maximum time to allow one check to run (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#timeout Service#timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#timeout Service#timeout}
 
 ---
 
@@ -2454,7 +2454,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecHosts {
 	Host: *string,
@@ -2481,7 +2481,7 @@ Host *string
 
 The name of the host.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#host Service#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#host Service#host}
 
 ---
 
@@ -2495,7 +2495,7 @@ Ip *string
 
 The ip of the host.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#ip Service#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#ip Service#ip}
 
 ---
 
@@ -2504,7 +2504,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecLabels {
 	Label: *string,
@@ -2531,7 +2531,7 @@ Label *string
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#label Service#label}
 
 ---
 
@@ -2545,7 +2545,7 @@ Value *string
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#value Service#value}
 
 ---
 
@@ -2554,16 +2554,16 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMounts {
 	Target: *string,
 	Type: *string,
-	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecMountsBindOptions,
+	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsBindOptions,
 	ReadOnly: interface{},
 	Source: *string,
-	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions,
-	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecMountsVolumeOptions,
+	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions,
+	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions,
 }
 ```
 
@@ -2591,7 +2591,7 @@ Target *string
 
 Container path.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#target Service#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#target Service#target}
 
 ---
 
@@ -2605,7 +2605,7 @@ Type *string
 
 The mount type.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#type Service#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#type Service#type}
 
 ---
 
@@ -2619,7 +2619,7 @@ BindOptions ServiceTaskSpecContainerSpecMountsBindOptions
 
 bind_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#bind_options Service#bind_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#bind_options Service#bind_options}
 
 ---
 
@@ -2633,7 +2633,7 @@ ReadOnly interface{}
 
 Whether the mount should be read-only.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#read_only Service#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#read_only Service#read_only}
 
 ---
 
@@ -2647,7 +2647,7 @@ Source *string
 
 Mount source (e.g. a volume name, a host path).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#source Service#source}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#source Service#source}
 
 ---
 
@@ -2661,7 +2661,7 @@ TmpfsOptions ServiceTaskSpecContainerSpecMountsTmpfsOptions
 
 tmpfs_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#tmpfs_options Service#tmpfs_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#tmpfs_options Service#tmpfs_options}
 
 ---
 
@@ -2675,7 +2675,7 @@ VolumeOptions ServiceTaskSpecContainerSpecMountsVolumeOptions
 
 volume_options block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#volume_options Service#volume_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#volume_options Service#volume_options}
 
 ---
 
@@ -2684,7 +2684,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsBindOptions {
 	Propagation: *string,
@@ -2711,7 +2711,7 @@ Bind propagation refers to whether or not mounts created within a given bind-mou
 
 See the [docs](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation) for details. Defaults to `rprivate`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#propagation Service#propagation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#propagation Service#propagation}
 
 ---
 
@@ -2720,7 +2720,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsTmpfsOptions {
 	Mode: *f64,
@@ -2747,7 +2747,7 @@ Mode *f64
 
 The permission mode for the tmpfs mount in an integer.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -2761,7 +2761,7 @@ SizeBytes *f64
 
 The size for the tmpfs mount in bytes.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#size_bytes Service#size_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#size_bytes Service#size_bytes}
 
 ---
 
@@ -2770,7 +2770,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsVolumeOptions {
 	DriverName: *string,
@@ -2801,7 +2801,7 @@ DriverName *string
 
 Name of the driver to use to create the volume.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#driver_name Service#driver_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#driver_name Service#driver_name}
 
 ---
 
@@ -2815,7 +2815,7 @@ DriverOptions *map[string]*string
 
 key/value map of driver specific options.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#driver_options Service#driver_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#driver_options Service#driver_options}
 
 ---
 
@@ -2829,7 +2829,7 @@ Labels interface{}
 
 labels block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -2843,7 +2843,7 @@ NoCopy interface{}
 
 Populate volume with data from the target.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#no_copy Service#no_copy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#no_copy Service#no_copy}
 
 ---
 
@@ -2852,7 +2852,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels {
 	Label: *string,
@@ -2879,7 +2879,7 @@ Label *string
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#label Service#label}
 
 ---
 
@@ -2893,7 +2893,7 @@ Value *string
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#value Service#value}
 
 ---
 
@@ -2902,11 +2902,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivileges {
-	CredentialSpec: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec,
-	SeLinuxContext: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext,
+	CredentialSpec: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec,
+	SeLinuxContext: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext,
 }
 ```
 
@@ -2929,7 +2929,7 @@ CredentialSpec ServiceTaskSpecContainerSpecPrivilegesCredentialSpec
 
 credential_spec block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#credential_spec Service#credential_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#credential_spec Service#credential_spec}
 
 ---
 
@@ -2943,7 +2943,7 @@ SeLinuxContext ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext
 
 se_linux_context block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#se_linux_context Service#se_linux_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#se_linux_context Service#se_linux_context}
 
 ---
 
@@ -2952,7 +2952,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpec {
 	File: *string,
@@ -2979,7 +2979,7 @@ File *string
 
 Load credential spec from this file.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file Service#file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file Service#file}
 
 ---
 
@@ -2993,7 +2993,7 @@ Registry *string
 
 Load credential spec from this value in the Windows registry.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#registry Service#registry}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#registry Service#registry}
 
 ---
 
@@ -3002,7 +3002,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
 	Disable: interface{},
@@ -3035,7 +3035,7 @@ Disable interface{}
 
 Disable SELinux.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#disable Service#disable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#disable Service#disable}
 
 ---
 
@@ -3049,7 +3049,7 @@ Level *string
 
 SELinux level label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#level Service#level}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#level Service#level}
 
 ---
 
@@ -3063,7 +3063,7 @@ Role *string
 
 SELinux role label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#role Service#role}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#role Service#role}
 
 ---
 
@@ -3077,7 +3077,7 @@ Type *string
 
 SELinux type label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#type Service#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#type Service#type}
 
 ---
 
@@ -3091,7 +3091,7 @@ User *string
 
 SELinux user label.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#user Service#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#user Service#user}
 
 ---
 
@@ -3100,7 +3100,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecContainerSpecSecrets {
 	FileName: *string,
@@ -3135,7 +3135,7 @@ FileName *string
 
 Represents the final filename in the filesystem.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_name Service#file_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_name Service#file_name}
 
 ---
 
@@ -3149,7 +3149,7 @@ SecretId *string
 
 ID of the specific secret that we're referencing.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#secret_id Service#secret_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#secret_id Service#secret_id}
 
 ---
 
@@ -3163,7 +3163,7 @@ FileGid *string
 
 Represents the file GID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_gid Service#file_gid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_gid Service#file_gid}
 
 ---
 
@@ -3177,7 +3177,7 @@ FileMode *f64
 
 Represents represents the FileMode of the file. Defaults to `0o444`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_mode Service#file_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_mode Service#file_mode}
 
 ---
 
@@ -3191,7 +3191,7 @@ FileUid *string
 
 Represents the file UID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#file_uid Service#file_uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#file_uid Service#file_uid}
 
 ---
 
@@ -3207,7 +3207,7 @@ Name of the secret that this references, but this is just provided for lookup/di
 
 The config in the reference will be identified by its ID
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#secret_name Service#secret_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#secret_name Service#secret_name}
 
 ---
 
@@ -3216,7 +3216,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecLogDriver.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecLogDriver {
 	Name: *string,
@@ -3243,7 +3243,7 @@ Name *string
 
 The logging driver to use.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#name Service#name}
 
 ---
 
@@ -3257,7 +3257,7 @@ Options *map[string]*string
 
 The options for the logging driver.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#options Service#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#options Service#options}
 
 ---
 
@@ -3266,7 +3266,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecNetworksAdvanced {
 	Name: *string,
@@ -3295,7 +3295,7 @@ Name *string
 
 The name/id of the network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#name Service#name}
 
 ---
 
@@ -3309,7 +3309,7 @@ Aliases *[]*string
 
 The network aliases of the container in the specific network.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#aliases Service#aliases}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#aliases Service#aliases}
 
 ---
 
@@ -3323,7 +3323,7 @@ DriverOpts *[]*string
 
 An array of driver options for the network, e.g. `opts1=value`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#driver_opts Service#driver_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#driver_opts Service#driver_opts}
 
 ---
 
@@ -3332,7 +3332,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacement.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecPlacement {
 	Constraints: *[]*string,
@@ -3363,7 +3363,7 @@ Constraints *[]*string
 
 An array of constraints. e.g.: `node.role==manager`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#constraints Service#constraints}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#constraints Service#constraints}
 
 ---
 
@@ -3377,7 +3377,7 @@ MaxReplicas *f64
 
 Maximum number of replicas for per node (default value is `0`, which is unlimited).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#max_replicas Service#max_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#max_replicas Service#max_replicas}
 
 ---
 
@@ -3391,7 +3391,7 @@ Platforms interface{}
 
 platforms block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#platforms Service#platforms}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#platforms Service#platforms}
 
 ---
 
@@ -3407,7 +3407,7 @@ Preferences provide a way to make the scheduler aware of factors such as topolog
 
 They are provided in order from highest to lowest precedence, e.g.: `spread=node.role.manager`
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#prefs Service#prefs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#prefs Service#prefs}
 
 ---
 
@@ -3416,7 +3416,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecPlacementPlatforms {
 	Architecture: *string,
@@ -3443,7 +3443,7 @@ Architecture *string
 
 The architecture, e.g. `amd64`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#architecture Service#architecture}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#architecture Service#architecture}
 
 ---
 
@@ -3457,7 +3457,7 @@ Os *string
 
 The operation system, e.g. `linux`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#os Service#os}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#os Service#os}
 
 ---
 
@@ -3466,11 +3466,11 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResources {
-	Limits: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecResourcesLimits,
-	Reservation: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecResourcesReservation,
+	Limits: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesLimits,
+	Reservation: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesReservation,
 }
 ```
 
@@ -3493,7 +3493,7 @@ Limits ServiceTaskSpecResourcesLimits
 
 limits block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#limits Service#limits}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#limits Service#limits}
 
 ---
 
@@ -3507,7 +3507,7 @@ Reservation ServiceTaskSpecResourcesReservation
 
 reservation block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#reservation Service#reservation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#reservation Service#reservation}
 
 ---
 
@@ -3516,7 +3516,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesLimits.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesLimits {
 	MemoryBytes: *f64,
@@ -3543,7 +3543,7 @@ MemoryBytes *f64
 
 The amounf of memory in bytes the container allocates.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#memory_bytes Service#memory_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#memory_bytes Service#memory_bytes}
 
 ---
 
@@ -3557,7 +3557,7 @@ NanoCpus *f64
 
 CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#nano_cpus Service#nano_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#nano_cpus Service#nano_cpus}
 
 ---
 
@@ -3566,10 +3566,10 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservation.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesReservation {
-	GenericResources: github.com/cdktf/cdktf-provider-docker-go/docker/v7.service.ServiceTaskSpecResourcesReservationGenericResources,
+	GenericResources: github.com/cdktf/cdktf-provider-docker-go/docker.service.ServiceTaskSpecResourcesReservationGenericResources,
 	MemoryBytes: *f64,
 	NanoCpus: *f64,
 }
@@ -3595,7 +3595,7 @@ GenericResources ServiceTaskSpecResourcesReservationGenericResources
 
 generic_resources block.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#generic_resources Service#generic_resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#generic_resources Service#generic_resources}
 
 ---
 
@@ -3609,7 +3609,7 @@ MemoryBytes *f64
 
 The amounf of memory in bytes the container allocates.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#memory_bytes Service#memory_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#memory_bytes Service#memory_bytes}
 
 ---
 
@@ -3623,7 +3623,7 @@ NanoCpus *f64
 
 CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least `1000000`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#nano_cpus Service#nano_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#nano_cpus Service#nano_cpus}
 
 ---
 
@@ -3632,7 +3632,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationGenericResources.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecResourcesReservationGenericResources {
 	DiscreteResourcesSpec: *[]*string,
@@ -3659,7 +3659,7 @@ DiscreteResourcesSpec *[]*string
 
 The Integer resources.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#discrete_resources_spec Service#discrete_resources_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#discrete_resources_spec Service#discrete_resources_spec}
 
 ---
 
@@ -3673,7 +3673,7 @@ NamedResourcesSpec *[]*string
 
 The String resources.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#named_resources_spec Service#named_resources_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#named_resources_spec Service#named_resources_spec}
 
 ---
 
@@ -3682,7 +3682,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceTaskSpecRestartPolicy {
 	Condition: *string,
@@ -3713,7 +3713,7 @@ Condition *string
 
 Condition for restart.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#condition Service#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#condition Service#condition}
 
 ---
 
@@ -3727,7 +3727,7 @@ Delay *string
 
 Delay between restart attempts (ms|s|m|h).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -3741,7 +3741,7 @@ MaxAttempts *f64
 
 Maximum attempts to restart a given container before giving up (default value is `0`, which is ignored).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#max_attempts Service#max_attempts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#max_attempts Service#max_attempts}
 
 ---
 
@@ -3755,7 +3755,7 @@ Window *string
 
 The time window used to evaluate the restart policy (default value is `0`, which is unbounded) (ms|s|m|h).
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#window Service#window}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#window Service#window}
 
 ---
 
@@ -3764,7 +3764,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.service.ServiceUpdateConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 &service.ServiceUpdateConfig {
 	Delay: *string,
@@ -3799,7 +3799,7 @@ Delay *string
 
 Delay between task updates `(ns|us|ms|s|m|h)`. Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -3813,7 +3813,7 @@ FailureAction *string
 
 Action on update failure: `pause`, `continue` or `rollback`. Defaults to `pause`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#failure_action Service#failure_action}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#failure_action Service#failure_action}
 
 ---
 
@@ -3827,7 +3827,7 @@ MaxFailureRatio *string
 
 Failure rate to tolerate during an update. Defaults to `0.0`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#max_failure_ratio Service#max_failure_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
 
 ---
 
@@ -3841,7 +3841,7 @@ Monitor *string
 
 Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#monitor Service#monitor}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#monitor Service#monitor}
 
 ---
 
@@ -3855,7 +3855,7 @@ Order *string
 
 Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#order Service#order}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#order Service#order}
 
 ---
 
@@ -3869,7 +3869,7 @@ Parallelism *f64
 
 Maximum number of tasks to be updated in one iteration. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docker/r/service#parallelism Service#parallelism}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service#parallelism Service#parallelism}
 
 ---
 
@@ -3880,7 +3880,7 @@ Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/docke
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceAuthOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceAuthOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceAuthOutputReference
 ```
@@ -4209,7 +4209,7 @@ func InternalValue() ServiceAuth
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceConvergeConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceConvergeConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceConvergeConfigOutputReference
 ```
@@ -4516,7 +4516,7 @@ func InternalValue() ServiceConvergeConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceEndpointSpecOutputReference
 ```
@@ -4836,7 +4836,7 @@ func InternalValue() ServiceEndpointSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceEndpointSpecPortsList
 ```
@@ -4979,7 +4979,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceEndpointSpecPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceEndpointSpecPortsOutputReference
 ```
@@ -5384,7 +5384,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceLabelsList
 ```
@@ -5527,7 +5527,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceLabelsOutputReference
 ```
@@ -5838,7 +5838,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceModeOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceModeOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceModeOutputReference
 ```
@@ -6158,7 +6158,7 @@ func InternalValue() ServiceMode
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceModeReplicatedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceModeReplicatedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceModeReplicatedOutputReference
 ```
@@ -6436,7 +6436,7 @@ func InternalValue() ServiceModeReplicated
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceRollbackConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceRollbackConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceRollbackConfigOutputReference
 ```
@@ -6859,7 +6859,7 @@ func InternalValue() ServiceRollbackConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecConfigsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecConfigsList
 ```
@@ -7002,7 +7002,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecConfigsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecConfigsOutputReference
 ```
@@ -7429,7 +7429,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecDnsConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecDnsConfigOutputReference
 ```
@@ -7758,7 +7758,7 @@ func InternalValue() ServiceTaskSpecContainerSpecDnsConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheckOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHealthcheckOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecHealthcheckOutputReference
 ```
@@ -8145,7 +8145,7 @@ func InternalValue() ServiceTaskSpecContainerSpecHealthcheck
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHostsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecHostsList
 ```
@@ -8288,7 +8288,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecHostsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecHostsOutputReference
 ```
@@ -8599,7 +8599,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecLabelsList
 ```
@@ -8742,7 +8742,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecLabelsOutputReference
 ```
@@ -9053,7 +9053,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsBindOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsBindOptionsOutputReference
 ```
@@ -9331,7 +9331,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsBindOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecMountsList
 ```
@@ -9474,7 +9474,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecMountsOutputReference
 ```
@@ -9969,7 +9969,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference
 ```
@@ -10276,7 +10276,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsTmpfsOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList
 ```
@@ -10419,7 +10419,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference
 ```
@@ -10730,7 +10730,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference
 ```
@@ -11108,7 +11108,7 @@ func InternalValue() ServiceTaskSpecContainerSpecMountsVolumeOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecOutputReference
 ```
@@ -12063,7 +12063,7 @@ func InternalValue() ServiceTaskSpecContainerSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesCredentialSpecOutputReference
 ```
@@ -12370,7 +12370,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivilegesCredentialSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesOutputReference
 ```
@@ -12703,7 +12703,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivileges
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference
 ```
@@ -13097,7 +13097,7 @@ func InternalValue() ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecSecretsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecContainerSpecSecretsList
 ```
@@ -13240,7 +13240,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecContainerSpecSecretsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecContainerSpecSecretsOutputReference
 ```
@@ -13667,7 +13667,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecLogDriverOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecLogDriverOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecLogDriverOutputReference
 ```
@@ -13967,7 +13967,7 @@ func InternalValue() ServiceTaskSpecLogDriver
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecNetworksAdvancedList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecNetworksAdvancedList
 ```
@@ -14110,7 +14110,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecNetworksAdvancedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecNetworksAdvancedOutputReference
 ```
@@ -14457,7 +14457,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecOutputReference
 ```
@@ -15009,7 +15009,7 @@ func InternalValue() ServiceTaskSpec
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecPlacementOutputReference
 ```
@@ -15387,7 +15387,7 @@ func InternalValue() ServiceTaskSpecPlacement
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementPlatformsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ServiceTaskSpecPlacementPlatformsList
 ```
@@ -15530,7 +15530,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecPlacementPlatformsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ServiceTaskSpecPlacementPlatformsOutputReference
 ```
@@ -15841,7 +15841,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesLimitsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesLimitsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesLimitsOutputReference
 ```
@@ -16148,7 +16148,7 @@ func InternalValue() ServiceTaskSpecResourcesLimits
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesOutputReference
 ```
@@ -16481,7 +16481,7 @@ func InternalValue() ServiceTaskSpecResources
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationGenericResourcesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesReservationGenericResourcesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesReservationGenericResourcesOutputReference
 ```
@@ -16788,7 +16788,7 @@ func InternalValue() ServiceTaskSpecResourcesReservationGenericResources
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecResourcesReservationOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecResourcesReservationOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecResourcesReservationOutputReference
 ```
@@ -17137,7 +17137,7 @@ func InternalValue() ServiceTaskSpecResourcesReservation
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicyOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceTaskSpecRestartPolicyOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceTaskSpecRestartPolicyOutputReference
 ```
@@ -17502,7 +17502,7 @@ func InternalValue() ServiceTaskSpecRestartPolicy
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.ServiceUpdateConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/service"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/service"
 
 service.NewServiceUpdateConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ServiceUpdateConfigOutputReference
 ```
