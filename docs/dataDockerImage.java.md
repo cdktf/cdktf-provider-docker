@@ -1,3 +1,7 @@
+# `data_docker_image`
+
+Refer to the Terraform Registory for docs: [`data_docker_image`](https://www.terraform.io/docs/providers/docker/d/image).
+
 # `dataDockerImage` Submodule <a name="`dataDockerImage` Submodule" id="@cdktf/provider-docker.dataDockerImage"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

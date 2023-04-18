@@ -1,3 +1,7 @@
+# `docker_volume`
+
+Refer to the Terraform Registory for docs: [`docker_volume`](https://www.terraform.io/docs/providers/docker/r/volume).
+
 # `volume` Submodule <a name="`volume` Submodule" id="@cdktf/provider-docker.volume"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

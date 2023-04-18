@@ -1,3 +1,7 @@
+# `docker_network`
+
+Refer to the Terraform Registory for docs: [`docker_network`](https://www.terraform.io/docs/providers/docker/r/network).
+
 # `network` Submodule <a name="`network` Submodule" id="@cdktf/provider-docker.network"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

@@ -1,3 +1,7 @@
+# `docker_service`
+
+Refer to the Terraform Registory for docs: [`docker_service`](https://www.terraform.io/docs/providers/docker/r/service).
+
 # `service` Submodule <a name="`service` Submodule" id="@cdktf/provider-docker.service"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
