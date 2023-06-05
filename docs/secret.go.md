@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.secret.Secret.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.NewSecret(scope Construct, id *string, config SecretConfig) Secret
 ```
@@ -297,7 +297,7 @@ func ResetLabels()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.secret.Secret.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.Secret_IsConstruct(x interface{}) *bool
 ```
@@ -329,7 +329,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.secret.Secret.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.Secret_IsTerraformElement(x interface{}) *bool
 ```
@@ -343,7 +343,7 @@ secret.Secret_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.secret.Secret.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.Secret_IsTerraformResource(x interface{}) *bool
 ```
@@ -630,7 +630,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.secret.SecretConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 &secret.SecretConfig {
 	Connection: interface{},
@@ -797,7 +797,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.secret.SecretLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 &secret.SecretLabels {
 	Label: *string,
@@ -849,7 +849,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.secret.SecretLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.NewSecretLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) SecretLabelsList
 ```
@@ -992,7 +992,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.secret.SecretLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v7/secret"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/secret"
 
 secret.NewSecretLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) SecretLabelsOutputReference
 ```
