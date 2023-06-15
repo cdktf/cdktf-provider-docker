@@ -2052,7 +2052,7 @@ def reset_subnet() -> None
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.gateway">gateway</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.ipRange">ip_range</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.subnet">subnet</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>]</code> | *No description.* |
 
 ---
 
@@ -2163,10 +2163,10 @@ subnet: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[NetworkIpamConfig, IResolvable]
+internal_value: typing.Union[IResolvable, NetworkIpamConfig]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>]
 
 ---
 
@@ -2581,7 +2581,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.label">label</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>]</code> | *No description.* |
 
 ---
 
@@ -2652,10 +2652,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[NetworkLabels, IResolvable]
+internal_value: typing.Union[IResolvable, NetworkLabels]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>]
 
 ---
 

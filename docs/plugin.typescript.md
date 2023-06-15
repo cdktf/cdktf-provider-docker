@@ -1486,7 +1486,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.valueInput">valueInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.value">value</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a></code> | *No description.* |
 
 ---
 
@@ -1557,10 +1557,10 @@ public readonly value: string[];
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: PluginGrantPermissions | IResolvable;
+public readonly internalValue: IResolvable | PluginGrantPermissions;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>
 
 ---
 

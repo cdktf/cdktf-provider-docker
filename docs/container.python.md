@@ -6475,7 +6475,7 @@ def reset_permissions() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.containerPath">container_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.hostPath">host_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.permissions">permissions</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | *No description.* |
 
 ---
 
@@ -6566,10 +6566,10 @@ permissions: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerDevices, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerDevices]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 ---
 
@@ -7396,7 +7396,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ipInput">ip_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.host">host</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ip">ip</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | *No description.* |
 
 ---
 
@@ -7467,10 +7467,10 @@ ip: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerHost, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerHost]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 ---
 
@@ -7885,7 +7885,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.label">label</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | *No description.* |
 
 ---
 
@@ -7956,10 +7956,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerLabels, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerLabels]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 ---
 
@@ -8823,7 +8823,7 @@ def reset_volume_options() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.source">source</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.target">target</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.type">type</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | *No description.* |
 
 ---
 
@@ -8994,10 +8994,10 @@ type: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerMounts, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerMounts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 ---
 
@@ -9744,7 +9744,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.label">label</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]</code> | *No description.* |
 
 ---
 
@@ -9815,10 +9815,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerMountsVolumeOptionsLabels, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerMountsVolumeOptionsLabels]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 ---
 
@@ -11185,7 +11185,7 @@ def reset_ipv6_address() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv4Address">ipv4_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv6Address">ipv6_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.name">name</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | *No description.* |
 
 ---
 
@@ -11296,10 +11296,10 @@ name: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerNetworksAdvanced, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerNetworksAdvanced]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 ---
 
@@ -11739,7 +11739,7 @@ def reset_protocol() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internal">internal</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.ip">ip</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.protocol">protocol</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | *No description.* |
 
 ---
 
@@ -11850,10 +11850,10 @@ protocol: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerPorts, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerPorts]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ---
 
@@ -12270,7 +12270,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.hard">hard</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.name">name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.soft">soft</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | *No description.* |
 
 ---
 
@@ -12361,10 +12361,10 @@ soft: typing.Union[int, float]
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerUlimit, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerUlimit]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ---
 
@@ -12822,7 +12822,7 @@ def reset_source_hash() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.file">file</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.source">source</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHash">source_hash</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | *No description.* |
 
 ---
 
@@ -12973,10 +12973,10 @@ source_hash: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerUpload, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerUpload]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 ---
 
@@ -13432,7 +13432,7 @@ def reset_volume_name() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPath">host_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeName">volume_name</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | *No description.* |
 
 ---
 
@@ -13563,10 +13563,10 @@ volume_name: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[ContainerVolumes, IResolvable]
+internal_value: typing.Union[IResolvable, ContainerVolumes]
 ```
 
-- *Type:* typing.Union[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>, cdktf.IResolvable]
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 ---
 

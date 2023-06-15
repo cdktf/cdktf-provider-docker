@@ -5328,7 +5328,7 @@ public resetPermissions(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.containerPath">containerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.hostPath">hostPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.permissions">permissions</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a></code> | *No description.* |
 
 ---
 
@@ -5419,10 +5419,10 @@ public readonly permissions: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerDevices | IResolvable;
+public readonly internalValue: IResolvable | ContainerDevices;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>
 
 ---
 
@@ -6189,7 +6189,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ipInput">ipInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.host">host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ip">ip</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a></code> | *No description.* |
 
 ---
 
@@ -6260,10 +6260,10 @@ public readonly ip: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerHost | IResolvable;
+public readonly internalValue: IResolvable | ContainerHost;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>
 
 ---
 
@@ -6643,7 +6643,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.label">label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.value">value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a></code> | *No description.* |
 
 ---
 
@@ -6714,10 +6714,10 @@ public readonly value: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerLabels | IResolvable;
+public readonly internalValue: IResolvable | ContainerLabels;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>
 
 ---
 
@@ -7459,7 +7459,7 @@ public resetVolumeOptions(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.source">source</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.target">target</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a></code> | *No description.* |
 
 ---
 
@@ -7630,10 +7630,10 @@ public readonly type: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerMounts | IResolvable;
+public readonly internalValue: IResolvable | ContainerMounts;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>
 
 ---
 
@@ -8320,7 +8320,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.label">label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.value">value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -8391,10 +8391,10 @@ public readonly value: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerMountsVolumeOptionsLabels | IResolvable;
+public readonly internalValue: IResolvable | ContainerMountsVolumeOptionsLabels;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -9664,7 +9664,7 @@ public resetIpv6Address(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv4Address">ipv4Address</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv6Address">ipv6Address</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -9775,10 +9775,10 @@ public readonly name: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerNetworksAdvanced | IResolvable;
+public readonly internalValue: IResolvable | ContainerNetworksAdvanced;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>
 
 ---
 
@@ -10183,7 +10183,7 @@ public resetProtocol(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internal">internal</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.ip">ip</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.protocol">protocol</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a></code> | *No description.* |
 
 ---
 
@@ -10294,10 +10294,10 @@ public readonly protocol: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerPorts | IResolvable;
+public readonly internalValue: IResolvable | ContainerPorts;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>
 
 ---
 
@@ -10679,7 +10679,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.hard">hard</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.soft">soft</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a></code> | *No description.* |
 
 ---
 
@@ -10770,10 +10770,10 @@ public readonly soft: number;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerUlimit | IResolvable;
+public readonly internalValue: IResolvable | ContainerUlimit;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>
 
 ---
 
@@ -11196,7 +11196,7 @@ public resetSourceHash(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.file">file</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.source">source</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHash">sourceHash</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a></code> | *No description.* |
 
 ---
 
@@ -11347,10 +11347,10 @@ public readonly sourceHash: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerUpload | IResolvable;
+public readonly internalValue: IResolvable | ContainerUpload;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>
 
 ---
 
@@ -11771,7 +11771,7 @@ public resetVolumeName(): void
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPath">hostPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">readOnly</a></code> | <code>boolean \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeName">volumeName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a></code> | *No description.* |
 
 ---
 
@@ -11902,10 +11902,10 @@ public readonly volumeName: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: ContainerVolumes | IResolvable;
+public readonly internalValue: IResolvable | ContainerVolumes;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>
 
 ---
 
