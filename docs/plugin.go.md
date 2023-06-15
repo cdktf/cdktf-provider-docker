@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.plugin.Plugin.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.NewPlugin(scope Construct, id *string, config PluginConfig) Plugin
 ```
@@ -346,7 +346,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.plugin.Plugin.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.Plugin_IsConstruct(x interface{}) *bool
 ```
@@ -378,7 +378,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.plugin.Plugin.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.Plugin_IsTerraformElement(x interface{}) *bool
 ```
@@ -392,7 +392,7 @@ plugin.Plugin_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.plugin.Plugin.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.Plugin_IsTerraformResource(x interface{}) *bool
 ```
@@ -822,7 +822,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.plugin.PluginConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 &plugin.PluginConfig {
 	Connection: interface{},
@@ -1085,7 +1085,7 @@ If you experience problems setting this value it might not be settable. Please t
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.plugin.PluginGrantPermissions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 &plugin.PluginGrantPermissions {
 	Name: *string,
@@ -1137,7 +1137,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.plugin.PluginGrantPermissionsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.NewPluginGrantPermissionsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) PluginGrantPermissionsList
 ```
@@ -1280,7 +1280,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/plugin"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/plugin"
 
 plugin.NewPluginGrantPermissionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) PluginGrantPermissionsOutputReference
 ```

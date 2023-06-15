@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.volume.Volume.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.NewVolume(scope Construct, id *string, config VolumeConfig) Volume
 ```
@@ -318,7 +318,7 @@ func ResetName()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.volume.Volume.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.Volume_IsConstruct(x interface{}) *bool
 ```
@@ -350,7 +350,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.volume.Volume.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.Volume_IsTerraformElement(x interface{}) *bool
 ```
@@ -364,7 +364,7 @@ volume.Volume_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.volume.Volume.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.Volume_IsTerraformResource(x interface{}) *bool
 ```
@@ -684,7 +684,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.volume.VolumeConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 &volume.VolumeConfig {
 	Connection: interface{},
@@ -867,7 +867,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.volume.VolumeLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 &volume.VolumeLabels {
 	Label: *string,
@@ -919,7 +919,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.volume.VolumeLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.NewVolumeLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) VolumeLabelsList
 ```
@@ -1062,7 +1062,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.volume.VolumeLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/volume"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/volume"
 
 volume.NewVolumeLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) VolumeLabelsOutputReference
 ```
