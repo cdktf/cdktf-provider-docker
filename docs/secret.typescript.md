@@ -1204,7 +1204,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.label">label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.value">value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a> \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a></code> | *No description.* |
 
 ---
 
@@ -1275,10 +1275,10 @@ public readonly value: string;
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.secret.SecretLabelsOutputReference.property.internalValue"></a>
 
 ```typescript
-public readonly internalValue: SecretLabels | IResolvable;
+public readonly internalValue: IResolvable | SecretLabels;
 ```
 
-- *Type:* <a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a> | cdktf.IResolvable
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a>
 
 ---
 

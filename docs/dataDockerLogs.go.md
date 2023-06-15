@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v9/datadockerlogs"
 
 datadockerlogs.NewDataDockerLogs(scope Construct, id *string, config DataDockerLogsConfig) DataDockerLogs
 ```
@@ -347,7 +347,7 @@ func ResetUntil()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v9/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsConstruct(x interface{}) *bool
 ```
@@ -379,7 +379,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v9/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsTerraformElement(x interface{}) *bool
 ```
@@ -393,7 +393,7 @@ datadockerlogs.DataDockerLogs_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v9/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -845,7 +845,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v8/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v9/datadockerlogs"
 
 &datadockerlogs.DataDockerLogsConfig {
 	Connection: interface{},
