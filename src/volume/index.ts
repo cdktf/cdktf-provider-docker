@@ -14,13 +14,13 @@ import * as cdktf from 'cdktf';
 export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   /**
   * Driver type for the volume. Defaults to `local`.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#driver Volume#driver}
   */
   readonly driver?: string;
   /**
   * Options specific to the driver.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#driver_opts Volume#driver_opts}
   */
   readonly driverOpts?: { [key: string]: string };
@@ -33,13 +33,13 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * The name of the Docker volume (will be generated if not provided).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#name Volume#name}
   */
   readonly name?: string;
   /**
   * labels block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#labels Volume#labels}
   */
   readonly labels?: VolumeLabels[] | cdktf.IResolvable;
@@ -47,13 +47,13 @@ export interface VolumeConfig extends cdktf.TerraformMetaArguments {
 export interface VolumeLabels {
   /**
   * Name of the label
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#label Volume#label}
   */
   readonly label: string;
   /**
   * Value of the label
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/volume#value Volume#value}
   */
   readonly value: string;

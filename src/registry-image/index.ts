@@ -21,25 +21,25 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image#insecure_skip_verify RegistryImage#insecure_skip_verify}
   */
   readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image#keep_remotely RegistryImage#keep_remotely}
   */
   readonly keepRemotely?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image#name RegistryImage#name}
   */
   readonly name: string;
   /**
   * A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. This can be used to repush a local image
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image#triggers RegistryImage#triggers}
   */
   readonly triggers?: { [key: string]: string };

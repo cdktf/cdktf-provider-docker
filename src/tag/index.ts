@@ -21,13 +21,13 @@ export interface TagConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * Name of the source image.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#source_image Tag#source_image}
   */
   readonly sourceImage: string;
   /**
   * Name of the target image.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag#target_image Tag#target_image}
   */
   readonly targetImage: string;

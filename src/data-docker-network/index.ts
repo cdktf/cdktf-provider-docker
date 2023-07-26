@@ -14,7 +14,7 @@ import * as cdktf from 'cdktf';
 export interface DataDockerNetworkConfig extends cdktf.TerraformMetaArguments {
   /**
   * The name of the Docker network.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/network#name DataDockerNetwork#name}
   */
   readonly name: string;

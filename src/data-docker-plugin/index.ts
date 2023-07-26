@@ -14,13 +14,13 @@ import * as cdktf from 'cdktf';
 export interface DataDockerPluginConfig extends cdktf.TerraformMetaArguments {
   /**
   * The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/plugin#alias DataDockerPlugin#alias}
   */
   readonly alias?: string;
   /**
   * The ID of the plugin, which has precedence over the `alias` of both are given
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/plugin#id DataDockerPlugin#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.

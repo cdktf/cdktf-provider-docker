@@ -14,43 +14,43 @@ import * as cdktf from 'cdktf';
 export interface PluginConfig extends cdktf.TerraformMetaArguments {
   /**
   * Docker Plugin alias
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#alias Plugin#alias}
   */
   readonly alias?: string;
   /**
   * HTTP client timeout to enable the plugin
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#enable_timeout Plugin#enable_timeout}
   */
   readonly enableTimeout?: number;
   /**
   * If `true` the plugin is enabled. Defaults to `true`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#enabled Plugin#enabled}
   */
   readonly enabled?: boolean | cdktf.IResolvable;
   /**
   * The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#env Plugin#env}
   */
   readonly env?: string[];
   /**
   * If true, then the plugin is destroyed forcibly
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#force_destroy Plugin#force_destroy}
   */
   readonly forceDestroy?: boolean | cdktf.IResolvable;
   /**
   * If true, then the plugin is disabled forcibly
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#force_disable Plugin#force_disable}
   */
   readonly forceDisable?: boolean | cdktf.IResolvable;
   /**
   * If true, grant all permissions necessary to run the plugin
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#grant_all_permissions Plugin#grant_all_permissions}
   */
   readonly grantAllPermissions?: boolean | cdktf.IResolvable;
@@ -63,13 +63,13 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * Docker Plugin name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#name Plugin#name}
   */
   readonly name: string;
   /**
   * grant_permissions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#grant_permissions Plugin#grant_permissions}
   */
   readonly grantPermissions?: PluginGrantPermissions[] | cdktf.IResolvable;
@@ -77,13 +77,13 @@ export interface PluginConfig extends cdktf.TerraformMetaArguments {
 export interface PluginGrantPermissions {
   /**
   * The name of the permission
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#name Plugin#name}
   */
   readonly name: string;
   /**
   * The value of the permission
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/plugin#value Plugin#value}
   */
   readonly value: string[];
