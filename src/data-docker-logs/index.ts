@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs
 // generated from terraform resource schema
 
@@ -18,7 +13,7 @@ export interface DataDockerLogsConfig extends cdktf.TerraformMetaArguments {
   readonly details?: boolean | cdktf.IResolvable;
   /**
   * Discard headers that docker appends to each log entry
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#discard_headers DataDockerLogs#discard_headers}
   */
   readonly discardHeaders?: boolean | cdktf.IResolvable;
@@ -35,13 +30,13 @@ export interface DataDockerLogsConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * If true populate computed value `logs_list_string`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#logs_list_string_enabled DataDockerLogs#logs_list_string_enabled}
   */
   readonly logsListStringEnabled?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker Container
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs#name DataDockerLogs#name}
   */
   readonly name: string;

@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret
 // generated from terraform resource schema
 
@@ -14,7 +9,7 @@ import * as cdktf from 'cdktf';
 export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded secret data
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#data Secret#data}
   */
   readonly data: string;
@@ -27,13 +22,13 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * User-defined name of the secret
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#name Secret#name}
   */
   readonly name: string;
   /**
   * labels block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#labels Secret#labels}
   */
   readonly labels?: SecretLabels[] | cdktf.IResolvable;
@@ -41,13 +36,13 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
 export interface SecretLabels {
   /**
   * Name of the label
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#label Secret#label}
   */
   readonly label: string;
   /**
   * Value of the label
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/secret#value Secret#value}
   */
   readonly value: string;

@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/config
 // generated from terraform resource schema
 
@@ -14,7 +9,7 @@ import * as cdktf from 'cdktf';
 export interface ConfigConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded config data
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/config#data Config#data}
   */
   readonly data: string;
@@ -27,7 +22,7 @@ export interface ConfigConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * User-defined name of the config
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/config#name Config#name}
   */
   readonly name: string;

@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/image
 // generated from terraform resource schema
 
@@ -21,7 +16,7 @@ export interface DataDockerImageConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * The name of the Docker image, including any tags or SHA256 repo digests.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/image#name DataDockerImage#name}
   */
   readonly name: string;

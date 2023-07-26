@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/registry_image
 // generated from terraform resource schema
 
@@ -21,13 +16,13 @@ export interface DataDockerRegistryImageConfig extends cdktf.TerraformMetaArgume
   readonly id?: string;
   /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/registry_image#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
   */
   readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker image, including any tags. e.g. `alpine:latest`
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/registry_image#name DataDockerRegistryImage#name}
   */
   readonly name: string;
