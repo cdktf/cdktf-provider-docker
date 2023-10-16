@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.provider.DockerProvider.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 provider.NewDockerProvider(scope Construct, id *string, config DockerProviderConfig) DockerProvider
 ```
@@ -196,7 +196,7 @@ func ResetSshOpts()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.provider.DockerProvider.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 provider.DockerProvider_IsConstruct(x interface{}) *bool
 ```
@@ -228,7 +228,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.provider.DockerProvider.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 provider.DockerProvider_IsTerraformElement(x interface{}) *bool
 ```
@@ -242,7 +242,7 @@ provider.DockerProvider_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformProvider` <a name="IsTerraformProvider" id="@cdktf/provider-docker.provider.DockerProvider.isTerraformProvider"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 provider.DockerProvider_IsTerraformProvider(x interface{}) *bool
 ```
@@ -551,7 +551,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.provider.DockerProviderConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 &provider.DockerProviderConfig {
 	Alias: *string,
@@ -697,7 +697,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.provider.DockerProviderRegistryAuth.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/provider"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/provider"
 
 &provider.DockerProviderRegistryAuth {
 	Address: *string,
