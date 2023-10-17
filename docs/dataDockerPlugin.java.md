@@ -359,6 +359,7 @@ public void resetId()
 | <code><a href="#@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.isTerraformElement">isTerraformElement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.isTerraformDataSource">isTerraformDataSource</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport">generateConfigForImport</a></code> | Generates CDKTF code for importing a DataDockerPlugin resource upon running "cdktf plan <stack-name>". |
 
 ---
 
@@ -419,6 +420,50 @@ DataDockerPlugin.isTerraformDataSource(java.lang.Object x)
 ###### `x`<sup>Required</sup> <a name="x" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.isTerraformDataSource.parameter.x"></a>
 
 - *Type:* java.lang.Object
+
+---
+
+##### `generateConfigForImport` <a name="generateConfigForImport" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport"></a>
+
+```java
+import com.hashicorp.cdktf.providers.docker.data_docker_plugin.DataDockerPlugin;
+
+DataDockerPlugin.generateConfigForImport(Construct scope, java.lang.String importToId, java.lang.String importFromId),DataDockerPlugin.generateConfigForImport(Construct scope, java.lang.String importToId, java.lang.String importFromId, TerraformProvider provider)
+```
+
+Generates CDKTF code for importing a DataDockerPlugin resource upon running "cdktf plan <stack-name>".
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport.parameter.scope"></a>
+
+- *Type:* software.constructs.Construct
+
+The scope in which to define this construct.
+
+---
+
+###### `importToId`<sup>Required</sup> <a name="importToId" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport.parameter.importToId"></a>
+
+- *Type:* java.lang.String
+
+The construct id used in the generated config for the DataDockerPlugin to import.
+
+---
+
+###### `importFromId`<sup>Required</sup> <a name="importFromId" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport.parameter.importFromId"></a>
+
+- *Type:* java.lang.String
+
+The id of the existing DataDockerPlugin that should be imported.
+
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.generateConfigForImport.parameter.provider"></a>
+
+- *Type:* com.hashicorp.cdktf.TerraformProvider
+
+? Optional instance of the provider where the DataDockerPlugin to import is found.
 
 ---
 

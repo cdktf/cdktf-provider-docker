@@ -39,6 +39,20 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "docker_plugin";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataDockerPlugin resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataDockerPlugin to import
+  * @param importFromId The id of the existing DataDockerPlugin that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataDockerPlugin to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "docker_plugin", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
