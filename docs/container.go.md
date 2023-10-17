@@ -13,7 +13,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.Container.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainer(scope Construct, id *string, config ContainerConfig) Container
 ```
@@ -60,6 +60,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.container.Container.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
 | <code><a href="#@cdktf/provider-docker.container.Container.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
+| <code><a href="#@cdktf/provider-docker.container.Container.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
 | <code><a href="#@cdktf/provider-docker.container.Container.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.getBooleanAttribute">GetBooleanAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.getBooleanMapAttribute">GetBooleanMapAttribute</a></code> | *No description.* |
@@ -69,7 +70,9 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.container.Container.getNumberMapAttribute">GetNumberMapAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.getStringAttribute">GetStringAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.getStringMapAttribute">GetStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.importFrom">ImportFrom</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.interpolationForAttribute">InterpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.moveTo">MoveTo</a></code> | Moves this resource to the target resource given by moveTarget. |
 | <code><a href="#@cdktf/provider-docker.container.Container.putCapabilities">PutCapabilities</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.putDevices">PutDevices</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.putHealthcheck">PutHealthcheck</a></code> | *No description.* |
@@ -209,6 +212,22 @@ func ToTerraform() interface{}
 
 Adds this resource to the terraform JSON output.
 
+##### `AddMoveTarget` <a name="AddMoveTarget" id="@cdktf/provider-docker.container.Container.addMoveTarget"></a>
+
+```go
+func AddMoveTarget(moveTarget *string)
+```
+
+Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move.
+
+###### `moveTarget`<sup>Required</sup> <a name="moveTarget" id="@cdktf/provider-docker.container.Container.addMoveTarget.parameter.moveTarget"></a>
+
+- *Type:* *string
+
+The string move target that will correspond to this resource.
+
+---
+
 ##### `GetAnyMapAttribute` <a name="GetAnyMapAttribute" id="@cdktf/provider-docker.container.Container.getAnyMapAttribute"></a>
 
 ```go
@@ -317,6 +336,24 @@ func GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 
 ---
 
+##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.container.Container.importFrom"></a>
+
+```go
+func ImportFrom(id *string, provider TerraformProvider)
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-docker.container.Container.importFrom.parameter.id"></a>
+
+- *Type:* *string
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-docker.container.Container.importFrom.parameter.provider"></a>
+
+- *Type:* github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider
+
+---
+
 ##### `InterpolationForAttribute` <a name="InterpolationForAttribute" id="@cdktf/provider-docker.container.Container.interpolationForAttribute"></a>
 
 ```go
@@ -326,6 +363,30 @@ func InterpolationForAttribute(terraformAttribute *string) IResolvable
 ###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="@cdktf/provider-docker.container.Container.interpolationForAttribute.parameter.terraformAttribute"></a>
 
 - *Type:* *string
+
+---
+
+##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.container.Container.moveTo"></a>
+
+```go
+func MoveTo(moveTarget *string, index interface{})
+```
+
+Moves this resource to the target resource given by moveTarget.
+
+###### `moveTarget`<sup>Required</sup> <a name="moveTarget" id="@cdktf/provider-docker.container.Container.moveTo.parameter.moveTarget"></a>
+
+- *Type:* *string
+
+The previously set user defined string set by .addMoveTarget() corresponding to the resource to move to.
+
+---
+
+###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.container.Container.moveTo.parameter.index"></a>
+
+- *Type:* interface{}
+
+Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
 ---
 
@@ -834,13 +895,14 @@ func ResetWorkingDir()
 | <code><a href="#@cdktf/provider-docker.container.Container.isConstruct">IsConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@cdktf/provider-docker.container.Container.isTerraformElement">IsTerraformElement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.isTerraformResource">IsTerraformResource</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.generateConfigForImport">GenerateConfigForImport</a></code> | Generates CDKTF code for importing a Container resource upon running "cdktf plan <stack-name>". |
 
 ---
 
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.container.Container.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsConstruct(x interface{}) *bool
 ```
@@ -872,7 +934,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.container.Container.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsTerraformElement(x interface{}) *bool
 ```
@@ -886,7 +948,7 @@ container.Container_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.container.Container.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.Container_IsTerraformResource(x interface{}) *bool
 ```
@@ -894,6 +956,50 @@ container.Container_IsTerraformResource(x interface{}) *bool
 ###### `x`<sup>Required</sup> <a name="x" id="@cdktf/provider-docker.container.Container.isTerraformResource.parameter.x"></a>
 
 - *Type:* interface{}
+
+---
+
+##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.container.Container.generateConfigForImport"></a>
+
+```go
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
+
+container.Container_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
+```
+
+Generates CDKTF code for importing a Container resource upon running "cdktf plan <stack-name>".
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@cdktf/provider-docker.container.Container.generateConfigForImport.parameter.scope"></a>
+
+- *Type:* github.com/aws/constructs-go/constructs/v10.Construct
+
+The scope in which to define this construct.
+
+---
+
+###### `importToId`<sup>Required</sup> <a name="importToId" id="@cdktf/provider-docker.container.Container.generateConfigForImport.parameter.importToId"></a>
+
+- *Type:* *string
+
+The construct id used in the generated config for the Container to import.
+
+---
+
+###### `importFromId`<sup>Required</sup> <a name="importFromId" id="@cdktf/provider-docker.container.Container.generateConfigForImport.parameter.importFromId"></a>
+
+- *Type:* *string
+
+The id of the existing Container that should be imported.
+
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/container#import import section} in the documentation of this resource for the id to use
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="@cdktf/provider-docker.container.Container.generateConfigForImport.parameter.provider"></a>
+
+- *Type:* github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider
+
+? Optional instance of the provider where the Container to import is found.
 
 ---
 
@@ -2515,7 +2621,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerCapabilities.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerCapabilities {
 	Add: *[]*string,
@@ -2565,7 +2671,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerConfig {
 	Connection: interface{},
@@ -2578,7 +2684,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
 	Image: *string,
 	Name: *string,
 	Attach: interface{},
-	Capabilities: github.com/cdktf/cdktf-provider-docker-go/docker/v10.container.ContainerCapabilities,
+	Capabilities: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerCapabilities,
 	CgroupnsMode: *string,
 	Command: *[]*string,
 	ContainerReadRefreshTimeoutMilliseconds: *f64,
@@ -2594,7 +2700,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
 	Env: *[]*string,
 	Gpus: *string,
 	GroupAdd: *[]*string,
-	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker/v10.container.ContainerHealthcheck,
+	Healthcheck: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerHealthcheck,
 	Host: interface{},
 	Hostname: *string,
 	Id: *string,
@@ -3698,7 +3804,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerDevices.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerDevices {
 	HostPath: *string,
@@ -3764,7 +3870,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerHealthcheck.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerHealthcheck {
 	Test: *[]*string,
@@ -3864,7 +3970,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerHost.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerHost {
 	Host: *string,
@@ -3914,7 +4020,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerLabels {
 	Label: *string,
@@ -3964,16 +4070,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMounts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMounts {
 	Target: *string,
 	Type: *string,
-	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v10.container.ContainerMountsBindOptions,
+	BindOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsBindOptions,
 	ReadOnly: interface{},
 	Source: *string,
-	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v10.container.ContainerMountsTmpfsOptions,
-	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker/v10.container.ContainerMountsVolumeOptions,
+	TmpfsOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsTmpfsOptions,
+	VolumeOptions: github.com/cdktf/cdktf-provider-docker-go/docker.container.ContainerMountsVolumeOptions,
 }
 ```
 
@@ -4094,7 +4200,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsBindOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsBindOptions {
 	Propagation: *string,
@@ -4128,7 +4234,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsTmpfsOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsTmpfsOptions {
 	Mode: *f64,
@@ -4178,7 +4284,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsVolumeOptions {
 	DriverName: *string,
@@ -4260,7 +4366,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerMountsVolumeOptionsLabels {
 	Label: *string,
@@ -4310,7 +4416,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerNetworkData.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerNetworkData {
 
@@ -4323,7 +4429,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerNetworksAdvanced.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerNetworksAdvanced {
 	Name: *string,
@@ -4407,7 +4513,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerPorts.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerPorts {
 	Internal: *f64,
@@ -4489,7 +4595,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerUlimit.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerUlimit {
 	Hard: *f64,
@@ -4555,7 +4661,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerUpload.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerUpload {
 	File: *string,
@@ -4675,7 +4781,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.container.ContainerVolumes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 &container.ContainerVolumes {
 	ContainerPath: *string,
@@ -4775,7 +4881,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerCapabilitiesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerCapabilitiesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerCapabilitiesOutputReference
 ```
@@ -5082,7 +5188,7 @@ func InternalValue() ContainerCapabilities
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerDevicesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerDevicesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerDevicesList
 ```
@@ -5225,7 +5331,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerDevicesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerDevicesOutputReference
 ```
@@ -5572,7 +5678,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHealthcheckOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHealthcheckOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerHealthcheckOutputReference
 ```
@@ -5959,7 +6065,7 @@ func InternalValue() ContainerHealthcheck
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHostList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHostList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerHostList
 ```
@@ -6102,7 +6208,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerHostOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerHostOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerHostOutputReference
 ```
@@ -6413,7 +6519,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerLabelsList
 ```
@@ -6556,7 +6662,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerLabelsOutputReference
 ```
@@ -6867,7 +6973,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsBindOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsBindOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsBindOptionsOutputReference
 ```
@@ -7145,7 +7251,7 @@ func InternalValue() ContainerMountsBindOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerMountsList
 ```
@@ -7288,7 +7394,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerMountsOutputReference
 ```
@@ -7783,7 +7889,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsTmpfsOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsTmpfsOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsTmpfsOptionsOutputReference
 ```
@@ -8090,7 +8196,7 @@ func InternalValue() ContainerMountsTmpfsOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerMountsVolumeOptionsLabelsList
 ```
@@ -8233,7 +8339,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerMountsVolumeOptionsLabelsOutputReference
 ```
@@ -8544,7 +8650,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerMountsVolumeOptionsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) ContainerMountsVolumeOptionsOutputReference
 ```
@@ -8922,7 +9028,7 @@ func InternalValue() ContainerMountsVolumeOptions
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworkDataList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworkDataList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerNetworkDataList
 ```
@@ -9054,7 +9160,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworkDataOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworkDataOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerNetworkDataOutputReference
 ```
@@ -9409,7 +9515,7 @@ func InternalValue() ContainerNetworkData
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworksAdvancedList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerNetworksAdvancedList
 ```
@@ -9552,7 +9658,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerNetworksAdvancedOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerNetworksAdvancedOutputReference
 ```
@@ -9928,7 +10034,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerPortsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerPortsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerPortsList
 ```
@@ -10071,7 +10177,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerPortsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerPortsOutputReference
 ```
@@ -10447,7 +10553,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUlimitList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUlimitList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerUlimitList
 ```
@@ -10590,7 +10696,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUlimitOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerUlimitOutputReference
 ```
@@ -10923,7 +11029,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUploadList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUploadList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerUploadList
 ```
@@ -11066,7 +11172,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerUploadOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerUploadOutputReference
 ```
@@ -11500,7 +11606,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerVolumesList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerVolumesList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) ContainerVolumesList
 ```
@@ -11643,7 +11749,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/container"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/container"
 
 container.NewContainerVolumesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) ContainerVolumesOutputReference
 ```
