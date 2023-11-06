@@ -1,7 +1,9 @@
 
-# Terraform CDK docker Provider ~> 3.0
+# Terraform CDK docker Provider tracks ~> 3.0
 
 This repo builds and publishes the Terraform docker Provider bindings for [CDK for Terraform](https://cdk.tf).
+
+Is based directly on docker 3.0.2
 
 ## Available Packages
 
@@ -61,7 +63,7 @@ This project is explicitly not tracking the Terraform docker Provider version 1:
 These are the upstream dependencies:
 
 - [Terraform CDK](https://cdk.tf)
-- [Terraform docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.0)
+- [Terraform docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2)
     - This links to the minimum version being tracked, you can find the latest released version [in our releases](https://github.com/cdktf/cdktf-provider-docker/releases)
 - [Terraform Engine](https://terraform.io)
 
