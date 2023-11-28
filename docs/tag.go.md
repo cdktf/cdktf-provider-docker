@@ -1,7 +1,3 @@
-# `docker_tag`
-
-Refer to the Terraform Registory for docs: [`docker_tag`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag).
-
 # `tag` Submodule <a name="`tag` Submodule" id="@cdktf/provider-docker.tag"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -13,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.tag.Tag.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.NewTag(scope Construct, id *string, config TagConfig) Tag
 ```
@@ -339,7 +335,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.tag.Tag.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsConstruct(x interface{}) *bool
 ```
@@ -371,7 +367,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.tag.Tag.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsTerraformElement(x interface{}) *bool
 ```
@@ -385,7 +381,7 @@ tag.Tag_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.tag.Tag.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_IsTerraformResource(x interface{}) *bool
 ```
@@ -399,7 +395,7 @@ tag.Tag_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.tag.Tag.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 tag.Tag_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -705,7 +701,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.tag.TagConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/tag"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/tag"
 
 &tag.TagConfig {
 	Connection: interface{},

@@ -1,7 +1,3 @@
-# `docker_service`
-
-Refer to the Terraform Registory for docs: [`docker_service`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/service).
-
 # `service` Submodule <a name="`service` Submodule" id="@cdktf/provider-docker.service"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

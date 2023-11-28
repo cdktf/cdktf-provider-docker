@@ -1,7 +1,3 @@
-# `docker_registry_image`
-
-Refer to the Terraform Registory for docs: [`docker_registry_image`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image).
-
 # `registryImage` Submodule <a name="`registryImage` Submodule" id="@cdktf/provider-docker.registryImage"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -13,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.registryImage.RegistryImage.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 registryimage.NewRegistryImage(scope Construct, id *string, config RegistryImageConfig) RegistryImage
 ```
@@ -360,7 +356,7 @@ func ResetTriggers()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.registryImage.RegistryImage.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 registryimage.RegistryImage_IsConstruct(x interface{}) *bool
 ```
@@ -392,7 +388,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.registryImage.RegistryImage.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 registryimage.RegistryImage_IsTerraformElement(x interface{}) *bool
 ```
@@ -406,7 +402,7 @@ registryimage.RegistryImage_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.registryImage.RegistryImage.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 registryimage.RegistryImage_IsTerraformResource(x interface{}) *bool
 ```
@@ -420,7 +416,7 @@ registryimage.RegistryImage_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.registryImage.RegistryImage.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 registryimage.RegistryImage_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -770,7 +766,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.registryImage.RegistryImageConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/registryimage"
 
 &registryimage.RegistryImageConfig {
 	Connection: interface{},

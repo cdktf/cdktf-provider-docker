@@ -1,7 +1,3 @@
-# `data_docker_plugin`
-
-Refer to the Terraform Registory for docs: [`data_docker_plugin`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/plugin).
-
 # `dataDockerPlugin` Submodule <a name="`dataDockerPlugin` Submodule" id="@cdktf/provider-docker.dataDockerPlugin"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

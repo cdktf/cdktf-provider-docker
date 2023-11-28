@@ -1,7 +1,3 @@
-# `docker_tag`
-
-Refer to the Terraform Registory for docs: [`docker_tag`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/tag).
-
 # `tag` Submodule <a name="`tag` Submodule" id="@cdktf/provider-docker.tag"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
