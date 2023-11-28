@@ -1,7 +1,3 @@
-# `docker_registry_image`
-
-Refer to the Terraform Registory for docs: [`docker_registry_image`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image).
-
 # `registryImage` Submodule <a name="`registryImage` Submodule" id="@cdktf/provider-docker.registryImage"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

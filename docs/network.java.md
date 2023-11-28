@@ -1,7 +1,3 @@
-# `docker_network`
-
-Refer to the Terraform Registory for docs: [`docker_network`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network).
-
 # `network` Submodule <a name="`network` Submodule" id="@cdktf/provider-docker.network"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>

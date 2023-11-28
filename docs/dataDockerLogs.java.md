@@ -1,7 +1,3 @@
-# `data_docker_logs`
-
-Refer to the Terraform Registory for docs: [`data_docker_logs`](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/logs).
-
 # `dataDockerLogs` Submodule <a name="`dataDockerLogs` Submodule" id="@cdktf/provider-docker.dataDockerLogs"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
