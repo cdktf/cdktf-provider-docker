@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.config.Config.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 config.NewConfig(scope Construct, id *string, config ConfigConfig) Config
 ```
@@ -378,7 +378,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.config.Config.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 config.Config_IsConstruct(x interface{}) *bool
 ```
@@ -410,7 +410,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.config.Config.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 config.Config_IsTerraformElement(x interface{}) *bool
 ```
@@ -424,7 +424,7 @@ config.Config_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.config.Config.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 config.Config_IsTerraformResource(x interface{}) *bool
 ```
@@ -438,7 +438,7 @@ config.Config_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.config.Config.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 config.Config_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -733,7 +733,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.config.ConfigConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/config"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/config"
 
 &config.ConfigConfig {
 	Connection: interface{},
