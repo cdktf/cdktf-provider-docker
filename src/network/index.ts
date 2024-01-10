@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/network
 // generated from terraform resource schema
 
@@ -130,6 +125,43 @@ export function networkIpamConfigToTerraform(struct?: NetworkIpamConfig | cdktf.
     ip_range: cdktf.stringToTerraform(struct!.ipRange),
     subnet: cdktf.stringToTerraform(struct!.subnet),
   }
+}
+
+
+export function networkIpamConfigToHclTerraform(struct?: NetworkIpamConfig | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    aux_address: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.auxAddress),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    gateway: {
+      value: cdktf.stringToHclTerraform(struct!.gateway),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip_range: {
+      value: cdktf.stringToHclTerraform(struct!.ipRange),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet: {
+      value: cdktf.stringToHclTerraform(struct!.subnet),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkIpamConfigOutputReference extends cdktf.ComplexObject {
@@ -302,6 +334,31 @@ export function networkLabelsToTerraform(struct?: NetworkLabels | cdktf.IResolva
     label: cdktf.stringToTerraform(struct!.label),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function networkLabelsToHclTerraform(struct?: NetworkLabels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLabelsOutputReference extends cdktf.ComplexObject {
@@ -701,5 +758,91 @@ export class Network extends cdktf.TerraformResource {
       ipam_config: cdktf.listMapper(networkIpamConfigToTerraform, true)(this._ipamConfig.internalValue),
       labels: cdktf.listMapper(networkLabelsToTerraform, true)(this._labels.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attachable: {
+        value: cdktf.booleanToHclTerraform(this._attachable),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      check_duplicate: {
+        value: cdktf.booleanToHclTerraform(this._checkDuplicate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      driver: {
+        value: cdktf.stringToHclTerraform(this._driver),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ingress: {
+        value: cdktf.booleanToHclTerraform(this._ingress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      internal: {
+        value: cdktf.booleanToHclTerraform(this._internal),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      ipam_driver: {
+        value: cdktf.stringToHclTerraform(this._ipamDriver),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ipam_options: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._ipamOptions),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      ipv6: {
+        value: cdktf.booleanToHclTerraform(this._ipv6),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      options: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._options),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      ipam_config: {
+        value: cdktf.listMapperHcl(networkIpamConfigToHclTerraform, true)(this._ipamConfig.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "NetworkIpamConfigList",
+      },
+      labels: {
+        value: cdktf.listMapperHcl(networkLabelsToHclTerraform, true)(this._labels.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "NetworkLabelsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

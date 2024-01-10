@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/data-sources/network
 // generated from terraform resource schema
 
@@ -29,6 +24,17 @@ export function dataDockerNetworkIpamConfigToTerraform(struct?: DataDockerNetwor
   }
   return {
   }
+}
+
+
+export function dataDockerNetworkIpamConfigToHclTerraform(struct?: DataDockerNetworkIpamConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataDockerNetworkIpamConfigOutputReference extends cdktf.ComplexObject {
@@ -211,5 +217,19 @@ export class DataDockerNetwork extends cdktf.TerraformDataSource {
     return {
       name: cdktf.stringToTerraform(this._name),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

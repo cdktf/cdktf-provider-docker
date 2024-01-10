@@ -1,8 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/registry_image
 // generated from terraform resource schema
 
@@ -201,5 +196,43 @@ export class RegistryImage extends cdktf.TerraformResource {
       name: cdktf.stringToTerraform(this._name),
       triggers: cdktf.hashMapper(cdktf.stringToTerraform)(this._triggers),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      insecure_skip_verify: {
+        value: cdktf.booleanToHclTerraform(this._insecureSkipVerify),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      keep_remotely: {
+        value: cdktf.booleanToHclTerraform(this._keepRemotely),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      triggers: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._triggers),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }
