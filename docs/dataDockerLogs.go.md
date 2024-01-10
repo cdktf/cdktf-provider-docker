@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 datadockerlogs.NewDataDockerLogs(scope Construct, id *string, config DataDockerLogsConfig) DataDockerLogs
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.toHclTerraform">ToHclTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
@@ -129,6 +130,14 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
+
+Adds this resource to the terraform JSON output.
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.toMetadata"></a>
 
@@ -344,7 +353,7 @@ func ResetUntil()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsConstruct(x interface{}) *bool
 ```
@@ -376,7 +385,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsTerraformElement(x interface{}) *bool
 ```
@@ -390,7 +399,7 @@ datadockerlogs.DataDockerLogs_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -404,7 +413,7 @@ datadockerlogs.DataDockerLogs_IsTerraformDataSource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 datadockerlogs.DataDockerLogs_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -886,7 +895,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/datadockerlogs"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerlogs"
 
 &datadockerlogs.DataDockerLogsConfig {
 	Connection: interface{},

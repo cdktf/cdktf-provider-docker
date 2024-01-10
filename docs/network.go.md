@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.Network.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.NewNetwork(scope Construct, id *string, config NetworkConfig) Network
 ```
@@ -54,6 +54,7 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.network.Network.addOverride">AddOverride</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.overrideLogicalId">OverrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#@cdktf/provider-docker.network.Network.resetOverrideLogicalId">ResetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#@cdktf/provider-docker.network.Network.toHclTerraform">ToHclTerraform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.toMetadata">ToMetadata</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.toTerraform">ToTerraform</a></code> | Adds this resource to the terraform JSON output. |
 | <code><a href="#@cdktf/provider-docker.network.Network.addMoveTarget">AddMoveTarget</a></code> | Adds a user defined moveTarget string to this resource to be later used in .moveTo(moveTarget) to resolve the location of the move. |
@@ -138,6 +139,12 @@ func ResetOverrideLogicalId()
 ```
 
 Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `ToHclTerraform` <a name="ToHclTerraform" id="@cdktf/provider-docker.network.Network.toHclTerraform"></a>
+
+```go
+func ToHclTerraform() interface{}
+```
 
 ##### `ToMetadata` <a name="ToMetadata" id="@cdktf/provider-docker.network.Network.toMetadata"></a>
 
@@ -481,7 +488,7 @@ func ResetOptions()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.network.Network.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.Network_IsConstruct(x interface{}) *bool
 ```
@@ -513,7 +520,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.network.Network.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.Network_IsTerraformElement(x interface{}) *bool
 ```
@@ -527,7 +534,7 @@ network.Network_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.network.Network.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.Network_IsTerraformResource(x interface{}) *bool
 ```
@@ -541,7 +548,7 @@ network.Network_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.network.Network.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.Network_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -1067,7 +1074,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.network.NetworkConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 &network.NetworkConfig {
 	Connection: interface{},
@@ -1380,7 +1387,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.network.NetworkIpamConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 &network.NetworkIpamConfig {
 	AuxAddress: *map[string]*string,
@@ -1462,7 +1469,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.network.NetworkLabels.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 &network.NetworkLabels {
 	Label: *string,
@@ -1514,7 +1521,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.NetworkIpamConfigList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.NewNetworkIpamConfigList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkIpamConfigList
 ```
@@ -1555,10 +1562,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-docker.network.NetworkIpamConfigList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-docker.network.NetworkIpamConfigList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -1657,7 +1681,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.NewNetworkIpamConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkIpamConfigOutputReference
 ```
@@ -2040,7 +2064,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.NetworkLabelsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.NewNetworkLabelsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) NetworkLabelsList
 ```
@@ -2081,10 +2105,27 @@ whether the list is wrapping a set (will add tolist() to be able to access an it
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.computeFqn">ComputeFqn</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-docker.network.NetworkLabelsList.allWithMapKey"></a>
+
+```go
+func AllWithMapKey(mapKeyAttributeName *string) DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="@cdktf/provider-docker.network.NetworkLabelsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* *string
 
 ---
 
@@ -2183,7 +2224,7 @@ func InternalValue() interface{}
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.NetworkLabelsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v10/network"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/network"
 
 network.NewNetworkLabelsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) NetworkLabelsOutputReference
 ```

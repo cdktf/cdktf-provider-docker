@@ -354,4 +354,84 @@ export class DataDockerLogs extends cdktf.TerraformDataSource {
       until: cdktf.stringToTerraform(this._until),
     };
   }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      details: {
+        value: cdktf.booleanToHclTerraform(this._details),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      discard_headers: {
+        value: cdktf.booleanToHclTerraform(this._discardHeaders),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      follow: {
+        value: cdktf.booleanToHclTerraform(this._follow),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      logs_list_string_enabled: {
+        value: cdktf.booleanToHclTerraform(this._logsListStringEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      show_stderr: {
+        value: cdktf.booleanToHclTerraform(this._showStderr),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      show_stdout: {
+        value: cdktf.booleanToHclTerraform(this._showStdout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      since: {
+        value: cdktf.stringToHclTerraform(this._since),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tail: {
+        value: cdktf.stringToHclTerraform(this._tail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timestamps: {
+        value: cdktf.booleanToHclTerraform(this._timestamps),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      until: {
+        value: cdktf.stringToHclTerraform(this._until),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
+  }
 }

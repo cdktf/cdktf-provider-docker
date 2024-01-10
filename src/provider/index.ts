@@ -116,6 +116,55 @@ export function dockerProviderRegistryAuthToTerraform(struct?: DockerProviderReg
 }
 
 
+export function dockerProviderRegistryAuthToHclTerraform(struct?: DockerProviderRegistryAuth | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address: {
+      value: cdktf.stringToHclTerraform(struct!.address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.authDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    config_file: {
+      value: cdktf.stringToHclTerraform(struct!.configFile),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_file_content: {
+      value: cdktf.stringToHclTerraform(struct!.configFileContent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
+
 /**
 * Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs docker}
 */
@@ -318,5 +367,61 @@ export class DockerProvider extends cdktf.TerraformProvider {
       alias: cdktf.stringToTerraform(this._alias),
       registry_auth: cdktf.listMapper(dockerProviderRegistryAuthToTerraform, true)(this._registryAuth),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ca_material: {
+        value: cdktf.stringToHclTerraform(this._caMaterial),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cert_material: {
+        value: cdktf.stringToHclTerraform(this._certMaterial),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cert_path: {
+        value: cdktf.stringToHclTerraform(this._certPath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host: {
+        value: cdktf.stringToHclTerraform(this._host),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_material: {
+        value: cdktf.stringToHclTerraform(this._keyMaterial),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssh_opts: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._sshOpts),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      alias: {
+        value: cdktf.stringToHclTerraform(this._alias),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      registry_auth: {
+        value: cdktf.listMapperHcl(dockerProviderRegistryAuthToHclTerraform, true)(this._registryAuth),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DockerProviderRegistryAuthList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }
