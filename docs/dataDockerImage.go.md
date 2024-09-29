@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerImage.DataDockerImage.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 datadockerimage.NewDataDockerImage(scope Construct, id *string, config DataDockerImageConfig) DataDockerImage
 ```
@@ -283,7 +283,7 @@ func ResetId()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.dataDockerImage.DataDockerImage.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 datadockerimage.DataDockerImage_IsConstruct(x interface{}) *bool
 ```
@@ -315,7 +315,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.dataDockerImage.DataDockerImage.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 datadockerimage.DataDockerImage_IsTerraformElement(x interface{}) *bool
 ```
@@ -329,7 +329,7 @@ datadockerimage.DataDockerImage_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-docker.dataDockerImage.DataDockerImage.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 datadockerimage.DataDockerImage_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -343,7 +343,7 @@ datadockerimage.DataDockerImage_IsTerraformDataSource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.dataDockerImage.DataDockerImage.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 datadockerimage.DataDockerImage_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -605,7 +605,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerImage.DataDockerImageConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/datadockerimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerimage"
 
 &datadockerimage.DataDockerImageConfig {
 	Connection: interface{},
