@@ -4,7 +4,7 @@
 
 ### Image <a name="Image" id="@cdktf/provider-docker.image.Image"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image docker_image}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image docker_image}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.Image.Initializer"></a>
 
@@ -522,7 +522,7 @@ The construct id used in the generated config for the Image to import.
 
 The id of the existing Image that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -914,7 +914,6 @@ using HashiCorp.Cdktf.Providers.Docker;
 new ImageBuild {
     string Context,
     object AuthConfig = null,
-    System.Collections.Generic.IDictionary<string, string> BuildArg = null,
     System.Collections.Generic.IDictionary<string, string> BuildArgs = null,
     string BuildId = null,
     string[] CacheFrom = null,
@@ -956,8 +955,7 @@ new ImageBuild {
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.context">Context</a></code> | <code>string</code> | Value to specify the build context. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.authConfig">AuthConfig</a></code> | <code>object</code> | auth_config block. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildArg">BuildArg</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Set build-time variables. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildArgs">BuildArgs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Pairs for build-time variables in the form TODO. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildArgs">BuildArgs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildId">BuildId</a></code> | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.cacheFrom">CacheFrom</a></code> | <code>string[]</code> | Images to consider as cache sources. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.cgroupParent">CgroupParent</a></code> | <code>string</code> | Optional parent cgroup for the container. |
@@ -1004,7 +1002,7 @@ Value to specify the build context.
 
 Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#context Image#context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#context Image#context}
 
 ---
 
@@ -1018,21 +1016,7 @@ public object AuthConfig { get; set; }
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#auth_config Image#auth_config}
-
----
-
-##### `BuildArg`<sup>Optional</sup> <a name="BuildArg" id="@cdktf/provider-docker.image.ImageBuild.property.buildArg"></a>
-
-```csharp
-public System.Collections.Generic.IDictionary<string, string> BuildArg { get; set; }
-```
-
-- *Type:* System.Collections.Generic.IDictionary<string, string>
-
-Set build-time variables.
-
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_arg Image#build_arg}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth_config Image#auth_config}
 
 ---
 
@@ -1044,9 +1028,9 @@ public System.Collections.Generic.IDictionary<string, string> BuildArgs { get; s
 
 - *Type:* System.Collections.Generic.IDictionary<string, string>
 
-Pairs for build-time variables in the form TODO.
+Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_args Image#build_args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_args Image#build_args}
 
 ---
 
@@ -1062,7 +1046,7 @@ BuildID is an optional identifier that can be passed together with the build req
 
 The same identifier can be used to gracefully cancel the build with the cancel request.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build_id Image#build_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_id Image#build_id}
 
 ---
 
@@ -1076,7 +1060,7 @@ public string[] CacheFrom { get; set; }
 
 Images to consider as cache sources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cache_from Image#cache_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cache_from Image#cache_from}
 
 ---
 
@@ -1090,7 +1074,7 @@ public string CgroupParent { get; set; }
 
 Optional parent cgroup for the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
 
 ---
 
@@ -1104,7 +1088,7 @@ public double CpuPeriod { get; set; }
 
 The length of a CPU period in microseconds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_period Image#cpu_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_period Image#cpu_period}
 
 ---
 
@@ -1118,7 +1102,7 @@ public double CpuQuota { get; set; }
 
 Microseconds of CPU time that the container can get in a CPU period.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_quota Image#cpu_quota}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_quota Image#cpu_quota}
 
 ---
 
@@ -1132,7 +1116,7 @@ public string CpuSetCpus { get; set; }
 
 CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
 
 ---
 
@@ -1146,7 +1130,7 @@ public string CpuSetMems { get; set; }
 
 MEMs in which to allow execution (`0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
 
 ---
 
@@ -1160,7 +1144,7 @@ public double CpuShares { get; set; }
 
 CPU shares (relative weight).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#cpu_shares Image#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_shares Image#cpu_shares}
 
 ---
 
@@ -1174,7 +1158,7 @@ public string Dockerfile { get; set; }
 
 Name of the Dockerfile. Defaults to `Dockerfile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#dockerfile Image#dockerfile}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#dockerfile Image#dockerfile}
 
 ---
 
@@ -1188,7 +1172,7 @@ public string[] ExtraHosts { get; set; }
 
 A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#extra_hosts Image#extra_hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#extra_hosts Image#extra_hosts}
 
 ---
 
@@ -1202,7 +1186,7 @@ public object ForceRemove { get; set; }
 
 Always remove intermediate containers.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1216,7 +1200,7 @@ public string Isolation { get; set; }
 
 Isolation represents the isolation technology of a container. The supported values are.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#isolation Image#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#isolation Image#isolation}
 
 ---
 
@@ -1230,7 +1214,7 @@ public System.Collections.Generic.IDictionary<string, string> Label { get; set; 
 
 Set metadata for an image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#label Image#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#label Image#label}
 
 ---
 
@@ -1244,7 +1228,7 @@ public System.Collections.Generic.IDictionary<string, string> Labels { get; set;
 
 User-defined key/value metadata.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#labels Image#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#labels Image#labels}
 
 ---
 
@@ -1258,7 +1242,7 @@ public double Memory { get; set; }
 
 Set memory limit for build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#memory Image#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory Image#memory}
 
 ---
 
@@ -1272,7 +1256,7 @@ public double MemorySwap { get; set; }
 
 Total memory (memory + swap), -1 to enable unlimited swap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#memory_swap Image#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory_swap Image#memory_swap}
 
 ---
 
@@ -1286,7 +1270,7 @@ public string NetworkMode { get; set; }
 
 Set the networking mode for the RUN instructions during build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#network_mode Image#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#network_mode Image#network_mode}
 
 ---
 
@@ -1300,7 +1284,7 @@ public object NoCache { get; set; }
 
 Do not use the cache when building the image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#no_cache Image#no_cache}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#no_cache Image#no_cache}
 
 ---
 
@@ -1314,7 +1298,7 @@ public string Platform { get; set; }
 
 Set platform if server is multi-platform capable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1328,7 +1312,7 @@ public object PullParent { get; set; }
 
 Attempt to pull the image even if an older image exists locally.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#pull_parent Image#pull_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_parent Image#pull_parent}
 
 ---
 
@@ -1342,7 +1326,7 @@ public string RemoteContext { get; set; }
 
 A Git repository URI or HTTP/HTTPS context URI.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#remote_context Image#remote_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remote_context Image#remote_context}
 
 ---
 
@@ -1356,7 +1340,7 @@ public object Remove { get; set; }
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#remove Image#remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remove Image#remove}
 
 ---
 
@@ -1370,7 +1354,7 @@ public string[] SecurityOpt { get; set; }
 
 The security options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#security_opt Image#security_opt}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#security_opt Image#security_opt}
 
 ---
 
@@ -1384,7 +1368,7 @@ public string SessionId { get; set; }
 
 Set an ID for the build session.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#session_id Image#session_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#session_id Image#session_id}
 
 ---
 
@@ -1398,7 +1382,7 @@ public double ShmSize { get; set; }
 
 Size of /dev/shm in bytes. The size must be greater than 0.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#shm_size Image#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#shm_size Image#shm_size}
 
 ---
 
@@ -1412,7 +1396,7 @@ public object Squash { get; set; }
 
 If true the new layers are squashed into a new image with a single new layer.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#squash Image#squash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#squash Image#squash}
 
 ---
 
@@ -1426,7 +1410,7 @@ public object SuppressOutput { get; set; }
 
 Suppress the build output and print image ID on success.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#suppress_output Image#suppress_output}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#suppress_output Image#suppress_output}
 
 ---
 
@@ -1440,7 +1424,7 @@ public string[] Tag { get; set; }
 
 Name and optionally a tag in the 'name:tag' format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#tag Image#tag}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#tag Image#tag}
 
 ---
 
@@ -1454,7 +1438,7 @@ public string Target { get; set; }
 
 Set the target build stage to build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#target Image#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#target Image#target}
 
 ---
 
@@ -1468,7 +1452,7 @@ public object Ulimit { get; set; }
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#ulimit Image#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#ulimit Image#ulimit}
 
 ---
 
@@ -1482,7 +1466,7 @@ public string Version { get; set; }
 
 Version of the underlying builder to use.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#version Image#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#version Image#version}
 
 ---
 
@@ -1530,7 +1514,7 @@ public string HostName { get; set; }
 
 hostname of the registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#host_name Image#host_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#host_name Image#host_name}
 
 ---
 
@@ -1544,7 +1528,7 @@ public string Auth { get; set; }
 
 the auth token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#auth Image#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth Image#auth}
 
 ---
 
@@ -1558,7 +1542,7 @@ public string Email { get; set; }
 
 the user emal.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#email Image#email}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#email Image#email}
 
 ---
 
@@ -1572,7 +1556,7 @@ public string IdentityToken { get; set; }
 
 the identity token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#identity_token Image#identity_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#identity_token Image#identity_token}
 
 ---
 
@@ -1586,7 +1570,7 @@ public string Password { get; set; }
 
 the registry password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#password Image#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#password Image#password}
 
 ---
 
@@ -1600,7 +1584,7 @@ public string RegistryToken { get; set; }
 
 the registry token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#registry_token Image#registry_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#registry_token Image#registry_token}
 
 ---
 
@@ -1614,7 +1598,7 @@ public string ServerAddress { get; set; }
 
 the server address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#server_address Image#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#server_address Image#server_address}
 
 ---
 
@@ -1628,7 +1612,7 @@ public string UserName { get; set; }
 
 the registry user name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#user_name Image#user_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#user_name Image#user_name}
 
 ---
 
@@ -1666,7 +1650,7 @@ public double Hard { get; set; }
 
 soft limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#hard Image#hard}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#hard Image#hard}
 
 ---
 
@@ -1680,7 +1664,7 @@ public string Name { get; set; }
 
 type of ulimit, e.g. `nofile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
 
 ---
 
@@ -1694,7 +1678,7 @@ public double Soft { get; set; }
 
 hard limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#soft Image#soft}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#soft Image#soft}
 
 ---
 
@@ -1824,7 +1808,7 @@ public string Name { get; set; }
 
 The name of the Docker image, including any tags or SHA256 repo digests.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
 
 ---
 
@@ -1838,7 +1822,7 @@ public ImageBuild BuildAttribute { get; set; }
 
 build block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#build Image#build}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build Image#build}
 
 ---
 
@@ -1852,7 +1836,7 @@ public object ForceRemove { get; set; }
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1868,7 +1852,7 @@ If true, then the Docker image won't be deleted on destroy operation.
 
 If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#keep_locally Image#keep_locally}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#keep_locally Image#keep_locally}
 
 ---
 
@@ -1882,7 +1866,7 @@ public string Platform { get; set; }
 
 The platform to use when pulling the image. Defaults to the platform of the current machine.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1898,7 +1882,7 @@ List of values which cause an image pull when changed.
 
 This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#pull_triggers Image#pull_triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_triggers Image#pull_triggers}
 
 ---
 
@@ -1914,7 +1898,7 @@ A map of arbitrary strings that, when changed, will force the `docker_image` res
 
 This can be used to rebuild an image when contents of source code folders change
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs/resources/image#triggers Image#triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#triggers Image#triggers}
 
 ---
 
@@ -2625,7 +2609,6 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig">PutAuthConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit">PutUlimit</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetAuthConfig">ResetAuthConfig</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArg">ResetBuildArg</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArgs">ResetBuildArgs</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildId">ResetBuildId</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetCacheFrom">ResetCacheFrom</a></code> | *No description.* |
@@ -2841,12 +2824,6 @@ private void PutUlimit(object Value)
 private void ResetAuthConfig()
 ```
 
-##### `ResetBuildArg` <a name="ResetBuildArg" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArg"></a>
-
-```csharp
-private void ResetBuildArg()
-```
-
 ##### `ResetBuildArgs` <a name="ResetBuildArgs" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArgs"></a>
 
 ```csharp
@@ -3049,7 +3026,6 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfig">AuthConfig</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimit">Ulimit</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList">ImageBuildUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">AuthConfigInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgInput">BuildArgInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgsInput">BuildArgsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildIdInput">BuildIdInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cacheFromInput">CacheFromInput</a></code> | <code>string[]</code> | *No description.* |
@@ -3083,7 +3059,6 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.targetInput">TargetInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput">UlimitInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.versionInput">VersionInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArg">BuildArg</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgs">BuildArgs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildId">BuildId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cacheFrom">CacheFrom</a></code> | <code>string[]</code> | *No description.* |
@@ -3171,16 +3146,6 @@ public object AuthConfigInput { get; }
 ```
 
 - *Type:* object
-
----
-
-##### `BuildArgInput`<sup>Optional</sup> <a name="BuildArgInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgInput"></a>
-
-```csharp
-public System.Collections.Generic.IDictionary<string, string> BuildArgInput { get; }
-```
-
-- *Type:* System.Collections.Generic.IDictionary<string, string>
 
 ---
 
@@ -3511,16 +3476,6 @@ public string VersionInput { get; }
 ```
 
 - *Type:* string
-
----
-
-##### `BuildArg`<sup>Required</sup> <a name="BuildArg" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArg"></a>
-
-```csharp
-public System.Collections.Generic.IDictionary<string, string> BuildArg { get; }
-```
-
-- *Type:* System.Collections.Generic.IDictionary<string, string>
 
 ---
 
