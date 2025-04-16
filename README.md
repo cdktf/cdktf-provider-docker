@@ -1,7 +1,7 @@
 
-# CDKTF prebuilt bindings for kreuzwerker/docker provider version 3.0.2
+# CDKTF prebuilt bindings for kreuzwerker/docker provider version 3.1.2
 
-This repo builds and publishes the [Terraform docker provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2/docs) bindings for [CDK for Terraform](https://cdk.tf).
+This repo builds and publishes the [Terraform docker provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs) bindings for [CDK for Terraform](https://cdk.tf).
 
 ## Available Packages
 
@@ -63,7 +63,7 @@ This project is explicitly not tracking the Terraform docker provider version 1:
 These are the upstream dependencies:
 
 - [CDK for Terraform](https://cdk.tf)
-- [Terraform docker provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.0.2)
+- [Terraform docker provider](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.
