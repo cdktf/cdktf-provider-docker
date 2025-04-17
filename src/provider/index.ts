@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,49 +10,49 @@ export interface DockerProviderConfig {
   /**
   * PEM-encoded content of Docker host CA certificate
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#ca_material DockerProvider#ca_material}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ca_material DockerProvider#ca_material}
   */
   readonly caMaterial?: string;
   /**
   * PEM-encoded content of Docker client certificate
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#cert_material DockerProvider#cert_material}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_material DockerProvider#cert_material}
   */
   readonly certMaterial?: string;
   /**
   * Path to directory with Docker TLS config
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#cert_path DockerProvider#cert_path}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_path DockerProvider#cert_path}
   */
   readonly certPath?: string;
   /**
   * The Docker daemon address
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#host DockerProvider#host}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#host DockerProvider#host}
   */
   readonly host?: string;
   /**
   * PEM-encoded content of Docker client private key
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#key_material DockerProvider#key_material}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#key_material DockerProvider#key_material}
   */
   readonly keyMaterial?: string;
   /**
   * Additional SSH option flags to be appended when using `ssh://` protocol
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#ssh_opts DockerProvider#ssh_opts}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ssh_opts DockerProvider#ssh_opts}
   */
   readonly sshOpts?: string[];
   /**
   * Alias name
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#alias DockerProvider#alias}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#alias DockerProvider#alias}
   */
   readonly alias?: string;
   /**
   * registry_auth block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#registry_auth DockerProvider#registry_auth}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#registry_auth DockerProvider#registry_auth}
   */
   readonly registryAuth?: DockerProviderRegistryAuth[] | cdktf.IResolvable;
 }
@@ -65,37 +60,37 @@ export interface DockerProviderRegistryAuth {
   /**
   * Address of the registry
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#address DockerProvider#address}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#address DockerProvider#address}
   */
   readonly address: string;
   /**
   * Setting this to `true` will tell the provider that this registry does not need authentication. Due to the docker internals, the provider will use dummy credentials (see https://github.com/kreuzwerker/terraform-provider-docker/issues/470 for more information). Defaults to `false`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#auth_disabled DockerProvider#auth_disabled}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#auth_disabled DockerProvider#auth_disabled}
   */
   readonly authDisabled?: boolean | cdktf.IResolvable;
   /**
   * Path to docker json file for registry auth. Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#config_file DockerProvider#config_file}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file DockerProvider#config_file}
   */
   readonly configFile?: string;
   /**
   * Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#config_file_content DockerProvider#config_file_content}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file_content DockerProvider#config_file_content}
   */
   readonly configFileContent?: string;
   /**
   * Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#password DockerProvider#password}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#password DockerProvider#password}
   */
   readonly password?: string;
   /**
   * Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#username DockerProvider#username}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#username DockerProvider#username}
   */
   readonly username?: string;
 }
@@ -166,7 +161,7 @@ export function dockerProviderRegistryAuthToHclTerraform(struct?: DockerProvider
 
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs docker}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs docker}
 */
 export class DockerProvider extends cdktf.TerraformProvider {
 
@@ -182,7 +177,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
   * Generates CDKTF code for importing a DockerProvider resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DockerProvider to import
-  * @param importFromId The id of the existing DockerProvider that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DockerProvider that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DockerProvider to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -194,7 +189,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs docker} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs docker} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -205,7 +200,7 @@ export class DockerProvider extends cdktf.TerraformProvider {
       terraformResourceType: 'docker',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.1.2',
+        providerVersion: '3.2.0',
         providerVersionConstraint: '~> 3.0'
       },
       terraformProviderSource: 'kreuzwerker/docker'
