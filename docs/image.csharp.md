@@ -4,7 +4,7 @@
 
 ### Image <a name="Image" id="@cdktf/provider-docker.image.Image"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image docker_image}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image docker_image}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.Image.Initializer"></a>
 
@@ -74,11 +74,13 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.image.Image.moveTo">MoveTo</a></code> | Moves this resource to the target resource given by moveTarget. |
 | <code><a href="#@cdktf/provider-docker.image.Image.moveToId">MoveToId</a></code> | Moves this resource to the resource corresponding to "id". |
 | <code><a href="#@cdktf/provider-docker.image.Image.putBuildAttribute">PutBuildAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.putTimeouts">PutTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetBuildAttribute">ResetBuildAttribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetForceRemove">ResetForceRemove</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetKeepLocally">ResetKeepLocally</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetPlatform">ResetPlatform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetPullTriggers">ResetPullTriggers</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.resetTimeouts">ResetTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetTriggers">ResetTriggers</a></code> | *No description.* |
 
 ---
@@ -383,6 +385,18 @@ private void PutBuildAttribute(ImageBuild Value)
 
 ---
 
+##### `PutTimeouts` <a name="PutTimeouts" id="@cdktf/provider-docker.image.Image.putTimeouts"></a>
+
+```csharp
+private void PutTimeouts(ImageTimeouts Value)
+```
+
+###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.image.Image.putTimeouts.parameter.value"></a>
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+
+---
+
 ##### `ResetBuildAttribute` <a name="ResetBuildAttribute" id="@cdktf/provider-docker.image.Image.resetBuildAttribute"></a>
 
 ```csharp
@@ -411,6 +425,12 @@ private void ResetPlatform()
 
 ```csharp
 private void ResetPullTriggers()
+```
+
+##### `ResetTimeouts` <a name="ResetTimeouts" id="@cdktf/provider-docker.image.Image.resetTimeouts"></a>
+
+```csharp
+private void ResetTimeouts()
 ```
 
 ##### `ResetTriggers` <a name="ResetTriggers" id="@cdktf/provider-docker.image.Image.resetTriggers"></a>
@@ -522,7 +542,7 @@ The construct id used in the generated config for the Image to import.
 
 The id of the existing Image that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -556,12 +576,14 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.image.Image.property.id">Id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.imageId">ImageId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.repoDigest">RepoDigest</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttributeInput">BuildAttributeInput</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">ForceRemoveInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">KeepLocallyInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platformInput">PlatformInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggersInput">PullTriggersInput</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">TimeoutsInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.triggersInput">TriggersInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">ForceRemove</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">KeepLocally</a></code> | <code>object</code> | *No description.* |
@@ -754,6 +776,16 @@ public string RepoDigest { get; }
 
 ---
 
+##### `Timeouts`<sup>Required</sup> <a name="Timeouts" id="@cdktf/provider-docker.image.Image.property.timeouts"></a>
+
+```csharp
+public ImageTimeoutsOutputReference Timeouts { get; }
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a>
+
+---
+
 ##### `BuildAttributeInput`<sup>Optional</sup> <a name="BuildAttributeInput" id="@cdktf/provider-docker.image.Image.property.buildAttributeInput"></a>
 
 ```csharp
@@ -811,6 +843,16 @@ public string[] PullTriggersInput { get; }
 ```
 
 - *Type:* string[]
+
+---
+
+##### `TimeoutsInput`<sup>Optional</sup> <a name="TimeoutsInput" id="@cdktf/provider-docker.image.Image.property.timeoutsInput"></a>
+
+```csharp
+public object TimeoutsInput { get; }
+```
+
+- *Type:* object
 
 ---
 
@@ -937,6 +979,7 @@ new ImageBuild {
     object PullParent = null,
     string RemoteContext = null,
     object Remove = null,
+    object Secrets = null,
     string[] SecurityOpt = null,
     string SessionId = null,
     double ShmSize = null,
@@ -978,6 +1021,7 @@ new ImageBuild {
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">PullParent</a></code> | <code>object</code> | Attempt to pull the image even if an older image exists locally. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remoteContext">RemoteContext</a></code> | <code>string</code> | A Git repository URI or HTTP/HTTPS context URI. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">Remove</a></code> | <code>object</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">Secrets</a></code> | <code>object</code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.securityOpt">SecurityOpt</a></code> | <code>string[]</code> | The security options. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.sessionId">SessionId</a></code> | <code>string</code> | Set an ID for the build session. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.shmSize">ShmSize</a></code> | <code>double</code> | Size of /dev/shm in bytes. The size must be greater than 0. |
@@ -1000,9 +1044,9 @@ public string Context { get; set; }
 
 Value to specify the build context.
 
-Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
+Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. This always refers to the local working directory, even when building images on remote hosts. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#context Image#context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#context Image#context}
 
 ---
 
@@ -1016,7 +1060,7 @@ public object AuthConfig { get; set; }
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth_config Image#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#auth_config Image#auth_config}
 
 ---
 
@@ -1030,7 +1074,7 @@ public System.Collections.Generic.IDictionary<string, string> BuildArgs { get; s
 
 Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_args Image#build_args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_args Image#build_args}
 
 ---
 
@@ -1046,7 +1090,7 @@ BuildID is an optional identifier that can be passed together with the build req
 
 The same identifier can be used to gracefully cancel the build with the cancel request.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_id Image#build_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_id Image#build_id}
 
 ---
 
@@ -1060,7 +1104,7 @@ public string[] CacheFrom { get; set; }
 
 Images to consider as cache sources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cache_from Image#cache_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cache_from Image#cache_from}
 
 ---
 
@@ -1074,7 +1118,7 @@ public string CgroupParent { get; set; }
 
 Optional parent cgroup for the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cgroup_parent Image#cgroup_parent}
 
 ---
 
@@ -1088,7 +1132,7 @@ public double CpuPeriod { get; set; }
 
 The length of a CPU period in microseconds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_period Image#cpu_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_period Image#cpu_period}
 
 ---
 
@@ -1102,7 +1146,7 @@ public double CpuQuota { get; set; }
 
 Microseconds of CPU time that the container can get in a CPU period.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_quota Image#cpu_quota}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_quota Image#cpu_quota}
 
 ---
 
@@ -1116,7 +1160,7 @@ public string CpuSetCpus { get; set; }
 
 CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
 
 ---
 
@@ -1130,7 +1174,7 @@ public string CpuSetMems { get; set; }
 
 MEMs in which to allow execution (`0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
 
 ---
 
@@ -1144,7 +1188,7 @@ public double CpuShares { get; set; }
 
 CPU shares (relative weight).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_shares Image#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_shares Image#cpu_shares}
 
 ---
 
@@ -1158,7 +1202,7 @@ public string Dockerfile { get; set; }
 
 Name of the Dockerfile. Defaults to `Dockerfile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#dockerfile Image#dockerfile}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#dockerfile Image#dockerfile}
 
 ---
 
@@ -1172,7 +1216,7 @@ public string[] ExtraHosts { get; set; }
 
 A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#extra_hosts Image#extra_hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#extra_hosts Image#extra_hosts}
 
 ---
 
@@ -1186,7 +1230,7 @@ public object ForceRemove { get; set; }
 
 Always remove intermediate containers.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1200,7 +1244,7 @@ public string Isolation { get; set; }
 
 Isolation represents the isolation technology of a container. The supported values are.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#isolation Image#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#isolation Image#isolation}
 
 ---
 
@@ -1214,7 +1258,7 @@ public System.Collections.Generic.IDictionary<string, string> Label { get; set; 
 
 Set metadata for an image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#label Image#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#label Image#label}
 
 ---
 
@@ -1228,7 +1272,7 @@ public System.Collections.Generic.IDictionary<string, string> Labels { get; set;
 
 User-defined key/value metadata.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#labels Image#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#labels Image#labels}
 
 ---
 
@@ -1242,7 +1286,7 @@ public double Memory { get; set; }
 
 Set memory limit for build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory Image#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory Image#memory}
 
 ---
 
@@ -1256,7 +1300,7 @@ public double MemorySwap { get; set; }
 
 Total memory (memory + swap), -1 to enable unlimited swap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory_swap Image#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory_swap Image#memory_swap}
 
 ---
 
@@ -1270,7 +1314,7 @@ public string NetworkMode { get; set; }
 
 Set the networking mode for the RUN instructions during build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#network_mode Image#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#network_mode Image#network_mode}
 
 ---
 
@@ -1284,7 +1328,7 @@ public object NoCache { get; set; }
 
 Do not use the cache when building the image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#no_cache Image#no_cache}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#no_cache Image#no_cache}
 
 ---
 
@@ -1298,7 +1342,7 @@ public string Platform { get; set; }
 
 Set platform if server is multi-platform capable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1312,7 +1356,7 @@ public object PullParent { get; set; }
 
 Attempt to pull the image even if an older image exists locally.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_parent Image#pull_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_parent Image#pull_parent}
 
 ---
 
@@ -1326,7 +1370,7 @@ public string RemoteContext { get; set; }
 
 A Git repository URI or HTTP/HTTPS context URI.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remote_context Image#remote_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remote_context Image#remote_context}
 
 ---
 
@@ -1340,7 +1384,21 @@ public object Remove { get; set; }
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remove Image#remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remove Image#remove}
+
+---
+
+##### `Secrets`<sup>Optional</sup> <a name="Secrets" id="@cdktf/provider-docker.image.ImageBuild.property.secrets"></a>
+
+```csharp
+public object Secrets { get; set; }
+```
+
+- *Type:* object
+
+secrets block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#secrets Image#secrets}
 
 ---
 
@@ -1354,7 +1412,7 @@ public string[] SecurityOpt { get; set; }
 
 The security options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#security_opt Image#security_opt}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#security_opt Image#security_opt}
 
 ---
 
@@ -1368,7 +1426,7 @@ public string SessionId { get; set; }
 
 Set an ID for the build session.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#session_id Image#session_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#session_id Image#session_id}
 
 ---
 
@@ -1382,7 +1440,7 @@ public double ShmSize { get; set; }
 
 Size of /dev/shm in bytes. The size must be greater than 0.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#shm_size Image#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#shm_size Image#shm_size}
 
 ---
 
@@ -1396,7 +1454,7 @@ public object Squash { get; set; }
 
 If true the new layers are squashed into a new image with a single new layer.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#squash Image#squash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#squash Image#squash}
 
 ---
 
@@ -1410,7 +1468,7 @@ public object SuppressOutput { get; set; }
 
 Suppress the build output and print image ID on success.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#suppress_output Image#suppress_output}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#suppress_output Image#suppress_output}
 
 ---
 
@@ -1424,7 +1482,7 @@ public string[] Tag { get; set; }
 
 Name and optionally a tag in the 'name:tag' format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#tag Image#tag}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#tag Image#tag}
 
 ---
 
@@ -1438,7 +1496,7 @@ public string Target { get; set; }
 
 Set the target build stage to build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#target Image#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#target Image#target}
 
 ---
 
@@ -1452,7 +1510,7 @@ public object Ulimit { get; set; }
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#ulimit Image#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#ulimit Image#ulimit}
 
 ---
 
@@ -1466,7 +1524,7 @@ public string Version { get; set; }
 
 Version of the underlying builder to use.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#version Image#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#version Image#version}
 
 ---
 
@@ -1514,7 +1572,7 @@ public string HostName { get; set; }
 
 hostname of the registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#host_name Image#host_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#host_name Image#host_name}
 
 ---
 
@@ -1528,7 +1586,7 @@ public string Auth { get; set; }
 
 the auth token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth Image#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#auth Image#auth}
 
 ---
 
@@ -1542,7 +1600,7 @@ public string Email { get; set; }
 
 the user emal.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#email Image#email}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#email Image#email}
 
 ---
 
@@ -1556,7 +1614,7 @@ public string IdentityToken { get; set; }
 
 the identity token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#identity_token Image#identity_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#identity_token Image#identity_token}
 
 ---
 
@@ -1570,7 +1628,7 @@ public string Password { get; set; }
 
 the registry password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#password Image#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#password Image#password}
 
 ---
 
@@ -1584,7 +1642,7 @@ public string RegistryToken { get; set; }
 
 the registry token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#registry_token Image#registry_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#registry_token Image#registry_token}
 
 ---
 
@@ -1598,7 +1656,7 @@ public string ServerAddress { get; set; }
 
 the server address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#server_address Image#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#server_address Image#server_address}
 
 ---
 
@@ -1612,7 +1670,76 @@ public string UserName { get; set; }
 
 the registry user name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#user_name Image#user_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#user_name Image#user_name}
+
+---
+
+### ImageBuildSecrets <a name="ImageBuildSecrets" id="@cdktf/provider-docker.image.ImageBuildSecrets"></a>
+
+#### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageBuildSecrets.Initializer"></a>
+
+```csharp
+using HashiCorp.Cdktf.Providers.Docker;
+
+new ImageBuildSecrets {
+    string Id,
+    string Env = null,
+    string Src = null
+};
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.id">Id</a></code> | <code>string</code> | ID of the secret. By default, secrets are mounted to /run/secrets/<id>. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.env">Env</a></code> | <code>string</code> | Environment variable source of the secret. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.src">Src</a></code> | <code>string</code> | File source of the secret. |
+
+---
+
+##### `Id`<sup>Required</sup> <a name="Id" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.id"></a>
+
+```csharp
+public string Id { get; set; }
+```
+
+- *Type:* string
+
+ID of the secret. By default, secrets are mounted to /run/secrets/<id>.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#id Image#id}
+
+Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `Env`<sup>Optional</sup> <a name="Env" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.env"></a>
+
+```csharp
+public string Env { get; set; }
+```
+
+- *Type:* string
+
+Environment variable source of the secret.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#env Image#env}
+
+---
+
+##### `Src`<sup>Optional</sup> <a name="Src" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.src"></a>
+
+```csharp
+public string Src { get; set; }
+```
+
+- *Type:* string
+
+File source of the secret.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#src Image#src}
 
 ---
 
@@ -1650,7 +1777,7 @@ public double Hard { get; set; }
 
 soft limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#hard Image#hard}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#hard Image#hard}
 
 ---
 
@@ -1664,7 +1791,7 @@ public string Name { get; set; }
 
 type of ulimit, e.g. `nofile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#name Image#name}
 
 ---
 
@@ -1678,7 +1805,7 @@ public double Soft { get; set; }
 
 hard limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#soft Image#soft}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#soft Image#soft}
 
 ---
 
@@ -1703,6 +1830,7 @@ new ImageConfig {
     object KeepLocally = null,
     string Platform = null,
     string[] PullTriggers = null,
+    ImageTimeouts Timeouts = null,
     System.Collections.Generic.IDictionary<string, string> Triggers = null
 };
 ```
@@ -1724,6 +1852,7 @@ new ImageConfig {
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">KeepLocally</a></code> | <code>object</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.platform">Platform</a></code> | <code>string</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.pullTriggers">PullTriggers</a></code> | <code>string[]</code> | List of values which cause an image pull when changed. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.triggers">Triggers</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. |
 
 ---
@@ -1808,7 +1937,7 @@ public string Name { get; set; }
 
 The name of the Docker image, including any tags or SHA256 repo digests.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#name Image#name}
 
 ---
 
@@ -1822,7 +1951,7 @@ public ImageBuild BuildAttribute { get; set; }
 
 build block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build Image#build}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build Image#build}
 
 ---
 
@@ -1836,7 +1965,7 @@ public object ForceRemove { get; set; }
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1852,7 +1981,7 @@ If true, then the Docker image won't be deleted on destroy operation.
 
 If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#keep_locally Image#keep_locally}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#keep_locally Image#keep_locally}
 
 ---
 
@@ -1866,7 +1995,7 @@ public string Platform { get; set; }
 
 The platform to use when pulling the image. Defaults to the platform of the current machine.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1882,7 +2011,21 @@ List of values which cause an image pull when changed.
 
 This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_triggers Image#pull_triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_triggers Image#pull_triggers}
+
+---
+
+##### `Timeouts`<sup>Optional</sup> <a name="Timeouts" id="@cdktf/provider-docker.image.ImageConfig.property.timeouts"></a>
+
+```csharp
+public ImageTimeouts Timeouts { get; set; }
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+
+timeouts block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#timeouts Image#timeouts}
 
 ---
 
@@ -1898,7 +2041,67 @@ A map of arbitrary strings that, when changed, will force the `docker_image` res
 
 This can be used to rebuild an image when contents of source code folders change
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#triggers Image#triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#triggers Image#triggers}
+
+---
+
+### ImageTimeouts <a name="ImageTimeouts" id="@cdktf/provider-docker.image.ImageTimeouts"></a>
+
+#### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageTimeouts.Initializer"></a>
+
+```csharp
+using HashiCorp.Cdktf.Providers.Docker;
+
+new ImageTimeouts {
+    string Create = null,
+    string Delete = null,
+    string Update = null
+};
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.create">Create</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#create Image#create}. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.delete">Delete</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#delete Image#delete}. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.update">Update</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#update Image#update}. |
+
+---
+
+##### `Create`<sup>Optional</sup> <a name="Create" id="@cdktf/provider-docker.image.ImageTimeouts.property.create"></a>
+
+```csharp
+public string Create { get; set; }
+```
+
+- *Type:* string
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#create Image#create}.
+
+---
+
+##### `Delete`<sup>Optional</sup> <a name="Delete" id="@cdktf/provider-docker.image.ImageTimeouts.property.delete"></a>
+
+```csharp
+public string Delete { get; set; }
+```
+
+- *Type:* string
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#delete Image#delete}.
+
+---
+
+##### `Update`<sup>Optional</sup> <a name="Update" id="@cdktf/provider-docker.image.ImageTimeouts.property.update"></a>
+
+```csharp
+public string Update { get; set; }
+```
+
+- *Type:* string
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#update Image#update}.
 
 ---
 
@@ -2607,6 +2810,7 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.toString">ToString</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig">PutAuthConfig</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets">PutSecrets</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit">PutUlimit</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetAuthConfig">ResetAuthConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArgs">ResetBuildArgs</a></code> | *No description.* |
@@ -2632,6 +2836,7 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetPullParent">ResetPullParent</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetRemoteContext">ResetRemoteContext</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetRemove">ResetRemove</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecrets">ResetSecrets</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecurityOpt">ResetSecurityOpt</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSessionId">ResetSessionId</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetShmSize">ResetShmSize</a></code> | *No description.* |
@@ -2806,6 +3011,18 @@ private void PutAuthConfig(object Value)
 
 ---
 
+##### `PutSecrets` <a name="PutSecrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets"></a>
+
+```csharp
+private void PutSecrets(object Value)
+```
+
+###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets.parameter.value"></a>
+
+- *Type:* object
+
+---
+
 ##### `PutUlimit` <a name="PutUlimit" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit"></a>
 
 ```csharp
@@ -2962,6 +3179,12 @@ private void ResetRemoteContext()
 private void ResetRemove()
 ```
 
+##### `ResetSecrets` <a name="ResetSecrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecrets"></a>
+
+```csharp
+private void ResetSecrets()
+```
+
 ##### `ResetSecurityOpt` <a name="ResetSecurityOpt" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecurityOpt"></a>
 
 ```csharp
@@ -3024,6 +3247,7 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfig">AuthConfig</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets">Secrets</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimit">Ulimit</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList">ImageBuildUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">AuthConfigInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgsInput">BuildArgsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
@@ -3050,6 +3274,7 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">PullParentInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContextInput">RemoteContextInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">RemoveInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">SecretsInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOptInput">SecurityOptInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionIdInput">SessionIdInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSizeInput">ShmSizeInput</a></code> | <code>double</code> | *No description.* |
@@ -3126,6 +3351,16 @@ public ImageBuildAuthConfigList AuthConfig { get; }
 ```
 
 - *Type:* <a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a>
+
+---
+
+##### `Secrets`<sup>Required</sup> <a name="Secrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets"></a>
+
+```csharp
+public ImageBuildSecretsList Secrets { get; }
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a>
 
 ---
 
@@ -3383,6 +3618,16 @@ public string RemoteContextInput { get; }
 
 ```csharp
 public object RemoveInput { get; }
+```
+
+- *Type:* object
+
+---
+
+##### `SecretsInput`<sup>Optional</sup> <a name="SecretsInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput"></a>
+
+```csharp
+public object SecretsInput { get; }
 ```
 
 - *Type:* object
@@ -3806,6 +4051,513 @@ public ImageBuild InternalValue { get; }
 ```
 
 - *Type:* <a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a>
+
+---
+
+
+### ImageBuildSecretsList <a name="ImageBuildSecretsList" id="@cdktf/provider-docker.image.ImageBuildSecretsList"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer"></a>
+
+```csharp
+using HashiCorp.Cdktf.Providers.Docker;
+
+new ImageBuildSecretsList(IInterpolatingParent TerraformResource, string TerraformAttribute, bool WrapsSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformResource">TerraformResource</a></code> | <code>HashiCorp.Cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformAttribute">TerraformAttribute</a></code> | <code>string</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.wrapsSet">WrapsSet</a></code> | <code>bool</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `TerraformResource`<sup>Required</sup> <a name="TerraformResource" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* HashiCorp.Cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `WrapsSet`<sup>Required</sup> <a name="WrapsSet" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* bool
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey">AllWithMapKey</a></code> | Creating an iterator for this complex list. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.computeFqn">ComputeFqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.toString">ToString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.get">Get</a></code> | *No description.* |
+
+---
+
+##### `AllWithMapKey` <a name="AllWithMapKey" id="@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey"></a>
+
+```csharp
+private DynamicListTerraformIterator AllWithMapKey(string MapKeyAttributeName)
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `MapKeyAttributeName`<sup>Required</sup> <a name="MapKeyAttributeName" id="@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* string
+
+---
+
+##### `ComputeFqn` <a name="ComputeFqn" id="@cdktf/provider-docker.image.ImageBuildSecretsList.computeFqn"></a>
+
+```csharp
+private string ComputeFqn()
+```
+
+##### `Resolve` <a name="Resolve" id="@cdktf/provider-docker.image.ImageBuildSecretsList.resolve"></a>
+
+```csharp
+private object Resolve(IResolveContext Context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `Context`<sup>Required</sup> <a name="Context" id="@cdktf/provider-docker.image.ImageBuildSecretsList.resolve.parameter._context"></a>
+
+- *Type:* HashiCorp.Cdktf.IResolveContext
+
+---
+
+##### `ToString` <a name="ToString" id="@cdktf/provider-docker.image.ImageBuildSecretsList.toString"></a>
+
+```csharp
+private string ToString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `Get` <a name="Get" id="@cdktf/provider-docker.image.ImageBuildSecretsList.get"></a>
+
+```csharp
+private ImageBuildSecretsOutputReference Get(double Index)
+```
+
+###### `Index`<sup>Required</sup> <a name="Index" id="@cdktf/provider-docker.image.ImageBuildSecretsList.get.parameter.index"></a>
+
+- *Type:* double
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+
+---
+
+##### `CreationStack`<sup>Required</sup> <a name="CreationStack" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack"></a>
+
+```csharp
+public string[] CreationStack { get; }
+```
+
+- *Type:* string[]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `Fqn`<sup>Required</sup> <a name="Fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn"></a>
+
+```csharp
+public string Fqn { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue"></a>
+
+```csharp
+public object InternalValue { get; }
+```
+
+- *Type:* object
+
+---
+
+
+### ImageBuildSecretsOutputReference <a name="ImageBuildSecretsOutputReference" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer"></a>
+
+```csharp
+using HashiCorp.Cdktf.Providers.Docker;
+
+new ImageBuildSecretsOutputReference(IInterpolatingParent TerraformResource, string TerraformAttribute, double ComplexObjectIndex, bool ComplexObjectIsFromSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformResource">TerraformResource</a></code> | <code>HashiCorp.Cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformAttribute">TerraformAttribute</a></code> | <code>string</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIndex">ComplexObjectIndex</a></code> | <code>double</code> | the index of this item in the list. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIsFromSet">ComplexObjectIsFromSet</a></code> | <code>bool</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `TerraformResource`<sup>Required</sup> <a name="TerraformResource" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* HashiCorp.Cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `ComplexObjectIndex`<sup>Required</sup> <a name="ComplexObjectIndex" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* double
+
+the index of this item in the list.
+
+---
+
+##### `ComplexObjectIsFromSet`<sup>Required</sup> <a name="ComplexObjectIsFromSet" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* bool
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.computeFqn">ComputeFqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute">GetBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute">GetBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute">GetListAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute">GetNumberAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute">GetNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute">GetNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute">GetStringAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute">GetStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute">InterpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.toString">ToString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetEnv">ResetEnv</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetSrc">ResetSrc</a></code> | *No description.* |
+
+---
+
+##### `ComputeFqn` <a name="ComputeFqn" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.computeFqn"></a>
+
+```csharp
+private string ComputeFqn()
+```
+
+##### `GetAnyMapAttribute` <a name="GetAnyMapAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, object> GetAnyMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetBooleanAttribute` <a name="GetBooleanAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute"></a>
+
+```csharp
+private IResolvable GetBooleanAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetBooleanMapAttribute` <a name="GetBooleanMapAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, bool> GetBooleanMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetListAttribute` <a name="GetListAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute"></a>
+
+```csharp
+private string[] GetListAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberAttribute` <a name="GetNumberAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute"></a>
+
+```csharp
+private double GetNumberAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberListAttribute` <a name="GetNumberListAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute"></a>
+
+```csharp
+private double[] GetNumberListAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberMapAttribute` <a name="GetNumberMapAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, double> GetNumberMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetStringAttribute` <a name="GetStringAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute"></a>
+
+```csharp
+private string GetStringAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetStringMapAttribute` <a name="GetStringMapAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, string> GetStringMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `InterpolationForAttribute` <a name="InterpolationForAttribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute"></a>
+
+```csharp
+private IResolvable InterpolationForAttribute(string Property)
+```
+
+###### `Property`<sup>Required</sup> <a name="Property" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* string
+
+---
+
+##### `Resolve` <a name="Resolve" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve"></a>
+
+```csharp
+private object Resolve(IResolveContext Context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `Context`<sup>Required</sup> <a name="Context" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve.parameter._context"></a>
+
+- *Type:* HashiCorp.Cdktf.IResolveContext
+
+---
+
+##### `ToString` <a name="ToString" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.toString"></a>
+
+```csharp
+private string ToString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `ResetEnv` <a name="ResetEnv" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetEnv"></a>
+
+```csharp
+private void ResetEnv()
+```
+
+##### `ResetSrc` <a name="ResetSrc" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetSrc"></a>
+
+```csharp
+private void ResetSrc()
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.envInput">EnvInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.srcInput">SrcInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env">Env</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id">Id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src">Src</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+
+---
+
+##### `CreationStack`<sup>Required</sup> <a name="CreationStack" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.creationStack"></a>
+
+```csharp
+public string[] CreationStack { get; }
+```
+
+- *Type:* string[]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `Fqn`<sup>Required</sup> <a name="Fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.fqn"></a>
+
+```csharp
+public string Fqn { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `EnvInput`<sup>Optional</sup> <a name="EnvInput" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.envInput"></a>
+
+```csharp
+public string EnvInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `IdInput`<sup>Optional</sup> <a name="IdInput" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.idInput"></a>
+
+```csharp
+public string IdInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `SrcInput`<sup>Optional</sup> <a name="SrcInput" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.srcInput"></a>
+
+```csharp
+public string SrcInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Env`<sup>Required</sup> <a name="Env" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env"></a>
+
+```csharp
+public string Env { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Id`<sup>Required</sup> <a name="Id" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id"></a>
+
+```csharp
+public string Id { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Src`<sup>Required</sup> <a name="Src" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src"></a>
+
+```csharp
+public string Src { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue"></a>
+
+```csharp
+public object InternalValue { get; }
+```
+
+- *Type:* object
 
 ---
 
@@ -4293,6 +5045,342 @@ public double Soft { get; }
 ---
 
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue"></a>
+
+```csharp
+public object InternalValue { get; }
+```
+
+- *Type:* object
+
+---
+
+
+### ImageTimeoutsOutputReference <a name="ImageTimeoutsOutputReference" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer"></a>
+
+```csharp
+using HashiCorp.Cdktf.Providers.Docker;
+
+new ImageTimeoutsOutputReference(IInterpolatingParent TerraformResource, string TerraformAttribute);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformResource">TerraformResource</a></code> | <code>HashiCorp.Cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformAttribute">TerraformAttribute</a></code> | <code>string</code> | The attribute on the parent resource this class is referencing. |
+
+---
+
+##### `TerraformResource`<sup>Required</sup> <a name="TerraformResource" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* HashiCorp.Cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.computeFqn">ComputeFqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute">GetAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute">GetBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute">GetBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute">GetListAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute">GetNumberAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute">GetNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute">GetNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute">GetStringAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute">GetStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute">InterpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve">Resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.toString">ToString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetCreate">ResetCreate</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetDelete">ResetDelete</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetUpdate">ResetUpdate</a></code> | *No description.* |
+
+---
+
+##### `ComputeFqn` <a name="ComputeFqn" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.computeFqn"></a>
+
+```csharp
+private string ComputeFqn()
+```
+
+##### `GetAnyMapAttribute` <a name="GetAnyMapAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, object> GetAnyMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetBooleanAttribute` <a name="GetBooleanAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute"></a>
+
+```csharp
+private IResolvable GetBooleanAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetBooleanMapAttribute` <a name="GetBooleanMapAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, bool> GetBooleanMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetListAttribute` <a name="GetListAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute"></a>
+
+```csharp
+private string[] GetListAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberAttribute` <a name="GetNumberAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute"></a>
+
+```csharp
+private double GetNumberAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberListAttribute` <a name="GetNumberListAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute"></a>
+
+```csharp
+private double[] GetNumberListAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetNumberMapAttribute` <a name="GetNumberMapAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, double> GetNumberMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetStringAttribute` <a name="GetStringAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute"></a>
+
+```csharp
+private string GetStringAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `GetStringMapAttribute` <a name="GetStringMapAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute"></a>
+
+```csharp
+private System.Collections.Generic.IDictionary<string, string> GetStringMapAttribute(string TerraformAttribute)
+```
+
+###### `TerraformAttribute`<sup>Required</sup> <a name="TerraformAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* string
+
+---
+
+##### `InterpolationForAttribute` <a name="InterpolationForAttribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute"></a>
+
+```csharp
+private IResolvable InterpolationForAttribute(string Property)
+```
+
+###### `Property`<sup>Required</sup> <a name="Property" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* string
+
+---
+
+##### `Resolve` <a name="Resolve" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve"></a>
+
+```csharp
+private object Resolve(IResolveContext Context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `Context`<sup>Required</sup> <a name="Context" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve.parameter._context"></a>
+
+- *Type:* HashiCorp.Cdktf.IResolveContext
+
+---
+
+##### `ToString` <a name="ToString" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.toString"></a>
+
+```csharp
+private string ToString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `ResetCreate` <a name="ResetCreate" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetCreate"></a>
+
+```csharp
+private void ResetCreate()
+```
+
+##### `ResetDelete` <a name="ResetDelete" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetDelete"></a>
+
+```csharp
+private void ResetDelete()
+```
+
+##### `ResetUpdate` <a name="ResetUpdate" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetUpdate"></a>
+
+```csharp
+private void ResetUpdate()
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.createInput">CreateInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.deleteInput">DeleteInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.updateInput">UpdateInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create">Create</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete">Delete</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update">Update</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+
+---
+
+##### `CreationStack`<sup>Required</sup> <a name="CreationStack" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.creationStack"></a>
+
+```csharp
+public string[] CreationStack { get; }
+```
+
+- *Type:* string[]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `Fqn`<sup>Required</sup> <a name="Fqn" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.fqn"></a>
+
+```csharp
+public string Fqn { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `CreateInput`<sup>Optional</sup> <a name="CreateInput" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.createInput"></a>
+
+```csharp
+public string CreateInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `DeleteInput`<sup>Optional</sup> <a name="DeleteInput" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.deleteInput"></a>
+
+```csharp
+public string DeleteInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `UpdateInput`<sup>Optional</sup> <a name="UpdateInput" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.updateInput"></a>
+
+```csharp
+public string UpdateInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Create`<sup>Required</sup> <a name="Create" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create"></a>
+
+```csharp
+public string Create { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Delete`<sup>Required</sup> <a name="Delete" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete"></a>
+
+```csharp
+public string Delete { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `Update`<sup>Required</sup> <a name="Update" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update"></a>
+
+```csharp
+public string Update { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue"></a>
 
 ```csharp
 public object InternalValue { get; }

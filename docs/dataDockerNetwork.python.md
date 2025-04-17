@@ -4,7 +4,7 @@
 
 ### DataDockerNetwork <a name="DataDockerNetwork" id="@cdktf/provider-docker.dataDockerNetwork.DataDockerNetwork"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/network docker_network}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/network docker_network}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerNetwork.DataDockerNetwork.Initializer"></a>
 
@@ -106,7 +106,7 @@ Must be unique amongst siblings in the same scope
 
 The name of the Docker network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/network#name DataDockerNetwork#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/network#name DataDockerNetwork#name}
 
 ---
 
@@ -465,7 +465,7 @@ The construct id used in the generated config for the DataDockerNetwork to impor
 
 The id of the existing DataDockerNetwork that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/network#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/network#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -840,7 +840,7 @@ name: str
 
 The name of the Docker network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/network#name DataDockerNetwork#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/network#name DataDockerNetwork#name}
 
 ---
 

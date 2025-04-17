@@ -4,7 +4,7 @@
 
 ### Secret <a name="Secret" id="@cdktf/provider-docker.secret.Secret"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret docker_secret}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret docker_secret}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.secret.Secret.Initializer"></a>
 
@@ -494,7 +494,7 @@ The construct id used in the generated config for the Secret to import.
 
 The id of the existing Secret that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -800,7 +800,7 @@ const secretConfig: secret.SecretConfig = { ... }
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.data">data</a></code> | <code>string</code> | Base64-url-safe-encoded secret data. |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.name">name</a></code> | <code>string</code> | User-defined name of the secret. |
-| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#id Secret#id}. |
+| <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#id Secret#id}. |
 | <code><a href="#@cdktf/provider-docker.secret.SecretConfig.property.labels">labels</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.secret.SecretLabels">SecretLabels</a>[]</code> | labels block. |
 
 ---
@@ -885,7 +885,7 @@ public readonly data: string;
 
 Base64-url-safe-encoded secret data.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#data Secret#data}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#data Secret#data}
 
 ---
 
@@ -899,7 +899,7 @@ public readonly name: string;
 
 User-defined name of the secret.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#name Secret#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#name Secret#name}
 
 ---
 
@@ -911,7 +911,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#id Secret#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#id Secret#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -928,7 +928,7 @@ public readonly labels: IResolvable | SecretLabels[];
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#labels Secret#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#labels Secret#labels}
 
 ---
 
@@ -961,7 +961,7 @@ public readonly label: string;
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#label Secret#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#label Secret#label}
 
 ---
 
@@ -975,7 +975,7 @@ public readonly value: string;
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/secret#value Secret#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/secret#value Secret#value}
 
 ---
 
