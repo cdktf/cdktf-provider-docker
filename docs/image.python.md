@@ -4,7 +4,7 @@
 
 ### Image <a name="Image" id="@cdktf/provider-docker.image.Image"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image docker_image}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image docker_image}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.Image.Initializer"></a>
 
@@ -27,6 +27,7 @@ image.Image(
   keep_locally: typing.Union[bool, IResolvable] = None,
   platform: str = None,
   pull_triggers: typing.List[str] = None,
+  timeouts: ImageTimeouts = None,
   triggers: typing.Mapping[str] = None
 )
 ```
@@ -48,6 +49,7 @@ image.Image(
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.keepLocally">keep_locally</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.platform">platform</a></code> | <code>str</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.pullTriggers">pull_triggers</a></code> | <code>typing.List[str]</code> | List of values which cause an image pull when changed. |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.triggers">triggers</a></code> | <code>typing.Mapping[str]</code> | A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. |
 
 ---
@@ -118,7 +120,7 @@ Must be unique amongst siblings in the same scope
 
 The name of the Docker image, including any tags or SHA256 repo digests.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#name Image#name}
 
 ---
 
@@ -128,7 +130,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 build block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build Image#build}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build Image#build}
 
 ---
 
@@ -138,7 +140,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -150,7 +152,7 @@ If true, then the Docker image won't be deleted on destroy operation.
 
 If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#keep_locally Image#keep_locally}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#keep_locally Image#keep_locally}
 
 ---
 
@@ -160,7 +162,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The platform to use when pulling the image. Defaults to the platform of the current machine.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -172,7 +174,17 @@ List of values which cause an image pull when changed.
 
 This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_triggers Image#pull_triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_triggers Image#pull_triggers}
+
+---
+
+##### `timeouts`<sup>Optional</sup> <a name="timeouts" id="@cdktf/provider-docker.image.Image.Initializer.parameter.timeouts"></a>
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+
+timeouts block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#timeouts Image#timeouts}
 
 ---
 
@@ -184,7 +196,7 @@ A map of arbitrary strings that, when changed, will force the `docker_image` res
 
 This can be used to rebuild an image when contents of source code folders change
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#triggers Image#triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#triggers Image#triggers}
 
 ---
 
@@ -216,11 +228,13 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 | <code><a href="#@cdktf/provider-docker.image.Image.moveTo">move_to</a></code> | Moves this resource to the target resource given by moveTarget. |
 | <code><a href="#@cdktf/provider-docker.image.Image.moveToId">move_to_id</a></code> | Moves this resource to the resource corresponding to "id". |
 | <code><a href="#@cdktf/provider-docker.image.Image.putBuildAttribute">put_build_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.putTimeouts">put_timeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetBuildAttribute">reset_build_attribute</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetForceRemove">reset_force_remove</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetKeepLocally">reset_keep_locally</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetPlatform">reset_platform</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetPullTriggers">reset_pull_triggers</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.resetTimeouts">reset_timeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.resetTriggers">reset_triggers</a></code> | *No description.* |
 
 ---
@@ -579,6 +593,7 @@ def put_build_attribute(
   pull_parent: typing.Union[bool, IResolvable] = None,
   remote_context: str = None,
   remove: typing.Union[bool, IResolvable] = None,
+  secrets: typing.Union[IResolvable, typing.List[ImageBuildSecrets]] = None,
   security_opt: typing.List[str] = None,
   session_id: str = None,
   shm_size: typing.Union[int, float] = None,
@@ -597,9 +612,9 @@ def put_build_attribute(
 
 Value to specify the build context.
 
-Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
+Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. This always refers to the local working directory, even when building images on remote hosts. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#context Image#context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#context Image#context}
 
 ---
 
@@ -609,7 +624,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth_config Image#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#auth_config Image#auth_config}
 
 ---
 
@@ -619,7 +634,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_args Image#build_args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_args Image#build_args}
 
 ---
 
@@ -631,7 +646,7 @@ BuildID is an optional identifier that can be passed together with the build req
 
 The same identifier can be used to gracefully cancel the build with the cancel request.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_id Image#build_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_id Image#build_id}
 
 ---
 
@@ -641,7 +656,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Images to consider as cache sources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cache_from Image#cache_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cache_from Image#cache_from}
 
 ---
 
@@ -651,7 +666,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Optional parent cgroup for the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cgroup_parent Image#cgroup_parent}
 
 ---
 
@@ -661,7 +676,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The length of a CPU period in microseconds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_period Image#cpu_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_period Image#cpu_period}
 
 ---
 
@@ -671,7 +686,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Microseconds of CPU time that the container can get in a CPU period.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_quota Image#cpu_quota}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_quota Image#cpu_quota}
 
 ---
 
@@ -681,7 +696,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
 
 ---
 
@@ -691,7 +706,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 MEMs in which to allow execution (`0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
 
 ---
 
@@ -701,7 +716,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 CPU shares (relative weight).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_shares Image#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_shares Image#cpu_shares}
 
 ---
 
@@ -711,7 +726,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Name of the Dockerfile. Defaults to `Dockerfile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#dockerfile Image#dockerfile}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#dockerfile Image#dockerfile}
 
 ---
 
@@ -721,7 +736,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#extra_hosts Image#extra_hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#extra_hosts Image#extra_hosts}
 
 ---
 
@@ -731,7 +746,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Always remove intermediate containers.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -741,7 +756,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Isolation represents the isolation technology of a container. The supported values are.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#isolation Image#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#isolation Image#isolation}
 
 ---
 
@@ -751,7 +766,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set metadata for an image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#label Image#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#label Image#label}
 
 ---
 
@@ -761,7 +776,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 User-defined key/value metadata.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#labels Image#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#labels Image#labels}
 
 ---
 
@@ -771,7 +786,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set memory limit for build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory Image#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory Image#memory}
 
 ---
 
@@ -781,7 +796,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Total memory (memory + swap), -1 to enable unlimited swap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory_swap Image#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory_swap Image#memory_swap}
 
 ---
 
@@ -791,7 +806,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set the networking mode for the RUN instructions during build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#network_mode Image#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#network_mode Image#network_mode}
 
 ---
 
@@ -801,7 +816,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Do not use the cache when building the image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#no_cache Image#no_cache}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#no_cache Image#no_cache}
 
 ---
 
@@ -811,7 +826,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set platform if server is multi-platform capable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -821,7 +836,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Attempt to pull the image even if an older image exists locally.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_parent Image#pull_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_parent Image#pull_parent}
 
 ---
 
@@ -831,7 +846,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 A Git repository URI or HTTP/HTTPS context URI.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remote_context Image#remote_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remote_context Image#remote_context}
 
 ---
 
@@ -841,7 +856,17 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remove Image#remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remove Image#remove}
+
+---
+
+###### `secrets`<sup>Optional</sup> <a name="secrets" id="@cdktf/provider-docker.image.Image.putBuildAttribute.parameter.secrets"></a>
+
+- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]
+
+secrets block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#secrets Image#secrets}
 
 ---
 
@@ -851,7 +876,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The security options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#security_opt Image#security_opt}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#security_opt Image#security_opt}
 
 ---
 
@@ -861,7 +886,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set an ID for the build session.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#session_id Image#session_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#session_id Image#session_id}
 
 ---
 
@@ -871,7 +896,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Size of /dev/shm in bytes. The size must be greater than 0.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#shm_size Image#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#shm_size Image#shm_size}
 
 ---
 
@@ -881,7 +906,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 If true the new layers are squashed into a new image with a single new layer.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#squash Image#squash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#squash Image#squash}
 
 ---
 
@@ -891,7 +916,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Suppress the build output and print image ID on success.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#suppress_output Image#suppress_output}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#suppress_output Image#suppress_output}
 
 ---
 
@@ -901,7 +926,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Name and optionally a tag in the 'name:tag' format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#tag Image#tag}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#tag Image#tag}
 
 ---
 
@@ -911,7 +936,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Set the target build stage to build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#target Image#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#target Image#target}
 
 ---
 
@@ -921,7 +946,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#ulimit Image#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#ulimit Image#ulimit}
 
 ---
 
@@ -931,7 +956,41 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Version of the underlying builder to use.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#version Image#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#version Image#version}
+
+---
+
+##### `put_timeouts` <a name="put_timeouts" id="@cdktf/provider-docker.image.Image.putTimeouts"></a>
+
+```python
+def put_timeouts(
+  create: str = None,
+  delete: str = None,
+  update: str = None
+) -> None
+```
+
+###### `create`<sup>Optional</sup> <a name="create" id="@cdktf/provider-docker.image.Image.putTimeouts.parameter.create"></a>
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#create Image#create}.
+
+---
+
+###### `delete`<sup>Optional</sup> <a name="delete" id="@cdktf/provider-docker.image.Image.putTimeouts.parameter.delete"></a>
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#delete Image#delete}.
+
+---
+
+###### `update`<sup>Optional</sup> <a name="update" id="@cdktf/provider-docker.image.Image.putTimeouts.parameter.update"></a>
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#update Image#update}.
 
 ---
 
@@ -963,6 +1022,12 @@ def reset_platform() -> None
 
 ```python
 def reset_pull_triggers() -> None
+```
+
+##### `reset_timeouts` <a name="reset_timeouts" id="@cdktf/provider-docker.image.Image.resetTimeouts"></a>
+
+```python
+def reset_timeouts() -> None
 ```
 
 ##### `reset_triggers` <a name="reset_triggers" id="@cdktf/provider-docker.image.Image.resetTriggers"></a>
@@ -1085,7 +1150,7 @@ The construct id used in the generated config for the Image to import.
 
 The id of the existing Image that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1119,12 +1184,14 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.image.Image.property.id">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.imageId">image_id</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.repoDigest">repo_digest</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttributeInput">build_attribute_input</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">force_remove_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">keep_locally_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.nameInput">name_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platformInput">platform_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggersInput">pull_triggers_input</a></code> | <code>typing.List[str]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">timeouts_input</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.triggersInput">triggers_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">force_remove</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">keep_locally</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
@@ -1317,6 +1384,16 @@ repo_digest: str
 
 ---
 
+##### `timeouts`<sup>Required</sup> <a name="timeouts" id="@cdktf/provider-docker.image.Image.property.timeouts"></a>
+
+```python
+timeouts: ImageTimeoutsOutputReference
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a>
+
+---
+
 ##### `build_attribute_input`<sup>Optional</sup> <a name="build_attribute_input" id="@cdktf/provider-docker.image.Image.property.buildAttributeInput"></a>
 
 ```python
@@ -1374,6 +1451,16 @@ pull_triggers_input: typing.List[str]
 ```
 
 - *Type:* typing.List[str]
+
+---
+
+##### `timeouts_input`<sup>Optional</sup> <a name="timeouts_input" id="@cdktf/provider-docker.image.Image.property.timeoutsInput"></a>
+
+```python
+timeouts_input: typing.Union[IResolvable, ImageTimeouts]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>]
 
 ---
 
@@ -1500,6 +1587,7 @@ image.ImageBuild(
   pull_parent: typing.Union[bool, IResolvable] = None,
   remote_context: str = None,
   remove: typing.Union[bool, IResolvable] = None,
+  secrets: typing.Union[IResolvable, typing.List[ImageBuildSecrets]] = None,
   security_opt: typing.List[str] = None,
   session_id: str = None,
   shm_size: typing.Union[int, float] = None,
@@ -1541,6 +1629,7 @@ image.ImageBuild(
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">pull_parent</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Attempt to pull the image even if an older image exists locally. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remoteContext">remote_context</a></code> | <code>str</code> | A Git repository URI or HTTP/HTTPS context URI. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">remove</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">secrets</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]</code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.securityOpt">security_opt</a></code> | <code>typing.List[str]</code> | The security options. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.sessionId">session_id</a></code> | <code>str</code> | Set an ID for the build session. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.shmSize">shm_size</a></code> | <code>typing.Union[int, float]</code> | Size of /dev/shm in bytes. The size must be greater than 0. |
@@ -1563,9 +1652,9 @@ context: str
 
 Value to specify the build context.
 
-Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
+Currently, only a `PATH` context is supported. You can use the helper function '${path.cwd}/context-dir'. This always refers to the local working directory, even when building images on remote hosts. Please see https://docs.docker.com/build/building/context/ for more information about build contexts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#context Image#context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#context Image#context}
 
 ---
 
@@ -1579,7 +1668,7 @@ auth_config: typing.Union[IResolvable, typing.List[ImageBuildAuthConfig]]
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth_config Image#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#auth_config Image#auth_config}
 
 ---
 
@@ -1593,7 +1682,7 @@ build_args: typing.Mapping[str]
 
 Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_args Image#build_args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_args Image#build_args}
 
 ---
 
@@ -1609,7 +1698,7 @@ BuildID is an optional identifier that can be passed together with the build req
 
 The same identifier can be used to gracefully cancel the build with the cancel request.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build_id Image#build_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build_id Image#build_id}
 
 ---
 
@@ -1623,7 +1712,7 @@ cache_from: typing.List[str]
 
 Images to consider as cache sources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cache_from Image#cache_from}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cache_from Image#cache_from}
 
 ---
 
@@ -1637,7 +1726,7 @@ cgroup_parent: str
 
 Optional parent cgroup for the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cgroup_parent Image#cgroup_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cgroup_parent Image#cgroup_parent}
 
 ---
 
@@ -1651,7 +1740,7 @@ cpu_period: typing.Union[int, float]
 
 The length of a CPU period in microseconds.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_period Image#cpu_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_period Image#cpu_period}
 
 ---
 
@@ -1665,7 +1754,7 @@ cpu_quota: typing.Union[int, float]
 
 Microseconds of CPU time that the container can get in a CPU period.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_quota Image#cpu_quota}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_quota Image#cpu_quota}
 
 ---
 
@@ -1679,7 +1768,7 @@ cpu_set_cpus: str
 
 CPUs in which to allow execution (e.g., `0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_cpus Image#cpu_set_cpus}
 
 ---
 
@@ -1693,7 +1782,7 @@ cpu_set_mems: str
 
 MEMs in which to allow execution (`0-3`, `0`, `1`).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_set_mems Image#cpu_set_mems}
 
 ---
 
@@ -1707,7 +1796,7 @@ cpu_shares: typing.Union[int, float]
 
 CPU shares (relative weight).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#cpu_shares Image#cpu_shares}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#cpu_shares Image#cpu_shares}
 
 ---
 
@@ -1721,7 +1810,7 @@ dockerfile: str
 
 Name of the Dockerfile. Defaults to `Dockerfile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#dockerfile Image#dockerfile}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#dockerfile Image#dockerfile}
 
 ---
 
@@ -1735,7 +1824,7 @@ extra_hosts: typing.List[str]
 
 A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"].
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#extra_hosts Image#extra_hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#extra_hosts Image#extra_hosts}
 
 ---
 
@@ -1749,7 +1838,7 @@ force_remove: typing.Union[bool, IResolvable]
 
 Always remove intermediate containers.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -1763,7 +1852,7 @@ isolation: str
 
 Isolation represents the isolation technology of a container. The supported values are.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#isolation Image#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#isolation Image#isolation}
 
 ---
 
@@ -1777,7 +1866,7 @@ label: typing.Mapping[str]
 
 Set metadata for an image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#label Image#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#label Image#label}
 
 ---
 
@@ -1791,7 +1880,7 @@ labels: typing.Mapping[str]
 
 User-defined key/value metadata.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#labels Image#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#labels Image#labels}
 
 ---
 
@@ -1805,7 +1894,7 @@ memory: typing.Union[int, float]
 
 Set memory limit for build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory Image#memory}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory Image#memory}
 
 ---
 
@@ -1819,7 +1908,7 @@ memory_swap: typing.Union[int, float]
 
 Total memory (memory + swap), -1 to enable unlimited swap.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#memory_swap Image#memory_swap}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#memory_swap Image#memory_swap}
 
 ---
 
@@ -1833,7 +1922,7 @@ network_mode: str
 
 Set the networking mode for the RUN instructions during build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#network_mode Image#network_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#network_mode Image#network_mode}
 
 ---
 
@@ -1847,7 +1936,7 @@ no_cache: typing.Union[bool, IResolvable]
 
 Do not use the cache when building the image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#no_cache Image#no_cache}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#no_cache Image#no_cache}
 
 ---
 
@@ -1861,7 +1950,7 @@ platform: str
 
 Set platform if server is multi-platform capable.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -1875,7 +1964,7 @@ pull_parent: typing.Union[bool, IResolvable]
 
 Attempt to pull the image even if an older image exists locally.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_parent Image#pull_parent}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_parent Image#pull_parent}
 
 ---
 
@@ -1889,7 +1978,7 @@ remote_context: str
 
 A Git repository URI or HTTP/HTTPS context URI.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remote_context Image#remote_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remote_context Image#remote_context}
 
 ---
 
@@ -1903,7 +1992,21 @@ remove: typing.Union[bool, IResolvable]
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#remove Image#remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#remove Image#remove}
+
+---
+
+##### `secrets`<sup>Optional</sup> <a name="secrets" id="@cdktf/provider-docker.image.ImageBuild.property.secrets"></a>
+
+```python
+secrets: typing.Union[IResolvable, typing.List[ImageBuildSecrets]]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]
+
+secrets block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#secrets Image#secrets}
 
 ---
 
@@ -1917,7 +2020,7 @@ security_opt: typing.List[str]
 
 The security options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#security_opt Image#security_opt}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#security_opt Image#security_opt}
 
 ---
 
@@ -1931,7 +2034,7 @@ session_id: str
 
 Set an ID for the build session.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#session_id Image#session_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#session_id Image#session_id}
 
 ---
 
@@ -1945,7 +2048,7 @@ shm_size: typing.Union[int, float]
 
 Size of /dev/shm in bytes. The size must be greater than 0.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#shm_size Image#shm_size}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#shm_size Image#shm_size}
 
 ---
 
@@ -1959,7 +2062,7 @@ squash: typing.Union[bool, IResolvable]
 
 If true the new layers are squashed into a new image with a single new layer.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#squash Image#squash}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#squash Image#squash}
 
 ---
 
@@ -1973,7 +2076,7 @@ suppress_output: typing.Union[bool, IResolvable]
 
 Suppress the build output and print image ID on success.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#suppress_output Image#suppress_output}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#suppress_output Image#suppress_output}
 
 ---
 
@@ -1987,7 +2090,7 @@ tag: typing.List[str]
 
 Name and optionally a tag in the 'name:tag' format.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#tag Image#tag}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#tag Image#tag}
 
 ---
 
@@ -2001,7 +2104,7 @@ target: str
 
 Set the target build stage to build.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#target Image#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#target Image#target}
 
 ---
 
@@ -2015,7 +2118,7 @@ ulimit: typing.Union[IResolvable, typing.List[ImageBuildUlimit]]
 
 ulimit block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#ulimit Image#ulimit}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#ulimit Image#ulimit}
 
 ---
 
@@ -2029,7 +2132,7 @@ version: str
 
 Version of the underlying builder to use.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#version Image#version}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#version Image#version}
 
 ---
 
@@ -2077,7 +2180,7 @@ host_name: str
 
 hostname of the registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#host_name Image#host_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#host_name Image#host_name}
 
 ---
 
@@ -2091,7 +2194,7 @@ auth: str
 
 the auth token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#auth Image#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#auth Image#auth}
 
 ---
 
@@ -2105,7 +2208,7 @@ email: str
 
 the user emal.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#email Image#email}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#email Image#email}
 
 ---
 
@@ -2119,7 +2222,7 @@ identity_token: str
 
 the identity token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#identity_token Image#identity_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#identity_token Image#identity_token}
 
 ---
 
@@ -2133,7 +2236,7 @@ password: str
 
 the registry password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#password Image#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#password Image#password}
 
 ---
 
@@ -2147,7 +2250,7 @@ registry_token: str
 
 the registry token.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#registry_token Image#registry_token}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#registry_token Image#registry_token}
 
 ---
 
@@ -2161,7 +2264,7 @@ server_address: str
 
 the server address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#server_address Image#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#server_address Image#server_address}
 
 ---
 
@@ -2175,7 +2278,76 @@ user_name: str
 
 the registry user name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#user_name Image#user_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#user_name Image#user_name}
+
+---
+
+### ImageBuildSecrets <a name="ImageBuildSecrets" id="@cdktf/provider-docker.image.ImageBuildSecrets"></a>
+
+#### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageBuildSecrets.Initializer"></a>
+
+```python
+from cdktf_cdktf_provider_docker import image
+
+image.ImageBuildSecrets(
+  id: str,
+  env: str = None,
+  src: str = None
+)
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.id">id</a></code> | <code>str</code> | ID of the secret. By default, secrets are mounted to /run/secrets/<id>. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.env">env</a></code> | <code>str</code> | Environment variable source of the secret. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecrets.property.src">src</a></code> | <code>str</code> | File source of the secret. |
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.id"></a>
+
+```python
+id: str
+```
+
+- *Type:* str
+
+ID of the secret. By default, secrets are mounted to /run/secrets/<id>.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#id Image#id}
+
+Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `env`<sup>Optional</sup> <a name="env" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.env"></a>
+
+```python
+env: str
+```
+
+- *Type:* str
+
+Environment variable source of the secret.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#env Image#env}
+
+---
+
+##### `src`<sup>Optional</sup> <a name="src" id="@cdktf/provider-docker.image.ImageBuildSecrets.property.src"></a>
+
+```python
+src: str
+```
+
+- *Type:* str
+
+File source of the secret.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#src Image#src}
 
 ---
 
@@ -2213,7 +2385,7 @@ hard: typing.Union[int, float]
 
 soft limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#hard Image#hard}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#hard Image#hard}
 
 ---
 
@@ -2227,7 +2399,7 @@ name: str
 
 type of ulimit, e.g. `nofile`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#name Image#name}
 
 ---
 
@@ -2241,7 +2413,7 @@ soft: typing.Union[int, float]
 
 hard limit.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#soft Image#soft}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#soft Image#soft}
 
 ---
 
@@ -2266,6 +2438,7 @@ image.ImageConfig(
   keep_locally: typing.Union[bool, IResolvable] = None,
   platform: str = None,
   pull_triggers: typing.List[str] = None,
+  timeouts: ImageTimeouts = None,
   triggers: typing.Mapping[str] = None
 )
 ```
@@ -2287,6 +2460,7 @@ image.ImageConfig(
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">keep_locally</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.platform">platform</a></code> | <code>str</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.pullTriggers">pull_triggers</a></code> | <code>typing.List[str]</code> | List of values which cause an image pull when changed. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.triggers">triggers</a></code> | <code>typing.Mapping[str]</code> | A map of arbitrary strings that, when changed, will force the `docker_image` resource to be replaced. |
 
 ---
@@ -2371,7 +2545,7 @@ name: str
 
 The name of the Docker image, including any tags or SHA256 repo digests.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#name Image#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#name Image#name}
 
 ---
 
@@ -2385,7 +2559,7 @@ build_attribute: ImageBuild
 
 build block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#build Image#build}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#build Image#build}
 
 ---
 
@@ -2399,7 +2573,7 @@ force_remove: typing.Union[bool, IResolvable]
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#force_remove Image#force_remove}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#force_remove Image#force_remove}
 
 ---
 
@@ -2415,7 +2589,7 @@ If true, then the Docker image won't be deleted on destroy operation.
 
 If this is false, it will delete the image from the docker local storage on destroy operation.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#keep_locally Image#keep_locally}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#keep_locally Image#keep_locally}
 
 ---
 
@@ -2429,7 +2603,7 @@ platform: str
 
 The platform to use when pulling the image. Defaults to the platform of the current machine.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#platform Image#platform}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#platform Image#platform}
 
 ---
 
@@ -2445,7 +2619,21 @@ List of values which cause an image pull when changed.
 
 This is used to store the image digest from the registry when using the [docker_registry_image](../data-sources/registry_image.md).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#pull_triggers Image#pull_triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#pull_triggers Image#pull_triggers}
+
+---
+
+##### `timeouts`<sup>Optional</sup> <a name="timeouts" id="@cdktf/provider-docker.image.ImageConfig.property.timeouts"></a>
+
+```python
+timeouts: ImageTimeouts
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+
+timeouts block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#timeouts Image#timeouts}
 
 ---
 
@@ -2461,7 +2649,67 @@ A map of arbitrary strings that, when changed, will force the `docker_image` res
 
 This can be used to rebuild an image when contents of source code folders change
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image#triggers Image#triggers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#triggers Image#triggers}
+
+---
+
+### ImageTimeouts <a name="ImageTimeouts" id="@cdktf/provider-docker.image.ImageTimeouts"></a>
+
+#### Initializer <a name="Initializer" id="@cdktf/provider-docker.image.ImageTimeouts.Initializer"></a>
+
+```python
+from cdktf_cdktf_provider_docker import image
+
+image.ImageTimeouts(
+  create: str = None,
+  delete: str = None,
+  update: str = None
+)
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.create">create</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#create Image#create}. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.delete">delete</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#delete Image#delete}. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeouts.property.update">update</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#update Image#update}. |
+
+---
+
+##### `create`<sup>Optional</sup> <a name="create" id="@cdktf/provider-docker.image.ImageTimeouts.property.create"></a>
+
+```python
+create: str
+```
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#create Image#create}.
+
+---
+
+##### `delete`<sup>Optional</sup> <a name="delete" id="@cdktf/provider-docker.image.ImageTimeouts.property.delete"></a>
+
+```python
+delete: str
+```
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#delete Image#delete}.
+
+---
+
+##### `update`<sup>Optional</sup> <a name="update" id="@cdktf/provider-docker.image.ImageTimeouts.property.update"></a>
+
+```python
+update: str
+```
+
+- *Type:* str
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/image#update Image#update}.
 
 ---
 
@@ -3210,6 +3458,7 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.toString">to_string</a></code> | Return a string representation of this resolvable object. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig">put_auth_config</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets">put_secrets</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit">put_ulimit</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetAuthConfig">reset_auth_config</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetBuildArgs">reset_build_args</a></code> | *No description.* |
@@ -3235,6 +3484,7 @@ The attribute on the parent resource this class is referencing.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetPullParent">reset_pull_parent</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetRemoteContext">reset_remote_context</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetRemove">reset_remove</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecrets">reset_secrets</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecurityOpt">reset_security_opt</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetSessionId">reset_session_id</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.resetShmSize">reset_shm_size</a></code> | *No description.* |
@@ -3433,6 +3683,20 @@ def put_auth_config(
 
 ---
 
+##### `put_secrets` <a name="put_secrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets"></a>
+
+```python
+def put_secrets(
+  value: typing.Union[IResolvable, typing.List[ImageBuildSecrets]]
+) -> None
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets.parameter.value"></a>
+
+- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]
+
+---
+
 ##### `put_ulimit` <a name="put_ulimit" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit"></a>
 
 ```python
@@ -3591,6 +3855,12 @@ def reset_remote_context() -> None
 def reset_remove() -> None
 ```
 
+##### `reset_secrets` <a name="reset_secrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecrets"></a>
+
+```python
+def reset_secrets() -> None
+```
+
 ##### `reset_security_opt` <a name="reset_security_opt" id="@cdktf/provider-docker.image.ImageBuildOutputReference.resetSecurityOpt"></a>
 
 ```python
@@ -3653,6 +3923,7 @@ def reset_version() -> None
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfig">auth_config</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets">secrets</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimit">ulimit</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList">ImageBuildUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">auth_config_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgsInput">build_args_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
@@ -3679,6 +3950,7 @@ def reset_version() -> None
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">pull_parent_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContextInput">remote_context_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">remove_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">secrets_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOptInput">security_opt_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionIdInput">session_id_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSizeInput">shm_size_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
@@ -3755,6 +4027,16 @@ auth_config: ImageBuildAuthConfigList
 ```
 
 - *Type:* <a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a>
+
+---
+
+##### `secrets`<sup>Required</sup> <a name="secrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets"></a>
+
+```python
+secrets: ImageBuildSecretsList
+```
+
+- *Type:* <a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a>
 
 ---
 
@@ -4015,6 +4297,16 @@ remove_input: typing.Union[bool, IResolvable]
 ```
 
 - *Type:* typing.Union[bool, cdktf.IResolvable]
+
+---
+
+##### `secrets_input`<sup>Optional</sup> <a name="secrets_input" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput"></a>
+
+```python
+secrets_input: typing.Union[IResolvable, typing.List[ImageBuildSecrets]]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]
 
 ---
 
@@ -4435,6 +4727,550 @@ internal_value: ImageBuild
 ```
 
 - *Type:* <a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a>
+
+---
+
+
+### ImageBuildSecretsList <a name="ImageBuildSecretsList" id="@cdktf/provider-docker.image.ImageBuildSecretsList"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer"></a>
+
+```python
+from cdktf_cdktf_provider_docker import image
+
+image.ImageBuildSecretsList(
+  terraform_resource: IInterpolatingParent,
+  terraform_attribute: str,
+  wraps_set: bool
+)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformResource">terraform_resource</a></code> | <code>cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformAttribute">terraform_attribute</a></code> | <code>str</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.wrapsSet">wraps_set</a></code> | <code>bool</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraform_resource`<sup>Required</sup> <a name="terraform_resource" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `wraps_set`<sup>Required</sup> <a name="wraps_set" id="@cdktf/provider-docker.image.ImageBuildSecretsList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* bool
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey">all_with_map_key</a></code> | Creating an iterator for this complex list. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.computeFqn">compute_fqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.toString">to_string</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.get">get</a></code> | *No description.* |
+
+---
+
+##### `all_with_map_key` <a name="all_with_map_key" id="@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey"></a>
+
+```python
+def all_with_map_key(
+  map_key_attribute_name: str
+) -> DynamicListTerraformIterator
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `map_key_attribute_name`<sup>Required</sup> <a name="map_key_attribute_name" id="@cdktf/provider-docker.image.ImageBuildSecretsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* str
+
+---
+
+##### `compute_fqn` <a name="compute_fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsList.computeFqn"></a>
+
+```python
+def compute_fqn() -> str
+```
+
+##### `resolve` <a name="resolve" id="@cdktf/provider-docker.image.ImageBuildSecretsList.resolve"></a>
+
+```python
+def resolve(
+  _context: IResolveContext
+) -> typing.Any
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="@cdktf/provider-docker.image.ImageBuildSecretsList.resolve.parameter._context"></a>
+
+- *Type:* cdktf.IResolveContext
+
+---
+
+##### `to_string` <a name="to_string" id="@cdktf/provider-docker.image.ImageBuildSecretsList.toString"></a>
+
+```python
+def to_string() -> str
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `get` <a name="get" id="@cdktf/provider-docker.image.ImageBuildSecretsList.get"></a>
+
+```python
+def get(
+  index: typing.Union[int, float]
+) -> ImageBuildSecretsOutputReference
+```
+
+###### `index`<sup>Required</sup> <a name="index" id="@cdktf/provider-docker.image.ImageBuildSecretsList.get.parameter.index"></a>
+
+- *Type:* typing.Union[int, float]
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]</code> | *No description.* |
+
+---
+
+##### `creation_stack`<sup>Required</sup> <a name="creation_stack" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack"></a>
+
+```python
+creation_stack: typing.List[str]
+```
+
+- *Type:* typing.List[str]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn"></a>
+
+```python
+fqn: str
+```
+
+- *Type:* str
+
+---
+
+##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue"></a>
+
+```python
+internal_value: typing.Union[IResolvable, typing.List[ImageBuildSecrets]]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]]
+
+---
+
+
+### ImageBuildSecretsOutputReference <a name="ImageBuildSecretsOutputReference" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer"></a>
+
+```python
+from cdktf_cdktf_provider_docker import image
+
+image.ImageBuildSecretsOutputReference(
+  terraform_resource: IInterpolatingParent,
+  terraform_attribute: str,
+  complex_object_index: typing.Union[int, float],
+  complex_object_is_from_set: bool
+)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformResource">terraform_resource</a></code> | <code>cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformAttribute">terraform_attribute</a></code> | <code>str</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIndex">complex_object_index</a></code> | <code>typing.Union[int, float]</code> | the index of this item in the list. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIsFromSet">complex_object_is_from_set</a></code> | <code>bool</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraform_resource`<sup>Required</sup> <a name="terraform_resource" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `complex_object_index`<sup>Required</sup> <a name="complex_object_index" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* typing.Union[int, float]
+
+the index of this item in the list.
+
+---
+
+##### `complex_object_is_from_set`<sup>Required</sup> <a name="complex_object_is_from_set" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* bool
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.computeFqn">compute_fqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute">get_any_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute">get_boolean_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute">get_boolean_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute">get_list_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute">get_number_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute">get_number_list_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute">get_number_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute">get_string_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute">get_string_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute">interpolation_for_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.toString">to_string</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetEnv">reset_env</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetSrc">reset_src</a></code> | *No description.* |
+
+---
+
+##### `compute_fqn` <a name="compute_fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.computeFqn"></a>
+
+```python
+def compute_fqn() -> str
+```
+
+##### `get_any_map_attribute` <a name="get_any_map_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute"></a>
+
+```python
+def get_any_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[typing.Any]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_boolean_attribute` <a name="get_boolean_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute"></a>
+
+```python
+def get_boolean_attribute(
+  terraform_attribute: str
+) -> IResolvable
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_boolean_map_attribute` <a name="get_boolean_map_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute"></a>
+
+```python
+def get_boolean_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[bool]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_list_attribute` <a name="get_list_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute"></a>
+
+```python
+def get_list_attribute(
+  terraform_attribute: str
+) -> typing.List[str]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_attribute` <a name="get_number_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute"></a>
+
+```python
+def get_number_attribute(
+  terraform_attribute: str
+) -> typing.Union[int, float]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_list_attribute` <a name="get_number_list_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute"></a>
+
+```python
+def get_number_list_attribute(
+  terraform_attribute: str
+) -> typing.List[typing.Union[int, float]]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_map_attribute` <a name="get_number_map_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute"></a>
+
+```python
+def get_number_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[typing.Union[int, float]]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_string_attribute` <a name="get_string_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute"></a>
+
+```python
+def get_string_attribute(
+  terraform_attribute: str
+) -> str
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_string_map_attribute` <a name="get_string_map_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute"></a>
+
+```python
+def get_string_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[str]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `interpolation_for_attribute` <a name="interpolation_for_attribute" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute"></a>
+
+```python
+def interpolation_for_attribute(
+  property: str
+) -> IResolvable
+```
+
+###### `property`<sup>Required</sup> <a name="property" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* str
+
+---
+
+##### `resolve` <a name="resolve" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve"></a>
+
+```python
+def resolve(
+  _context: IResolveContext
+) -> typing.Any
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resolve.parameter._context"></a>
+
+- *Type:* cdktf.IResolveContext
+
+---
+
+##### `to_string` <a name="to_string" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.toString"></a>
+
+```python
+def to_string() -> str
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `reset_env` <a name="reset_env" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetEnv"></a>
+
+```python
+def reset_env() -> None
+```
+
+##### `reset_src` <a name="reset_src" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.resetSrc"></a>
+
+```python
+def reset_src() -> None
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.envInput">env_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.idInput">id_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.srcInput">src_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env">env</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id">id</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src">src</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]</code> | *No description.* |
+
+---
+
+##### `creation_stack`<sup>Required</sup> <a name="creation_stack" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.creationStack"></a>
+
+```python
+creation_stack: typing.List[str]
+```
+
+- *Type:* typing.List[str]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.fqn"></a>
+
+```python
+fqn: str
+```
+
+- *Type:* str
+
+---
+
+##### `env_input`<sup>Optional</sup> <a name="env_input" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.envInput"></a>
+
+```python
+env_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `id_input`<sup>Optional</sup> <a name="id_input" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.idInput"></a>
+
+```python
+id_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `src_input`<sup>Optional</sup> <a name="src_input" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.srcInput"></a>
+
+```python
+src_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env"></a>
+
+```python
+env: str
+```
+
+- *Type:* str
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id"></a>
+
+```python
+id: str
+```
+
+- *Type:* str
+
+---
+
+##### `src`<sup>Required</sup> <a name="src" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src"></a>
+
+```python
+src: str
+```
+
+- *Type:* str
+
+---
+
+##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue"></a>
+
+```python
+internal_value: typing.Union[IResolvable, ImageBuildSecrets]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>]
 
 ---
 
@@ -4965,6 +5801,367 @@ internal_value: typing.Union[IResolvable, ImageBuildUlimit]
 ```
 
 - *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>]
+
+---
+
+
+### ImageTimeoutsOutputReference <a name="ImageTimeoutsOutputReference" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer"></a>
+
+```python
+from cdktf_cdktf_provider_docker import image
+
+image.ImageTimeoutsOutputReference(
+  terraform_resource: IInterpolatingParent,
+  terraform_attribute: str
+)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformResource">terraform_resource</a></code> | <code>cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformAttribute">terraform_attribute</a></code> | <code>str</code> | The attribute on the parent resource this class is referencing. |
+
+---
+
+##### `terraform_resource`<sup>Required</sup> <a name="terraform_resource" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.computeFqn">compute_fqn</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute">get_any_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute">get_boolean_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute">get_boolean_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute">get_list_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute">get_number_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute">get_number_list_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute">get_number_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute">get_string_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute">get_string_map_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute">interpolation_for_attribute</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.toString">to_string</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetCreate">reset_create</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetDelete">reset_delete</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetUpdate">reset_update</a></code> | *No description.* |
+
+---
+
+##### `compute_fqn` <a name="compute_fqn" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.computeFqn"></a>
+
+```python
+def compute_fqn() -> str
+```
+
+##### `get_any_map_attribute` <a name="get_any_map_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute"></a>
+
+```python
+def get_any_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[typing.Any]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_boolean_attribute` <a name="get_boolean_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute"></a>
+
+```python
+def get_boolean_attribute(
+  terraform_attribute: str
+) -> IResolvable
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_boolean_map_attribute` <a name="get_boolean_map_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute"></a>
+
+```python
+def get_boolean_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[bool]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_list_attribute` <a name="get_list_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute"></a>
+
+```python
+def get_list_attribute(
+  terraform_attribute: str
+) -> typing.List[str]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_attribute` <a name="get_number_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute"></a>
+
+```python
+def get_number_attribute(
+  terraform_attribute: str
+) -> typing.Union[int, float]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_list_attribute` <a name="get_number_list_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute"></a>
+
+```python
+def get_number_list_attribute(
+  terraform_attribute: str
+) -> typing.List[typing.Union[int, float]]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_number_map_attribute` <a name="get_number_map_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute"></a>
+
+```python
+def get_number_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[typing.Union[int, float]]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_string_attribute` <a name="get_string_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute"></a>
+
+```python
+def get_string_attribute(
+  terraform_attribute: str
+) -> str
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `get_string_map_attribute` <a name="get_string_map_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute"></a>
+
+```python
+def get_string_map_attribute(
+  terraform_attribute: str
+) -> typing.Mapping[str]
+```
+
+###### `terraform_attribute`<sup>Required</sup> <a name="terraform_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* str
+
+---
+
+##### `interpolation_for_attribute` <a name="interpolation_for_attribute" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute"></a>
+
+```python
+def interpolation_for_attribute(
+  property: str
+) -> IResolvable
+```
+
+###### `property`<sup>Required</sup> <a name="property" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* str
+
+---
+
+##### `resolve` <a name="resolve" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve"></a>
+
+```python
+def resolve(
+  _context: IResolveContext
+) -> typing.Any
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resolve.parameter._context"></a>
+
+- *Type:* cdktf.IResolveContext
+
+---
+
+##### `to_string` <a name="to_string" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.toString"></a>
+
+```python
+def to_string() -> str
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `reset_create` <a name="reset_create" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetCreate"></a>
+
+```python
+def reset_create() -> None
+```
+
+##### `reset_delete` <a name="reset_delete" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetDelete"></a>
+
+```python
+def reset_delete() -> None
+```
+
+##### `reset_update` <a name="reset_update" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.resetUpdate"></a>
+
+```python
+def reset_update() -> None
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.createInput">create_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.deleteInput">delete_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.updateInput">update_input</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create">create</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete">delete</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update">update</a></code> | <code>str</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>]</code> | *No description.* |
+
+---
+
+##### `creation_stack`<sup>Required</sup> <a name="creation_stack" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.creationStack"></a>
+
+```python
+creation_stack: typing.List[str]
+```
+
+- *Type:* typing.List[str]
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.fqn"></a>
+
+```python
+fqn: str
+```
+
+- *Type:* str
+
+---
+
+##### `create_input`<sup>Optional</sup> <a name="create_input" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.createInput"></a>
+
+```python
+create_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `delete_input`<sup>Optional</sup> <a name="delete_input" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.deleteInput"></a>
+
+```python
+delete_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `update_input`<sup>Optional</sup> <a name="update_input" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.updateInput"></a>
+
+```python
+update_input: str
+```
+
+- *Type:* str
+
+---
+
+##### `create`<sup>Required</sup> <a name="create" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create"></a>
+
+```python
+create: str
+```
+
+- *Type:* str
+
+---
+
+##### `delete`<sup>Required</sup> <a name="delete" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete"></a>
+
+```python
+delete: str
+```
+
+- *Type:* str
+
+---
+
+##### `update`<sup>Required</sup> <a name="update" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update"></a>
+
+```python
+update: str
+```
+
+- *Type:* str
+
+---
+
+##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue"></a>
+
+```python
+internal_value: typing.Union[IResolvable, ImageTimeouts]
+```
+
+- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>]
 
 ---
 

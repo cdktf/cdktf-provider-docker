@@ -4,7 +4,7 @@
 
 ### DataDockerRegistryImage <a name="DataDockerRegistryImage" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image docker_registry_image}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image docker_registry_image}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.Initializer"></a>
 
@@ -379,7 +379,7 @@ The construct id used in the generated config for the DataDockerRegistryImage to
 
 The id of the existing DataDockerRegistryImage that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -651,7 +651,7 @@ const dataDockerRegistryImageConfig: dataDockerRegistryImage.DataDockerRegistryI
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provisioners">provisioners</a></code> | <code>cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.name">name</a></code> | <code>string</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`. |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image#id DataDockerRegistryImage#id}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.id">id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image#id DataDockerRegistryImage#id}. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.insecureSkipVerify">insecureSkipVerify</a></code> | <code>boolean \| cdktf.IResolvable</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. |
 
 ---
@@ -736,7 +736,7 @@ public readonly name: string;
 
 The name of the Docker image, including any tags. e.g. `alpine:latest`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image#name DataDockerRegistryImage#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image#name DataDockerRegistryImage#name}
 
 ---
 
@@ -748,7 +748,7 @@ public readonly id: string;
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image#id DataDockerRegistryImage#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image#id DataDockerRegistryImage#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -765,7 +765,7 @@ public readonly insecureSkipVerify: boolean | IResolvable;
 
 If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/data-sources/registry_image#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/data-sources/registry_image#insecure_skip_verify DataDockerRegistryImage#insecure_skip_verify}
 
 ---
 
