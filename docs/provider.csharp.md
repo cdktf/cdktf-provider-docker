@@ -4,7 +4,7 @@
 
 ### DockerProvider <a name="DockerProvider" id="@cdktf/provider-docker.provider.DockerProvider"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs docker}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs docker}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.provider.DockerProvider.Initializer"></a>
 
@@ -61,6 +61,8 @@ Must be unique amongst siblings in the same scope
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCaMaterial">ResetCaMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCertMaterial">ResetCertMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCertPath">ResetCertPath</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetContext">ResetContext</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetDisableDockerDaemonCheck">ResetDisableDockerDaemonCheck</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetHost">ResetHost</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetKeyMaterial">ResetKeyMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetRegistryAuth">ResetRegistryAuth</a></code> | *No description.* |
@@ -160,6 +162,18 @@ private void ResetCertMaterial()
 
 ```csharp
 private void ResetCertPath()
+```
+
+##### `ResetContext` <a name="ResetContext" id="@cdktf/provider-docker.provider.DockerProvider.resetContext"></a>
+
+```csharp
+private void ResetContext()
+```
+
+##### `ResetDisableDockerDaemonCheck` <a name="ResetDisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.resetDisableDockerDaemonCheck"></a>
+
+```csharp
+private void ResetDisableDockerDaemonCheck()
 ```
 
 ##### `ResetHost` <a name="ResetHost" id="@cdktf/provider-docker.provider.DockerProvider.resetHost"></a>
@@ -289,7 +303,7 @@ The construct id used in the generated config for the DockerProvider to import.
 
 The id of the existing DockerProvider that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -318,6 +332,8 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterialInput">CaMaterialInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterialInput">CertMaterialInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPathInput">CertPathInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.contextInput">ContextInput</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">DisableDockerDaemonCheckInput</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.hostInput">HostInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterialInput">KeyMaterialInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">RegistryAuthInput</a></code> | <code>object</code> | *No description.* |
@@ -325,6 +341,8 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterial">CaMaterial</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterial">CertMaterial</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPath">CertPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.context">Context</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>object</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.host">Host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterial">KeyMaterial</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">RegistryAuth</a></code> | <code>object</code> | *No description.* |
@@ -464,6 +482,26 @@ public string CertPathInput { get; }
 
 ---
 
+##### `ContextInput`<sup>Optional</sup> <a name="ContextInput" id="@cdktf/provider-docker.provider.DockerProvider.property.contextInput"></a>
+
+```csharp
+public string ContextInput { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `DisableDockerDaemonCheckInput`<sup>Optional</sup> <a name="DisableDockerDaemonCheckInput" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput"></a>
+
+```csharp
+public object DisableDockerDaemonCheckInput { get; }
+```
+
+- *Type:* object
+
+---
+
 ##### `HostInput`<sup>Optional</sup> <a name="HostInput" id="@cdktf/provider-docker.provider.DockerProvider.property.hostInput"></a>
 
 ```csharp
@@ -531,6 +569,26 @@ public string CertPath { get; }
 ```
 
 - *Type:* string
+
+---
+
+##### `Context`<sup>Optional</sup> <a name="Context" id="@cdktf/provider-docker.provider.DockerProvider.property.context"></a>
+
+```csharp
+public string Context { get; }
+```
+
+- *Type:* string
+
+---
+
+##### `DisableDockerDaemonCheck`<sup>Optional</sup> <a name="DisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck"></a>
+
+```csharp
+public object DisableDockerDaemonCheck { get; }
+```
+
+- *Type:* object
 
 ---
 
@@ -606,6 +664,8 @@ new DockerProviderConfig {
     string CaMaterial = null,
     string CertMaterial = null,
     string CertPath = null,
+    string Context = null,
+    object DisableDockerDaemonCheck = null,
     string Host = null,
     string KeyMaterial = null,
     object RegistryAuth = null,
@@ -621,6 +681,8 @@ new DockerProviderConfig {
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.caMaterial">CaMaterial</a></code> | <code>string</code> | PEM-encoded content of Docker host CA certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certMaterial">CertMaterial</a></code> | <code>string</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certPath">CertPath</a></code> | <code>string</code> | Path to directory with Docker TLS config. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.context">Context</a></code> | <code>string</code> | The name of the Docker context to use. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>object</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.host">Host</a></code> | <code>string</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.keyMaterial">KeyMaterial</a></code> | <code>string</code> | PEM-encoded content of Docker client private key. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">RegistryAuth</a></code> | <code>object</code> | registry_auth block. |
@@ -638,7 +700,7 @@ public string Alias { get; set; }
 
 Alias name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#alias DockerProvider#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#alias DockerProvider#alias}
 
 ---
 
@@ -652,7 +714,7 @@ public string CaMaterial { get; set; }
 
 PEM-encoded content of Docker host CA certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ca_material DockerProvider#ca_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ca_material DockerProvider#ca_material}
 
 ---
 
@@ -666,7 +728,7 @@ public string CertMaterial { get; set; }
 
 PEM-encoded content of Docker client certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_material DockerProvider#cert_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_material DockerProvider#cert_material}
 
 ---
 
@@ -680,7 +742,39 @@ public string CertPath { get; set; }
 
 Path to directory with Docker TLS config.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_path DockerProvider#cert_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_path DockerProvider#cert_path}
+
+---
+
+##### `Context`<sup>Optional</sup> <a name="Context" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.context"></a>
+
+```csharp
+public string Context { get; set; }
+```
+
+- *Type:* string
+
+The name of the Docker context to use.
+
+Can also be set via `DOCKER_CONTEXT` environment variable. Overrides the `host` if set.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#context DockerProvider#context}
+
+---
+
+##### `DisableDockerDaemonCheck`<sup>Optional</sup> <a name="DisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck"></a>
+
+```csharp
+public object DisableDockerDaemonCheck { get; set; }
+```
+
+- *Type:* object
+
+If set to `true`, the provider will not check if the Docker daemon is running.
+
+This is useful for resources/data_sourcess that do not require a running Docker daemon, such as the data source `docker_registry_image`.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#disable_docker_daemon_check DockerProvider#disable_docker_daemon_check}
 
 ---
 
@@ -694,7 +788,7 @@ public string Host { get; set; }
 
 The Docker daemon address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#host DockerProvider#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#host DockerProvider#host}
 
 ---
 
@@ -708,7 +802,7 @@ public string KeyMaterial { get; set; }
 
 PEM-encoded content of Docker client private key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#key_material DockerProvider#key_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#key_material DockerProvider#key_material}
 
 ---
 
@@ -722,7 +816,7 @@ public object RegistryAuth { get; set; }
 
 registry_auth block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#registry_auth DockerProvider#registry_auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#registry_auth DockerProvider#registry_auth}
 
 ---
 
@@ -736,7 +830,7 @@ public string[] SshOpts { get; set; }
 
 Additional SSH option flags to be appended when using `ssh://` protocol.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ssh_opts DockerProvider#ssh_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ssh_opts DockerProvider#ssh_opts}
 
 ---
 
@@ -780,7 +874,7 @@ public string Address { get; set; }
 
 Address of the registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#address DockerProvider#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#address DockerProvider#address}
 
 ---
 
@@ -796,7 +890,7 @@ Setting this to `true` will tell the provider that this registry does not need a
 
 Due to the docker internals, the provider will use dummy credentials (see https://github.com/kreuzwerker/terraform-provider-docker/issues/470 for more information). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#auth_disabled DockerProvider#auth_disabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#auth_disabled DockerProvider#auth_disabled}
 
 ---
 
@@ -812,7 +906,7 @@ Path to docker json file for registry auth.
 
 Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file DockerProvider#config_file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#config_file DockerProvider#config_file}
 
 ---
 
@@ -826,7 +920,7 @@ public string ConfigFileContent { get; set; }
 
 Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file_content DockerProvider#config_file_content}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#config_file_content DockerProvider#config_file_content}
 
 ---
 
@@ -840,7 +934,7 @@ public string Password { get; set; }
 
 Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#password DockerProvider#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#password DockerProvider#password}
 
 ---
 
@@ -854,7 +948,7 @@ public string Username { get; set; }
 
 Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#username DockerProvider#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#username DockerProvider#username}
 
 ---
 

@@ -4,7 +4,7 @@
 
 ### Tag <a name="Tag" id="@cdktf/provider-docker.tag.Tag"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag docker_tag}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag docker_tag}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.tag.Tag.Initializer"></a>
 
@@ -26,6 +26,7 @@ Tag.Builder.create(Construct scope, java.lang.String id)
     .sourceImage(java.lang.String)
     .targetImage(java.lang.String)
 //  .id(java.lang.String)
+//  .tagTriggers(java.util.List<java.lang.String>)
     .build();
 ```
 
@@ -42,7 +43,8 @@ Tag.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.sourceImage">sourceImage</a></code> | <code>java.lang.String</code> | Name of the source image. |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.targetImage">targetImage</a></code> | <code>java.lang.String</code> | Name of the target image. |
-| <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#id Tag#id}. |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#id Tag#id}. |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.Initializer.parameter.tagTriggers">tagTriggers</a></code> | <code>java.util.List<java.lang.String></code> | List of values which cause the tag to be (re)created. |
 
 ---
 
@@ -112,7 +114,7 @@ Must be unique amongst siblings in the same scope
 
 Name of the source image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#source_image Tag#source_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#source_image Tag#source_image}
 
 ---
 
@@ -122,7 +124,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Name of the target image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#target_image Tag#target_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#target_image Tag#target_image}
 
 ---
 
@@ -130,10 +132,22 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#id Tag#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#id Tag#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `tagTriggers`<sup>Optional</sup> <a name="tagTriggers" id="@cdktf/provider-docker.tag.Tag.Initializer.parameter.tagTriggers"></a>
+
+- *Type:* java.util.List<java.lang.String>
+
+List of values which cause the tag to be (re)created.
+
+This is useful for triggering a new tag when the source image changes.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#tag_triggers Tag#tag_triggers}
 
 ---
 
@@ -165,6 +179,7 @@ If you experience problems setting this value it might not be settable. Please t
 | <code><a href="#@cdktf/provider-docker.tag.Tag.moveTo">moveTo</a></code> | Moves this resource to the target resource given by moveTarget. |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.moveToId">moveToId</a></code> | Moves this resource to the resource corresponding to "id". |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.resetId">resetId</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.resetTagTriggers">resetTagTriggers</a></code> | *No description.* |
 
 ---
 
@@ -464,6 +479,12 @@ Full id of resource to move to, e.g. "aws_s3_bucket.example".
 public void resetId()
 ```
 
+##### `resetTagTriggers` <a name="resetTagTriggers" id="@cdktf/provider-docker.tag.Tag.resetTagTriggers"></a>
+
+```java
+public void resetTagTriggers()
+```
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -567,7 +588,7 @@ The construct id used in the generated config for the Tag to import.
 
 The id of the existing Tag that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -600,9 +621,11 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.sourceImageId">sourceImageId</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.sourceImageInput">sourceImageInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.property.tagTriggersInput">tagTriggersInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.targetImageInput">targetImageInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.sourceImage">sourceImage</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.tag.Tag.property.tagTriggers">tagTriggers</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.Tag.property.targetImage">targetImage</a></code> | <code>java.lang.String</code> | *No description.* |
 
 ---
@@ -779,6 +802,16 @@ public java.lang.String getSourceImageInput();
 
 ---
 
+##### `tagTriggersInput`<sup>Optional</sup> <a name="tagTriggersInput" id="@cdktf/provider-docker.tag.Tag.property.tagTriggersInput"></a>
+
+```java
+public java.util.List<java.lang.String> getTagTriggersInput();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+---
+
 ##### `targetImageInput`<sup>Optional</sup> <a name="targetImageInput" id="@cdktf/provider-docker.tag.Tag.property.targetImageInput"></a>
 
 ```java
@@ -806,6 +839,16 @@ public java.lang.String getSourceImage();
 ```
 
 - *Type:* java.lang.String
+
+---
+
+##### `tagTriggers`<sup>Required</sup> <a name="tagTriggers" id="@cdktf/provider-docker.tag.Tag.property.tagTriggers"></a>
+
+```java
+public java.util.List<java.lang.String> getTagTriggers();
+```
+
+- *Type:* java.util.List<java.lang.String>
 
 ---
 
@@ -861,6 +904,7 @@ TagConfig.builder()
     .sourceImage(java.lang.String)
     .targetImage(java.lang.String)
 //  .id(java.lang.String)
+//  .tagTriggers(java.util.List<java.lang.String>)
     .build();
 ```
 
@@ -877,7 +921,8 @@ TagConfig.builder()
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.sourceImage">sourceImage</a></code> | <code>java.lang.String</code> | Name of the source image. |
 | <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.targetImage">targetImage</a></code> | <code>java.lang.String</code> | Name of the target image. |
-| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#id Tag#id}. |
+| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#id Tag#id}. |
+| <code><a href="#@cdktf/provider-docker.tag.TagConfig.property.tagTriggers">tagTriggers</a></code> | <code>java.util.List<java.lang.String></code> | List of values which cause the tag to be (re)created. |
 
 ---
 
@@ -961,7 +1006,7 @@ public java.lang.String getSourceImage();
 
 Name of the source image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#source_image Tag#source_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#source_image Tag#source_image}
 
 ---
 
@@ -975,7 +1020,7 @@ public java.lang.String getTargetImage();
 
 Name of the target image.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#target_image Tag#target_image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#target_image Tag#target_image}
 
 ---
 
@@ -987,10 +1032,26 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#id Tag#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#id Tag#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `tagTriggers`<sup>Optional</sup> <a name="tagTriggers" id="@cdktf/provider-docker.tag.TagConfig.property.tagTriggers"></a>
+
+```java
+public java.util.List<java.lang.String> getTagTriggers();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+List of values which cause the tag to be (re)created.
+
+This is useful for triggering a new tag when the source image changes.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#tag_triggers Tag#tag_triggers}
 
 ---
 

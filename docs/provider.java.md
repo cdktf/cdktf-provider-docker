@@ -4,7 +4,7 @@
 
 ### DockerProvider <a name="DockerProvider" id="@cdktf/provider-docker.provider.DockerProvider"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs docker}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs docker}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.provider.DockerProvider.Initializer"></a>
 
@@ -16,6 +16,9 @@ DockerProvider.Builder.create(Construct scope, java.lang.String id)
 //  .caMaterial(java.lang.String)
 //  .certMaterial(java.lang.String)
 //  .certPath(java.lang.String)
+//  .context(java.lang.String)
+//  .disableDockerDaemonCheck(java.lang.Boolean)
+//  .disableDockerDaemonCheck(IResolvable)
 //  .host(java.lang.String)
 //  .keyMaterial(java.lang.String)
 //  .registryAuth(IResolvable)
@@ -32,6 +35,8 @@ DockerProvider.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.caMaterial">caMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker host CA certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.certPath">certPath</a></code> | <code>java.lang.String</code> | Path to directory with Docker TLS config. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.context">context</a></code> | <code>java.lang.String</code> | The name of the Docker context to use. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.host">host</a></code> | <code>java.lang.String</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client private key. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
@@ -63,7 +68,7 @@ Must be unique amongst siblings in the same scope
 
 Alias name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#alias DockerProvider#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#alias DockerProvider#alias}
 
 ---
 
@@ -73,7 +78,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 PEM-encoded content of Docker host CA certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ca_material DockerProvider#ca_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ca_material DockerProvider#ca_material}
 
 ---
 
@@ -83,7 +88,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 PEM-encoded content of Docker client certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_material DockerProvider#cert_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_material DockerProvider#cert_material}
 
 ---
 
@@ -93,7 +98,31 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Path to directory with Docker TLS config.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_path DockerProvider#cert_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_path DockerProvider#cert_path}
+
+---
+
+##### `context`<sup>Optional</sup> <a name="context" id="@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.context"></a>
+
+- *Type:* java.lang.String
+
+The name of the Docker context to use.
+
+Can also be set via `DOCKER_CONTEXT` environment variable. Overrides the `host` if set.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#context DockerProvider#context}
+
+---
+
+##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.disableDockerDaemonCheck"></a>
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+If set to `true`, the provider will not check if the Docker daemon is running.
+
+This is useful for resources/data_sourcess that do not require a running Docker daemon, such as the data source `docker_registry_image`.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#disable_docker_daemon_check DockerProvider#disable_docker_daemon_check}
 
 ---
 
@@ -103,7 +132,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The Docker daemon address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#host DockerProvider#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#host DockerProvider#host}
 
 ---
 
@@ -113,7 +142,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 PEM-encoded content of Docker client private key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#key_material DockerProvider#key_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#key_material DockerProvider#key_material}
 
 ---
 
@@ -123,7 +152,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 registry_auth block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#registry_auth DockerProvider#registry_auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#registry_auth DockerProvider#registry_auth}
 
 ---
 
@@ -133,7 +162,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Additional SSH option flags to be appended when using `ssh://` protocol.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ssh_opts DockerProvider#ssh_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ssh_opts DockerProvider#ssh_opts}
 
 ---
 
@@ -152,6 +181,8 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCaMaterial">resetCaMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCertMaterial">resetCertMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetCertPath">resetCertPath</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetContext">resetContext</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetDisableDockerDaemonCheck">resetDisableDockerDaemonCheck</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetHost">resetHost</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetKeyMaterial">resetKeyMaterial</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.resetRegistryAuth">resetRegistryAuth</a></code> | *No description.* |
@@ -251,6 +282,18 @@ public void resetCertMaterial()
 
 ```java
 public void resetCertPath()
+```
+
+##### `resetContext` <a name="resetContext" id="@cdktf/provider-docker.provider.DockerProvider.resetContext"></a>
+
+```java
+public void resetContext()
+```
+
+##### `resetDisableDockerDaemonCheck` <a name="resetDisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.resetDisableDockerDaemonCheck"></a>
+
+```java
+public void resetDisableDockerDaemonCheck()
 ```
 
 ##### `resetHost` <a name="resetHost" id="@cdktf/provider-docker.provider.DockerProvider.resetHost"></a>
@@ -380,7 +423,7 @@ The construct id used in the generated config for the DockerProvider to import.
 
 The id of the existing DockerProvider that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -409,6 +452,8 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterialInput">caMaterialInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterialInput">certMaterialInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPathInput">certPathInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.contextInput">contextInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">disableDockerDaemonCheckInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.hostInput">hostInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterialInput">keyMaterialInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">registryAuthInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
@@ -416,6 +461,8 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterial">caMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPath">certPath</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.context">context</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.host">host</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
@@ -555,6 +602,26 @@ public java.lang.String getCertPathInput();
 
 ---
 
+##### `contextInput`<sup>Optional</sup> <a name="contextInput" id="@cdktf/provider-docker.provider.DockerProvider.property.contextInput"></a>
+
+```java
+public java.lang.String getContextInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `disableDockerDaemonCheckInput`<sup>Optional</sup> <a name="disableDockerDaemonCheckInput" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput"></a>
+
+```java
+public java.lang.Object getDisableDockerDaemonCheckInput();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+---
+
 ##### `hostInput`<sup>Optional</sup> <a name="hostInput" id="@cdktf/provider-docker.provider.DockerProvider.property.hostInput"></a>
 
 ```java
@@ -622,6 +689,26 @@ public java.lang.String getCertPath();
 ```
 
 - *Type:* java.lang.String
+
+---
+
+##### `context`<sup>Optional</sup> <a name="context" id="@cdktf/provider-docker.provider.DockerProvider.property.context"></a>
+
+```java
+public java.lang.String getContext();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck"></a>
+
+```java
+public java.lang.Object getDisableDockerDaemonCheck();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -697,6 +784,9 @@ DockerProviderConfig.builder()
 //  .caMaterial(java.lang.String)
 //  .certMaterial(java.lang.String)
 //  .certPath(java.lang.String)
+//  .context(java.lang.String)
+//  .disableDockerDaemonCheck(java.lang.Boolean)
+//  .disableDockerDaemonCheck(IResolvable)
 //  .host(java.lang.String)
 //  .keyMaterial(java.lang.String)
 //  .registryAuth(IResolvable)
@@ -713,6 +803,8 @@ DockerProviderConfig.builder()
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.caMaterial">caMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker host CA certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certPath">certPath</a></code> | <code>java.lang.String</code> | Path to directory with Docker TLS config. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.context">context</a></code> | <code>java.lang.String</code> | The name of the Docker context to use. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.host">host</a></code> | <code>java.lang.String</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client private key. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
@@ -730,7 +822,7 @@ public java.lang.String getAlias();
 
 Alias name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#alias DockerProvider#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#alias DockerProvider#alias}
 
 ---
 
@@ -744,7 +836,7 @@ public java.lang.String getCaMaterial();
 
 PEM-encoded content of Docker host CA certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ca_material DockerProvider#ca_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ca_material DockerProvider#ca_material}
 
 ---
 
@@ -758,7 +850,7 @@ public java.lang.String getCertMaterial();
 
 PEM-encoded content of Docker client certificate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_material DockerProvider#cert_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_material DockerProvider#cert_material}
 
 ---
 
@@ -772,7 +864,39 @@ public java.lang.String getCertPath();
 
 Path to directory with Docker TLS config.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#cert_path DockerProvider#cert_path}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#cert_path DockerProvider#cert_path}
+
+---
+
+##### `context`<sup>Optional</sup> <a name="context" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.context"></a>
+
+```java
+public java.lang.String getContext();
+```
+
+- *Type:* java.lang.String
+
+The name of the Docker context to use.
+
+Can also be set via `DOCKER_CONTEXT` environment variable. Overrides the `host` if set.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#context DockerProvider#context}
+
+---
+
+##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck"></a>
+
+```java
+public java.lang.Object getDisableDockerDaemonCheck();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+If set to `true`, the provider will not check if the Docker daemon is running.
+
+This is useful for resources/data_sourcess that do not require a running Docker daemon, such as the data source `docker_registry_image`.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#disable_docker_daemon_check DockerProvider#disable_docker_daemon_check}
 
 ---
 
@@ -786,7 +910,7 @@ public java.lang.String getHost();
 
 The Docker daemon address.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#host DockerProvider#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#host DockerProvider#host}
 
 ---
 
@@ -800,7 +924,7 @@ public java.lang.String getKeyMaterial();
 
 PEM-encoded content of Docker client private key.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#key_material DockerProvider#key_material}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#key_material DockerProvider#key_material}
 
 ---
 
@@ -814,7 +938,7 @@ public java.lang.Object getRegistryAuth();
 
 registry_auth block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#registry_auth DockerProvider#registry_auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#registry_auth DockerProvider#registry_auth}
 
 ---
 
@@ -828,7 +952,7 @@ public java.util.List<java.lang.String> getSshOpts();
 
 Additional SSH option flags to be appended when using `ssh://` protocol.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#ssh_opts DockerProvider#ssh_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#ssh_opts DockerProvider#ssh_opts}
 
 ---
 
@@ -873,7 +997,7 @@ public java.lang.String getAddress();
 
 Address of the registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#address DockerProvider#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#address DockerProvider#address}
 
 ---
 
@@ -889,7 +1013,7 @@ Setting this to `true` will tell the provider that this registry does not need a
 
 Due to the docker internals, the provider will use dummy credentials (see https://github.com/kreuzwerker/terraform-provider-docker/issues/470 for more information). Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#auth_disabled DockerProvider#auth_disabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#auth_disabled DockerProvider#auth_disabled}
 
 ---
 
@@ -905,7 +1029,7 @@ Path to docker json file for registry auth.
 
 Defaults to `~/.docker/config.json`. If `DOCKER_CONFIG` is set, the value of `DOCKER_CONFIG` is used as the path. `config_file` has predencen over all other options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file DockerProvider#config_file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#config_file DockerProvider#config_file}
 
 ---
 
@@ -919,7 +1043,7 @@ public java.lang.String getConfigFileContent();
 
 Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#config_file_content DockerProvider#config_file_content}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#config_file_content DockerProvider#config_file_content}
 
 ---
 
@@ -933,7 +1057,7 @@ public java.lang.String getPassword();
 
 Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#password DockerProvider#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#password DockerProvider#password}
 
 ---
 
@@ -947,7 +1071,7 @@ public java.lang.String getUsername();
 
 Username for the registry. Defaults to `DOCKER_REGISTRY_USER` env variable if set.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs#username DockerProvider#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs#username DockerProvider#username}
 
 ---
 
