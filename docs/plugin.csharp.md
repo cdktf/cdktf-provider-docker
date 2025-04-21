@@ -4,7 +4,7 @@
 
 ### Plugin <a name="Plugin" id="@cdktf/provider-docker.plugin.Plugin"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin docker_plugin}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin docker_plugin}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.plugin.Plugin.Initializer"></a>
 
@@ -543,7 +543,7 @@ The construct id used in the generated config for the Plugin to import.
 
 The id of the existing Plugin that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1017,7 +1017,7 @@ new PluginConfig {
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDisable">ForceDisable</a></code> | <code>object</code> | If true, then the plugin is disabled forcibly. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>object</code> | If true, grant all permissions necessary to run the plugin. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantPermissions">GrantPermissions</a></code> | <code>object</code> | grant_permissions block. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#id Plugin#id}. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#id Plugin#id}. |
 
 ---
 
@@ -1101,7 +1101,7 @@ public string Name { get; set; }
 
 Docker Plugin name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#name Plugin#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#name Plugin#name}
 
 ---
 
@@ -1115,7 +1115,7 @@ public string Alias { get; set; }
 
 Docker Plugin alias.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#alias Plugin#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#alias Plugin#alias}
 
 ---
 
@@ -1129,7 +1129,7 @@ public object Enabled { get; set; }
 
 If `true` the plugin is enabled. Defaults to `true`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#enabled Plugin#enabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#enabled Plugin#enabled}
 
 ---
 
@@ -1143,7 +1143,7 @@ public double EnableTimeout { get; set; }
 
 HTTP client timeout to enable the plugin.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#enable_timeout Plugin#enable_timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#enable_timeout Plugin#enable_timeout}
 
 ---
 
@@ -1157,7 +1157,7 @@ public string[] Env { get; set; }
 
 The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#env Plugin#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#env Plugin#env}
 
 ---
 
@@ -1171,7 +1171,7 @@ public object ForceDestroy { get; set; }
 
 If true, then the plugin is destroyed forcibly.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#force_destroy Plugin#force_destroy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#force_destroy Plugin#force_destroy}
 
 ---
 
@@ -1185,7 +1185,7 @@ public object ForceDisable { get; set; }
 
 If true, then the plugin is disabled forcibly.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#force_disable Plugin#force_disable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#force_disable Plugin#force_disable}
 
 ---
 
@@ -1199,7 +1199,7 @@ public object GrantAllPermissions { get; set; }
 
 If true, grant all permissions necessary to run the plugin.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#grant_all_permissions Plugin#grant_all_permissions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#grant_all_permissions Plugin#grant_all_permissions}
 
 ---
 
@@ -1213,7 +1213,7 @@ public object GrantPermissions { get; set; }
 
 grant_permissions block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#grant_permissions Plugin#grant_permissions}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#grant_permissions Plugin#grant_permissions}
 
 ---
 
@@ -1225,7 +1225,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#id Plugin#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#id Plugin#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1264,7 +1264,7 @@ public string Name { get; set; }
 
 The name of the permission.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#name Plugin#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#name Plugin#name}
 
 ---
 
@@ -1278,7 +1278,7 @@ public string[] Value { get; set; }
 
 The value of the permission.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/plugin#value Plugin#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/plugin#value Plugin#value}
 
 ---
 
