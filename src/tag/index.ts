@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -13,7 +8,7 @@ import * as cdktf from 'cdktf';
 
 export interface TagConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#id Tag#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#id Tag#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,19 +17,25 @@ export interface TagConfig extends cdktf.TerraformMetaArguments {
   /**
   * Name of the source image.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#source_image Tag#source_image}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#source_image Tag#source_image}
   */
   readonly sourceImage: string;
   /**
+  * List of values which cause the tag to be (re)created. This is useful for triggering a new tag when the source image changes.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#tag_triggers Tag#tag_triggers}
+  */
+  readonly tagTriggers?: string[];
+  /**
   * Name of the target image.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#target_image Tag#target_image}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#target_image Tag#target_image}
   */
   readonly targetImage: string;
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag docker_tag}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag docker_tag}
 */
 export class Tag extends cdktf.TerraformResource {
 
@@ -50,7 +51,7 @@ export class Tag extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Tag resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Tag to import
-  * @param importFromId The id of the existing Tag that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Tag that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Tag to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -62,7 +63,7 @@ export class Tag extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.2.0/docs/resources/tag docker_tag} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/tag docker_tag} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -73,7 +74,7 @@ export class Tag extends cdktf.TerraformResource {
       terraformResourceType: 'docker_tag',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.2.0',
+        providerVersion: '3.3.0',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
@@ -86,6 +87,7 @@ export class Tag extends cdktf.TerraformResource {
     });
     this._id = config.id;
     this._sourceImage = config.sourceImage;
+    this._tagTriggers = config.tagTriggers;
     this._targetImage = config.targetImage;
   }
 
@@ -127,6 +129,22 @@ export class Tag extends cdktf.TerraformResource {
     return this.getStringAttribute('source_image_id');
   }
 
+  // tag_triggers - computed: false, optional: true, required: false
+  private _tagTriggers?: string[]; 
+  public get tagTriggers() {
+    return cdktf.Fn.tolist(this.getListAttribute('tag_triggers'));
+  }
+  public set tagTriggers(value: string[]) {
+    this._tagTriggers = value;
+  }
+  public resetTagTriggers() {
+    this._tagTriggers = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get tagTriggersInput() {
+    return this._tagTriggers;
+  }
+
   // target_image - computed: false, optional: false, required: true
   private _targetImage?: string; 
   public get targetImage() {
@@ -148,6 +166,7 @@ export class Tag extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       source_image: cdktf.stringToTerraform(this._sourceImage),
+      tag_triggers: cdktf.listMapper(cdktf.stringToTerraform, false)(this._tagTriggers),
       target_image: cdktf.stringToTerraform(this._targetImage),
     };
   }
@@ -165,6 +184,12 @@ export class Tag extends cdktf.TerraformResource {
         isBlock: false,
         type: "simple",
         storageClassType: "string",
+      },
+      tag_triggers: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._tagTriggers),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
       },
       target_image: {
         value: cdktf.stringToHclTerraform(this._targetImage),
