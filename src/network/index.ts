@@ -1,9 +1,4 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- * SPDX-License-Identifier: MPL-2.0
- */
-
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,23 +10,23 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   /**
   * Enable manual container attachment to the network.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#attachable Network#attachable}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#attachable Network#attachable}
   */
   readonly attachable?: boolean | cdktf.IResolvable;
   /**
   * Requests daemon to check for networks with same name.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#check_duplicate Network#check_duplicate}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#check_duplicate Network#check_duplicate}
   */
   readonly checkDuplicate?: boolean | cdktf.IResolvable;
   /**
   * The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#driver Network#driver}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#driver Network#driver}
   */
   readonly driver?: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#id Network#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#id Network#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -40,55 +35,55 @@ export interface NetworkConfig extends cdktf.TerraformMetaArguments {
   /**
   * Create swarm routing-mesh network. Defaults to `false`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ingress Network#ingress}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ingress Network#ingress}
   */
   readonly ingress?: boolean | cdktf.IResolvable;
   /**
   * Whether the network is internal.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#internal Network#internal}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#internal Network#internal}
   */
   readonly internal?: boolean | cdktf.IResolvable;
   /**
   * Driver used by the custom IP scheme of the network. Defaults to `default`
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ipam_driver Network#ipam_driver}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_driver Network#ipam_driver}
   */
   readonly ipamDriver?: string;
   /**
   * Provide explicit options to the IPAM driver. Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ipam_options Network#ipam_options}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_options Network#ipam_options}
   */
   readonly ipamOptions?: { [key: string]: string };
   /**
   * Enable IPv6 networking. Defaults to `false`.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ipv6 Network#ipv6}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipv6 Network#ipv6}
   */
   readonly ipv6?: boolean | cdktf.IResolvable;
   /**
   * The name of the Docker network.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#name Network#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#name Network#name}
   */
   readonly name: string;
   /**
   * Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#options Network#options}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#options Network#options}
   */
   readonly options?: { [key: string]: string };
   /**
   * ipam_config block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ipam_config Network#ipam_config}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_config Network#ipam_config}
   */
   readonly ipamConfig?: NetworkIpamConfig[] | cdktf.IResolvable;
   /**
   * labels block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#labels Network#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#labels Network#labels}
   */
   readonly labels?: NetworkLabels[] | cdktf.IResolvable;
 }
@@ -96,25 +91,25 @@ export interface NetworkIpamConfig {
   /**
   * Auxiliary IPv4 or IPv6 addresses used by Network driver
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#aux_address Network#aux_address}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#aux_address Network#aux_address}
   */
   readonly auxAddress?: { [key: string]: string };
   /**
   * The IP address of the gateway
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#gateway Network#gateway}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#gateway Network#gateway}
   */
   readonly gateway?: string;
   /**
   * The ip range in CIDR form
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#ip_range Network#ip_range}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ip_range Network#ip_range}
   */
   readonly ipRange?: string;
   /**
   * The subnet in CIDR form
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#subnet Network#subnet}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#subnet Network#subnet}
   */
   readonly subnet?: string;
 }
@@ -319,13 +314,13 @@ export interface NetworkLabels {
   /**
   * Name of the label
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#label Network#label}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#label Network#label}
   */
   readonly label: string;
   /**
   * Value of the label
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#value Network#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#value Network#value}
   */
   readonly value: string;
 }
@@ -464,7 +459,7 @@ export class NetworkLabelsList extends cdktf.ComplexList {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network docker_network}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network docker_network}
 */
 export class Network extends cdktf.TerraformResource {
 
@@ -480,7 +475,7 @@ export class Network extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Network resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Network to import
-  * @param importFromId The id of the existing Network that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Network that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Network to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -492,7 +487,7 @@ export class Network extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.3.0/docs/resources/network docker_network} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network docker_network} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -503,7 +498,7 @@ export class Network extends cdktf.TerraformResource {
       terraformResourceType: 'docker_network',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.3.0',
+        providerVersion: '3.4.0',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
