@@ -11,6 +11,7 @@ The following submodules are available:
 - [dataDockerNetwork](./dataDockerNetwork.java.md)
 - [dataDockerPlugin](./dataDockerPlugin.java.md)
 - [dataDockerRegistryImage](./dataDockerRegistryImage.java.md)
+- [dataDockerRegistryImageManifests](./dataDockerRegistryImageManifests.java.md)
 - [image](./image.java.md)
 - [network](./network.java.md)
 - [plugin](./plugin.java.md)

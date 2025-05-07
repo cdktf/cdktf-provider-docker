@@ -4,7 +4,7 @@
 
 ### Service <a name="Service" id="@cdktf/provider-docker.service.Service"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service docker_service}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service docker_service}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.service.Service.Initializer"></a>
 
@@ -53,7 +53,7 @@ Service.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.auth">auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.convergeConfig">convergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.endpointSpec">endpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
-| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#id Service#id}. |
+| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#id Service#id}. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.mode">mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.rollbackConfig">rollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
@@ -127,7 +127,7 @@ Must be unique amongst siblings in the same scope
 
 Name of the service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#name Service#name}
 
 ---
 
@@ -137,7 +137,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 task_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#task_spec Service#task_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#task_spec Service#task_spec}
 
 ---
 
@@ -147,7 +147,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 auth block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#auth Service#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#auth Service#auth}
 
 ---
 
@@ -157,7 +157,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 converge_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#converge_config Service#converge_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#converge_config Service#converge_config}
 
 ---
 
@@ -167,7 +167,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 endpoint_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#endpoint_spec Service#endpoint_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#endpoint_spec Service#endpoint_spec}
 
 ---
 
@@ -175,7 +175,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#id Service#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#id Service#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -188,7 +188,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -198,7 +198,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 mode block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -208,7 +208,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 rollback_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#rollback_config Service#rollback_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#rollback_config Service#rollback_config}
 
 ---
 
@@ -218,7 +218,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 update_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#update_config Service#update_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#update_config Service#update_config}
 
 ---
 
@@ -805,7 +805,7 @@ The construct id used in the generated config for the Service to import.
 
 The id of the existing Service that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1254,7 +1254,7 @@ public java.lang.String getServerAddress();
 
 The address of the server for the authentication.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#server_address Service#server_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#server_address Service#server_address}
 
 ---
 
@@ -1268,7 +1268,7 @@ public java.lang.String getPassword();
 
 The password.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#password Service#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#password Service#password}
 
 ---
 
@@ -1282,7 +1282,7 @@ public java.lang.String getUsername();
 
 The username.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#username Service#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#username Service#username}
 
 ---
 
@@ -1335,7 +1335,7 @@ ServiceConfig.builder()
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.auth">auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.convergeConfig">convergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.endpointSpec">endpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#id Service#id}. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#id Service#id}. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.mode">mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.rollbackConfig">rollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
@@ -1423,7 +1423,7 @@ public java.lang.String getName();
 
 Name of the service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#name Service#name}
 
 ---
 
@@ -1437,7 +1437,7 @@ public ServiceTaskSpec getTaskSpec();
 
 task_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#task_spec Service#task_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#task_spec Service#task_spec}
 
 ---
 
@@ -1451,7 +1451,7 @@ public ServiceAuth getAuth();
 
 auth block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#auth Service#auth}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#auth Service#auth}
 
 ---
 
@@ -1465,7 +1465,7 @@ public ServiceConvergeConfig getConvergeConfig();
 
 converge_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#converge_config Service#converge_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#converge_config Service#converge_config}
 
 ---
 
@@ -1479,7 +1479,7 @@ public ServiceEndpointSpec getEndpointSpec();
 
 endpoint_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#endpoint_spec Service#endpoint_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#endpoint_spec Service#endpoint_spec}
 
 ---
 
@@ -1491,7 +1491,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#id Service#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#id Service#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1508,7 +1508,7 @@ public java.lang.Object getLabels();
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -1522,7 +1522,7 @@ public ServiceMode getMode();
 
 mode block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -1536,7 +1536,7 @@ public ServiceRollbackConfig getRollbackConfig();
 
 rollback_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#rollback_config Service#rollback_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#rollback_config Service#rollback_config}
 
 ---
 
@@ -1550,7 +1550,7 @@ public ServiceUpdateConfig getUpdateConfig();
 
 update_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#update_config Service#update_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#update_config Service#update_config}
 
 ---
 
@@ -1586,7 +1586,7 @@ public java.lang.String getDelay();
 
 The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -1600,7 +1600,7 @@ public java.lang.String getTimeout();
 
 The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#timeout Service#timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#timeout Service#timeout}
 
 ---
 
@@ -1637,7 +1637,7 @@ public java.lang.String getMode();
 
 The mode of resolution to use for internal load balancing between tasks.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -1651,7 +1651,7 @@ public java.lang.Object getPorts();
 
 ports block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#ports Service#ports}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#ports Service#ports}
 
 ---
 
@@ -1693,7 +1693,7 @@ public java.lang.Number getTargetPort();
 
 The port inside the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#target_port Service#target_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#target_port Service#target_port}
 
 ---
 
@@ -1707,7 +1707,7 @@ public java.lang.String getName();
 
 A random name for the port.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#name Service#name}
 
 ---
 
@@ -1721,7 +1721,7 @@ public java.lang.String getProtocol();
 
 Rrepresents the protocol of a port: `tcp`, `udp` or `sctp`. Defaults to `tcp`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#protocol Service#protocol}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#protocol Service#protocol}
 
 ---
 
@@ -1735,7 +1735,7 @@ public java.lang.Number getPublishedPort();
 
 The port on the swarm hosts.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#published_port Service#published_port}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#published_port Service#published_port}
 
 ---
 
@@ -1749,7 +1749,7 @@ public java.lang.String getPublishMode();
 
 Represents the mode in which the port is to be published: 'ingress' or 'host'. Defaults to `ingress`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#publish_mode Service#publish_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#publish_mode Service#publish_mode}
 
 ---
 
@@ -1785,7 +1785,7 @@ public java.lang.String getLabel();
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#label Service#label}
 
 ---
 
@@ -1799,7 +1799,7 @@ public java.lang.String getValue();
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#value Service#value}
 
 ---
 
@@ -1836,7 +1836,7 @@ public java.lang.Object getGlobal();
 
 The global service mode. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#global Service#global}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#global Service#global}
 
 ---
 
@@ -1850,7 +1850,7 @@ public ServiceModeReplicated getReplicated();
 
 replicated block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#replicated Service#replicated}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#replicated Service#replicated}
 
 ---
 
@@ -1884,7 +1884,7 @@ public java.lang.Number getReplicas();
 
 The amount of replicas of the service. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#replicas Service#replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#replicas Service#replicas}
 
 ---
 
@@ -1928,7 +1928,7 @@ public java.lang.String getDelay();
 
 Delay between task rollbacks (ns|us|ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -1942,7 +1942,7 @@ public java.lang.String getFailureAction();
 
 Action on rollback failure: pause | continue. Defaults to `pause`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#failure_action Service#failure_action}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#failure_action Service#failure_action}
 
 ---
 
@@ -1956,7 +1956,7 @@ public java.lang.String getMaxFailureRatio();
 
 Failure rate to tolerate during a rollback. Defaults to `0.0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
 
 ---
 
@@ -1970,7 +1970,7 @@ public java.lang.String getMonitor();
 
 Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#monitor Service#monitor}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#monitor Service#monitor}
 
 ---
 
@@ -1984,7 +1984,7 @@ public java.lang.String getOrder();
 
 Rollback order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#order Service#order}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#order Service#order}
 
 ---
 
@@ -1998,7 +1998,7 @@ public java.lang.Number getParallelism();
 
 Maximum number of tasks to be rollbacked in one iteration. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#parallelism Service#parallelism}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#parallelism Service#parallelism}
 
 ---
 
@@ -2047,7 +2047,7 @@ public ServiceTaskSpecContainerSpec getContainerSpec();
 
 container_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#container_spec Service#container_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#container_spec Service#container_spec}
 
 ---
 
@@ -2061,7 +2061,7 @@ public java.lang.Number getForceUpdate();
 
 A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#force_update Service#force_update}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#force_update Service#force_update}
 
 ---
 
@@ -2075,7 +2075,7 @@ public ServiceTaskSpecLogDriver getLogDriver();
 
 log_driver block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#log_driver Service#log_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#log_driver Service#log_driver}
 
 ---
 
@@ -2089,7 +2089,7 @@ public java.lang.Object getNetworksAdvanced();
 
 networks_advanced block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#networks_advanced Service#networks_advanced}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#networks_advanced Service#networks_advanced}
 
 ---
 
@@ -2103,7 +2103,7 @@ public ServiceTaskSpecPlacement getPlacement();
 
 placement block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#placement Service#placement}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#placement Service#placement}
 
 ---
 
@@ -2117,7 +2117,7 @@ public ServiceTaskSpecResources getResources();
 
 resources block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#resources Service#resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#resources Service#resources}
 
 ---
 
@@ -2131,7 +2131,7 @@ public ServiceTaskSpecRestartPolicy getRestartPolicy();
 
 restart_policy block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#restart_policy Service#restart_policy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#restart_policy Service#restart_policy}
 
 ---
 
@@ -2145,7 +2145,7 @@ public java.lang.String getRuntime();
 
 Runtime is the type of runtime specified for the task executor. See the [types](https://github.com/moby/moby/blob/master/api/types/swarm/runtime.go).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#runtime Service#runtime}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#runtime Service#runtime}
 
 ---
 
@@ -2225,7 +2225,7 @@ public java.lang.String getImage();
 
 The image name to use for the containers of the service, like `nginx:1.17.6`. Also use the data-source or resource of `docker_image` with the `repo_digest` or `docker_registry_image` with the `name` attribute for this, as shown in the examples.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#image Service#image}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#image Service#image}
 
 ---
 
@@ -2239,7 +2239,7 @@ public java.util.List<java.lang.String> getArgs();
 
 Arguments to the command.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#args Service#args}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#args Service#args}
 
 ---
 
@@ -2255,7 +2255,7 @@ The command/entrypoint to be run in the image.
 
 According to the [docker cli](https://github.com/docker/cli/blob/v20.10.7/cli/command/service/opts.go#L705) the override of the entrypoint is also passed to the `command` property and there is no `entrypoint` attribute in the `ContainerSpec` of the service.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#command Service#command}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#command Service#command}
 
 ---
 
@@ -2269,7 +2269,7 @@ public java.lang.Object getConfigs();
 
 configs block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#configs Service#configs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#configs Service#configs}
 
 ---
 
@@ -2283,7 +2283,7 @@ public java.lang.String getDir();
 
 The working directory for commands to run in.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#dir Service#dir}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#dir Service#dir}
 
 ---
 
@@ -2297,7 +2297,7 @@ public ServiceTaskSpecContainerSpecDnsConfig getDnsConfig();
 
 dns_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#dns_config Service#dns_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#dns_config Service#dns_config}
 
 ---
 
@@ -2311,7 +2311,7 @@ public java.util.Map<java.lang.String, java.lang.String> getEnv();
 
 A list of environment variables in the form VAR="value".
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#env Service#env}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#env Service#env}
 
 ---
 
@@ -2325,7 +2325,7 @@ public java.util.List<java.lang.String> getGroups();
 
 A list of additional groups that the container process will run as.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#groups Service#groups}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#groups Service#groups}
 
 ---
 
@@ -2339,7 +2339,7 @@ public ServiceTaskSpecContainerSpecHealthcheck getHealthcheck();
 
 healthcheck block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#healthcheck Service#healthcheck}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#healthcheck Service#healthcheck}
 
 ---
 
@@ -2353,7 +2353,7 @@ public java.lang.String getHostname();
 
 The hostname to use for the container, as a valid RFC 1123 hostname.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#hostname Service#hostname}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#hostname Service#hostname}
 
 ---
 
@@ -2367,7 +2367,7 @@ public java.lang.Object getHosts();
 
 hosts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#hosts Service#hosts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#hosts Service#hosts}
 
 ---
 
@@ -2381,7 +2381,7 @@ public java.lang.String getIsolation();
 
 Isolation technology of the containers running the service. (Windows only). Defaults to `default`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#isolation Service#isolation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#isolation Service#isolation}
 
 ---
 
@@ -2395,7 +2395,7 @@ public java.lang.Object getLabels();
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -2409,7 +2409,7 @@ public java.lang.Object getMounts();
 
 mounts block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#mounts Service#mounts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#mounts Service#mounts}
 
 ---
 
@@ -2423,7 +2423,7 @@ public ServiceTaskSpecContainerSpecPrivileges getPrivileges();
 
 privileges block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#privileges Service#privileges}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#privileges Service#privileges}
 
 ---
 
@@ -2437,7 +2437,7 @@ public java.lang.Object getReadOnly();
 
 Mount the container's root filesystem as read only.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#read_only Service#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#read_only Service#read_only}
 
 ---
 
@@ -2451,7 +2451,7 @@ public java.lang.Object getSecrets();
 
 secrets block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#secrets Service#secrets}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#secrets Service#secrets}
 
 ---
 
@@ -2467,7 +2467,7 @@ Amount of time to wait for the container to terminate before forcefully removing
 
 If not specified or '0s' the destroy will not check if all tasks/containers of the service terminate.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#stop_grace_period Service#stop_grace_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#stop_grace_period Service#stop_grace_period}
 
 ---
 
@@ -2481,7 +2481,7 @@ public java.lang.String getStopSignal();
 
 Signal to stop the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#stop_signal Service#stop_signal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#stop_signal Service#stop_signal}
 
 ---
 
@@ -2495,7 +2495,7 @@ public java.util.Map<java.lang.String, java.lang.String> getSysctl();
 
 Sysctls config (Linux only).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#sysctl Service#sysctl}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#sysctl Service#sysctl}
 
 ---
 
@@ -2509,7 +2509,7 @@ public java.lang.String getUser();
 
 The user inside the container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#user Service#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#user Service#user}
 
 ---
 
@@ -2553,7 +2553,7 @@ public java.lang.String getConfigId();
 
 ID of the specific config that we're referencing.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#config_id Service#config_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#config_id Service#config_id}
 
 ---
 
@@ -2567,7 +2567,7 @@ public java.lang.String getFileName();
 
 Represents the final filename in the filesystem.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_name Service#file_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_name Service#file_name}
 
 ---
 
@@ -2583,7 +2583,7 @@ Name of the config that this references, but this is just provided for lookup/di
 
 The config in the reference will be identified by its ID
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#config_name Service#config_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#config_name Service#config_name}
 
 ---
 
@@ -2597,7 +2597,7 @@ public java.lang.String getFileGid();
 
 Represents the file GID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_gid Service#file_gid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_gid Service#file_gid}
 
 ---
 
@@ -2611,7 +2611,7 @@ public java.lang.Number getFileMode();
 
 Represents represents the FileMode of the file. Defaults to `0o444`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_mode Service#file_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_mode Service#file_mode}
 
 ---
 
@@ -2625,7 +2625,7 @@ public java.lang.String getFileUid();
 
 Represents the file UID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_uid Service#file_uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_uid Service#file_uid}
 
 ---
 
@@ -2663,7 +2663,7 @@ public java.util.List<java.lang.String> getNameservers();
 
 The IP addresses of the name servers.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#nameservers Service#nameservers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#nameservers Service#nameservers}
 
 ---
 
@@ -2677,7 +2677,7 @@ public java.util.List<java.lang.String> getOptions();
 
 A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#options Service#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#options Service#options}
 
 ---
 
@@ -2691,7 +2691,7 @@ public java.util.List<java.lang.String> getSearch();
 
 A search list for host-name lookup.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#search Service#search}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#search Service#search}
 
 ---
 
@@ -2733,7 +2733,7 @@ public java.util.List<java.lang.String> getTest();
 
 The test to perform as list.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#test Service#test}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#test Service#test}
 
 ---
 
@@ -2747,7 +2747,7 @@ public java.lang.String getInterval();
 
 Time between running the check (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#interval Service#interval}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#interval Service#interval}
 
 ---
 
@@ -2761,7 +2761,7 @@ public java.lang.Number getRetries();
 
 Consecutive failures needed to report unhealthy. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#retries Service#retries}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#retries Service#retries}
 
 ---
 
@@ -2775,7 +2775,7 @@ public java.lang.String getStartPeriod();
 
 Start period for the container to initialize before counting retries towards unstable (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#start_period Service#start_period}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#start_period Service#start_period}
 
 ---
 
@@ -2789,7 +2789,7 @@ public java.lang.String getTimeout();
 
 Maximum time to allow one check to run (ms|s|m|h). Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#timeout Service#timeout}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#timeout Service#timeout}
 
 ---
 
@@ -2825,7 +2825,7 @@ public java.lang.String getHost();
 
 The name of the host.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#host Service#host}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#host Service#host}
 
 ---
 
@@ -2839,7 +2839,7 @@ public java.lang.String getIp();
 
 The ip of the host.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#ip Service#ip}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#ip Service#ip}
 
 ---
 
@@ -2875,7 +2875,7 @@ public java.lang.String getLabel();
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#label Service#label}
 
 ---
 
@@ -2889,7 +2889,7 @@ public java.lang.String getValue();
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#value Service#value}
 
 ---
 
@@ -2936,7 +2936,7 @@ public java.lang.String getTarget();
 
 Container path.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#target Service#target}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#target Service#target}
 
 ---
 
@@ -2950,7 +2950,7 @@ public java.lang.String getType();
 
 The mount type.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#type Service#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#type Service#type}
 
 ---
 
@@ -2964,7 +2964,7 @@ public ServiceTaskSpecContainerSpecMountsBindOptions getBindOptions();
 
 bind_options block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#bind_options Service#bind_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#bind_options Service#bind_options}
 
 ---
 
@@ -2978,7 +2978,7 @@ public java.lang.Object getReadOnly();
 
 Whether the mount should be read-only.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#read_only Service#read_only}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#read_only Service#read_only}
 
 ---
 
@@ -2992,7 +2992,7 @@ public java.lang.String getSource();
 
 Mount source (e.g. a volume name, a host path).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#source Service#source}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#source Service#source}
 
 ---
 
@@ -3006,7 +3006,7 @@ public ServiceTaskSpecContainerSpecMountsTmpfsOptions getTmpfsOptions();
 
 tmpfs_options block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#tmpfs_options Service#tmpfs_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#tmpfs_options Service#tmpfs_options}
 
 ---
 
@@ -3020,7 +3020,7 @@ public ServiceTaskSpecContainerSpecMountsVolumeOptions getVolumeOptions();
 
 volume_options block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#volume_options Service#volume_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#volume_options Service#volume_options}
 
 ---
 
@@ -3056,7 +3056,7 @@ Bind propagation refers to whether or not mounts created within a given bind-mou
 
 See the [docs](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation) for details. Defaults to `rprivate`
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#propagation Service#propagation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#propagation Service#propagation}
 
 ---
 
@@ -3092,7 +3092,7 @@ public java.lang.Number getMode();
 
 The permission mode for the tmpfs mount in an integer.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#mode Service#mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#mode Service#mode}
 
 ---
 
@@ -3106,7 +3106,7 @@ public java.lang.Number getSizeBytes();
 
 The size for the tmpfs mount in bytes.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#size_bytes Service#size_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#size_bytes Service#size_bytes}
 
 ---
 
@@ -3148,7 +3148,7 @@ public java.lang.String getDriverName();
 
 Name of the driver to use to create the volume.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#driver_name Service#driver_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#driver_name Service#driver_name}
 
 ---
 
@@ -3162,7 +3162,7 @@ public java.util.Map<java.lang.String, java.lang.String> getDriverOptions();
 
 key/value map of driver specific options.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#driver_options Service#driver_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#driver_options Service#driver_options}
 
 ---
 
@@ -3176,7 +3176,7 @@ public java.lang.Object getLabels();
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#labels Service#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#labels Service#labels}
 
 ---
 
@@ -3190,7 +3190,7 @@ public java.lang.Object getNoCopy();
 
 Populate volume with data from the target.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#no_copy Service#no_copy}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#no_copy Service#no_copy}
 
 ---
 
@@ -3226,7 +3226,7 @@ public java.lang.String getLabel();
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#label Service#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#label Service#label}
 
 ---
 
@@ -3240,7 +3240,7 @@ public java.lang.String getValue();
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#value Service#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#value Service#value}
 
 ---
 
@@ -3276,7 +3276,7 @@ public ServiceTaskSpecContainerSpecPrivilegesCredentialSpec getCredentialSpec();
 
 credential_spec block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#credential_spec Service#credential_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#credential_spec Service#credential_spec}
 
 ---
 
@@ -3290,7 +3290,7 @@ public ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext getSeLinuxContext();
 
 se_linux_context block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#se_linux_context Service#se_linux_context}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#se_linux_context Service#se_linux_context}
 
 ---
 
@@ -3326,7 +3326,7 @@ public java.lang.String getFile();
 
 Load credential spec from this file.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file Service#file}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file Service#file}
 
 ---
 
@@ -3340,7 +3340,7 @@ public java.lang.String getRegistry();
 
 Load credential spec from this value in the Windows registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#registry Service#registry}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#registry Service#registry}
 
 ---
 
@@ -3383,7 +3383,7 @@ public java.lang.Object getDisable();
 
 Disable SELinux.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#disable Service#disable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#disable Service#disable}
 
 ---
 
@@ -3397,7 +3397,7 @@ public java.lang.String getLevel();
 
 SELinux level label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#level Service#level}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#level Service#level}
 
 ---
 
@@ -3411,7 +3411,7 @@ public java.lang.String getRole();
 
 SELinux role label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#role Service#role}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#role Service#role}
 
 ---
 
@@ -3425,7 +3425,7 @@ public java.lang.String getType();
 
 SELinux type label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#type Service#type}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#type Service#type}
 
 ---
 
@@ -3439,7 +3439,7 @@ public java.lang.String getUser();
 
 SELinux user label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#user Service#user}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#user Service#user}
 
 ---
 
@@ -3483,7 +3483,7 @@ public java.lang.String getFileName();
 
 Represents the final filename in the filesystem.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_name Service#file_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_name Service#file_name}
 
 ---
 
@@ -3497,7 +3497,7 @@ public java.lang.String getSecretId();
 
 ID of the specific secret that we're referencing.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#secret_id Service#secret_id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#secret_id Service#secret_id}
 
 ---
 
@@ -3511,7 +3511,7 @@ public java.lang.String getFileGid();
 
 Represents the file GID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_gid Service#file_gid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_gid Service#file_gid}
 
 ---
 
@@ -3525,7 +3525,7 @@ public java.lang.Number getFileMode();
 
 Represents represents the FileMode of the file. Defaults to `0o444`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_mode Service#file_mode}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_mode Service#file_mode}
 
 ---
 
@@ -3539,7 +3539,7 @@ public java.lang.String getFileUid();
 
 Represents the file UID. Defaults to `0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#file_uid Service#file_uid}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#file_uid Service#file_uid}
 
 ---
 
@@ -3555,7 +3555,7 @@ Name of the secret that this references, but this is just provided for lookup/di
 
 The config in the reference will be identified by its ID
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#secret_name Service#secret_name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#secret_name Service#secret_name}
 
 ---
 
@@ -3591,7 +3591,7 @@ public java.lang.String getName();
 
 The logging driver to use.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#name Service#name}
 
 ---
 
@@ -3605,7 +3605,7 @@ public java.util.Map<java.lang.String, java.lang.String> getOptions();
 
 The options for the logging driver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#options Service#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#options Service#options}
 
 ---
 
@@ -3643,7 +3643,7 @@ public java.lang.String getName();
 
 The name/id of the network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#name Service#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#name Service#name}
 
 ---
 
@@ -3657,7 +3657,7 @@ public java.util.List<java.lang.String> getAliases();
 
 The network aliases of the container in the specific network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#aliases Service#aliases}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#aliases Service#aliases}
 
 ---
 
@@ -3671,7 +3671,7 @@ public java.util.List<java.lang.String> getDriverOpts();
 
 An array of driver options for the network, e.g. `opts1=value`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#driver_opts Service#driver_opts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#driver_opts Service#driver_opts}
 
 ---
 
@@ -3712,7 +3712,7 @@ public java.util.List<java.lang.String> getConstraints();
 
 An array of constraints. e.g.: `node.role==manager`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#constraints Service#constraints}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#constraints Service#constraints}
 
 ---
 
@@ -3726,7 +3726,7 @@ public java.lang.Number getMaxReplicas();
 
 Maximum number of replicas for per node (default value is `0`, which is unlimited).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#max_replicas Service#max_replicas}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#max_replicas Service#max_replicas}
 
 ---
 
@@ -3740,7 +3740,7 @@ public java.lang.Object getPlatforms();
 
 platforms block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#platforms Service#platforms}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#platforms Service#platforms}
 
 ---
 
@@ -3756,7 +3756,7 @@ Preferences provide a way to make the scheduler aware of factors such as topolog
 
 They are provided in order from highest to lowest precedence, e.g.: `spread=node.role.manager`
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#prefs Service#prefs}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#prefs Service#prefs}
 
 ---
 
@@ -3792,7 +3792,7 @@ public java.lang.String getArchitecture();
 
 The architecture, e.g. `amd64`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#architecture Service#architecture}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#architecture Service#architecture}
 
 ---
 
@@ -3806,7 +3806,7 @@ public java.lang.String getOs();
 
 The operation system, e.g. `linux`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#os Service#os}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#os Service#os}
 
 ---
 
@@ -3842,7 +3842,7 @@ public ServiceTaskSpecResourcesLimits getLimits();
 
 limits block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#limits Service#limits}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#limits Service#limits}
 
 ---
 
@@ -3856,7 +3856,7 @@ public ServiceTaskSpecResourcesReservation getReservation();
 
 reservation block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#reservation Service#reservation}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#reservation Service#reservation}
 
 ---
 
@@ -3892,7 +3892,7 @@ public java.lang.Number getMemoryBytes();
 
 The amounf of memory in bytes the container allocates.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#memory_bytes Service#memory_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#memory_bytes Service#memory_bytes}
 
 ---
 
@@ -3906,7 +3906,7 @@ public java.lang.Number getNanoCpus();
 
 CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#nano_cpus Service#nano_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#nano_cpus Service#nano_cpus}
 
 ---
 
@@ -3944,7 +3944,7 @@ public ServiceTaskSpecResourcesReservationGenericResources getGenericResources()
 
 generic_resources block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#generic_resources Service#generic_resources}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#generic_resources Service#generic_resources}
 
 ---
 
@@ -3958,7 +3958,7 @@ public java.lang.Number getMemoryBytes();
 
 The amounf of memory in bytes the container allocates.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#memory_bytes Service#memory_bytes}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#memory_bytes Service#memory_bytes}
 
 ---
 
@@ -3972,7 +3972,7 @@ public java.lang.Number getNanoCpus();
 
 CPU shares in units of 1/1e9 (or 10^-9) of the CPU. Should be at least `1000000`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#nano_cpus Service#nano_cpus}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#nano_cpus Service#nano_cpus}
 
 ---
 
@@ -4008,7 +4008,7 @@ public java.util.List<java.lang.String> getDiscreteResourcesSpec();
 
 The Integer resources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#discrete_resources_spec Service#discrete_resources_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#discrete_resources_spec Service#discrete_resources_spec}
 
 ---
 
@@ -4022,7 +4022,7 @@ public java.util.List<java.lang.String> getNamedResourcesSpec();
 
 The String resources.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#named_resources_spec Service#named_resources_spec}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#named_resources_spec Service#named_resources_spec}
 
 ---
 
@@ -4062,7 +4062,7 @@ public java.lang.String getCondition();
 
 Condition for restart.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#condition Service#condition}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#condition Service#condition}
 
 ---
 
@@ -4076,7 +4076,7 @@ public java.lang.String getDelay();
 
 Delay between restart attempts (ms|s|m|h).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -4090,7 +4090,7 @@ public java.lang.Number getMaxAttempts();
 
 Maximum attempts to restart a given container before giving up (default value is `0`, which is ignored).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#max_attempts Service#max_attempts}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#max_attempts Service#max_attempts}
 
 ---
 
@@ -4104,7 +4104,7 @@ public java.lang.String getWindow();
 
 The time window used to evaluate the restart policy (default value is `0`, which is unbounded) (ms|s|m|h).
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#window Service#window}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#window Service#window}
 
 ---
 
@@ -4148,7 +4148,7 @@ public java.lang.String getDelay();
 
 Delay between task updates `(ns|us|ms|s|m|h)`. Defaults to `0s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#delay Service#delay}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#delay Service#delay}
 
 ---
 
@@ -4162,7 +4162,7 @@ public java.lang.String getFailureAction();
 
 Action on update failure: `pause`, `continue` or `rollback`. Defaults to `pause`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#failure_action Service#failure_action}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#failure_action Service#failure_action}
 
 ---
 
@@ -4176,7 +4176,7 @@ public java.lang.String getMaxFailureRatio();
 
 Failure rate to tolerate during an update. Defaults to `0.0`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#max_failure_ratio Service#max_failure_ratio}
 
 ---
 
@@ -4190,7 +4190,7 @@ public java.lang.String getMonitor();
 
 Duration after each task update to monitor for failure (ns|us|ms|s|m|h). Defaults to `5s`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#monitor Service#monitor}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#monitor Service#monitor}
 
 ---
 
@@ -4204,7 +4204,7 @@ public java.lang.String getOrder();
 
 Update order: either 'stop-first' or 'start-first'. Defaults to `stop-first`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#order Service#order}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#order Service#order}
 
 ---
 
@@ -4218,7 +4218,7 @@ public java.lang.Number getParallelism();
 
 Maximum number of tasks to be updated in one iteration. Defaults to `1`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/service#parallelism Service#parallelism}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/service#parallelism Service#parallelism}
 
 ---
 

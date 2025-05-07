@@ -4,7 +4,7 @@
 
 ### Network <a name="Network" id="@cdktf/provider-docker.network.Network"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network docker_network}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network docker_network}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.network.Network.Initializer"></a>
 
@@ -61,7 +61,7 @@ Network.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.attachable">attachable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.driver">driver</a></code> | <code>java.lang.String</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#id Network#id}. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#id Network#id}. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ingress">ingress</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.internal">internal</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
@@ -139,7 +139,7 @@ Must be unique amongst siblings in the same scope
 
 The name of the Docker network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#name Network#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#name Network#name}
 
 ---
 
@@ -149,7 +149,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Enable manual container attachment to the network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#attachable Network#attachable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#attachable Network#attachable}
 
 ---
 
@@ -159,7 +159,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Requests daemon to check for networks with same name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#check_duplicate Network#check_duplicate}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#check_duplicate Network#check_duplicate}
 
 ---
 
@@ -169,7 +169,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#driver Network#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#driver Network#driver}
 
 ---
 
@@ -177,7 +177,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#id Network#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#id Network#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -190,7 +190,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 Create swarm routing-mesh network. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ingress Network#ingress}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ingress Network#ingress}
 
 ---
 
@@ -200,7 +200,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Whether the network is internal.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#internal Network#internal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#internal Network#internal}
 
 ---
 
@@ -210,7 +210,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ipam_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_config Network#ipam_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_config Network#ipam_config}
 
 ---
 
@@ -220,7 +220,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Driver used by the custom IP scheme of the network. Defaults to `default`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_driver Network#ipam_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_driver Network#ipam_driver}
 
 ---
 
@@ -232,7 +232,7 @@ Provide explicit options to the IPAM driver.
 
 Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_options Network#ipam_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_options Network#ipam_options}
 
 ---
 
@@ -242,7 +242,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Enable IPv6 networking. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipv6 Network#ipv6}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipv6 Network#ipv6}
 
 ---
 
@@ -252,7 +252,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#labels Network#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#labels Network#labels}
 
 ---
 
@@ -262,7 +262,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#options Network#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#options Network#options}
 
 ---
 
@@ -799,7 +799,7 @@ The construct id used in the generated config for the Network to import.
 
 The id of the existing Network that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -1348,7 +1348,7 @@ NetworkConfig.builder()
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">attachable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.driver">driver</a></code> | <code>java.lang.String</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#id Network#id}. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#id Network#id}. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">ingress</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">internal</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
@@ -1440,7 +1440,7 @@ public java.lang.String getName();
 
 The name of the Docker network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#name Network#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#name Network#name}
 
 ---
 
@@ -1454,7 +1454,7 @@ public java.lang.Object getAttachable();
 
 Enable manual container attachment to the network.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#attachable Network#attachable}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#attachable Network#attachable}
 
 ---
 
@@ -1468,7 +1468,7 @@ public java.lang.Object getCheckDuplicate();
 
 Requests daemon to check for networks with same name.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#check_duplicate Network#check_duplicate}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#check_duplicate Network#check_duplicate}
 
 ---
 
@@ -1482,7 +1482,7 @@ public java.lang.String getDriver();
 
 The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#driver Network#driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#driver Network#driver}
 
 ---
 
@@ -1494,7 +1494,7 @@ public java.lang.String getId();
 
 - *Type:* java.lang.String
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#id Network#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#id Network#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1511,7 +1511,7 @@ public java.lang.Object getIngress();
 
 Create swarm routing-mesh network. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ingress Network#ingress}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ingress Network#ingress}
 
 ---
 
@@ -1525,7 +1525,7 @@ public java.lang.Object getInternal();
 
 Whether the network is internal.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#internal Network#internal}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#internal Network#internal}
 
 ---
 
@@ -1539,7 +1539,7 @@ public java.lang.Object getIpamConfig();
 
 ipam_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_config Network#ipam_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_config Network#ipam_config}
 
 ---
 
@@ -1553,7 +1553,7 @@ public java.lang.String getIpamDriver();
 
 Driver used by the custom IP scheme of the network. Defaults to `default`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_driver Network#ipam_driver}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_driver Network#ipam_driver}
 
 ---
 
@@ -1569,7 +1569,7 @@ Provide explicit options to the IPAM driver.
 
 Valid options vary with `ipam_driver` and refer to that driver's documentation for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipam_options Network#ipam_options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipam_options Network#ipam_options}
 
 ---
 
@@ -1583,7 +1583,7 @@ public java.lang.Object getIpv6();
 
 Enable IPv6 networking. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ipv6 Network#ipv6}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ipv6 Network#ipv6}
 
 ---
 
@@ -1597,7 +1597,7 @@ public java.lang.Object getLabels();
 
 labels block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#labels Network#labels}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#labels Network#labels}
 
 ---
 
@@ -1611,7 +1611,7 @@ public java.util.Map<java.lang.String, java.lang.String> getOptions();
 
 Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#options Network#options}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#options Network#options}
 
 ---
 
@@ -1651,7 +1651,7 @@ public java.util.Map<java.lang.String, java.lang.String> getAuxAddress();
 
 Auxiliary IPv4 or IPv6 addresses used by Network driver.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#aux_address Network#aux_address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#aux_address Network#aux_address}
 
 ---
 
@@ -1665,7 +1665,7 @@ public java.lang.String getGateway();
 
 The IP address of the gateway.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#gateway Network#gateway}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#gateway Network#gateway}
 
 ---
 
@@ -1679,7 +1679,7 @@ public java.lang.String getIpRange();
 
 The ip range in CIDR form.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#ip_range Network#ip_range}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#ip_range Network#ip_range}
 
 ---
 
@@ -1693,7 +1693,7 @@ public java.lang.String getSubnet();
 
 The subnet in CIDR form.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#subnet Network#subnet}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#subnet Network#subnet}
 
 ---
 
@@ -1729,7 +1729,7 @@ public java.lang.String getLabel();
 
 Name of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#label Network#label}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#label Network#label}
 
 ---
 
@@ -1743,7 +1743,7 @@ public java.lang.String getValue();
 
 Value of the label.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/resources/network#value Network#value}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/network#value Network#value}
 
 ---
 

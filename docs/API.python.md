@@ -11,6 +11,7 @@ The following submodules are available:
 - [dataDockerNetwork](./dataDockerNetwork.python.md)
 - [dataDockerPlugin](./dataDockerPlugin.python.md)
 - [dataDockerRegistryImage](./dataDockerRegistryImage.python.md)
+- [dataDockerRegistryImageManifests](./dataDockerRegistryImageManifests.python.md)
 - [image](./image.python.md)
 - [network](./network.python.md)
 - [plugin](./plugin.python.md)

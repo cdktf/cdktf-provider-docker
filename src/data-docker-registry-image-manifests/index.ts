@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -11,9 +11,9 @@ import * as cdktf from 'cdktf';
 
 // Configuration
 
-export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
+export interface DataDockerRegistryImageManifestsConfig extends cdktf.TerraformMetaArguments {
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#id RegistryImage#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -22,56 +22,134 @@ export interface RegistryImageConfig extends cdktf.TerraformMetaArguments {
   /**
   * If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#insecure_skip_verify RegistryImage#insecure_skip_verify}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#insecure_skip_verify DataDockerRegistryImageManifests#insecure_skip_verify}
   */
   readonly insecureSkipVerify?: boolean | cdktf.IResolvable;
   /**
-  * If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker registry on destroy operation. Defaults to `false`
+  * The name of the Docker image, including any tags. e.g. `alpine:latest`
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#keep_remotely RegistryImage#keep_remotely}
-  */
-  readonly keepRemotely?: boolean | cdktf.IResolvable;
-  /**
-  * The name of the Docker image.
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#name RegistryImage#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#name DataDockerRegistryImageManifests#name}
   */
   readonly name: string;
   /**
-  * A map of arbitrary strings that, when changed, will force the `docker_registry_image` resource to be replaced. This can be used to repush a local image
-  *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#triggers RegistryImage#triggers}
-  */
-  readonly triggers?: { [key: string]: string };
-  /**
   * auth_config block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#auth_config RegistryImage#auth_config}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#auth_config DataDockerRegistryImageManifests#auth_config}
   */
-  readonly authConfig?: RegistryImageAuthConfig;
+  readonly authConfig?: DataDockerRegistryImageManifestsAuthConfig;
 }
-export interface RegistryImageAuthConfig {
+export interface DataDockerRegistryImageManifestsManifests {
+}
+
+export function dataDockerRegistryImageManifestsManifestsToTerraform(struct?: DataDockerRegistryImageManifestsManifests): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+
+export function dataDockerRegistryImageManifestsManifestsToHclTerraform(struct?: DataDockerRegistryImageManifestsManifests): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
+export class DataDockerRegistryImageManifestsManifestsOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataDockerRegistryImageManifestsManifests | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataDockerRegistryImageManifestsManifests | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // architecture - computed: true, optional: false, required: false
+  public get architecture() {
+    return this.getStringAttribute('architecture');
+  }
+
+  // media_type - computed: true, optional: false, required: false
+  public get mediaType() {
+    return this.getStringAttribute('media_type');
+  }
+
+  // os - computed: true, optional: false, required: false
+  public get os() {
+    return this.getStringAttribute('os');
+  }
+
+  // sha256_digest - computed: true, optional: false, required: false
+  public get sha256Digest() {
+    return this.getStringAttribute('sha256_digest');
+  }
+}
+
+export class DataDockerRegistryImageManifestsManifestsList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataDockerRegistryImageManifestsManifestsOutputReference {
+    return new DataDockerRegistryImageManifestsManifestsOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+export interface DataDockerRegistryImageManifestsAuthConfig {
   /**
   * The address of the Docker registry.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#address RegistryImage#address}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#address DataDockerRegistryImageManifests#address}
   */
   readonly address: string;
   /**
   * The password for the Docker registry.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#password RegistryImage#password}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#password DataDockerRegistryImageManifests#password}
   */
   readonly password: string;
   /**
   * The username for the Docker registry.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#username RegistryImage#username}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#username DataDockerRegistryImageManifests#username}
   */
   readonly username: string;
 }
 
-export function registryImageAuthConfigToTerraform(struct?: RegistryImageAuthConfigOutputReference | RegistryImageAuthConfig): any {
+export function dataDockerRegistryImageManifestsAuthConfigToTerraform(struct?: DataDockerRegistryImageManifestsAuthConfigOutputReference | DataDockerRegistryImageManifestsAuthConfig): any {
   if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -84,7 +162,7 @@ export function registryImageAuthConfigToTerraform(struct?: RegistryImageAuthCon
 }
 
 
-export function registryImageAuthConfigToHclTerraform(struct?: RegistryImageAuthConfigOutputReference | RegistryImageAuthConfig): any {
+export function dataDockerRegistryImageManifestsAuthConfigToHclTerraform(struct?: DataDockerRegistryImageManifestsAuthConfigOutputReference | DataDockerRegistryImageManifestsAuthConfig): any {
   if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
   if (cdktf.isComplexElement(struct)) {
     throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
@@ -114,7 +192,7 @@ export function registryImageAuthConfigToHclTerraform(struct?: RegistryImageAuth
   return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
-export class RegistryImageAuthConfigOutputReference extends cdktf.ComplexObject {
+export class DataDockerRegistryImageManifestsAuthConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
   /**
@@ -125,7 +203,7 @@ export class RegistryImageAuthConfigOutputReference extends cdktf.ComplexObject 
     super(terraformResource, terraformAttribute, false, 0);
   }
 
-  public get internalValue(): RegistryImageAuthConfig | undefined {
+  public get internalValue(): DataDockerRegistryImageManifestsAuthConfig | undefined {
     let hasAnyValues = this.isEmptyObject;
     const internalValueResult: any = {};
     if (this._address !== undefined) {
@@ -143,7 +221,7 @@ export class RegistryImageAuthConfigOutputReference extends cdktf.ComplexObject 
     return hasAnyValues ? internalValueResult : undefined;
   }
 
-  public set internalValue(value: RegistryImageAuthConfig | undefined) {
+  public set internalValue(value: DataDockerRegistryImageManifestsAuthConfig | undefined) {
     if (value === undefined) {
       this.isEmptyObject = false;
       this._address = undefined;
@@ -199,27 +277,27 @@ export class RegistryImageAuthConfigOutputReference extends cdktf.ComplexObject 
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image docker_registry_image}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests docker_registry_image_manifests}
 */
-export class RegistryImage extends cdktf.TerraformResource {
+export class DataDockerRegistryImageManifests extends cdktf.TerraformDataSource {
 
   // =================
   // STATIC PROPERTIES
   // =================
-  public static readonly tfResourceType = "docker_registry_image";
+  public static readonly tfResourceType = "docker_registry_image_manifests";
 
   // ==============
   // STATIC Methods
   // ==============
   /**
-  * Generates CDKTF code for importing a RegistryImage resource upon running "cdktf plan <stack-name>"
+  * Generates CDKTF code for importing a DataDockerRegistryImageManifests resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
-  * @param importToId The construct id used in the generated config for the RegistryImage to import
-  * @param importFromId The id of the existing RegistryImage that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image#import import section} in the documentation of this resource for the id to use
-  * @param provider? Optional instance of the provider where the RegistryImage to import is found
+  * @param importToId The construct id used in the generated config for the DataDockerRegistryImageManifests to import
+  * @param importFromId The id of the existing DataDockerRegistryImageManifests that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataDockerRegistryImageManifests to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
-        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "docker_registry_image", importId: importFromId, provider });
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "docker_registry_image_manifests", importId: importFromId, provider });
       }
 
   // ===========
@@ -227,15 +305,15 @@ export class RegistryImage extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/registry_image docker_registry_image} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/registry_image_manifests docker_registry_image_manifests} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
-  * @param options RegistryImageConfig
+  * @param options DataDockerRegistryImageManifestsConfig
   */
-  public constructor(scope: Construct, id: string, config: RegistryImageConfig) {
+  public constructor(scope: Construct, id: string, config: DataDockerRegistryImageManifestsConfig) {
     super(scope, id, {
-      terraformResourceType: 'docker_registry_image',
+      terraformResourceType: 'docker_registry_image_manifests',
       terraformGeneratorMetadata: {
         providerName: 'docker',
         providerVersion: '3.5.0',
@@ -251,9 +329,7 @@ export class RegistryImage extends cdktf.TerraformResource {
     });
     this._id = config.id;
     this._insecureSkipVerify = config.insecureSkipVerify;
-    this._keepRemotely = config.keepRemotely;
     this._name = config.name;
-    this._triggers = config.triggers;
     this._authConfig.internalValue = config.authConfig;
   }
 
@@ -293,20 +369,10 @@ export class RegistryImage extends cdktf.TerraformResource {
     return this._insecureSkipVerify;
   }
 
-  // keep_remotely - computed: false, optional: true, required: false
-  private _keepRemotely?: boolean | cdktf.IResolvable; 
-  public get keepRemotely() {
-    return this.getBooleanAttribute('keep_remotely');
-  }
-  public set keepRemotely(value: boolean | cdktf.IResolvable) {
-    this._keepRemotely = value;
-  }
-  public resetKeepRemotely() {
-    this._keepRemotely = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get keepRemotelyInput() {
-    return this._keepRemotely;
+  // manifests - computed: true, optional: false, required: false
+  private _manifests = new DataDockerRegistryImageManifestsManifestsList(this, "manifests", true);
+  public get manifests() {
+    return this._manifests;
   }
 
   // name - computed: false, optional: false, required: true
@@ -322,33 +388,12 @@ export class RegistryImage extends cdktf.TerraformResource {
     return this._name;
   }
 
-  // sha256_digest - computed: true, optional: false, required: false
-  public get sha256Digest() {
-    return this.getStringAttribute('sha256_digest');
-  }
-
-  // triggers - computed: false, optional: true, required: false
-  private _triggers?: { [key: string]: string }; 
-  public get triggers() {
-    return this.getStringMapAttribute('triggers');
-  }
-  public set triggers(value: { [key: string]: string }) {
-    this._triggers = value;
-  }
-  public resetTriggers() {
-    this._triggers = undefined;
-  }
-  // Temporarily expose input value. Use with caution.
-  public get triggersInput() {
-    return this._triggers;
-  }
-
   // auth_config - computed: false, optional: true, required: false
-  private _authConfig = new RegistryImageAuthConfigOutputReference(this, "auth_config");
+  private _authConfig = new DataDockerRegistryImageManifestsAuthConfigOutputReference(this, "auth_config");
   public get authConfig() {
     return this._authConfig;
   }
-  public putAuthConfig(value: RegistryImageAuthConfig) {
+  public putAuthConfig(value: DataDockerRegistryImageManifestsAuthConfig) {
     this._authConfig.internalValue = value;
   }
   public resetAuthConfig() {
@@ -367,10 +412,8 @@ export class RegistryImage extends cdktf.TerraformResource {
     return {
       id: cdktf.stringToTerraform(this._id),
       insecure_skip_verify: cdktf.booleanToTerraform(this._insecureSkipVerify),
-      keep_remotely: cdktf.booleanToTerraform(this._keepRemotely),
       name: cdktf.stringToTerraform(this._name),
-      triggers: cdktf.hashMapper(cdktf.stringToTerraform)(this._triggers),
-      auth_config: registryImageAuthConfigToTerraform(this._authConfig.internalValue),
+      auth_config: dataDockerRegistryImageManifestsAuthConfigToTerraform(this._authConfig.internalValue),
     };
   }
 
@@ -388,29 +431,17 @@ export class RegistryImage extends cdktf.TerraformResource {
         type: "simple",
         storageClassType: "boolean",
       },
-      keep_remotely: {
-        value: cdktf.booleanToHclTerraform(this._keepRemotely),
-        isBlock: false,
-        type: "simple",
-        storageClassType: "boolean",
-      },
       name: {
         value: cdktf.stringToHclTerraform(this._name),
         isBlock: false,
         type: "simple",
         storageClassType: "string",
       },
-      triggers: {
-        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._triggers),
-        isBlock: false,
-        type: "map",
-        storageClassType: "stringMap",
-      },
       auth_config: {
-        value: registryImageAuthConfigToHclTerraform(this._authConfig.internalValue),
+        value: dataDockerRegistryImageManifestsAuthConfigToHclTerraform(this._authConfig.internalValue),
         isBlock: true,
         type: "list",
-        storageClassType: "RegistryImageAuthConfigList",
+        storageClassType: "DataDockerRegistryImageManifestsAuthConfigList",
       },
     };
 

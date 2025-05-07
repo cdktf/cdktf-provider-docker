@@ -11,6 +11,7 @@ The following submodules are available:
 - [dataDockerNetwork](./dataDockerNetwork.go.md)
 - [dataDockerPlugin](./dataDockerPlugin.go.md)
 - [dataDockerRegistryImage](./dataDockerRegistryImage.go.md)
+- [dataDockerRegistryImageManifests](./dataDockerRegistryImageManifests.go.md)
 - [image](./image.go.md)
 - [network](./network.go.md)
 - [plugin](./plugin.go.md)

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,13 +15,13 @@ export interface DataDockerPluginConfig extends cdktf.TerraformMetaArguments {
   /**
   * The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
   */
   readonly alias?: string;
   /**
   * The ID of the plugin, which has precedence over the `alias` of both are given
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin#id DataDockerPlugin#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#id DataDockerPlugin#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -30,7 +30,7 @@ export interface DataDockerPluginConfig extends cdktf.TerraformMetaArguments {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin docker_plugin}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin docker_plugin}
 */
 export class DataDockerPlugin extends cdktf.TerraformDataSource {
 
@@ -46,7 +46,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   * Generates CDKTF code for importing a DataDockerPlugin resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the DataDockerPlugin to import
-  * @param importFromId The id of the existing DataDockerPlugin that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing DataDockerPlugin that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the DataDockerPlugin to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -58,7 +58,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.4.0/docs/data-sources/plugin docker_plugin} Data Source
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin docker_plugin} Data Source
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -69,7 +69,7 @@ export class DataDockerPlugin extends cdktf.TerraformDataSource {
       terraformResourceType: 'docker_plugin',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.4.0',
+        providerVersion: '3.5.0',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
