@@ -11,6 +11,7 @@ The following submodules are available:
 - [dataDockerNetwork](./dataDockerNetwork.typescript.md)
 - [dataDockerPlugin](./dataDockerPlugin.typescript.md)
 - [dataDockerRegistryImage](./dataDockerRegistryImage.typescript.md)
+- [dataDockerRegistryImageManifests](./dataDockerRegistryImageManifests.typescript.md)
 - [image](./image.typescript.md)
 - [network](./network.typescript.md)
 - [plugin](./plugin.typescript.md)

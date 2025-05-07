@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/resources/config
 // generated from terraform resource schema
 

@@ -11,6 +11,7 @@ The following submodules are available:
 - [dataDockerNetwork](./dataDockerNetwork.csharp.md)
 - [dataDockerPlugin](./dataDockerPlugin.csharp.md)
 - [dataDockerRegistryImage](./dataDockerRegistryImage.csharp.md)
+- [dataDockerRegistryImageManifests](./dataDockerRegistryImageManifests.csharp.md)
 - [image](./image.csharp.md)
 - [network](./network.csharp.md)
 - [plugin](./plugin.csharp.md)
