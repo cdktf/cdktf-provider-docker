@@ -4,6 +4,7 @@
 
 The following submodules are available:
 
+- [buildxBuilder](./buildxBuilder.csharp.md)
 - [config](./config.csharp.md)
 - [container](./container.csharp.md)
 - [dataDockerImage](./dataDockerImage.csharp.md)

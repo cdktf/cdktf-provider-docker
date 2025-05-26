@@ -4,6 +4,7 @@
 
 The following submodules are available:
 
+- [buildxBuilder](./buildxBuilder.python.md)
 - [config](./config.python.md)
 - [container](./container.python.md)
 - [dataDockerImage](./dataDockerImage.python.md)

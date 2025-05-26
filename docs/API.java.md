@@ -4,6 +4,7 @@
 
 The following submodules are available:
 
+- [buildxBuilder](./buildxBuilder.java.md)
 - [config](./config.java.md)
 - [container](./container.java.md)
 - [dataDockerImage](./dataDockerImage.java.md)
