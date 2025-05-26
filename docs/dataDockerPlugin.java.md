@@ -4,7 +4,7 @@
 
 ### DataDockerPlugin <a name="DataDockerPlugin" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin docker_plugin}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin docker_plugin}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerPlugin.DataDockerPlugin.Initializer"></a>
 
@@ -110,7 +110,7 @@ Must be unique amongst siblings in the same scope
 
 The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
 
 ---
 
@@ -120,7 +120,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The ID of the plugin, which has precedence over the `alias` of both are given.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#id DataDockerPlugin#id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin#id DataDockerPlugin#id}
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -460,7 +460,7 @@ The construct id used in the generated config for the DataDockerPlugin to import
 
 The id of the existing DataDockerPlugin that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -852,7 +852,7 @@ public java.lang.String getAlias();
 
 The alias of the Docker plugin. If the tag is omitted, `:latest` is complemented to the attribute value.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin#alias DataDockerPlugin#alias}
 
 ---
 
@@ -866,7 +866,7 @@ public java.lang.String getId();
 
 The ID of the plugin, which has precedence over the `alias` of both are given.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.5.0/docs/data-sources/plugin#id DataDockerPlugin#id}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/plugin#id DataDockerPlugin#id}
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
