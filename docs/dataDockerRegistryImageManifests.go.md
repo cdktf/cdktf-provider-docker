@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.NewDataDockerRegistryImageManifests(scope Construct, id *string, config DataDockerRegistryImageManifestsConfig) DataDockerRegistryImageManifests
 ```
@@ -310,7 +310,7 @@ func ResetInsecureSkipVerify()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.DataDockerRegistryImageManifests_IsConstruct(x interface{}) *bool
 ```
@@ -342,7 +342,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.DataDockerRegistryImageManifests_IsTerraformElement(x interface{}) *bool
 ```
@@ -356,7 +356,7 @@ datadockerregistryimagemanifests.DataDockerRegistryImageManifests_IsTerraformEle
 ##### `IsTerraformDataSource` <a name="IsTerraformDataSource" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.isTerraformDataSource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.DataDockerRegistryImageManifests_IsTerraformDataSource(x interface{}) *bool
 ```
@@ -370,7 +370,7 @@ datadockerregistryimagemanifests.DataDockerRegistryImageManifests_IsTerraformDat
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.DataDockerRegistryImageManifests_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -676,7 +676,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 &datadockerregistryimagemanifests.DataDockerRegistryImageManifestsAuthConfig {
 	Address: *string,
@@ -742,7 +742,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 &datadockerregistryimagemanifests.DataDockerRegistryImageManifestsConfig {
 	Connection: interface{},
@@ -753,7 +753,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryi
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Name: *string,
-	AuthConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v11.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfig,
+	AuthConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v12.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfig,
 	Id: *string,
 	InsecureSkipVerify: interface{},
 }
@@ -909,7 +909,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsManifests.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 &datadockerregistryimagemanifests.DataDockerRegistryImageManifestsManifests {
 
@@ -924,7 +924,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryi
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.NewDataDockerRegistryImageManifestsAuthConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) DataDockerRegistryImageManifestsAuthConfigOutputReference
 ```
@@ -1239,7 +1239,7 @@ func InternalValue() DataDockerRegistryImageManifestsAuthConfig
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsManifestsList.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.NewDataDockerRegistryImageManifestsManifestsList(terraformResource IInterpolatingParent, terraformAttribute *string, wrapsSet *bool) DataDockerRegistryImageManifestsManifestsList
 ```
@@ -1388,7 +1388,7 @@ func Fqn() *string
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsManifestsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/datadockerregistryimagemanifests"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/datadockerregistryimagemanifests"
 
 datadockerregistryimagemanifests.NewDataDockerRegistryImageManifestsManifestsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string, complexObjectIndex *f64, complexObjectIsFromSet *bool) DataDockerRegistryImageManifestsManifestsOutputReference
 ```

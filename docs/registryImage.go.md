@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.registryImage.RegistryImage.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.NewRegistryImage(scope Construct, id *string, config RegistryImageConfig) RegistryImage
 ```
@@ -426,7 +426,7 @@ func ResetTriggers()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.registryImage.RegistryImage.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.RegistryImage_IsConstruct(x interface{}) *bool
 ```
@@ -458,7 +458,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.registryImage.RegistryImage.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.RegistryImage_IsTerraformElement(x interface{}) *bool
 ```
@@ -472,7 +472,7 @@ registryimage.RegistryImage_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.registryImage.RegistryImage.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.RegistryImage_IsTerraformResource(x interface{}) *bool
 ```
@@ -486,7 +486,7 @@ registryimage.RegistryImage_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.registryImage.RegistryImage.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.RegistryImage_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -858,7 +858,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.registryImage.RegistryImageAuthConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 &registryimage.RegistryImageAuthConfig {
 	Address: *string,
@@ -924,7 +924,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.registryImage.RegistryImageConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 &registryimage.RegistryImageConfig {
 	Connection: interface{},
@@ -935,7 +935,7 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
 	Provider: github.com/hashicorp/terraform-cdk-go/cdktf.TerraformProvider,
 	Provisioners: *[]interface{},
 	Name: *string,
-	AuthConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v11.registryImage.RegistryImageAuthConfig,
+	AuthConfig: github.com/cdktf/cdktf-provider-docker-go/docker/v12.registryImage.RegistryImageAuthConfig,
 	Id: *string,
 	InsecureSkipVerify: interface{},
 	KeepRemotely: interface{},
@@ -1129,7 +1129,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.registryImage.RegistryImageAuthConfigOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/registryimage"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/registryimage"
 
 registryimage.NewRegistryImageAuthConfigOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) RegistryImageAuthConfigOutputReference
 ```
