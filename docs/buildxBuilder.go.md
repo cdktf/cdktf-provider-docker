@@ -9,7 +9,7 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilder(scope Construct, id *string, config BuildxBuilderConfig) BuildxBuilder
 ```
@@ -515,7 +515,7 @@ func ResetUse()
 ##### `IsConstruct` <a name="IsConstruct" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.isConstruct"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.BuildxBuilder_IsConstruct(x interface{}) *bool
 ```
@@ -547,7 +547,7 @@ Any object.
 ##### `IsTerraformElement` <a name="IsTerraformElement" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.isTerraformElement"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.BuildxBuilder_IsTerraformElement(x interface{}) *bool
 ```
@@ -561,7 +561,7 @@ buildxbuilder.BuildxBuilder_IsTerraformElement(x interface{}) *bool
 ##### `IsTerraformResource` <a name="IsTerraformResource" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.isTerraformResource"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.BuildxBuilder_IsTerraformResource(x interface{}) *bool
 ```
@@ -575,7 +575,7 @@ buildxbuilder.BuildxBuilder_IsTerraformResource(x interface{}) *bool
 ##### `GenerateConfigForImport` <a name="GenerateConfigForImport" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.generateConfigForImport"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.BuildxBuilder_GenerateConfigForImport(scope Construct, importToId *string, importFromId *string, provider TerraformProvider) ImportableResource
 ```
@@ -1112,7 +1112,7 @@ func TfResourceType() *string
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderConfig {
 	Connection: interface{},
@@ -1126,15 +1126,15 @@ import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
 	Bootstrap: interface{},
 	BuildkitConfig: *string,
 	BuildkitFlags: *string,
-	DockerContainer: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderDockerContainer,
+	DockerContainer: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderDockerContainer,
 	Driver: *string,
 	DriverOptions: *map[string]*string,
 	Id: *string,
-	Kubernetes: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderKubernetes,
+	Kubernetes: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderKubernetes,
 	Name: *string,
 	NodeAttribute: *string,
 	Platform: *[]*string,
-	Remote: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderRemote,
+	Remote: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderRemote,
 	Use: interface{},
 }
 ```
@@ -1439,7 +1439,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderDockerContainer {
 	CgroupParent: *string,
@@ -1665,20 +1665,20 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderKubernetes {
 	Annotations: *string,
 	DefaultLoad: interface{},
 	Image: *string,
 	Labels: *string,
-	Limits: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderKubernetesLimits,
+	Limits: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderKubernetesLimits,
 	Loadbalance: *string,
 	Namespace: *string,
 	Nodeselector: *string,
-	Qemu: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderKubernetesQemu,
+	Qemu: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderKubernetesQemu,
 	Replicas: *f64,
-	Requests: github.com/cdktf/cdktf-provider-docker-go/docker/v11.buildxBuilder.BuildxBuilderKubernetesRequests,
+	Requests: github.com/cdktf/cdktf-provider-docker-go/docker/v12.buildxBuilder.BuildxBuilderKubernetesRequests,
 	Rootless: interface{},
 	Schedulername: *string,
 	Serviceaccount: *string,
@@ -1939,7 +1939,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimits.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderKubernetesLimits {
 	Cpu: *string,
@@ -2005,7 +2005,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderKubernetesQemu {
 	Image: *string,
@@ -2055,7 +2055,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequests.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderKubernetesRequests {
 	Cpu: *string,
@@ -2121,7 +2121,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializer <a name="Initializer" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 &buildxbuilder.BuildxBuilderRemote {
 	Cacert: *string,
@@ -2221,7 +2221,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderDockerContainerOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderDockerContainerOutputReference
 ```
@@ -2847,7 +2847,7 @@ func InternalValue() BuildxBuilderDockerContainer
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimitsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderKubernetesLimitsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderKubernetesLimitsOutputReference
 ```
@@ -3183,7 +3183,7 @@ func InternalValue() BuildxBuilderKubernetesLimits
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderKubernetesOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderKubernetesOutputReference
 ```
@@ -3935,7 +3935,7 @@ func InternalValue() BuildxBuilderKubernetes
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderKubernetesQemuOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderKubernetesQemuOutputReference
 ```
@@ -4242,7 +4242,7 @@ func InternalValue() BuildxBuilderKubernetesQemu
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequestsOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderKubernetesRequestsOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderKubernetesRequestsOutputReference
 ```
@@ -4578,7 +4578,7 @@ func InternalValue() BuildxBuilderKubernetesRequests
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.Initializer"></a>
 
 ```go
-import "github.com/cdktf/cdktf-provider-docker-go/docker/v11/buildxbuilder"
+import "github.com/cdktf/cdktf-provider-docker-go/docker/v12/buildxbuilder"
 
 buildxbuilder.NewBuildxBuilderRemoteOutputReference(terraformResource IInterpolatingParent, terraformAttribute *string) BuildxBuilderRemoteOutputReference
 ```
