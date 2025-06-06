@@ -4,7 +4,7 @@
 
 ### DataDockerRegistryImageManifests <a name="DataDockerRegistryImageManifests" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests docker_registry_image_manifests}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests docker_registry_image_manifests}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer"></a>
 
@@ -41,7 +41,7 @@ dataDockerRegistryImageManifests.DataDockerRegistryImageManifests(
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.name">name</a></code> | <code>str</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.authConfig">auth_config</a></code> | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfig">DataDockerRegistryImageManifestsAuthConfig</a></code> | auth_config block. |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifests.Initializer.parameter.insecureSkipVerify">insecure_skip_verify</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. |
 
 ---
@@ -112,7 +112,7 @@ Must be unique amongst siblings in the same scope
 
 The name of the Docker image, including any tags. e.g. `alpine:latest`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#name DataDockerRegistryImageManifests#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#name DataDockerRegistryImageManifests#name}
 
 ---
 
@@ -122,7 +122,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#auth_config DataDockerRegistryImageManifests#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#auth_config DataDockerRegistryImageManifests#auth_config}
 
 ---
 
@@ -130,7 +130,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -143,7 +143,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#insecure_skip_verify DataDockerRegistryImageManifests#insecure_skip_verify}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#insecure_skip_verify DataDockerRegistryImageManifests#insecure_skip_verify}
 
 ---
 
@@ -408,7 +408,7 @@ def put_auth_config(
 
 The address of the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#address DataDockerRegistryImageManifests#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#address DataDockerRegistryImageManifests#address}
 
 ---
 
@@ -418,7 +418,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The password for the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#password DataDockerRegistryImageManifests#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#password DataDockerRegistryImageManifests#password}
 
 ---
 
@@ -428,7 +428,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 The username for the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#username DataDockerRegistryImageManifests#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#username DataDockerRegistryImageManifests#username}
 
 ---
 
@@ -564,7 +564,7 @@ The construct id used in the generated config for the DataDockerRegistryImageMan
 
 The id of the existing DataDockerRegistryImageManifests that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -870,7 +870,7 @@ address: str
 
 The address of the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#address DataDockerRegistryImageManifests#address}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#address DataDockerRegistryImageManifests#address}
 
 ---
 
@@ -884,7 +884,7 @@ password: str
 
 The password for the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#password DataDockerRegistryImageManifests#password}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#password DataDockerRegistryImageManifests#password}
 
 ---
 
@@ -898,7 +898,7 @@ username: str
 
 The username for the Docker registry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#username DataDockerRegistryImageManifests#username}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#username DataDockerRegistryImageManifests#username}
 
 ---
 
@@ -937,7 +937,7 @@ dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig(
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.name">name</a></code> | <code>str</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.authConfig">auth_config</a></code> | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsAuthConfig">DataDockerRegistryImageManifestsAuthConfig</a></code> | auth_config block. |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImageManifests.DataDockerRegistryImageManifestsConfig.property.insecureSkipVerify">insecure_skip_verify</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. |
 
 ---
@@ -1022,7 +1022,7 @@ name: str
 
 The name of the Docker image, including any tags. e.g. `alpine:latest`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#name DataDockerRegistryImageManifests#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#name DataDockerRegistryImageManifests#name}
 
 ---
 
@@ -1036,7 +1036,7 @@ auth_config: DataDockerRegistryImageManifestsAuthConfig
 
 auth_config block.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#auth_config DataDockerRegistryImageManifests#auth_config}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#auth_config DataDockerRegistryImageManifests#auth_config}
 
 ---
 
@@ -1048,7 +1048,7 @@ id: str
 
 - *Type:* str
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#id DataDockerRegistryImageManifests#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1065,7 +1065,7 @@ insecure_skip_verify: typing.Union[bool, IResolvable]
 
 If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/data-sources/registry_image_manifests#insecure_skip_verify DataDockerRegistryImageManifests#insecure_skip_verify}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/registry_image_manifests#insecure_skip_verify DataDockerRegistryImageManifests#insecure_skip_verify}
 
 ---
 
