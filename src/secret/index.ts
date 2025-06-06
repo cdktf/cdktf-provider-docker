@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret
+// https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret
 // generated from terraform resource schema
 
 import { Construct } from 'constructs';
@@ -15,11 +15,11 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * Base64-url-safe-encoded secret data
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#data Secret#data}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#data Secret#data}
   */
   readonly data: string;
   /**
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#id Secret#id}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#id Secret#id}
   *
   * Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
   * If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -28,13 +28,13 @@ export interface SecretConfig extends cdktf.TerraformMetaArguments {
   /**
   * User-defined name of the secret
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#name Secret#name}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#name Secret#name}
   */
   readonly name: string;
   /**
   * labels block
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#labels Secret#labels}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#labels Secret#labels}
   */
   readonly labels?: SecretLabels[] | cdktf.IResolvable;
 }
@@ -42,13 +42,13 @@ export interface SecretLabels {
   /**
   * Name of the label
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#label Secret#label}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#label Secret#label}
   */
   readonly label: string;
   /**
   * Value of the label
   *
-  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#value Secret#value}
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#value Secret#value}
   */
   readonly value: string;
 }
@@ -187,7 +187,7 @@ export class SecretLabelsList extends cdktf.ComplexList {
 }
 
 /**
-* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret docker_secret}
+* Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret docker_secret}
 */
 export class Secret extends cdktf.TerraformResource {
 
@@ -203,7 +203,7 @@ export class Secret extends cdktf.TerraformResource {
   * Generates CDKTF code for importing a Secret resource upon running "cdktf plan <stack-name>"
   * @param scope The scope in which to define this construct
   * @param importToId The construct id used in the generated config for the Secret to import
-  * @param importFromId The id of the existing Secret that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret#import import section} in the documentation of this resource for the id to use
+  * @param importFromId The id of the existing Secret that should be imported. Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret#import import section} in the documentation of this resource for the id to use
   * @param provider? Optional instance of the provider where the Secret to import is found
   */
   public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
@@ -215,7 +215,7 @@ export class Secret extends cdktf.TerraformResource {
   // ===========
 
   /**
-  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.0/docs/resources/secret docker_secret} Resource
+  * Create a new {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/resources/secret docker_secret} Resource
   *
   * @param scope The scope in which to define this construct
   * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
@@ -226,7 +226,7 @@ export class Secret extends cdktf.TerraformResource {
       terraformResourceType: 'docker_secret',
       terraformGeneratorMetadata: {
         providerName: 'docker',
-        providerVersion: '3.6.0',
+        providerVersion: '3.6.1',
         providerVersionConstraint: '~> 3.0'
       },
       provider: config.provider,
