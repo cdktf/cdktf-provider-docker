@@ -4,7 +4,7 @@
 
 ### DataDockerLogs <a name="DataDockerLogs" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs"></a>
 
-Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs docker_logs}.
+Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs docker_logs}.
 
 #### Initializers <a name="Initializers" id="@cdktf/provider-docker.dataDockerLogs.DataDockerLogs.Initializer"></a>
 
@@ -442,7 +442,7 @@ The construct id used in the generated config for the DataDockerLogs to import.
 
 The id of the existing DataDockerLogs that should be imported.
 
-Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#import import section} in the documentation of this resource for the id to use
+Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#import import section} in the documentation of this resource for the id to use
 
 ---
 
@@ -932,17 +932,17 @@ new DataDockerLogsConfig {
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.name">Name</a></code> | <code>string</code> | The name of the Docker Container. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.details">Details</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#details DataDockerLogs#details}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.details">Details</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#details DataDockerLogs#details}. |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.discardHeaders">DiscardHeaders</a></code> | <code>object</code> | Discard headers that docker appends to each log entry. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.follow">Follow</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#follow DataDockerLogs#follow}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#id DataDockerLogs#id}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.follow">Follow</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#follow DataDockerLogs#follow}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#id DataDockerLogs#id}. |
 | <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.logsListStringEnabled">LogsListStringEnabled</a></code> | <code>object</code> | If true populate computed value `logs_list_string`. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.showStderr">ShowStderr</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#show_stderr DataDockerLogs#show_stderr}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.showStdout">ShowStdout</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#show_stdout DataDockerLogs#show_stdout}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.since">Since</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#since DataDockerLogs#since}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.tail">Tail</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#tail DataDockerLogs#tail}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.timestamps">Timestamps</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#timestamps DataDockerLogs#timestamps}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.until">Until</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#until DataDockerLogs#until}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.showStderr">ShowStderr</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#show_stderr DataDockerLogs#show_stderr}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.showStdout">ShowStdout</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#show_stdout DataDockerLogs#show_stdout}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.since">Since</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#since DataDockerLogs#since}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.tail">Tail</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#tail DataDockerLogs#tail}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.timestamps">Timestamps</a></code> | <code>object</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#timestamps DataDockerLogs#timestamps}. |
+| <code><a href="#@cdktf/provider-docker.dataDockerLogs.DataDockerLogsConfig.property.until">Until</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#until DataDockerLogs#until}. |
 
 ---
 
@@ -1026,7 +1026,7 @@ public string Name { get; set; }
 
 The name of the Docker Container.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#name DataDockerLogs#name}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#name DataDockerLogs#name}
 
 ---
 
@@ -1038,7 +1038,7 @@ public object Details { get; set; }
 
 - *Type:* object
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#details DataDockerLogs#details}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#details DataDockerLogs#details}.
 
 ---
 
@@ -1052,7 +1052,7 @@ public object DiscardHeaders { get; set; }
 
 Discard headers that docker appends to each log entry.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#discard_headers DataDockerLogs#discard_headers}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#discard_headers DataDockerLogs#discard_headers}
 
 ---
 
@@ -1064,7 +1064,7 @@ public object Follow { get; set; }
 
 - *Type:* object
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#follow DataDockerLogs#follow}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#follow DataDockerLogs#follow}.
 
 ---
 
@@ -1076,7 +1076,7 @@ public string Id { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#id DataDockerLogs#id}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#id DataDockerLogs#id}.
 
 Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
 If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
@@ -1093,7 +1093,7 @@ public object LogsListStringEnabled { get; set; }
 
 If true populate computed value `logs_list_string`.
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#logs_list_string_enabled DataDockerLogs#logs_list_string_enabled}
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#logs_list_string_enabled DataDockerLogs#logs_list_string_enabled}
 
 ---
 
@@ -1105,7 +1105,7 @@ public object ShowStderr { get; set; }
 
 - *Type:* object
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#show_stderr DataDockerLogs#show_stderr}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#show_stderr DataDockerLogs#show_stderr}.
 
 ---
 
@@ -1117,7 +1117,7 @@ public object ShowStdout { get; set; }
 
 - *Type:* object
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#show_stdout DataDockerLogs#show_stdout}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#show_stdout DataDockerLogs#show_stdout}.
 
 ---
 
@@ -1129,7 +1129,7 @@ public string Since { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#since DataDockerLogs#since}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#since DataDockerLogs#since}.
 
 ---
 
@@ -1141,7 +1141,7 @@ public string Tail { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#tail DataDockerLogs#tail}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#tail DataDockerLogs#tail}.
 
 ---
 
@@ -1153,7 +1153,7 @@ public object Timestamps { get; set; }
 
 - *Type:* object
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#timestamps DataDockerLogs#timestamps}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#timestamps DataDockerLogs#timestamps}.
 
 ---
 
@@ -1165,7 +1165,7 @@ public string Until { get; set; }
 
 - *Type:* string
 
-Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.1/docs/data-sources/logs#until DataDockerLogs#until}.
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/logs#until DataDockerLogs#until}.
 
 ---
 
