@@ -12,25 +12,20 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 import com.hashicorp.cdktf.providers.docker.service.Service;
 
 Service.Builder.create(Construct scope, java.lang.String id)
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
     .taskSpec(ServiceTaskSpec)
 //  .auth(ServiceAuth)
 //  .convergeConfig(ServiceConvergeConfig)
 //  .endpointSpec(ServiceEndpointSpec)
 //  .id(java.lang.String)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ServiceLabels>)
+//  .labels(IResolvable|java.util.List<ServiceLabels>)
 //  .mode(ServiceMode)
 //  .rollbackConfig(ServiceRollbackConfig)
 //  .updateConfig(ServiceUpdateConfig)
@@ -41,20 +36,20 @@ Service.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.name">name</a></code> | <code>java.lang.String</code> | Name of the service. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.taskSpec">taskSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec">ServiceTaskSpec</a></code> | task_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.auth">auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.convergeConfig">convergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.endpointSpec">endpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/service#id Service#id}. |
-| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.mode">mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.rollbackConfig">rollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
 | <code><a href="#@cdktf/provider-docker.service.Service.Initializer.parameter.updateConfig">updateConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceUpdateConfig">ServiceUpdateConfig</a></code> | update_config block. |
@@ -81,13 +76,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.service.Service.Initializer.parameter.connection"></a>
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.service.Service.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -117,7 +112,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.service.Service.Initializer.parameter.provisioners"></a>
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -184,7 +179,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.service.Service.Initializer.parameter.labels"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
 
 labels block.
 
@@ -465,7 +460,7 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 ##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-docker.service.Service.hasResourceMove"></a>
 
 ```java
-public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+public TerraformResourceMoveByTarget|TerraformResourceMoveById hasResourceMove()
 ```
 
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-docker.service.Service.importFrom"></a>
@@ -521,7 +516,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 
 ```java
 public void moveTo(java.lang.String moveTarget)
-public void moveTo(java.lang.String moveTarget, java.lang.String OR java.lang.Number index)
+public void moveTo(java.lang.String moveTarget, java.lang.String|java.lang.Number index)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -536,7 +531,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.service.Service.moveTo.parameter.index"></a>
 
-- *Type:* java.lang.String OR java.lang.Number
+- *Type:* java.lang.String|java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -597,12 +592,12 @@ public void putEndpointSpec(ServiceEndpointSpec value)
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.service.Service.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<ServiceLabels> value)
+public void putLabels(IResolvable|java.util.List<ServiceLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.Service.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
 
 ---
 
@@ -828,13 +823,13 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.auth">auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuthOutputReference">ServiceAuthOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.convergeConfig">convergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfigOutputReference">ServiceConvergeConfigOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.endpointSpec">endpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference">ServiceEndpointSpecOutputReference</a></code> | *No description.* |
@@ -847,7 +842,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.service.Service.property.convergeConfigInput">convergeConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.endpointSpecInput">endpointSpecInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.modeInput">modeInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.nameInput">nameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.rollbackConfigInput">rollbackConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | *No description.* |
@@ -933,20 +928,20 @@ public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.service.Service.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.service.Service.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -993,10 +988,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.service.Service.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -1123,10 +1118,10 @@ public java.lang.String getIdInput();
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.service.Service.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<ServiceLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
 
 ---
 
@@ -1294,25 +1289,20 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 import com.hashicorp.cdktf.providers.docker.service.ServiceConfig;
 
 ServiceConfig.builder()
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
     .taskSpec(ServiceTaskSpec)
 //  .auth(ServiceAuth)
 //  .convergeConfig(ServiceConvergeConfig)
 //  .endpointSpec(ServiceEndpointSpec)
 //  .id(java.lang.String)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ServiceLabels>)
+//  .labels(IResolvable|java.util.List<ServiceLabels>)
 //  .mode(ServiceMode)
 //  .rollbackConfig(ServiceRollbackConfig)
 //  .updateConfig(ServiceUpdateConfig)
@@ -1323,20 +1313,20 @@ ServiceConfig.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.name">name</a></code> | <code>java.lang.String</code> | Name of the service. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.taskSpec">taskSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec">ServiceTaskSpec</a></code> | task_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.auth">auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.convergeConfig">convergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.endpointSpec">endpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/service#id Service#id}. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.mode">mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.rollbackConfig">rollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.updateConfig">updateConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceUpdateConfig">ServiceUpdateConfig</a></code> | update_config block. |
@@ -1346,20 +1336,20 @@ ServiceConfig.builder()
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.service.ServiceConfig.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.service.ServiceConfig.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -1406,10 +1396,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.service.ServiceConfig.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -1501,10 +1491,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.service.ServiceConfig.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<ServiceLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
 
 labels block.
 
@@ -1613,8 +1603,7 @@ import com.hashicorp.cdktf.providers.docker.service.ServiceEndpointSpec;
 
 ServiceEndpointSpec.builder()
 //  .mode(java.lang.String)
-//  .ports(IResolvable)
-//  .ports(java.util.List<ServiceEndpointSpecPorts>)
+//  .ports(IResolvable|java.util.List<ServiceEndpointSpecPorts>)
     .build();
 ```
 
@@ -1623,7 +1612,7 @@ ServiceEndpointSpec.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.mode">mode</a></code> | <code>java.lang.String</code> | The mode of resolution to use for internal load balancing between tasks. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | ports block. |
 
 ---
 
@@ -1644,10 +1633,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ports`<sup>Optional</sup> <a name="ports" id="@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports"></a>
 
 ```java
-public java.lang.Object getPorts();
+public IResolvable|java.util.List<ServiceEndpointSpecPorts> getPorts();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
 
 ports block.
 
@@ -1811,8 +1800,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 import com.hashicorp.cdktf.providers.docker.service.ServiceMode;
 
 ServiceMode.builder()
-//  .global(java.lang.Boolean)
-//  .global(IResolvable)
+//  .global(java.lang.Boolean|IResolvable)
 //  .replicated(ServiceModeReplicated)
     .build();
 ```
@@ -1821,7 +1809,7 @@ ServiceMode.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.global">global</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | The global service mode. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.global">global</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | The global service mode. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.replicated">replicated</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicated">ServiceModeReplicated</a></code> | replicated block. |
 
 ---
@@ -1829,10 +1817,10 @@ ServiceMode.builder()
 ##### `global`<sup>Optional</sup> <a name="global" id="@cdktf/provider-docker.service.ServiceMode.property.global"></a>
 
 ```java
-public java.lang.Object getGlobal();
+public java.lang.Boolean|IResolvable getGlobal();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 The global service mode. Defaults to `false`.
 
@@ -2013,8 +2001,7 @@ ServiceTaskSpec.builder()
     .containerSpec(ServiceTaskSpecContainerSpec)
 //  .forceUpdate(java.lang.Number)
 //  .logDriver(ServiceTaskSpecLogDriver)
-//  .networksAdvanced(IResolvable)
-//  .networksAdvanced(java.util.List<ServiceTaskSpecNetworksAdvanced>)
+//  .networksAdvanced(IResolvable|java.util.List<ServiceTaskSpecNetworksAdvanced>)
 //  .placement(ServiceTaskSpecPlacement)
 //  .resources(ServiceTaskSpecResources)
 //  .restartPolicy(ServiceTaskSpecRestartPolicy)
@@ -2029,7 +2016,7 @@ ServiceTaskSpec.builder()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.containerSpec">containerSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec">ServiceTaskSpecContainerSpec</a></code> | container_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.forceUpdate">forceUpdate</a></code> | <code>java.lang.Number</code> | A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.logDriver">logDriver</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecLogDriver">ServiceTaskSpecLogDriver</a></code> | log_driver block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.placement">placement</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement">ServiceTaskSpecPlacement</a></code> | placement block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.resources">resources</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecResources">ServiceTaskSpecResources</a></code> | resources block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.restartPolicy">restartPolicy</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy">ServiceTaskSpecRestartPolicy</a></code> | restart_policy block. |
@@ -2082,10 +2069,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `networksAdvanced`<sup>Optional</sup> <a name="networksAdvanced" id="@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced"></a>
 
 ```java
-public java.lang.Object getNetworksAdvanced();
+public IResolvable|java.util.List<ServiceTaskSpecNetworksAdvanced> getNetworksAdvanced();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
 
 networks_advanced block.
 
@@ -2162,26 +2149,20 @@ ServiceTaskSpecContainerSpec.builder()
 //  .capAdd(java.util.List<java.lang.String>)
 //  .capDrop(java.util.List<java.lang.String>)
 //  .command(java.util.List<java.lang.String>)
-//  .configs(IResolvable)
-//  .configs(java.util.List<ServiceTaskSpecContainerSpecConfigs>)
+//  .configs(IResolvable|java.util.List<ServiceTaskSpecContainerSpecConfigs>)
 //  .dir(java.lang.String)
 //  .dnsConfig(ServiceTaskSpecContainerSpecDnsConfig)
 //  .env(java.util.Map<java.lang.String, java.lang.String>)
 //  .groups(java.util.List<java.lang.String>)
 //  .healthcheck(ServiceTaskSpecContainerSpecHealthcheck)
 //  .hostname(java.lang.String)
-//  .hosts(IResolvable)
-//  .hosts(java.util.List<ServiceTaskSpecContainerSpecHosts>)
+//  .hosts(IResolvable|java.util.List<ServiceTaskSpecContainerSpecHosts>)
 //  .isolation(java.lang.String)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ServiceTaskSpecContainerSpecLabels>)
-//  .mounts(IResolvable)
-//  .mounts(java.util.List<ServiceTaskSpecContainerSpecMounts>)
+//  .labels(IResolvable|java.util.List<ServiceTaskSpecContainerSpecLabels>)
+//  .mounts(IResolvable|java.util.List<ServiceTaskSpecContainerSpecMounts>)
 //  .privileges(ServiceTaskSpecContainerSpecPrivileges)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
-//  .secrets(IResolvable)
-//  .secrets(java.util.List<ServiceTaskSpecContainerSpecSecrets>)
+//  .readOnly(java.lang.Boolean|IResolvable)
+//  .secrets(IResolvable|java.util.List<ServiceTaskSpecContainerSpecSecrets>)
 //  .stopGracePeriod(java.lang.String)
 //  .stopSignal(java.lang.String)
 //  .sysctl(java.util.Map<java.lang.String, java.lang.String>)
@@ -2198,20 +2179,20 @@ ServiceTaskSpecContainerSpec.builder()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.capAdd">capAdd</a></code> | <code>java.util.List<java.lang.String></code> | List of Linux capabilities to add to the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.capDrop">capDrop</a></code> | <code>java.util.List<java.lang.String></code> | List of Linux capabilities to drop from the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.command">command</a></code> | <code>java.util.List<java.lang.String></code> | The command/entrypoint to be run in the image. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs">configs</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | configs block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs">configs</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | configs block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.dir">dir</a></code> | <code>java.lang.String</code> | The working directory for commands to run in. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.dnsConfig">dnsConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig">ServiceTaskSpecContainerSpecDnsConfig</a></code> | dns_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.env">env</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A list of environment variables in the form VAR="value". |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.groups">groups</a></code> | <code>java.util.List<java.lang.String></code> | A list of additional groups that the container process will run as. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.healthcheck">healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck">ServiceTaskSpecContainerSpecHealthcheck</a></code> | healthcheck block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hostname">hostname</a></code> | <code>java.lang.String</code> | The hostname to use for the container, as a valid RFC 1123 hostname. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts">hosts</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | hosts block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts">hosts</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | hosts block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.isolation">isolation</a></code> | <code>java.lang.String</code> | Isolation technology of the containers running the service. (Windows only). Defaults to `default`. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | mounts block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.privileges">privileges</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges">ServiceTaskSpecContainerSpecPrivileges</a></code> | privileges block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Mount the container's root filesystem as read only. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets">secrets</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | secrets block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Mount the container's root filesystem as read only. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets">secrets</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.stopGracePeriod">stopGracePeriod</a></code> | <code>java.lang.String</code> | Amount of time to wait for the container to terminate before forcefully removing it (ms\|s\|m\|h). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.stopSignal">stopSignal</a></code> | <code>java.lang.String</code> | Signal to stop the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.sysctl">sysctl</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Sysctls config (Linux only). |
@@ -2294,10 +2275,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `configs`<sup>Optional</sup> <a name="configs" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs"></a>
 
 ```java
-public java.lang.Object getConfigs();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecConfigs> getConfigs();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
 
 configs block.
 
@@ -2392,10 +2373,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `hosts`<sup>Optional</sup> <a name="hosts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts"></a>
 
 ```java
-public java.lang.Object getHosts();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecHosts> getHosts();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
 
 hosts block.
 
@@ -2420,10 +2401,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
 
 labels block.
 
@@ -2434,10 +2415,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `mounts`<sup>Optional</sup> <a name="mounts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts"></a>
 
 ```java
-public java.lang.Object getMounts();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMounts> getMounts();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
 
 mounts block.
 
@@ -2462,10 +2443,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Mount the container's root filesystem as read only.
 
@@ -2476,10 +2457,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `secrets`<sup>Optional</sup> <a name="secrets" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets"></a>
 
 ```java
-public java.lang.Object getSecrets();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecSecrets> getSecrets();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
 
 secrets block.
 
@@ -2936,8 +2917,7 @@ ServiceTaskSpecContainerSpecMounts.builder()
     .target(java.lang.String)
     .type(java.lang.String)
 //  .bindOptions(ServiceTaskSpecContainerSpecMountsBindOptions)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
+//  .readOnly(java.lang.Boolean|IResolvable)
 //  .source(java.lang.String)
 //  .tmpfsOptions(ServiceTaskSpecContainerSpecMountsTmpfsOptions)
 //  .volumeOptions(ServiceTaskSpecContainerSpecMountsVolumeOptions)
@@ -2951,7 +2931,7 @@ ServiceTaskSpecContainerSpecMounts.builder()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.target">target</a></code> | <code>java.lang.String</code> | Container path. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.type">type</a></code> | <code>java.lang.String</code> | The mount type. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.bindOptions">bindOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions">ServiceTaskSpecContainerSpecMountsBindOptions</a></code> | bind_options block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the mount should be read-only. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether the mount should be read-only. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.source">source</a></code> | <code>java.lang.String</code> | Mount source (e.g. a volume name, a host path). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.tmpfsOptions">tmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions">ServiceTaskSpecContainerSpecMountsTmpfsOptions</a></code> | tmpfs_options block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.volumeOptions">volumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | volume_options block. |
@@ -3003,10 +2983,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether the mount should be read-only.
 
@@ -3152,10 +3132,8 @@ import com.hashicorp.cdktf.providers.docker.service.ServiceTaskSpecContainerSpec
 ServiceTaskSpecContainerSpecMountsVolumeOptions.builder()
 //  .driverName(java.lang.String)
 //  .driverOptions(java.util.Map<java.lang.String, java.lang.String>)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels>)
-//  .noCopy(java.lang.Boolean)
-//  .noCopy(IResolvable)
+//  .labels(IResolvable|java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels>)
+//  .noCopy(java.lang.Boolean|IResolvable)
     .build();
 ```
 
@@ -3165,8 +3143,8 @@ ServiceTaskSpecContainerSpecMountsVolumeOptions.builder()
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.driverName">driverName</a></code> | <code>java.lang.String</code> | Name of the driver to use to create the volume. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.driverOptions">driverOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | key/value map of driver specific options. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Populate volume with data from the target. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Populate volume with data from the target. |
 
 ---
 
@@ -3201,10 +3179,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
 
 labels block.
 
@@ -3215,10 +3193,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `noCopy`<sup>Optional</sup> <a name="noCopy" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy"></a>
 
 ```java
-public java.lang.Object getNoCopy();
+public java.lang.Boolean|IResolvable getNoCopy();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -3384,8 +3362,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 import com.hashicorp.cdktf.providers.docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext;
 
 ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.builder()
-//  .disable(java.lang.Boolean)
-//  .disable(IResolvable)
+//  .disable(java.lang.Boolean|IResolvable)
 //  .level(java.lang.String)
 //  .role(java.lang.String)
 //  .type(java.lang.String)
@@ -3397,7 +3374,7 @@ ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable">disable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Disable SELinux. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable">disable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Disable SELinux. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.level">level</a></code> | <code>java.lang.String</code> | SELinux level label. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.role">role</a></code> | <code>java.lang.String</code> | SELinux role label. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.type">type</a></code> | <code>java.lang.String</code> | SELinux type label. |
@@ -3408,10 +3385,10 @@ ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.builder()
 ##### `disable`<sup>Optional</sup> <a name="disable" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable"></a>
 
 ```java
-public java.lang.Object getDisable();
+public java.lang.Boolean|IResolvable getDisable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Disable SELinux.
 
@@ -3717,8 +3694,7 @@ import com.hashicorp.cdktf.providers.docker.service.ServiceTaskSpecPlacement;
 ServiceTaskSpecPlacement.builder()
 //  .constraints(java.util.List<java.lang.String>)
 //  .maxReplicas(java.lang.Number)
-//  .platforms(IResolvable)
-//  .platforms(java.util.List<ServiceTaskSpecPlacementPlatforms>)
+//  .platforms(IResolvable|java.util.List<ServiceTaskSpecPlacementPlatforms>)
 //  .prefs(java.util.List<java.lang.String>)
     .build();
 ```
@@ -3729,7 +3705,7 @@ ServiceTaskSpecPlacement.builder()
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.constraints">constraints</a></code> | <code>java.util.List<java.lang.String></code> | An array of constraints. e.g.: `node.role==manager`. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.maxReplicas">maxReplicas</a></code> | <code>java.lang.Number</code> | Maximum number of replicas for per node (default value is `0`, which is unlimited). |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms">platforms</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | platforms block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms">platforms</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | platforms block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.prefs">prefs</a></code> | <code>java.util.List<java.lang.String></code> | Preferences provide a way to make the scheduler aware of factors such as topology. |
 
 ---
@@ -3765,10 +3741,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `platforms`<sup>Optional</sup> <a name="platforms" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms"></a>
 
 ```java
-public java.lang.Object getPlatforms();
+public IResolvable|java.util.List<ServiceTaskSpecPlacementPlatforms> getPlatforms();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
 
 platforms block.
 
@@ -5101,12 +5077,12 @@ Returns a reversible string representation.
 ##### `putPorts` <a name="putPorts" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.putPorts"></a>
 
 ```java
-public void putPorts(IResolvable OR java.util.List<ServiceEndpointSpecPorts> value)
+public void putPorts(IResolvable|java.util.List<ServiceEndpointSpecPorts> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.putPorts.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
 
 ---
 
@@ -5131,7 +5107,7 @@ public void resetPorts()
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.ports">ports</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList">ServiceEndpointSpecPortsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.modeInput">modeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput">portsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput">portsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.mode">mode</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | *No description.* |
 
@@ -5184,10 +5160,10 @@ public java.lang.String getModeInput();
 ##### `portsInput`<sup>Optional</sup> <a name="portsInput" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput"></a>
 
 ```java
-public java.lang.Object getPortsInput();
+public IResolvable|java.util.List<ServiceEndpointSpecPorts> getPortsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
 
 ---
 
@@ -5333,7 +5309,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>></code> | *No description.* |
 
 ---
 
@@ -5364,10 +5340,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceEndpointSpecPorts> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>>
 
 ---
 
@@ -5638,7 +5614,7 @@ public void resetPublishMode()
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.publishedPort">publishedPort</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.publishMode">publishMode</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.targetPort">targetPort</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a></code> | *No description.* |
 
 ---
 
@@ -5769,10 +5745,10 @@ public java.lang.Number getTargetPort();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceEndpointSpecPorts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>
 
 ---
 
@@ -5898,7 +5874,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>></code> | *No description.* |
 
 ---
 
@@ -5929,10 +5905,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>>
 
 ---
 
@@ -6169,7 +6145,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a></code> | *No description.* |
 
 ---
 
@@ -6240,10 +6216,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>
 
 ---
 
@@ -6486,9 +6462,9 @@ public void resetReplicated()
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.replicated">replicated</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicatedOutputReference">ServiceModeReplicatedOutputReference</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput">globalInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput">globalInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.replicatedInput">replicatedInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicated">ServiceModeReplicated</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.global">global</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.global">global</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | *No description.* |
 
 ---
@@ -6530,10 +6506,10 @@ public ServiceModeReplicatedOutputReference getReplicated();
 ##### `globalInput`<sup>Optional</sup> <a name="globalInput" id="@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput"></a>
 
 ```java
-public java.lang.Object getGlobalInput();
+public java.lang.Boolean|IResolvable getGlobalInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -6550,10 +6526,10 @@ public ServiceModeReplicated getReplicatedInput();
 ##### `global`<sup>Required</sup> <a name="global" id="@cdktf/provider-docker.service.ServiceModeOutputReference.property.global"></a>
 
 ```java
-public java.lang.Object getGlobal();
+public java.lang.Boolean|IResolvable getGlobal();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -7390,7 +7366,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | *No description.* |
 
 ---
 
@@ -7421,10 +7397,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecConfigs> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
 
 ---
 
@@ -7697,7 +7673,7 @@ public void resetFileUid()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileMode">fileMode</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileName">fileName</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileUid">fileUid</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a></code> | *No description.* |
 
 ---
 
@@ -7848,10 +7824,10 @@ public java.lang.String getFileUid();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecConfigs getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>
 
 ---
 
@@ -8693,7 +8669,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | *No description.* |
 
 ---
 
@@ -8724,10 +8700,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecHosts> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
 
 ---
 
@@ -8964,7 +8940,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.ipInput">ipInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.host">host</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.ip">ip</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a></code> | *No description.* |
 
 ---
 
@@ -9035,10 +9011,10 @@ public java.lang.String getIp();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecHosts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>
 
 ---
 
@@ -9164,7 +9140,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | *No description.* |
 
 ---
 
@@ -9195,10 +9171,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
 
 ---
 
@@ -9435,7 +9411,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a></code> | *No description.* |
 
 ---
 
@@ -9506,10 +9482,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>
 
 ---
 
@@ -9913,7 +9889,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | *No description.* |
 
 ---
 
@@ -9944,10 +9920,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMounts> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
 
 ---
 
@@ -10258,17 +10234,17 @@ public void resetVolumeOptions()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.tmpfsOptions">tmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference">ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.volumeOptions">volumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference">ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.bindOptionsInput">bindOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions">ServiceTaskSpecContainerSpecMountsBindOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.sourceInput">sourceInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.targetInput">targetInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.tmpfsOptionsInput">tmpfsOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions">ServiceTaskSpecContainerSpecMountsTmpfsOptions</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.typeInput">typeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.volumeOptionsInput">volumeOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.source">source</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.target">target</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.type">type</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a></code> | *No description.* |
 
 ---
 
@@ -10339,10 +10315,10 @@ public ServiceTaskSpecContainerSpecMountsBindOptions getBindOptionsInput();
 ##### `readOnlyInput`<sup>Optional</sup> <a name="readOnlyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput"></a>
 
 ```java
-public java.lang.Object getReadOnlyInput();
+public java.lang.Boolean|IResolvable getReadOnlyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -10399,10 +10375,10 @@ public ServiceTaskSpecContainerSpecMountsVolumeOptions getVolumeOptionsInput();
 ##### `readOnly`<sup>Required</sup> <a name="readOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -10439,10 +10415,10 @@ public java.lang.String getType();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecMounts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>
 
 ---
 
@@ -10875,7 +10851,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | *No description.* |
 
 ---
 
@@ -10906,10 +10882,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
 
 ---
 
@@ -11146,7 +11122,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -11217,10 +11193,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -11436,12 +11412,12 @@ Returns a reversible string representation.
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels> value)
+public void putLabels(IResolvable|java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
 
 ---
 
@@ -11479,11 +11455,11 @@ public void resetNoCopy()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labels">labels</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverNameInput">driverNameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverOptionsInput">driverOptionsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput">noCopyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput">noCopyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverName">driverName</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverOptions">driverOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | *No description.* |
 
 ---
@@ -11545,20 +11521,20 @@ public java.util.Map<java.lang.String, java.lang.String> getDriverOptionsInput()
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>>
 
 ---
 
 ##### `noCopyInput`<sup>Optional</sup> <a name="noCopyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput"></a>
 
 ```java
-public java.lang.Object getNoCopyInput();
+public java.lang.Boolean|IResolvable getNoCopyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -11585,10 +11561,10 @@ public java.util.Map<java.lang.String, java.lang.String> getDriverOptions();
 ##### `noCopy`<sup>Required</sup> <a name="noCopy" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy"></a>
 
 ```java
-public java.lang.Object getNoCopy();
+public java.lang.Boolean|IResolvable getNoCopy();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -11839,12 +11815,12 @@ Returns a reversible string representation.
 ##### `putConfigs` <a name="putConfigs" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putConfigs"></a>
 
 ```java
-public void putConfigs(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecConfigs> value)
+public void putConfigs(IResolvable|java.util.List<ServiceTaskSpecContainerSpecConfigs> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putConfigs.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
 
 ---
 
@@ -11875,36 +11851,36 @@ public void putHealthcheck(ServiceTaskSpecContainerSpecHealthcheck value)
 ##### `putHosts` <a name="putHosts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putHosts"></a>
 
 ```java
-public void putHosts(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecHosts> value)
+public void putHosts(IResolvable|java.util.List<ServiceTaskSpecContainerSpecHosts> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putHosts.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
 
 ---
 
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecLabels> value)
+public void putLabels(IResolvable|java.util.List<ServiceTaskSpecContainerSpecLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
 
 ---
 
 ##### `putMounts` <a name="putMounts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putMounts"></a>
 
 ```java
-public void putMounts(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecMounts> value)
+public void putMounts(IResolvable|java.util.List<ServiceTaskSpecContainerSpecMounts> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putMounts.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
 
 ---
 
@@ -11923,12 +11899,12 @@ public void putPrivileges(ServiceTaskSpecContainerSpecPrivileges value)
 ##### `putSecrets` <a name="putSecrets" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putSecrets"></a>
 
 ```java
-public void putSecrets(IResolvable OR java.util.List<ServiceTaskSpecContainerSpecSecrets> value)
+public void putSecrets(IResolvable|java.util.List<ServiceTaskSpecContainerSpecSecrets> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putSecrets.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
 
 ---
 
@@ -12083,21 +12059,21 @@ public void resetUser()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.capAddInput">capAddInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.capDropInput">capDropInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.commandInput">commandInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput">configsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput">configsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.dirInput">dirInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.dnsConfigInput">dnsConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig">ServiceTaskSpecContainerSpecDnsConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.envInput">envInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.groupsInput">groupsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.healthcheckInput">healthcheckInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck">ServiceTaskSpecContainerSpecHealthcheck</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostnameInput">hostnameInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput">hostsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput">hostsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.imageInput">imageInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.isolationInput">isolationInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput">mountsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput">mountsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.privilegesInput">privilegesInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges">ServiceTaskSpecContainerSpecPrivileges</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput">secretsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput">secretsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopGracePeriodInput">stopGracePeriodInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopSignalInput">stopSignalInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.sysctlInput">sysctlInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
@@ -12112,7 +12088,7 @@ public void resetUser()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostname">hostname</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.image">image</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.isolation">isolation</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopGracePeriod">stopGracePeriod</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopSignal">stopSignal</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.sysctl">sysctl</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
@@ -12268,10 +12244,10 @@ public java.util.List<java.lang.String> getCommandInput();
 ##### `configsInput`<sup>Optional</sup> <a name="configsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput"></a>
 
 ```java
-public java.lang.Object getConfigsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecConfigs> getConfigsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>>
 
 ---
 
@@ -12338,10 +12314,10 @@ public java.lang.String getHostnameInput();
 ##### `hostsInput`<sup>Optional</sup> <a name="hostsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput"></a>
 
 ```java
-public java.lang.Object getHostsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecHosts> getHostsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>>
 
 ---
 
@@ -12368,20 +12344,20 @@ public java.lang.String getIsolationInput();
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>>
 
 ---
 
 ##### `mountsInput`<sup>Optional</sup> <a name="mountsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput"></a>
 
 ```java
-public java.lang.Object getMountsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecMounts> getMountsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>>
 
 ---
 
@@ -12398,20 +12374,20 @@ public ServiceTaskSpecContainerSpecPrivileges getPrivilegesInput();
 ##### `readOnlyInput`<sup>Optional</sup> <a name="readOnlyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput"></a>
 
 ```java
-public java.lang.Object getReadOnlyInput();
+public java.lang.Boolean|IResolvable getReadOnlyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `secretsInput`<sup>Optional</sup> <a name="secretsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput"></a>
 
 ```java
-public java.lang.Object getSecretsInput();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecSecrets> getSecretsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
 
 ---
 
@@ -12558,10 +12534,10 @@ public java.lang.String getIsolation();
 ##### `readOnly`<sup>Required</sup> <a name="readOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13501,12 +13477,12 @@ public void resetUser()
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput">disableInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput">disableInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.levelInput">levelInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.roleInput">roleInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.typeInput">typeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.userInput">userInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable">disable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable">disable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.level">level</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.role">role</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.type">type</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -13542,10 +13518,10 @@ public java.lang.String getFqn();
 ##### `disableInput`<sup>Optional</sup> <a name="disableInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput"></a>
 
 ```java
-public java.lang.Object getDisableInput();
+public java.lang.Boolean|IResolvable getDisableInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13592,10 +13568,10 @@ public java.lang.String getUserInput();
 ##### `disable`<sup>Required</sup> <a name="disable" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable"></a>
 
 ```java
-public java.lang.Object getDisable();
+public java.lang.Boolean|IResolvable getDisable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13771,7 +13747,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>></code> | *No description.* |
 
 ---
 
@@ -13802,10 +13778,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecContainerSpecSecrets> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>>
 
 ---
 
@@ -14078,7 +14054,7 @@ public void resetSecretName()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.fileUid">fileUid</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.secretId">secretId</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.secretName">secretName</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a></code> | *No description.* |
 
 ---
 
@@ -14229,10 +14205,10 @@ public java.lang.String getSecretName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecContainerSpecSecrets getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>
 
 ---
 
@@ -14658,7 +14634,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | *No description.* |
 
 ---
 
@@ -14689,10 +14665,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecNetworksAdvanced> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
 
 ---
 
@@ -14945,7 +14921,7 @@ public void resetDriverOpts()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.aliases">aliases</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.driverOpts">driverOpts</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -15036,10 +15012,10 @@ public java.lang.String getName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecNetworksAdvanced getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>
 
 ---
 
@@ -15287,12 +15263,12 @@ public void putLogDriver(ServiceTaskSpecLogDriver value)
 ##### `putNetworksAdvanced` <a name="putNetworksAdvanced" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.putNetworksAdvanced"></a>
 
 ```java
-public void putNetworksAdvanced(IResolvable OR java.util.List<ServiceTaskSpecNetworksAdvanced> value)
+public void putNetworksAdvanced(IResolvable|java.util.List<ServiceTaskSpecNetworksAdvanced> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.putNetworksAdvanced.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
 
 ---
 
@@ -15390,7 +15366,7 @@ public void resetRuntime()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.containerSpecInput">containerSpecInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec">ServiceTaskSpecContainerSpec</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.forceUpdateInput">forceUpdateInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.logDriverInput">logDriverInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecLogDriver">ServiceTaskSpecLogDriver</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput">networksAdvancedInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput">networksAdvancedInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.placementInput">placementInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement">ServiceTaskSpecPlacement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.resourcesInput">resourcesInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecResources">ServiceTaskSpecResources</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.restartPolicyInput">restartPolicyInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy">ServiceTaskSpecRestartPolicy</a></code> | *No description.* |
@@ -15518,10 +15494,10 @@ public ServiceTaskSpecLogDriver getLogDriverInput();
 ##### `networksAdvancedInput`<sup>Optional</sup> <a name="networksAdvancedInput" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput"></a>
 
 ```java
-public java.lang.Object getNetworksAdvancedInput();
+public IResolvable|java.util.List<ServiceTaskSpecNetworksAdvanced> getNetworksAdvancedInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>>
 
 ---
 
@@ -15807,12 +15783,12 @@ Returns a reversible string representation.
 ##### `putPlatforms` <a name="putPlatforms" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.putPlatforms"></a>
 
 ```java
-public void putPlatforms(IResolvable OR java.util.List<ServiceTaskSpecPlacementPlatforms> value)
+public void putPlatforms(IResolvable|java.util.List<ServiceTaskSpecPlacementPlatforms> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.putPlatforms.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
 
 ---
 
@@ -15850,7 +15826,7 @@ public void resetPrefs()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platforms">platforms</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList">ServiceTaskSpecPlacementPlatformsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.constraintsInput">constraintsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.maxReplicasInput">maxReplicasInput</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput">platformsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput">platformsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.prefsInput">prefsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.constraints">constraints</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.maxReplicas">maxReplicas</a></code> | <code>java.lang.Number</code> | *No description.* |
@@ -15916,10 +15892,10 @@ public java.lang.Number getMaxReplicasInput();
 ##### `platformsInput`<sup>Optional</sup> <a name="platformsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput"></a>
 
 ```java
-public java.lang.Object getPlatformsInput();
+public IResolvable|java.util.List<ServiceTaskSpecPlacementPlatforms> getPlatformsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
 
 ---
 
@@ -16095,7 +16071,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>></code> | *No description.* |
 
 ---
 
@@ -16126,10 +16102,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ServiceTaskSpecPlacementPlatforms> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>>
 
 ---
 
@@ -16366,7 +16342,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.osInput">osInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.architecture">architecture</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.os">os</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a></code> | *No description.* |
 
 ---
 
@@ -16437,10 +16413,10 @@ public java.lang.String getOs();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ServiceTaskSpecPlacementPlatforms getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>
 
 ---
 

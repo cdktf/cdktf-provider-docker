@@ -283,7 +283,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.plugin.Plugin.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.plugin.Plugin.importFrom"></a>
@@ -337,7 +337,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.plugin.Plugin.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -352,7 +352,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.plugin.Plugin.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -377,12 +377,12 @@ Full id of resource to move to, e.g. "aws_s3_bucket.example".
 ##### `PutGrantPermissions` <a name="PutGrantPermissions" id="@cdktf/provider-docker.plugin.Plugin.putGrantPermissions"></a>
 
 ```csharp
-private void PutGrantPermissions(object Value)
+private void PutGrantPermissions(IResolvable|PluginGrantPermissions[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.plugin.Plugin.putGrantPermissions.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]
 
 ---
 
@@ -566,32 +566,32 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantPermissions">GrantPermissions</a></code> | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsList">PluginGrantPermissionsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.pluginReference">PluginReference</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.aliasInput">AliasInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enabledInput">EnabledInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enabledInput">EnabledInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enableTimeoutInput">EnableTimeoutInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.envInput">EnvInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDestroyInput">ForceDestroyInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDisableInput">ForceDisableInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissionsInput">GrantAllPermissionsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantPermissionsInput">GrantPermissionsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDestroyInput">ForceDestroyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDisableInput">ForceDisableInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissionsInput">GrantAllPermissionsInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantPermissionsInput">GrantPermissionsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.alias">Alias</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enabled">Enabled</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enabled">Enabled</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.enableTimeout">EnableTimeout</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.env">Env</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDestroy">ForceDestroy</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDisable">ForceDisable</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDestroy">ForceDestroy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.forceDisable">ForceDisable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.id">Id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.Plugin.property.name">Name</a></code> | <code>string</code> | *No description.* |
 
@@ -672,20 +672,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.plugin.Plugin.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.plugin.Plugin.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -732,10 +732,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.plugin.Plugin.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -772,10 +772,10 @@ public string AliasInput { get; }
 ##### `EnabledInput`<sup>Optional</sup> <a name="EnabledInput" id="@cdktf/provider-docker.plugin.Plugin.property.enabledInput"></a>
 
 ```csharp
-public object EnabledInput { get; }
+public bool|IResolvable EnabledInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -802,40 +802,40 @@ public string[] EnvInput { get; }
 ##### `ForceDestroyInput`<sup>Optional</sup> <a name="ForceDestroyInput" id="@cdktf/provider-docker.plugin.Plugin.property.forceDestroyInput"></a>
 
 ```csharp
-public object ForceDestroyInput { get; }
+public bool|IResolvable ForceDestroyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `ForceDisableInput`<sup>Optional</sup> <a name="ForceDisableInput" id="@cdktf/provider-docker.plugin.Plugin.property.forceDisableInput"></a>
 
 ```csharp
-public object ForceDisableInput { get; }
+public bool|IResolvable ForceDisableInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `GrantAllPermissionsInput`<sup>Optional</sup> <a name="GrantAllPermissionsInput" id="@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissionsInput"></a>
 
 ```csharp
-public object GrantAllPermissionsInput { get; }
+public bool|IResolvable GrantAllPermissionsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `GrantPermissionsInput`<sup>Optional</sup> <a name="GrantPermissionsInput" id="@cdktf/provider-docker.plugin.Plugin.property.grantPermissionsInput"></a>
 
 ```csharp
-public object GrantPermissionsInput { get; }
+public IResolvable|PluginGrantPermissions[] GrantPermissionsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]
 
 ---
 
@@ -872,10 +872,10 @@ public string Alias { get; }
 ##### `Enabled`<sup>Required</sup> <a name="Enabled" id="@cdktf/provider-docker.plugin.Plugin.property.enabled"></a>
 
 ```csharp
-public object Enabled { get; }
+public bool|IResolvable Enabled { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -902,30 +902,30 @@ public string[] Env { get; }
 ##### `ForceDestroy`<sup>Required</sup> <a name="ForceDestroy" id="@cdktf/provider-docker.plugin.Plugin.property.forceDestroy"></a>
 
 ```csharp
-public object ForceDestroy { get; }
+public bool|IResolvable ForceDestroy { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `ForceDisable`<sup>Required</sup> <a name="ForceDisable" id="@cdktf/provider-docker.plugin.Plugin.property.forceDisable"></a>
 
 ```csharp
-public object ForceDisable { get; }
+public bool|IResolvable ForceDisable { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `GrantAllPermissions`<sup>Required</sup> <a name="GrantAllPermissions" id="@cdktf/provider-docker.plugin.Plugin.property.grantAllPermissions"></a>
 
 ```csharp
-public object GrantAllPermissions { get; }
+public bool|IResolvable GrantAllPermissions { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -977,22 +977,22 @@ public string TfResourceType { get; }
 using HashiCorp.Cdktf.Providers.Docker;
 
 new PluginConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Name,
     string Alias = null,
-    object Enabled = null,
+    bool|IResolvable Enabled = null,
     double EnableTimeout = null,
     string[] Env = null,
-    object ForceDestroy = null,
-    object ForceDisable = null,
-    object GrantAllPermissions = null,
-    object GrantPermissions = null,
+    bool|IResolvable ForceDestroy = null,
+    bool|IResolvable ForceDisable = null,
+    bool|IResolvable GrantAllPermissions = null,
+    IResolvable|PluginGrantPermissions[] GrantPermissions = null,
     string Id = null
 };
 ```
@@ -1001,22 +1001,22 @@ new PluginConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.name">Name</a></code> | <code>string</code> | Docker Plugin name. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.alias">Alias</a></code> | <code>string</code> | Docker Plugin alias. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.enabled">Enabled</a></code> | <code>object</code> | If `true` the plugin is enabled. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.enabled">Enabled</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true` the plugin is enabled. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.enableTimeout">EnableTimeout</a></code> | <code>double</code> | HTTP client timeout to enable the plugin. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.env">Env</a></code> | <code>string[]</code> | The environment variables in the form of `KEY=VALUE`, e.g. `DEBUG=0`. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDestroy">ForceDestroy</a></code> | <code>object</code> | If true, then the plugin is destroyed forcibly. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDisable">ForceDisable</a></code> | <code>object</code> | If true, then the plugin is disabled forcibly. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>object</code> | If true, grant all permissions necessary to run the plugin. |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantPermissions">GrantPermissions</a></code> | <code>object</code> | grant_permissions block. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDestroy">ForceDestroy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true, then the plugin is destroyed forcibly. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.forceDisable">ForceDisable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true, then the plugin is disabled forcibly. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantAllPermissions">GrantAllPermissions</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true, grant all permissions necessary to run the plugin. |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.grantPermissions">GrantPermissions</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]</code> | grant_permissions block. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/plugin#id Plugin#id}. |
 
 ---
@@ -1024,20 +1024,20 @@ new PluginConfig {
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.plugin.PluginConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.plugin.PluginConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1084,10 +1084,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.plugin.PluginConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -1122,10 +1122,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Enabled`<sup>Optional</sup> <a name="Enabled" id="@cdktf/provider-docker.plugin.PluginConfig.property.enabled"></a>
 
 ```csharp
-public object Enabled { get; set; }
+public bool|IResolvable Enabled { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true` the plugin is enabled. Defaults to `true`.
 
@@ -1164,10 +1164,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ForceDestroy`<sup>Optional</sup> <a name="ForceDestroy" id="@cdktf/provider-docker.plugin.PluginConfig.property.forceDestroy"></a>
 
 ```csharp
-public object ForceDestroy { get; set; }
+public bool|IResolvable ForceDestroy { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true, then the plugin is destroyed forcibly.
 
@@ -1178,10 +1178,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ForceDisable`<sup>Optional</sup> <a name="ForceDisable" id="@cdktf/provider-docker.plugin.PluginConfig.property.forceDisable"></a>
 
 ```csharp
-public object ForceDisable { get; set; }
+public bool|IResolvable ForceDisable { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true, then the plugin is disabled forcibly.
 
@@ -1192,10 +1192,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `GrantAllPermissions`<sup>Optional</sup> <a name="GrantAllPermissions" id="@cdktf/provider-docker.plugin.PluginConfig.property.grantAllPermissions"></a>
 
 ```csharp
-public object GrantAllPermissions { get; set; }
+public bool|IResolvable GrantAllPermissions { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true, grant all permissions necessary to run the plugin.
 
@@ -1206,10 +1206,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `GrantPermissions`<sup>Optional</sup> <a name="GrantPermissions" id="@cdktf/provider-docker.plugin.PluginConfig.property.grantPermissions"></a>
 
 ```csharp
-public object GrantPermissions { get; set; }
+public IResolvable|PluginGrantPermissions[] GrantPermissions { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]
 
 grant_permissions block.
 
@@ -1405,7 +1405,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]</code> | *No description.* |
 
 ---
 
@@ -1436,10 +1436,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.plugin.PluginGrantPermissionsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|PluginGrantPermissions[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>[]
 
 ---
 
@@ -1676,7 +1676,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.valueInput">ValueInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.value">Value</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a></code> | *No description.* |
 
 ---
 
@@ -1747,10 +1747,10 @@ public string[] Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.plugin.PluginGrantPermissionsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|PluginGrantPermissions InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.plugin.PluginGrantPermissions">PluginGrantPermissions</a>
 
 ---
 

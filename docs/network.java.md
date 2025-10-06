@@ -12,36 +12,25 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 import com.hashicorp.cdktf.providers.docker.network.Network;
 
 Network.Builder.create(Construct scope, java.lang.String id)
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
-//  .attachable(java.lang.Boolean)
-//  .attachable(IResolvable)
-//  .checkDuplicate(java.lang.Boolean)
-//  .checkDuplicate(IResolvable)
+//  .attachable(java.lang.Boolean|IResolvable)
+//  .checkDuplicate(java.lang.Boolean|IResolvable)
 //  .driver(java.lang.String)
 //  .id(java.lang.String)
-//  .ingress(java.lang.Boolean)
-//  .ingress(IResolvable)
-//  .internal(java.lang.Boolean)
-//  .internal(IResolvable)
-//  .ipamConfig(IResolvable)
-//  .ipamConfig(java.util.List<NetworkIpamConfig>)
+//  .ingress(java.lang.Boolean|IResolvable)
+//  .internal(java.lang.Boolean|IResolvable)
+//  .ipamConfig(IResolvable|java.util.List<NetworkIpamConfig>)
 //  .ipamDriver(java.lang.String)
 //  .ipamOptions(java.util.Map<java.lang.String, java.lang.String>)
-//  .ipv6(java.lang.Boolean)
-//  .ipv6(IResolvable)
-//  .labels(IResolvable)
-//  .labels(java.util.List<NetworkLabels>)
+//  .ipv6(java.lang.Boolean|IResolvable)
+//  .labels(IResolvable|java.util.List<NetworkLabels>)
 //  .options(java.util.Map<java.lang.String, java.lang.String>)
     .build();
 ```
@@ -50,25 +39,25 @@ Network.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.name">name</a></code> | <code>java.lang.String</code> | The name of the Docker network. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.attachable">attachable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.attachable">attachable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.driver">driver</a></code> | <code>java.lang.String</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/network#id Network#id}. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ingress">ingress</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.internal">internal</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ingress">ingress</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.internal">internal</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipamDriver">ipamDriver</a></code> | <code>java.lang.String</code> | Driver used by the custom IP scheme of the network. Defaults to `default`. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipamOptions">ipamOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Provide explicit options to the IPAM driver. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipv6">ipv6</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable IPv6 networking. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.ipv6">ipv6</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Enable IPv6 networking. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.network.Network.Initializer.parameter.options">options</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. |
 
 ---
@@ -93,13 +82,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.network.Network.Initializer.parameter.connection"></a>
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.network.Network.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -129,7 +118,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.network.Network.Initializer.parameter.provisioners"></a>
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -145,7 +134,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `attachable`<sup>Optional</sup> <a name="attachable" id="@cdktf/provider-docker.network.Network.Initializer.parameter.attachable"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Enable manual container attachment to the network.
 
@@ -155,7 +144,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `checkDuplicate`<sup>Optional</sup> <a name="checkDuplicate" id="@cdktf/provider-docker.network.Network.Initializer.parameter.checkDuplicate"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Requests daemon to check for networks with same name.
 
@@ -186,7 +175,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 ##### `ingress`<sup>Optional</sup> <a name="ingress" id="@cdktf/provider-docker.network.Network.Initializer.parameter.ingress"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Create swarm routing-mesh network. Defaults to `false`.
 
@@ -196,7 +185,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `internal`<sup>Optional</sup> <a name="internal" id="@cdktf/provider-docker.network.Network.Initializer.parameter.internal"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether the network is internal.
 
@@ -206,7 +195,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ipamConfig`<sup>Optional</sup> <a name="ipamConfig" id="@cdktf/provider-docker.network.Network.Initializer.parameter.ipamConfig"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
 
 ipam_config block.
 
@@ -238,7 +227,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ipv6`<sup>Optional</sup> <a name="ipv6" id="@cdktf/provider-docker.network.Network.Initializer.parameter.ipv6"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Enable IPv6 networking. Defaults to `false`.
 
@@ -248,7 +237,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.network.Network.Initializer.parameter.labels"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
 
 labels block.
 
@@ -507,7 +496,7 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 ##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-docker.network.Network.hasResourceMove"></a>
 
 ```java
-public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+public TerraformResourceMoveByTarget|TerraformResourceMoveById hasResourceMove()
 ```
 
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-docker.network.Network.importFrom"></a>
@@ -563,7 +552,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 
 ```java
 public void moveTo(java.lang.String moveTarget)
-public void moveTo(java.lang.String moveTarget, java.lang.String OR java.lang.Number index)
+public void moveTo(java.lang.String moveTarget, java.lang.String|java.lang.Number index)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -578,7 +567,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.network.Network.moveTo.parameter.index"></a>
 
-- *Type:* java.lang.String OR java.lang.Number
+- *Type:* java.lang.String|java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -603,24 +592,24 @@ Full id of resource to move to, e.g. "aws_s3_bucket.example".
 ##### `putIpamConfig` <a name="putIpamConfig" id="@cdktf/provider-docker.network.Network.putIpamConfig"></a>
 
 ```java
-public void putIpamConfig(IResolvable OR java.util.List<NetworkIpamConfig> value)
+public void putIpamConfig(IResolvable|java.util.List<NetworkIpamConfig> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.network.Network.putIpamConfig.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
 
 ---
 
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.network.Network.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<NetworkLabels> value)
+public void putLabels(IResolvable|java.util.List<NetworkLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.network.Network.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
 
 ---
 
@@ -822,38 +811,38 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfig">ipamConfig</a></code> | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList">NetworkIpamConfigList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.labels">labels</a></code> | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList">NetworkLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.scope">scope</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.attachableInput">attachableInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicateInput">checkDuplicateInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.attachableInput">attachableInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicateInput">checkDuplicateInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.driverInput">driverInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ingressInput">ingressInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.internalInput">internalInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfigInput">ipamConfigInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ingressInput">ingressInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.internalInput">internalInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfigInput">ipamConfigInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamDriverInput">ipamDriverInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamOptionsInput">ipamOptionsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6Input">ipv6Input</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6Input">ipv6Input</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.nameInput">nameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.optionsInput">optionsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.attachable">attachable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.attachable">attachable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.driver">driver</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ingress">ingress</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.internal">internal</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ingress">ingress</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.internal">internal</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamDriver">ipamDriver</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamOptions">ipamOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6">ipv6</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6">ipv6</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.options">options</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 
@@ -934,20 +923,20 @@ public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.network.Network.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.network.Network.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -994,10 +983,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.network.Network.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -1034,20 +1023,20 @@ public java.lang.String getScope();
 ##### `attachableInput`<sup>Optional</sup> <a name="attachableInput" id="@cdktf/provider-docker.network.Network.property.attachableInput"></a>
 
 ```java
-public java.lang.Object getAttachableInput();
+public java.lang.Boolean|IResolvable getAttachableInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `checkDuplicateInput`<sup>Optional</sup> <a name="checkDuplicateInput" id="@cdktf/provider-docker.network.Network.property.checkDuplicateInput"></a>
 
 ```java
-public java.lang.Object getCheckDuplicateInput();
+public java.lang.Boolean|IResolvable getCheckDuplicateInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1074,30 +1063,30 @@ public java.lang.String getIdInput();
 ##### `ingressInput`<sup>Optional</sup> <a name="ingressInput" id="@cdktf/provider-docker.network.Network.property.ingressInput"></a>
 
 ```java
-public java.lang.Object getIngressInput();
+public java.lang.Boolean|IResolvable getIngressInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `internalInput`<sup>Optional</sup> <a name="internalInput" id="@cdktf/provider-docker.network.Network.property.internalInput"></a>
 
 ```java
-public java.lang.Object getInternalInput();
+public java.lang.Boolean|IResolvable getInternalInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `ipamConfigInput`<sup>Optional</sup> <a name="ipamConfigInput" id="@cdktf/provider-docker.network.Network.property.ipamConfigInput"></a>
 
 ```java
-public java.lang.Object getIpamConfigInput();
+public IResolvable|java.util.List<NetworkIpamConfig> getIpamConfigInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
 
 ---
 
@@ -1124,20 +1113,20 @@ public java.util.Map<java.lang.String, java.lang.String> getIpamOptionsInput();
 ##### `ipv6Input`<sup>Optional</sup> <a name="ipv6Input" id="@cdktf/provider-docker.network.Network.property.ipv6Input"></a>
 
 ```java
-public java.lang.Object getIpv6Input();
+public java.lang.Boolean|IResolvable getIpv6Input();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.network.Network.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<NetworkLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
 
 ---
 
@@ -1164,20 +1153,20 @@ public java.util.Map<java.lang.String, java.lang.String> getOptionsInput();
 ##### `attachable`<sup>Required</sup> <a name="attachable" id="@cdktf/provider-docker.network.Network.property.attachable"></a>
 
 ```java
-public java.lang.Object getAttachable();
+public java.lang.Boolean|IResolvable getAttachable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `checkDuplicate`<sup>Required</sup> <a name="checkDuplicate" id="@cdktf/provider-docker.network.Network.property.checkDuplicate"></a>
 
 ```java
-public java.lang.Object getCheckDuplicate();
+public java.lang.Boolean|IResolvable getCheckDuplicate();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1204,20 +1193,20 @@ public java.lang.String getId();
 ##### `ingress`<sup>Required</sup> <a name="ingress" id="@cdktf/provider-docker.network.Network.property.ingress"></a>
 
 ```java
-public java.lang.Object getIngress();
+public java.lang.Boolean|IResolvable getIngress();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `internal`<sup>Required</sup> <a name="internal" id="@cdktf/provider-docker.network.Network.property.internal"></a>
 
 ```java
-public java.lang.Object getInternal();
+public java.lang.Boolean|IResolvable getInternal();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1244,10 +1233,10 @@ public java.util.Map<java.lang.String, java.lang.String> getIpamOptions();
 ##### `ipv6`<sup>Required</sup> <a name="ipv6" id="@cdktf/provider-docker.network.Network.property.ipv6"></a>
 
 ```java
-public java.lang.Object getIpv6();
+public java.lang.Boolean|IResolvable getIpv6();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1299,36 +1288,25 @@ public java.lang.String getTfResourceType();
 import com.hashicorp.cdktf.providers.docker.network.NetworkConfig;
 
 NetworkConfig.builder()
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
-//  .attachable(java.lang.Boolean)
-//  .attachable(IResolvable)
-//  .checkDuplicate(java.lang.Boolean)
-//  .checkDuplicate(IResolvable)
+//  .attachable(java.lang.Boolean|IResolvable)
+//  .checkDuplicate(java.lang.Boolean|IResolvable)
 //  .driver(java.lang.String)
 //  .id(java.lang.String)
-//  .ingress(java.lang.Boolean)
-//  .ingress(IResolvable)
-//  .internal(java.lang.Boolean)
-//  .internal(IResolvable)
-//  .ipamConfig(IResolvable)
-//  .ipamConfig(java.util.List<NetworkIpamConfig>)
+//  .ingress(java.lang.Boolean|IResolvable)
+//  .internal(java.lang.Boolean|IResolvable)
+//  .ipamConfig(IResolvable|java.util.List<NetworkIpamConfig>)
 //  .ipamDriver(java.lang.String)
 //  .ipamOptions(java.util.Map<java.lang.String, java.lang.String>)
-//  .ipv6(java.lang.Boolean)
-//  .ipv6(IResolvable)
-//  .labels(IResolvable)
-//  .labels(java.util.List<NetworkLabels>)
+//  .ipv6(java.lang.Boolean|IResolvable)
+//  .labels(IResolvable|java.util.List<NetworkLabels>)
 //  .options(java.util.Map<java.lang.String, java.lang.String>)
     .build();
 ```
@@ -1337,25 +1315,25 @@ NetworkConfig.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.name">name</a></code> | <code>java.lang.String</code> | The name of the Docker network. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">attachable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">attachable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Enable manual container attachment to the network. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">checkDuplicate</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.driver">driver</a></code> | <code>java.lang.String</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/network#id Network#id}. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">ingress</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">internal</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">ingress</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">internal</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether the network is internal. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">ipamConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | ipam_config block. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamDriver">ipamDriver</a></code> | <code>java.lang.String</code> | Driver used by the custom IP scheme of the network. Defaults to `default`. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamOptions">ipamOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Provide explicit options to the IPAM driver. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipv6">ipv6</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Enable IPv6 networking. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipv6">ipv6</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Enable IPv6 networking. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.options">options</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. |
 
 ---
@@ -1363,20 +1341,20 @@ NetworkConfig.builder()
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.network.NetworkConfig.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.network.NetworkConfig.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -1423,10 +1401,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.network.NetworkConfig.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -1447,10 +1425,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `attachable`<sup>Optional</sup> <a name="attachable" id="@cdktf/provider-docker.network.NetworkConfig.property.attachable"></a>
 
 ```java
-public java.lang.Object getAttachable();
+public java.lang.Boolean|IResolvable getAttachable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Enable manual container attachment to the network.
 
@@ -1461,10 +1439,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `checkDuplicate`<sup>Optional</sup> <a name="checkDuplicate" id="@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate"></a>
 
 ```java
-public java.lang.Object getCheckDuplicate();
+public java.lang.Boolean|IResolvable getCheckDuplicate();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Requests daemon to check for networks with same name.
 
@@ -1504,10 +1482,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `ingress`<sup>Optional</sup> <a name="ingress" id="@cdktf/provider-docker.network.NetworkConfig.property.ingress"></a>
 
 ```java
-public java.lang.Object getIngress();
+public java.lang.Boolean|IResolvable getIngress();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Create swarm routing-mesh network. Defaults to `false`.
 
@@ -1518,10 +1496,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `internal`<sup>Optional</sup> <a name="internal" id="@cdktf/provider-docker.network.NetworkConfig.property.internal"></a>
 
 ```java
-public java.lang.Object getInternal();
+public java.lang.Boolean|IResolvable getInternal();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether the network is internal.
 
@@ -1532,10 +1510,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ipamConfig`<sup>Optional</sup> <a name="ipamConfig" id="@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig"></a>
 
 ```java
-public java.lang.Object getIpamConfig();
+public IResolvable|java.util.List<NetworkIpamConfig> getIpamConfig();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
 
 ipam_config block.
 
@@ -1576,10 +1554,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ipv6`<sup>Optional</sup> <a name="ipv6" id="@cdktf/provider-docker.network.NetworkConfig.property.ipv6"></a>
 
 ```java
-public java.lang.Object getIpv6();
+public java.lang.Boolean|IResolvable getIpv6();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Enable IPv6 networking. Defaults to `false`.
 
@@ -1590,10 +1568,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.network.NetworkConfig.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<NetworkLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
 
 labels block.
 
@@ -1870,7 +1848,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>></code> | *No description.* |
 
 ---
 
@@ -1901,10 +1879,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<NetworkIpamConfig> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>>
 
 ---
 
@@ -2173,7 +2151,7 @@ public void resetSubnet()
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.gateway">gateway</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.ipRange">ipRange</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.subnet">subnet</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a></code> | *No description.* |
 
 ---
 
@@ -2284,10 +2262,10 @@ public java.lang.String getSubnet();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|NetworkIpamConfig getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>
 
 ---
 
@@ -2413,7 +2391,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>></code> | *No description.* |
 
 ---
 
@@ -2444,10 +2422,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<NetworkLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>>
 
 ---
 
@@ -2684,7 +2662,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a></code> | *No description.* |
 
 ---
 
@@ -2755,10 +2733,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|NetworkLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>
 
 ---
 

@@ -333,19 +333,19 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterialInput">CertMaterialInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPathInput">CertPathInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.contextInput">ContextInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">DisableDockerDaemonCheckInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">DisableDockerDaemonCheckInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.hostInput">HostInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterialInput">KeyMaterialInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">RegistryAuthInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">RegistryAuthInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.sshOptsInput">SshOptsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterial">CaMaterial</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterial">CertMaterial</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPath">CertPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.context">Context</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.host">Host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterial">KeyMaterial</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">RegistryAuth</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">RegistryAuth</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.sshOpts">SshOpts</a></code> | <code>string[]</code> | *No description.* |
 
 ---
@@ -495,10 +495,10 @@ public string ContextInput { get; }
 ##### `DisableDockerDaemonCheckInput`<sup>Optional</sup> <a name="DisableDockerDaemonCheckInput" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput"></a>
 
 ```csharp
-public object DisableDockerDaemonCheckInput { get; }
+public bool|IResolvable DisableDockerDaemonCheckInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -525,10 +525,10 @@ public string KeyMaterialInput { get; }
 ##### `RegistryAuthInput`<sup>Optional</sup> <a name="RegistryAuthInput" id="@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput"></a>
 
 ```csharp
-public object RegistryAuthInput { get; }
+public IResolvable|DockerProviderRegistryAuth[] RegistryAuthInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]
 
 ---
 
@@ -585,10 +585,10 @@ public string Context { get; }
 ##### `DisableDockerDaemonCheck`<sup>Optional</sup> <a name="DisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck"></a>
 
 ```csharp
-public object DisableDockerDaemonCheck { get; }
+public bool|IResolvable DisableDockerDaemonCheck { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -615,10 +615,10 @@ public string KeyMaterial { get; }
 ##### `RegistryAuth`<sup>Optional</sup> <a name="RegistryAuth" id="@cdktf/provider-docker.provider.DockerProvider.property.registryAuth"></a>
 
 ```csharp
-public object RegistryAuth { get; }
+public IResolvable|DockerProviderRegistryAuth[] RegistryAuth { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]
 
 ---
 
@@ -665,10 +665,10 @@ new DockerProviderConfig {
     string CertMaterial = null,
     string CertPath = null,
     string Context = null,
-    object DisableDockerDaemonCheck = null,
+    bool|IResolvable DisableDockerDaemonCheck = null,
     string Host = null,
     string KeyMaterial = null,
-    object RegistryAuth = null,
+    IResolvable|DockerProviderRegistryAuth[] RegistryAuth = null,
     string[] SshOpts = null
 };
 ```
@@ -682,10 +682,10 @@ new DockerProviderConfig {
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certMaterial">CertMaterial</a></code> | <code>string</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certPath">CertPath</a></code> | <code>string</code> | Path to directory with Docker TLS config. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.context">Context</a></code> | <code>string</code> | The name of the Docker context to use. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>object</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">DisableDockerDaemonCheck</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.host">Host</a></code> | <code>string</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.keyMaterial">KeyMaterial</a></code> | <code>string</code> | PEM-encoded content of Docker client private key. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">RegistryAuth</a></code> | <code>object</code> | registry_auth block. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">RegistryAuth</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]</code> | registry_auth block. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.sshOpts">SshOpts</a></code> | <code>string[]</code> | Additional SSH option flags to be appended when using `ssh://` protocol. |
 
 ---
@@ -765,10 +765,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `DisableDockerDaemonCheck`<sup>Optional</sup> <a name="DisableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck"></a>
 
 ```csharp
-public object DisableDockerDaemonCheck { get; set; }
+public bool|IResolvable DisableDockerDaemonCheck { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If set to `true`, the provider will not check if the Docker daemon is running.
 
@@ -809,10 +809,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `RegistryAuth`<sup>Optional</sup> <a name="RegistryAuth" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth"></a>
 
 ```csharp
-public object RegistryAuth { get; set; }
+public IResolvable|DockerProviderRegistryAuth[] RegistryAuth { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>[]
 
 registry_auth block.
 
@@ -843,7 +843,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new DockerProviderRegistryAuth {
     string Address,
-    object AuthDisabled = null,
+    bool|IResolvable AuthDisabled = null,
     string ConfigFile = null,
     string ConfigFileContent = null,
     string Password = null,
@@ -856,7 +856,7 @@ new DockerProviderRegistryAuth {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.address">Address</a></code> | <code>string</code> | Address of the registry. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled">AuthDisabled</a></code> | <code>object</code> | Setting this to `true` will tell the provider that this registry does not need authentication. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled">AuthDisabled</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Setting this to `true` will tell the provider that this registry does not need authentication. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.configFile">ConfigFile</a></code> | <code>string</code> | Path to docker json file for registry auth. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.configFileContent">ConfigFileContent</a></code> | <code>string</code> | Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.password">Password</a></code> | <code>string</code> | Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set. |
@@ -881,10 +881,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `AuthDisabled`<sup>Optional</sup> <a name="AuthDisabled" id="@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled"></a>
 
 ```csharp
-public object AuthDisabled { get; set; }
+public bool|IResolvable AuthDisabled { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Setting this to `true` will tell the provider that this registry does not need authentication.
 

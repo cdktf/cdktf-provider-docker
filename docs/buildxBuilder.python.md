@@ -14,15 +14,15 @@ from cdktf_cdktf_provider_docker import buildx_builder
 buildxBuilder.BuildxBuilder(
   scope: Construct,
   id: str,
-  connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
+  connection: SSHProvisionerConnection | WinrmProvisionerConnection = None,
+  count: typing.Union[int, float] | TerraformCount = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
   provider: TerraformProvider = None,
-  provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]] = None,
-  append: typing.Union[bool, IResolvable] = None,
-  bootstrap: typing.Union[bool, IResolvable] = None,
+  provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner] = None,
+  append: bool | IResolvable = None,
+  bootstrap: bool | IResolvable = None,
   buildkit_config: str = None,
   buildkit_flags: str = None,
   docker_container: BuildxBuilderDockerContainer = None,
@@ -35,7 +35,7 @@ buildxBuilder.BuildxBuilder(
   node_attribute: str = None,
   platform: typing.List[str] = None,
   remote: BuildxBuilderRemote = None,
-  use: typing.Union[bool, IResolvable] = None
+  use: bool | IResolvable = None
 )
 ```
 
@@ -43,15 +43,15 @@ buildxBuilder.BuildxBuilder(
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.id">id</a></code> | <code>str</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.append">append</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Append a node to builder instead of changing it. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.bootstrap">bootstrap</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Automatically boot the builder after creation. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.append">append</a></code> | <code>bool \| cdktf.IResolvable</code> | Append a node to builder instead of changing it. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.bootstrap">bootstrap</a></code> | <code>bool \| cdktf.IResolvable</code> | Automatically boot the builder after creation. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.buildkitConfig">buildkit_config</a></code> | <code>str</code> | BuildKit daemon config file. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.buildkitFlags">buildkit_flags</a></code> | <code>str</code> | BuildKit flags to set for the builder. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.dockerContainer">docker_container</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer">BuildxBuilderDockerContainer</a></code> | docker_container block. |
@@ -64,7 +64,7 @@ buildxBuilder.BuildxBuilder(
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.nodeAttribute">node_attribute</a></code> | <code>str</code> | Create/modify node with given name. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.platform">platform</a></code> | <code>typing.List[str]</code> | Fixed platforms for current node. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.remote">remote</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | remote block. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.use">use</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Set the current builder instance as the default for the current context. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.use">use</a></code> | <code>bool \| cdktf.IResolvable</code> | Set the current builder instance as the default for the current context. |
 
 ---
 
@@ -88,13 +88,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.connection"></a>
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.count"></a>
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -124,13 +124,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.provisioners"></a>
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
 ##### `append`<sup>Optional</sup> <a name="append" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.append"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Append a node to builder instead of changing it.
 
@@ -140,7 +140,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `bootstrap`<sup>Optional</sup> <a name="bootstrap" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.bootstrap"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically boot the builder after creation. Defaults to `false`.
 
@@ -273,7 +273,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `use`<sup>Optional</sup> <a name="use" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.Initializer.parameter.use"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Set the current builder instance as the default for the current context.
 
@@ -551,7 +551,7 @@ def get_string_map_attribute(
 ##### `has_resource_move` <a name="has_resource_move" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.hasResourceMove"></a>
 
 ```python
-def has_resource_move() -> typing.Union[TerraformResourceMoveByTarget, TerraformResourceMoveById]
+def has_resource_move() -> TerraformResourceMoveByTarget | TerraformResourceMoveById
 ```
 
 ##### `import_from` <a name="import_from" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.importFrom"></a>
@@ -614,7 +614,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ```python
 def move_to(
   move_target: str,
-  index: typing.Union[str, typing.Union[int, float]] = None
+  index: str | typing.Union[int, float] = None
 ) -> None
 ```
 
@@ -630,7 +630,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.moveTo.parameter.index"></a>
 
-- *Type:* typing.Union[str, typing.Union[int, float]]
+- *Type:* str | typing.Union[int, float]
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -664,7 +664,7 @@ def put_docker_container(
   cpuset_cpus: str = None,
   cpuset_mems: str = None,
   cpu_shares: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   env: typing.Mapping[str] = None,
   image: str = None,
   memory: str = None,
@@ -736,7 +736,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.putDockerContainer.parameter.defaultLoad"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -809,7 +809,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ```python
 def put_kubernetes(
   annotations: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   image: str = None,
   labels: str = None,
   limits: BuildxBuilderKubernetesLimits = None,
@@ -819,7 +819,7 @@ def put_kubernetes(
   qemu: BuildxBuilderKubernetesQemu = None,
   replicas: typing.Union[int, float] = None,
   requests: BuildxBuilderKubernetesRequests = None,
-  rootless: typing.Union[bool, IResolvable] = None,
+  rootless: bool | IResolvable = None,
   schedulername: str = None,
   serviceaccount: str = None,
   timeout: str = None,
@@ -839,7 +839,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.putKubernetes.parameter.defaultLoad"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -939,7 +939,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `rootless`<sup>Optional</sup> <a name="rootless" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.putKubernetes.parameter.rootless"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Run the container as a non-root user.
 
@@ -993,7 +993,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 def put_remote(
   cacert: str = None,
   cert: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   key: str = None,
   servername: str = None
 ) -> None
@@ -1021,7 +1021,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.putRemote.parameter.defaultLoad"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -1276,18 +1276,18 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformMetaArguments">terraform_meta_arguments</a></code> | <code>typing.Mapping[typing.Any]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformResourceType">terraform_resource_type</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformGeneratorMetadata">terraform_generator_metadata</a></code> | <code>cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dependsOn">depends_on</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dockerContainer">docker_container</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference">BuildxBuilderDockerContainerOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.kubernetes">kubernetes</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference">BuildxBuilderKubernetesOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.remote">remote</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference">BuildxBuilderRemoteOutputReference</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput">append_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput">bootstrap_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput">append_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput">bootstrap_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitConfigInput">buildkit_config_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitFlagsInput">buildkit_flags_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dockerContainerInput">docker_container_input</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer">BuildxBuilderDockerContainer</a></code> | *No description.* |
@@ -1300,9 +1300,9 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.nodeAttributeInput">node_attribute_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.platformInput">platform_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.remoteInput">remote_input</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput">use_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append">append</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap">bootstrap</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput">use_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append">append</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap">bootstrap</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitConfig">buildkit_config</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitFlags">buildkit_flags</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.driver">driver</a></code> | <code>str</code> | *No description.* |
@@ -1312,7 +1312,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.name">name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.nodeAttribute">node_attribute</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.platform">platform</a></code> | <code>typing.List[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use">use</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use">use</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 
 ---
 
@@ -1391,20 +1391,20 @@ terraform_generator_metadata: TerraformProviderGeneratorMetadata
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection"></a>
 
 ```python
-connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
+connection: SSHProvisionerConnection | WinrmProvisionerConnection
 ```
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count"></a>
 
 ```python
-count: typing.Union[typing.Union[int, float], TerraformCount]
+count: typing.Union[int, float] | TerraformCount
 ```
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -1451,10 +1451,10 @@ provider: TerraformProvider
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners"></a>
 
 ```python
-provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]]
+provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner]
 ```
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
@@ -1491,20 +1491,20 @@ remote: BuildxBuilderRemoteOutputReference
 ##### `append_input`<sup>Optional</sup> <a name="append_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput"></a>
 
 ```python
-append_input: typing.Union[bool, IResolvable]
+append_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `bootstrap_input`<sup>Optional</sup> <a name="bootstrap_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput"></a>
 
 ```python
-bootstrap_input: typing.Union[bool, IResolvable]
+bootstrap_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -1631,30 +1631,30 @@ remote_input: BuildxBuilderRemote
 ##### `use_input`<sup>Optional</sup> <a name="use_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput"></a>
 
 ```python
-use_input: typing.Union[bool, IResolvable]
+use_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `append`<sup>Required</sup> <a name="append" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append"></a>
 
 ```python
-append: typing.Union[bool, IResolvable]
+append: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `bootstrap`<sup>Required</sup> <a name="bootstrap" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap"></a>
 
 ```python
-bootstrap: typing.Union[bool, IResolvable]
+bootstrap: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -1751,10 +1751,10 @@ platform: typing.List[str]
 ##### `use`<sup>Required</sup> <a name="use" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use"></a>
 
 ```python
-use: typing.Union[bool, IResolvable]
+use: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -1786,15 +1786,15 @@ tfResourceType: str
 from cdktf_cdktf_provider_docker import buildx_builder
 
 buildxBuilder.BuildxBuilderConfig(
-  connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
+  connection: SSHProvisionerConnection | WinrmProvisionerConnection = None,
+  count: typing.Union[int, float] | TerraformCount = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
   provider: TerraformProvider = None,
-  provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]] = None,
-  append: typing.Union[bool, IResolvable] = None,
-  bootstrap: typing.Union[bool, IResolvable] = None,
+  provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner] = None,
+  append: bool | IResolvable = None,
+  bootstrap: bool | IResolvable = None,
   buildkit_config: str = None,
   buildkit_flags: str = None,
   docker_container: BuildxBuilderDockerContainer = None,
@@ -1807,7 +1807,7 @@ buildxBuilder.BuildxBuilderConfig(
   node_attribute: str = None,
   platform: typing.List[str] = None,
   remote: BuildxBuilderRemote = None,
-  use: typing.Union[bool, IResolvable] = None
+  use: bool | IResolvable = None
 )
 ```
 
@@ -1815,15 +1815,15 @@ buildxBuilder.BuildxBuilderConfig(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append">append</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Append a node to builder instead of changing it. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap">bootstrap</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Automatically boot the builder after creation. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append">append</a></code> | <code>bool \| cdktf.IResolvable</code> | Append a node to builder instead of changing it. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap">bootstrap</a></code> | <code>bool \| cdktf.IResolvable</code> | Automatically boot the builder after creation. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.buildkitConfig">buildkit_config</a></code> | <code>str</code> | BuildKit daemon config file. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.buildkitFlags">buildkit_flags</a></code> | <code>str</code> | BuildKit flags to set for the builder. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.dockerContainer">docker_container</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer">BuildxBuilderDockerContainer</a></code> | docker_container block. |
@@ -1836,27 +1836,27 @@ buildxBuilder.BuildxBuilderConfig(
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.nodeAttribute">node_attribute</a></code> | <code>str</code> | Create/modify node with given name. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.platform">platform</a></code> | <code>typing.List[str]</code> | Fixed platforms for current node. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.remote">remote</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | remote block. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use">use</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Set the current builder instance as the default for the current context. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use">use</a></code> | <code>bool \| cdktf.IResolvable</code> | Set the current builder instance as the default for the current context. |
 
 ---
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection"></a>
 
 ```python
-connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
+connection: SSHProvisionerConnection | WinrmProvisionerConnection
 ```
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count"></a>
 
 ```python
-count: typing.Union[typing.Union[int, float], TerraformCount]
+count: typing.Union[int, float] | TerraformCount
 ```
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -1903,20 +1903,20 @@ provider: TerraformProvider
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners"></a>
 
 ```python
-provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]]
+provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner]
 ```
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
 ##### `append`<sup>Optional</sup> <a name="append" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append"></a>
 
 ```python
-append: typing.Union[bool, IResolvable]
+append: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Append a node to builder instead of changing it.
 
@@ -1927,10 +1927,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `bootstrap`<sup>Optional</sup> <a name="bootstrap" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap"></a>
 
 ```python
-bootstrap: typing.Union[bool, IResolvable]
+bootstrap: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically boot the builder after creation. Defaults to `false`.
 
@@ -2112,10 +2112,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `use`<sup>Optional</sup> <a name="use" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use"></a>
 
 ```python
-use: typing.Union[bool, IResolvable]
+use: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Set the current builder instance as the default for the current context.
 
@@ -2137,7 +2137,7 @@ buildxBuilder.BuildxBuilderDockerContainer(
   cpuset_cpus: str = None,
   cpuset_mems: str = None,
   cpu_shares: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   env: typing.Mapping[str] = None,
   image: str = None,
   memory: str = None,
@@ -2157,7 +2157,7 @@ buildxBuilder.BuildxBuilderDockerContainer(
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpusetCpus">cpuset_cpus</a></code> | <code>str</code> | Limits the set of CPU cores the container can use. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpusetMems">cpuset_mems</a></code> | <code>str</code> | Limits the set of CPU memory nodes the container can use. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpuShares">cpu_shares</a></code> | <code>str</code> | Configures CPU shares (relative weight) of the container. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.env">env</a></code> | <code>typing.Mapping[str]</code> | Sets environment variables in the container. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.image">image</a></code> | <code>str</code> | Sets the BuildKit image to use for the container. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.memory">memory</a></code> | <code>str</code> | Sets the amount of memory the container can use. |
@@ -2254,10 +2254,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -2358,7 +2358,7 @@ from cdktf_cdktf_provider_docker import buildx_builder
 
 buildxBuilder.BuildxBuilderKubernetes(
   annotations: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   image: str = None,
   labels: str = None,
   limits: BuildxBuilderKubernetesLimits = None,
@@ -2368,7 +2368,7 @@ buildxBuilder.BuildxBuilderKubernetes(
   qemu: BuildxBuilderKubernetesQemu = None,
   replicas: typing.Union[int, float] = None,
   requests: BuildxBuilderKubernetesRequests = None,
-  rootless: typing.Union[bool, IResolvable] = None,
+  rootless: bool | IResolvable = None,
   schedulername: str = None,
   serviceaccount: str = None,
   timeout: str = None,
@@ -2381,7 +2381,7 @@ buildxBuilder.BuildxBuilderKubernetes(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.annotations">annotations</a></code> | <code>str</code> | Sets additional annotations on the deployments and pods. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.image">image</a></code> | <code>str</code> | Sets the image to use for running BuildKit. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.labels">labels</a></code> | <code>str</code> | Sets additional labels on the deployments and pods. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.limits">limits</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimits">BuildxBuilderKubernetesLimits</a></code> | limits block. |
@@ -2391,7 +2391,7 @@ buildxBuilder.BuildxBuilderKubernetes(
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.qemu">qemu</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | qemu block. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.replicas">replicas</a></code> | <code>typing.Union[int, float]</code> | Sets the number of Pod replicas to create. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.requests">requests</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequests">BuildxBuilderKubernetesRequests</a></code> | requests block. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless">rootless</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Run the container as a non-root user. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless">rootless</a></code> | <code>bool \| cdktf.IResolvable</code> | Run the container as a non-root user. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.schedulername">schedulername</a></code> | <code>str</code> | Sets the scheduler responsible for scheduling the pod. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.serviceaccount">serviceaccount</a></code> | <code>str</code> | Sets the pod's serviceAccountName. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.timeout">timeout</a></code> | <code>str</code> | Set the timeout limit for pod provisioning. |
@@ -2416,10 +2416,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -2556,10 +2556,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `rootless`<sup>Optional</sup> <a name="rootless" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless"></a>
 
 ```python
-rootless: typing.Union[bool, IResolvable]
+rootless: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Run the container as a non-root user.
 
@@ -2698,7 +2698,7 @@ from cdktf_cdktf_provider_docker import buildx_builder
 
 buildxBuilder.BuildxBuilderKubernetesQemu(
   image: str = None,
-  install: typing.Union[bool, IResolvable] = None
+  install: bool | IResolvable = None
 )
 ```
 
@@ -2707,7 +2707,7 @@ buildxBuilder.BuildxBuilderKubernetesQemu(
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.image">image</a></code> | <code>str</code> | Sets the QEMU emulation image. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install">install</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Install QEMU emulation for multi-platform support. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install">install</a></code> | <code>bool \| cdktf.IResolvable</code> | Install QEMU emulation for multi-platform support. |
 
 ---
 
@@ -2728,10 +2728,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `install`<sup>Optional</sup> <a name="install" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install"></a>
 
 ```python
-install: typing.Union[bool, IResolvable]
+install: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Install QEMU emulation for multi-platform support.
 
@@ -2815,7 +2815,7 @@ from cdktf_cdktf_provider_docker import buildx_builder
 buildxBuilder.BuildxBuilderRemote(
   cacert: str = None,
   cert: str = None,
-  default_load: typing.Union[bool, IResolvable] = None,
+  default_load: bool | IResolvable = None,
   key: str = None,
   servername: str = None
 )
@@ -2827,7 +2827,7 @@ buildxBuilder.BuildxBuilderRemote(
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.cacert">cacert</a></code> | <code>str</code> | Absolute path to the TLS certificate authority used for validation. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.cert">cert</a></code> | <code>str</code> | Absolute path to the TLS client certificate to present to buildkitd. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.key">key</a></code> | <code>str</code> | Sets the TLS client key. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.servername">servername</a></code> | <code>str</code> | TLS server name used in requests. |
 
@@ -2864,10 +2864,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `default_load`<sup>Optional</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -3237,7 +3237,7 @@ def reset_restart_policy() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetCpusInput">cpuset_cpus_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetMemsInput">cpuset_mems_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpuSharesInput">cpu_shares_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.envInput">env_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.imageInput">image_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.memoryInput">memory_input</a></code> | <code>str</code> | *No description.* |
@@ -3250,7 +3250,7 @@ def reset_restart_policy() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetCpus">cpuset_cpus</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetMems">cpuset_mems</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpuShares">cpu_shares</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.env">env</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.image">image</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.memory">memory</a></code> | <code>str</code> | *No description.* |
@@ -3348,10 +3348,10 @@ cpu_shares_input: str
 ##### `default_load_input`<sup>Optional</sup> <a name="default_load_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput"></a>
 
 ```python
-default_load_input: typing.Union[bool, IResolvable]
+default_load_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3478,10 +3478,10 @@ cpu_shares: str
 ##### `default_load`<sup>Required</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -4209,7 +4209,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ```python
 def put_qemu(
   image: str = None,
-  install: typing.Union[bool, IResolvable] = None
+  install: bool | IResolvable = None
 ) -> None
 ```
 
@@ -4225,7 +4225,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `install`<sup>Optional</sup> <a name="install" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.putQemu.parameter.install"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Install QEMU emulation for multi-platform support.
 
@@ -4380,7 +4380,7 @@ def reset_tolerations() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.qemu">qemu</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference">BuildxBuilderKubernetesQemuOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.requests">requests</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequestsOutputReference">BuildxBuilderKubernetesRequestsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.annotationsInput">annotations_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.imageInput">image_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.labelsInput">labels_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.limitsInput">limits_input</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimits">BuildxBuilderKubernetesLimits</a></code> | *No description.* |
@@ -4390,20 +4390,20 @@ def reset_tolerations() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.qemuInput">qemu_input</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.replicasInput">replicas_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.requestsInput">requests_input</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequests">BuildxBuilderKubernetesRequests</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput">rootless_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput">rootless_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.schedulernameInput">schedulername_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.serviceaccountInput">serviceaccount_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.timeoutInput">timeout_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.tolerationsInput">tolerations_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.annotations">annotations</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.image">image</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.labels">labels</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.loadbalance">loadbalance</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.namespace">namespace</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.nodeselector">nodeselector</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.replicas">replicas</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless">rootless</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless">rootless</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.schedulername">schedulername</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.serviceaccount">serviceaccount</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.timeout">timeout</a></code> | <code>str</code> | *No description.* |
@@ -4479,10 +4479,10 @@ annotations_input: str
 ##### `default_load_input`<sup>Optional</sup> <a name="default_load_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput"></a>
 
 ```python
-default_load_input: typing.Union[bool, IResolvable]
+default_load_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -4579,10 +4579,10 @@ requests_input: BuildxBuilderKubernetesRequests
 ##### `rootless_input`<sup>Optional</sup> <a name="rootless_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput"></a>
 
 ```python
-rootless_input: typing.Union[bool, IResolvable]
+rootless_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -4639,10 +4639,10 @@ annotations: str
 ##### `default_load`<sup>Required</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -4709,10 +4709,10 @@ replicas: typing.Union[int, float]
 ##### `rootless`<sup>Required</sup> <a name="rootless" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless"></a>
 
 ```python
-rootless: typing.Union[bool, IResolvable]
+rootless: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -5017,9 +5017,9 @@ def reset_install() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.imageInput">image_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput">install_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput">install_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.image">image</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install">install</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install">install</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.internalValue">internal_value</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | *No description.* |
 
 ---
@@ -5061,10 +5061,10 @@ image_input: str
 ##### `install_input`<sup>Optional</sup> <a name="install_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput"></a>
 
 ```python
-install_input: typing.Union[bool, IResolvable]
+install_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -5081,10 +5081,10 @@ image: str
 ##### `install`<sup>Required</sup> <a name="install" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install"></a>
 
 ```python
-install: typing.Union[bool, IResolvable]
+install: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -5732,12 +5732,12 @@ def reset_servername() -> None
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cacertInput">cacert_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.certInput">cert_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput">default_load_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.keyInput">key_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.servernameInput">servername_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cacert">cacert</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cert">cert</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad">default_load</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad">default_load</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.key">key</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.servername">servername</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.internalValue">internal_value</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | *No description.* |
@@ -5791,10 +5791,10 @@ cert_input: str
 ##### `default_load_input`<sup>Optional</sup> <a name="default_load_input" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput"></a>
 
 ```python
-default_load_input: typing.Union[bool, IResolvable]
+default_load_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -5841,10 +5841,10 @@ cert: str
 ##### `default_load`<sup>Required</sup> <a name="default_load" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad"></a>
 
 ```python
-default_load: typing.Union[bool, IResolvable]
+default_load: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 

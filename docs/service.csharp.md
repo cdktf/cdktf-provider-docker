@@ -289,7 +289,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.service.Service.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.service.Service.importFrom"></a>
@@ -343,7 +343,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.service.Service.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -358,7 +358,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.service.Service.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -419,12 +419,12 @@ private void PutEndpointSpec(ServiceEndpointSpec Value)
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.service.Service.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|ServiceLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.Service.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]
 
 ---
 
@@ -650,13 +650,13 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.auth">Auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuthOutputReference">ServiceAuthOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.convergeConfig">ConvergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfigOutputReference">ServiceConvergeConfigOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.endpointSpec">EndpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference">ServiceEndpointSpecOutputReference</a></code> | *No description.* |
@@ -669,7 +669,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.service.Service.property.convergeConfigInput">ConvergeConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.endpointSpecInput">EndpointSpecInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.Service.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.Service.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.modeInput">ModeInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.Service.property.rollbackConfigInput">RollbackConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | *No description.* |
@@ -755,20 +755,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.service.Service.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.service.Service.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -815,10 +815,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.service.Service.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -945,10 +945,10 @@ public string IdInput { get; }
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.service.Service.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|ServiceLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]
 
 ---
 
@@ -1116,20 +1116,20 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 using HashiCorp.Cdktf.Providers.Docker;
 
 new ServiceConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Name,
     ServiceTaskSpec TaskSpec,
     ServiceAuth Auth = null,
     ServiceConvergeConfig ConvergeConfig = null,
     ServiceEndpointSpec EndpointSpec = null,
     string Id = null,
-    object Labels = null,
+    IResolvable|ServiceLabels[] Labels = null,
     ServiceMode Mode = null,
     ServiceRollbackConfig RollbackConfig = null,
     ServiceUpdateConfig UpdateConfig = null
@@ -1140,20 +1140,20 @@ new ServiceConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.name">Name</a></code> | <code>string</code> | Name of the service. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.taskSpec">TaskSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec">ServiceTaskSpec</a></code> | task_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.auth">Auth</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceAuth">ServiceAuth</a></code> | auth block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.convergeConfig">ConvergeConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceConvergeConfig">ServiceConvergeConfig</a></code> | converge_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.endpointSpec">EndpointSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | endpoint_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/service#id Service#id}. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">Labels</a></code> | <code>object</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.mode">Mode</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | mode block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.rollbackConfig">RollbackConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceRollbackConfig">ServiceRollbackConfig</a></code> | rollback_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceConfig.property.updateConfig">UpdateConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceUpdateConfig">ServiceUpdateConfig</a></code> | update_config block. |
@@ -1163,20 +1163,20 @@ new ServiceConfig {
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.service.ServiceConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.service.ServiceConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1223,10 +1223,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.service.ServiceConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -1318,10 +1318,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.service.ServiceConfig.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|ServiceLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]
 
 labels block.
 
@@ -1430,7 +1430,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new ServiceEndpointSpec {
     string Mode = null,
-    object Ports = null
+    IResolvable|ServiceEndpointSpecPorts[] Ports = null
 };
 ```
 
@@ -1439,7 +1439,7 @@ new ServiceEndpointSpec {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.mode">Mode</a></code> | <code>string</code> | The mode of resolution to use for internal load balancing between tasks. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports">Ports</a></code> | <code>object</code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports">Ports</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]</code> | ports block. |
 
 ---
 
@@ -1460,10 +1460,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Ports`<sup>Optional</sup> <a name="Ports" id="@cdktf/provider-docker.service.ServiceEndpointSpec.property.ports"></a>
 
 ```csharp
-public object Ports { get; set; }
+public IResolvable|ServiceEndpointSpecPorts[] Ports { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]
 
 ports block.
 
@@ -1627,7 +1627,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 using HashiCorp.Cdktf.Providers.Docker;
 
 new ServiceMode {
-    object Global = null,
+    bool|IResolvable Global = null,
     ServiceModeReplicated Replicated = null
 };
 ```
@@ -1636,7 +1636,7 @@ new ServiceMode {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.global">Global</a></code> | <code>object</code> | The global service mode. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.global">Global</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | The global service mode. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceMode.property.replicated">Replicated</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicated">ServiceModeReplicated</a></code> | replicated block. |
 
 ---
@@ -1644,10 +1644,10 @@ new ServiceMode {
 ##### `Global`<sup>Optional</sup> <a name="Global" id="@cdktf/provider-docker.service.ServiceMode.property.global"></a>
 
 ```csharp
-public object Global { get; set; }
+public bool|IResolvable Global { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 The global service mode. Defaults to `false`.
 
@@ -1828,7 +1828,7 @@ new ServiceTaskSpec {
     ServiceTaskSpecContainerSpec ContainerSpec,
     double ForceUpdate = null,
     ServiceTaskSpecLogDriver LogDriver = null,
-    object NetworksAdvanced = null,
+    IResolvable|ServiceTaskSpecNetworksAdvanced[] NetworksAdvanced = null,
     ServiceTaskSpecPlacement Placement = null,
     ServiceTaskSpecResources Resources = null,
     ServiceTaskSpecRestartPolicy RestartPolicy = null,
@@ -1843,7 +1843,7 @@ new ServiceTaskSpec {
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.containerSpec">ContainerSpec</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec">ServiceTaskSpecContainerSpec</a></code> | container_spec block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.forceUpdate">ForceUpdate</a></code> | <code>double</code> | A counter that triggers an update even if no relevant parameters have been changed. See the [spec](https://github.com/docker/swarmkit/blob/master/api/specs.proto#L126). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.logDriver">LogDriver</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecLogDriver">ServiceTaskSpecLogDriver</a></code> | log_driver block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced">NetworksAdvanced</a></code> | <code>object</code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced">NetworksAdvanced</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]</code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.placement">Placement</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement">ServiceTaskSpecPlacement</a></code> | placement block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.resources">Resources</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecResources">ServiceTaskSpecResources</a></code> | resources block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpec.property.restartPolicy">RestartPolicy</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy">ServiceTaskSpecRestartPolicy</a></code> | restart_policy block. |
@@ -1896,10 +1896,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `NetworksAdvanced`<sup>Optional</sup> <a name="NetworksAdvanced" id="@cdktf/provider-docker.service.ServiceTaskSpec.property.networksAdvanced"></a>
 
 ```csharp
-public object NetworksAdvanced { get; set; }
+public IResolvable|ServiceTaskSpecNetworksAdvanced[] NetworksAdvanced { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]
 
 networks_advanced block.
 
@@ -1976,20 +1976,20 @@ new ServiceTaskSpecContainerSpec {
     string[] CapAdd = null,
     string[] CapDrop = null,
     string[] Command = null,
-    object Configs = null,
+    IResolvable|ServiceTaskSpecContainerSpecConfigs[] Configs = null,
     string Dir = null,
     ServiceTaskSpecContainerSpecDnsConfig DnsConfig = null,
     System.Collections.Generic.IDictionary<string, string> Env = null,
     string[] Groups = null,
     ServiceTaskSpecContainerSpecHealthcheck Healthcheck = null,
     string Hostname = null,
-    object Hosts = null,
+    IResolvable|ServiceTaskSpecContainerSpecHosts[] Hosts = null,
     string Isolation = null,
-    object Labels = null,
-    object Mounts = null,
+    IResolvable|ServiceTaskSpecContainerSpecLabels[] Labels = null,
+    IResolvable|ServiceTaskSpecContainerSpecMounts[] Mounts = null,
     ServiceTaskSpecContainerSpecPrivileges Privileges = null,
-    object ReadOnly = null,
-    object Secrets = null,
+    bool|IResolvable ReadOnly = null,
+    IResolvable|ServiceTaskSpecContainerSpecSecrets[] Secrets = null,
     string StopGracePeriod = null,
     string StopSignal = null,
     System.Collections.Generic.IDictionary<string, string> Sysctl = null,
@@ -2006,20 +2006,20 @@ new ServiceTaskSpecContainerSpec {
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.capAdd">CapAdd</a></code> | <code>string[]</code> | List of Linux capabilities to add to the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.capDrop">CapDrop</a></code> | <code>string[]</code> | List of Linux capabilities to drop from the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.command">Command</a></code> | <code>string[]</code> | The command/entrypoint to be run in the image. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs">Configs</a></code> | <code>object</code> | configs block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs">Configs</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]</code> | configs block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.dir">Dir</a></code> | <code>string</code> | The working directory for commands to run in. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.dnsConfig">DnsConfig</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig">ServiceTaskSpecContainerSpecDnsConfig</a></code> | dns_config block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.env">Env</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A list of environment variables in the form VAR="value". |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.groups">Groups</a></code> | <code>string[]</code> | A list of additional groups that the container process will run as. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.healthcheck">Healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck">ServiceTaskSpecContainerSpecHealthcheck</a></code> | healthcheck block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hostname">Hostname</a></code> | <code>string</code> | The hostname to use for the container, as a valid RFC 1123 hostname. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts">Hosts</a></code> | <code>object</code> | hosts block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts">Hosts</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]</code> | hosts block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.isolation">Isolation</a></code> | <code>string</code> | Isolation technology of the containers running the service. (Windows only). Defaults to `default`. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels">Labels</a></code> | <code>object</code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts">Mounts</a></code> | <code>object</code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts">Mounts</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]</code> | mounts block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.privileges">Privileges</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges">ServiceTaskSpecContainerSpecPrivileges</a></code> | privileges block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly">ReadOnly</a></code> | <code>object</code> | Mount the container's root filesystem as read only. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets">Secrets</a></code> | <code>object</code> | secrets block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Mount the container's root filesystem as read only. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets">Secrets</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]</code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.stopGracePeriod">StopGracePeriod</a></code> | <code>string</code> | Amount of time to wait for the container to terminate before forcefully removing it (ms\|s\|m\|h). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.stopSignal">StopSignal</a></code> | <code>string</code> | Signal to stop the container. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.sysctl">Sysctl</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Sysctls config (Linux only). |
@@ -2102,10 +2102,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Configs`<sup>Optional</sup> <a name="Configs" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.configs"></a>
 
 ```csharp
-public object Configs { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecConfigs[] Configs { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]
 
 configs block.
 
@@ -2200,10 +2200,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Hosts`<sup>Optional</sup> <a name="Hosts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.hosts"></a>
 
 ```csharp
-public object Hosts { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecHosts[] Hosts { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]
 
 hosts block.
 
@@ -2228,10 +2228,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]
 
 labels block.
 
@@ -2242,10 +2242,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Mounts`<sup>Optional</sup> <a name="Mounts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.mounts"></a>
 
 ```csharp
-public object Mounts { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecMounts[] Mounts { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]
 
 mounts block.
 
@@ -2270,10 +2270,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ReadOnly`<sup>Optional</sup> <a name="ReadOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; set; }
+public bool|IResolvable ReadOnly { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Mount the container's root filesystem as read only.
 
@@ -2284,10 +2284,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Secrets`<sup>Optional</sup> <a name="Secrets" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec.property.secrets"></a>
 
 ```csharp
-public object Secrets { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecSecrets[] Secrets { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]
 
 secrets block.
 
@@ -2744,7 +2744,7 @@ new ServiceTaskSpecContainerSpecMounts {
     string Target,
     string Type,
     ServiceTaskSpecContainerSpecMountsBindOptions BindOptions = null,
-    object ReadOnly = null,
+    bool|IResolvable ReadOnly = null,
     string Source = null,
     ServiceTaskSpecContainerSpecMountsTmpfsOptions TmpfsOptions = null,
     ServiceTaskSpecContainerSpecMountsVolumeOptions VolumeOptions = null
@@ -2758,7 +2758,7 @@ new ServiceTaskSpecContainerSpecMounts {
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.target">Target</a></code> | <code>string</code> | Container path. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.type">Type</a></code> | <code>string</code> | The mount type. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.bindOptions">BindOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions">ServiceTaskSpecContainerSpecMountsBindOptions</a></code> | bind_options block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly">ReadOnly</a></code> | <code>object</code> | Whether the mount should be read-only. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Whether the mount should be read-only. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.source">Source</a></code> | <code>string</code> | Mount source (e.g. a volume name, a host path). |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.tmpfsOptions">TmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions">ServiceTaskSpecContainerSpecMountsTmpfsOptions</a></code> | tmpfs_options block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.volumeOptions">VolumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | volume_options block. |
@@ -2810,10 +2810,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ReadOnly`<sup>Optional</sup> <a name="ReadOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; set; }
+public bool|IResolvable ReadOnly { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Whether the mount should be read-only.
 
@@ -2959,8 +2959,8 @@ using HashiCorp.Cdktf.Providers.Docker;
 new ServiceTaskSpecContainerSpecMountsVolumeOptions {
     string DriverName = null,
     System.Collections.Generic.IDictionary<string, string> DriverOptions = null,
-    object Labels = null,
-    object NoCopy = null
+    IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] Labels = null,
+    bool|IResolvable NoCopy = null
 };
 ```
 
@@ -2970,8 +2970,8 @@ new ServiceTaskSpecContainerSpecMountsVolumeOptions {
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.driverName">DriverName</a></code> | <code>string</code> | Name of the driver to use to create the volume. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.driverOptions">DriverOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | key/value map of driver specific options. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels">Labels</a></code> | <code>object</code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy">NoCopy</a></code> | <code>object</code> | Populate volume with data from the target. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy">NoCopy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Populate volume with data from the target. |
 
 ---
 
@@ -3006,10 +3006,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]
 
 labels block.
 
@@ -3020,10 +3020,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `NoCopy`<sup>Optional</sup> <a name="NoCopy" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions.property.noCopy"></a>
 
 ```csharp
-public object NoCopy { get; set; }
+public bool|IResolvable NoCopy { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -3189,7 +3189,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 using HashiCorp.Cdktf.Providers.Docker;
 
 new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
-    object Disable = null,
+    bool|IResolvable Disable = null,
     string Level = null,
     string Role = null,
     string Type = null,
@@ -3201,7 +3201,7 @@ new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable">Disable</a></code> | <code>object</code> | Disable SELinux. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable">Disable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Disable SELinux. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.level">Level</a></code> | <code>string</code> | SELinux level label. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.role">Role</a></code> | <code>string</code> | SELinux role label. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.type">Type</a></code> | <code>string</code> | SELinux type label. |
@@ -3212,10 +3212,10 @@ new ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
 ##### `Disable`<sup>Optional</sup> <a name="Disable" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext.property.disable"></a>
 
 ```csharp
-public object Disable { get; set; }
+public bool|IResolvable Disable { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Disable SELinux.
 
@@ -3521,7 +3521,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 new ServiceTaskSpecPlacement {
     string[] Constraints = null,
     double MaxReplicas = null,
-    object Platforms = null,
+    IResolvable|ServiceTaskSpecPlacementPlatforms[] Platforms = null,
     string[] Prefs = null
 };
 ```
@@ -3532,7 +3532,7 @@ new ServiceTaskSpecPlacement {
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.constraints">Constraints</a></code> | <code>string[]</code> | An array of constraints. e.g.: `node.role==manager`. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.maxReplicas">MaxReplicas</a></code> | <code>double</code> | Maximum number of replicas for per node (default value is `0`, which is unlimited). |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms">Platforms</a></code> | <code>object</code> | platforms block. |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms">Platforms</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]</code> | platforms block. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.prefs">Prefs</a></code> | <code>string[]</code> | Preferences provide a way to make the scheduler aware of factors such as topology. |
 
 ---
@@ -3568,10 +3568,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Platforms`<sup>Optional</sup> <a name="Platforms" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacement.property.platforms"></a>
 
 ```csharp
-public object Platforms { get; set; }
+public IResolvable|ServiceTaskSpecPlacementPlatforms[] Platforms { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]
 
 platforms block.
 
@@ -4904,12 +4904,12 @@ Returns a reversible string representation.
 ##### `PutPorts` <a name="PutPorts" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.putPorts"></a>
 
 ```csharp
-private void PutPorts(object Value)
+private void PutPorts(IResolvable|ServiceEndpointSpecPorts[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.putPorts.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]
 
 ---
 
@@ -4934,7 +4934,7 @@ private void ResetPorts()
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.ports">Ports</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList">ServiceEndpointSpecPortsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.modeInput">ModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput">PortsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput">PortsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.mode">Mode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpec">ServiceEndpointSpec</a></code> | *No description.* |
 
@@ -4987,10 +4987,10 @@ public string ModeInput { get; }
 ##### `PortsInput`<sup>Optional</sup> <a name="PortsInput" id="@cdktf/provider-docker.service.ServiceEndpointSpecOutputReference.property.portsInput"></a>
 
 ```csharp
-public object PortsInput { get; }
+public IResolvable|ServiceEndpointSpecPorts[] PortsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]
 
 ---
 
@@ -5136,7 +5136,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]</code> | *No description.* |
 
 ---
 
@@ -5167,10 +5167,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceEndpointSpecPorts[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>[]
 
 ---
 
@@ -5441,7 +5441,7 @@ private void ResetPublishMode()
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.publishedPort">PublishedPort</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.publishMode">PublishMode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.targetPort">TargetPort</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a></code> | *No description.* |
 
 ---
 
@@ -5572,10 +5572,10 @@ public double TargetPort { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceEndpointSpecPortsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceEndpointSpecPorts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceEndpointSpecPorts">ServiceEndpointSpecPorts</a>
 
 ---
 
@@ -5701,7 +5701,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -5732,10 +5732,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>[]
 
 ---
 
@@ -5972,7 +5972,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a></code> | *No description.* |
 
 ---
 
@@ -6043,10 +6043,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceLabels">ServiceLabels</a>
 
 ---
 
@@ -6289,9 +6289,9 @@ private void ResetReplicated()
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.replicated">Replicated</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicatedOutputReference">ServiceModeReplicatedOutputReference</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput">GlobalInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput">GlobalInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.replicatedInput">ReplicatedInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceModeReplicated">ServiceModeReplicated</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.global">Global</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.global">Global</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceModeOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceMode">ServiceMode</a></code> | *No description.* |
 
 ---
@@ -6333,10 +6333,10 @@ public ServiceModeReplicatedOutputReference Replicated { get; }
 ##### `GlobalInput`<sup>Optional</sup> <a name="GlobalInput" id="@cdktf/provider-docker.service.ServiceModeOutputReference.property.globalInput"></a>
 
 ```csharp
-public object GlobalInput { get; }
+public bool|IResolvable GlobalInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -6353,10 +6353,10 @@ public ServiceModeReplicated ReplicatedInput { get; }
 ##### `Global`<sup>Required</sup> <a name="Global" id="@cdktf/provider-docker.service.ServiceModeOutputReference.property.global"></a>
 
 ```csharp
-public object Global { get; }
+public bool|IResolvable Global { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -7193,7 +7193,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]</code> | *No description.* |
 
 ---
 
@@ -7224,10 +7224,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecConfigs[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]
 
 ---
 
@@ -7500,7 +7500,7 @@ private void ResetFileUid()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileMode">FileMode</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileName">FileName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.fileUid">FileUid</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a></code> | *No description.* |
 
 ---
 
@@ -7651,10 +7651,10 @@ public string FileUid { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecConfigs InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>
 
 ---
 
@@ -8496,7 +8496,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]</code> | *No description.* |
 
 ---
 
@@ -8527,10 +8527,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecHosts[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]
 
 ---
 
@@ -8767,7 +8767,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.ipInput">IpInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.host">Host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.ip">Ip</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a></code> | *No description.* |
 
 ---
 
@@ -8838,10 +8838,10 @@ public string Ip { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHostsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecHosts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>
 
 ---
 
@@ -8967,7 +8967,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -8998,10 +8998,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]
 
 ---
 
@@ -9238,7 +9238,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a></code> | *No description.* |
 
 ---
 
@@ -9309,10 +9309,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>
 
 ---
 
@@ -9716,7 +9716,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]</code> | *No description.* |
 
 ---
 
@@ -9747,10 +9747,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMounts[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]
 
 ---
 
@@ -10061,17 +10061,17 @@ private void ResetVolumeOptions()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.tmpfsOptions">TmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference">ServiceTaskSpecContainerSpecMountsTmpfsOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.volumeOptions">VolumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference">ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.bindOptionsInput">BindOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsBindOptions">ServiceTaskSpecContainerSpecMountsBindOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.sourceInput">SourceInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.targetInput">TargetInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.tmpfsOptionsInput">TmpfsOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsTmpfsOptions">ServiceTaskSpecContainerSpecMountsTmpfsOptions</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.typeInput">TypeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.volumeOptionsInput">VolumeOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly">ReadOnly</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.source">Source</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.target">Target</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.type">Type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a></code> | *No description.* |
 
 ---
 
@@ -10142,10 +10142,10 @@ public ServiceTaskSpecContainerSpecMountsBindOptions BindOptionsInput { get; }
 ##### `ReadOnlyInput`<sup>Optional</sup> <a name="ReadOnlyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnlyInput"></a>
 
 ```csharp
-public object ReadOnlyInput { get; }
+public bool|IResolvable ReadOnlyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -10202,10 +10202,10 @@ public ServiceTaskSpecContainerSpecMountsVolumeOptions VolumeOptionsInput { get;
 ##### `ReadOnly`<sup>Required</sup> <a name="ReadOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; }
+public bool|IResolvable ReadOnly { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -10242,10 +10242,10 @@ public string Type { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMounts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>
 
 ---
 
@@ -10678,7 +10678,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -10709,10 +10709,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]
 
 ---
 
@@ -10949,7 +10949,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -11020,10 +11020,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -11239,12 +11239,12 @@ Returns a reversible string representation.
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]
 
 ---
 
@@ -11282,11 +11282,11 @@ private void ResetNoCopy()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labels">Labels</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverNameInput">DriverNameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverOptionsInput">DriverOptionsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput">NoCopyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput">NoCopyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverName">DriverName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.driverOptions">DriverOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy">NoCopy</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy">NoCopy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptions">ServiceTaskSpecContainerSpecMountsVolumeOptions</a></code> | *No description.* |
 
 ---
@@ -11348,20 +11348,20 @@ public System.Collections.Generic.IDictionary<string, string> DriverOptionsInput
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels">ServiceTaskSpecContainerSpecMountsVolumeOptionsLabels</a>[]
 
 ---
 
 ##### `NoCopyInput`<sup>Optional</sup> <a name="NoCopyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopyInput"></a>
 
 ```csharp
-public object NoCopyInput { get; }
+public bool|IResolvable NoCopyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -11388,10 +11388,10 @@ public System.Collections.Generic.IDictionary<string, string> DriverOptions { ge
 ##### `NoCopy`<sup>Required</sup> <a name="NoCopy" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMountsVolumeOptionsOutputReference.property.noCopy"></a>
 
 ```csharp
-public object NoCopy { get; }
+public bool|IResolvable NoCopy { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -11642,12 +11642,12 @@ Returns a reversible string representation.
 ##### `PutConfigs` <a name="PutConfigs" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putConfigs"></a>
 
 ```csharp
-private void PutConfigs(object Value)
+private void PutConfigs(IResolvable|ServiceTaskSpecContainerSpecConfigs[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putConfigs.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]
 
 ---
 
@@ -11678,36 +11678,36 @@ private void PutHealthcheck(ServiceTaskSpecContainerSpecHealthcheck Value)
 ##### `PutHosts` <a name="PutHosts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putHosts"></a>
 
 ```csharp
-private void PutHosts(object Value)
+private void PutHosts(IResolvable|ServiceTaskSpecContainerSpecHosts[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putHosts.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]
 
 ---
 
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|ServiceTaskSpecContainerSpecLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]
 
 ---
 
 ##### `PutMounts` <a name="PutMounts" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putMounts"></a>
 
 ```csharp
-private void PutMounts(object Value)
+private void PutMounts(IResolvable|ServiceTaskSpecContainerSpecMounts[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putMounts.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]
 
 ---
 
@@ -11726,12 +11726,12 @@ private void PutPrivileges(ServiceTaskSpecContainerSpecPrivileges Value)
 ##### `PutSecrets` <a name="PutSecrets" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putSecrets"></a>
 
 ```csharp
-private void PutSecrets(object Value)
+private void PutSecrets(IResolvable|ServiceTaskSpecContainerSpecSecrets[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.putSecrets.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]
 
 ---
 
@@ -11886,21 +11886,21 @@ private void ResetUser()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.capAddInput">CapAddInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.capDropInput">CapDropInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.commandInput">CommandInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput">ConfigsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput">ConfigsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.dirInput">DirInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.dnsConfigInput">DnsConfigInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecDnsConfig">ServiceTaskSpecContainerSpecDnsConfig</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.envInput">EnvInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.groupsInput">GroupsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.healthcheckInput">HealthcheckInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHealthcheck">ServiceTaskSpecContainerSpecHealthcheck</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostnameInput">HostnameInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput">HostsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput">HostsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.imageInput">ImageInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.isolationInput">IsolationInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput">MountsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput">MountsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.privilegesInput">PrivilegesInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivileges">ServiceTaskSpecContainerSpecPrivileges</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput">SecretsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput">SecretsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopGracePeriodInput">StopGracePeriodInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopSignalInput">StopSignalInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.sysctlInput">SysctlInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
@@ -11915,7 +11915,7 @@ private void ResetUser()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostname">Hostname</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.image">Image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.isolation">Isolation</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly">ReadOnly</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopGracePeriod">StopGracePeriod</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.stopSignal">StopSignal</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.sysctl">Sysctl</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
@@ -12071,10 +12071,10 @@ public string[] CommandInput { get; }
 ##### `ConfigsInput`<sup>Optional</sup> <a name="ConfigsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.configsInput"></a>
 
 ```csharp
-public object ConfigsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecConfigs[] ConfigsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecConfigs">ServiceTaskSpecContainerSpecConfigs</a>[]
 
 ---
 
@@ -12141,10 +12141,10 @@ public string HostnameInput { get; }
 ##### `HostsInput`<sup>Optional</sup> <a name="HostsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.hostsInput"></a>
 
 ```csharp
-public object HostsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecHosts[] HostsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecHosts">ServiceTaskSpecContainerSpecHosts</a>[]
 
 ---
 
@@ -12171,20 +12171,20 @@ public string IsolationInput { get; }
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecLabels">ServiceTaskSpecContainerSpecLabels</a>[]
 
 ---
 
 ##### `MountsInput`<sup>Optional</sup> <a name="MountsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.mountsInput"></a>
 
 ```csharp
-public object MountsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecMounts[] MountsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecMounts">ServiceTaskSpecContainerSpecMounts</a>[]
 
 ---
 
@@ -12201,20 +12201,20 @@ public ServiceTaskSpecContainerSpecPrivileges PrivilegesInput { get; }
 ##### `ReadOnlyInput`<sup>Optional</sup> <a name="ReadOnlyInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnlyInput"></a>
 
 ```csharp
-public object ReadOnlyInput { get; }
+public bool|IResolvable ReadOnlyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `SecretsInput`<sup>Optional</sup> <a name="SecretsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.secretsInput"></a>
 
 ```csharp
-public object SecretsInput { get; }
+public IResolvable|ServiceTaskSpecContainerSpecSecrets[] SecretsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]
 
 ---
 
@@ -12361,10 +12361,10 @@ public string Isolation { get; }
 ##### `ReadOnly`<sup>Required</sup> <a name="ReadOnly" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecOutputReference.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; }
+public bool|IResolvable ReadOnly { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -13304,12 +13304,12 @@ private void ResetUser()
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput">DisableInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput">DisableInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.levelInput">LevelInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.roleInput">RoleInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.typeInput">TypeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.userInput">UserInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable">Disable</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable">Disable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.level">Level</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.role">Role</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.type">Type</a></code> | <code>string</code> | *No description.* |
@@ -13345,10 +13345,10 @@ public string Fqn { get; }
 ##### `DisableInput`<sup>Optional</sup> <a name="DisableInput" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disableInput"></a>
 
 ```csharp
-public object DisableInput { get; }
+public bool|IResolvable DisableInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -13395,10 +13395,10 @@ public string UserInput { get; }
 ##### `Disable`<sup>Required</sup> <a name="Disable" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecPrivilegesSeLinuxContextOutputReference.property.disable"></a>
 
 ```csharp
-public object Disable { get; }
+public bool|IResolvable Disable { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -13574,7 +13574,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]</code> | *No description.* |
 
 ---
 
@@ -13605,10 +13605,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecSecrets[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>[]
 
 ---
 
@@ -13881,7 +13881,7 @@ private void ResetSecretName()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.fileUid">FileUid</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.secretId">SecretId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.secretName">SecretName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a></code> | *No description.* |
 
 ---
 
@@ -14032,10 +14032,10 @@ public string SecretName { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecretsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecContainerSpecSecrets InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpecSecrets">ServiceTaskSpecContainerSpecSecrets</a>
 
 ---
 
@@ -14461,7 +14461,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]</code> | *No description.* |
 
 ---
 
@@ -14492,10 +14492,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecNetworksAdvanced[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]
 
 ---
 
@@ -14748,7 +14748,7 @@ private void ResetDriverOpts()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.aliases">Aliases</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.driverOpts">DriverOpts</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.name">Name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -14839,10 +14839,10 @@ public string Name { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecNetworksAdvanced InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>
 
 ---
 
@@ -15090,12 +15090,12 @@ private void PutLogDriver(ServiceTaskSpecLogDriver Value)
 ##### `PutNetworksAdvanced` <a name="PutNetworksAdvanced" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.putNetworksAdvanced"></a>
 
 ```csharp
-private void PutNetworksAdvanced(object Value)
+private void PutNetworksAdvanced(IResolvable|ServiceTaskSpecNetworksAdvanced[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.putNetworksAdvanced.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]
 
 ---
 
@@ -15193,7 +15193,7 @@ private void ResetRuntime()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.containerSpecInput">ContainerSpecInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecContainerSpec">ServiceTaskSpecContainerSpec</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.forceUpdateInput">ForceUpdateInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.logDriverInput">LogDriverInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecLogDriver">ServiceTaskSpecLogDriver</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput">NetworksAdvancedInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput">NetworksAdvancedInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.placementInput">PlacementInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacement">ServiceTaskSpecPlacement</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.resourcesInput">ResourcesInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecResources">ServiceTaskSpecResources</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.restartPolicyInput">RestartPolicyInput</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecRestartPolicy">ServiceTaskSpecRestartPolicy</a></code> | *No description.* |
@@ -15321,10 +15321,10 @@ public ServiceTaskSpecLogDriver LogDriverInput { get; }
 ##### `NetworksAdvancedInput`<sup>Optional</sup> <a name="NetworksAdvancedInput" id="@cdktf/provider-docker.service.ServiceTaskSpecOutputReference.property.networksAdvancedInput"></a>
 
 ```csharp
-public object NetworksAdvancedInput { get; }
+public IResolvable|ServiceTaskSpecNetworksAdvanced[] NetworksAdvancedInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecNetworksAdvanced">ServiceTaskSpecNetworksAdvanced</a>[]
 
 ---
 
@@ -15610,12 +15610,12 @@ Returns a reversible string representation.
 ##### `PutPlatforms` <a name="PutPlatforms" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.putPlatforms"></a>
 
 ```csharp
-private void PutPlatforms(object Value)
+private void PutPlatforms(IResolvable|ServiceTaskSpecPlacementPlatforms[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.putPlatforms.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]
 
 ---
 
@@ -15653,7 +15653,7 @@ private void ResetPrefs()
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platforms">Platforms</a></code> | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList">ServiceTaskSpecPlacementPlatformsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.constraintsInput">ConstraintsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.maxReplicasInput">MaxReplicasInput</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput">PlatformsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput">PlatformsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.prefsInput">PrefsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.constraints">Constraints</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.maxReplicas">MaxReplicas</a></code> | <code>double</code> | *No description.* |
@@ -15719,10 +15719,10 @@ public double MaxReplicasInput { get; }
 ##### `PlatformsInput`<sup>Optional</sup> <a name="PlatformsInput" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementOutputReference.property.platformsInput"></a>
 
 ```csharp
-public object PlatformsInput { get; }
+public IResolvable|ServiceTaskSpecPlacementPlatforms[] PlatformsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]
 
 ---
 
@@ -15898,7 +15898,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]</code> | *No description.* |
 
 ---
 
@@ -15929,10 +15929,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecPlacementPlatforms[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>[]
 
 ---
 
@@ -16169,7 +16169,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.osInput">OsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.architecture">Architecture</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.os">Os</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a></code> | *No description.* |
 
 ---
 
@@ -16240,10 +16240,10 @@ public string Os { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatformsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ServiceTaskSpecPlacementPlatforms InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.service.ServiceTaskSpecPlacementPlatforms">ServiceTaskSpecPlacementPlatforms</a>
 
 ---
 

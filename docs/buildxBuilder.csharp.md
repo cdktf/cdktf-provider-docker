@@ -291,7 +291,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.importFrom"></a>
@@ -345,7 +345,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -360,7 +360,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -634,18 +634,18 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dockerContainer">DockerContainer</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference">BuildxBuilderDockerContainerOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.kubernetes">Kubernetes</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference">BuildxBuilderKubernetesOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.remote">Remote</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference">BuildxBuilderRemoteOutputReference</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput">AppendInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput">BootstrapInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput">AppendInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput">BootstrapInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitConfigInput">BuildkitConfigInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitFlagsInput">BuildkitFlagsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.dockerContainerInput">DockerContainerInput</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer">BuildxBuilderDockerContainer</a></code> | *No description.* |
@@ -658,9 +658,9 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.nodeAttributeInput">NodeAttributeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.platformInput">PlatformInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.remoteInput">RemoteInput</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput">UseInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append">Append</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap">Bootstrap</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput">UseInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append">Append</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap">Bootstrap</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitConfig">BuildkitConfig</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.buildkitFlags">BuildkitFlags</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.driver">Driver</a></code> | <code>string</code> | *No description.* |
@@ -670,7 +670,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.nodeAttribute">NodeAttribute</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.platform">Platform</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use">Use</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use">Use</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 
 ---
 
@@ -749,20 +749,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -809,10 +809,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -849,20 +849,20 @@ public BuildxBuilderRemoteOutputReference Remote { get; }
 ##### `AppendInput`<sup>Optional</sup> <a name="AppendInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.appendInput"></a>
 
 ```csharp
-public object AppendInput { get; }
+public bool|IResolvable AppendInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `BootstrapInput`<sup>Optional</sup> <a name="BootstrapInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrapInput"></a>
 
 ```csharp
-public object BootstrapInput { get; }
+public bool|IResolvable BootstrapInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -989,30 +989,30 @@ public BuildxBuilderRemote RemoteInput { get; }
 ##### `UseInput`<sup>Optional</sup> <a name="UseInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.useInput"></a>
 
 ```csharp
-public object UseInput { get; }
+public bool|IResolvable UseInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `Append`<sup>Required</sup> <a name="Append" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.append"></a>
 
 ```csharp
-public object Append { get; }
+public bool|IResolvable Append { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `Bootstrap`<sup>Required</sup> <a name="Bootstrap" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.bootstrap"></a>
 
 ```csharp
-public object Bootstrap { get; }
+public bool|IResolvable Bootstrap { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1109,10 +1109,10 @@ public string[] Platform { get; }
 ##### `Use`<sup>Required</sup> <a name="Use" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilder.property.use"></a>
 
 ```csharp
-public object Use { get; }
+public bool|IResolvable Use { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1144,15 +1144,15 @@ public string TfResourceType { get; }
 using HashiCorp.Cdktf.Providers.Docker;
 
 new BuildxBuilderConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
-    object Append = null,
-    object Bootstrap = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
+    bool|IResolvable Append = null,
+    bool|IResolvable Bootstrap = null,
     string BuildkitConfig = null,
     string BuildkitFlags = null,
     BuildxBuilderDockerContainer DockerContainer = null,
@@ -1165,7 +1165,7 @@ new BuildxBuilderConfig {
     string NodeAttribute = null,
     string[] Platform = null,
     BuildxBuilderRemote Remote = null,
-    object Use = null
+    bool|IResolvable Use = null
 };
 ```
 
@@ -1173,15 +1173,15 @@ new BuildxBuilderConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append">Append</a></code> | <code>object</code> | Append a node to builder instead of changing it. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap">Bootstrap</a></code> | <code>object</code> | Automatically boot the builder after creation. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append">Append</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Append a node to builder instead of changing it. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap">Bootstrap</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Automatically boot the builder after creation. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.buildkitConfig">BuildkitConfig</a></code> | <code>string</code> | BuildKit daemon config file. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.buildkitFlags">BuildkitFlags</a></code> | <code>string</code> | BuildKit flags to set for the builder. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.dockerContainer">DockerContainer</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer">BuildxBuilderDockerContainer</a></code> | docker_container block. |
@@ -1194,27 +1194,27 @@ new BuildxBuilderConfig {
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.nodeAttribute">NodeAttribute</a></code> | <code>string</code> | Create/modify node with given name. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.platform">Platform</a></code> | <code>string[]</code> | Fixed platforms for current node. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.remote">Remote</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | remote block. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use">Use</a></code> | <code>object</code> | Set the current builder instance as the default for the current context. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use">Use</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Set the current builder instance as the default for the current context. |
 
 ---
 
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1261,20 +1261,20 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
 ##### `Append`<sup>Optional</sup> <a name="Append" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.append"></a>
 
 ```csharp
-public object Append { get; set; }
+public bool|IResolvable Append { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Append a node to builder instead of changing it.
 
@@ -1285,10 +1285,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Bootstrap`<sup>Optional</sup> <a name="Bootstrap" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.bootstrap"></a>
 
 ```csharp
-public object Bootstrap { get; set; }
+public bool|IResolvable Bootstrap { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Automatically boot the builder after creation. Defaults to `false`.
 
@@ -1470,10 +1470,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Use`<sup>Optional</sup> <a name="Use" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderConfig.property.use"></a>
 
 ```csharp
-public object Use { get; set; }
+public bool|IResolvable Use { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Set the current builder instance as the default for the current context.
 
@@ -1495,7 +1495,7 @@ new BuildxBuilderDockerContainer {
     string CpusetCpus = null,
     string CpusetMems = null,
     string CpuShares = null,
-    object DefaultLoad = null,
+    bool|IResolvable DefaultLoad = null,
     System.Collections.Generic.IDictionary<string, string> Env = null,
     string Image = null,
     string Memory = null,
@@ -1515,7 +1515,7 @@ new BuildxBuilderDockerContainer {
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpusetCpus">CpusetCpus</a></code> | <code>string</code> | Limits the set of CPU cores the container can use. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpusetMems">CpusetMems</a></code> | <code>string</code> | Limits the set of CPU memory nodes the container can use. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.cpuShares">CpuShares</a></code> | <code>string</code> | Configures CPU shares (relative weight) of the container. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.env">Env</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Sets environment variables in the container. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.image">Image</a></code> | <code>string</code> | Sets the BuildKit image to use for the container. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.memory">Memory</a></code> | <code>string</code> | Sets the amount of memory the container can use. |
@@ -1612,10 +1612,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `DefaultLoad`<sup>Optional</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainer.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; set; }
+public bool|IResolvable DefaultLoad { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -1716,7 +1716,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new BuildxBuilderKubernetes {
     string Annotations = null,
-    object DefaultLoad = null,
+    bool|IResolvable DefaultLoad = null,
     string Image = null,
     string Labels = null,
     BuildxBuilderKubernetesLimits Limits = null,
@@ -1726,7 +1726,7 @@ new BuildxBuilderKubernetes {
     BuildxBuilderKubernetesQemu Qemu = null,
     double Replicas = null,
     BuildxBuilderKubernetesRequests Requests = null,
-    object Rootless = null,
+    bool|IResolvable Rootless = null,
     string Schedulername = null,
     string Serviceaccount = null,
     string Timeout = null,
@@ -1739,7 +1739,7 @@ new BuildxBuilderKubernetes {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.annotations">Annotations</a></code> | <code>string</code> | Sets additional annotations on the deployments and pods. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.image">Image</a></code> | <code>string</code> | Sets the image to use for running BuildKit. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.labels">Labels</a></code> | <code>string</code> | Sets additional labels on the deployments and pods. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.limits">Limits</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimits">BuildxBuilderKubernetesLimits</a></code> | limits block. |
@@ -1749,7 +1749,7 @@ new BuildxBuilderKubernetes {
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.qemu">Qemu</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | qemu block. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.replicas">Replicas</a></code> | <code>double</code> | Sets the number of Pod replicas to create. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.requests">Requests</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequests">BuildxBuilderKubernetesRequests</a></code> | requests block. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless">Rootless</a></code> | <code>object</code> | Run the container as a non-root user. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless">Rootless</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Run the container as a non-root user. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.schedulername">Schedulername</a></code> | <code>string</code> | Sets the scheduler responsible for scheduling the pod. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.serviceaccount">Serviceaccount</a></code> | <code>string</code> | Sets the pod's serviceAccountName. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.timeout">Timeout</a></code> | <code>string</code> | Set the timeout limit for pod provisioning. |
@@ -1774,10 +1774,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `DefaultLoad`<sup>Optional</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; set; }
+public bool|IResolvable DefaultLoad { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -1914,10 +1914,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Rootless`<sup>Optional</sup> <a name="Rootless" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetes.property.rootless"></a>
 
 ```csharp
-public object Rootless { get; set; }
+public bool|IResolvable Rootless { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Run the container as a non-root user.
 
@@ -2056,7 +2056,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new BuildxBuilderKubernetesQemu {
     string Image = null,
-    object Install = null
+    bool|IResolvable Install = null
 };
 ```
 
@@ -2065,7 +2065,7 @@ new BuildxBuilderKubernetesQemu {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.image">Image</a></code> | <code>string</code> | Sets the QEMU emulation image. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install">Install</a></code> | <code>object</code> | Install QEMU emulation for multi-platform support. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install">Install</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Install QEMU emulation for multi-platform support. |
 
 ---
 
@@ -2086,10 +2086,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Install`<sup>Optional</sup> <a name="Install" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu.property.install"></a>
 
 ```csharp
-public object Install { get; set; }
+public bool|IResolvable Install { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Install QEMU emulation for multi-platform support.
 
@@ -2173,7 +2173,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 new BuildxBuilderRemote {
     string Cacert = null,
     string Cert = null,
-    object DefaultLoad = null,
+    bool|IResolvable DefaultLoad = null,
     string Key = null,
     string Servername = null
 };
@@ -2185,7 +2185,7 @@ new BuildxBuilderRemote {
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.cacert">Cacert</a></code> | <code>string</code> | Absolute path to the TLS certificate authority used for validation. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.cert">Cert</a></code> | <code>string</code> | Absolute path to the TLS client certificate to present to buildkitd. |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Automatically load images to the Docker Engine image store. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.key">Key</a></code> | <code>string</code> | Sets the TLS client key. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.servername">Servername</a></code> | <code>string</code> | TLS server name used in requests. |
 
@@ -2222,10 +2222,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `DefaultLoad`<sup>Optional</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; set; }
+public bool|IResolvable DefaultLoad { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Automatically load images to the Docker Engine image store. Defaults to `false`.
 
@@ -2570,7 +2570,7 @@ private void ResetRestartPolicy()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetCpusInput">CpusetCpusInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetMemsInput">CpusetMemsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpuSharesInput">CpuSharesInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.envInput">EnvInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.imageInput">ImageInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.memoryInput">MemoryInput</a></code> | <code>string</code> | *No description.* |
@@ -2583,7 +2583,7 @@ private void ResetRestartPolicy()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetCpus">CpusetCpus</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpusetMems">CpusetMems</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.cpuShares">CpuShares</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.env">Env</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.image">Image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.memory">Memory</a></code> | <code>string</code> | *No description.* |
@@ -2681,10 +2681,10 @@ public string CpuSharesInput { get; }
 ##### `DefaultLoadInput`<sup>Optional</sup> <a name="DefaultLoadInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoadInput"></a>
 
 ```csharp
-public object DefaultLoadInput { get; }
+public bool|IResolvable DefaultLoadInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2811,10 +2811,10 @@ public string CpuShares { get; }
 ##### `DefaultLoad`<sup>Required</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderDockerContainerOutputReference.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; }
+public bool|IResolvable DefaultLoad { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3590,7 +3590,7 @@ private void ResetTolerations()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.qemu">Qemu</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference">BuildxBuilderKubernetesQemuOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.requests">Requests</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequestsOutputReference">BuildxBuilderKubernetesRequestsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.annotationsInput">AnnotationsInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.imageInput">ImageInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.labelsInput">LabelsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.limitsInput">LimitsInput</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesLimits">BuildxBuilderKubernetesLimits</a></code> | *No description.* |
@@ -3600,20 +3600,20 @@ private void ResetTolerations()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.qemuInput">QemuInput</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.replicasInput">ReplicasInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.requestsInput">RequestsInput</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesRequests">BuildxBuilderKubernetesRequests</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput">RootlessInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput">RootlessInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.schedulernameInput">SchedulernameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.serviceaccountInput">ServiceaccountInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.timeoutInput">TimeoutInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.tolerationsInput">TolerationsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.annotations">Annotations</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.image">Image</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.labels">Labels</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.loadbalance">Loadbalance</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.namespace">Namespace</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.nodeselector">Nodeselector</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.replicas">Replicas</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless">Rootless</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless">Rootless</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.schedulername">Schedulername</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.serviceaccount">Serviceaccount</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.timeout">Timeout</a></code> | <code>string</code> | *No description.* |
@@ -3689,10 +3689,10 @@ public string AnnotationsInput { get; }
 ##### `DefaultLoadInput`<sup>Optional</sup> <a name="DefaultLoadInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoadInput"></a>
 
 ```csharp
-public object DefaultLoadInput { get; }
+public bool|IResolvable DefaultLoadInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3789,10 +3789,10 @@ public BuildxBuilderKubernetesRequests RequestsInput { get; }
 ##### `RootlessInput`<sup>Optional</sup> <a name="RootlessInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootlessInput"></a>
 
 ```csharp
-public object RootlessInput { get; }
+public bool|IResolvable RootlessInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3849,10 +3849,10 @@ public string Annotations { get; }
 ##### `DefaultLoad`<sup>Required</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; }
+public bool|IResolvable DefaultLoad { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3919,10 +3919,10 @@ public double Replicas { get; }
 ##### `Rootless`<sup>Required</sup> <a name="Rootless" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesOutputReference.property.rootless"></a>
 
 ```csharp
-public object Rootless { get; }
+public bool|IResolvable Rootless { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4202,9 +4202,9 @@ private void ResetInstall()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.imageInput">ImageInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput">InstallInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput">InstallInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.image">Image</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install">Install</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install">Install</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemu">BuildxBuilderKubernetesQemu</a></code> | *No description.* |
 
 ---
@@ -4246,10 +4246,10 @@ public string ImageInput { get; }
 ##### `InstallInput`<sup>Optional</sup> <a name="InstallInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.installInput"></a>
 
 ```csharp
-public object InstallInput { get; }
+public bool|IResolvable InstallInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4266,10 +4266,10 @@ public string Image { get; }
 ##### `Install`<sup>Required</sup> <a name="Install" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderKubernetesQemuOutputReference.property.install"></a>
 
 ```csharp
-public object Install { get; }
+public bool|IResolvable Install { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4867,12 +4867,12 @@ private void ResetServername()
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cacertInput">CacertInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.certInput">CertInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput">DefaultLoadInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.keyInput">KeyInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.servernameInput">ServernameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cacert">Cacert</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.cert">Cert</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad">DefaultLoad</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.key">Key</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.servername">Servername</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemote">BuildxBuilderRemote</a></code> | *No description.* |
@@ -4926,10 +4926,10 @@ public string CertInput { get; }
 ##### `DefaultLoadInput`<sup>Optional</sup> <a name="DefaultLoadInput" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoadInput"></a>
 
 ```csharp
-public object DefaultLoadInput { get; }
+public bool|IResolvable DefaultLoadInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4976,10 +4976,10 @@ public string Cert { get; }
 ##### `DefaultLoad`<sup>Required</sup> <a name="DefaultLoad" id="@cdktf/provider-docker.buildxBuilder.BuildxBuilderRemoteOutputReference.property.defaultLoad"></a>
 
 ```csharp
-public object DefaultLoad { get; }
+public bool|IResolvable DefaultLoad { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 

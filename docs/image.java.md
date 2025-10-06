@@ -12,23 +12,17 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 import com.hashicorp.cdktf.providers.docker.image.Image;
 
 Image.Builder.create(Construct scope, java.lang.String id)
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
 //  .buildAttribute(ImageBuild)
-//  .forceRemove(java.lang.Boolean)
-//  .forceRemove(IResolvable)
-//  .keepLocally(java.lang.Boolean)
-//  .keepLocally(IResolvable)
+//  .forceRemove(java.lang.Boolean|IResolvable)
+//  .keepLocally(java.lang.Boolean|IResolvable)
 //  .platform(java.lang.String)
 //  .pullTriggers(java.util.List<java.lang.String>)
 //  .timeouts(ImageTimeouts)
@@ -40,17 +34,17 @@ Image.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.name">name</a></code> | <code>java.lang.String</code> | The name of the Docker image, including any tags or SHA256 repo digests. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.buildAttribute">buildAttribute</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | build block. |
-| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If true, then the image is removed forcibly when the resource is destroyed. |
-| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If true, then the Docker image won't be deleted on destroy operation. |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If true, then the image is removed forcibly when the resource is destroyed. |
+| <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.platform">platform</a></code> | <code>java.lang.String</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.pullTriggers">pullTriggers</a></code> | <code>java.util.List<java.lang.String></code> | List of values which cause an image pull when changed. |
 | <code><a href="#@cdktf/provider-docker.image.Image.Initializer.parameter.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
@@ -78,13 +72,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.image.Image.Initializer.parameter.connection"></a>
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.image.Image.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -114,7 +108,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.image.Image.Initializer.parameter.provisioners"></a>
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -140,7 +134,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `forceRemove`<sup>Optional</sup> <a name="forceRemove" id="@cdktf/provider-docker.image.Image.Initializer.parameter.forceRemove"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
@@ -150,7 +144,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `keepLocally`<sup>Optional</sup> <a name="keepLocally" id="@cdktf/provider-docker.image.Image.Initializer.parameter.keepLocally"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If true, then the Docker image won't be deleted on destroy operation.
 
@@ -440,7 +434,7 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 ##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-docker.image.Image.hasResourceMove"></a>
 
 ```java
-public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+public TerraformResourceMoveByTarget|TerraformResourceMoveById hasResourceMove()
 ```
 
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-docker.image.Image.importFrom"></a>
@@ -496,7 +490,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 
 ```java
 public void moveTo(java.lang.String moveTarget)
-public void moveTo(java.lang.String moveTarget, java.lang.String OR java.lang.Number index)
+public void moveTo(java.lang.String moveTarget, java.lang.String|java.lang.Number index)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -511,7 +505,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.image.Image.moveTo.parameter.index"></a>
 
-- *Type:* java.lang.String OR java.lang.Number
+- *Type:* java.lang.String|java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -725,28 +719,28 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttribute">buildAttribute</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference">ImageBuildOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.imageId">imageId</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.repoDigest">repoDigest</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttributeInput">buildAttributeInput</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">forceRemoveInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">keepLocallyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">forceRemoveInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">keepLocallyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.nameInput">nameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platformInput">platformInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggersInput">pullTriggersInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">timeoutsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">timeoutsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.triggersInput">triggersInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platform">platform</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggers">pullTriggers</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
@@ -829,20 +823,20 @@ public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.image.Image.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.image.Image.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -889,10 +883,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.image.Image.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -959,20 +953,20 @@ public ImageBuild getBuildAttributeInput();
 ##### `forceRemoveInput`<sup>Optional</sup> <a name="forceRemoveInput" id="@cdktf/provider-docker.image.Image.property.forceRemoveInput"></a>
 
 ```java
-public java.lang.Object getForceRemoveInput();
+public java.lang.Boolean|IResolvable getForceRemoveInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `keepLocallyInput`<sup>Optional</sup> <a name="keepLocallyInput" id="@cdktf/provider-docker.image.Image.property.keepLocallyInput"></a>
 
 ```java
-public java.lang.Object getKeepLocallyInput();
+public java.lang.Boolean|IResolvable getKeepLocallyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1009,10 +1003,10 @@ public java.util.List<java.lang.String> getPullTriggersInput();
 ##### `timeoutsInput`<sup>Optional</sup> <a name="timeoutsInput" id="@cdktf/provider-docker.image.Image.property.timeoutsInput"></a>
 
 ```java
-public java.lang.Object getTimeoutsInput();
+public IResolvable|ImageTimeouts getTimeoutsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
 
 ---
 
@@ -1029,20 +1023,20 @@ public java.util.Map<java.lang.String, java.lang.String> getTriggersInput();
 ##### `forceRemove`<sup>Required</sup> <a name="forceRemove" id="@cdktf/provider-docker.image.Image.property.forceRemove"></a>
 
 ```java
-public java.lang.Object getForceRemove();
+public java.lang.Boolean|IResolvable getForceRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `keepLocally`<sup>Required</sup> <a name="keepLocally" id="@cdktf/provider-docker.image.Image.property.keepLocally"></a>
 
 ```java
-public java.lang.Object getKeepLocally();
+public java.lang.Boolean|IResolvable getKeepLocally();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -1115,8 +1109,7 @@ import com.hashicorp.cdktf.providers.docker.image.ImageBuild;
 
 ImageBuild.builder()
     .context(java.lang.String)
-//  .authConfig(IResolvable)
-//  .authConfig(java.util.List<ImageBuildAuthConfig>)
+//  .authConfig(IResolvable|java.util.List<ImageBuildAuthConfig>)
 //  .buildArgs(java.util.Map<java.lang.String, java.lang.String>)
 //  .builder(java.lang.String)
 //  .buildId(java.lang.String)
@@ -1130,35 +1123,27 @@ ImageBuild.builder()
 //  .cpuShares(java.lang.Number)
 //  .dockerfile(java.lang.String)
 //  .extraHosts(java.util.List<java.lang.String>)
-//  .forceRemove(java.lang.Boolean)
-//  .forceRemove(IResolvable)
+//  .forceRemove(java.lang.Boolean|IResolvable)
 //  .isolation(java.lang.String)
 //  .label(java.util.Map<java.lang.String, java.lang.String>)
 //  .labels(java.util.Map<java.lang.String, java.lang.String>)
 //  .memory(java.lang.Number)
 //  .memorySwap(java.lang.Number)
 //  .networkMode(java.lang.String)
-//  .noCache(java.lang.Boolean)
-//  .noCache(IResolvable)
+//  .noCache(java.lang.Boolean|IResolvable)
 //  .platform(java.lang.String)
-//  .pullParent(java.lang.Boolean)
-//  .pullParent(IResolvable)
+//  .pullParent(java.lang.Boolean|IResolvable)
 //  .remoteContext(java.lang.String)
-//  .remove(java.lang.Boolean)
-//  .remove(IResolvable)
-//  .secrets(IResolvable)
-//  .secrets(java.util.List<ImageBuildSecrets>)
+//  .remove(java.lang.Boolean|IResolvable)
+//  .secrets(IResolvable|java.util.List<ImageBuildSecrets>)
 //  .securityOpt(java.util.List<java.lang.String>)
 //  .sessionId(java.lang.String)
 //  .shmSize(java.lang.Number)
-//  .squash(java.lang.Boolean)
-//  .squash(IResolvable)
-//  .suppressOutput(java.lang.Boolean)
-//  .suppressOutput(IResolvable)
+//  .squash(java.lang.Boolean|IResolvable)
+//  .suppressOutput(java.lang.Boolean|IResolvable)
 //  .tag(java.util.List<java.lang.String>)
 //  .target(java.lang.String)
-//  .ulimit(IResolvable)
-//  .ulimit(java.util.List<ImageBuildUlimit>)
+//  .ulimit(IResolvable|java.util.List<ImageBuildUlimit>)
 //  .version(java.lang.String)
     .build();
 ```
@@ -1168,7 +1153,7 @@ ImageBuild.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.context">context</a></code> | <code>java.lang.String</code> | Value to specify the build context. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.authConfig">authConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | auth_config block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.authConfig">authConfig</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | auth_config block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildArgs">buildArgs</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.builder">builder</a></code> | <code>java.lang.String</code> | Set the name of the buildx builder to use. If not set, the legacy builder is used. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildId">buildId</a></code> | <code>java.lang.String</code> | BuildID is an optional identifier that can be passed together with the build request. |
@@ -1182,27 +1167,27 @@ ImageBuild.builder()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.cpuShares">cpuShares</a></code> | <code>java.lang.Number</code> | CPU shares (relative weight). |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.dockerfile">dockerfile</a></code> | <code>java.lang.String</code> | Name of the Dockerfile. Defaults to `Dockerfile`. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.extraHosts">extraHosts</a></code> | <code>java.util.List<java.lang.String></code> | A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"]. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Always remove intermediate containers. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Always remove intermediate containers. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.isolation">isolation</a></code> | <code>java.lang.String</code> | Isolation represents the isolation technology of a container. The supported values are. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.label">label</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Set metadata for an image. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.labels">labels</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | User-defined key/value metadata. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.memory">memory</a></code> | <code>java.lang.Number</code> | Set memory limit for build. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.memorySwap">memorySwap</a></code> | <code>java.lang.Number</code> | Total memory (memory + swap), -1 to enable unlimited swap. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.networkMode">networkMode</a></code> | <code>java.lang.String</code> | Set the networking mode for the RUN instructions during build. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.noCache">noCache</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Do not use the cache when building the image. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.noCache">noCache</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Do not use the cache when building the image. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.platform">platform</a></code> | <code>java.lang.String</code> | Set the target platform for the build. Defaults to `GOOS/GOARCH`. For more information see the [docker documentation](https://github.com/docker/buildx/blob/master/docs/reference/buildx.md#-set-the-target-platforms-for-the-build---platform). |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">pullParent</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Attempt to pull the image even if an older image exists locally. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">pullParent</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Attempt to pull the image even if an older image exists locally. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remoteContext">remoteContext</a></code> | <code>java.lang.String</code> | A Git repository URI or HTTP/HTTPS context URI. Will be ignored if `builder` is set. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">remove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">secrets</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | secrets block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">remove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">secrets</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.securityOpt">securityOpt</a></code> | <code>java.util.List<java.lang.String></code> | The security options. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.sessionId">sessionId</a></code> | <code>java.lang.String</code> | Set an ID for the build session. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.shmSize">shmSize</a></code> | <code>java.lang.Number</code> | Size of /dev/shm in bytes. The size must be greater than 0. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.squash">squash</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If true the new layers are squashed into a new image with a single new layer. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.suppressOutput">suppressOutput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Suppress the build output and print image ID on success. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.squash">squash</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If true the new layers are squashed into a new image with a single new layer. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.suppressOutput">suppressOutput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Suppress the build output and print image ID on success. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.tag">tag</a></code> | <code>java.util.List<java.lang.String></code> | Name and optionally a tag in the 'name:tag' format. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.target">target</a></code> | <code>java.lang.String</code> | Set the target build stage to build. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | ulimit block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.version">version</a></code> | <code>java.lang.String</code> | Version of the underlying builder to use. |
 
 ---
@@ -1226,10 +1211,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `authConfig`<sup>Optional</sup> <a name="authConfig" id="@cdktf/provider-docker.image.ImageBuild.property.authConfig"></a>
 
 ```java
-public java.lang.Object getAuthConfig();
+public IResolvable|java.util.List<ImageBuildAuthConfig> getAuthConfig();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
 
 auth_config block.
 
@@ -1426,10 +1411,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `forceRemove`<sup>Optional</sup> <a name="forceRemove" id="@cdktf/provider-docker.image.ImageBuild.property.forceRemove"></a>
 
 ```java
-public java.lang.Object getForceRemove();
+public java.lang.Boolean|IResolvable getForceRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Always remove intermediate containers.
 
@@ -1524,10 +1509,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `noCache`<sup>Optional</sup> <a name="noCache" id="@cdktf/provider-docker.image.ImageBuild.property.noCache"></a>
 
 ```java
-public java.lang.Object getNoCache();
+public java.lang.Boolean|IResolvable getNoCache();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Do not use the cache when building the image.
 
@@ -1552,10 +1537,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `pullParent`<sup>Optional</sup> <a name="pullParent" id="@cdktf/provider-docker.image.ImageBuild.property.pullParent"></a>
 
 ```java
-public java.lang.Object getPullParent();
+public java.lang.Boolean|IResolvable getPullParent();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Attempt to pull the image even if an older image exists locally.
 
@@ -1580,10 +1565,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `remove`<sup>Optional</sup> <a name="remove" id="@cdktf/provider-docker.image.ImageBuild.property.remove"></a>
 
 ```java
-public java.lang.Object getRemove();
+public java.lang.Boolean|IResolvable getRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
@@ -1594,10 +1579,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `secrets`<sup>Optional</sup> <a name="secrets" id="@cdktf/provider-docker.image.ImageBuild.property.secrets"></a>
 
 ```java
-public java.lang.Object getSecrets();
+public IResolvable|java.util.List<ImageBuildSecrets> getSecrets();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
 
 secrets block.
 
@@ -1650,10 +1635,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `squash`<sup>Optional</sup> <a name="squash" id="@cdktf/provider-docker.image.ImageBuild.property.squash"></a>
 
 ```java
-public java.lang.Object getSquash();
+public java.lang.Boolean|IResolvable getSquash();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If true the new layers are squashed into a new image with a single new layer.
 
@@ -1664,10 +1649,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `suppressOutput`<sup>Optional</sup> <a name="suppressOutput" id="@cdktf/provider-docker.image.ImageBuild.property.suppressOutput"></a>
 
 ```java
-public java.lang.Object getSuppressOutput();
+public java.lang.Boolean|IResolvable getSuppressOutput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Suppress the build output and print image ID on success.
 
@@ -1706,10 +1691,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ulimit`<sup>Optional</sup> <a name="ulimit" id="@cdktf/provider-docker.image.ImageBuild.property.ulimit"></a>
 
 ```java
-public java.lang.Object getUlimit();
+public IResolvable|java.util.List<ImageBuildUlimit> getUlimit();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
 
 ulimit block.
 
@@ -2020,23 +2005,17 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 import com.hashicorp.cdktf.providers.docker.image.ImageConfig;
 
 ImageConfig.builder()
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .name(java.lang.String)
 //  .buildAttribute(ImageBuild)
-//  .forceRemove(java.lang.Boolean)
-//  .forceRemove(IResolvable)
-//  .keepLocally(java.lang.Boolean)
-//  .keepLocally(IResolvable)
+//  .forceRemove(java.lang.Boolean|IResolvable)
+//  .keepLocally(java.lang.Boolean|IResolvable)
 //  .platform(java.lang.String)
 //  .pullTriggers(java.util.List<java.lang.String>)
 //  .timeouts(ImageTimeouts)
@@ -2048,17 +2027,17 @@ ImageConfig.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.name">name</a></code> | <code>java.lang.String</code> | The name of the Docker image, including any tags or SHA256 repo digests. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.buildAttribute">buildAttribute</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | build block. |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If true, then the image is removed forcibly when the resource is destroyed. |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If true, then the Docker image won't be deleted on destroy operation. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If true, then the image is removed forcibly when the resource is destroyed. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">keepLocally</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.platform">platform</a></code> | <code>java.lang.String</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.pullTriggers">pullTriggers</a></code> | <code>java.util.List<java.lang.String></code> | List of values which cause an image pull when changed. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.timeouts">timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
@@ -2069,20 +2048,20 @@ ImageConfig.builder()
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.image.ImageConfig.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.image.ImageConfig.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -2129,10 +2108,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.image.ImageConfig.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -2167,10 +2146,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `forceRemove`<sup>Optional</sup> <a name="forceRemove" id="@cdktf/provider-docker.image.ImageConfig.property.forceRemove"></a>
 
 ```java
-public java.lang.Object getForceRemove();
+public java.lang.Boolean|IResolvable getForceRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
@@ -2181,10 +2160,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `keepLocally`<sup>Optional</sup> <a name="keepLocally" id="@cdktf/provider-docker.image.ImageConfig.property.keepLocally"></a>
 
 ```java
-public java.lang.Object getKeepLocally();
+public java.lang.Boolean|IResolvable getKeepLocally();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If true, then the Docker image won't be deleted on destroy operation.
 
@@ -2437,7 +2416,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | *No description.* |
 
 ---
 
@@ -2468,10 +2447,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ImageBuildAuthConfig> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
 
 ---
 
@@ -2769,7 +2748,7 @@ public void resetUserName()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.registryToken">registryToken</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.serverAddress">serverAddress</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.userName">userName</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a></code> | *No description.* |
 
 ---
 
@@ -2960,10 +2939,10 @@ public java.lang.String getUserName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ImageBuildAuthConfig getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>
 
 ---
 
@@ -3213,36 +3192,36 @@ Returns a reversible string representation.
 ##### `putAuthConfig` <a name="putAuthConfig" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig"></a>
 
 ```java
-public void putAuthConfig(IResolvable OR java.util.List<ImageBuildAuthConfig> value)
+public void putAuthConfig(IResolvable|java.util.List<ImageBuildAuthConfig> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
 
 ---
 
 ##### `putSecrets` <a name="putSecrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets"></a>
 
 ```java
-public void putSecrets(IResolvable OR java.util.List<ImageBuildSecrets> value)
+public void putSecrets(IResolvable|java.util.List<ImageBuildSecrets> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
 
 ---
 
 ##### `putUlimit` <a name="putUlimit" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit"></a>
 
 ```java
-public void putUlimit(IResolvable OR java.util.List<ImageBuildUlimit> value)
+public void putUlimit(IResolvable|java.util.List<ImageBuildUlimit> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
 
 ---
 
@@ -3472,7 +3451,7 @@ public void resetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfig">authConfig</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets">secrets</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimit">ulimit</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList">ImageBuildUlimitList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">authConfigInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">authConfigInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgsInput">buildArgsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.builderInput">builderInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildIdInput">buildIdInput</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -3487,27 +3466,27 @@ public void resetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cpuSharesInput">cpuSharesInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.dockerfileInput">dockerfileInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.extraHostsInput">extraHostsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput">forceRemoveInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput">forceRemoveInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.isolationInput">isolationInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labelInput">labelInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labelsInput">labelsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memoryInput">memoryInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memorySwapInput">memorySwapInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.networkModeInput">networkModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput">noCacheInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput">noCacheInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.platformInput">platformInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">pullParentInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">pullParentInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContextInput">remoteContextInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">removeInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">secretsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">removeInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">secretsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOptInput">securityOptInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionIdInput">sessionIdInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSizeInput">shmSizeInput</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput">squashInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput">suppressOutputInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput">squashInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput">suppressOutputInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.tagInput">tagInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.targetInput">targetInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput">ulimitInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput">ulimitInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.versionInput">versionInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgs">buildArgs</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.builder">builder</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -3523,23 +3502,23 @@ public void resetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cpuShares">cpuShares</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.dockerfile">dockerfile</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.extraHosts">extraHosts</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove">forceRemove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.isolation">isolation</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.label">label</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labels">labels</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memory">memory</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memorySwap">memorySwap</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.networkMode">networkMode</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache">noCache</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache">noCache</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.platform">platform</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent">pullParent</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent">pullParent</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContext">remoteContext</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove">remove</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove">remove</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOpt">securityOpt</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionId">sessionId</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSize">shmSize</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash">squash</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput">suppressOutput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash">squash</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput">suppressOutput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.tag">tag</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.target">target</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.version">version</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -3604,10 +3583,10 @@ public ImageBuildUlimitList getUlimit();
 ##### `authConfigInput`<sup>Optional</sup> <a name="authConfigInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput"></a>
 
 ```java
-public java.lang.Object getAuthConfigInput();
+public IResolvable|java.util.List<ImageBuildAuthConfig> getAuthConfigInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>>
 
 ---
 
@@ -3754,10 +3733,10 @@ public java.util.List<java.lang.String> getExtraHostsInput();
 ##### `forceRemoveInput`<sup>Optional</sup> <a name="forceRemoveInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput"></a>
 
 ```java
-public java.lang.Object getForceRemoveInput();
+public java.lang.Boolean|IResolvable getForceRemoveInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3824,10 +3803,10 @@ public java.lang.String getNetworkModeInput();
 ##### `noCacheInput`<sup>Optional</sup> <a name="noCacheInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput"></a>
 
 ```java
-public java.lang.Object getNoCacheInput();
+public java.lang.Boolean|IResolvable getNoCacheInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3844,10 +3823,10 @@ public java.lang.String getPlatformInput();
 ##### `pullParentInput`<sup>Optional</sup> <a name="pullParentInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput"></a>
 
 ```java
-public java.lang.Object getPullParentInput();
+public java.lang.Boolean|IResolvable getPullParentInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3864,20 +3843,20 @@ public java.lang.String getRemoteContextInput();
 ##### `removeInput`<sup>Optional</sup> <a name="removeInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput"></a>
 
 ```java
-public java.lang.Object getRemoveInput();
+public java.lang.Boolean|IResolvable getRemoveInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `secretsInput`<sup>Optional</sup> <a name="secretsInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput"></a>
 
 ```java
-public java.lang.Object getSecretsInput();
+public IResolvable|java.util.List<ImageBuildSecrets> getSecretsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
 
 ---
 
@@ -3914,20 +3893,20 @@ public java.lang.Number getShmSizeInput();
 ##### `squashInput`<sup>Optional</sup> <a name="squashInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput"></a>
 
 ```java
-public java.lang.Object getSquashInput();
+public java.lang.Boolean|IResolvable getSquashInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `suppressOutputInput`<sup>Optional</sup> <a name="suppressOutputInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput"></a>
 
 ```java
-public java.lang.Object getSuppressOutputInput();
+public java.lang.Boolean|IResolvable getSuppressOutputInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3954,10 +3933,10 @@ public java.lang.String getTargetInput();
 ##### `ulimitInput`<sup>Optional</sup> <a name="ulimitInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput"></a>
 
 ```java
-public java.lang.Object getUlimitInput();
+public IResolvable|java.util.List<ImageBuildUlimit> getUlimitInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
 
 ---
 
@@ -4114,10 +4093,10 @@ public java.util.List<java.lang.String> getExtraHosts();
 ##### `forceRemove`<sup>Required</sup> <a name="forceRemove" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove"></a>
 
 ```java
-public java.lang.Object getForceRemove();
+public java.lang.Boolean|IResolvable getForceRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -4184,10 +4163,10 @@ public java.lang.String getNetworkMode();
 ##### `noCache`<sup>Required</sup> <a name="noCache" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache"></a>
 
 ```java
-public java.lang.Object getNoCache();
+public java.lang.Boolean|IResolvable getNoCache();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -4204,10 +4183,10 @@ public java.lang.String getPlatform();
 ##### `pullParent`<sup>Required</sup> <a name="pullParent" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent"></a>
 
 ```java
-public java.lang.Object getPullParent();
+public java.lang.Boolean|IResolvable getPullParent();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -4224,10 +4203,10 @@ public java.lang.String getRemoteContext();
 ##### `remove`<sup>Required</sup> <a name="remove" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove"></a>
 
 ```java
-public java.lang.Object getRemove();
+public java.lang.Boolean|IResolvable getRemove();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -4264,20 +4243,20 @@ public java.lang.Number getShmSize();
 ##### `squash`<sup>Required</sup> <a name="squash" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash"></a>
 
 ```java
-public java.lang.Object getSquash();
+public java.lang.Boolean|IResolvable getSquash();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `suppressOutput`<sup>Required</sup> <a name="suppressOutput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput"></a>
 
 ```java
-public java.lang.Object getSuppressOutput();
+public java.lang.Boolean|IResolvable getSuppressOutput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -4443,7 +4422,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>></code> | *No description.* |
 
 ---
 
@@ -4474,10 +4453,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ImageBuildSecrets> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>>
 
 ---
 
@@ -4730,7 +4709,7 @@ public void resetSrc()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env">env</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src">src</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a></code> | *No description.* |
 
 ---
 
@@ -4821,10 +4800,10 @@ public java.lang.String getSrc();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ImageBuildSecrets getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>
 
 ---
 
@@ -4950,7 +4929,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>></code> | *No description.* |
 
 ---
 
@@ -4981,10 +4960,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ImageBuildUlimit> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>>
 
 ---
 
@@ -5223,7 +5202,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.hard">hard</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.soft">soft</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a></code> | *No description.* |
 
 ---
 
@@ -5314,10 +5293,10 @@ public java.lang.Number getSoft();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ImageBuildUlimit getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>
 
 ---
 
@@ -5559,7 +5538,7 @@ public void resetUpdate()
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create">create</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete">delete</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update">update</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
 
 ---
 
@@ -5650,10 +5629,10 @@ public java.lang.String getUpdate();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ImageTimeouts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
 
 ---
 

@@ -402,17 +402,17 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.sha256Digest">Sha256Digest</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerifyInput">InsecureSkipVerifyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerifyInput">InsecureSkipVerifyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.id">Id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerify">InsecureSkipVerify</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerify">InsecureSkipVerify</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.name">Name</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -492,10 +492,10 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -562,10 +562,10 @@ public string IdInput { get; }
 ##### `InsecureSkipVerifyInput`<sup>Optional</sup> <a name="InsecureSkipVerifyInput" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerifyInput"></a>
 
 ```csharp
-public object InsecureSkipVerifyInput { get; }
+public bool|IResolvable InsecureSkipVerifyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -592,10 +592,10 @@ public string Id { get; }
 ##### `InsecureSkipVerify`<sup>Required</sup> <a name="InsecureSkipVerify" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImage.property.insecureSkipVerify"></a>
 
 ```csharp
-public object InsecureSkipVerify { get; }
+public bool|IResolvable InsecureSkipVerify { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -637,16 +637,16 @@ public string TfResourceType { get; }
 using HashiCorp.Cdktf.Providers.Docker;
 
 new DataDockerRegistryImageConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Name,
     string Id = null,
-    object InsecureSkipVerify = null
+    bool|IResolvable InsecureSkipVerify = null
 };
 ```
 
@@ -654,36 +654,36 @@ new DataDockerRegistryImageConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.name">Name</a></code> | <code>string</code> | The name of the Docker image, including any tags. e.g. `alpine:latest`. You can also specify a digest, e.g. `nginx:1.28.0@sha256:eaa7e36decc3421fc04478c586dfea0d931cebe47d5bc0b15d758a32ba51126f`. |
 | <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/data-sources/registry_image#id DataDockerRegistryImage#id}. |
-| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.insecureSkipVerify">InsecureSkipVerify</a></code> | <code>object</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.insecureSkipVerify">InsecureSkipVerify</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`. |
 
 ---
 
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -730,10 +730,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -769,10 +769,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `InsecureSkipVerify`<sup>Optional</sup> <a name="InsecureSkipVerify" id="@cdktf/provider-docker.dataDockerRegistryImage.DataDockerRegistryImageConfig.property.insecureSkipVerify"></a>
 
 ```csharp
-public object InsecureSkipVerify { get; set; }
+public bool|IResolvable InsecureSkipVerify { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, the verification of TLS certificates of the server/registry is disabled. Defaults to `false`.
 
