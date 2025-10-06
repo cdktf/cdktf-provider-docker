@@ -12,21 +12,16 @@ Represents a {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 import com.hashicorp.cdktf.providers.docker.container.Container;
 
 Container.Builder.create(Construct scope, java.lang.String id)
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .image(java.lang.String)
     .name(java.lang.String)
-//  .attach(java.lang.Boolean)
-//  .attach(IResolvable)
+//  .attach(java.lang.Boolean|IResolvable)
 //  .capabilities(ContainerCapabilities)
 //  .cgroupnsMode(java.lang.String)
 //  .cgroupParent(java.lang.String)
@@ -38,8 +33,7 @@ Container.Builder.create(Construct scope, java.lang.String id)
 //  .cpuSet(java.lang.String)
 //  .cpuShares(java.lang.Number)
 //  .destroyGraceSeconds(java.lang.Number)
-//  .devices(IResolvable)
-//  .devices(java.util.List<ContainerDevices>)
+//  .devices(IResolvable|java.util.List<ContainerDevices>)
 //  .dns(java.util.List<java.lang.String>)
 //  .dnsOpts(java.util.List<java.lang.String>)
 //  .dnsSearch(java.util.List<java.lang.String>)
@@ -49,67 +43,47 @@ Container.Builder.create(Construct scope, java.lang.String id)
 //  .gpus(java.lang.String)
 //  .groupAdd(java.util.List<java.lang.String>)
 //  .healthcheck(ContainerHealthcheck)
-//  .host(IResolvable)
-//  .host(java.util.List<ContainerHost>)
+//  .host(IResolvable|java.util.List<ContainerHost>)
 //  .hostname(java.lang.String)
 //  .id(java.lang.String)
-//  .init(java.lang.Boolean)
-//  .init(IResolvable)
+//  .init(java.lang.Boolean|IResolvable)
 //  .ipcMode(java.lang.String)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ContainerLabels>)
+//  .labels(IResolvable|java.util.List<ContainerLabels>)
 //  .logDriver(java.lang.String)
 //  .logOpts(java.util.Map<java.lang.String, java.lang.String>)
-//  .logs(java.lang.Boolean)
-//  .logs(IResolvable)
+//  .logs(java.lang.Boolean|IResolvable)
 //  .maxRetryCount(java.lang.Number)
 //  .memory(java.lang.Number)
 //  .memorySwap(java.lang.Number)
-//  .mounts(IResolvable)
-//  .mounts(java.util.List<ContainerMounts>)
-//  .mustRun(java.lang.Boolean)
-//  .mustRun(IResolvable)
+//  .mounts(IResolvable|java.util.List<ContainerMounts>)
+//  .mustRun(java.lang.Boolean|IResolvable)
 //  .networkMode(java.lang.String)
-//  .networksAdvanced(IResolvable)
-//  .networksAdvanced(java.util.List<ContainerNetworksAdvanced>)
+//  .networksAdvanced(IResolvable|java.util.List<ContainerNetworksAdvanced>)
 //  .pidMode(java.lang.String)
-//  .ports(IResolvable)
-//  .ports(java.util.List<ContainerPorts>)
-//  .privileged(java.lang.Boolean)
-//  .privileged(IResolvable)
-//  .publishAllPorts(java.lang.Boolean)
-//  .publishAllPorts(IResolvable)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
-//  .removeVolumes(java.lang.Boolean)
-//  .removeVolumes(IResolvable)
+//  .ports(IResolvable|java.util.List<ContainerPorts>)
+//  .privileged(java.lang.Boolean|IResolvable)
+//  .publishAllPorts(java.lang.Boolean|IResolvable)
+//  .readOnly(java.lang.Boolean|IResolvable)
+//  .removeVolumes(java.lang.Boolean|IResolvable)
 //  .restart(java.lang.String)
-//  .rm(java.lang.Boolean)
-//  .rm(IResolvable)
+//  .rm(java.lang.Boolean|IResolvable)
 //  .runtime(java.lang.String)
 //  .securityOpts(java.util.List<java.lang.String>)
 //  .shmSize(java.lang.Number)
-//  .start(java.lang.Boolean)
-//  .start(IResolvable)
-//  .stdinOpen(java.lang.Boolean)
-//  .stdinOpen(IResolvable)
+//  .start(java.lang.Boolean|IResolvable)
+//  .stdinOpen(java.lang.Boolean|IResolvable)
 //  .stopSignal(java.lang.String)
 //  .stopTimeout(java.lang.Number)
 //  .storageOpts(java.util.Map<java.lang.String, java.lang.String>)
 //  .sysctls(java.util.Map<java.lang.String, java.lang.String>)
 //  .tmpfs(java.util.Map<java.lang.String, java.lang.String>)
-//  .tty(java.lang.Boolean)
-//  .tty(IResolvable)
-//  .ulimit(IResolvable)
-//  .ulimit(java.util.List<ContainerUlimit>)
-//  .upload(IResolvable)
-//  .upload(java.util.List<ContainerUpload>)
+//  .tty(java.lang.Boolean|IResolvable)
+//  .ulimit(IResolvable|java.util.List<ContainerUlimit>)
+//  .upload(IResolvable|java.util.List<ContainerUpload>)
 //  .user(java.lang.String)
 //  .usernsMode(java.lang.String)
-//  .volumes(IResolvable)
-//  .volumes(java.util.List<ContainerVolumes>)
-//  .wait(java.lang.Boolean)
-//  .wait(IResolvable)
+//  .volumes(IResolvable|java.util.List<ContainerVolumes>)
+//  .wait(java.lang.Boolean|IResolvable)
 //  .waitTimeout(java.lang.Number)
 //  .workingDir(java.lang.String)
     .build();
@@ -119,16 +93,16 @@ Container.Builder.create(Construct scope, java.lang.String id)
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.image">image</a></code> | <code>java.lang.String</code> | The ID of the image to back this container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.name">name</a></code> | <code>java.lang.String</code> | The name of the container. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.attach">attach</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.attach">attach</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | capabilities block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cgroupnsMode">cgroupnsMode</a></code> | <code>java.lang.String</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cgroupParent">cgroupParent</a></code> | <code>java.lang.String</code> | Optional parent cgroup for the container. |
@@ -140,7 +114,7 @@ Container.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cpuSet">cpuSet</a></code> | <code>java.lang.String</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cpuShares">cpuShares</a></code> | <code>java.lang.Number</code> | CPU shares (relative weight) for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.destroyGraceSeconds">destroyGraceSeconds</a></code> | <code>java.lang.Number</code> | If defined will attempt to stop the container before destroying. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.devices">devices</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | devices block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.devices">devices</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | devices block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dns">dns</a></code> | <code>java.util.List<java.lang.String></code> | DNS servers to use. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dnsOpts">dnsOpts</a></code> | <code>java.util.List<java.lang.String></code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dnsSearch">dnsSearch</a></code> | <code>java.util.List<java.lang.String></code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container. |
@@ -150,47 +124,47 @@ Container.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.gpus">gpus</a></code> | <code>java.lang.String</code> | GPU devices to add to the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.groupAdd">groupAdd</a></code> | <code>java.util.List<java.lang.String></code> | Additional groups for the container user. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.healthcheck">healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.host">host</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | host block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.host">host</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.hostname">hostname</a></code> | <code>java.lang.String</code> | Hostname of the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/container#id Container#id}. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.init">init</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.init">init</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ipcMode">ipcMode</a></code> | <code>java.lang.String</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logDriver">logDriver</a></code> | <code>java.lang.String</code> | The logging driver to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logOpts">logOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key/value pairs to use as options for the logging driver. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logs">logs</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logs">logs</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.maxRetryCount">maxRetryCount</a></code> | <code>java.lang.Number</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.memory">memory</a></code> | <code>java.lang.Number</code> | The memory limit for the container in MBs. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.memorySwap">memorySwap</a></code> | <code>java.lang.Number</code> | The total memory limit (memory + swap) for the container in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | mounts block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun">mustRun</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun">mustRun</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networkMode">networkMode</a></code> | <code>java.lang.String</code> | Network mode of the container. See https://docs.docker.com/engine/network/ for more information. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.pidMode">pidMode</a></code> | <code>java.lang.String</code> | he PID (Process) Namespace mode for the container. Either `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | ports block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.privileged">privileged</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Publish all ports of the container. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.privileged">privileged</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Publish all ports of the container. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.restart">restart</a></code> | <code>java.lang.String</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.rm">rm</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.rm">rm</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.runtime">runtime</a></code> | <code>java.lang.String</code> | Runtime to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.securityOpts">securityOpts</a></code> | <code>java.util.List<java.lang.String></code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.shmSize">shmSize</a></code> | <code>java.lang.Number</code> | Size of `/dev/shm` in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.start">start</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.start">start</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stopSignal">stopSignal</a></code> | <code>java.lang.String</code> | Signal to stop a container (default `SIGTERM`). |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stopTimeout">stopTimeout</a></code> | <code>java.lang.Number</code> | Timeout (in seconds) to stop a container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.storageOpts">storageOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.sysctls">sysctls</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of kernel parameters (sysctls) to set in the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tmpfs">tmpfs</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tty">tty</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | ulimit block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.upload">upload</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | upload block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tty">tty</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.upload">upload</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | upload block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.user">user</a></code> | <code>java.lang.String</code> | User used for run the first process. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.usernsMode">usernsMode</a></code> | <code>java.lang.String</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.volumes">volumes</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | volumes block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.wait">wait</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.volumes">volumes</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | volumes block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.wait">wait</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.waitTimeout">waitTimeout</a></code> | <code>java.lang.Number</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.workingDir">workingDir</a></code> | <code>java.lang.String</code> | The working directory for commands to run in. |
 
@@ -216,13 +190,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.Container.Initializer.parameter.connection"></a>
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.Container.Initializer.parameter.count"></a>
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -252,7 +226,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners"></a>
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -280,7 +254,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `attach`<sup>Optional</sup> <a name="attach" id="@cdktf/provider-docker.container.Container.Initializer.parameter.attach"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
@@ -408,7 +382,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `devices`<sup>Optional</sup> <a name="devices" id="@cdktf/provider-docker.container.Container.Initializer.parameter.devices"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
 
 devices block.
 
@@ -512,7 +486,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `host`<sup>Optional</sup> <a name="host" id="@cdktf/provider-docker.container.Container.Initializer.parameter.host"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
 
 host block.
 
@@ -543,7 +517,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 ##### `init`<sup>Optional</sup> <a name="init" id="@cdktf/provider-docker.container.Container.Initializer.parameter.init"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Configured whether an init process should be injected for this container.
 
@@ -565,7 +539,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.Container.Initializer.parameter.labels"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
 
 labels block.
 
@@ -595,7 +569,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `logs`<sup>Optional</sup> <a name="logs" id="@cdktf/provider-docker.container.Container.Initializer.parameter.logs"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
@@ -637,7 +611,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `mounts`<sup>Optional</sup> <a name="mounts" id="@cdktf/provider-docker.container.Container.Initializer.parameter.mounts"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
 
 mounts block.
 
@@ -647,7 +621,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `mustRun`<sup>Optional</sup> <a name="mustRun" id="@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container will be kept running.
 
@@ -669,7 +643,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `networksAdvanced`<sup>Optional</sup> <a name="networksAdvanced" id="@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
 
 networks_advanced block.
 
@@ -689,7 +663,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ports`<sup>Optional</sup> <a name="ports" id="@cdktf/provider-docker.container.Container.Initializer.parameter.ports"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
 
 ports block.
 
@@ -699,7 +673,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `privileged`<sup>Optional</sup> <a name="privileged" id="@cdktf/provider-docker.container.Container.Initializer.parameter.privileged"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, the container runs in privileged mode.
 
@@ -709,7 +683,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `publishAllPorts`<sup>Optional</sup> <a name="publishAllPorts" id="@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Publish all ports of the container.
 
@@ -719,7 +693,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
@@ -729,7 +703,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `removeVolumes`<sup>Optional</sup> <a name="removeVolumes" id="@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
@@ -749,7 +723,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `rm`<sup>Optional</sup> <a name="rm" id="@cdktf/provider-docker.container.Container.Initializer.parameter.rm"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
@@ -789,7 +763,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `start`<sup>Optional</sup> <a name="start" id="@cdktf/provider-docker.container.Container.Initializer.parameter.start"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container will be started after creation.
 
@@ -801,7 +775,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `stdinOpen`<sup>Optional</sup> <a name="stdinOpen" id="@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
@@ -861,7 +835,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `tty`<sup>Optional</sup> <a name="tty" id="@cdktf/provider-docker.container.Container.Initializer.parameter.tty"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
@@ -871,7 +845,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ulimit`<sup>Optional</sup> <a name="ulimit" id="@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
 
 ulimit block.
 
@@ -881,7 +855,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `upload`<sup>Optional</sup> <a name="upload" id="@cdktf/provider-docker.container.Container.Initializer.parameter.upload"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
 
 upload block.
 
@@ -913,7 +887,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `volumes`<sup>Optional</sup> <a name="volumes" id="@cdktf/provider-docker.container.Container.Initializer.parameter.volumes"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
 
 volumes block.
 
@@ -923,7 +897,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `wait`<sup>Optional</sup> <a name="wait" id="@cdktf/provider-docker.container.Container.Initializer.parameter.wait"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container is waited for being healthy state after creation.
 
@@ -1256,7 +1230,7 @@ public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(j
 ##### `hasResourceMove` <a name="hasResourceMove" id="@cdktf/provider-docker.container.Container.hasResourceMove"></a>
 
 ```java
-public TerraformResourceMoveByTarget OR TerraformResourceMoveById hasResourceMove()
+public TerraformResourceMoveByTarget|TerraformResourceMoveById hasResourceMove()
 ```
 
 ##### `importFrom` <a name="importFrom" id="@cdktf/provider-docker.container.Container.importFrom"></a>
@@ -1312,7 +1286,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 
 ```java
 public void moveTo(java.lang.String moveTarget)
-public void moveTo(java.lang.String moveTarget, java.lang.String OR java.lang.Number index)
+public void moveTo(java.lang.String moveTarget, java.lang.String|java.lang.Number index)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -1327,7 +1301,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.container.Container.moveTo.parameter.index"></a>
 
-- *Type:* java.lang.String OR java.lang.Number
+- *Type:* java.lang.String|java.lang.Number
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -1364,12 +1338,12 @@ public void putCapabilities(ContainerCapabilities value)
 ##### `putDevices` <a name="putDevices" id="@cdktf/provider-docker.container.Container.putDevices"></a>
 
 ```java
-public void putDevices(IResolvable OR java.util.List<ContainerDevices> value)
+public void putDevices(IResolvable|java.util.List<ContainerDevices> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putDevices.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
 
 ---
 
@@ -1388,96 +1362,96 @@ public void putHealthcheck(ContainerHealthcheck value)
 ##### `putHost` <a name="putHost" id="@cdktf/provider-docker.container.Container.putHost"></a>
 
 ```java
-public void putHost(IResolvable OR java.util.List<ContainerHost> value)
+public void putHost(IResolvable|java.util.List<ContainerHost> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putHost.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
 
 ---
 
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.container.Container.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<ContainerLabels> value)
+public void putLabels(IResolvable|java.util.List<ContainerLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
 
 ---
 
 ##### `putMounts` <a name="putMounts" id="@cdktf/provider-docker.container.Container.putMounts"></a>
 
 ```java
-public void putMounts(IResolvable OR java.util.List<ContainerMounts> value)
+public void putMounts(IResolvable|java.util.List<ContainerMounts> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putMounts.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
 
 ---
 
 ##### `putNetworksAdvanced` <a name="putNetworksAdvanced" id="@cdktf/provider-docker.container.Container.putNetworksAdvanced"></a>
 
 ```java
-public void putNetworksAdvanced(IResolvable OR java.util.List<ContainerNetworksAdvanced> value)
+public void putNetworksAdvanced(IResolvable|java.util.List<ContainerNetworksAdvanced> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putNetworksAdvanced.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
 
 ---
 
 ##### `putPorts` <a name="putPorts" id="@cdktf/provider-docker.container.Container.putPorts"></a>
 
 ```java
-public void putPorts(IResolvable OR java.util.List<ContainerPorts> value)
+public void putPorts(IResolvable|java.util.List<ContainerPorts> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putPorts.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
 
 ---
 
 ##### `putUlimit` <a name="putUlimit" id="@cdktf/provider-docker.container.Container.putUlimit"></a>
 
 ```java
-public void putUlimit(IResolvable OR java.util.List<ContainerUlimit> value)
+public void putUlimit(IResolvable|java.util.List<ContainerUlimit> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putUlimit.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
 
 ---
 
 ##### `putUpload` <a name="putUpload" id="@cdktf/provider-docker.container.Container.putUpload"></a>
 
 ```java
-public void putUpload(IResolvable OR java.util.List<ContainerUpload> value)
+public void putUpload(IResolvable|java.util.List<ContainerUpload> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putUpload.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
 
 ---
 
 ##### `putVolumes` <a name="putVolumes" id="@cdktf/provider-docker.container.Container.putVolumes"></a>
 
 ```java
-public void putVolumes(IResolvable OR java.util.List<ContainerVolumes> value)
+public void putVolumes(IResolvable|java.util.List<ContainerVolumes> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putVolumes.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
 
 ---
 
@@ -1997,13 +1971,13 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.bridge">bridge</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilitiesOutputReference">ContainerCapabilitiesOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.containerLogs">containerLogs</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -2019,7 +1993,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ulimit">ulimit</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList">ContainerUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.upload">upload</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList">ContainerUploadList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.volumes">volumes</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList">ContainerVolumesList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">attachInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">attachInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilitiesInput">capabilitiesInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsModeInput">cgroupnsModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParentInput">cgroupParentInput</a></code> | <code>java.lang.String</code> | *No description.* |
@@ -2031,7 +2005,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpuSharesInput">cpuSharesInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpusInput">cpusInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.destroyGraceSecondsInput">destroyGraceSecondsInput</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">devicesInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">devicesInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsInput">dnsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsOptsInput">dnsOptsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsSearchInput">dnsSearchInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
@@ -2041,52 +2015,52 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.gpusInput">gpusInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.groupAddInput">groupAddInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.healthcheckInput">healthcheckInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">hostInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">hostInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostnameInput">hostnameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.imageInput">imageInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">initInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">initInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcModeInput">ipcModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriverInput">logDriverInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOptsInput">logOptsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">logsInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">logsInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCountInput">maxRetryCountInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memoryInput">memoryInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwapInput">memorySwapInput</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">mountsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">mustRunInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">mountsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">mustRunInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.nameInput">nameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkModeInput">networkModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">networksAdvancedInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">networksAdvancedInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidModeInput">pidModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">portsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">privilegedInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">publishAllPortsInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">removeVolumesInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">portsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">privilegedInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">publishAllPortsInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">removeVolumesInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restartInput">restartInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">rmInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">rmInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtimeInput">runtimeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOptsInput">securityOptsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSizeInput">shmSizeInput</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">startInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">stdinOpenInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">startInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">stdinOpenInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignalInput">stopSignalInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeoutInput">stopTimeoutInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOptsInput">storageOptsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctlsInput">sysctlsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfsInput">tmpfsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">ttyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">ulimitInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">uploadInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">ttyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">ulimitInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">uploadInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.userInput">userInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsModeInput">usernsModeInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">volumesInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">waitInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">volumesInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">waitInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeoutInput">waitTimeoutInput</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDirInput">workingDirInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">attach</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">attach</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsMode">cgroupnsMode</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParent">cgroupParent</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.command">command</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
@@ -2108,38 +2082,38 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostname">hostname</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.image">image</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.init">init</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.init">init</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcMode">ipcMode</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriver">logDriver</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOpts">logOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">logs</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">logs</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCount">maxRetryCount</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memory">memory</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwap">memorySwap</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">mustRun</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">mustRun</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkMode">networkMode</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidMode">pidMode</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">privileged</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">privileged</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restart">restart</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">rm</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">rm</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtime">runtime</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOpts">securityOpts</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSize">shmSize</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.start">start</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.start">start</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignal">stopSignal</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeout">stopTimeout</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOpts">storageOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctls">sysctls</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfs">tmpfs</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">tty</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">tty</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.user">user</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsMode">usernsMode</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">wait</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">wait</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeout">waitTimeout</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDir">workingDir</a></code> | <code>java.lang.String</code> | *No description.* |
 
@@ -2220,20 +2194,20 @@ public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.Container.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.Container.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -2280,10 +2254,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.Container.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -2440,10 +2414,10 @@ public ContainerVolumesList getVolumes();
 ##### `attachInput`<sup>Optional</sup> <a name="attachInput" id="@cdktf/provider-docker.container.Container.property.attachInput"></a>
 
 ```java
-public java.lang.Object getAttachInput();
+public java.lang.Boolean|IResolvable getAttachInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2560,10 +2534,10 @@ public java.lang.Number getDestroyGraceSecondsInput();
 ##### `devicesInput`<sup>Optional</sup> <a name="devicesInput" id="@cdktf/provider-docker.container.Container.property.devicesInput"></a>
 
 ```java
-public java.lang.Object getDevicesInput();
+public IResolvable|java.util.List<ContainerDevices> getDevicesInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
 
 ---
 
@@ -2660,10 +2634,10 @@ public ContainerHealthcheck getHealthcheckInput();
 ##### `hostInput`<sup>Optional</sup> <a name="hostInput" id="@cdktf/provider-docker.container.Container.property.hostInput"></a>
 
 ```java
-public java.lang.Object getHostInput();
+public IResolvable|java.util.List<ContainerHost> getHostInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
 
 ---
 
@@ -2700,10 +2674,10 @@ public java.lang.String getImageInput();
 ##### `initInput`<sup>Optional</sup> <a name="initInput" id="@cdktf/provider-docker.container.Container.property.initInput"></a>
 
 ```java
-public java.lang.Object getInitInput();
+public java.lang.Boolean|IResolvable getInitInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2720,10 +2694,10 @@ public java.lang.String getIpcModeInput();
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.container.Container.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<ContainerLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
 
 ---
 
@@ -2750,10 +2724,10 @@ public java.util.Map<java.lang.String, java.lang.String> getLogOptsInput();
 ##### `logsInput`<sup>Optional</sup> <a name="logsInput" id="@cdktf/provider-docker.container.Container.property.logsInput"></a>
 
 ```java
-public java.lang.Object getLogsInput();
+public java.lang.Boolean|IResolvable getLogsInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2790,20 +2764,20 @@ public java.lang.Number getMemorySwapInput();
 ##### `mountsInput`<sup>Optional</sup> <a name="mountsInput" id="@cdktf/provider-docker.container.Container.property.mountsInput"></a>
 
 ```java
-public java.lang.Object getMountsInput();
+public IResolvable|java.util.List<ContainerMounts> getMountsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
 
 ---
 
 ##### `mustRunInput`<sup>Optional</sup> <a name="mustRunInput" id="@cdktf/provider-docker.container.Container.property.mustRunInput"></a>
 
 ```java
-public java.lang.Object getMustRunInput();
+public java.lang.Boolean|IResolvable getMustRunInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2830,10 +2804,10 @@ public java.lang.String getNetworkModeInput();
 ##### `networksAdvancedInput`<sup>Optional</sup> <a name="networksAdvancedInput" id="@cdktf/provider-docker.container.Container.property.networksAdvancedInput"></a>
 
 ```java
-public java.lang.Object getNetworksAdvancedInput();
+public IResolvable|java.util.List<ContainerNetworksAdvanced> getNetworksAdvancedInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
 
 ---
 
@@ -2850,50 +2824,50 @@ public java.lang.String getPidModeInput();
 ##### `portsInput`<sup>Optional</sup> <a name="portsInput" id="@cdktf/provider-docker.container.Container.property.portsInput"></a>
 
 ```java
-public java.lang.Object getPortsInput();
+public IResolvable|java.util.List<ContainerPorts> getPortsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
 
 ---
 
 ##### `privilegedInput`<sup>Optional</sup> <a name="privilegedInput" id="@cdktf/provider-docker.container.Container.property.privilegedInput"></a>
 
 ```java
-public java.lang.Object getPrivilegedInput();
+public java.lang.Boolean|IResolvable getPrivilegedInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `publishAllPortsInput`<sup>Optional</sup> <a name="publishAllPortsInput" id="@cdktf/provider-docker.container.Container.property.publishAllPortsInput"></a>
 
 ```java
-public java.lang.Object getPublishAllPortsInput();
+public java.lang.Boolean|IResolvable getPublishAllPortsInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `readOnlyInput`<sup>Optional</sup> <a name="readOnlyInput" id="@cdktf/provider-docker.container.Container.property.readOnlyInput"></a>
 
 ```java
-public java.lang.Object getReadOnlyInput();
+public java.lang.Boolean|IResolvable getReadOnlyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `removeVolumesInput`<sup>Optional</sup> <a name="removeVolumesInput" id="@cdktf/provider-docker.container.Container.property.removeVolumesInput"></a>
 
 ```java
-public java.lang.Object getRemoveVolumesInput();
+public java.lang.Boolean|IResolvable getRemoveVolumesInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2910,10 +2884,10 @@ public java.lang.String getRestartInput();
 ##### `rmInput`<sup>Optional</sup> <a name="rmInput" id="@cdktf/provider-docker.container.Container.property.rmInput"></a>
 
 ```java
-public java.lang.Object getRmInput();
+public java.lang.Boolean|IResolvable getRmInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -2950,20 +2924,20 @@ public java.lang.Number getShmSizeInput();
 ##### `startInput`<sup>Optional</sup> <a name="startInput" id="@cdktf/provider-docker.container.Container.property.startInput"></a>
 
 ```java
-public java.lang.Object getStartInput();
+public java.lang.Boolean|IResolvable getStartInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `stdinOpenInput`<sup>Optional</sup> <a name="stdinOpenInput" id="@cdktf/provider-docker.container.Container.property.stdinOpenInput"></a>
 
 ```java
-public java.lang.Object getStdinOpenInput();
+public java.lang.Boolean|IResolvable getStdinOpenInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3020,30 +2994,30 @@ public java.util.Map<java.lang.String, java.lang.String> getTmpfsInput();
 ##### `ttyInput`<sup>Optional</sup> <a name="ttyInput" id="@cdktf/provider-docker.container.Container.property.ttyInput"></a>
 
 ```java
-public java.lang.Object getTtyInput();
+public java.lang.Boolean|IResolvable getTtyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `ulimitInput`<sup>Optional</sup> <a name="ulimitInput" id="@cdktf/provider-docker.container.Container.property.ulimitInput"></a>
 
 ```java
-public java.lang.Object getUlimitInput();
+public IResolvable|java.util.List<ContainerUlimit> getUlimitInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
 
 ---
 
 ##### `uploadInput`<sup>Optional</sup> <a name="uploadInput" id="@cdktf/provider-docker.container.Container.property.uploadInput"></a>
 
 ```java
-public java.lang.Object getUploadInput();
+public IResolvable|java.util.List<ContainerUpload> getUploadInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
 
 ---
 
@@ -3070,20 +3044,20 @@ public java.lang.String getUsernsModeInput();
 ##### `volumesInput`<sup>Optional</sup> <a name="volumesInput" id="@cdktf/provider-docker.container.Container.property.volumesInput"></a>
 
 ```java
-public java.lang.Object getVolumesInput();
+public IResolvable|java.util.List<ContainerVolumes> getVolumesInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
 
 ---
 
 ##### `waitInput`<sup>Optional</sup> <a name="waitInput" id="@cdktf/provider-docker.container.Container.property.waitInput"></a>
 
 ```java
-public java.lang.Object getWaitInput();
+public java.lang.Boolean|IResolvable getWaitInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3110,10 +3084,10 @@ public java.lang.String getWorkingDirInput();
 ##### `attach`<sup>Required</sup> <a name="attach" id="@cdktf/provider-docker.container.Container.property.attach"></a>
 
 ```java
-public java.lang.Object getAttach();
+public java.lang.Boolean|IResolvable getAttach();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3330,10 +3304,10 @@ public java.lang.String getImage();
 ##### `init`<sup>Required</sup> <a name="init" id="@cdktf/provider-docker.container.Container.property.init"></a>
 
 ```java
-public java.lang.Object getInit();
+public java.lang.Boolean|IResolvable getInit();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3370,10 +3344,10 @@ public java.util.Map<java.lang.String, java.lang.String> getLogOpts();
 ##### `logs`<sup>Required</sup> <a name="logs" id="@cdktf/provider-docker.container.Container.property.logs"></a>
 
 ```java
-public java.lang.Object getLogs();
+public java.lang.Boolean|IResolvable getLogs();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3410,10 +3384,10 @@ public java.lang.Number getMemorySwap();
 ##### `mustRun`<sup>Required</sup> <a name="mustRun" id="@cdktf/provider-docker.container.Container.property.mustRun"></a>
 
 ```java
-public java.lang.Object getMustRun();
+public java.lang.Boolean|IResolvable getMustRun();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3450,40 +3424,40 @@ public java.lang.String getPidMode();
 ##### `privileged`<sup>Required</sup> <a name="privileged" id="@cdktf/provider-docker.container.Container.property.privileged"></a>
 
 ```java
-public java.lang.Object getPrivileged();
+public java.lang.Boolean|IResolvable getPrivileged();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `publishAllPorts`<sup>Required</sup> <a name="publishAllPorts" id="@cdktf/provider-docker.container.Container.property.publishAllPorts"></a>
 
 ```java
-public java.lang.Object getPublishAllPorts();
+public java.lang.Boolean|IResolvable getPublishAllPorts();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `readOnly`<sup>Required</sup> <a name="readOnly" id="@cdktf/provider-docker.container.Container.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `removeVolumes`<sup>Required</sup> <a name="removeVolumes" id="@cdktf/provider-docker.container.Container.property.removeVolumes"></a>
 
 ```java
-public java.lang.Object getRemoveVolumes();
+public java.lang.Boolean|IResolvable getRemoveVolumes();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3500,10 +3474,10 @@ public java.lang.String getRestart();
 ##### `rm`<sup>Required</sup> <a name="rm" id="@cdktf/provider-docker.container.Container.property.rm"></a>
 
 ```java
-public java.lang.Object getRm();
+public java.lang.Boolean|IResolvable getRm();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3540,20 +3514,20 @@ public java.lang.Number getShmSize();
 ##### `start`<sup>Required</sup> <a name="start" id="@cdktf/provider-docker.container.Container.property.start"></a>
 
 ```java
-public java.lang.Object getStart();
+public java.lang.Boolean|IResolvable getStart();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
 ##### `stdinOpen`<sup>Required</sup> <a name="stdinOpen" id="@cdktf/provider-docker.container.Container.property.stdinOpen"></a>
 
 ```java
-public java.lang.Object getStdinOpen();
+public java.lang.Boolean|IResolvable getStdinOpen();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3610,10 +3584,10 @@ public java.util.Map<java.lang.String, java.lang.String> getTmpfs();
 ##### `tty`<sup>Required</sup> <a name="tty" id="@cdktf/provider-docker.container.Container.property.tty"></a>
 
 ```java
-public java.lang.Object getTty();
+public java.lang.Boolean|IResolvable getTty();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3640,10 +3614,10 @@ public java.lang.String getUsernsMode();
 ##### `wait`<sup>Required</sup> <a name="wait" id="@cdktf/provider-docker.container.Container.property.wait"></a>
 
 ```java
-public java.lang.Object getWait();
+public java.lang.Boolean|IResolvable getWait();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -3745,21 +3719,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 import com.hashicorp.cdktf.providers.docker.container.ContainerConfig;
 
 ContainerConfig.builder()
-//  .connection(SSHProvisionerConnection)
-//  .connection(WinrmProvisionerConnection)
-//  .count(java.lang.Number)
-//  .count(TerraformCount)
+//  .connection(SSHProvisionerConnection|WinrmProvisionerConnection)
+//  .count(java.lang.Number|TerraformCount)
 //  .dependsOn(java.util.List<ITerraformDependable>)
 //  .forEach(ITerraformIterator)
 //  .lifecycle(TerraformResourceLifecycle)
 //  .provider(TerraformProvider)
-//  .provisioners(java.util.List<FileProvisioner)
-//  .provisioners(LocalExecProvisioner)
-//  .provisioners(RemoteExecProvisioner>)
+//  .provisioners(java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner>)
     .image(java.lang.String)
     .name(java.lang.String)
-//  .attach(java.lang.Boolean)
-//  .attach(IResolvable)
+//  .attach(java.lang.Boolean|IResolvable)
 //  .capabilities(ContainerCapabilities)
 //  .cgroupnsMode(java.lang.String)
 //  .cgroupParent(java.lang.String)
@@ -3771,8 +3740,7 @@ ContainerConfig.builder()
 //  .cpuSet(java.lang.String)
 //  .cpuShares(java.lang.Number)
 //  .destroyGraceSeconds(java.lang.Number)
-//  .devices(IResolvable)
-//  .devices(java.util.List<ContainerDevices>)
+//  .devices(IResolvable|java.util.List<ContainerDevices>)
 //  .dns(java.util.List<java.lang.String>)
 //  .dnsOpts(java.util.List<java.lang.String>)
 //  .dnsSearch(java.util.List<java.lang.String>)
@@ -3782,67 +3750,47 @@ ContainerConfig.builder()
 //  .gpus(java.lang.String)
 //  .groupAdd(java.util.List<java.lang.String>)
 //  .healthcheck(ContainerHealthcheck)
-//  .host(IResolvable)
-//  .host(java.util.List<ContainerHost>)
+//  .host(IResolvable|java.util.List<ContainerHost>)
 //  .hostname(java.lang.String)
 //  .id(java.lang.String)
-//  .init(java.lang.Boolean)
-//  .init(IResolvable)
+//  .init(java.lang.Boolean|IResolvable)
 //  .ipcMode(java.lang.String)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ContainerLabels>)
+//  .labels(IResolvable|java.util.List<ContainerLabels>)
 //  .logDriver(java.lang.String)
 //  .logOpts(java.util.Map<java.lang.String, java.lang.String>)
-//  .logs(java.lang.Boolean)
-//  .logs(IResolvable)
+//  .logs(java.lang.Boolean|IResolvable)
 //  .maxRetryCount(java.lang.Number)
 //  .memory(java.lang.Number)
 //  .memorySwap(java.lang.Number)
-//  .mounts(IResolvable)
-//  .mounts(java.util.List<ContainerMounts>)
-//  .mustRun(java.lang.Boolean)
-//  .mustRun(IResolvable)
+//  .mounts(IResolvable|java.util.List<ContainerMounts>)
+//  .mustRun(java.lang.Boolean|IResolvable)
 //  .networkMode(java.lang.String)
-//  .networksAdvanced(IResolvable)
-//  .networksAdvanced(java.util.List<ContainerNetworksAdvanced>)
+//  .networksAdvanced(IResolvable|java.util.List<ContainerNetworksAdvanced>)
 //  .pidMode(java.lang.String)
-//  .ports(IResolvable)
-//  .ports(java.util.List<ContainerPorts>)
-//  .privileged(java.lang.Boolean)
-//  .privileged(IResolvable)
-//  .publishAllPorts(java.lang.Boolean)
-//  .publishAllPorts(IResolvable)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
-//  .removeVolumes(java.lang.Boolean)
-//  .removeVolumes(IResolvable)
+//  .ports(IResolvable|java.util.List<ContainerPorts>)
+//  .privileged(java.lang.Boolean|IResolvable)
+//  .publishAllPorts(java.lang.Boolean|IResolvable)
+//  .readOnly(java.lang.Boolean|IResolvable)
+//  .removeVolumes(java.lang.Boolean|IResolvable)
 //  .restart(java.lang.String)
-//  .rm(java.lang.Boolean)
-//  .rm(IResolvable)
+//  .rm(java.lang.Boolean|IResolvable)
 //  .runtime(java.lang.String)
 //  .securityOpts(java.util.List<java.lang.String>)
 //  .shmSize(java.lang.Number)
-//  .start(java.lang.Boolean)
-//  .start(IResolvable)
-//  .stdinOpen(java.lang.Boolean)
-//  .stdinOpen(IResolvable)
+//  .start(java.lang.Boolean|IResolvable)
+//  .stdinOpen(java.lang.Boolean|IResolvable)
 //  .stopSignal(java.lang.String)
 //  .stopTimeout(java.lang.Number)
 //  .storageOpts(java.util.Map<java.lang.String, java.lang.String>)
 //  .sysctls(java.util.Map<java.lang.String, java.lang.String>)
 //  .tmpfs(java.util.Map<java.lang.String, java.lang.String>)
-//  .tty(java.lang.Boolean)
-//  .tty(IResolvable)
-//  .ulimit(IResolvable)
-//  .ulimit(java.util.List<ContainerUlimit>)
-//  .upload(IResolvable)
-//  .upload(java.util.List<ContainerUpload>)
+//  .tty(java.lang.Boolean|IResolvable)
+//  .ulimit(IResolvable|java.util.List<ContainerUlimit>)
+//  .upload(IResolvable|java.util.List<ContainerUpload>)
 //  .user(java.lang.String)
 //  .usernsMode(java.lang.String)
-//  .volumes(IResolvable)
-//  .volumes(java.util.List<ContainerVolumes>)
-//  .wait(java.lang.Boolean)
-//  .wait(IResolvable)
+//  .volumes(IResolvable|java.util.List<ContainerVolumes>)
+//  .wait(java.lang.Boolean|IResolvable)
 //  .waitTimeout(java.lang.Number)
 //  .workingDir(java.lang.String)
     .build();
@@ -3852,16 +3800,16 @@ ContainerConfig.builder()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection\|com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">count</a></code> | <code>java.lang.Number\|com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner\|com.hashicorp.cdktf.LocalExecProvisioner\|com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.image">image</a></code> | <code>java.lang.String</code> | The ID of the image to back this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.name">name</a></code> | <code>java.lang.String</code> | The name of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">attach</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">attach</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | capabilities block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupnsMode">cgroupnsMode</a></code> | <code>java.lang.String</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupParent">cgroupParent</a></code> | <code>java.lang.String</code> | Optional parent cgroup for the container. |
@@ -3873,7 +3821,7 @@ ContainerConfig.builder()
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuSet">cpuSet</a></code> | <code>java.lang.String</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuShares">cpuShares</a></code> | <code>java.lang.Number</code> | CPU shares (relative weight) for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.destroyGraceSeconds">destroyGraceSeconds</a></code> | <code>java.lang.Number</code> | If defined will attempt to stop the container before destroying. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">devices</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | devices block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">devices</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | devices block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dns">dns</a></code> | <code>java.util.List<java.lang.String></code> | DNS servers to use. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsOpts">dnsOpts</a></code> | <code>java.util.List<java.lang.String></code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsSearch">dnsSearch</a></code> | <code>java.util.List<java.lang.String></code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container. |
@@ -3883,47 +3831,47 @@ ContainerConfig.builder()
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.gpus">gpus</a></code> | <code>java.lang.String</code> | GPU devices to add to the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.groupAdd">groupAdd</a></code> | <code>java.util.List<java.lang.String></code> | Additional groups for the container user. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.healthcheck">healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">host</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | host block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">host</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.hostname">hostname</a></code> | <code>java.lang.String</code> | Hostname of the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/container#id Container#id}. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">init</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">init</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ipcMode">ipcMode</a></code> | <code>java.lang.String</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logDriver">logDriver</a></code> | <code>java.lang.String</code> | The logging driver to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logOpts">logOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key/value pairs to use as options for the logging driver. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">logs</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">logs</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.maxRetryCount">maxRetryCount</a></code> | <code>java.lang.Number</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memory">memory</a></code> | <code>java.lang.Number</code> | The memory limit for the container in MBs. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memorySwap">memorySwap</a></code> | <code>java.lang.Number</code> | The total memory limit (memory + swap) for the container in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | mounts block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">mustRun</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">mounts</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">mustRun</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networkMode">networkMode</a></code> | <code>java.lang.String</code> | Network mode of the container. See https://docs.docker.com/engine/network/ for more information. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">networksAdvanced</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.pidMode">pidMode</a></code> | <code>java.lang.String</code> | he PID (Process) Namespace mode for the container. Either `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | ports block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">privileged</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Publish all ports of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">ports</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">privileged</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">publishAllPorts</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Publish all ports of the container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">removeVolumes</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.restart">restart</a></code> | <code>java.lang.String</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">rm</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">rm</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.runtime">runtime</a></code> | <code>java.lang.String</code> | Runtime to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.securityOpts">securityOpts</a></code> | <code>java.util.List<java.lang.String></code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.shmSize">shmSize</a></code> | <code>java.lang.Number</code> | Size of `/dev/shm` in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">start</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">start</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">stdinOpen</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopSignal">stopSignal</a></code> | <code>java.lang.String</code> | Signal to stop a container (default `SIGTERM`). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopTimeout">stopTimeout</a></code> | <code>java.lang.Number</code> | Timeout (in seconds) to stop a container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.storageOpts">storageOpts</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.sysctls">sysctls</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of kernel parameters (sysctls) to set in the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tmpfs">tmpfs</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">tty</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | ulimit block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">upload</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | upload block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">tty</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">ulimit</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">upload</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | upload block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.user">user</a></code> | <code>java.lang.String</code> | User used for run the first process. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.usernsMode">usernsMode</a></code> | <code>java.lang.String</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">volumes</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | volumes block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">wait</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">volumes</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | volumes block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">wait</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.waitTimeout">waitTimeout</a></code> | <code>java.lang.Number</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.workingDir">workingDir</a></code> | <code>java.lang.String</code> | The working directory for commands to run in. |
 
@@ -3932,20 +3880,20 @@ ContainerConfig.builder()
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.ContainerConfig.property.connection"></a>
 
 ```java
-public java.lang.Object getConnection();
+public SSHProvisionerConnection|WinrmProvisionerConnection getConnection();
 ```
 
-- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection|com.hashicorp.cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.ContainerConfig.property.count"></a>
 
 ```java
-public java.lang.Object getCount();
+public java.lang.Number|TerraformCount getCount();
 ```
 
-- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+- *Type:* java.lang.Number|com.hashicorp.cdktf.TerraformCount
 
 ---
 
@@ -3992,10 +3940,10 @@ public TerraformProvider getProvider();
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.ContainerConfig.property.provisioners"></a>
 
 ```java
-public java.lang.Object getProvisioners();
+public java.util.List<FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner> getProvisioners();
 ```
 
-- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner|com.hashicorp.cdktf.LocalExecProvisioner|com.hashicorp.cdktf.RemoteExecProvisioner>
 
 ---
 
@@ -4032,10 +3980,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `attach`<sup>Optional</sup> <a name="attach" id="@cdktf/provider-docker.container.ContainerConfig.property.attach"></a>
 
 ```java
-public java.lang.Object getAttach();
+public java.lang.Boolean|IResolvable getAttach();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
@@ -4208,10 +4156,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `devices`<sup>Optional</sup> <a name="devices" id="@cdktf/provider-docker.container.ContainerConfig.property.devices"></a>
 
 ```java
-public java.lang.Object getDevices();
+public IResolvable|java.util.List<ContainerDevices> getDevices();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
 
 devices block.
 
@@ -4352,10 +4300,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `host`<sup>Optional</sup> <a name="host" id="@cdktf/provider-docker.container.ContainerConfig.property.host"></a>
 
 ```java
-public java.lang.Object getHost();
+public IResolvable|java.util.List<ContainerHost> getHost();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
 
 host block.
 
@@ -4395,10 +4343,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `init`<sup>Optional</sup> <a name="init" id="@cdktf/provider-docker.container.ContainerConfig.property.init"></a>
 
 ```java
-public java.lang.Object getInit();
+public java.lang.Boolean|IResolvable getInit();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Configured whether an init process should be injected for this container.
 
@@ -4425,10 +4373,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.ContainerConfig.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<ContainerLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
 
 labels block.
 
@@ -4467,10 +4415,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `logs`<sup>Optional</sup> <a name="logs" id="@cdktf/provider-docker.container.ContainerConfig.property.logs"></a>
 
 ```java
-public java.lang.Object getLogs();
+public java.lang.Boolean|IResolvable getLogs();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
@@ -4525,10 +4473,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `mounts`<sup>Optional</sup> <a name="mounts" id="@cdktf/provider-docker.container.ContainerConfig.property.mounts"></a>
 
 ```java
-public java.lang.Object getMounts();
+public IResolvable|java.util.List<ContainerMounts> getMounts();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
 
 mounts block.
 
@@ -4539,10 +4487,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `mustRun`<sup>Optional</sup> <a name="mustRun" id="@cdktf/provider-docker.container.ContainerConfig.property.mustRun"></a>
 
 ```java
-public java.lang.Object getMustRun();
+public java.lang.Boolean|IResolvable getMustRun();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container will be kept running.
 
@@ -4569,10 +4517,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `networksAdvanced`<sup>Optional</sup> <a name="networksAdvanced" id="@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced"></a>
 
 ```java
-public java.lang.Object getNetworksAdvanced();
+public IResolvable|java.util.List<ContainerNetworksAdvanced> getNetworksAdvanced();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
 
 networks_advanced block.
 
@@ -4597,10 +4545,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ports`<sup>Optional</sup> <a name="ports" id="@cdktf/provider-docker.container.ContainerConfig.property.ports"></a>
 
 ```java
-public java.lang.Object getPorts();
+public IResolvable|java.util.List<ContainerPorts> getPorts();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
 
 ports block.
 
@@ -4611,10 +4559,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `privileged`<sup>Optional</sup> <a name="privileged" id="@cdktf/provider-docker.container.ContainerConfig.property.privileged"></a>
 
 ```java
-public java.lang.Object getPrivileged();
+public java.lang.Boolean|IResolvable getPrivileged();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, the container runs in privileged mode.
 
@@ -4625,10 +4573,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `publishAllPorts`<sup>Optional</sup> <a name="publishAllPorts" id="@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts"></a>
 
 ```java
-public java.lang.Object getPublishAllPorts();
+public java.lang.Boolean|IResolvable getPublishAllPorts();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Publish all ports of the container.
 
@@ -4639,10 +4587,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.container.ContainerConfig.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
@@ -4653,10 +4601,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `removeVolumes`<sup>Optional</sup> <a name="removeVolumes" id="@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes"></a>
 
 ```java
-public java.lang.Object getRemoveVolumes();
+public java.lang.Boolean|IResolvable getRemoveVolumes();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
@@ -4681,10 +4629,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `rm`<sup>Optional</sup> <a name="rm" id="@cdktf/provider-docker.container.ContainerConfig.property.rm"></a>
 
 ```java
-public java.lang.Object getRm();
+public java.lang.Boolean|IResolvable getRm();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
@@ -4737,10 +4685,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `start`<sup>Optional</sup> <a name="start" id="@cdktf/provider-docker.container.ContainerConfig.property.start"></a>
 
 ```java
-public java.lang.Object getStart();
+public java.lang.Boolean|IResolvable getStart();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container will be started after creation.
 
@@ -4753,10 +4701,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `stdinOpen`<sup>Optional</sup> <a name="stdinOpen" id="@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen"></a>
 
 ```java
-public java.lang.Object getStdinOpen();
+public java.lang.Boolean|IResolvable getStdinOpen();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
@@ -4837,10 +4785,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `tty`<sup>Optional</sup> <a name="tty" id="@cdktf/provider-docker.container.ContainerConfig.property.tty"></a>
 
 ```java
-public java.lang.Object getTty();
+public java.lang.Boolean|IResolvable getTty();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
@@ -4851,10 +4799,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ulimit`<sup>Optional</sup> <a name="ulimit" id="@cdktf/provider-docker.container.ContainerConfig.property.ulimit"></a>
 
 ```java
-public java.lang.Object getUlimit();
+public IResolvable|java.util.List<ContainerUlimit> getUlimit();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
 
 ulimit block.
 
@@ -4865,10 +4813,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `upload`<sup>Optional</sup> <a name="upload" id="@cdktf/provider-docker.container.ContainerConfig.property.upload"></a>
 
 ```java
-public java.lang.Object getUpload();
+public IResolvable|java.util.List<ContainerUpload> getUpload();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
 
 upload block.
 
@@ -4909,10 +4857,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `volumes`<sup>Optional</sup> <a name="volumes" id="@cdktf/provider-docker.container.ContainerConfig.property.volumes"></a>
 
 ```java
-public java.lang.Object getVolumes();
+public IResolvable|java.util.List<ContainerVolumes> getVolumes();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
 
 volumes block.
 
@@ -4923,10 +4871,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `wait`<sup>Optional</sup> <a name="wait" id="@cdktf/provider-docker.container.ContainerConfig.property.wait"></a>
 
 ```java
-public java.lang.Object getWait();
+public java.lang.Boolean|IResolvable getWait();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, then the Docker container is waited for being healthy state after creation.
 
@@ -5257,8 +5205,7 @@ ContainerMounts.builder()
     .target(java.lang.String)
     .type(java.lang.String)
 //  .bindOptions(ContainerMountsBindOptions)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
+//  .readOnly(java.lang.Boolean|IResolvable)
 //  .source(java.lang.String)
 //  .tmpfsOptions(ContainerMountsTmpfsOptions)
 //  .volumeOptions(ContainerMountsVolumeOptions)
@@ -5272,7 +5219,7 @@ ContainerMounts.builder()
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.target">target</a></code> | <code>java.lang.String</code> | Container path. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.type">type</a></code> | <code>java.lang.String</code> | The mount type. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.bindOptions">bindOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | bind_options block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Whether the mount should be read-only. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Whether the mount should be read-only. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.source">source</a></code> | <code>java.lang.String</code> | Mount source (e.g. a volume name, a host path). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.tmpfsOptions">tmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | tmpfs_options block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.volumeOptions">volumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | volume_options block. |
@@ -5324,10 +5271,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.container.ContainerMounts.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Whether the mount should be read-only.
 
@@ -5471,10 +5418,8 @@ import com.hashicorp.cdktf.providers.docker.container.ContainerMountsVolumeOptio
 ContainerMountsVolumeOptions.builder()
 //  .driverName(java.lang.String)
 //  .driverOptions(java.util.Map<java.lang.String, java.lang.String>)
-//  .labels(IResolvable)
-//  .labels(java.util.List<ContainerMountsVolumeOptionsLabels>)
-//  .noCopy(java.lang.Boolean)
-//  .noCopy(IResolvable)
+//  .labels(IResolvable|java.util.List<ContainerMountsVolumeOptionsLabels>)
+//  .noCopy(java.lang.Boolean|IResolvable)
 //  .subpath(java.lang.String)
     .build();
 ```
@@ -5485,8 +5430,8 @@ ContainerMountsVolumeOptions.builder()
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverName">driverName</a></code> | <code>java.lang.String</code> | Name of the driver to use to create the volume. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverOptions">driverOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | key/value map of driver specific options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Populate volume with data from the target. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">labels</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Populate volume with data from the target. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.subpath">subpath</a></code> | <code>java.lang.String</code> | Path within the volume to mount. Requires docker server version 1.45 or higher. |
 
 ---
@@ -5522,10 +5467,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels"></a>
 
 ```java
-public java.lang.Object getLabels();
+public IResolvable|java.util.List<ContainerMountsVolumeOptionsLabels> getLabels();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
 
 labels block.
 
@@ -5536,10 +5481,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `noCopy`<sup>Optional</sup> <a name="noCopy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy"></a>
 
 ```java
-public java.lang.Object getNoCopy();
+public java.lang.Boolean|IResolvable getNoCopy();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -5866,8 +5811,7 @@ ContainerUpload.builder()
     .file(java.lang.String)
 //  .content(java.lang.String)
 //  .contentBase64(java.lang.String)
-//  .executable(java.lang.Boolean)
-//  .executable(IResolvable)
+//  .executable(java.lang.Boolean|IResolvable)
 //  .permissions(java.lang.String)
 //  .source(java.lang.String)
 //  .sourceHash(java.lang.String)
@@ -5881,7 +5825,7 @@ ContainerUpload.builder()
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.file">file</a></code> | <code>java.lang.String</code> | Path to the file in the container where is upload goes to. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.content">content</a></code> | <code>java.lang.String</code> | Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.contentBase64">contentBase64</a></code> | <code>java.lang.String</code> | Base64-encoded data that will be decoded and uploaded as raw bytes for the object content. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">executable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">executable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.permissions">permissions</a></code> | <code>java.lang.String</code> | The permission mode for the file in the container. Has precedence over `executable`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.source">source</a></code> | <code>java.lang.String</code> | A filename that references a file which will be uploaded as the object content. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.sourceHash">sourceHash</a></code> | <code>java.lang.String</code> | If using `source`, this will force an update if the file content has updated but the filename has not. |
@@ -5937,10 +5881,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `executable`<sup>Optional</sup> <a name="executable" id="@cdktf/provider-docker.container.ContainerUpload.property.executable"></a>
 
 ```java
-public java.lang.Object getExecutable();
+public java.lang.Boolean|IResolvable getExecutable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, the file will be uploaded with user executable permission. Defaults to `false`.
 
@@ -6003,8 +5947,7 @@ ContainerVolumes.builder()
 //  .containerPath(java.lang.String)
 //  .fromContainer(java.lang.String)
 //  .hostPath(java.lang.String)
-//  .readOnly(java.lang.Boolean)
-//  .readOnly(IResolvable)
+//  .readOnly(java.lang.Boolean|IResolvable)
 //  .volumeName(java.lang.String)
     .build();
 ```
@@ -6016,7 +5959,7 @@ ContainerVolumes.builder()
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.containerPath">containerPath</a></code> | <code>java.lang.String</code> | The path in the container where the volume will be mounted. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.fromContainer">fromContainer</a></code> | <code>java.lang.String</code> | The container where the volume is coming from. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.hostPath">hostPath</a></code> | <code>java.lang.String</code> | The path on the host where the volume is coming from. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If `true`, this volume will be readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If `true`, this volume will be readonly. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.volumeName">volumeName</a></code> | <code>java.lang.String</code> | The name of the docker volume which should be mounted. |
 
 ---
@@ -6066,10 +6009,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `readOnly`<sup>Optional</sup> <a name="readOnly" id="@cdktf/provider-docker.container.ContainerVolumes.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If `true`, this volume will be readonly. Defaults to `false`.
 
@@ -6521,7 +6464,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>></code> | *No description.* |
 
 ---
 
@@ -6552,10 +6495,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerDevices> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>>
 
 ---
 
@@ -6808,7 +6751,7 @@ public void resetPermissions()
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.containerPath">containerPath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.hostPath">hostPath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.permissions">permissions</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a></code> | *No description.* |
 
 ---
 
@@ -6899,10 +6842,10 @@ public java.lang.String getPermissions();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerDevices getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>
 
 ---
 
@@ -7444,7 +7387,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>></code> | *No description.* |
 
 ---
 
@@ -7475,10 +7418,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerHostList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerHost> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>>
 
 ---
 
@@ -7715,7 +7658,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ipInput">ipInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.host">host</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ip">ip</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a></code> | *No description.* |
 
 ---
 
@@ -7786,10 +7729,10 @@ public java.lang.String getIp();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerHost getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>
 
 ---
 
@@ -7915,7 +7858,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>></code> | *No description.* |
 
 ---
 
@@ -7946,10 +7889,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>>
 
 ---
 
@@ -8186,7 +8129,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a></code> | *No description.* |
 
 ---
 
@@ -8257,10 +8200,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>
 
 ---
 
@@ -8664,7 +8607,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>></code> | *No description.* |
 
 ---
 
@@ -8695,10 +8638,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerMounts> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>>
 
 ---
 
@@ -9009,17 +8952,17 @@ public void resetVolumeOptions()
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptions">tmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptionsOutputReference">ContainerMountsTmpfsOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptions">volumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference">ContainerMountsVolumeOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.bindOptionsInput">bindOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.sourceInput">sourceInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.targetInput">targetInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptionsInput">tmpfsOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.typeInput">typeInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptionsInput">volumeOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.source">source</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.target">target</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.type">type</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a></code> | *No description.* |
 
 ---
 
@@ -9090,10 +9033,10 @@ public ContainerMountsBindOptions getBindOptionsInput();
 ##### `readOnlyInput`<sup>Optional</sup> <a name="readOnlyInput" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput"></a>
 
 ```java
-public java.lang.Object getReadOnlyInput();
+public java.lang.Boolean|IResolvable getReadOnlyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -9150,10 +9093,10 @@ public ContainerMountsVolumeOptions getVolumeOptionsInput();
 ##### `readOnly`<sup>Required</sup> <a name="readOnly" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -9190,10 +9133,10 @@ public java.lang.String getType();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerMounts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>
 
 ---
 
@@ -9626,7 +9569,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | *No description.* |
 
 ---
 
@@ -9657,10 +9600,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerMountsVolumeOptionsLabels> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
 
 ---
 
@@ -9897,7 +9840,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.valueInput">valueInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.label">label</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.value">value</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -9968,10 +9911,10 @@ public java.lang.String getValue();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerMountsVolumeOptionsLabels getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -10188,12 +10131,12 @@ Returns a reversible string representation.
 ##### `putLabels` <a name="putLabels" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.putLabels"></a>
 
 ```java
-public void putLabels(IResolvable OR java.util.List<ContainerMountsVolumeOptionsLabels> value)
+public void putLabels(IResolvable|java.util.List<ContainerMountsVolumeOptionsLabels> value)
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
 
 ---
 
@@ -10237,12 +10180,12 @@ public void resetSubpath()
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labels">labels</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList">ContainerMountsVolumeOptionsLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverNameInput">driverNameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptionsInput">driverOptionsInput</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">noCopyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">labelsInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">noCopyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpathInput">subpathInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverName">driverName</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptions">driverOptions</a></code> | <code>java.util.Map<java.lang.String, java.lang.String></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">noCopy</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpath">subpath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
 
@@ -10305,20 +10248,20 @@ public java.util.Map<java.lang.String, java.lang.String> getDriverOptionsInput()
 ##### `labelsInput`<sup>Optional</sup> <a name="labelsInput" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput"></a>
 
 ```java
-public java.lang.Object getLabelsInput();
+public IResolvable|java.util.List<ContainerMountsVolumeOptionsLabels> getLabelsInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>>
 
 ---
 
 ##### `noCopyInput`<sup>Optional</sup> <a name="noCopyInput" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput"></a>
 
 ```java
-public java.lang.Object getNoCopyInput();
+public java.lang.Boolean|IResolvable getNoCopyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -10355,10 +10298,10 @@ public java.util.Map<java.lang.String, java.lang.String> getDriverOptions();
 ##### `noCopy`<sup>Required</sup> <a name="noCopy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy"></a>
 
 ```java
-public java.lang.Object getNoCopy();
+public java.lang.Boolean|IResolvable getNoCopy();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -11008,7 +10951,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>></code> | *No description.* |
 
 ---
 
@@ -11039,10 +10982,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerNetworksAdvanced> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>>
 
 ---
 
@@ -11304,7 +11247,7 @@ public void resetIpv6Address()
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv4Address">ipv4Address</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv6Address">ipv6Address</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -11415,10 +11358,10 @@ public java.lang.String getName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerNetworksAdvanced getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>
 
 ---
 
@@ -11544,7 +11487,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>></code> | *No description.* |
 
 ---
 
@@ -11575,10 +11518,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerPortsList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerPorts> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>>
 
 ---
 
@@ -11840,7 +11783,7 @@ public void resetProtocol()
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internal">internal</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.ip">ip</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.protocol">protocol</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a></code> | *No description.* |
 
 ---
 
@@ -11951,10 +11894,10 @@ public java.lang.String getProtocol();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerPorts getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>
 
 ---
 
@@ -12080,7 +12023,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>></code> | *No description.* |
 
 ---
 
@@ -12111,10 +12054,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerUlimit> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>>
 
 ---
 
@@ -12353,7 +12296,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.hard">hard</a></code> | <code>java.lang.Number</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.soft">soft</a></code> | <code>java.lang.Number</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a></code> | *No description.* |
 
 ---
 
@@ -12444,10 +12387,10 @@ public java.lang.Number getSoft();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerUlimit getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>
 
 ---
 
@@ -12573,7 +12516,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>></code> | *No description.* |
 
 ---
 
@@ -12604,10 +12547,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUploadList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerUpload> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>>
 
 ---
 
@@ -12884,19 +12827,19 @@ public void resetSourceHash()
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64Input">contentBase64Input</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentInput">contentInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">executableInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">executableInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fileInput">fileInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissionsInput">permissionsInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHashInput">sourceHashInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceInput">sourceInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.content">content</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64">contentBase64</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">executable</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">executable</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.file">file</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissions">permissions</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.source">source</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHash">sourceHash</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a></code> | *No description.* |
 
 ---
 
@@ -12947,10 +12890,10 @@ public java.lang.String getContentInput();
 ##### `executableInput`<sup>Optional</sup> <a name="executableInput" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput"></a>
 
 ```java
-public java.lang.Object getExecutableInput();
+public java.lang.Boolean|IResolvable getExecutableInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13017,10 +12960,10 @@ public java.lang.String getContentBase64();
 ##### `executable`<sup>Required</sup> <a name="executable" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable"></a>
 
 ```java
-public java.lang.Object getExecutable();
+public java.lang.Boolean|IResolvable getExecutable();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13067,10 +13010,10 @@ public java.lang.String getSourceHash();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerUpload getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>
 
 ---
 
@@ -13196,7 +13139,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>></code> | *No description.* |
 
 ---
 
@@ -13227,10 +13170,10 @@ public java.lang.String getFqn();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|java.util.List<ContainerVolumes> getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>>
 
 ---
 
@@ -13501,14 +13444,14 @@ public void resetVolumeName()
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPathInput">containerPathInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainerInput">fromContainerInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPathInput">hostPathInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">readOnlyInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeNameInput">volumeNameInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPath">containerPath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainer">fromContainer</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPath">hostPath</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">readOnly</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeName">volumeName</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a></code> | *No description.* |
 
 ---
 
@@ -13569,10 +13512,10 @@ public java.lang.String getHostPathInput();
 ##### `readOnlyInput`<sup>Optional</sup> <a name="readOnlyInput" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput"></a>
 
 ```java
-public java.lang.Object getReadOnlyInput();
+public java.lang.Boolean|IResolvable getReadOnlyInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13619,10 +13562,10 @@ public java.lang.String getHostPath();
 ##### `readOnly`<sup>Required</sup> <a name="readOnly" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly"></a>
 
 ```java
-public java.lang.Object getReadOnly();
+public java.lang.Boolean|IResolvable getReadOnly();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -13639,10 +13582,10 @@ public java.lang.String getVolumeName();
 ##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue"></a>
 
 ```java
-public java.lang.Object getInternalValue();
+public IResolvable|ContainerVolumes getInternalValue();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>
+- *Type:* com.hashicorp.cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>
 
 ---
 

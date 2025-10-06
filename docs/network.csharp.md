@@ -287,7 +287,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.network.Network.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.network.Network.importFrom"></a>
@@ -341,7 +341,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.network.Network.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -356,7 +356,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.network.Network.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -381,24 +381,24 @@ Full id of resource to move to, e.g. "aws_s3_bucket.example".
 ##### `PutIpamConfig` <a name="PutIpamConfig" id="@cdktf/provider-docker.network.Network.putIpamConfig"></a>
 
 ```csharp
-private void PutIpamConfig(object Value)
+private void PutIpamConfig(IResolvable|NetworkIpamConfig[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.network.Network.putIpamConfig.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]
 
 ---
 
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.network.Network.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|NetworkLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.network.Network.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]
 
 ---
 
@@ -600,38 +600,38 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfig">IpamConfig</a></code> | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList">NetworkIpamConfigList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.labels">Labels</a></code> | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList">NetworkLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.scope">Scope</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.attachableInput">AttachableInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicateInput">CheckDuplicateInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.attachableInput">AttachableInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicateInput">CheckDuplicateInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.driverInput">DriverInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ingressInput">IngressInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.internalInput">InternalInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfigInput">IpamConfigInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ingressInput">IngressInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.internalInput">InternalInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipamConfigInput">IpamConfigInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamDriverInput">IpamDriverInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamOptionsInput">IpamOptionsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6Input">Ipv6Input</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6Input">Ipv6Input</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.optionsInput">OptionsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.attachable">Attachable</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicate">CheckDuplicate</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.attachable">Attachable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.checkDuplicate">CheckDuplicate</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.driver">Driver</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.id">Id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ingress">Ingress</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.internal">Internal</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ingress">Ingress</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.internal">Internal</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamDriver">IpamDriver</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.ipamOptions">IpamOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6">Ipv6</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.Network.property.ipv6">Ipv6</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.Network.property.options">Options</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 
@@ -712,20 +712,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.network.Network.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.network.Network.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -772,10 +772,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.network.Network.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -812,20 +812,20 @@ public string Scope { get; }
 ##### `AttachableInput`<sup>Optional</sup> <a name="AttachableInput" id="@cdktf/provider-docker.network.Network.property.attachableInput"></a>
 
 ```csharp
-public object AttachableInput { get; }
+public bool|IResolvable AttachableInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `CheckDuplicateInput`<sup>Optional</sup> <a name="CheckDuplicateInput" id="@cdktf/provider-docker.network.Network.property.checkDuplicateInput"></a>
 
 ```csharp
-public object CheckDuplicateInput { get; }
+public bool|IResolvable CheckDuplicateInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -852,30 +852,30 @@ public string IdInput { get; }
 ##### `IngressInput`<sup>Optional</sup> <a name="IngressInput" id="@cdktf/provider-docker.network.Network.property.ingressInput"></a>
 
 ```csharp
-public object IngressInput { get; }
+public bool|IResolvable IngressInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `InternalInput`<sup>Optional</sup> <a name="InternalInput" id="@cdktf/provider-docker.network.Network.property.internalInput"></a>
 
 ```csharp
-public object InternalInput { get; }
+public bool|IResolvable InternalInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `IpamConfigInput`<sup>Optional</sup> <a name="IpamConfigInput" id="@cdktf/provider-docker.network.Network.property.ipamConfigInput"></a>
 
 ```csharp
-public object IpamConfigInput { get; }
+public IResolvable|NetworkIpamConfig[] IpamConfigInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]
 
 ---
 
@@ -902,20 +902,20 @@ public System.Collections.Generic.IDictionary<string, string> IpamOptionsInput {
 ##### `Ipv6Input`<sup>Optional</sup> <a name="Ipv6Input" id="@cdktf/provider-docker.network.Network.property.ipv6Input"></a>
 
 ```csharp
-public object Ipv6Input { get; }
+public bool|IResolvable Ipv6Input { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.network.Network.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|NetworkLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]
 
 ---
 
@@ -942,20 +942,20 @@ public System.Collections.Generic.IDictionary<string, string> OptionsInput { get
 ##### `Attachable`<sup>Required</sup> <a name="Attachable" id="@cdktf/provider-docker.network.Network.property.attachable"></a>
 
 ```csharp
-public object Attachable { get; }
+public bool|IResolvable Attachable { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `CheckDuplicate`<sup>Required</sup> <a name="CheckDuplicate" id="@cdktf/provider-docker.network.Network.property.checkDuplicate"></a>
 
 ```csharp
-public object CheckDuplicate { get; }
+public bool|IResolvable CheckDuplicate { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -982,20 +982,20 @@ public string Id { get; }
 ##### `Ingress`<sup>Required</sup> <a name="Ingress" id="@cdktf/provider-docker.network.Network.property.ingress"></a>
 
 ```csharp
-public object Ingress { get; }
+public bool|IResolvable Ingress { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `Internal`<sup>Required</sup> <a name="Internal" id="@cdktf/provider-docker.network.Network.property.internal"></a>
 
 ```csharp
-public object Internal { get; }
+public bool|IResolvable Internal { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1022,10 +1022,10 @@ public System.Collections.Generic.IDictionary<string, string> IpamOptions { get;
 ##### `Ipv6`<sup>Required</sup> <a name="Ipv6" id="@cdktf/provider-docker.network.Network.property.ipv6"></a>
 
 ```csharp
-public object Ipv6 { get; }
+public bool|IResolvable Ipv6 { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1077,25 +1077,25 @@ public string TfResourceType { get; }
 using HashiCorp.Cdktf.Providers.Docker;
 
 new NetworkConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Name,
-    object Attachable = null,
-    object CheckDuplicate = null,
+    bool|IResolvable Attachable = null,
+    bool|IResolvable CheckDuplicate = null,
     string Driver = null,
     string Id = null,
-    object Ingress = null,
-    object Internal = null,
-    object IpamConfig = null,
+    bool|IResolvable Ingress = null,
+    bool|IResolvable Internal = null,
+    IResolvable|NetworkIpamConfig[] IpamConfig = null,
     string IpamDriver = null,
     System.Collections.Generic.IDictionary<string, string> IpamOptions = null,
-    object Ipv6 = null,
-    object Labels = null,
+    bool|IResolvable Ipv6 = null,
+    IResolvable|NetworkLabels[] Labels = null,
     System.Collections.Generic.IDictionary<string, string> Options = null
 };
 ```
@@ -1104,25 +1104,25 @@ new NetworkConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.name">Name</a></code> | <code>string</code> | The name of the Docker network. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">Attachable</a></code> | <code>object</code> | Enable manual container attachment to the network. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">CheckDuplicate</a></code> | <code>object</code> | Requests daemon to check for networks with same name. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.attachable">Attachable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Enable manual container attachment to the network. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate">CheckDuplicate</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Requests daemon to check for networks with same name. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.driver">Driver</a></code> | <code>string</code> | The driver of the Docker network. Possible values are `bridge`, `host`, `overlay`, `macvlan`. See [network docs](https://docs.docker.com/network/#network-drivers) for more details. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/network#id Network#id}. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">Ingress</a></code> | <code>object</code> | Create swarm routing-mesh network. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">Internal</a></code> | <code>object</code> | Whether the network is internal. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">IpamConfig</a></code> | <code>object</code> | ipam_config block. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ingress">Ingress</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Create swarm routing-mesh network. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.internal">Internal</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Whether the network is internal. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig">IpamConfig</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]</code> | ipam_config block. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamDriver">IpamDriver</a></code> | <code>string</code> | Driver used by the custom IP scheme of the network. Defaults to `default`. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipamOptions">IpamOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Provide explicit options to the IPAM driver. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipv6">Ipv6</a></code> | <code>object</code> | Enable IPv6 networking. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.labels">Labels</a></code> | <code>object</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.ipv6">Ipv6</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Enable IPv6 networking. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkConfig.property.options">Options</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Only available with bridge networks. See [bridge options docs](https://docs.docker.com/engine/reference/commandline/network_create/#bridge-driver-options) for more details. |
 
 ---
@@ -1130,20 +1130,20 @@ new NetworkConfig {
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.network.NetworkConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.network.NetworkConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1190,10 +1190,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.network.NetworkConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -1214,10 +1214,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Attachable`<sup>Optional</sup> <a name="Attachable" id="@cdktf/provider-docker.network.NetworkConfig.property.attachable"></a>
 
 ```csharp
-public object Attachable { get; set; }
+public bool|IResolvable Attachable { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Enable manual container attachment to the network.
 
@@ -1228,10 +1228,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `CheckDuplicate`<sup>Optional</sup> <a name="CheckDuplicate" id="@cdktf/provider-docker.network.NetworkConfig.property.checkDuplicate"></a>
 
 ```csharp
-public object CheckDuplicate { get; set; }
+public bool|IResolvable CheckDuplicate { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Requests daemon to check for networks with same name.
 
@@ -1271,10 +1271,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `Ingress`<sup>Optional</sup> <a name="Ingress" id="@cdktf/provider-docker.network.NetworkConfig.property.ingress"></a>
 
 ```csharp
-public object Ingress { get; set; }
+public bool|IResolvable Ingress { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Create swarm routing-mesh network. Defaults to `false`.
 
@@ -1285,10 +1285,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Internal`<sup>Optional</sup> <a name="Internal" id="@cdktf/provider-docker.network.NetworkConfig.property.internal"></a>
 
 ```csharp
-public object Internal { get; set; }
+public bool|IResolvable Internal { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Whether the network is internal.
 
@@ -1299,10 +1299,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `IpamConfig`<sup>Optional</sup> <a name="IpamConfig" id="@cdktf/provider-docker.network.NetworkConfig.property.ipamConfig"></a>
 
 ```csharp
-public object IpamConfig { get; set; }
+public IResolvable|NetworkIpamConfig[] IpamConfig { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]
 
 ipam_config block.
 
@@ -1343,10 +1343,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Ipv6`<sup>Optional</sup> <a name="Ipv6" id="@cdktf/provider-docker.network.NetworkConfig.property.ipv6"></a>
 
 ```csharp
-public object Ipv6 { get; set; }
+public bool|IResolvable Ipv6 { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Enable IPv6 networking. Defaults to `false`.
 
@@ -1357,10 +1357,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.network.NetworkConfig.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|NetworkLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]
 
 labels block.
 
@@ -1637,7 +1637,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]</code> | *No description.* |
 
 ---
 
@@ -1668,10 +1668,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.network.NetworkIpamConfigList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|NetworkIpamConfig[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>[]
 
 ---
 
@@ -1940,7 +1940,7 @@ private void ResetSubnet()
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.gateway">Gateway</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.ipRange">IpRange</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.subnet">Subnet</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a></code> | *No description.* |
 
 ---
 
@@ -2051,10 +2051,10 @@ public string Subnet { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.network.NetworkIpamConfigOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|NetworkIpamConfig InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkIpamConfig">NetworkIpamConfig</a>
 
 ---
 
@@ -2180,7 +2180,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -2211,10 +2211,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.network.NetworkLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|NetworkLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>[]
 
 ---
 
@@ -2451,7 +2451,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a></code> | *No description.* |
 
 ---
 
@@ -2522,10 +2522,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.network.NetworkLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|NetworkLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.network.NetworkLabels">NetworkLabels</a>
 
 ---
 

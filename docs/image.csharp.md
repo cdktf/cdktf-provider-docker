@@ -282,7 +282,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.image.Image.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.image.Image.importFrom"></a>
@@ -336,7 +336,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.image.Image.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -351,7 +351,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.image.Image.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -565,28 +565,28 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttribute">BuildAttribute</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference">ImageBuildOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.id">Id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.imageId">ImageId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.repoDigest">RepoDigest</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference">ImageTimeoutsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.buildAttributeInput">BuildAttributeInput</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">ForceRemoveInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">KeepLocallyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemoveInput">ForceRemoveInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocallyInput">KeepLocallyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platformInput">PlatformInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggersInput">PullTriggersInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">TimeoutsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.timeoutsInput">TimeoutsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.triggersInput">TriggersInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">ForceRemove</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">KeepLocally</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.forceRemove">ForceRemove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.Image.property.keepLocally">KeepLocally</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.platform">Platform</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.Image.property.pullTriggers">PullTriggers</a></code> | <code>string[]</code> | *No description.* |
@@ -669,20 +669,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.image.Image.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.image.Image.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -729,10 +729,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.image.Image.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -799,20 +799,20 @@ public ImageBuild BuildAttributeInput { get; }
 ##### `ForceRemoveInput`<sup>Optional</sup> <a name="ForceRemoveInput" id="@cdktf/provider-docker.image.Image.property.forceRemoveInput"></a>
 
 ```csharp
-public object ForceRemoveInput { get; }
+public bool|IResolvable ForceRemoveInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `KeepLocallyInput`<sup>Optional</sup> <a name="KeepLocallyInput" id="@cdktf/provider-docker.image.Image.property.keepLocallyInput"></a>
 
 ```csharp
-public object KeepLocallyInput { get; }
+public bool|IResolvable KeepLocallyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -849,10 +849,10 @@ public string[] PullTriggersInput { get; }
 ##### `TimeoutsInput`<sup>Optional</sup> <a name="TimeoutsInput" id="@cdktf/provider-docker.image.Image.property.timeoutsInput"></a>
 
 ```csharp
-public object TimeoutsInput { get; }
+public IResolvable|ImageTimeouts TimeoutsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
 
 ---
 
@@ -869,20 +869,20 @@ public System.Collections.Generic.IDictionary<string, string> TriggersInput { ge
 ##### `ForceRemove`<sup>Required</sup> <a name="ForceRemove" id="@cdktf/provider-docker.image.Image.property.forceRemove"></a>
 
 ```csharp
-public object ForceRemove { get; }
+public bool|IResolvable ForceRemove { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `KeepLocally`<sup>Required</sup> <a name="KeepLocally" id="@cdktf/provider-docker.image.Image.property.keepLocally"></a>
 
 ```csharp
-public object KeepLocally { get; }
+public bool|IResolvable KeepLocally { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -955,7 +955,7 @@ using HashiCorp.Cdktf.Providers.Docker;
 
 new ImageBuild {
     string Context,
-    object AuthConfig = null,
+    IResolvable|ImageBuildAuthConfig[] AuthConfig = null,
     System.Collections.Generic.IDictionary<string, string> BuildArgs = null,
     string Builder = null,
     string BuildId = null,
@@ -969,27 +969,27 @@ new ImageBuild {
     double CpuShares = null,
     string Dockerfile = null,
     string[] ExtraHosts = null,
-    object ForceRemove = null,
+    bool|IResolvable ForceRemove = null,
     string Isolation = null,
     System.Collections.Generic.IDictionary<string, string> Label = null,
     System.Collections.Generic.IDictionary<string, string> Labels = null,
     double Memory = null,
     double MemorySwap = null,
     string NetworkMode = null,
-    object NoCache = null,
+    bool|IResolvable NoCache = null,
     string Platform = null,
-    object PullParent = null,
+    bool|IResolvable PullParent = null,
     string RemoteContext = null,
-    object Remove = null,
-    object Secrets = null,
+    bool|IResolvable Remove = null,
+    IResolvable|ImageBuildSecrets[] Secrets = null,
     string[] SecurityOpt = null,
     string SessionId = null,
     double ShmSize = null,
-    object Squash = null,
-    object SuppressOutput = null,
+    bool|IResolvable Squash = null,
+    bool|IResolvable SuppressOutput = null,
     string[] Tag = null,
     string Target = null,
-    object Ulimit = null,
+    IResolvable|ImageBuildUlimit[] Ulimit = null,
     string Version = null
 };
 ```
@@ -999,7 +999,7 @@ new ImageBuild {
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.context">Context</a></code> | <code>string</code> | Value to specify the build context. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.authConfig">AuthConfig</a></code> | <code>object</code> | auth_config block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.authConfig">AuthConfig</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]</code> | auth_config block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildArgs">BuildArgs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Pairs for build-time variables in the form of `ENDPOINT : "https://example.com"`. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.builder">Builder</a></code> | <code>string</code> | Set the name of the buildx builder to use. If not set, the legacy builder is used. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.buildId">BuildId</a></code> | <code>string</code> | BuildID is an optional identifier that can be passed together with the build request. |
@@ -1013,27 +1013,27 @@ new ImageBuild {
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.cpuShares">CpuShares</a></code> | <code>double</code> | CPU shares (relative weight). |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.dockerfile">Dockerfile</a></code> | <code>string</code> | Name of the Dockerfile. Defaults to `Dockerfile`. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.extraHosts">ExtraHosts</a></code> | <code>string[]</code> | A list of hostnames/IP mappings to add to the container’s /etc/hosts file. Specified in the form ["hostname:IP"]. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.forceRemove">ForceRemove</a></code> | <code>object</code> | Always remove intermediate containers. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.forceRemove">ForceRemove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Always remove intermediate containers. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.isolation">Isolation</a></code> | <code>string</code> | Isolation represents the isolation technology of a container. The supported values are. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.label">Label</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Set metadata for an image. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.labels">Labels</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | User-defined key/value metadata. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.memory">Memory</a></code> | <code>double</code> | Set memory limit for build. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.memorySwap">MemorySwap</a></code> | <code>double</code> | Total memory (memory + swap), -1 to enable unlimited swap. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.networkMode">NetworkMode</a></code> | <code>string</code> | Set the networking mode for the RUN instructions during build. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.noCache">NoCache</a></code> | <code>object</code> | Do not use the cache when building the image. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.noCache">NoCache</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Do not use the cache when building the image. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.platform">Platform</a></code> | <code>string</code> | Set the target platform for the build. Defaults to `GOOS/GOARCH`. For more information see the [docker documentation](https://github.com/docker/buildx/blob/master/docs/reference/buildx.md#-set-the-target-platforms-for-the-build---platform). |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">PullParent</a></code> | <code>object</code> | Attempt to pull the image even if an older image exists locally. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.pullParent">PullParent</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Attempt to pull the image even if an older image exists locally. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remoteContext">RemoteContext</a></code> | <code>string</code> | A Git repository URI or HTTP/HTTPS context URI. Will be ignored if `builder` is set. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">Remove</a></code> | <code>object</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">Secrets</a></code> | <code>object</code> | secrets block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.remove">Remove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Remove intermediate containers after a successful build. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.secrets">Secrets</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]</code> | secrets block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.securityOpt">SecurityOpt</a></code> | <code>string[]</code> | The security options. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.sessionId">SessionId</a></code> | <code>string</code> | Set an ID for the build session. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.shmSize">ShmSize</a></code> | <code>double</code> | Size of /dev/shm in bytes. The size must be greater than 0. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.squash">Squash</a></code> | <code>object</code> | If true the new layers are squashed into a new image with a single new layer. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.suppressOutput">SuppressOutput</a></code> | <code>object</code> | Suppress the build output and print image ID on success. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.squash">Squash</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true the new layers are squashed into a new image with a single new layer. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.suppressOutput">SuppressOutput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Suppress the build output and print image ID on success. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.tag">Tag</a></code> | <code>string[]</code> | Name and optionally a tag in the 'name:tag' format. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.target">Target</a></code> | <code>string</code> | Set the target build stage to build. |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.ulimit">Ulimit</a></code> | <code>object</code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.ulimit">Ulimit</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]</code> | ulimit block. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuild.property.version">Version</a></code> | <code>string</code> | Version of the underlying builder to use. |
 
 ---
@@ -1057,10 +1057,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `AuthConfig`<sup>Optional</sup> <a name="AuthConfig" id="@cdktf/provider-docker.image.ImageBuild.property.authConfig"></a>
 
 ```csharp
-public object AuthConfig { get; set; }
+public IResolvable|ImageBuildAuthConfig[] AuthConfig { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]
 
 auth_config block.
 
@@ -1257,10 +1257,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ForceRemove`<sup>Optional</sup> <a name="ForceRemove" id="@cdktf/provider-docker.image.ImageBuild.property.forceRemove"></a>
 
 ```csharp
-public object ForceRemove { get; set; }
+public bool|IResolvable ForceRemove { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Always remove intermediate containers.
 
@@ -1355,10 +1355,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `NoCache`<sup>Optional</sup> <a name="NoCache" id="@cdktf/provider-docker.image.ImageBuild.property.noCache"></a>
 
 ```csharp
-public object NoCache { get; set; }
+public bool|IResolvable NoCache { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Do not use the cache when building the image.
 
@@ -1383,10 +1383,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `PullParent`<sup>Optional</sup> <a name="PullParent" id="@cdktf/provider-docker.image.ImageBuild.property.pullParent"></a>
 
 ```csharp
-public object PullParent { get; set; }
+public bool|IResolvable PullParent { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Attempt to pull the image even if an older image exists locally.
 
@@ -1411,10 +1411,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Remove`<sup>Optional</sup> <a name="Remove" id="@cdktf/provider-docker.image.ImageBuild.property.remove"></a>
 
 ```csharp
-public object Remove { get; set; }
+public bool|IResolvable Remove { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Remove intermediate containers after a successful build. Defaults to `true`.
 
@@ -1425,10 +1425,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Secrets`<sup>Optional</sup> <a name="Secrets" id="@cdktf/provider-docker.image.ImageBuild.property.secrets"></a>
 
 ```csharp
-public object Secrets { get; set; }
+public IResolvable|ImageBuildSecrets[] Secrets { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]
 
 secrets block.
 
@@ -1481,10 +1481,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Squash`<sup>Optional</sup> <a name="Squash" id="@cdktf/provider-docker.image.ImageBuild.property.squash"></a>
 
 ```csharp
-public object Squash { get; set; }
+public bool|IResolvable Squash { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true the new layers are squashed into a new image with a single new layer.
 
@@ -1495,10 +1495,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `SuppressOutput`<sup>Optional</sup> <a name="SuppressOutput" id="@cdktf/provider-docker.image.ImageBuild.property.suppressOutput"></a>
 
 ```csharp
-public object SuppressOutput { get; set; }
+public bool|IResolvable SuppressOutput { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Suppress the build output and print image ID on success.
 
@@ -1537,10 +1537,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Ulimit`<sup>Optional</sup> <a name="Ulimit" id="@cdktf/provider-docker.image.ImageBuild.property.ulimit"></a>
 
 ```csharp
-public object Ulimit { get; set; }
+public IResolvable|ImageBuildUlimit[] Ulimit { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]
 
 ulimit block.
 
@@ -1851,17 +1851,17 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 using HashiCorp.Cdktf.Providers.Docker;
 
 new ImageConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Name,
     ImageBuild BuildAttribute = null,
-    object ForceRemove = null,
-    object KeepLocally = null,
+    bool|IResolvable ForceRemove = null,
+    bool|IResolvable KeepLocally = null,
     string Platform = null,
     string[] PullTriggers = null,
     ImageTimeouts Timeouts = null,
@@ -1873,17 +1873,17 @@ new ImageConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.name">Name</a></code> | <code>string</code> | The name of the Docker image, including any tags or SHA256 repo digests. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.buildAttribute">BuildAttribute</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuild">ImageBuild</a></code> | build block. |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forceRemove">ForceRemove</a></code> | <code>object</code> | If true, then the image is removed forcibly when the resource is destroyed. |
-| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">KeepLocally</a></code> | <code>object</code> | If true, then the Docker image won't be deleted on destroy operation. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.forceRemove">ForceRemove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true, then the image is removed forcibly when the resource is destroyed. |
+| <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.keepLocally">KeepLocally</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If true, then the Docker image won't be deleted on destroy operation. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.platform">Platform</a></code> | <code>string</code> | The platform to use when pulling the image. Defaults to the platform of the current machine. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.pullTriggers">PullTriggers</a></code> | <code>string[]</code> | List of values which cause an image pull when changed. |
 | <code><a href="#@cdktf/provider-docker.image.ImageConfig.property.timeouts">Timeouts</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | timeouts block. |
@@ -1894,20 +1894,20 @@ new ImageConfig {
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.image.ImageConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.image.ImageConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1954,10 +1954,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.image.ImageConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -1992,10 +1992,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ForceRemove`<sup>Optional</sup> <a name="ForceRemove" id="@cdktf/provider-docker.image.ImageConfig.property.forceRemove"></a>
 
 ```csharp
-public object ForceRemove { get; set; }
+public bool|IResolvable ForceRemove { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true, then the image is removed forcibly when the resource is destroyed.
 
@@ -2006,10 +2006,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `KeepLocally`<sup>Optional</sup> <a name="KeepLocally" id="@cdktf/provider-docker.image.ImageConfig.property.keepLocally"></a>
 
 ```csharp
-public object KeepLocally { get; set; }
+public bool|IResolvable KeepLocally { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If true, then the Docker image won't be deleted on destroy operation.
 
@@ -2262,7 +2262,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]</code> | *No description.* |
 
 ---
 
@@ -2293,10 +2293,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildAuthConfigList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildAuthConfig[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]
 
 ---
 
@@ -2594,7 +2594,7 @@ private void ResetUserName()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.registryToken">RegistryToken</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.serverAddress">ServerAddress</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.userName">UserName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a></code> | *No description.* |
 
 ---
 
@@ -2785,10 +2785,10 @@ public string UserName { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildAuthConfigOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildAuthConfig InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>
 
 ---
 
@@ -3038,36 +3038,36 @@ Returns a reversible string representation.
 ##### `PutAuthConfig` <a name="PutAuthConfig" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig"></a>
 
 ```csharp
-private void PutAuthConfig(object Value)
+private void PutAuthConfig(IResolvable|ImageBuildAuthConfig[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putAuthConfig.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]
 
 ---
 
 ##### `PutSecrets` <a name="PutSecrets" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets"></a>
 
 ```csharp
-private void PutSecrets(object Value)
+private void PutSecrets(IResolvable|ImageBuildSecrets[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putSecrets.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]
 
 ---
 
 ##### `PutUlimit` <a name="PutUlimit" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit"></a>
 
 ```csharp
-private void PutUlimit(object Value)
+private void PutUlimit(IResolvable|ImageBuildUlimit[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.image.ImageBuildOutputReference.putUlimit.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]
 
 ---
 
@@ -3297,7 +3297,7 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfig">AuthConfig</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildAuthConfigList">ImageBuildAuthConfigList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secrets">Secrets</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList">ImageBuildSecretsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimit">Ulimit</a></code> | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList">ImageBuildUlimitList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">AuthConfigInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput">AuthConfigInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgsInput">BuildArgsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.builderInput">BuilderInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildIdInput">BuildIdInput</a></code> | <code>string</code> | *No description.* |
@@ -3312,27 +3312,27 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cpuSharesInput">CpuSharesInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.dockerfileInput">DockerfileInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.extraHostsInput">ExtraHostsInput</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput">ForceRemoveInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput">ForceRemoveInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.isolationInput">IsolationInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labelInput">LabelInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labelsInput">LabelsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memoryInput">MemoryInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memorySwapInput">MemorySwapInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.networkModeInput">NetworkModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput">NoCacheInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput">NoCacheInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.platformInput">PlatformInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">PullParentInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput">PullParentInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContextInput">RemoteContextInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">RemoveInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">SecretsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput">RemoveInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput">SecretsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOptInput">SecurityOptInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionIdInput">SessionIdInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSizeInput">ShmSizeInput</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput">SquashInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput">SuppressOutputInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput">SquashInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput">SuppressOutputInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.tagInput">TagInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.targetInput">TargetInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput">UlimitInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput">UlimitInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.versionInput">VersionInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.buildArgs">BuildArgs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.builder">Builder</a></code> | <code>string</code> | *No description.* |
@@ -3348,23 +3348,23 @@ private void ResetVersion()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.cpuShares">CpuShares</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.dockerfile">Dockerfile</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.extraHosts">ExtraHosts</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove">ForceRemove</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove">ForceRemove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.isolation">Isolation</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.label">Label</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.labels">Labels</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memory">Memory</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.memorySwap">MemorySwap</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.networkMode">NetworkMode</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache">NoCache</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache">NoCache</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.platform">Platform</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent">PullParent</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent">PullParent</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remoteContext">RemoteContext</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove">Remove</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove">Remove</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.securityOpt">SecurityOpt</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.sessionId">SessionId</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.shmSize">ShmSize</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash">Squash</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput">SuppressOutput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash">Squash</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput">SuppressOutput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.tag">Tag</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.target">Target</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildOutputReference.property.version">Version</a></code> | <code>string</code> | *No description.* |
@@ -3429,10 +3429,10 @@ public ImageBuildUlimitList Ulimit { get; }
 ##### `AuthConfigInput`<sup>Optional</sup> <a name="AuthConfigInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.authConfigInput"></a>
 
 ```csharp
-public object AuthConfigInput { get; }
+public IResolvable|ImageBuildAuthConfig[] AuthConfigInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildAuthConfig">ImageBuildAuthConfig</a>[]
 
 ---
 
@@ -3579,10 +3579,10 @@ public string[] ExtraHostsInput { get; }
 ##### `ForceRemoveInput`<sup>Optional</sup> <a name="ForceRemoveInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemoveInput"></a>
 
 ```csharp
-public object ForceRemoveInput { get; }
+public bool|IResolvable ForceRemoveInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3649,10 +3649,10 @@ public string NetworkModeInput { get; }
 ##### `NoCacheInput`<sup>Optional</sup> <a name="NoCacheInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCacheInput"></a>
 
 ```csharp
-public object NoCacheInput { get; }
+public bool|IResolvable NoCacheInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3669,10 +3669,10 @@ public string PlatformInput { get; }
 ##### `PullParentInput`<sup>Optional</sup> <a name="PullParentInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParentInput"></a>
 
 ```csharp
-public object PullParentInput { get; }
+public bool|IResolvable PullParentInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3689,20 +3689,20 @@ public string RemoteContextInput { get; }
 ##### `RemoveInput`<sup>Optional</sup> <a name="RemoveInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.removeInput"></a>
 
 ```csharp
-public object RemoveInput { get; }
+public bool|IResolvable RemoveInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `SecretsInput`<sup>Optional</sup> <a name="SecretsInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.secretsInput"></a>
 
 ```csharp
-public object SecretsInput { get; }
+public IResolvable|ImageBuildSecrets[] SecretsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]
 
 ---
 
@@ -3739,20 +3739,20 @@ public double ShmSizeInput { get; }
 ##### `SquashInput`<sup>Optional</sup> <a name="SquashInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.squashInput"></a>
 
 ```csharp
-public object SquashInput { get; }
+public bool|IResolvable SquashInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `SuppressOutputInput`<sup>Optional</sup> <a name="SuppressOutputInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutputInput"></a>
 
 ```csharp
-public object SuppressOutputInput { get; }
+public bool|IResolvable SuppressOutputInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -3779,10 +3779,10 @@ public string TargetInput { get; }
 ##### `UlimitInput`<sup>Optional</sup> <a name="UlimitInput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.ulimitInput"></a>
 
 ```csharp
-public object UlimitInput { get; }
+public IResolvable|ImageBuildUlimit[] UlimitInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]
 
 ---
 
@@ -3939,10 +3939,10 @@ public string[] ExtraHosts { get; }
 ##### `ForceRemove`<sup>Required</sup> <a name="ForceRemove" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.forceRemove"></a>
 
 ```csharp
-public object ForceRemove { get; }
+public bool|IResolvable ForceRemove { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4009,10 +4009,10 @@ public string NetworkMode { get; }
 ##### `NoCache`<sup>Required</sup> <a name="NoCache" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.noCache"></a>
 
 ```csharp
-public object NoCache { get; }
+public bool|IResolvable NoCache { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4029,10 +4029,10 @@ public string Platform { get; }
 ##### `PullParent`<sup>Required</sup> <a name="PullParent" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.pullParent"></a>
 
 ```csharp
-public object PullParent { get; }
+public bool|IResolvable PullParent { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4049,10 +4049,10 @@ public string RemoteContext { get; }
 ##### `Remove`<sup>Required</sup> <a name="Remove" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.remove"></a>
 
 ```csharp
-public object Remove { get; }
+public bool|IResolvable Remove { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4089,20 +4089,20 @@ public double ShmSize { get; }
 ##### `Squash`<sup>Required</sup> <a name="Squash" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.squash"></a>
 
 ```csharp
-public object Squash { get; }
+public bool|IResolvable Squash { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `SuppressOutput`<sup>Required</sup> <a name="SuppressOutput" id="@cdktf/provider-docker.image.ImageBuildOutputReference.property.suppressOutput"></a>
 
 ```csharp
-public object SuppressOutput { get; }
+public bool|IResolvable SuppressOutput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -4268,7 +4268,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]</code> | *No description.* |
 
 ---
 
@@ -4299,10 +4299,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildSecrets[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>[]
 
 ---
 
@@ -4555,7 +4555,7 @@ private void ResetSrc()
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.env">Env</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.id">Id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.src">Src</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a></code> | *No description.* |
 
 ---
 
@@ -4646,10 +4646,10 @@ public string Src { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildSecretsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildSecrets InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildSecrets">ImageBuildSecrets</a>
 
 ---
 
@@ -4775,7 +4775,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]</code> | *No description.* |
 
 ---
 
@@ -4806,10 +4806,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildUlimitList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildUlimit[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>[]
 
 ---
 
@@ -5048,7 +5048,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.hard">Hard</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.soft">Soft</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a></code> | *No description.* |
 
 ---
 
@@ -5139,10 +5139,10 @@ public double Soft { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageBuildUlimitOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageBuildUlimit InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageBuildUlimit">ImageBuildUlimit</a>
 
 ---
 
@@ -5384,7 +5384,7 @@ private void ResetUpdate()
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.create">Create</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.delete">Delete</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.update">Update</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a></code> | *No description.* |
 
 ---
 
@@ -5475,10 +5475,10 @@ public string Update { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.image.ImageTimeoutsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ImageTimeouts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.image.ImageTimeouts">ImageTimeouts</a>
 
 ---
 

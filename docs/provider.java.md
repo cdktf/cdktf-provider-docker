@@ -17,12 +17,10 @@ DockerProvider.Builder.create(Construct scope, java.lang.String id)
 //  .certMaterial(java.lang.String)
 //  .certPath(java.lang.String)
 //  .context(java.lang.String)
-//  .disableDockerDaemonCheck(java.lang.Boolean)
-//  .disableDockerDaemonCheck(IResolvable)
+//  .disableDockerDaemonCheck(java.lang.Boolean|IResolvable)
 //  .host(java.lang.String)
 //  .keyMaterial(java.lang.String)
-//  .registryAuth(IResolvable)
-//  .registryAuth(java.util.List<DockerProviderRegistryAuth>)
+//  .registryAuth(IResolvable|java.util.List<DockerProviderRegistryAuth>)
 //  .sshOpts(java.util.List<java.lang.String>)
     .build();
 ```
@@ -36,10 +34,10 @@ DockerProvider.Builder.create(Construct scope, java.lang.String id)
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.certPath">certPath</a></code> | <code>java.lang.String</code> | Path to directory with Docker TLS config. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.context">context</a></code> | <code>java.lang.String</code> | The name of the Docker context to use. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.host">host</a></code> | <code>java.lang.String</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client private key. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.sshOpts">sshOpts</a></code> | <code>java.util.List<java.lang.String></code> | Additional SSH option flags to be appended when using `ssh://` protocol. |
 
 ---
@@ -116,7 +114,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.disableDockerDaemonCheck"></a>
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If set to `true`, the provider will not check if the Docker daemon is running.
 
@@ -148,7 +146,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `registryAuth`<sup>Optional</sup> <a name="registryAuth" id="@cdktf/provider-docker.provider.DockerProvider.Initializer.parameter.registryAuth"></a>
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
 
 registry_auth block.
 
@@ -453,19 +451,19 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterialInput">certMaterialInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPathInput">certPathInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.contextInput">contextInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">disableDockerDaemonCheckInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput">disableDockerDaemonCheckInput</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.hostInput">hostInput</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterialInput">keyMaterialInput</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">registryAuthInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput">registryAuthInput</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.sshOptsInput">sshOptsInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.caMaterial">caMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.certPath">certPath</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.context">context</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.host">host</a></code> | <code>java.lang.String</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProvider.property.sshOpts">sshOpts</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
 
 ---
@@ -615,10 +613,10 @@ public java.lang.String getContextInput();
 ##### `disableDockerDaemonCheckInput`<sup>Optional</sup> <a name="disableDockerDaemonCheckInput" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheckInput"></a>
 
 ```java
-public java.lang.Object getDisableDockerDaemonCheckInput();
+public java.lang.Boolean|IResolvable getDisableDockerDaemonCheckInput();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -645,10 +643,10 @@ public java.lang.String getKeyMaterialInput();
 ##### `registryAuthInput`<sup>Optional</sup> <a name="registryAuthInput" id="@cdktf/provider-docker.provider.DockerProvider.property.registryAuthInput"></a>
 
 ```java
-public java.lang.Object getRegistryAuthInput();
+public IResolvable|java.util.List<DockerProviderRegistryAuth> getRegistryAuthInput();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
 
 ---
 
@@ -705,10 +703,10 @@ public java.lang.String getContext();
 ##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProvider.property.disableDockerDaemonCheck"></a>
 
 ```java
-public java.lang.Object getDisableDockerDaemonCheck();
+public java.lang.Boolean|IResolvable getDisableDockerDaemonCheck();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 ---
 
@@ -735,10 +733,10 @@ public java.lang.String getKeyMaterial();
 ##### `registryAuth`<sup>Optional</sup> <a name="registryAuth" id="@cdktf/provider-docker.provider.DockerProvider.property.registryAuth"></a>
 
 ```java
-public java.lang.Object getRegistryAuth();
+public IResolvable|java.util.List<DockerProviderRegistryAuth> getRegistryAuth();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
 
 ---
 
@@ -785,12 +783,10 @@ DockerProviderConfig.builder()
 //  .certMaterial(java.lang.String)
 //  .certPath(java.lang.String)
 //  .context(java.lang.String)
-//  .disableDockerDaemonCheck(java.lang.Boolean)
-//  .disableDockerDaemonCheck(IResolvable)
+//  .disableDockerDaemonCheck(java.lang.Boolean|IResolvable)
 //  .host(java.lang.String)
 //  .keyMaterial(java.lang.String)
-//  .registryAuth(IResolvable)
-//  .registryAuth(java.util.List<DockerProviderRegistryAuth>)
+//  .registryAuth(IResolvable|java.util.List<DockerProviderRegistryAuth>)
 //  .sshOpts(java.util.List<java.lang.String>)
     .build();
 ```
@@ -804,10 +800,10 @@ DockerProviderConfig.builder()
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certMaterial">certMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client certificate. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.certPath">certPath</a></code> | <code>java.lang.String</code> | Path to directory with Docker TLS config. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.context">context</a></code> | <code>java.lang.String</code> | The name of the Docker context to use. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck">disableDockerDaemonCheck</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | If set to `true`, the provider will not check if the Docker daemon is running. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.host">host</a></code> | <code>java.lang.String</code> | The Docker daemon address. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.keyMaterial">keyMaterial</a></code> | <code>java.lang.String</code> | PEM-encoded content of Docker client private key. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth">registryAuth</a></code> | <code>com.hashicorp.cdktf.IResolvable\|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>></code> | registry_auth block. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderConfig.property.sshOpts">sshOpts</a></code> | <code>java.util.List<java.lang.String></code> | Additional SSH option flags to be appended when using `ssh://` protocol. |
 
 ---
@@ -887,10 +883,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `disableDockerDaemonCheck`<sup>Optional</sup> <a name="disableDockerDaemonCheck" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.disableDockerDaemonCheck"></a>
 
 ```java
-public java.lang.Object getDisableDockerDaemonCheck();
+public java.lang.Boolean|IResolvable getDisableDockerDaemonCheck();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 If set to `true`, the provider will not check if the Docker daemon is running.
 
@@ -931,10 +927,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `registryAuth`<sup>Optional</sup> <a name="registryAuth" id="@cdktf/provider-docker.provider.DockerProviderConfig.property.registryAuth"></a>
 
 ```java
-public java.lang.Object getRegistryAuth();
+public IResolvable|java.util.List<DockerProviderRegistryAuth> getRegistryAuth();
 ```
 
-- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
+- *Type:* com.hashicorp.cdktf.IResolvable|java.util.List<<a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth">DockerProviderRegistryAuth</a>>
 
 registry_auth block.
 
@@ -965,8 +961,7 @@ import com.hashicorp.cdktf.providers.docker.provider.DockerProviderRegistryAuth;
 
 DockerProviderRegistryAuth.builder()
     .address(java.lang.String)
-//  .authDisabled(java.lang.Boolean)
-//  .authDisabled(IResolvable)
+//  .authDisabled(java.lang.Boolean|IResolvable)
 //  .configFile(java.lang.String)
 //  .configFileContent(java.lang.String)
 //  .password(java.lang.String)
@@ -979,7 +974,7 @@ DockerProviderRegistryAuth.builder()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.address">address</a></code> | <code>java.lang.String</code> | Address of the registry. |
-| <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled">authDisabled</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Setting this to `true` will tell the provider that this registry does not need authentication. |
+| <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled">authDisabled</a></code> | <code>java.lang.Boolean\|com.hashicorp.cdktf.IResolvable</code> | Setting this to `true` will tell the provider that this registry does not need authentication. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.configFile">configFile</a></code> | <code>java.lang.String</code> | Path to docker json file for registry auth. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.configFileContent">configFileContent</a></code> | <code>java.lang.String</code> | Plain content of the docker json file for registry auth. `config_file_content` has precedence over username/password. |
 | <code><a href="#@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.password">password</a></code> | <code>java.lang.String</code> | Password for the registry. Defaults to `DOCKER_REGISTRY_PASS` env variable if set. |
@@ -1004,10 +999,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `authDisabled`<sup>Optional</sup> <a name="authDisabled" id="@cdktf/provider-docker.provider.DockerProviderRegistryAuth.property.authDisabled"></a>
 
 ```java
-public java.lang.Object getAuthDisabled();
+public java.lang.Boolean|IResolvable getAuthDisabled();
 ```
 
-- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+- *Type:* java.lang.Boolean|com.hashicorp.cdktf.IResolvable
 
 Setting this to `true` will tell the provider that this registry does not need authentication.
 

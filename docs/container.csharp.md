@@ -349,7 +349,7 @@ private System.Collections.Generic.IDictionary<string, string> GetStringMapAttri
 ##### `HasResourceMove` <a name="HasResourceMove" id="@cdktf/provider-docker.container.Container.hasResourceMove"></a>
 
 ```csharp
-private object HasResourceMove()
+private TerraformResourceMoveByTarget|TerraformResourceMoveById HasResourceMove()
 ```
 
 ##### `ImportFrom` <a name="ImportFrom" id="@cdktf/provider-docker.container.Container.importFrom"></a>
@@ -403,7 +403,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ##### `MoveTo` <a name="MoveTo" id="@cdktf/provider-docker.container.Container.moveTo"></a>
 
 ```csharp
-private void MoveTo(string MoveTarget, object Index = null)
+private void MoveTo(string MoveTarget, string|double Index = null)
 ```
 
 Moves this resource to the target resource given by moveTarget.
@@ -418,7 +418,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `Index`<sup>Optional</sup> <a name="Index" id="@cdktf/provider-docker.container.Container.moveTo.parameter.index"></a>
 
-- *Type:* object
+- *Type:* string|double
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -455,12 +455,12 @@ private void PutCapabilities(ContainerCapabilities Value)
 ##### `PutDevices` <a name="PutDevices" id="@cdktf/provider-docker.container.Container.putDevices"></a>
 
 ```csharp
-private void PutDevices(object Value)
+private void PutDevices(IResolvable|ContainerDevices[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putDevices.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]
 
 ---
 
@@ -479,96 +479,96 @@ private void PutHealthcheck(ContainerHealthcheck Value)
 ##### `PutHost` <a name="PutHost" id="@cdktf/provider-docker.container.Container.putHost"></a>
 
 ```csharp
-private void PutHost(object Value)
+private void PutHost(IResolvable|ContainerHost[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putHost.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]
 
 ---
 
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.container.Container.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|ContainerLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]
 
 ---
 
 ##### `PutMounts` <a name="PutMounts" id="@cdktf/provider-docker.container.Container.putMounts"></a>
 
 ```csharp
-private void PutMounts(object Value)
+private void PutMounts(IResolvable|ContainerMounts[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putMounts.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]
 
 ---
 
 ##### `PutNetworksAdvanced` <a name="PutNetworksAdvanced" id="@cdktf/provider-docker.container.Container.putNetworksAdvanced"></a>
 
 ```csharp
-private void PutNetworksAdvanced(object Value)
+private void PutNetworksAdvanced(IResolvable|ContainerNetworksAdvanced[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putNetworksAdvanced.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]
 
 ---
 
 ##### `PutPorts` <a name="PutPorts" id="@cdktf/provider-docker.container.Container.putPorts"></a>
 
 ```csharp
-private void PutPorts(object Value)
+private void PutPorts(IResolvable|ContainerPorts[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putPorts.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]
 
 ---
 
 ##### `PutUlimit` <a name="PutUlimit" id="@cdktf/provider-docker.container.Container.putUlimit"></a>
 
 ```csharp
-private void PutUlimit(object Value)
+private void PutUlimit(IResolvable|ContainerUlimit[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putUlimit.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]
 
 ---
 
 ##### `PutUpload` <a name="PutUpload" id="@cdktf/provider-docker.container.Container.putUpload"></a>
 
 ```csharp
-private void PutUpload(object Value)
+private void PutUpload(IResolvable|ContainerUpload[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putUpload.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]
 
 ---
 
 ##### `PutVolumes` <a name="PutVolumes" id="@cdktf/provider-docker.container.Container.putVolumes"></a>
 
 ```csharp
-private void PutVolumes(object Value)
+private void PutVolumes(IResolvable|ContainerVolumes[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.Container.putVolumes.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]
 
 ---
 
@@ -1088,13 +1088,13 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformMetaArguments">TerraformMetaArguments</a></code> | <code>System.Collections.Generic.IDictionary<string, object></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformResourceType">TerraformResourceType</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformGeneratorMetadata">TerraformGeneratorMetadata</a></code> | <code>HashiCorp.Cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dependsOn">DependsOn</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.bridge">Bridge</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilities">Capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilitiesOutputReference">ContainerCapabilitiesOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.containerLogs">ContainerLogs</a></code> | <code>string</code> | *No description.* |
@@ -1110,7 +1110,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ulimit">Ulimit</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList">ContainerUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.upload">Upload</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList">ContainerUploadList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.volumes">Volumes</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList">ContainerVolumesList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">AttachInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">AttachInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilitiesInput">CapabilitiesInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsModeInput">CgroupnsModeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParentInput">CgroupParentInput</a></code> | <code>string</code> | *No description.* |
@@ -1122,7 +1122,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpuSharesInput">CpuSharesInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpusInput">CpusInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.destroyGraceSecondsInput">DestroyGraceSecondsInput</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">DevicesInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">DevicesInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsInput">DnsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsOptsInput">DnsOptsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsSearchInput">DnsSearchInput</a></code> | <code>string[]</code> | *No description.* |
@@ -1132,52 +1132,52 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.gpusInput">GpusInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.groupAddInput">GroupAddInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.healthcheckInput">HealthcheckInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">HostInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">HostInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostnameInput">HostnameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.idInput">IdInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.imageInput">ImageInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">InitInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">InitInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcModeInput">IpcModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriverInput">LogDriverInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOptsInput">LogOptsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">LogsInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">LogsInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCountInput">MaxRetryCountInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memoryInput">MemoryInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwapInput">MemorySwapInput</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">MountsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">MustRunInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">MountsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">MustRunInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.nameInput">NameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkModeInput">NetworkModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">NetworksAdvancedInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">NetworksAdvancedInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidModeInput">PidModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">PortsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">PrivilegedInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">PublishAllPortsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">ReadOnlyInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">RemoveVolumesInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">PortsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">PrivilegedInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">PublishAllPortsInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">ReadOnlyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">RemoveVolumesInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restartInput">RestartInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">RmInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">RmInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtimeInput">RuntimeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOptsInput">SecurityOptsInput</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSizeInput">ShmSizeInput</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">StartInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">StdinOpenInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">StartInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">StdinOpenInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignalInput">StopSignalInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeoutInput">StopTimeoutInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOptsInput">StorageOptsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctlsInput">SysctlsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfsInput">TmpfsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">TtyInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">UlimitInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">UploadInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">TtyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">UlimitInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">UploadInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.userInput">UserInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsModeInput">UsernsModeInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">VolumesInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">WaitInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">VolumesInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">WaitInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeoutInput">WaitTimeoutInput</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDirInput">WorkingDirInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">Attach</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">Attach</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsMode">CgroupnsMode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParent">CgroupParent</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.command">Command</a></code> | <code>string[]</code> | *No description.* |
@@ -1199,38 +1199,38 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostname">Hostname</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.id">Id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.image">Image</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.init">Init</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.init">Init</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcMode">IpcMode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriver">LogDriver</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOpts">LogOpts</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">Logs</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">Logs</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCount">MaxRetryCount</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memory">Memory</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwap">MemorySwap</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">MustRun</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">MustRun</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkMode">NetworkMode</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidMode">PidMode</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">Privileged</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">PublishAllPorts</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">ReadOnly</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">RemoveVolumes</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">Privileged</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">PublishAllPorts</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">RemoveVolumes</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restart">Restart</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">Rm</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">Rm</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtime">Runtime</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOpts">SecurityOpts</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSize">ShmSize</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.start">Start</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">StdinOpen</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.start">Start</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">StdinOpen</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignal">StopSignal</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeout">StopTimeout</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOpts">StorageOpts</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctls">Sysctls</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfs">Tmpfs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">Tty</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">Tty</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.user">User</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsMode">UsernsMode</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">Wait</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">Wait</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeout">WaitTimeout</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDir">WorkingDir</a></code> | <code>string</code> | *No description.* |
 
@@ -1311,20 +1311,20 @@ public TerraformProviderGeneratorMetadata TerraformGeneratorMetadata { get; }
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.container.Container.property.connection"></a>
 
 ```csharp
-public object Connection { get; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.container.Container.property.count"></a>
 
 ```csharp
-public object Count { get; }
+public double|TerraformCount Count { get; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -1371,10 +1371,10 @@ public TerraformProvider Provider { get; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.container.Container.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -1531,10 +1531,10 @@ public ContainerVolumesList Volumes { get; }
 ##### `AttachInput`<sup>Optional</sup> <a name="AttachInput" id="@cdktf/provider-docker.container.Container.property.attachInput"></a>
 
 ```csharp
-public object AttachInput { get; }
+public bool|IResolvable AttachInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1651,10 +1651,10 @@ public double DestroyGraceSecondsInput { get; }
 ##### `DevicesInput`<sup>Optional</sup> <a name="DevicesInput" id="@cdktf/provider-docker.container.Container.property.devicesInput"></a>
 
 ```csharp
-public object DevicesInput { get; }
+public IResolvable|ContainerDevices[] DevicesInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]
 
 ---
 
@@ -1751,10 +1751,10 @@ public ContainerHealthcheck HealthcheckInput { get; }
 ##### `HostInput`<sup>Optional</sup> <a name="HostInput" id="@cdktf/provider-docker.container.Container.property.hostInput"></a>
 
 ```csharp
-public object HostInput { get; }
+public IResolvable|ContainerHost[] HostInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]
 
 ---
 
@@ -1791,10 +1791,10 @@ public string ImageInput { get; }
 ##### `InitInput`<sup>Optional</sup> <a name="InitInput" id="@cdktf/provider-docker.container.Container.property.initInput"></a>
 
 ```csharp
-public object InitInput { get; }
+public bool|IResolvable InitInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1811,10 +1811,10 @@ public string IpcModeInput { get; }
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.container.Container.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|ContainerLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]
 
 ---
 
@@ -1841,10 +1841,10 @@ public System.Collections.Generic.IDictionary<string, string> LogOptsInput { get
 ##### `LogsInput`<sup>Optional</sup> <a name="LogsInput" id="@cdktf/provider-docker.container.Container.property.logsInput"></a>
 
 ```csharp
-public object LogsInput { get; }
+public bool|IResolvable LogsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1881,20 +1881,20 @@ public double MemorySwapInput { get; }
 ##### `MountsInput`<sup>Optional</sup> <a name="MountsInput" id="@cdktf/provider-docker.container.Container.property.mountsInput"></a>
 
 ```csharp
-public object MountsInput { get; }
+public IResolvable|ContainerMounts[] MountsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]
 
 ---
 
 ##### `MustRunInput`<sup>Optional</sup> <a name="MustRunInput" id="@cdktf/provider-docker.container.Container.property.mustRunInput"></a>
 
 ```csharp
-public object MustRunInput { get; }
+public bool|IResolvable MustRunInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -1921,10 +1921,10 @@ public string NetworkModeInput { get; }
 ##### `NetworksAdvancedInput`<sup>Optional</sup> <a name="NetworksAdvancedInput" id="@cdktf/provider-docker.container.Container.property.networksAdvancedInput"></a>
 
 ```csharp
-public object NetworksAdvancedInput { get; }
+public IResolvable|ContainerNetworksAdvanced[] NetworksAdvancedInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]
 
 ---
 
@@ -1941,50 +1941,50 @@ public string PidModeInput { get; }
 ##### `PortsInput`<sup>Optional</sup> <a name="PortsInput" id="@cdktf/provider-docker.container.Container.property.portsInput"></a>
 
 ```csharp
-public object PortsInput { get; }
+public IResolvable|ContainerPorts[] PortsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]
 
 ---
 
 ##### `PrivilegedInput`<sup>Optional</sup> <a name="PrivilegedInput" id="@cdktf/provider-docker.container.Container.property.privilegedInput"></a>
 
 ```csharp
-public object PrivilegedInput { get; }
+public bool|IResolvable PrivilegedInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `PublishAllPortsInput`<sup>Optional</sup> <a name="PublishAllPortsInput" id="@cdktf/provider-docker.container.Container.property.publishAllPortsInput"></a>
 
 ```csharp
-public object PublishAllPortsInput { get; }
+public bool|IResolvable PublishAllPortsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `ReadOnlyInput`<sup>Optional</sup> <a name="ReadOnlyInput" id="@cdktf/provider-docker.container.Container.property.readOnlyInput"></a>
 
 ```csharp
-public object ReadOnlyInput { get; }
+public bool|IResolvable ReadOnlyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `RemoveVolumesInput`<sup>Optional</sup> <a name="RemoveVolumesInput" id="@cdktf/provider-docker.container.Container.property.removeVolumesInput"></a>
 
 ```csharp
-public object RemoveVolumesInput { get; }
+public bool|IResolvable RemoveVolumesInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2001,10 +2001,10 @@ public string RestartInput { get; }
 ##### `RmInput`<sup>Optional</sup> <a name="RmInput" id="@cdktf/provider-docker.container.Container.property.rmInput"></a>
 
 ```csharp
-public object RmInput { get; }
+public bool|IResolvable RmInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2041,20 +2041,20 @@ public double ShmSizeInput { get; }
 ##### `StartInput`<sup>Optional</sup> <a name="StartInput" id="@cdktf/provider-docker.container.Container.property.startInput"></a>
 
 ```csharp
-public object StartInput { get; }
+public bool|IResolvable StartInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `StdinOpenInput`<sup>Optional</sup> <a name="StdinOpenInput" id="@cdktf/provider-docker.container.Container.property.stdinOpenInput"></a>
 
 ```csharp
-public object StdinOpenInput { get; }
+public bool|IResolvable StdinOpenInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2111,30 +2111,30 @@ public System.Collections.Generic.IDictionary<string, string> TmpfsInput { get; 
 ##### `TtyInput`<sup>Optional</sup> <a name="TtyInput" id="@cdktf/provider-docker.container.Container.property.ttyInput"></a>
 
 ```csharp
-public object TtyInput { get; }
+public bool|IResolvable TtyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `UlimitInput`<sup>Optional</sup> <a name="UlimitInput" id="@cdktf/provider-docker.container.Container.property.ulimitInput"></a>
 
 ```csharp
-public object UlimitInput { get; }
+public IResolvable|ContainerUlimit[] UlimitInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]
 
 ---
 
 ##### `UploadInput`<sup>Optional</sup> <a name="UploadInput" id="@cdktf/provider-docker.container.Container.property.uploadInput"></a>
 
 ```csharp
-public object UploadInput { get; }
+public IResolvable|ContainerUpload[] UploadInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]
 
 ---
 
@@ -2161,20 +2161,20 @@ public string UsernsModeInput { get; }
 ##### `VolumesInput`<sup>Optional</sup> <a name="VolumesInput" id="@cdktf/provider-docker.container.Container.property.volumesInput"></a>
 
 ```csharp
-public object VolumesInput { get; }
+public IResolvable|ContainerVolumes[] VolumesInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]
 
 ---
 
 ##### `WaitInput`<sup>Optional</sup> <a name="WaitInput" id="@cdktf/provider-docker.container.Container.property.waitInput"></a>
 
 ```csharp
-public object WaitInput { get; }
+public bool|IResolvable WaitInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2201,10 +2201,10 @@ public string WorkingDirInput { get; }
 ##### `Attach`<sup>Required</sup> <a name="Attach" id="@cdktf/provider-docker.container.Container.property.attach"></a>
 
 ```csharp
-public object Attach { get; }
+public bool|IResolvable Attach { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2421,10 +2421,10 @@ public string Image { get; }
 ##### `Init`<sup>Required</sup> <a name="Init" id="@cdktf/provider-docker.container.Container.property.init"></a>
 
 ```csharp
-public object Init { get; }
+public bool|IResolvable Init { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2461,10 +2461,10 @@ public System.Collections.Generic.IDictionary<string, string> LogOpts { get; }
 ##### `Logs`<sup>Required</sup> <a name="Logs" id="@cdktf/provider-docker.container.Container.property.logs"></a>
 
 ```csharp
-public object Logs { get; }
+public bool|IResolvable Logs { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2501,10 +2501,10 @@ public double MemorySwap { get; }
 ##### `MustRun`<sup>Required</sup> <a name="MustRun" id="@cdktf/provider-docker.container.Container.property.mustRun"></a>
 
 ```csharp
-public object MustRun { get; }
+public bool|IResolvable MustRun { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2541,40 +2541,40 @@ public string PidMode { get; }
 ##### `Privileged`<sup>Required</sup> <a name="Privileged" id="@cdktf/provider-docker.container.Container.property.privileged"></a>
 
 ```csharp
-public object Privileged { get; }
+public bool|IResolvable Privileged { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `PublishAllPorts`<sup>Required</sup> <a name="PublishAllPorts" id="@cdktf/provider-docker.container.Container.property.publishAllPorts"></a>
 
 ```csharp
-public object PublishAllPorts { get; }
+public bool|IResolvable PublishAllPorts { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `ReadOnly`<sup>Required</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.Container.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; }
+public bool|IResolvable ReadOnly { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `RemoveVolumes`<sup>Required</sup> <a name="RemoveVolumes" id="@cdktf/provider-docker.container.Container.property.removeVolumes"></a>
 
 ```csharp
-public object RemoveVolumes { get; }
+public bool|IResolvable RemoveVolumes { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2591,10 +2591,10 @@ public string Restart { get; }
 ##### `Rm`<sup>Required</sup> <a name="Rm" id="@cdktf/provider-docker.container.Container.property.rm"></a>
 
 ```csharp
-public object Rm { get; }
+public bool|IResolvable Rm { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2631,20 +2631,20 @@ public double ShmSize { get; }
 ##### `Start`<sup>Required</sup> <a name="Start" id="@cdktf/provider-docker.container.Container.property.start"></a>
 
 ```csharp
-public object Start { get; }
+public bool|IResolvable Start { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
 ##### `StdinOpen`<sup>Required</sup> <a name="StdinOpen" id="@cdktf/provider-docker.container.Container.property.stdinOpen"></a>
 
 ```csharp
-public object StdinOpen { get; }
+public bool|IResolvable StdinOpen { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2701,10 +2701,10 @@ public System.Collections.Generic.IDictionary<string, string> Tmpfs { get; }
 ##### `Tty`<sup>Required</sup> <a name="Tty" id="@cdktf/provider-docker.container.Container.property.tty"></a>
 
 ```csharp
-public object Tty { get; }
+public bool|IResolvable Tty { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2731,10 +2731,10 @@ public string UsernsMode { get; }
 ##### `Wait`<sup>Required</sup> <a name="Wait" id="@cdktf/provider-docker.container.Container.property.wait"></a>
 
 ```csharp
-public object Wait { get; }
+public bool|IResolvable Wait { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -2836,16 +2836,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 using HashiCorp.Cdktf.Providers.Docker;
 
 new ContainerConfig {
-    object Connection = null,
-    object Count = null,
+    SSHProvisionerConnection|WinrmProvisionerConnection Connection = null,
+    double|TerraformCount Count = null,
     ITerraformDependable[] DependsOn = null,
     ITerraformIterator ForEach = null,
     TerraformResourceLifecycle Lifecycle = null,
     TerraformProvider Provider = null,
-    object[] Provisioners = null,
+    (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners = null,
     string Image,
     string Name,
-    object Attach = null,
+    bool|IResolvable Attach = null,
     ContainerCapabilities Capabilities = null,
     string CgroupnsMode = null,
     string CgroupParent = null,
@@ -2857,7 +2857,7 @@ new ContainerConfig {
     string CpuSet = null,
     double CpuShares = null,
     double DestroyGraceSeconds = null,
-    object Devices = null,
+    IResolvable|ContainerDevices[] Devices = null,
     string[] Dns = null,
     string[] DnsOpts = null,
     string[] DnsSearch = null,
@@ -2867,47 +2867,47 @@ new ContainerConfig {
     string Gpus = null,
     string[] GroupAdd = null,
     ContainerHealthcheck Healthcheck = null,
-    object Host = null,
+    IResolvable|ContainerHost[] Host = null,
     string Hostname = null,
     string Id = null,
-    object Init = null,
+    bool|IResolvable Init = null,
     string IpcMode = null,
-    object Labels = null,
+    IResolvable|ContainerLabels[] Labels = null,
     string LogDriver = null,
     System.Collections.Generic.IDictionary<string, string> LogOpts = null,
-    object Logs = null,
+    bool|IResolvable Logs = null,
     double MaxRetryCount = null,
     double Memory = null,
     double MemorySwap = null,
-    object Mounts = null,
-    object MustRun = null,
+    IResolvable|ContainerMounts[] Mounts = null,
+    bool|IResolvable MustRun = null,
     string NetworkMode = null,
-    object NetworksAdvanced = null,
+    IResolvable|ContainerNetworksAdvanced[] NetworksAdvanced = null,
     string PidMode = null,
-    object Ports = null,
-    object Privileged = null,
-    object PublishAllPorts = null,
-    object ReadOnly = null,
-    object RemoveVolumes = null,
+    IResolvable|ContainerPorts[] Ports = null,
+    bool|IResolvable Privileged = null,
+    bool|IResolvable PublishAllPorts = null,
+    bool|IResolvable ReadOnly = null,
+    bool|IResolvable RemoveVolumes = null,
     string Restart = null,
-    object Rm = null,
+    bool|IResolvable Rm = null,
     string Runtime = null,
     string[] SecurityOpts = null,
     double ShmSize = null,
-    object Start = null,
-    object StdinOpen = null,
+    bool|IResolvable Start = null,
+    bool|IResolvable StdinOpen = null,
     string StopSignal = null,
     double StopTimeout = null,
     System.Collections.Generic.IDictionary<string, string> StorageOpts = null,
     System.Collections.Generic.IDictionary<string, string> Sysctls = null,
     System.Collections.Generic.IDictionary<string, string> Tmpfs = null,
-    object Tty = null,
-    object Ulimit = null,
-    object Upload = null,
+    bool|IResolvable Tty = null,
+    IResolvable|ContainerUlimit[] Ulimit = null,
+    IResolvable|ContainerUpload[] Upload = null,
     string User = null,
     string UsernsMode = null,
-    object Volumes = null,
-    object Wait = null,
+    IResolvable|ContainerVolumes[] Volumes = null,
+    bool|IResolvable Wait = null,
     double WaitTimeout = null,
     string WorkingDir = null
 };
@@ -2917,16 +2917,16 @@ new ContainerConfig {
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">Connection</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">Count</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">Connection</a></code> | <code>HashiCorp.Cdktf.SSHProvisionerConnection\|HashiCorp.Cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">Count</a></code> | <code>double\|HashiCorp.Cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dependsOn">DependsOn</a></code> | <code>HashiCorp.Cdktf.ITerraformDependable[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.forEach">ForEach</a></code> | <code>HashiCorp.Cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.lifecycle">Lifecycle</a></code> | <code>HashiCorp.Cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provider">Provider</a></code> | <code>HashiCorp.Cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">Provisioners</a></code> | <code>object[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">Provisioners</a></code> | <code>HashiCorp.Cdktf.FileProvisioner\|HashiCorp.Cdktf.LocalExecProvisioner\|HashiCorp.Cdktf.RemoteExecProvisioner[]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.image">Image</a></code> | <code>string</code> | The ID of the image to back this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.name">Name</a></code> | <code>string</code> | The name of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">Attach</a></code> | <code>object</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">Attach</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.capabilities">Capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | capabilities block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupnsMode">CgroupnsMode</a></code> | <code>string</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupParent">CgroupParent</a></code> | <code>string</code> | Optional parent cgroup for the container. |
@@ -2938,7 +2938,7 @@ new ContainerConfig {
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuSet">CpuSet</a></code> | <code>string</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuShares">CpuShares</a></code> | <code>double</code> | CPU shares (relative weight) for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.destroyGraceSeconds">DestroyGraceSeconds</a></code> | <code>double</code> | If defined will attempt to stop the container before destroying. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">Devices</a></code> | <code>object</code> | devices block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">Devices</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]</code> | devices block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dns">Dns</a></code> | <code>string[]</code> | DNS servers to use. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsOpts">DnsOpts</a></code> | <code>string[]</code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsSearch">DnsSearch</a></code> | <code>string[]</code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container. |
@@ -2948,47 +2948,47 @@ new ContainerConfig {
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.gpus">Gpus</a></code> | <code>string</code> | GPU devices to add to the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.groupAdd">GroupAdd</a></code> | <code>string[]</code> | Additional groups for the container user. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.healthcheck">Healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">Host</a></code> | <code>object</code> | host block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">Host</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]</code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.hostname">Hostname</a></code> | <code>string</code> | Hostname of the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.id">Id</a></code> | <code>string</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/container#id Container#id}. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">Init</a></code> | <code>object</code> | Configured whether an init process should be injected for this container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">Init</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ipcMode">IpcMode</a></code> | <code>string</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">Labels</a></code> | <code>object</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logDriver">LogDriver</a></code> | <code>string</code> | The logging driver to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logOpts">LogOpts</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Key/value pairs to use as options for the logging driver. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">Logs</a></code> | <code>object</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">Logs</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.maxRetryCount">MaxRetryCount</a></code> | <code>double</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memory">Memory</a></code> | <code>double</code> | The memory limit for the container in MBs. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memorySwap">MemorySwap</a></code> | <code>double</code> | The total memory limit (memory + swap) for the container in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">Mounts</a></code> | <code>object</code> | mounts block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">MustRun</a></code> | <code>object</code> | If `true`, then the Docker container will be kept running. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">Mounts</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]</code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">MustRun</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networkMode">NetworkMode</a></code> | <code>string</code> | Network mode of the container. See https://docs.docker.com/engine/network/ for more information. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">NetworksAdvanced</a></code> | <code>object</code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">NetworksAdvanced</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]</code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.pidMode">PidMode</a></code> | <code>string</code> | he PID (Process) Namespace mode for the container. Either `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">Ports</a></code> | <code>object</code> | ports block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">Privileged</a></code> | <code>object</code> | If `true`, the container runs in privileged mode. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">PublishAllPorts</a></code> | <code>object</code> | Publish all ports of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">ReadOnly</a></code> | <code>object</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">RemoveVolumes</a></code> | <code>object</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">Ports</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]</code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">Privileged</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">PublishAllPorts</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Publish all ports of the container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">RemoveVolumes</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.restart">Restart</a></code> | <code>string</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">Rm</a></code> | <code>object</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">Rm</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.runtime">Runtime</a></code> | <code>string</code> | Runtime to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.securityOpts">SecurityOpts</a></code> | <code>string[]</code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.shmSize">ShmSize</a></code> | <code>double</code> | Size of `/dev/shm` in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">Start</a></code> | <code>object</code> | If `true`, then the Docker container will be started after creation. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">StdinOpen</a></code> | <code>object</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">Start</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">StdinOpen</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopSignal">StopSignal</a></code> | <code>string</code> | Signal to stop a container (default `SIGTERM`). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopTimeout">StopTimeout</a></code> | <code>double</code> | Timeout (in seconds) to stop a container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.storageOpts">StorageOpts</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.sysctls">Sysctls</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A map of kernel parameters (sysctls) to set in the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tmpfs">Tmpfs</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">Tty</a></code> | <code>object</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">Ulimit</a></code> | <code>object</code> | ulimit block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">Upload</a></code> | <code>object</code> | upload block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">Tty</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">Ulimit</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]</code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">Upload</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]</code> | upload block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.user">User</a></code> | <code>string</code> | User used for run the first process. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.usernsMode">UsernsMode</a></code> | <code>string</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">Volumes</a></code> | <code>object</code> | volumes block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">Wait</a></code> | <code>object</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">Volumes</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]</code> | volumes block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">Wait</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.waitTimeout">WaitTimeout</a></code> | <code>double</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.workingDir">WorkingDir</a></code> | <code>string</code> | The working directory for commands to run in. |
 
@@ -2997,20 +2997,20 @@ new ContainerConfig {
 ##### `Connection`<sup>Optional</sup> <a name="Connection" id="@cdktf/provider-docker.container.ContainerConfig.property.connection"></a>
 
 ```csharp
-public object Connection { get; set; }
+public SSHProvisionerConnection|WinrmProvisionerConnection Connection { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.SSHProvisionerConnection|HashiCorp.Cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `Count`<sup>Optional</sup> <a name="Count" id="@cdktf/provider-docker.container.ContainerConfig.property.count"></a>
 
 ```csharp
-public object Count { get; set; }
+public double|TerraformCount Count { get; set; }
 ```
 
-- *Type:* object
+- *Type:* double|HashiCorp.Cdktf.TerraformCount
 
 ---
 
@@ -3057,10 +3057,10 @@ public TerraformProvider Provider { get; set; }
 ##### `Provisioners`<sup>Optional</sup> <a name="Provisioners" id="@cdktf/provider-docker.container.ContainerConfig.property.provisioners"></a>
 
 ```csharp
-public object[] Provisioners { get; set; }
+public (FileProvisioner|LocalExecProvisioner|RemoteExecProvisioner)[] Provisioners { get; set; }
 ```
 
-- *Type:* object[]
+- *Type:* HashiCorp.Cdktf.FileProvisioner|HashiCorp.Cdktf.LocalExecProvisioner|HashiCorp.Cdktf.RemoteExecProvisioner[]
 
 ---
 
@@ -3097,10 +3097,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Attach`<sup>Optional</sup> <a name="Attach" id="@cdktf/provider-docker.container.ContainerConfig.property.attach"></a>
 
 ```csharp
-public object Attach { get; set; }
+public bool|IResolvable Attach { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
@@ -3273,10 +3273,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Devices`<sup>Optional</sup> <a name="Devices" id="@cdktf/provider-docker.container.ContainerConfig.property.devices"></a>
 
 ```csharp
-public object Devices { get; set; }
+public IResolvable|ContainerDevices[] Devices { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]
 
 devices block.
 
@@ -3417,10 +3417,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Host`<sup>Optional</sup> <a name="Host" id="@cdktf/provider-docker.container.ContainerConfig.property.host"></a>
 
 ```csharp
-public object Host { get; set; }
+public IResolvable|ContainerHost[] Host { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]
 
 host block.
 
@@ -3460,10 +3460,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `Init`<sup>Optional</sup> <a name="Init" id="@cdktf/provider-docker.container.ContainerConfig.property.init"></a>
 
 ```csharp
-public object Init { get; set; }
+public bool|IResolvable Init { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Configured whether an init process should be injected for this container.
 
@@ -3490,10 +3490,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.container.ContainerConfig.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|ContainerLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]
 
 labels block.
 
@@ -3532,10 +3532,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Logs`<sup>Optional</sup> <a name="Logs" id="@cdktf/provider-docker.container.ContainerConfig.property.logs"></a>
 
 ```csharp
-public object Logs { get; set; }
+public bool|IResolvable Logs { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
@@ -3590,10 +3590,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Mounts`<sup>Optional</sup> <a name="Mounts" id="@cdktf/provider-docker.container.ContainerConfig.property.mounts"></a>
 
 ```csharp
-public object Mounts { get; set; }
+public IResolvable|ContainerMounts[] Mounts { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]
 
 mounts block.
 
@@ -3604,10 +3604,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `MustRun`<sup>Optional</sup> <a name="MustRun" id="@cdktf/provider-docker.container.ContainerConfig.property.mustRun"></a>
 
 ```csharp
-public object MustRun { get; set; }
+public bool|IResolvable MustRun { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, then the Docker container will be kept running.
 
@@ -3634,10 +3634,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `NetworksAdvanced`<sup>Optional</sup> <a name="NetworksAdvanced" id="@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced"></a>
 
 ```csharp
-public object NetworksAdvanced { get; set; }
+public IResolvable|ContainerNetworksAdvanced[] NetworksAdvanced { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]
 
 networks_advanced block.
 
@@ -3662,10 +3662,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Ports`<sup>Optional</sup> <a name="Ports" id="@cdktf/provider-docker.container.ContainerConfig.property.ports"></a>
 
 ```csharp
-public object Ports { get; set; }
+public IResolvable|ContainerPorts[] Ports { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]
 
 ports block.
 
@@ -3676,10 +3676,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Privileged`<sup>Optional</sup> <a name="Privileged" id="@cdktf/provider-docker.container.ContainerConfig.property.privileged"></a>
 
 ```csharp
-public object Privileged { get; set; }
+public bool|IResolvable Privileged { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, the container runs in privileged mode.
 
@@ -3690,10 +3690,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `PublishAllPorts`<sup>Optional</sup> <a name="PublishAllPorts" id="@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts"></a>
 
 ```csharp
-public object PublishAllPorts { get; set; }
+public bool|IResolvable PublishAllPorts { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Publish all ports of the container.
 
@@ -3704,10 +3704,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ReadOnly`<sup>Optional</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.ContainerConfig.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; set; }
+public bool|IResolvable ReadOnly { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
@@ -3718,10 +3718,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `RemoveVolumes`<sup>Optional</sup> <a name="RemoveVolumes" id="@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes"></a>
 
 ```csharp
-public object RemoveVolumes { get; set; }
+public bool|IResolvable RemoveVolumes { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
@@ -3746,10 +3746,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Rm`<sup>Optional</sup> <a name="Rm" id="@cdktf/provider-docker.container.ContainerConfig.property.rm"></a>
 
 ```csharp
-public object Rm { get; set; }
+public bool|IResolvable Rm { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
@@ -3802,10 +3802,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Start`<sup>Optional</sup> <a name="Start" id="@cdktf/provider-docker.container.ContainerConfig.property.start"></a>
 
 ```csharp
-public object Start { get; set; }
+public bool|IResolvable Start { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, then the Docker container will be started after creation.
 
@@ -3818,10 +3818,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `StdinOpen`<sup>Optional</sup> <a name="StdinOpen" id="@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen"></a>
 
 ```csharp
-public object StdinOpen { get; set; }
+public bool|IResolvable StdinOpen { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
@@ -3902,10 +3902,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Tty`<sup>Optional</sup> <a name="Tty" id="@cdktf/provider-docker.container.ContainerConfig.property.tty"></a>
 
 ```csharp
-public object Tty { get; set; }
+public bool|IResolvable Tty { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
@@ -3916,10 +3916,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Ulimit`<sup>Optional</sup> <a name="Ulimit" id="@cdktf/provider-docker.container.ContainerConfig.property.ulimit"></a>
 
 ```csharp
-public object Ulimit { get; set; }
+public IResolvable|ContainerUlimit[] Ulimit { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]
 
 ulimit block.
 
@@ -3930,10 +3930,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Upload`<sup>Optional</sup> <a name="Upload" id="@cdktf/provider-docker.container.ContainerConfig.property.upload"></a>
 
 ```csharp
-public object Upload { get; set; }
+public IResolvable|ContainerUpload[] Upload { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]
 
 upload block.
 
@@ -3974,10 +3974,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Volumes`<sup>Optional</sup> <a name="Volumes" id="@cdktf/provider-docker.container.ContainerConfig.property.volumes"></a>
 
 ```csharp
-public object Volumes { get; set; }
+public IResolvable|ContainerVolumes[] Volumes { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]
 
 volumes block.
 
@@ -3988,10 +3988,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Wait`<sup>Optional</sup> <a name="Wait" id="@cdktf/provider-docker.container.ContainerConfig.property.wait"></a>
 
 ```csharp
-public object Wait { get; set; }
+public bool|IResolvable Wait { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, then the Docker container is waited for being healthy state after creation.
 
@@ -4322,7 +4322,7 @@ new ContainerMounts {
     string Target,
     string Type,
     ContainerMountsBindOptions BindOptions = null,
-    object ReadOnly = null,
+    bool|IResolvable ReadOnly = null,
     string Source = null,
     ContainerMountsTmpfsOptions TmpfsOptions = null,
     ContainerMountsVolumeOptions VolumeOptions = null
@@ -4336,7 +4336,7 @@ new ContainerMounts {
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.target">Target</a></code> | <code>string</code> | Container path. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.type">Type</a></code> | <code>string</code> | The mount type. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.bindOptions">BindOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | bind_options block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">ReadOnly</a></code> | <code>object</code> | Whether the mount should be read-only. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Whether the mount should be read-only. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.source">Source</a></code> | <code>string</code> | Mount source (e.g. a volume name, a host path). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.tmpfsOptions">TmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | tmpfs_options block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.volumeOptions">VolumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | volume_options block. |
@@ -4388,10 +4388,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ReadOnly`<sup>Optional</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.ContainerMounts.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; set; }
+public bool|IResolvable ReadOnly { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Whether the mount should be read-only.
 
@@ -4535,8 +4535,8 @@ using HashiCorp.Cdktf.Providers.Docker;
 new ContainerMountsVolumeOptions {
     string DriverName = null,
     System.Collections.Generic.IDictionary<string, string> DriverOptions = null,
-    object Labels = null,
-    object NoCopy = null,
+    IResolvable|ContainerMountsVolumeOptionsLabels[] Labels = null,
+    bool|IResolvable NoCopy = null,
     string Subpath = null
 };
 ```
@@ -4547,8 +4547,8 @@ new ContainerMountsVolumeOptions {
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverName">DriverName</a></code> | <code>string</code> | Name of the driver to use to create the volume. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverOptions">DriverOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | key/value map of driver specific options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">Labels</a></code> | <code>object</code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">NoCopy</a></code> | <code>object</code> | Populate volume with data from the target. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">Labels</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">NoCopy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | Populate volume with data from the target. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.subpath">Subpath</a></code> | <code>string</code> | Path within the volume to mount. Requires docker server version 1.45 or higher. |
 
 ---
@@ -4584,10 +4584,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Labels`<sup>Optional</sup> <a name="Labels" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels"></a>
 
 ```csharp
-public object Labels { get; set; }
+public IResolvable|ContainerMountsVolumeOptionsLabels[] Labels { get; set; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]
 
 labels block.
 
@@ -4598,10 +4598,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `NoCopy`<sup>Optional</sup> <a name="NoCopy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy"></a>
 
 ```csharp
-public object NoCopy { get; set; }
+public bool|IResolvable NoCopy { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -4929,7 +4929,7 @@ new ContainerUpload {
     string File,
     string Content = null,
     string ContentBase64 = null,
-    object Executable = null,
+    bool|IResolvable Executable = null,
     string Permissions = null,
     string Source = null,
     string SourceHash = null
@@ -4943,7 +4943,7 @@ new ContainerUpload {
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.file">File</a></code> | <code>string</code> | Path to the file in the container where is upload goes to. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.content">Content</a></code> | <code>string</code> | Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.contentBase64">ContentBase64</a></code> | <code>string</code> | Base64-encoded data that will be decoded and uploaded as raw bytes for the object content. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">Executable</a></code> | <code>object</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">Executable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.permissions">Permissions</a></code> | <code>string</code> | The permission mode for the file in the container. Has precedence over `executable`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.source">Source</a></code> | <code>string</code> | A filename that references a file which will be uploaded as the object content. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.sourceHash">SourceHash</a></code> | <code>string</code> | If using `source`, this will force an update if the file content has updated but the filename has not. |
@@ -4999,10 +4999,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `Executable`<sup>Optional</sup> <a name="Executable" id="@cdktf/provider-docker.container.ContainerUpload.property.executable"></a>
 
 ```csharp
-public object Executable { get; set; }
+public bool|IResolvable Executable { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, the file will be uploaded with user executable permission. Defaults to `false`.
 
@@ -5065,7 +5065,7 @@ new ContainerVolumes {
     string ContainerPath = null,
     string FromContainer = null,
     string HostPath = null,
-    object ReadOnly = null,
+    bool|IResolvable ReadOnly = null,
     string VolumeName = null
 };
 ```
@@ -5077,7 +5077,7 @@ new ContainerVolumes {
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.containerPath">ContainerPath</a></code> | <code>string</code> | The path in the container where the volume will be mounted. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.fromContainer">FromContainer</a></code> | <code>string</code> | The container where the volume is coming from. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.hostPath">HostPath</a></code> | <code>string</code> | The path on the host where the volume is coming from. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">ReadOnly</a></code> | <code>object</code> | If `true`, this volume will be readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | If `true`, this volume will be readonly. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.volumeName">VolumeName</a></code> | <code>string</code> | The name of the docker volume which should be mounted. |
 
 ---
@@ -5127,10 +5127,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ReadOnly`<sup>Optional</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.ContainerVolumes.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; set; }
+public bool|IResolvable ReadOnly { get; set; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 If `true`, this volume will be readonly. Defaults to `false`.
 
@@ -5582,7 +5582,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]</code> | *No description.* |
 
 ---
 
@@ -5613,10 +5613,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerDevices[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>[]
 
 ---
 
@@ -5869,7 +5869,7 @@ private void ResetPermissions()
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.containerPath">ContainerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.hostPath">HostPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.permissions">Permissions</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a></code> | *No description.* |
 
 ---
 
@@ -5960,10 +5960,10 @@ public string Permissions { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerDevices InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>
 
 ---
 
@@ -6505,7 +6505,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]</code> | *No description.* |
 
 ---
 
@@ -6536,10 +6536,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerHostList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerHost[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>[]
 
 ---
 
@@ -6776,7 +6776,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ipInput">IpInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.host">Host</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ip">Ip</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a></code> | *No description.* |
 
 ---
 
@@ -6847,10 +6847,10 @@ public string Ip { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerHost InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>
 
 ---
 
@@ -6976,7 +6976,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -7007,10 +7007,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>[]
 
 ---
 
@@ -7247,7 +7247,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a></code> | *No description.* |
 
 ---
 
@@ -7318,10 +7318,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>
 
 ---
 
@@ -7725,7 +7725,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]</code> | *No description.* |
 
 ---
 
@@ -7756,10 +7756,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerMountsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerMounts[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>[]
 
 ---
 
@@ -8070,17 +8070,17 @@ private void ResetVolumeOptions()
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptions">TmpfsOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptionsOutputReference">ContainerMountsTmpfsOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptions">VolumeOptions</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference">ContainerMountsVolumeOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.bindOptionsInput">BindOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.sourceInput">SourceInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.targetInput">TargetInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptionsInput">TmpfsOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.typeInput">TypeInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptionsInput">VolumeOptionsInput</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">ReadOnly</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.source">Source</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.target">Target</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.type">Type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a></code> | *No description.* |
 
 ---
 
@@ -8151,10 +8151,10 @@ public ContainerMountsBindOptions BindOptionsInput { get; }
 ##### `ReadOnlyInput`<sup>Optional</sup> <a name="ReadOnlyInput" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput"></a>
 
 ```csharp
-public object ReadOnlyInput { get; }
+public bool|IResolvable ReadOnlyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -8211,10 +8211,10 @@ public ContainerMountsVolumeOptions VolumeOptionsInput { get; }
 ##### `ReadOnly`<sup>Required</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; }
+public bool|IResolvable ReadOnly { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -8251,10 +8251,10 @@ public string Type { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerMounts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>
 
 ---
 
@@ -8687,7 +8687,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]</code> | *No description.* |
 
 ---
 
@@ -8718,10 +8718,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerMountsVolumeOptionsLabels[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]
 
 ---
 
@@ -8958,7 +8958,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.valueInput">ValueInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.label">Label</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.value">Value</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -9029,10 +9029,10 @@ public string Value { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerMountsVolumeOptionsLabels InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -9249,12 +9249,12 @@ Returns a reversible string representation.
 ##### `PutLabels` <a name="PutLabels" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.putLabels"></a>
 
 ```csharp
-private void PutLabels(object Value)
+private void PutLabels(IResolvable|ContainerMountsVolumeOptionsLabels[] Value)
 ```
 
 ###### `Value`<sup>Required</sup> <a name="Value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]
 
 ---
 
@@ -9298,12 +9298,12 @@ private void ResetSubpath()
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labels">Labels</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList">ContainerMountsVolumeOptionsLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverNameInput">DriverNameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptionsInput">DriverOptionsInput</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">LabelsInput</a></code> | <code>object</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">NoCopyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">LabelsInput</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">NoCopyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpathInput">SubpathInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverName">DriverName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptions">DriverOptions</a></code> | <code>System.Collections.Generic.IDictionary<string, string></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">NoCopy</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">NoCopy</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpath">Subpath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.internalValue">InternalValue</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
 
@@ -9366,20 +9366,20 @@ public System.Collections.Generic.IDictionary<string, string> DriverOptionsInput
 ##### `LabelsInput`<sup>Optional</sup> <a name="LabelsInput" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput"></a>
 
 ```csharp
-public object LabelsInput { get; }
+public IResolvable|ContainerMountsVolumeOptionsLabels[] LabelsInput { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>[]
 
 ---
 
 ##### `NoCopyInput`<sup>Optional</sup> <a name="NoCopyInput" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput"></a>
 
 ```csharp
-public object NoCopyInput { get; }
+public bool|IResolvable NoCopyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -9416,10 +9416,10 @@ public System.Collections.Generic.IDictionary<string, string> DriverOptions { ge
 ##### `NoCopy`<sup>Required</sup> <a name="NoCopy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy"></a>
 
 ```csharp
-public object NoCopy { get; }
+public bool|IResolvable NoCopy { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -10069,7 +10069,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]</code> | *No description.* |
 
 ---
 
@@ -10100,10 +10100,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerNetworksAdvanced[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>[]
 
 ---
 
@@ -10365,7 +10365,7 @@ private void ResetIpv6Address()
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv4Address">Ipv4Address</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv6Address">Ipv6Address</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.name">Name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -10476,10 +10476,10 @@ public string Name { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerNetworksAdvanced InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>
 
 ---
 
@@ -10605,7 +10605,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]</code> | *No description.* |
 
 ---
 
@@ -10636,10 +10636,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerPortsList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerPorts[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>[]
 
 ---
 
@@ -10901,7 +10901,7 @@ private void ResetProtocol()
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internal">Internal</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.ip">Ip</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.protocol">Protocol</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a></code> | *No description.* |
 
 ---
 
@@ -11012,10 +11012,10 @@ public string Protocol { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerPorts InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>
 
 ---
 
@@ -11141,7 +11141,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]</code> | *No description.* |
 
 ---
 
@@ -11172,10 +11172,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerUlimit[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>[]
 
 ---
 
@@ -11414,7 +11414,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.hard">Hard</a></code> | <code>double</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.name">Name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.soft">Soft</a></code> | <code>double</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a></code> | *No description.* |
 
 ---
 
@@ -11505,10 +11505,10 @@ public double Soft { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerUlimit InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>
 
 ---
 
@@ -11634,7 +11634,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]</code> | *No description.* |
 
 ---
 
@@ -11665,10 +11665,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerUploadList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerUpload[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>[]
 
 ---
 
@@ -11945,19 +11945,19 @@ private void ResetSourceHash()
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64Input">ContentBase64Input</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentInput">ContentInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">ExecutableInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">ExecutableInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fileInput">FileInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissionsInput">PermissionsInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHashInput">SourceHashInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceInput">SourceInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.content">Content</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64">ContentBase64</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">Executable</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">Executable</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.file">File</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissions">Permissions</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.source">Source</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHash">SourceHash</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a></code> | *No description.* |
 
 ---
 
@@ -12008,10 +12008,10 @@ public string ContentInput { get; }
 ##### `ExecutableInput`<sup>Optional</sup> <a name="ExecutableInput" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput"></a>
 
 ```csharp
-public object ExecutableInput { get; }
+public bool|IResolvable ExecutableInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -12078,10 +12078,10 @@ public string ContentBase64 { get; }
 ##### `Executable`<sup>Required</sup> <a name="Executable" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable"></a>
 
 ```csharp
-public object Executable { get; }
+public bool|IResolvable Executable { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -12128,10 +12128,10 @@ public string SourceHash { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerUpload InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>
 
 ---
 
@@ -12257,7 +12257,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.creationStack">CreationStack</a></code> | <code>string[]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.fqn">Fqn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]</code> | *No description.* |
 
 ---
 
@@ -12288,10 +12288,10 @@ public string Fqn { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerVolumes[] InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>[]
 
 ---
 
@@ -12562,14 +12562,14 @@ private void ResetVolumeName()
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPathInput">ContainerPathInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainerInput">FromContainerInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPathInput">HostPathInput</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">ReadOnlyInput</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeNameInput">VolumeNameInput</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPath">ContainerPath</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainer">FromContainer</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPath">HostPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">ReadOnly</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">ReadOnly</a></code> | <code>bool\|HashiCorp.Cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeName">VolumeName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">InternalValue</a></code> | <code>object</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">InternalValue</a></code> | <code>HashiCorp.Cdktf.IResolvable\|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a></code> | *No description.* |
 
 ---
 
@@ -12630,10 +12630,10 @@ public string HostPathInput { get; }
 ##### `ReadOnlyInput`<sup>Optional</sup> <a name="ReadOnlyInput" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput"></a>
 
 ```csharp
-public object ReadOnlyInput { get; }
+public bool|IResolvable ReadOnlyInput { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -12680,10 +12680,10 @@ public string HostPath { get; }
 ##### `ReadOnly`<sup>Required</sup> <a name="ReadOnly" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly"></a>
 
 ```csharp
-public object ReadOnly { get; }
+public bool|IResolvable ReadOnly { get; }
 ```
 
-- *Type:* object
+- *Type:* bool|HashiCorp.Cdktf.IResolvable
 
 ---
 
@@ -12700,10 +12700,10 @@ public string VolumeName { get; }
 ##### `InternalValue`<sup>Optional</sup> <a name="InternalValue" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue"></a>
 
 ```csharp
-public object InternalValue { get; }
+public IResolvable|ContainerVolumes InternalValue { get; }
 ```
 
-- *Type:* object
+- *Type:* HashiCorp.Cdktf.IResolvable|<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>
 
 ---
 

@@ -14,16 +14,16 @@ from cdktf_cdktf_provider_docker import container
 container.Container(
   scope: Construct,
   id: str,
-  connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
+  connection: SSHProvisionerConnection | WinrmProvisionerConnection = None,
+  count: typing.Union[int, float] | TerraformCount = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
   provider: TerraformProvider = None,
-  provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]] = None,
+  provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner] = None,
   image: str,
   name: str,
-  attach: typing.Union[bool, IResolvable] = None,
+  attach: bool | IResolvable = None,
   capabilities: ContainerCapabilities = None,
   cgroupns_mode: str = None,
   cgroup_parent: str = None,
@@ -35,7 +35,7 @@ container.Container(
   cpu_set: str = None,
   cpu_shares: typing.Union[int, float] = None,
   destroy_grace_seconds: typing.Union[int, float] = None,
-  devices: typing.Union[IResolvable, typing.List[ContainerDevices]] = None,
+  devices: IResolvable | typing.List[ContainerDevices] = None,
   dns: typing.List[str] = None,
   dns_opts: typing.List[str] = None,
   dns_search: typing.List[str] = None,
@@ -45,47 +45,47 @@ container.Container(
   gpus: str = None,
   group_add: typing.List[str] = None,
   healthcheck: ContainerHealthcheck = None,
-  host: typing.Union[IResolvable, typing.List[ContainerHost]] = None,
+  host: IResolvable | typing.List[ContainerHost] = None,
   hostname: str = None,
   id: str = None,
-  init: typing.Union[bool, IResolvable] = None,
+  init: bool | IResolvable = None,
   ipc_mode: str = None,
-  labels: typing.Union[IResolvable, typing.List[ContainerLabels]] = None,
+  labels: IResolvable | typing.List[ContainerLabels] = None,
   log_driver: str = None,
   log_opts: typing.Mapping[str] = None,
-  logs: typing.Union[bool, IResolvable] = None,
+  logs: bool | IResolvable = None,
   max_retry_count: typing.Union[int, float] = None,
   memory: typing.Union[int, float] = None,
   memory_swap: typing.Union[int, float] = None,
-  mounts: typing.Union[IResolvable, typing.List[ContainerMounts]] = None,
-  must_run: typing.Union[bool, IResolvable] = None,
+  mounts: IResolvable | typing.List[ContainerMounts] = None,
+  must_run: bool | IResolvable = None,
   network_mode: str = None,
-  networks_advanced: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]] = None,
+  networks_advanced: IResolvable | typing.List[ContainerNetworksAdvanced] = None,
   pid_mode: str = None,
-  ports: typing.Union[IResolvable, typing.List[ContainerPorts]] = None,
-  privileged: typing.Union[bool, IResolvable] = None,
-  publish_all_ports: typing.Union[bool, IResolvable] = None,
-  read_only: typing.Union[bool, IResolvable] = None,
-  remove_volumes: typing.Union[bool, IResolvable] = None,
+  ports: IResolvable | typing.List[ContainerPorts] = None,
+  privileged: bool | IResolvable = None,
+  publish_all_ports: bool | IResolvable = None,
+  read_only: bool | IResolvable = None,
+  remove_volumes: bool | IResolvable = None,
   restart: str = None,
-  rm: typing.Union[bool, IResolvable] = None,
+  rm: bool | IResolvable = None,
   runtime: str = None,
   security_opts: typing.List[str] = None,
   shm_size: typing.Union[int, float] = None,
-  start: typing.Union[bool, IResolvable] = None,
-  stdin_open: typing.Union[bool, IResolvable] = None,
+  start: bool | IResolvable = None,
+  stdin_open: bool | IResolvable = None,
   stop_signal: str = None,
   stop_timeout: typing.Union[int, float] = None,
   storage_opts: typing.Mapping[str] = None,
   sysctls: typing.Mapping[str] = None,
   tmpfs: typing.Mapping[str] = None,
-  tty: typing.Union[bool, IResolvable] = None,
-  ulimit: typing.Union[IResolvable, typing.List[ContainerUlimit]] = None,
-  upload: typing.Union[IResolvable, typing.List[ContainerUpload]] = None,
+  tty: bool | IResolvable = None,
+  ulimit: IResolvable | typing.List[ContainerUlimit] = None,
+  upload: IResolvable | typing.List[ContainerUpload] = None,
   user: str = None,
   userns_mode: str = None,
-  volumes: typing.Union[IResolvable, typing.List[ContainerVolumes]] = None,
-  wait: typing.Union[bool, IResolvable] = None,
+  volumes: IResolvable | typing.List[ContainerVolumes] = None,
+  wait: bool | IResolvable = None,
   wait_timeout: typing.Union[int, float] = None,
   working_dir: str = None
 )
@@ -95,16 +95,16 @@ container.Container(
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | The scope in which to define this construct. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.id">id</a></code> | <code>str</code> | The scoped construct ID. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.image">image</a></code> | <code>str</code> | The ID of the image to back this container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.name">name</a></code> | <code>str</code> | The name of the container. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.attach">attach</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.attach">attach</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | capabilities block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cgroupnsMode">cgroupns_mode</a></code> | <code>str</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cgroupParent">cgroup_parent</a></code> | <code>str</code> | Optional parent cgroup for the container. |
@@ -116,7 +116,7 @@ container.Container(
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cpuSet">cpu_set</a></code> | <code>str</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.cpuShares">cpu_shares</a></code> | <code>typing.Union[int, float]</code> | CPU shares (relative weight) for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.destroyGraceSeconds">destroy_grace_seconds</a></code> | <code>typing.Union[int, float]</code> | If defined will attempt to stop the container before destroying. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.devices">devices</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]</code> | devices block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.devices">devices</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | devices block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dns">dns</a></code> | <code>typing.List[str]</code> | DNS servers to use. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dnsOpts">dns_opts</a></code> | <code>typing.List[str]</code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.dnsSearch">dns_search</a></code> | <code>typing.List[str]</code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container. |
@@ -126,47 +126,47 @@ container.Container(
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.gpus">gpus</a></code> | <code>str</code> | GPU devices to add to the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.groupAdd">group_add</a></code> | <code>typing.List[str]</code> | Additional groups for the container user. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.healthcheck">healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.host">host</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]</code> | host block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.host">host</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.hostname">hostname</a></code> | <code>str</code> | Hostname of the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/container#id Container#id}. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.init">init</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Configured whether an init process should be injected for this container. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.init">init</a></code> | <code>bool \| cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ipcMode">ipc_mode</a></code> | <code>str</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.labels">labels</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.labels">labels</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logDriver">log_driver</a></code> | <code>str</code> | The logging driver to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logOpts">log_opts</a></code> | <code>typing.Mapping[str]</code> | Key/value pairs to use as options for the logging driver. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logs">logs</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.logs">logs</a></code> | <code>bool \| cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.maxRetryCount">max_retry_count</a></code> | <code>typing.Union[int, float]</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.memory">memory</a></code> | <code>typing.Union[int, float]</code> | The memory limit for the container in MBs. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.memorySwap">memory_swap</a></code> | <code>typing.Union[int, float]</code> | The total memory limit (memory + swap) for the container in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mounts">mounts</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]</code> | mounts block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun">must_run</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container will be kept running. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mounts">mounts</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun">must_run</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networkMode">network_mode</a></code> | <code>str</code> | Network mode of the container. See https://docs.docker.com/engine/network/ for more information. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced">networks_advanced</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]</code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced">networks_advanced</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.pidMode">pid_mode</a></code> | <code>str</code> | he PID (Process) Namespace mode for the container. Either `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ports">ports</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]</code> | ports block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.privileged">privileged</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the container runs in privileged mode. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts">publish_all_ports</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Publish all ports of the container. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes">remove_volumes</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ports">ports</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.privileged">privileged</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts">publish_all_ports</a></code> | <code>bool \| cdktf.IResolvable</code> | Publish all ports of the container. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes">remove_volumes</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.restart">restart</a></code> | <code>str</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.rm">rm</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.rm">rm</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.runtime">runtime</a></code> | <code>str</code> | Runtime to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.securityOpts">security_opts</a></code> | <code>typing.List[str]</code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.shmSize">shm_size</a></code> | <code>typing.Union[int, float]</code> | Size of `/dev/shm` in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.start">start</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container will be started after creation. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen">stdin_open</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.start">start</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen">stdin_open</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stopSignal">stop_signal</a></code> | <code>str</code> | Signal to stop a container (default `SIGTERM`). |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.stopTimeout">stop_timeout</a></code> | <code>typing.Union[int, float]</code> | Timeout (in seconds) to stop a container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.storageOpts">storage_opts</a></code> | <code>typing.Mapping[str]</code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.sysctls">sysctls</a></code> | <code>typing.Mapping[str]</code> | A map of kernel parameters (sysctls) to set in the container. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tmpfs">tmpfs</a></code> | <code>typing.Mapping[str]</code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tty">tty</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit">ulimit</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]</code> | ulimit block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.upload">upload</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]</code> | upload block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.tty">tty</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit">ulimit</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.upload">upload</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | upload block. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.user">user</a></code> | <code>str</code> | User used for run the first process. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.usernsMode">userns_mode</a></code> | <code>str</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.volumes">volumes</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]</code> | volumes block. |
-| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.wait">wait</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.volumes">volumes</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | volumes block. |
+| <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.wait">wait</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.waitTimeout">wait_timeout</a></code> | <code>typing.Union[int, float]</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. |
 | <code><a href="#@cdktf/provider-docker.container.Container.Initializer.parameter.workingDir">working_dir</a></code> | <code>str</code> | The working directory for commands to run in. |
 
@@ -192,13 +192,13 @@ Must be unique amongst siblings in the same scope
 
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.Container.Initializer.parameter.connection"></a>
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.Container.Initializer.parameter.count"></a>
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -228,7 +228,7 @@ Must be unique amongst siblings in the same scope
 
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.Container.Initializer.parameter.provisioners"></a>
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
@@ -256,7 +256,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `attach`<sup>Optional</sup> <a name="attach" id="@cdktf/provider-docker.container.Container.Initializer.parameter.attach"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
@@ -384,7 +384,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `devices`<sup>Optional</sup> <a name="devices" id="@cdktf/provider-docker.container.Container.Initializer.parameter.devices"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 devices block.
 
@@ -488,7 +488,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `host`<sup>Optional</sup> <a name="host" id="@cdktf/provider-docker.container.Container.Initializer.parameter.host"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 host block.
 
@@ -519,7 +519,7 @@ If you experience problems setting this value it might not be settable. Please t
 
 ##### `init`<sup>Optional</sup> <a name="init" id="@cdktf/provider-docker.container.Container.Initializer.parameter.init"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Configured whether an init process should be injected for this container.
 
@@ -541,7 +541,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.Container.Initializer.parameter.labels"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 labels block.
 
@@ -571,7 +571,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `logs`<sup>Optional</sup> <a name="logs" id="@cdktf/provider-docker.container.Container.Initializer.parameter.logs"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
@@ -613,7 +613,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `mounts`<sup>Optional</sup> <a name="mounts" id="@cdktf/provider-docker.container.Container.Initializer.parameter.mounts"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 mounts block.
 
@@ -623,7 +623,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `must_run`<sup>Optional</sup> <a name="must_run" id="@cdktf/provider-docker.container.Container.Initializer.parameter.mustRun"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container will be kept running.
 
@@ -645,7 +645,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `networks_advanced`<sup>Optional</sup> <a name="networks_advanced" id="@cdktf/provider-docker.container.Container.Initializer.parameter.networksAdvanced"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 networks_advanced block.
 
@@ -665,7 +665,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ports`<sup>Optional</sup> <a name="ports" id="@cdktf/provider-docker.container.Container.Initializer.parameter.ports"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ports block.
 
@@ -675,7 +675,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `privileged`<sup>Optional</sup> <a name="privileged" id="@cdktf/provider-docker.container.Container.Initializer.parameter.privileged"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, the container runs in privileged mode.
 
@@ -685,7 +685,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `publish_all_ports`<sup>Optional</sup> <a name="publish_all_ports" id="@cdktf/provider-docker.container.Container.Initializer.parameter.publishAllPorts"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Publish all ports of the container.
 
@@ -695,7 +695,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `read_only`<sup>Optional</sup> <a name="read_only" id="@cdktf/provider-docker.container.Container.Initializer.parameter.readOnly"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
@@ -705,7 +705,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `remove_volumes`<sup>Optional</sup> <a name="remove_volumes" id="@cdktf/provider-docker.container.Container.Initializer.parameter.removeVolumes"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
@@ -725,7 +725,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `rm`<sup>Optional</sup> <a name="rm" id="@cdktf/provider-docker.container.Container.Initializer.parameter.rm"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
@@ -765,7 +765,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `start`<sup>Optional</sup> <a name="start" id="@cdktf/provider-docker.container.Container.Initializer.parameter.start"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container will be started after creation.
 
@@ -777,7 +777,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `stdin_open`<sup>Optional</sup> <a name="stdin_open" id="@cdktf/provider-docker.container.Container.Initializer.parameter.stdinOpen"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
@@ -837,7 +837,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `tty`<sup>Optional</sup> <a name="tty" id="@cdktf/provider-docker.container.Container.Initializer.parameter.tty"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
@@ -847,7 +847,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `ulimit`<sup>Optional</sup> <a name="ulimit" id="@cdktf/provider-docker.container.Container.Initializer.parameter.ulimit"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ulimit block.
 
@@ -857,7 +857,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `upload`<sup>Optional</sup> <a name="upload" id="@cdktf/provider-docker.container.Container.Initializer.parameter.upload"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 upload block.
 
@@ -889,7 +889,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `volumes`<sup>Optional</sup> <a name="volumes" id="@cdktf/provider-docker.container.Container.Initializer.parameter.volumes"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 volumes block.
 
@@ -899,7 +899,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ##### `wait`<sup>Optional</sup> <a name="wait" id="@cdktf/provider-docker.container.Container.Initializer.parameter.wait"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container is waited for being healthy state after creation.
 
@@ -1257,7 +1257,7 @@ def get_string_map_attribute(
 ##### `has_resource_move` <a name="has_resource_move" id="@cdktf/provider-docker.container.Container.hasResourceMove"></a>
 
 ```python
-def has_resource_move() -> typing.Union[TerraformResourceMoveByTarget, TerraformResourceMoveById]
+def has_resource_move() -> TerraformResourceMoveByTarget | TerraformResourceMoveById
 ```
 
 ##### `import_from` <a name="import_from" id="@cdktf/provider-docker.container.Container.importFrom"></a>
@@ -1320,7 +1320,7 @@ Full id of resource being moved from, e.g. "aws_s3_bucket.example".
 ```python
 def move_to(
   move_target: str,
-  index: typing.Union[str, typing.Union[int, float]] = None
+  index: str | typing.Union[int, float] = None
 ) -> None
 ```
 
@@ -1336,7 +1336,7 @@ The previously set user defined string set by .addMoveTarget() corresponding to 
 
 ###### `index`<sup>Optional</sup> <a name="index" id="@cdktf/provider-docker.container.Container.moveTo.parameter.index"></a>
 
-- *Type:* typing.Union[str, typing.Union[int, float]]
+- *Type:* str | typing.Union[int, float]
 
 Optional The index corresponding to the key the resource is to appear in the foreach of a resource to move to.
 
@@ -1393,13 +1393,13 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ```python
 def put_devices(
-  value: typing.Union[IResolvable, typing.List[ContainerDevices]]
+  value: IResolvable | typing.List[ContainerDevices]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putDevices.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 ---
 
@@ -1482,13 +1482,13 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ```python
 def put_host(
-  value: typing.Union[IResolvable, typing.List[ContainerHost]]
+  value: IResolvable | typing.List[ContainerHost]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putHost.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 ---
 
@@ -1496,13 +1496,13 @@ def put_host(
 
 ```python
 def put_labels(
-  value: typing.Union[IResolvable, typing.List[ContainerLabels]]
+  value: IResolvable | typing.List[ContainerLabels]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putLabels.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 ---
 
@@ -1510,13 +1510,13 @@ def put_labels(
 
 ```python
 def put_mounts(
-  value: typing.Union[IResolvable, typing.List[ContainerMounts]]
+  value: IResolvable | typing.List[ContainerMounts]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putMounts.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 ---
 
@@ -1524,13 +1524,13 @@ def put_mounts(
 
 ```python
 def put_networks_advanced(
-  value: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]]
+  value: IResolvable | typing.List[ContainerNetworksAdvanced]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putNetworksAdvanced.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 ---
 
@@ -1538,13 +1538,13 @@ def put_networks_advanced(
 
 ```python
 def put_ports(
-  value: typing.Union[IResolvable, typing.List[ContainerPorts]]
+  value: IResolvable | typing.List[ContainerPorts]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putPorts.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ---
 
@@ -1552,13 +1552,13 @@ def put_ports(
 
 ```python
 def put_ulimit(
-  value: typing.Union[IResolvable, typing.List[ContainerUlimit]]
+  value: IResolvable | typing.List[ContainerUlimit]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putUlimit.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ---
 
@@ -1566,13 +1566,13 @@ def put_ulimit(
 
 ```python
 def put_upload(
-  value: typing.Union[IResolvable, typing.List[ContainerUpload]]
+  value: IResolvable | typing.List[ContainerUpload]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putUpload.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 ---
 
@@ -1580,13 +1580,13 @@ def put_upload(
 
 ```python
 def put_volumes(
-  value: typing.Union[IResolvable, typing.List[ContainerVolumes]]
+  value: IResolvable | typing.List[ContainerVolumes]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.Container.putVolumes.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 ---
 
@@ -2117,13 +2117,13 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformMetaArguments">terraform_meta_arguments</a></code> | <code>typing.Mapping[typing.Any]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformResourceType">terraform_resource_type</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.terraformGeneratorMetadata">terraform_generator_metadata</a></code> | <code>cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dependsOn">depends_on</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.bridge">bridge</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilitiesOutputReference">ContainerCapabilitiesOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.containerLogs">container_logs</a></code> | <code>str</code> | *No description.* |
@@ -2139,7 +2139,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ulimit">ulimit</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList">ContainerUlimitList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.upload">upload</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList">ContainerUploadList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.volumes">volumes</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList">ContainerVolumesList</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">attach_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attachInput">attach_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.capabilitiesInput">capabilities_input</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsModeInput">cgroupns_mode_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParentInput">cgroup_parent_input</a></code> | <code>str</code> | *No description.* |
@@ -2151,7 +2151,7 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpuSharesInput">cpu_shares_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cpusInput">cpus_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.destroyGraceSecondsInput">destroy_grace_seconds_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">devices_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.devicesInput">devices_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsInput">dns_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsOptsInput">dns_opts_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.dnsSearchInput">dns_search_input</a></code> | <code>typing.List[str]</code> | *No description.* |
@@ -2161,52 +2161,52 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.gpusInput">gpus_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.groupAddInput">group_add_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.healthcheckInput">healthcheck_input</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">host_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.hostInput">host_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostnameInput">hostname_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.idInput">id_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.imageInput">image_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">init_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.initInput">init_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcModeInput">ipc_mode_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">labels_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.labelsInput">labels_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriverInput">log_driver_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOptsInput">log_opts_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">logs_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logsInput">logs_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCountInput">max_retry_count_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memoryInput">memory_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwapInput">memory_swap_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">mounts_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">must_run_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mountsInput">mounts_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRunInput">must_run_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.nameInput">name_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkModeInput">network_mode_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">networks_advanced_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.networksAdvancedInput">networks_advanced_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidModeInput">pid_mode_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">ports_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">privileged_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">publish_all_ports_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">read_only_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">remove_volumes_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.portsInput">ports_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privilegedInput">privileged_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPortsInput">publish_all_ports_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnlyInput">read_only_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumesInput">remove_volumes_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restartInput">restart_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">rm_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rmInput">rm_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtimeInput">runtime_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOptsInput">security_opts_input</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSizeInput">shm_size_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">start_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">stdin_open_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.startInput">start_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpenInput">stdin_open_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignalInput">stop_signal_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeoutInput">stop_timeout_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOptsInput">storage_opts_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctlsInput">sysctls_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfsInput">tmpfs_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">tty_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">ulimit_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">upload_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ttyInput">tty_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.ulimitInput">ulimit_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.uploadInput">upload_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.userInput">user_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsModeInput">userns_mode_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">volumes_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">wait_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.volumesInput">volumes_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.waitInput">wait_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeoutInput">wait_timeout_input</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDirInput">working_dir_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">attach</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.attach">attach</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupnsMode">cgroupns_mode</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.cgroupParent">cgroup_parent</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.command">command</a></code> | <code>typing.List[str]</code> | *No description.* |
@@ -2228,38 +2228,38 @@ Refer to the {@link https://registry.terraform.io/providers/kreuzwerker/docker/3
 | <code><a href="#@cdktf/provider-docker.container.Container.property.hostname">hostname</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.id">id</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.image">image</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.init">init</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.init">init</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.ipcMode">ipc_mode</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logDriver">log_driver</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.logOpts">log_opts</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">logs</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.logs">logs</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.maxRetryCount">max_retry_count</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memory">memory</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.memorySwap">memory_swap</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">must_run</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.mustRun">must_run</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.name">name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.networkMode">network_mode</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.pidMode">pid_mode</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">privileged</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">publish_all_ports</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">remove_volumes</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.privileged">privileged</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.publishAllPorts">publish_all_ports</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.removeVolumes">remove_volumes</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.restart">restart</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">rm</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.rm">rm</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.runtime">runtime</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.securityOpts">security_opts</a></code> | <code>typing.List[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.shmSize">shm_size</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.start">start</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">stdin_open</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.start">start</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.stdinOpen">stdin_open</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopSignal">stop_signal</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.stopTimeout">stop_timeout</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.storageOpts">storage_opts</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.sysctls">sysctls</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.tmpfs">tmpfs</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">tty</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.tty">tty</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.user">user</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.usernsMode">userns_mode</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">wait</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.Container.property.wait">wait</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.waitTimeout">wait_timeout</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.Container.property.workingDir">working_dir</a></code> | <code>str</code> | *No description.* |
 
@@ -2340,20 +2340,20 @@ terraform_generator_metadata: TerraformProviderGeneratorMetadata
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.Container.property.connection"></a>
 
 ```python
-connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
+connection: SSHProvisionerConnection | WinrmProvisionerConnection
 ```
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.Container.property.count"></a>
 
 ```python
-count: typing.Union[typing.Union[int, float], TerraformCount]
+count: typing.Union[int, float] | TerraformCount
 ```
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -2400,10 +2400,10 @@ provider: TerraformProvider
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.Container.property.provisioners"></a>
 
 ```python
-provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]]
+provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner]
 ```
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
@@ -2560,10 +2560,10 @@ volumes: ContainerVolumesList
 ##### `attach_input`<sup>Optional</sup> <a name="attach_input" id="@cdktf/provider-docker.container.Container.property.attachInput"></a>
 
 ```python
-attach_input: typing.Union[bool, IResolvable]
+attach_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -2680,10 +2680,10 @@ destroy_grace_seconds_input: typing.Union[int, float]
 ##### `devices_input`<sup>Optional</sup> <a name="devices_input" id="@cdktf/provider-docker.container.Container.property.devicesInput"></a>
 
 ```python
-devices_input: typing.Union[IResolvable, typing.List[ContainerDevices]]
+devices_input: IResolvable | typing.List[ContainerDevices]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 ---
 
@@ -2780,10 +2780,10 @@ healthcheck_input: ContainerHealthcheck
 ##### `host_input`<sup>Optional</sup> <a name="host_input" id="@cdktf/provider-docker.container.Container.property.hostInput"></a>
 
 ```python
-host_input: typing.Union[IResolvable, typing.List[ContainerHost]]
+host_input: IResolvable | typing.List[ContainerHost]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 ---
 
@@ -2820,10 +2820,10 @@ image_input: str
 ##### `init_input`<sup>Optional</sup> <a name="init_input" id="@cdktf/provider-docker.container.Container.property.initInput"></a>
 
 ```python
-init_input: typing.Union[bool, IResolvable]
+init_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -2840,10 +2840,10 @@ ipc_mode_input: str
 ##### `labels_input`<sup>Optional</sup> <a name="labels_input" id="@cdktf/provider-docker.container.Container.property.labelsInput"></a>
 
 ```python
-labels_input: typing.Union[IResolvable, typing.List[ContainerLabels]]
+labels_input: IResolvable | typing.List[ContainerLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 ---
 
@@ -2870,10 +2870,10 @@ log_opts_input: typing.Mapping[str]
 ##### `logs_input`<sup>Optional</sup> <a name="logs_input" id="@cdktf/provider-docker.container.Container.property.logsInput"></a>
 
 ```python
-logs_input: typing.Union[bool, IResolvable]
+logs_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -2910,20 +2910,20 @@ memory_swap_input: typing.Union[int, float]
 ##### `mounts_input`<sup>Optional</sup> <a name="mounts_input" id="@cdktf/provider-docker.container.Container.property.mountsInput"></a>
 
 ```python
-mounts_input: typing.Union[IResolvable, typing.List[ContainerMounts]]
+mounts_input: IResolvable | typing.List[ContainerMounts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 ---
 
 ##### `must_run_input`<sup>Optional</sup> <a name="must_run_input" id="@cdktf/provider-docker.container.Container.property.mustRunInput"></a>
 
 ```python
-must_run_input: typing.Union[bool, IResolvable]
+must_run_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -2950,10 +2950,10 @@ network_mode_input: str
 ##### `networks_advanced_input`<sup>Optional</sup> <a name="networks_advanced_input" id="@cdktf/provider-docker.container.Container.property.networksAdvancedInput"></a>
 
 ```python
-networks_advanced_input: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]]
+networks_advanced_input: IResolvable | typing.List[ContainerNetworksAdvanced]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 ---
 
@@ -2970,50 +2970,50 @@ pid_mode_input: str
 ##### `ports_input`<sup>Optional</sup> <a name="ports_input" id="@cdktf/provider-docker.container.Container.property.portsInput"></a>
 
 ```python
-ports_input: typing.Union[IResolvable, typing.List[ContainerPorts]]
+ports_input: IResolvable | typing.List[ContainerPorts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ---
 
 ##### `privileged_input`<sup>Optional</sup> <a name="privileged_input" id="@cdktf/provider-docker.container.Container.property.privilegedInput"></a>
 
 ```python
-privileged_input: typing.Union[bool, IResolvable]
+privileged_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `publish_all_ports_input`<sup>Optional</sup> <a name="publish_all_ports_input" id="@cdktf/provider-docker.container.Container.property.publishAllPortsInput"></a>
 
 ```python
-publish_all_ports_input: typing.Union[bool, IResolvable]
+publish_all_ports_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `read_only_input`<sup>Optional</sup> <a name="read_only_input" id="@cdktf/provider-docker.container.Container.property.readOnlyInput"></a>
 
 ```python
-read_only_input: typing.Union[bool, IResolvable]
+read_only_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `remove_volumes_input`<sup>Optional</sup> <a name="remove_volumes_input" id="@cdktf/provider-docker.container.Container.property.removeVolumesInput"></a>
 
 ```python
-remove_volumes_input: typing.Union[bool, IResolvable]
+remove_volumes_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3030,10 +3030,10 @@ restart_input: str
 ##### `rm_input`<sup>Optional</sup> <a name="rm_input" id="@cdktf/provider-docker.container.Container.property.rmInput"></a>
 
 ```python
-rm_input: typing.Union[bool, IResolvable]
+rm_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3070,20 +3070,20 @@ shm_size_input: typing.Union[int, float]
 ##### `start_input`<sup>Optional</sup> <a name="start_input" id="@cdktf/provider-docker.container.Container.property.startInput"></a>
 
 ```python
-start_input: typing.Union[bool, IResolvable]
+start_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `stdin_open_input`<sup>Optional</sup> <a name="stdin_open_input" id="@cdktf/provider-docker.container.Container.property.stdinOpenInput"></a>
 
 ```python
-stdin_open_input: typing.Union[bool, IResolvable]
+stdin_open_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3140,30 +3140,30 @@ tmpfs_input: typing.Mapping[str]
 ##### `tty_input`<sup>Optional</sup> <a name="tty_input" id="@cdktf/provider-docker.container.Container.property.ttyInput"></a>
 
 ```python
-tty_input: typing.Union[bool, IResolvable]
+tty_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `ulimit_input`<sup>Optional</sup> <a name="ulimit_input" id="@cdktf/provider-docker.container.Container.property.ulimitInput"></a>
 
 ```python
-ulimit_input: typing.Union[IResolvable, typing.List[ContainerUlimit]]
+ulimit_input: IResolvable | typing.List[ContainerUlimit]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ---
 
 ##### `upload_input`<sup>Optional</sup> <a name="upload_input" id="@cdktf/provider-docker.container.Container.property.uploadInput"></a>
 
 ```python
-upload_input: typing.Union[IResolvable, typing.List[ContainerUpload]]
+upload_input: IResolvable | typing.List[ContainerUpload]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 ---
 
@@ -3190,20 +3190,20 @@ userns_mode_input: str
 ##### `volumes_input`<sup>Optional</sup> <a name="volumes_input" id="@cdktf/provider-docker.container.Container.property.volumesInput"></a>
 
 ```python
-volumes_input: typing.Union[IResolvable, typing.List[ContainerVolumes]]
+volumes_input: IResolvable | typing.List[ContainerVolumes]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 ---
 
 ##### `wait_input`<sup>Optional</sup> <a name="wait_input" id="@cdktf/provider-docker.container.Container.property.waitInput"></a>
 
 ```python
-wait_input: typing.Union[bool, IResolvable]
+wait_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3230,10 +3230,10 @@ working_dir_input: str
 ##### `attach`<sup>Required</sup> <a name="attach" id="@cdktf/provider-docker.container.Container.property.attach"></a>
 
 ```python
-attach: typing.Union[bool, IResolvable]
+attach: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3450,10 +3450,10 @@ image: str
 ##### `init`<sup>Required</sup> <a name="init" id="@cdktf/provider-docker.container.Container.property.init"></a>
 
 ```python
-init: typing.Union[bool, IResolvable]
+init: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3490,10 +3490,10 @@ log_opts: typing.Mapping[str]
 ##### `logs`<sup>Required</sup> <a name="logs" id="@cdktf/provider-docker.container.Container.property.logs"></a>
 
 ```python
-logs: typing.Union[bool, IResolvable]
+logs: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3530,10 +3530,10 @@ memory_swap: typing.Union[int, float]
 ##### `must_run`<sup>Required</sup> <a name="must_run" id="@cdktf/provider-docker.container.Container.property.mustRun"></a>
 
 ```python
-must_run: typing.Union[bool, IResolvable]
+must_run: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3570,40 +3570,40 @@ pid_mode: str
 ##### `privileged`<sup>Required</sup> <a name="privileged" id="@cdktf/provider-docker.container.Container.property.privileged"></a>
 
 ```python
-privileged: typing.Union[bool, IResolvable]
+privileged: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `publish_all_ports`<sup>Required</sup> <a name="publish_all_ports" id="@cdktf/provider-docker.container.Container.property.publishAllPorts"></a>
 
 ```python
-publish_all_ports: typing.Union[bool, IResolvable]
+publish_all_ports: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `read_only`<sup>Required</sup> <a name="read_only" id="@cdktf/provider-docker.container.Container.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `remove_volumes`<sup>Required</sup> <a name="remove_volumes" id="@cdktf/provider-docker.container.Container.property.removeVolumes"></a>
 
 ```python
-remove_volumes: typing.Union[bool, IResolvable]
+remove_volumes: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3620,10 +3620,10 @@ restart: str
 ##### `rm`<sup>Required</sup> <a name="rm" id="@cdktf/provider-docker.container.Container.property.rm"></a>
 
 ```python
-rm: typing.Union[bool, IResolvable]
+rm: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3660,20 +3660,20 @@ shm_size: typing.Union[int, float]
 ##### `start`<sup>Required</sup> <a name="start" id="@cdktf/provider-docker.container.Container.property.start"></a>
 
 ```python
-start: typing.Union[bool, IResolvable]
+start: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
 ##### `stdin_open`<sup>Required</sup> <a name="stdin_open" id="@cdktf/provider-docker.container.Container.property.stdinOpen"></a>
 
 ```python
-stdin_open: typing.Union[bool, IResolvable]
+stdin_open: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3730,10 +3730,10 @@ tmpfs: typing.Mapping[str]
 ##### `tty`<sup>Required</sup> <a name="tty" id="@cdktf/provider-docker.container.Container.property.tty"></a>
 
 ```python
-tty: typing.Union[bool, IResolvable]
+tty: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3760,10 +3760,10 @@ userns_mode: str
 ##### `wait`<sup>Required</sup> <a name="wait" id="@cdktf/provider-docker.container.Container.property.wait"></a>
 
 ```python
-wait: typing.Union[bool, IResolvable]
+wait: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -3865,16 +3865,16 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 from cdktf_cdktf_provider_docker import container
 
 container.ContainerConfig(
-  connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection] = None,
-  count: typing.Union[typing.Union[int, float], TerraformCount] = None,
+  connection: SSHProvisionerConnection | WinrmProvisionerConnection = None,
+  count: typing.Union[int, float] | TerraformCount = None,
   depends_on: typing.List[ITerraformDependable] = None,
   for_each: ITerraformIterator = None,
   lifecycle: TerraformResourceLifecycle = None,
   provider: TerraformProvider = None,
-  provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]] = None,
+  provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner] = None,
   image: str,
   name: str,
-  attach: typing.Union[bool, IResolvable] = None,
+  attach: bool | IResolvable = None,
   capabilities: ContainerCapabilities = None,
   cgroupns_mode: str = None,
   cgroup_parent: str = None,
@@ -3886,7 +3886,7 @@ container.ContainerConfig(
   cpu_set: str = None,
   cpu_shares: typing.Union[int, float] = None,
   destroy_grace_seconds: typing.Union[int, float] = None,
-  devices: typing.Union[IResolvable, typing.List[ContainerDevices]] = None,
+  devices: IResolvable | typing.List[ContainerDevices] = None,
   dns: typing.List[str] = None,
   dns_opts: typing.List[str] = None,
   dns_search: typing.List[str] = None,
@@ -3896,47 +3896,47 @@ container.ContainerConfig(
   gpus: str = None,
   group_add: typing.List[str] = None,
   healthcheck: ContainerHealthcheck = None,
-  host: typing.Union[IResolvable, typing.List[ContainerHost]] = None,
+  host: IResolvable | typing.List[ContainerHost] = None,
   hostname: str = None,
   id: str = None,
-  init: typing.Union[bool, IResolvable] = None,
+  init: bool | IResolvable = None,
   ipc_mode: str = None,
-  labels: typing.Union[IResolvable, typing.List[ContainerLabels]] = None,
+  labels: IResolvable | typing.List[ContainerLabels] = None,
   log_driver: str = None,
   log_opts: typing.Mapping[str] = None,
-  logs: typing.Union[bool, IResolvable] = None,
+  logs: bool | IResolvable = None,
   max_retry_count: typing.Union[int, float] = None,
   memory: typing.Union[int, float] = None,
   memory_swap: typing.Union[int, float] = None,
-  mounts: typing.Union[IResolvable, typing.List[ContainerMounts]] = None,
-  must_run: typing.Union[bool, IResolvable] = None,
+  mounts: IResolvable | typing.List[ContainerMounts] = None,
+  must_run: bool | IResolvable = None,
   network_mode: str = None,
-  networks_advanced: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]] = None,
+  networks_advanced: IResolvable | typing.List[ContainerNetworksAdvanced] = None,
   pid_mode: str = None,
-  ports: typing.Union[IResolvable, typing.List[ContainerPorts]] = None,
-  privileged: typing.Union[bool, IResolvable] = None,
-  publish_all_ports: typing.Union[bool, IResolvable] = None,
-  read_only: typing.Union[bool, IResolvable] = None,
-  remove_volumes: typing.Union[bool, IResolvable] = None,
+  ports: IResolvable | typing.List[ContainerPorts] = None,
+  privileged: bool | IResolvable = None,
+  publish_all_ports: bool | IResolvable = None,
+  read_only: bool | IResolvable = None,
+  remove_volumes: bool | IResolvable = None,
   restart: str = None,
-  rm: typing.Union[bool, IResolvable] = None,
+  rm: bool | IResolvable = None,
   runtime: str = None,
   security_opts: typing.List[str] = None,
   shm_size: typing.Union[int, float] = None,
-  start: typing.Union[bool, IResolvable] = None,
-  stdin_open: typing.Union[bool, IResolvable] = None,
+  start: bool | IResolvable = None,
+  stdin_open: bool | IResolvable = None,
   stop_signal: str = None,
   stop_timeout: typing.Union[int, float] = None,
   storage_opts: typing.Mapping[str] = None,
   sysctls: typing.Mapping[str] = None,
   tmpfs: typing.Mapping[str] = None,
-  tty: typing.Union[bool, IResolvable] = None,
-  ulimit: typing.Union[IResolvable, typing.List[ContainerUlimit]] = None,
-  upload: typing.Union[IResolvable, typing.List[ContainerUpload]] = None,
+  tty: bool | IResolvable = None,
+  ulimit: IResolvable | typing.List[ContainerUlimit] = None,
+  upload: IResolvable | typing.List[ContainerUpload] = None,
   user: str = None,
   userns_mode: str = None,
-  volumes: typing.Union[IResolvable, typing.List[ContainerVolumes]] = None,
-  wait: typing.Union[bool, IResolvable] = None,
+  volumes: IResolvable | typing.List[ContainerVolumes] = None,
+  wait: bool | IResolvable = None,
   wait_timeout: typing.Union[int, float] = None,
   working_dir: str = None
 )
@@ -3946,16 +3946,16 @@ container.ContainerConfig(
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">connection</a></code> | <code>typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">count</a></code> | <code>typing.Union[typing.Union[int, float], cdktf.TerraformCount]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.connection">connection</a></code> | <code>cdktf.SSHProvisionerConnection \| cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.count">count</a></code> | <code>typing.Union[int, float] \| cdktf.TerraformCount</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dependsOn">depends_on</a></code> | <code>typing.List[cdktf.ITerraformDependable]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.forEach">for_each</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.lifecycle">lifecycle</a></code> | <code>cdktf.TerraformResourceLifecycle</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provider">provider</a></code> | <code>cdktf.TerraformProvider</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">provisioners</a></code> | <code>typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.provisioners">provisioners</a></code> | <code>typing.List[cdktf.FileProvisioner \| cdktf.LocalExecProvisioner \| cdktf.RemoteExecProvisioner]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.image">image</a></code> | <code>str</code> | The ID of the image to back this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.name">name</a></code> | <code>str</code> | The name of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">attach</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.attach">attach</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.capabilities">capabilities</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerCapabilities">ContainerCapabilities</a></code> | capabilities block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupnsMode">cgroupns_mode</a></code> | <code>str</code> | Cgroup namespace mode to use for the container. Possible values are: `private`, `host`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cgroupParent">cgroup_parent</a></code> | <code>str</code> | Optional parent cgroup for the container. |
@@ -3967,7 +3967,7 @@ container.ContainerConfig(
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuSet">cpu_set</a></code> | <code>str</code> | A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.cpuShares">cpu_shares</a></code> | <code>typing.Union[int, float]</code> | CPU shares (relative weight) for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.destroyGraceSeconds">destroy_grace_seconds</a></code> | <code>typing.Union[int, float]</code> | If defined will attempt to stop the container before destroying. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">devices</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]</code> | devices block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.devices">devices</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | devices block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dns">dns</a></code> | <code>typing.List[str]</code> | DNS servers to use. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsOpts">dns_opts</a></code> | <code>typing.List[str]</code> | DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.dnsSearch">dns_search</a></code> | <code>typing.List[str]</code> | DNS search domains that are used when bare unqualified hostnames are used inside of the container. |
@@ -3977,47 +3977,47 @@ container.ContainerConfig(
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.gpus">gpus</a></code> | <code>str</code> | GPU devices to add to the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.groupAdd">group_add</a></code> | <code>typing.List[str]</code> | Additional groups for the container user. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.healthcheck">healthcheck</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerHealthcheck">ContainerHealthcheck</a></code> | healthcheck block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">host</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]</code> | host block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.host">host</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | host block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.hostname">hostname</a></code> | <code>str</code> | Hostname of the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.id">id</a></code> | <code>str</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuzwerker/docker/3.6.2/docs/resources/container#id Container#id}. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">init</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Configured whether an init process should be injected for this container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.init">init</a></code> | <code>bool \| cdktf.IResolvable</code> | Configured whether an init process should be injected for this container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ipcMode">ipc_mode</a></code> | <code>str</code> | IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">labels</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.labels">labels</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | labels block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logDriver">log_driver</a></code> | <code>str</code> | The logging driver to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logOpts">log_opts</a></code> | <code>typing.Mapping[str]</code> | Key/value pairs to use as options for the logging driver. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">logs</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.logs">logs</a></code> | <code>bool \| cdktf.IResolvable</code> | Save the container logs (`attach` must be enabled). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.maxRetryCount">max_retry_count</a></code> | <code>typing.Union[int, float]</code> | The maximum amount of times to an attempt a restart when `restart` is set to 'on-failure'. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memory">memory</a></code> | <code>typing.Union[int, float]</code> | The memory limit for the container in MBs. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.memorySwap">memory_swap</a></code> | <code>typing.Union[int, float]</code> | The total memory limit (memory + swap) for the container in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">mounts</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]</code> | mounts block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">must_run</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container will be kept running. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mounts">mounts</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | mounts block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.mustRun">must_run</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container will be kept running. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networkMode">network_mode</a></code> | <code>str</code> | Network mode of the container. See https://docs.docker.com/engine/network/ for more information. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">networks_advanced</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]</code> | networks_advanced block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced">networks_advanced</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | networks_advanced block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.pidMode">pid_mode</a></code> | <code>str</code> | he PID (Process) Namespace mode for the container. Either `container:<name\|id>` or `host`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">ports</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]</code> | ports block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">privileged</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the container runs in privileged mode. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">publish_all_ports</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Publish all ports of the container. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">remove_volumes</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ports">ports</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | ports block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.privileged">privileged</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, the container runs in privileged mode. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts">publish_all_ports</a></code> | <code>bool \| cdktf.IResolvable</code> | Publish all ports of the container. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, the container will be started as readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes">remove_volumes</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.restart">restart</a></code> | <code>str</code> | The restart policy for the container. Must be one of 'no', 'on-failure', 'always', 'unless-stopped'. Defaults to `no`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">rm</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.rm">rm</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the container will be automatically removed when it exits. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.runtime">runtime</a></code> | <code>str</code> | Runtime to use for the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.securityOpts">security_opts</a></code> | <code>typing.List[str]</code> | List of string values to customize labels for MLS systems, such as SELinux. See https://docs.docker.com/engine/reference/run/#security-configuration. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.shmSize">shm_size</a></code> | <code>typing.Union[int, float]</code> | Size of `/dev/shm` in MBs. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">start</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container will be started after creation. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">stdin_open</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.start">start</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container will be started after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen">stdin_open</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopSignal">stop_signal</a></code> | <code>str</code> | Signal to stop a container (default `SIGTERM`). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.stopTimeout">stop_timeout</a></code> | <code>typing.Union[int, float]</code> | Timeout (in seconds) to stop a container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.storageOpts">storage_opts</a></code> | <code>typing.Mapping[str]</code> | Key/value pairs for the storage driver options, e.g. `size`: `120G`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.sysctls">sysctls</a></code> | <code>typing.Mapping[str]</code> | A map of kernel parameters (sysctls) to set in the container. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tmpfs">tmpfs</a></code> | <code>typing.Mapping[str]</code> | A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">tty</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">ulimit</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]</code> | ulimit block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">upload</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]</code> | upload block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.tty">tty</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.ulimit">ulimit</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | ulimit block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.upload">upload</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | upload block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.user">user</a></code> | <code>str</code> | User used for run the first process. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.usernsMode">userns_mode</a></code> | <code>str</code> | Sets the usernamespace mode for the container when usernamespace remapping option is enabled. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">volumes</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]</code> | volumes block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">wait</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.volumes">volumes</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | volumes block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.wait">wait</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, then the Docker container is waited for being healthy state after creation. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.waitTimeout">wait_timeout</a></code> | <code>typing.Union[int, float]</code> | The timeout in seconds to wait the container to be healthy after creation. Defaults to `60`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerConfig.property.workingDir">working_dir</a></code> | <code>str</code> | The working directory for commands to run in. |
 
@@ -4026,20 +4026,20 @@ container.ContainerConfig(
 ##### `connection`<sup>Optional</sup> <a name="connection" id="@cdktf/provider-docker.container.ContainerConfig.property.connection"></a>
 
 ```python
-connection: typing.Union[SSHProvisionerConnection, WinrmProvisionerConnection]
+connection: SSHProvisionerConnection | WinrmProvisionerConnection
 ```
 
-- *Type:* typing.Union[cdktf.SSHProvisionerConnection, cdktf.WinrmProvisionerConnection]
+- *Type:* cdktf.SSHProvisionerConnection | cdktf.WinrmProvisionerConnection
 
 ---
 
 ##### `count`<sup>Optional</sup> <a name="count" id="@cdktf/provider-docker.container.ContainerConfig.property.count"></a>
 
 ```python
-count: typing.Union[typing.Union[int, float], TerraformCount]
+count: typing.Union[int, float] | TerraformCount
 ```
 
-- *Type:* typing.Union[typing.Union[int, float], cdktf.TerraformCount]
+- *Type:* typing.Union[int, float] | cdktf.TerraformCount
 
 ---
 
@@ -4086,10 +4086,10 @@ provider: TerraformProvider
 ##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="@cdktf/provider-docker.container.ContainerConfig.property.provisioners"></a>
 
 ```python
-provisioners: typing.List[typing.Union[FileProvisioner, LocalExecProvisioner, RemoteExecProvisioner]]
+provisioners: typing.List[FileProvisioner | LocalExecProvisioner | RemoteExecProvisioner]
 ```
 
-- *Type:* typing.List[typing.Union[cdktf.FileProvisioner, cdktf.LocalExecProvisioner, cdktf.RemoteExecProvisioner]]
+- *Type:* typing.List[cdktf.FileProvisioner | cdktf.LocalExecProvisioner | cdktf.RemoteExecProvisioner]
 
 ---
 
@@ -4126,10 +4126,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `attach`<sup>Optional</sup> <a name="attach" id="@cdktf/provider-docker.container.ContainerConfig.property.attach"></a>
 
 ```python
-attach: typing.Union[bool, IResolvable]
+attach: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true` attach to the container after its creation and waits the end of its execution. Defaults to `false`.
 
@@ -4302,10 +4302,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `devices`<sup>Optional</sup> <a name="devices" id="@cdktf/provider-docker.container.ContainerConfig.property.devices"></a>
 
 ```python
-devices: typing.Union[IResolvable, typing.List[ContainerDevices]]
+devices: IResolvable | typing.List[ContainerDevices]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 devices block.
 
@@ -4446,10 +4446,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `host`<sup>Optional</sup> <a name="host" id="@cdktf/provider-docker.container.ContainerConfig.property.host"></a>
 
 ```python
-host: typing.Union[IResolvable, typing.List[ContainerHost]]
+host: IResolvable | typing.List[ContainerHost]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 host block.
 
@@ -4489,10 +4489,10 @@ If you experience problems setting this value it might not be settable. Please t
 ##### `init`<sup>Optional</sup> <a name="init" id="@cdktf/provider-docker.container.ContainerConfig.property.init"></a>
 
 ```python
-init: typing.Union[bool, IResolvable]
+init: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Configured whether an init process should be injected for this container.
 
@@ -4519,10 +4519,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.ContainerConfig.property.labels"></a>
 
 ```python
-labels: typing.Union[IResolvable, typing.List[ContainerLabels]]
+labels: IResolvable | typing.List[ContainerLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 labels block.
 
@@ -4561,10 +4561,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `logs`<sup>Optional</sup> <a name="logs" id="@cdktf/provider-docker.container.ContainerConfig.property.logs"></a>
 
 ```python
-logs: typing.Union[bool, IResolvable]
+logs: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Save the container logs (`attach` must be enabled). Defaults to `false`.
 
@@ -4619,10 +4619,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `mounts`<sup>Optional</sup> <a name="mounts" id="@cdktf/provider-docker.container.ContainerConfig.property.mounts"></a>
 
 ```python
-mounts: typing.Union[IResolvable, typing.List[ContainerMounts]]
+mounts: IResolvable | typing.List[ContainerMounts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 mounts block.
 
@@ -4633,10 +4633,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `must_run`<sup>Optional</sup> <a name="must_run" id="@cdktf/provider-docker.container.ContainerConfig.property.mustRun"></a>
 
 ```python
-must_run: typing.Union[bool, IResolvable]
+must_run: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container will be kept running.
 
@@ -4663,10 +4663,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `networks_advanced`<sup>Optional</sup> <a name="networks_advanced" id="@cdktf/provider-docker.container.ContainerConfig.property.networksAdvanced"></a>
 
 ```python
-networks_advanced: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]]
+networks_advanced: IResolvable | typing.List[ContainerNetworksAdvanced]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 networks_advanced block.
 
@@ -4691,10 +4691,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ports`<sup>Optional</sup> <a name="ports" id="@cdktf/provider-docker.container.ContainerConfig.property.ports"></a>
 
 ```python
-ports: typing.Union[IResolvable, typing.List[ContainerPorts]]
+ports: IResolvable | typing.List[ContainerPorts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ports block.
 
@@ -4705,10 +4705,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `privileged`<sup>Optional</sup> <a name="privileged" id="@cdktf/provider-docker.container.ContainerConfig.property.privileged"></a>
 
 ```python
-privileged: typing.Union[bool, IResolvable]
+privileged: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, the container runs in privileged mode.
 
@@ -4719,10 +4719,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `publish_all_ports`<sup>Optional</sup> <a name="publish_all_ports" id="@cdktf/provider-docker.container.ContainerConfig.property.publishAllPorts"></a>
 
 ```python
-publish_all_ports: typing.Union[bool, IResolvable]
+publish_all_ports: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Publish all ports of the container.
 
@@ -4733,10 +4733,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `read_only`<sup>Optional</sup> <a name="read_only" id="@cdktf/provider-docker.container.ContainerConfig.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, the container will be started as readonly. Defaults to `false`.
 
@@ -4747,10 +4747,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `remove_volumes`<sup>Optional</sup> <a name="remove_volumes" id="@cdktf/provider-docker.container.ContainerConfig.property.removeVolumes"></a>
 
 ```python
-remove_volumes: typing.Union[bool, IResolvable]
+remove_volumes: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, it will remove anonymous volumes associated with the container. Defaults to `true`.
 
@@ -4775,10 +4775,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `rm`<sup>Optional</sup> <a name="rm" id="@cdktf/provider-docker.container.ContainerConfig.property.rm"></a>
 
 ```python
-rm: typing.Union[bool, IResolvable]
+rm: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the container will be automatically removed when it exits. Defaults to `false`.
 
@@ -4831,10 +4831,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `start`<sup>Optional</sup> <a name="start" id="@cdktf/provider-docker.container.ContainerConfig.property.start"></a>
 
 ```python
-start: typing.Union[bool, IResolvable]
+start: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container will be started after creation.
 
@@ -4847,10 +4847,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `stdin_open`<sup>Optional</sup> <a name="stdin_open" id="@cdktf/provider-docker.container.ContainerConfig.property.stdinOpen"></a>
 
 ```python
-stdin_open: typing.Union[bool, IResolvable]
+stdin_open: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, keep STDIN open even if not attached (`docker run -i`). Defaults to `false`.
 
@@ -4931,10 +4931,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `tty`<sup>Optional</sup> <a name="tty" id="@cdktf/provider-docker.container.ContainerConfig.property.tty"></a>
 
 ```python
-tty: typing.Union[bool, IResolvable]
+tty: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, allocate a pseudo-tty (`docker run -t`). Defaults to `false`.
 
@@ -4945,10 +4945,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `ulimit`<sup>Optional</sup> <a name="ulimit" id="@cdktf/provider-docker.container.ContainerConfig.property.ulimit"></a>
 
 ```python
-ulimit: typing.Union[IResolvable, typing.List[ContainerUlimit]]
+ulimit: IResolvable | typing.List[ContainerUlimit]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ulimit block.
 
@@ -4959,10 +4959,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `upload`<sup>Optional</sup> <a name="upload" id="@cdktf/provider-docker.container.ContainerConfig.property.upload"></a>
 
 ```python
-upload: typing.Union[IResolvable, typing.List[ContainerUpload]]
+upload: IResolvable | typing.List[ContainerUpload]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 upload block.
 
@@ -5003,10 +5003,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `volumes`<sup>Optional</sup> <a name="volumes" id="@cdktf/provider-docker.container.ContainerConfig.property.volumes"></a>
 
 ```python
-volumes: typing.Union[IResolvable, typing.List[ContainerVolumes]]
+volumes: IResolvable | typing.List[ContainerVolumes]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 volumes block.
 
@@ -5017,10 +5017,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `wait`<sup>Optional</sup> <a name="wait" id="@cdktf/provider-docker.container.ContainerConfig.property.wait"></a>
 
 ```python
-wait: typing.Union[bool, IResolvable]
+wait: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, then the Docker container is waited for being healthy state after creation.
 
@@ -5351,7 +5351,7 @@ container.ContainerMounts(
   target: str,
   type: str,
   bind_options: ContainerMountsBindOptions = None,
-  read_only: typing.Union[bool, IResolvable] = None,
+  read_only: bool | IResolvable = None,
   source: str = None,
   tmpfs_options: ContainerMountsTmpfsOptions = None,
   volume_options: ContainerMountsVolumeOptions = None
@@ -5365,7 +5365,7 @@ container.ContainerMounts(
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.target">target</a></code> | <code>str</code> | Container path. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.type">type</a></code> | <code>str</code> | The mount type. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.bindOptions">bind_options</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | bind_options block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Whether the mount should be read-only. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | Whether the mount should be read-only. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.source">source</a></code> | <code>str</code> | Mount source (e.g. a volume name, a host path). |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.tmpfsOptions">tmpfs_options</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | tmpfs_options block. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMounts.property.volumeOptions">volume_options</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | volume_options block. |
@@ -5417,10 +5417,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `read_only`<sup>Optional</sup> <a name="read_only" id="@cdktf/provider-docker.container.ContainerMounts.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Whether the mount should be read-only.
 
@@ -5564,8 +5564,8 @@ from cdktf_cdktf_provider_docker import container
 container.ContainerMountsVolumeOptions(
   driver_name: str = None,
   driver_options: typing.Mapping[str] = None,
-  labels: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]] = None,
-  no_copy: typing.Union[bool, IResolvable] = None,
+  labels: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels] = None,
+  no_copy: bool | IResolvable = None,
   subpath: str = None
 )
 ```
@@ -5576,8 +5576,8 @@ container.ContainerMountsVolumeOptions(
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverName">driver_name</a></code> | <code>str</code> | Name of the driver to use to create the volume. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.driverOptions">driver_options</a></code> | <code>typing.Mapping[str]</code> | key/value map of driver specific options. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">labels</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]</code> | labels block. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">no_copy</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | Populate volume with data from the target. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels">labels</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]</code> | labels block. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy">no_copy</a></code> | <code>bool \| cdktf.IResolvable</code> | Populate volume with data from the target. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.subpath">subpath</a></code> | <code>str</code> | Path within the volume to mount. Requires docker server version 1.45 or higher. |
 
 ---
@@ -5613,10 +5613,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.labels"></a>
 
 ```python
-labels: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]]
+labels: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 labels block.
 
@@ -5627,10 +5627,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `no_copy`<sup>Optional</sup> <a name="no_copy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptions.property.noCopy"></a>
 
 ```python
-no_copy: typing.Union[bool, IResolvable]
+no_copy: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -5956,7 +5956,7 @@ container.ContainerUpload(
   file: str,
   content: str = None,
   content_base64: str = None,
-  executable: typing.Union[bool, IResolvable] = None,
+  executable: bool | IResolvable = None,
   permissions: str = None,
   source: str = None,
   source_hash: str = None
@@ -5970,7 +5970,7 @@ container.ContainerUpload(
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.file">file</a></code> | <code>str</code> | Path to the file in the container where is upload goes to. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.content">content</a></code> | <code>str</code> | Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.contentBase64">content_base64</a></code> | <code>str</code> | Base64-encoded data that will be decoded and uploaded as raw bytes for the object content. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">executable</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.executable">executable</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, the file will be uploaded with user executable permission. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.permissions">permissions</a></code> | <code>str</code> | The permission mode for the file in the container. Has precedence over `executable`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.source">source</a></code> | <code>str</code> | A filename that references a file which will be uploaded as the object content. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUpload.property.sourceHash">source_hash</a></code> | <code>str</code> | If using `source`, this will force an update if the file content has updated but the filename has not. |
@@ -6026,10 +6026,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `executable`<sup>Optional</sup> <a name="executable" id="@cdktf/provider-docker.container.ContainerUpload.property.executable"></a>
 
 ```python
-executable: typing.Union[bool, IResolvable]
+executable: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, the file will be uploaded with user executable permission. Defaults to `false`.
 
@@ -6092,7 +6092,7 @@ container.ContainerVolumes(
   container_path: str = None,
   from_container: str = None,
   host_path: str = None,
-  read_only: typing.Union[bool, IResolvable] = None,
+  read_only: bool | IResolvable = None,
   volume_name: str = None
 )
 ```
@@ -6104,7 +6104,7 @@ container.ContainerVolumes(
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.containerPath">container_path</a></code> | <code>str</code> | The path in the container where the volume will be mounted. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.fromContainer">from_container</a></code> | <code>str</code> | The container where the volume is coming from. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.hostPath">host_path</a></code> | <code>str</code> | The path on the host where the volume is coming from. |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | If `true`, this volume will be readonly. Defaults to `false`. |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | If `true`, this volume will be readonly. Defaults to `false`. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumes.property.volumeName">volume_name</a></code> | <code>str</code> | The name of the docker volume which should be mounted. |
 
 ---
@@ -6154,10 +6154,10 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 ##### `read_only`<sup>Optional</sup> <a name="read_only" id="@cdktf/provider-docker.container.ContainerVolumes.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 If `true`, this volume will be readonly. Defaults to `false`.
 
@@ -6644,7 +6644,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | *No description.* |
 
 ---
 
@@ -6675,10 +6675,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerDevicesList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerDevices]]
+internal_value: IResolvable | typing.List[ContainerDevices]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
 
 ---
 
@@ -6958,7 +6958,7 @@ def reset_permissions() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.containerPath">container_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.hostPath">host_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.permissions">permissions</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a></code> | *No description.* |
 
 ---
 
@@ -7049,10 +7049,10 @@ permissions: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerDevicesOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerDevices]
+internal_value: IResolvable | ContainerDevices
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerDevices">ContainerDevices</a>
 
 ---
 
@@ -7629,7 +7629,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | *No description.* |
 
 ---
 
@@ -7660,10 +7660,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerHostList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerHost]]
+internal_value: IResolvable | typing.List[ContainerHost]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
 
 ---
 
@@ -7927,7 +7927,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ipInput">ip_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.host">host</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.ip">ip</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a></code> | *No description.* |
 
 ---
 
@@ -7998,10 +7998,10 @@ ip: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerHostOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerHost]
+internal_value: IResolvable | ContainerHost
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerHost">ContainerHost</a>
 
 ---
 
@@ -8137,7 +8137,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | *No description.* |
 
 ---
 
@@ -8168,10 +8168,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerLabelsList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerLabels]]
+internal_value: IResolvable | typing.List[ContainerLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
 
 ---
 
@@ -8435,7 +8435,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.label">label</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a></code> | *No description.* |
 
 ---
 
@@ -8506,10 +8506,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerLabelsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerLabels]
+internal_value: IResolvable | ContainerLabels
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerLabels">ContainerLabels</a>
 
 ---
 
@@ -8948,7 +8948,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | *No description.* |
 
 ---
 
@@ -8979,10 +8979,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerMounts]]
+internal_value: IResolvable | typing.List[ContainerMounts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
 
 ---
 
@@ -9296,8 +9296,8 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 def put_volume_options(
   driver_name: str = None,
   driver_options: typing.Mapping[str] = None,
-  labels: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]] = None,
-  no_copy: typing.Union[bool, IResolvable] = None,
+  labels: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels] = None,
+  no_copy: bool | IResolvable = None,
   subpath: str = None
 ) -> None
 ```
@@ -9324,7 +9324,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `labels`<sup>Optional</sup> <a name="labels" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.putVolumeOptions.parameter.labels"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 labels block.
 
@@ -9334,7 +9334,7 @@ Docs at Terraform Registry: {@link https://registry.terraform.io/providers/kreuz
 
 ###### `no_copy`<sup>Optional</sup> <a name="no_copy" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.putVolumeOptions.parameter.noCopy"></a>
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 Populate volume with data from the target.
 
@@ -9393,17 +9393,17 @@ def reset_volume_options() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptions">tmpfs_options</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptionsOutputReference">ContainerMountsTmpfsOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptions">volume_options</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference">ContainerMountsVolumeOptionsOutputReference</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.bindOptionsInput">bind_options_input</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsBindOptions">ContainerMountsBindOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">read_only_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput">read_only_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.sourceInput">source_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.targetInput">target_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.tmpfsOptionsInput">tmpfs_options_input</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsTmpfsOptions">ContainerMountsTmpfsOptions</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.typeInput">type_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.volumeOptionsInput">volume_options_input</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.source">source</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.target">target</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.type">type</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a></code> | *No description.* |
 
 ---
 
@@ -9474,10 +9474,10 @@ bind_options_input: ContainerMountsBindOptions
 ##### `read_only_input`<sup>Optional</sup> <a name="read_only_input" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnlyInput"></a>
 
 ```python
-read_only_input: typing.Union[bool, IResolvable]
+read_only_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -9534,10 +9534,10 @@ volume_options_input: ContainerMountsVolumeOptions
 ##### `read_only`<sup>Required</sup> <a name="read_only" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -9574,10 +9574,10 @@ type: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerMounts]
+internal_value: IResolvable | ContainerMounts
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerMounts">ContainerMounts</a>
 
 ---
 
@@ -10045,7 +10045,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]</code> | *No description.* |
 
 ---
 
@@ -10076,10 +10076,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]]
+internal_value: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 ---
 
@@ -10343,7 +10343,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.valueInput">value_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.label">label</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.value">value</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a></code> | *No description.* |
 
 ---
 
@@ -10414,10 +10414,10 @@ value: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerMountsVolumeOptionsLabels]
+internal_value: IResolvable | ContainerMountsVolumeOptionsLabels
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>
 
 ---
 
@@ -10660,13 +10660,13 @@ Returns a reversible string representation.
 
 ```python
 def put_labels(
-  value: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]]
+  value: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels]
 ) -> None
 ```
 
 ###### `value`<sup>Required</sup> <a name="value" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.putLabels.parameter.value"></a>
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 ---
 
@@ -10710,12 +10710,12 @@ def reset_subpath() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labels">labels</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabelsList">ContainerMountsVolumeOptionsLabelsList</a></code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverNameInput">driver_name_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptionsInput">driver_options_input</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">labels_input</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">no_copy_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput">labels_input</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput">no_copy_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpathInput">subpath_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverName">driver_name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.driverOptions">driver_options</a></code> | <code>typing.Mapping[str]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">no_copy</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy">no_copy</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.subpath">subpath</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.internalValue">internal_value</a></code> | <code><a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptions">ContainerMountsVolumeOptions</a></code> | *No description.* |
 
@@ -10778,20 +10778,20 @@ driver_options_input: typing.Mapping[str]
 ##### `labels_input`<sup>Optional</sup> <a name="labels_input" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.labelsInput"></a>
 
 ```python
-labels_input: typing.Union[IResolvable, typing.List[ContainerMountsVolumeOptionsLabels]]
+labels_input: IResolvable | typing.List[ContainerMountsVolumeOptionsLabels]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerMountsVolumeOptionsLabels">ContainerMountsVolumeOptionsLabels</a>]
 
 ---
 
 ##### `no_copy_input`<sup>Optional</sup> <a name="no_copy_input" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopyInput"></a>
 
 ```python
-no_copy_input: typing.Union[bool, IResolvable]
+no_copy_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -10828,10 +10828,10 @@ driver_options: typing.Mapping[str]
 ##### `no_copy`<sup>Required</sup> <a name="no_copy" id="@cdktf/provider-docker.container.ContainerMountsVolumeOptionsOutputReference.property.noCopy"></a>
 
 ```python
-no_copy: typing.Union[bool, IResolvable]
+no_copy: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -11528,7 +11528,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | *No description.* |
 
 ---
 
@@ -11559,10 +11559,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerNetworksAdvanced]]
+internal_value: IResolvable | typing.List[ContainerNetworksAdvanced]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
 
 ---
 
@@ -11851,7 +11851,7 @@ def reset_ipv6_address() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv4Address">ipv4_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.ipv6Address">ipv6_address</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.name">name</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a></code> | *No description.* |
 
 ---
 
@@ -11962,10 +11962,10 @@ name: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerNetworksAdvancedOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerNetworksAdvanced]
+internal_value: IResolvable | ContainerNetworksAdvanced
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerNetworksAdvanced">ContainerNetworksAdvanced</a>
 
 ---
 
@@ -12101,7 +12101,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | *No description.* |
 
 ---
 
@@ -12132,10 +12132,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerPortsList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerPorts]]
+internal_value: IResolvable | typing.List[ContainerPorts]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
 
 ---
 
@@ -12424,7 +12424,7 @@ def reset_protocol() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internal">internal</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.ip">ip</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.protocol">protocol</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a></code> | *No description.* |
 
 ---
 
@@ -12535,10 +12535,10 @@ protocol: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerPortsOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerPorts]
+internal_value: IResolvable | ContainerPorts
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerPorts">ContainerPorts</a>
 
 ---
 
@@ -12674,7 +12674,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | *No description.* |
 
 ---
 
@@ -12705,10 +12705,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUlimitList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerUlimit]]
+internal_value: IResolvable | typing.List[ContainerUlimit]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
 
 ---
 
@@ -12974,7 +12974,7 @@ Returns a reversible string representation.
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.hard">hard</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.name">name</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.soft">soft</a></code> | <code>typing.Union[int, float]</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a></code> | *No description.* |
 
 ---
 
@@ -13065,10 +13065,10 @@ soft: typing.Union[int, float]
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUlimitOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerUlimit]
+internal_value: IResolvable | ContainerUlimit
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerUlimit">ContainerUlimit</a>
 
 ---
 
@@ -13204,7 +13204,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | *No description.* |
 
 ---
 
@@ -13235,10 +13235,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUploadList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerUpload]]
+internal_value: IResolvable | typing.List[ContainerUpload]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
 
 ---
 
@@ -13542,19 +13542,19 @@ def reset_source_hash() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64Input">content_base64_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentInput">content_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">executable_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput">executable_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.fileInput">file_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissionsInput">permissions_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHashInput">source_hash_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceInput">source_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.content">content</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.contentBase64">content_base64</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">executable</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable">executable</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.file">file</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.permissions">permissions</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.source">source</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.sourceHash">source_hash</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a></code> | *No description.* |
 
 ---
 
@@ -13605,10 +13605,10 @@ content_input: str
 ##### `executable_input`<sup>Optional</sup> <a name="executable_input" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executableInput"></a>
 
 ```python
-executable_input: typing.Union[bool, IResolvable]
+executable_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -13675,10 +13675,10 @@ content_base64: str
 ##### `executable`<sup>Required</sup> <a name="executable" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.executable"></a>
 
 ```python
-executable: typing.Union[bool, IResolvable]
+executable: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -13725,10 +13725,10 @@ source_hash: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerUploadOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerUpload]
+internal_value: IResolvable | ContainerUpload
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerUpload">ContainerUpload</a>
 
 ---
 
@@ -13864,7 +13864,7 @@ the index of the item to return.
 | --- | --- | --- |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.creationStack">creation_stack</a></code> | <code>typing.List[str]</code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.fqn">fqn</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | *No description.* |
 
 ---
 
@@ -13895,10 +13895,10 @@ fqn: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerVolumesList.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, typing.List[ContainerVolumes]]
+internal_value: IResolvable | typing.List[ContainerVolumes]
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]]
+- *Type:* cdktf.IResolvable | typing.List[<a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
 
 ---
 
@@ -14196,14 +14196,14 @@ def reset_volume_name() -> None
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPathInput">container_path_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainerInput">from_container_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPathInput">host_path_input</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">read_only_input</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput">read_only_input</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeNameInput">volume_name_input</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.containerPath">container_path</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.fromContainer">from_container</a></code> | <code>str</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.hostPath">host_path</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">read_only</a></code> | <code>typing.Union[bool, cdktf.IResolvable]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly">read_only</a></code> | <code>bool \| cdktf.IResolvable</code> | *No description.* |
 | <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.volumeName">volume_name</a></code> | <code>str</code> | *No description.* |
-| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internal_value</a></code> | <code>typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]</code> | *No description.* |
+| <code><a href="#@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue">internal_value</a></code> | <code>cdktf.IResolvable \| <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a></code> | *No description.* |
 
 ---
 
@@ -14264,10 +14264,10 @@ host_path_input: str
 ##### `read_only_input`<sup>Optional</sup> <a name="read_only_input" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnlyInput"></a>
 
 ```python
-read_only_input: typing.Union[bool, IResolvable]
+read_only_input: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -14314,10 +14314,10 @@ host_path: str
 ##### `read_only`<sup>Required</sup> <a name="read_only" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.readOnly"></a>
 
 ```python
-read_only: typing.Union[bool, IResolvable]
+read_only: bool | IResolvable
 ```
 
-- *Type:* typing.Union[bool, cdktf.IResolvable]
+- *Type:* bool | cdktf.IResolvable
 
 ---
 
@@ -14334,10 +14334,10 @@ volume_name: str
 ##### `internal_value`<sup>Optional</sup> <a name="internal_value" id="@cdktf/provider-docker.container.ContainerVolumesOutputReference.property.internalValue"></a>
 
 ```python
-internal_value: typing.Union[IResolvable, ContainerVolumes]
+internal_value: IResolvable | ContainerVolumes
 ```
 
-- *Type:* typing.Union[cdktf.IResolvable, <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>]
+- *Type:* cdktf.IResolvable | <a href="#@cdktf/provider-docker.container.ContainerVolumes">ContainerVolumes</a>
 
 ---
 
